@@ -81,9 +81,9 @@ Download the App
 {{< /button >}}
 
 {{< button href="/blog" target="_self" >}}
-Read Dev Updates
+Development Updates
 {{< /button >}}
 
 ---
 
-<small>Big Bang Smugglers © 2024-2026 | [Dev Blog](/blog) | [Roadmap](/roadmap)</small>
+<small>Big Bang Smugglers © 2024-2026 | [Guide](/guide) | [Updates](/blog)</small>
