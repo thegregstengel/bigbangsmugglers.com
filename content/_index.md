@@ -3,23 +3,17 @@ title: "Big Bang Smugglers"
 description: "Forge Your Legacy in the Void"
 ---
 
-{{< lead >}}
 # FORGE YOUR LEGACY IN THE VOID
-{{< /lead >}}
 
 Trade, fight, and dominate in a ruthless universe where every choice shapes your destiny. Navigate dangerous sectors, build your fortune, and carve out your place among the stars.
 
-{{< button href="#play" target="_self" >}}
-Download the App
-{{< /button >}}
+[Download the App](#play){.button}
 
 ---
 
 ## WHO WILL YOU BE?
 
-{{< lead >}}
-Choose your path. Forge your legend.
-{{< /lead >}}
+**Choose your path. Forge your legend.**
 
 ### 🌿 The Trader
 Master the art of buy low, sell high. Navigate market fluctuations, exploit supply chains, and build wealth through strategic commerce. Every port is an opportunity. Every commodity tells a story.
@@ -76,13 +70,7 @@ Upgrade everything:
 
 The void doesn't care who you were. It only cares what you become.
 
-{{< button href="#play" target="_self" >}}
-Download the App
-{{< /button >}}
-
-{{< button href="/blog" target="_self" >}}
-Development Updates
-{{< /button >}}
+**[Download the App](#play)** | **[Development Updates](/blog)**
 
 ---
 
