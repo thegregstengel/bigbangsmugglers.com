@@ -24,14 +24,9 @@ enableEmoji = true
     weight = 20
     
   [[menu.main]]
-    name = "Dev Blog"
+    name = "Updates"
     pageRef = "/blog"
     weight = 30
-    
-  [[menu.main]]
-    name = "Roadmap"
-    pageRef = "/roadmap"
-    weight = 40
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
