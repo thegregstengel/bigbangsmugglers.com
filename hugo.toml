@@ -1,40 +1,42 @@
 baseURL = 'https://bigbangsmugglers.com/'
 languageCode = 'en-us'
 title = 'Big Bang Smugglers'
-theme = 'PaperMod'
+theme = 'hextra'
 
 enableEmoji = true
 enableRobotsTXT = true
+enableGitInfo = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
+
+[menu]
+  [[menu.main]]
+    name = "Guide"
+    pageRef = "/guide"
+    weight = 1
+  [[menu.main]]
+    name = "Updates"
+    pageRef = "/blog"
+    weight = 2
 
 [params]
   description = "Forge Your Legacy in the Void. Trade, fight, and dominate in a ruthless universe where every choice shapes your destiny."
-  author = "Big Bang Smugglers Team"
   
-  ShowReadingTime = false
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowRssButtonInSectionTermList = false
+  navbar.displayTitle = true
+  navbar.displayLogo = false
   
-  [params.homeInfoParams]
-    Title = "Big Bang Smugglers"
-    Content = "Trade, fight, and dominate in a ruthless universe where every choice shapes your destiny."
+  page.width = "normal"
+  
+  footer.displayCopyright = true
+  footer.displayPoweredBy = false
 
-[[menu.main]]
-  name = "Home"
-  url = "/"
-  weight = 10
-
-[[menu.main]]
-  name = "Guide"
-  url = "/guide"
-  weight = 20
-
-[[menu.main]]
-  name = "Updates"
-  url = "/blog"
-  weight = 30
+[params.search]
+  enable = true
+  type = "flexsearch"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
