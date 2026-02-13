@@ -1,0 +1,33 @@
+baseURL = 'https://bigbangsmugglers.com/'
+languageCode = 'en-us'
+title = 'Big Bang Smugglers'
+theme = 'blowfish'
+
+# Enable emoji support
+enableEmoji = true
+
+[author]
+  name = "Big Bang Smugglers Team"
+  email = "team@bigbangsmugglers.com"
+
+[params]
+  description = "A space trading and combat game"
+  
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+    
+  [[menu.main]]
+    name = "Dev Blog"
+    pageRef = "/blog"
+    weight = 20
+    
+  [[menu.main]]
+    name = "Roadmap"
+    pageRef = "/roadmap"
+    weight = 30
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
