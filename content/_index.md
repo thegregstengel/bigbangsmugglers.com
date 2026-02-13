@@ -1,25 +1,89 @@
 ---
 title: "Big Bang Smugglers"
-description: "A space trading and combat game"
+description: "Forge Your Legacy in the Void"
 ---
 
-# Welcome to Big Bang Smugglers
+{{< lead >}}
+# FORGE YOUR LEGACY IN THE VOID
+{{< /lead >}}
 
-Big Bang Smugglers is a multiplayer space trading and combat game where you navigate dangerous sectors, trade commodities, engage in combat, and build your reputation across the galaxy.
+Trade, fight, and dominate in a ruthless universe where every choice shapes your destiny. Navigate dangerous sectors, build your fortune, and carve out your place among the stars.
 
-## Features
+{{< button href="#play" target="_self" >}}
+Download the App
+{{< /button >}}
 
-- **Dynamic Economy**: Trade commodities across multiple sectors with real-time supply and demand
-- **Ship Combat**: Engage NPCs and other players in tactical space battles
-- **Planetary System**: Claim and develop planets for resource generation
-- **Faction Territories**: Navigate Federation and Pirate space with unique challenges
-- **Mission System**: Accept contracts and bounties to earn credits and reputation
-- **Ship Upgrades**: Customize your vessel with warp drives, weapons, and cargo expansions
+---
 
-## Current Status
+## WHO WILL YOU BE?
 
-Big Bang Smugglers is in active development. Check out the [Dev Blog](/blog) for the latest updates and the [Roadmap](/roadmap) to see what's coming next.
+{{< lead >}}
+Choose your path. Forge your legend.
+{{< /lead >}}
 
-## Play Now
+### 🌿 The Trader
+Master the art of buy low, sell high. Navigate market fluctuations, exploit supply chains, and build wealth through strategic commerce. Every port is an opportunity. Every commodity tells a story.
 
-The game is currently in alpha testing. Stay tuned for public access!
+### ⚔️ The Mercenary  
+Combat isn't just survival—it's profit. Take bounties, eliminate threats, and carve a bloody path through hostile territory. Your ship is your weapon. Your reputation is currency.
+
+### 💰 The Tycoon
+Build an empire that spans sectors. Own planets, control trade routes, and dominate the galactic economy. Power isn't found—it's built, credit by credit, territory by territory.
+
+### ⭐ The Pioneer
+Explore uncharted sectors. Claim untouched worlds. The void is vast, and fortune favors the bold. Discovery is its own reward—but it pays well too.
+
+---
+
+## NO TWO GALAXIES ARE THE SAME
+
+Every season, a new universe is born. Unique territories. Fresh opportunities. Dynamic challenges.
+
+### 🌱 Dynamic Economy
+Real-time supply and demand across hundreds of ports. Prices shift based on player trades, faction wars, and galactic events. Adapt or get left behind.
+
+### 🛡️ Choose Your Faction
+Join the Federation for structure and safety, or embrace the lawless freedom of Pirate space. Your allegiance shapes your experience—and your enemies.
+
+### 💀 PvP Combat
+Hunt or be hunted. Engage in tactical ship-to-ship combat with real stakes. Every encounter is a gamble. Every victory earns respect.
+
+### 🌌 Custom Galaxy
+Procedurally generated sectors with unique trade routes, faction territories, and hidden treasures. No two playthroughs are the same.
+
+---
+
+## YOUR SHIP. YOUR RULES.
+
+### Customize Your Fleet
+Your ship is your identity. Your mobile base. Your weapon.
+
+Choose from multiple ship classes:
+- **Scout** - Fast and agile
+- **Trader** - Maximum cargo capacity  
+- **Corvette** - Built for combat
+- **Smuggler** - Evade detection
+
+Upgrade everything:
+- ⚡ Warp Drives for efficient travel
+- 🛡️ Shields for defense
+- 🚀 Engines for speed
+- 📦 Holds for cargo expansion
+
+---
+
+## YOUR DESTINY AWAITS
+
+The void doesn't care who you were. It only cares what you become.
+
+{{< button href="#play" target="_self" >}}
+Download the App
+{{< /button >}}
+
+{{< button href="/blog" target="_self" >}}
+Read Dev Updates
+{{< /button >}}
+
+---
+
+<small>Big Bang Smugglers © 2024-2026 | [Dev Blog](/blog) | [Roadmap](/roadmap)</small>

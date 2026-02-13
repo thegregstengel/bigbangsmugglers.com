@@ -8,10 +8,9 @@ enableEmoji = true
 
 [author]
   name = "Big Bang Smugglers Team"
-  email = "team@bigbangsmugglers.com"
 
 [params]
-  description = "A space trading and combat game"
+  description = "Forge Your Legacy in the Void. Trade, fight, and dominate in a ruthless universe where every choice shapes your destiny."
   
 [menu]
   [[menu.main]]
