@@ -4,8 +4,6 @@ date: 2026-02-13
 draft: false
 description: "Master the art of profitable trading"
 weight: 3
-sidebar:
-  exclude: true
 toc: false
 ---
 

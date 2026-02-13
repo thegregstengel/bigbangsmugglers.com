@@ -4,8 +4,6 @@ date: 2026-02-13
 draft: false
 description: "Your first steps in Big Bang Smugglers"
 weight: 1
-sidebar:
-  exclude: true
 toc: false
 ---
 

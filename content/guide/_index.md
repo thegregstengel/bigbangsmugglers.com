@@ -1,8 +1,6 @@
 ---
 title: "Official Guide"
 description: "Everything you need to know about Big Bang Smugglers"
-sidebar:
-  exclude: true
 toc: false
 ---
 

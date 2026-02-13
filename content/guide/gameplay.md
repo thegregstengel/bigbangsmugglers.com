@@ -4,8 +4,6 @@ date: 2026-02-13
 draft: false
 description: "Core mechanics and game systems"
 weight: 2
-sidebar:
-  exclude: true
 toc: false
 ---
 

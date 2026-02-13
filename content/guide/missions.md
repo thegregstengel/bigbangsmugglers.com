@@ -4,8 +4,6 @@ date: 2026-02-13
 draft: false
 description: "Complete missions to earn credits and reputation"
 weight: 5
-sidebar:
-  exclude: true
 toc: false
 ---
 
