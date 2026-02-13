@@ -4,6 +4,9 @@ date: 2026-02-12
 draft: false
 description: "We tore down the old starport menu system and rebuilt it as an immersive directory of businesses. Here's why it matters."
 tags: ["features", "ui", "starports"]
+sidebar:
+  exclude: true
+toc: false
 ---
 
 **The old starports felt like a vending machine.**

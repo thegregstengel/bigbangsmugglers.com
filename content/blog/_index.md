@@ -1,6 +1,9 @@
 ---
 title: "Updates"
 description: "Development updates, roadmap, and feature releases"
+sidebar:
+  exclude: true
+toc: false
 ---
 
 ## 🚧 Currently Building

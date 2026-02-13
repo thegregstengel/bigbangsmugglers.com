@@ -4,6 +4,9 @@ date: 2026-02-13
 draft: false
 description: "Ship combat and defense strategies"
 weight: 4
+sidebar:
+  exclude: true
+toc: false
 ---
 
 # Combat

@@ -4,6 +4,9 @@ date: 2026-02-13
 draft: false
 description: "Advanced services at faction starports"
 weight: 6
+sidebar:
+  exclude: true
+toc: false
 ---
 
 # Starports

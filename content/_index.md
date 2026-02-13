@@ -1,6 +1,9 @@
 ---
 title: "Big Bang Smugglers"
 description: "Forge Your Legacy in the Void"
+sidebar:
+  exclude: true
+toc: false
 ---
 
 # FORGE YOUR LEGACY IN THE VOID
