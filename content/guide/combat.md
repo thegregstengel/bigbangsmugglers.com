@@ -1,15 +1,67 @@
 ---
 title: "Combat"
-date: 2026-02-13
+date: 2026-02-14
 draft: false
-description: "Ship combat and defense strategies"
+description: "Ship combat, PvP zones, and defense strategies"
 weight: 4
 toc: false
 ---
 
 # Combat
 
-Prepare for hostile encounters and defend your cargo.
+Prepare for hostile encounters and defend your cargo. Engage in PvP combat or fight NPCs in the dangerous sectors of space.
+
+## PvP Combat Zones
+
+### Safe Zones vs PvP Zones
+
+**Federation Space: 🛡️ Always Safe**
+- No PvP combat allowed (ever)
+- New players spawn here
+- Safe retreat zone for all players
+- Green "Safe Zone" badge
+
+**Pirate & Neutral Space: ⚔️ PvP Zones**
+- PvP combat enabled (when galaxy allows)
+- Red "PvP Zone" badge
+- Players indicator shows when others present
+- Tap indicator to engage
+
+**All Ports: Safe Havens**
+- Docked ships cannot attack or be attacked
+- Safe to manage inventory, repair, upgrade
+- Works in all sectors (Fed, Pirate, Neutral)
+
+### Initiating PvP Combat
+
+**Requirements:**
+- Must be in PvP-enabled sector (Pirate/Neutral)
+- Must have at least 1 turn
+- Cannot be docked at port
+- Target must be in same sector
+- Target cannot be docked
+
+**How to Attack:**
+1. Enter Pirate or Neutral sector
+2. Look for "⚔️ X players in sector" indicator
+3. Tap indicator → Battle Station modal opens
+4. Select target → Tap Attack button
+5. Combat resolves immediately
+6. Results shown with XP, loot, and losses
+
+**Turn Cost:** 1 turn per attack (defender loses no turns)
+
+### Escape & Defense
+
+**Escape Options:**
+- Move to Federation space (always safe)
+- Dock at any port (safe haven)
+- Move to a different sector (1 turn cost)
+
+**Post-Combat Immunity:**
+- Losers receive 30-60s immunity
+- Cannot be attacked during immunity
+- Prevents spawn camping
 
 ## Combat Basics
 
