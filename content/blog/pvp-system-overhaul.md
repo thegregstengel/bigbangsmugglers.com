@@ -79,13 +79,18 @@ if (!pvpEnabled) {
 **Removed battle station from ports** - PvP is no longer a port service
 
 **Added to NavScreen:**
-- **Zone Badges:** 🛡️ Safe Zone (Federation) / ⚔️ PvP Zone (Pirate/Neutral)
+- **Territory Badges:** Always visible, shows faction + PvP status
+  - Federation Space 🛡️ (blue, always shield)
+  - Pirate Territory 🛡️/⚔️ (red, shield/sword based on PvP)
+  - Neutral Space 🛡️/⚔️ (gray, shield/sword based on PvP)
 - **Players Indicator:** "⚔️ 3 players in sector - Tap to engage"
 - **BattleStationModal:** Sector-based combat modal (not port-based)
 
 **Visual Feedback:**
-- Green badges for safe zones
-- Red badges for PvP zones
+- Shield icon (🛡️) = Safe zone, no PvP
+- Sword icon (⚔️) = PvP zone, combat enabled
+- Federation always shows shield (always safe)
+- Pirate/Neutral show sword when PvP enabled
 - Indicator only shows in PvP-enabled sectors
 
 ### Old UI Deleted
@@ -102,7 +107,7 @@ if (!pvpEnabled) {
 ```
 Enter Federation sector
   ↓
-Zone badge: 🛡️ Safe Zone (green)
+Territory badge: Federation Space 🛡️ (blue)
   ↓
 No players indicator (even if others present)
   ↓
@@ -114,7 +119,7 @@ Backend blocks combat attempts
 ```
 Enter Pirate sector
   ↓
-Zone badge: ⚔️ PvP Zone (red)
+Territory badge: Pirate Territory ⚔️ (red)
   ↓
 Players indicator: ⚔️ 2 players in sector
   ↓
@@ -123,6 +128,18 @@ Tap indicator → BattleStationModal
 Select target → Combat initiates
   ↓
 Results shown → Feed notification posted
+```
+
+### In Pirate/Neutral Space (pvpEnabled: false)
+
+```
+Enter Neutral sector
+  ↓
+Territory badge: Neutral Space 🛡️ (gray)
+  ↓
+No players indicator (PvP disabled)
+  ↓
+Backend blocks combat attempts
 ```
 
 ### At Any Port (Docked)

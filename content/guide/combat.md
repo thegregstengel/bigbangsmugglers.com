@@ -15,17 +15,33 @@ Prepare for hostile encounters and defend your cargo. Engage in PvP combat or fi
 
 ### Safe Zones vs PvP Zones
 
-**Federation Space: 🛡️ Always Safe**
+Every sector shows a **territory badge** indicating faction and PvP status:
+
+**Territory Badge Display:**
+
+| Territory | PvP Disabled | PvP Enabled |
+|-----------|--------------|-------------|
+| Federation | Federation Space 🛡️ | Federation Space 🛡️ |
+| Pirate | Pirate Territory 🛡️ | Pirate Territory ⚔️ |
+| Neutral | Neutral Space 🛡️ | Neutral Space ⚔️ |
+
+**Icon Meaning:**
+- **🛡️ Shield** - Safe zone, no PvP combat allowed
+- **⚔️ Sword** - PvP zone, combat enabled
+
+**Federation Space: Always Safe**
+- Shield icon always shows
 - No PvP combat allowed (ever)
 - New players spawn here
 - Safe retreat zone for all players
-- Green "Safe Zone" badge
+- Blue badge
 
-**Pirate & Neutral Space: ⚔️ PvP Zones**
-- PvP combat enabled (when galaxy allows)
-- Red "PvP Zone" badge
-- Players indicator shows when others present
+**Pirate & Neutral Space: PvP When Enabled**
+- Shield when galaxy PvP disabled
+- Sword when galaxy PvP enabled
+- Players indicator shows when others present (PvP zones only)
 - Tap indicator to engage
+- Red badge (Pirate), Gray badge (Neutral)
 
 **All Ports: Safe Havens**
 - Docked ships cannot attack or be attacked
