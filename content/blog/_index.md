@@ -6,91 +6,51 @@ sidebar:
 toc: false
 ---
 
-## 🎉 Recent Releases (February 2026)
-
-**Three major systems shipped this week:**
-
-1. **[Galaxy Creation v2.0](/blog/galaxy-creation-improvements)** - Quick Create mode, 6 presets, real-time validation
-2. **[PvP Combat v2.0](/blog/pvp-system-overhaul)** - Sector-based combat with faction safety zones
-3. **[Feed Notifications](/blog/feed-notifications-system)** - Real-time activity feed with admin broadcast tools
-
-**Impact:** Streamlined admin experience, enhanced player safety, improved community awareness.
+Development updates, newest first.
 
 ---
 
-## 🚧 Currently Building
+**[Planet Combat, Intel Brokers & Starport Fixes](/blog/2026-02-21-planet-combat-intel-starport-fixes)**
+*2026-02-21* — Planet attack system, intel broker service, defense station PvP immunity, structure building UI, and 4 parallel agent fixes. 14 issues closed.
 
-**This Week:**
-- Starport Personnel & Equipment (Testing phase)
-- Mission auto-completion system
-- Multi-player combat (Phase 2)
+**[QA: Joshua Plays the Game](/blog/2026-02-20-qa-joshua-plays-the-game)**
+*2026-02-20* — The AI assistant played Big Bang Smugglers via backend CLI and found 11 bugs — trading exploits, cooldown bypasses, data crashes, and worse.
 
-**This Month:**
-- Corporation system foundation
-- Enhanced leaderboards
-- Planet development features
+**[Galaxy Cleanup & Stability](/blog/2026-02-14-galaxy-cleanup-stability)**
+*2026-02-14* — Galaxy destruction now cleans up starports and all related collections; player stats reset properly on season exit.
 
----
+**[Starport Services Launch](/blog/2026-02-13-starport-services-launch)**
+*2026-02-13* — 12 starport features shipped in one day — the redesign is fully live with bank, shipyard, ship sales, contracts, recruitment, and tactical supply.
 
-## 📋 Roadmap
+**[Quality of Life Fixes](/blog/2026-02-12-quality-of-life-fixes)**
+*2026-02-12* — Four polish fixes: XP display, nav screen refresh after warp, mission persistence across seasons, and a screen notch overflow.
 
-### ✅ Built & Shipped
+**[Bug Fix Sprint](/blog/2026-02-08-bug-fix-sprint)**
+*2026-02-08* — 8 quick bug fixes after the audit — credits in the wrong field, crashes, and a misnamed leaderboard tab.
 
-**Core Systems:**
-- Galaxy generation with territories, ports, planets, stations
-- Ship system with multiple classes and upgrades
-- Dynamic trading economy with supply/demand
-- Banking system (deposit/withdraw)
-- Mission system with objectives and rewards
-- **Feed notification system** - Real-time activity feed with 6 event types
-- **Admin broadcast tools** - Global and galaxy-specific announcements
+**[Planets, Warp & Trade](/blog/2026-02-06-planets-warp-trade)**
+*2026-02-06* — Part 3 of the Feb 6 sprint: planet feature gaps catalogued, warp drive system designed and queued, trade system improvements scoped.
 
-**Galaxy Creation (v2.0 - Feb 2026):**
-- **Quick Create mode** - 3 essential fields instead of 88 parameters
-- **6 presets** - Quick PvP, Trade Empire, Standard, Mega, Explorer, Hardcore
-- **Real-time validation** - Inline feedback with helpful error messages
-- **Seed system** - Share galaxy configs via seed strings (like Minecraft)
-- **11.6KB documentation** - Complete user guide with best practices
+**[Multiplayer Systems Audit](/blog/2026-02-06-multiplayer-systems-audit)**
+*2026-02-06* — Part 2 of the Feb 6 sprint: PvP disabled, leaderboards hardcoded, no chat, no corps — the full multiplayer gap report.
 
-**PvP Combat System (v2.0 - Feb 2026):**
-- **Sector-based combat** - Fight anywhere, anytime (not just at ports)
-- **Faction-based safety** - Federation always safe, Pirate/Neutral = PvP zones
-- **Zone badges** - Visual indicators (🛡️ Safe Zone / ⚔️ PvP Zone)
-- **Port protection** - Docked players cannot attack or be attacked
-- **Turn requirements** - Must have ≥1 turn to initiate combat
-- **BattleStationModal** - Sector-based combat UI with target selection
-- **15.1KB documentation** - Technical implementation guide
+**[Mission, Performance & Docs Audit](/blog/2026-02-06-mission-performance-docs-audit)**
+*2026-02-06* — Part 1 of the Feb 6 sprint: mission system breakdowns, P0 performance work, and a full documentation overhaul.
 
-**Federation Starports v2.0:**
-- Directory-based navigation (6 physical locations)
-- Federation Reserve Bank / The Vault - Deposit and withdraw
-- TriStar Shipyard / Blackheart Shipbreakers - Rename, repair, warp drive, weapons, cargo upgrades
-- Nebula Ship Sales / Prize Vessels - 30-ship catalog with purchase flow
-- Contract Office / Bounty Board - Mission system (view, accept, abandon)
-- Vanguard Recruitment / Crimson Crew - Hire fighters and workers
-- CoreStar Supply / Black Market - Buy beacons and mines
+**[Auditing the Foundation](/blog/2026-02-05-auditing-the-foundation)**
+*2026-02-05* — 23 issues filed across UI wiring gaps, dead buttons, and broken API chains — setting the stage for the build sprint.
 
-### 🎯 Next Up (1-2 Months)
+**[Federation Starports: From Menus to Living Spaces](/blog/federation-starports-redesign)**
+*2026-02-12* — We tore down the old starport menu system and rebuilt it as an immersive directory of businesses.
 
-- **Mission Auto-Completion** - Missions complete when objectives met (no manual claim)
-- **Multi-Player Combat** (Phase 2) - 2+ players gang up on one target, corporation teams
-- **Player Entry Notifications** - Alert when players enter your sector (PvP awareness)
-- **Enhanced Missions** - More variety, dynamic objectives, chained missions
-- **Starport Personnel & Equipment** - Final testing and release
+**[Feed & Notification System](/blog/feed-notifications-system)**
+*2026-02* — Real-time activity feed with admin broadcast tools, combat notifications, and 6 event types.
 
-### 🔮 Future (2-4+ Months)
+**[Galaxy Creation Improvements](/blog/galaxy-creation-improvements)**
+*2026-02* — Quick Create mode, 6 presets, real-time validation, and seed strings.
 
-- **PvP Zones & War Declarations** (Phase 3) - Zone-specific rules, corp wars, alliances
-- **Territory Control** - Faction warfare and sector ownership
-- **Planet Development** - Buildings, defenses, production chains
-- **Corporation System** - Player-run corps with shared resources and team battles
-- **Social Features** - Friends lists, teams, in-game chat
-- **Events & Campaigns** - Limited-time storylines and special events
-- **Crafting** - Build equipment from resources
-- **Reputation Effects** - Faction standing impacts gameplay and access
+**[Performance: Composite Endpoints](/blog/performance-composite-endpoints)**
+*2026-02* — Collapsed per-screen API calls into single composite endpoints to eliminate loading lag.
 
----
-
-## 📰 Development Updates
-
-Recent changes, new features, and technical insights:
+**[PvP System Overhaul](/blog/pvp-system-overhaul)**
+*2026-02* — Sector-based combat, faction safety zones, port protection, and the BattleStationModal.
