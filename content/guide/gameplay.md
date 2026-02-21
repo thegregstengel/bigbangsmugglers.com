@@ -7,8 +7,6 @@ weight: 2
 toc: false
 ---
 
-# Gameplay Basics
-
 Master the fundamentals of Big Bang Smugglers.
 
 ## Navigation

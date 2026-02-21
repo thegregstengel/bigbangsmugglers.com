@@ -7,8 +7,6 @@ weight: 1
 toc: false
 ---
 
-# Getting Started
-
 Welcome to Big Bang Smugglers! This guide will help you launch your career as a space trader, smuggler, or pirate.
 
 ## Creating Your Account

@@ -7,8 +7,6 @@ weight: 3
 toc: false
 ---
 
-# Trading & Economy
-
 Trading is the backbone of your career. Learn to read the markets and maximize profits.
 
 ## The Three Commodities

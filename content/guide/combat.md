@@ -7,8 +7,6 @@ weight: 4
 toc: false
 ---
 
-# Combat
-
 Prepare for hostile encounters and defend your cargo. Engage in PvP combat or fight NPCs in the dangerous sectors of space.
 
 ## PvP Combat Zones

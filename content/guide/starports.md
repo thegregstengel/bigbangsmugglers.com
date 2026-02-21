@@ -7,8 +7,6 @@ weight: 6
 toc: false
 ---
 
-# Starports
-
 Starports are advanced facilities offering services beyond standard ports. They're your hub for upgrades, banking, ship purchases, missions, and recruitment.
 
 ## Finding Starports

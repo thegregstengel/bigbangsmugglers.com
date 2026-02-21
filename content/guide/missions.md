@@ -7,8 +7,6 @@ weight: 5
 toc: false
 ---
 
-# Missions
-
 Earn credits, reputation, and rewards by completing missions from starports.
 
 ## Mission System

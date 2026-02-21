@@ -6,8 +6,6 @@ cascade:
   type: docs
 ---
 
-# Official Guide
-
 Welcome to the Big Bang Smugglers official guide. Learn the mechanics, master the systems, and forge your legacy in the void.
 
 ## Guide Sections
