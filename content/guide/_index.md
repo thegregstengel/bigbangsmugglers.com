@@ -2,6 +2,8 @@
 title: "Official Guide"
 description: "Everything you need to know about Big Bang Smugglers"
 toc: false
+cascade:
+  type: docs
 ---
 
 # Official Guide
@@ -27,3 +29,6 @@ Complete missions for credits and reputation - mission types, rewards, and optim
 
 ### 🚀 [Starports](starports)
 Advanced services at faction starports - banking, shipyards, ship sales, missions, recruitment, and tactical supply.
+
+### 🌍 [Planets](planets)
+Claim and develop planets for passive income - garrison fighters, colonize with workers, build structures, and collect daily production.
