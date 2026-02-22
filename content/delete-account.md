@@ -36,4 +36,4 @@ Account deletion requests are processed within **7 business days**. You will rec
 
 ---
 
-For questions, contact [privacy@bigbangsmugglers.com](mailto:privacy@bigbangsmugglers.com).
+For questions, contact **Protovision Games** at [privacy@bigbangsmugglers.com](mailto:privacy@bigbangsmugglers.com).

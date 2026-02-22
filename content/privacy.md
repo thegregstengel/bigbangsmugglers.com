@@ -5,7 +5,7 @@ description: "Privacy Policy for Big Bang Smugglers"
 
 *Last updated: February 21, 2026*
 
-Big Bang Smugglers ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect information when you play Big Bang Smugglers (the "Game").
+Protovision Games ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect information when you play Big Bang Smugglers (the "Game").
 
 ---
 
@@ -113,5 +113,5 @@ We may update this Privacy Policy from time to time. We will notify you of signi
 
 If you have questions about this Privacy Policy or your data, please contact us at:
 
-**Big Bang Smugglers**  
+**Protovision Games**  
 Email: [privacy@bigbangsmugglers.com](mailto:privacy@bigbangsmugglers.com)
