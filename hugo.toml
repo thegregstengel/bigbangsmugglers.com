@@ -2,7 +2,7 @@ baseURL = 'https://bigbangsmugglers.com/'
 languageCode = 'en-us'
 title = 'Big Bang Smugglers'
 theme = 'hextra'
-copyright = '© 2024–2026 Protovision Games. All rights reserved.'
+copyright = '© 2024–2026 [Protovision Games](https://protovisiongames.com). All rights reserved.'
 
 enableEmoji = true
 enableRobotsTXT = true
