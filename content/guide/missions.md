@@ -7,16 +7,15 @@ weight: 10
 toc: true
 ---
 
-Missions give you objectives beyond free trading: structured tasks that pay credits, XP, and faction reputation. They're available in most galaxies and refresh periodically.
+Missions give you structured objectives beyond free trading. They pay credits, XP, and faction reputation and are available at most starports throughout the galaxy.
 
 ## Finding Missions
 
-Missions are listed in the **Mission Board** at any Starport. The board shows available missions for your current galaxy, filtered by your faction access.
+Missions are listed on the Mission Board at any Starport. The board shows available missions for your current galaxy, filtered by your faction access.
 
-Your faction determines which mission types you can see:
-- **Federation-aligned:** Access to Courier and Patrol missions
-- **Pirate-aligned:** Access to Smuggle, Raid, and Bounty missions
-- **Neutral:** Access to Courier and Patrol missions
+- Federation-aligned players access Courier and Patrol missions
+- Pirate-aligned players access Smuggle, Raid, and Bounty missions
+- Neutral players access Courier and Patrol missions
 
 ## Mission Types
 
@@ -34,57 +33,38 @@ Your faction determines which mission types you can see:
 
 ## Difficulty Tiers
 
-Missions come in four difficulty tiers that scale rewards and requirements:
+Missions come in four difficulty tiers that scale rewards and requirements.
 
 | Tier | Label | Reward Scale |
 |------|-------|-------------|
 | 1 | Easy | Base |
-| 2 | Medium | ~2× |
-| 3 | Hard | ~4× |
-| 4 | Elite | ~8× |
+| 2 | Medium | ~2x |
+| 3 | Hard | ~4x |
+| 4 | Elite | ~8x |
 
-Higher-tier missions may require minimum reputation with the issuing faction, minimum alignment score, or a specific ship class.
+Higher-tier missions may require minimum faction reputation, a minimum alignment score, or a specific ship class.
 
 ## Accepting a Mission
 
-1. Open the Mission Board at any Starport
-2. Browse available missions: each shows type, difficulty, objectives, and rewards
-3. Tap **Accept** on any mission that interests you
-4. The mission moves to your Active Missions list on the Ship screen
-
-You can have multiple missions active simultaneously.
+Open the Mission Board at any Starport, browse available missions, and tap Accept on any mission you want. The mission moves to your Active Missions list on the Ship screen. You can have multiple missions active simultaneously.
 
 ## Completing Objectives
 
-Mission progress tracks automatically as you play. Common objective types:
-
-- **Travel to a sector**: just move there while the mission is active
-- **Defeat NPC ships**: combat victories in the right sector
-- **Trade at a port**: buy or sell at the specified location
-- **Claim or upgrade a planet**: planetary development actions
-- **Return to origin**: bring goods or proof back to the mission source
+Mission progress tracks automatically as you play. Common objective types include traveling to a specific sector, defeating NPC ships, trading at a port, claiming or upgrading a planet, and returning to the mission origin.
 
 The Ship screen shows your active missions with a progress indicator per objective.
 
 ## Collecting Rewards
 
-When all objectives are complete, return to any Starport and tap **Complete Mission** from your active missions list (or it may auto-complete).
-
-**Rewards per mission:**
-- Credits (deposited directly to your wallet)
-- XP (contributes to your level progression)
-- Faction reputation (Federation, Pirate, or Neutral standing)
-- Alignment adjustment (positive or negative)
+When all objectives are complete, return to any Starport and complete the mission from your active missions list. Rewards include credits deposited directly to your wallet, XP toward your level, faction reputation, and alignment adjustment.
 
 ## Mission Expiry
 
-Missions have expiry timers. If you don't complete a mission before it expires, it fails: you lose access to the objectives but keep anything you earned along the way.
-
-Check expiry times before accepting long or complex missions. A hard mission with a 1-hour timer is a different commitment than the same mission with a 24-hour window.
+Missions have expiry timers. If you do not complete a mission before it expires, it fails. Check expiry times before accepting long or complex missions.
 
 ## Tips
 
-- **Stack compatible missions:** Two courier missions going in the same direction cost the same turns as one
-- **Patrol missions and NPC farming:** Patrol objectives align naturally with clearing dangerous sectors: you'd fight those NPCs anyway
-- **Smuggle missions for smugglers:** If you're already running contraband, pick up a smuggle mission going the same direction for bonus credit on top of your trade profit
-- **Check requirements first:** Elite missions may require faction reputation you haven't built yet: accept them too early and you'll fail immediately
+- Stack compatible missions. Two courier missions going in the same direction cost the same turns as one.
+- Patrol objectives align naturally with clearing dangerous sectors. You would fight those NPCs anyway.
+- If you are already running contraband, pick up a smuggle mission going the same direction for bonus credits on top of your trade profit.
+- Check requirements before accepting elite missions. You may fail immediately if you do not meet faction reputation thresholds.

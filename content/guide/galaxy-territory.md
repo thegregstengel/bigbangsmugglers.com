@@ -7,62 +7,56 @@ weight: 2
 toc: true
 ---
 
-Every season takes place in a procedurally generated galaxy: a web of interconnected sectors with distinct territory types, regions, and rules.
+Every season takes place in a procedurally generated galaxy. It is a web of interconnected sectors with distinct territory types, regions, and rules.
 
 ## Galaxy Structure
 
-The galaxy is divided into **sectors** connected by navigation links. Each sector has:
+The galaxy is divided into **sectors** connected by navigation links. Each sector has a sector number, a territory type (federation, neutral, or pirate), a region (from FED_CORE at the center to DEEP and PIRATE at the edges), and points of interest like ports, planets, landmarks, and wormholes.
 
-- A **sector number** (displayed in the nav grid and on beacons)
-- A **territory type** (federation, neutral/unincorporated, or pirate)
-- A **region** (from FED_CORE at the center to DEEP and PIRATE at the edges)
-- **Points of interest**: ports, planets, landmarks, stations, wormholes
-
-Navigation between sectors follows the link network. Every sector has between 2–4 neighbors. You move one sector at a time (costs 1 turn) or use **warp drive** to jump multiple sectors at once.
+Navigation between sectors follows the link network. Every sector has between 2 and 4 neighbors. You move one sector at a time for 1 turn, or use a **warp drive** to jump multiple sectors at once.
 
 ## Territory Types
 
-Territory is the most important property of a sector. It determines what you'll encounter, what's legal to carry, and what services are available.
+Territory is the most important property of a sector. It determines what you encounter, what is legal to carry, and what services are available.
 
-### Federation Space 🛡️
+### Federation Space
 
-Safe, law-abiding, actively patrolled.
+Safe, law-abiding, and actively patrolled.
 
-- **NPC aggression:** Pirates never attack first; patrol NPCs enforce contraband laws
-- **Contraband:** Carrying it here is illegal: expect customs scans
-- **Ports:** Standard trading ports, Federation Starports, Tech Hubs, repair stations
-- **PvP:** Never enabled, regardless of galaxy settings
-- **New players spawn here**
+- Pirate NPCs never attack first
+- Patrol NPCs enforce contraband laws
+- Carrying contraband here is illegal and will trigger customs scans
+- Ports include standard trading, Federation Starports, Tech Hubs, and repair stations
+- PvP is never enabled here, regardless of galaxy settings
+- New players spawn here
 
 ### Neutral / Unincorporated Space
 
 The frontier between civilization and lawlessness.
 
-- **NPC aggression:** Pirates attack first 33% of the time
-- **Contraband:** Still illegal here: patrol NPCs operate in neutral space
-- **Ports:** Mix of trading ports and independent stations
-- **PvP:** Enabled when the galaxy has PvP turned on
+- Pirate NPCs attack first 33% of the time
+- Contraband is still illegal and patrol NPCs operate here
+- Ports include a mix of trading ports and independent stations
+- PvP is enabled when the galaxy has PvP turned on
 
-### Pirate Space ⚔️
+### Pirate Space
 
 No law. High risk, high reward.
 
-- **NPC aggression:** Pirates attack first 66% of the time
-- **Contraband:** Legal to carry: no customs enforcement
-- **Ports:** Pirate bases, Black Markets, and service stations only (no regular trading ports)
-- **PvP:** Enabled when the galaxy has PvP turned on
-
-> **Important:** Regular trading ports (standard, agri, depot) do not exist in pirate sectors. The only commercial ports in pirate space are Black Markets and Pirate Bases. Plan your routes accordingly.
+- Pirate NPCs attack first 66% of the time
+- Contraband is legal to carry with no customs enforcement
+- Ports are pirate bases, black markets, and service stations only. Regular trading ports do not exist in pirate space.
+- PvP is enabled when the galaxy has PvP turned on
 
 ## Regions
 
-Regions describe where a sector sits in the galaxy's geography. They affect NPC spawn rates and difficulty:
+Regions describe where a sector sits in the galaxy's geography. They affect NPC spawn rates and difficulty.
 
 | Region | Description | Danger |
 |--------|-------------|--------|
 | FED_CORE | Federation heartland | Minimal |
 | FED_SPACE | Federation territory | Low |
-| INNER | Inner systems | Low-Med |
+| INNER | Inner systems | Low to Medium |
 | CORE | Central hub systems | Medium |
 | FRONTIER | Edge of known space | Medium |
 | OUTER | Outer rim | High |
@@ -70,33 +64,27 @@ Regions describe where a sector sits in the galaxy's geography. They affect NPC 
 | DEEP | Deep space | Extreme |
 | NEBULA | Nebula sectors | Variable |
 
-Higher-tier NPC ships (stronger stats, better loot) appear in more dangerous regions. A Pirate tier 5 Warlord Battleship will only show up in PIRATE or DEEP space: the outer rim.
+Higher-tier NPC ships appear in more dangerous regions. A Pirate tier 5 Warlord Battleship only shows up in PIRATE or DEEP space.
 
 ## Reading the Nav Screen
 
 The Nav screen displays your current sector and its connections. Key information:
 
-- **Territory badge**: Shows federation/pirate/neutral and PvP status (🛡️ = safe, ⚔️ = PvP enabled)
-- **Sector number**: Your unique sector identifier
-- **Neighbor grid**: Connected sectors you can move to directly
-- **Points of interest**: Ports, planets, and other features in this sector
-- **Players indicator**: Other players currently in this sector (shown in PvP zones)
+- **Territory badge** shows federation, pirate, or neutral status and whether PvP is active (shield icon means safe, sword icon means PvP enabled)
+- **Sector number** is your unique sector identifier
+- **Neighbor grid** shows connected sectors you can move to directly
+- **Points of interest** lists ports, planets, and other features in this sector
+- **Players indicator** shows other players currently in this sector, visible in PvP zones
 
 ## Warp Drive
 
-Once you install a warp drive (available at starport shipyards), you can jump directly to any sector you've previously visited: no matter how far away.
+Once you install a warp drive (available at starport shipyards), you can jump directly to any sector you have previously visited, regardless of how far away it is.
 
-- Warp costs turns based on distance (number of hops in the shortest path)
-- The **Warp Optimizer** tech upgrade reduces warp turn cost by 1
+- Warp costs turns based on distance
+- The Warp Optimizer tech upgrade reduces warp turn cost by 1
 - Warp can be interrupted by NPC encounters mid-route
-- You cannot warp to sectors you haven't visited yet
+- You cannot warp to sectors you have not visited yet
 
 ## Sector History
 
-Every sector you visit is recorded in your **sector history**. This powers:
-
-- Warp targeting (you can only warp to visited sectors)
-- The recent sectors list on the Nav screen
-- Beacon tracking (beacons show sector info from when you placed them)
-
-Your history persists for the life of the season. When a new season starts in a new galaxy, history resets.
+Every sector you visit is recorded in your sector history. This powers warp targeting, the recent sectors list on the Nav screen, and beacon tracking. Your history persists for the life of the season and resets when a new season starts in a new galaxy.

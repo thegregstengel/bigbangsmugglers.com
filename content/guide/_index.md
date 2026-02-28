@@ -10,44 +10,44 @@ Welcome to the Big Bang Smugglers official guide. Learn the mechanics, master th
 
 ## Guide Sections
 
-### 🎮 [Getting Started](getting-started)
-Your first steps: create your account, understand your ship, and make your first trade.
+### [Getting Started](getting-started)
+Your first steps. Download the app, join a season, understand your starter ship, and make your first trade.
 
-### 🌌 [Galaxy & Territory](galaxy-territory)
-How galaxies are structured, territory types (Federation / Neutral / Pirate), regions, and how to read the Nav screen.
+### [Galaxy & Territory](galaxy-territory)
+How galaxies are structured, what territory types mean, and how to read the Nav screen.
 
-### 🎯 [Gameplay Basics](gameplay)
-Core mechanics: navigation, ship stats, turns, credits, and faction territories.
+### [Gameplay Basics](gameplay)
+Core mechanics including navigation, ship stats, turns, credits, and faction territories.
 
-### 💰 [Trading & Economy](trading)
-Master profitable trading: commodities, port types, price mechanics, and maximizing profit per run.
+### [Trading & Economy](trading)
+How to find profitable routes, understand price mechanics, and maximize credits per run.
 
-### 🕴️ [Smuggling & Contraband](smuggling)
-Run contraband, evade Federation patrols, use the black market, and the Goods Cloaking Device.
+### [Smuggling & Contraband](smuggling)
+How to run contraband, evade Federation patrols, use the black market, and protect your cargo with cloaking devices.
 
-### 👾 [NPCs & Encounters](npcs)
+### [NPCs & Encounters](npcs)
 NPC ship types, aggression rates by territory, patrol enforcement, and what to expect in each region.
 
-### ⚔️ [Combat](combat)
-Ship combat and defense: power formula, PvP zones, loot mechanics, immunity, and upgrade priorities.
+### [Combat](combat)
+How combat resolves, PvP zone rules, loot mechanics, immunity, and upgrade priorities.
 
-### 📡 [Beacons & Mines](beacons-mines)
+### [Beacons & Mines](beacons-mines)
 Deploy navigation beacons to mark explored space and proximity mines to defend your planets.
 
-### 🔬 [Tech Upgrades](tech-upgrades)
-Permanent ship improvements from Tech Hub ports: cargo, shields, combat, stealth, and warp efficiency.
+### [Tech Upgrades](tech-upgrades)
+Permanent ship improvements from Tech Hub ports covering cargo, shields, combat, stealth, and warp efficiency.
 
-### 📋 [Missions](missions)
-Complete missions for credits and reputation: mission types, tiers, rewards, and stacking strategy.
+### [Missions](missions)
+Mission types, difficulty tiers, how to accept and complete objectives, and how to stack missions efficiently.
 
-### 🚀 [Starports](starports)
-Advanced services at faction starports: banking, shipyards, ship sales, missions, recruitment, and supply.
+### [Starports](starports)
+Banking, shipyards, ship sales, missions, recruitment, and all other port services.
 
-### 🌍 [Planets](planets)
-Claim and develop planets for passive income: colonize with workers, build structures, collect daily production.
+### [Planets](planets)
+How to claim and develop planets for passive income, including structures, production formulas, and garrison defense.
 
-### 🏆 [Seasons & Leaderboard](seasons)
+### [Seasons & Leaderboard](seasons)
 How seasons work, XP-based scoring, season end, and strategy for fresh-start galaxies.
 
-### 📐 [Economy Formulas](economy-formulas)
-Precise formulas for power users: trade pricing, combat resolution, planet production, loot caps, and more.
+### [Economy Formulas](economy-formulas)
+Precise formulas for power users covering trade pricing, combat resolution, planet production, and more.

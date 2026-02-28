@@ -7,13 +7,13 @@ weight: 8
 toc: true
 ---
 
-Tech Hub ports (labeled **Research Station**, **Market Station**, and similar research_port archetypes) offer permanent, one-time ship upgrades that make your ship more capable in specific ways.
+Tech Hub ports offer permanent, one-time ship upgrades that make your ship more capable in specific ways.
 
 ## Where to Buy
 
-Look for **Research Station** or **Market Station** ports on the Nav screen. These are **research_port** archetype stations: they appear in all territory types but are less common than standard trading ports.
+Look for Research Station or Market Station ports on the Nav screen. These are research_port archetype stations that appear in all territory types but are less common than standard trading ports.
 
-Once in the sector, open the port and select **Tech Hub** from the services menu.
+Once in the sector, open the port and select Tech Hub from the services menu.
 
 ## Upgrade Catalog
 
@@ -31,38 +31,39 @@ All upgrades are permanent and apply immediately. Each requires a minimum XP lev
 ## How Each Upgrade Works
 
 ### Cargo Compressors
-Increases your ship's cargo hold capacity by 20% of current maximum. Applied immediately: your ship gains the extra holds right away. This is a flat increase, so a 40-hold ship becomes a 48-hold ship.
+
+Increases your cargo hold capacity by 20% of current maximum, applied immediately. A 40-hold ship becomes a 48-hold ship.
 
 ### Shield Booster Arrays
-Increases max shield capacity by 15% of current shields. Also tops up your current shields by the bonus amount. A 200-shield ship gains +30 shields (200 → 230). The bonus is permanent and persists through repairs.
+
+Increases max shield capacity by 15% of current shields and tops up your current shields by the same amount. A 200-shield ship gains 30 shields and becomes 230. The bonus is permanent and persists through repairs.
 
 ### Emergency Escape Pods
-Adds 15% to your base escape chance, capped at 95% total. Escape chance determines how likely you are to survive being disabled in combat rather than being fully destroyed.
+
+Adds 15% to your base escape chance, capped at 95% total. Escape chance determines how likely you are to survive being disabled in NPC combat.
 
 ### Combat AI Core
-Stored as a flag on your ship. The combat system reads this and applies a 20% boost to your fighter effectiveness when you attack or defend. Best combined with high fighter counts from upgrades and restocking.
+
+Stored as a flag on your ship. The combat system reads this and applies a 20% boost to your fighter effectiveness when attacking or defending. Best combined with high fighter counts from restocking.
 
 ### Stealth Hull Plating
-Stored as a flag. When the contraband scanner runs a check on your ship, this upgrade reduces the detection roll threshold by 30 percentage points. Combined with a Goods Cloaking Device (750 cr at black markets), this dramatically reduces your bust risk.
 
-> **Stacking:** Stealth Hull Plating applies before the cloaking device check. The exact stacking formula is handled in the scanner: consult the [Smuggling guide](/guide/smuggling) for detection odds.
+Stored as a flag. Reduces the detection roll threshold by 30 percentage points when customs scans your cargo. Combined with a Goods Cloaking Device (750 cr at black markets), this significantly reduces your bust risk.
 
 ### Warp Optimizer
-Stored as a flag. When you execute a warp, the system reads this and deducts 1 fewer turn from the warp cost. Valuable for long-range traders who warp frequently.
+
+Stored as a flag. Deducts 1 fewer turn from every warp jump. Valuable for long-range traders who warp frequently.
 
 ## Upgrade Strategy
 
-**Early game (under 2,000 XP):**
-Start with **Cargo Compressors**: more cargo means more credits per run. The XP requirement is low and it pays back quickly.
+**Early game (under 2,000 XP):** Start with Cargo Compressors. More cargo means more credits per run and the investment pays back quickly.
 
-**Mid game (2,000–5,000 XP):**
-**Shield Booster Arrays** if you're combat-active. **Warp Optimizer** if you're a trader covering long distances.
+**Mid game (2,000 to 5,000 XP):** Shield Booster Arrays if you are combat-active. Warp Optimizer if you are covering long distances as a trader.
 
-**Late game (5,000+ XP):**
-**Stealth Hull Plating** is essential for dedicated smugglers. **Combat AI Core** for PvP-focused players.
+**Late game (5,000+ XP):** Stealth Hull Plating is essential for dedicated smugglers. Combat AI Core for PvP-focused players.
 
 ## Notes
 
-- Upgrades apply to your **current ship**: if you buy a new ship, upgrades do not transfer
-- Each upgrade can only be purchased once per ship
-- The Ship screen shows your installed upgrades so you can see what's active
+- Upgrades apply to your current ship. If you buy a new ship, upgrades do not transfer.
+- Each upgrade can only be purchased once per ship.
+- The Ship screen shows your installed upgrades.
