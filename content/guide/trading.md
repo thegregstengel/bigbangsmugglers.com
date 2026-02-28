@@ -111,6 +111,27 @@ Lots sell in FIFO order, lowest purchase price first. This maximizes your report
 
 The result dialog after the sale shows actual tax, port fee, and total profit from the confirmed trades, broken down by lot.
 
-## Contraband Trading
+## Contraband Lots
 
-Contraband from the Black Market can be sold as its underlying commodity at federation ports, with a 75% chance of confiscation if you get scanned. See the [Smuggling guide](/guide/smuggling) for the full picture.
+Contraband purchased from the Black Market is stored as a separate lot from regular cargo of the same type. If you buy normal equipment and then buy black market equipment, your hold shows them as two distinct groups:
+
+```
+⚙️ Equipment      10 units   avg 50 cr
+⚙️ Equipment 🔴   10 units   avg 80 cr   Contraband
+```
+
+Tapping either row expands it to show the per-lot breakdown. Contraband lots are highlighted in red and marked "sells first."
+
+When you sell, contraband lots are always sold before regular lots regardless of price. This minimizes the time you are carrying hot cargo through federation space. Within each group lots sell cheapest first as usual.
+
+The sell confirm dialog flags each contraband lot clearly:
+
+```
+Lots:
+  10 @ 80 cr/unit 🔴 contraband
+  10 @ 50 cr/unit
+```
+
+Federation ports scan your cargo on docking. If you are caught carrying contraband the goods are confiscated and a fine is applied. See the [Smuggling guide](/guide/smuggling) for detection rates, cloaking devices, and how to minimize your risk.
+
+
