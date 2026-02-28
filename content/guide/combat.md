@@ -80,15 +80,33 @@ The same resolution system applies to NPC encounters. NPCs may auto-aggress base
 
 Three feed messages are created per combat event. One is private to the attacker with loot details. One is private to the defender with what was lost. One is public to the galaxy feed showing who defeated whom. The global combat listener in the app shows instant popup alerts for combat involving you.
 
+## Combat Recap Screen
+
+After every combat resolves, a recap screen shows both sides' stats before and after the fight. The layout shows each ship's fighters, shields, torpedoes, and calculated combat power side by side, along with your win probability going in. Losses, loot, and any bounty collected are shown in the outcome section. If your ship was disabled the recap notes the auto-repair timing.
+
+## Assessing NPC Targets
+
+When you open an NPC encounter, the modal shows your attack power versus the enemy's combat power before you decide to engage. A win odds label summarizes the matchup: Heavily Favored means 75% or higher, Favored is 60 to 74%, Even Odds is 45 to 59%, Risky is 30 to 44%, and Dangerous is below 30%. You can always choose not to engage.
+
 ## Upgrading for Combat
 
-**Best combat investments:**
+**Tech Hub upgrades for combat:**
 
-- Shield Booster Arrays from any Tech Hub, 10,000 cr, adds 15% max shields permanently
-- Combat AI Core from any Tech Hub, 15,000 cr, adds 20% fighter effectiveness permanently
-- Restock fighters and torpedoes at any starport between fights
+- Shield Booster Arrays, 10,000 cr, adds 15% max shields permanently
+- Combat AI Core, 15,000 cr, adds 20% fighter effectiveness permanently
+- Advanced Attack Systems, 22,000 cr / 6,000 XP required, +10% offense multiplier in combat
+- Reinforced Armor Plating, 22,000 cr / 6,000 XP required, +10% defense multiplier in combat
+- Emergency Escape Pods, 12,000 cr, adds 15% escape chance from NPC combat
 
-**Escape-focused:** Emergency Escape Pods from any Tech Hub, 12,000 cr, adds 15% escape chance from NPC combat.
+Restock fighters and torpedoes at any starport between fights.
+
+### XP Tier Bonus
+
+Your XP tier applies a multiplier to your effective combat power. Each tier above 1 adds 4% to your power, up to a maximum of 16% at Tier 5. A Tier 5 veteran fighting an identical Tier 1 ship has a meaningful edge in close fights.
+
+### Combat Power Display
+
+Your Ship screen shows your current Attack Power and Defense Power at a glance. The formula applied is the same one the backend uses, so the number you see is the number used in actual combat.
 
 ## Ship Disable and Recovery
 

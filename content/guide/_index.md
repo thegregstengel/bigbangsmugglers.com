@@ -51,3 +51,6 @@ How seasons work, XP-based scoring, season end, and strategy for fresh-start gal
 
 ### [Economy Formulas](economy-formulas)
 Precise formulas for power users covering trade pricing, combat resolution, planet production, and more.
+
+### [Bounties](bounties)
+Post rewards on rival captains at any Starport. Bounties collect automatically when a hunter defeats the target in PvP.

@@ -82,3 +82,48 @@ Other players can attack your planet to steal stored commodities. Defense depend
 - Collect regularly. Production above the storage cap is wasted.
 - Prioritize workers before factories. Population multiplier has a bigger impact at low population levels than additional factory levels.
 - Planets in pirate space are more exposed to attacks but carry no contraband enforcement risk.
+
+## Trading Posts
+
+A Trading Post is a player-built port that lets other captains buy commodities from your planet. It is a late-game investment — expensive to build, but it generates passive income while you do other things.
+
+### Building a Trading Post
+
+You need two things before you can build:
+
+- Warehouse Level 2 on the planet
+- 100,000 credits in your wallet or bank
+
+Open your planet screen, go to the Trade tab, and tap Build Trading Post. The cost comes from your wallet first, then your bank if the wallet falls short. The post is permanent and cannot be demolished.
+
+### How It Works
+
+Once built, the Trading Post appears in your sector as a named port on the Nav screen. Any player who enters the sector can open it and buy commodities. The post is buy-only — players cannot sell to it.
+
+Stock transfers from your planet storage to the post every 4 hours at the same boundaries as turn resets. You can also trigger a manual refill from the Trade tab once per 4-hour window. If your planet storage is empty, the post runs dry until production refills it.
+
+You earn 80% of every sale, deposited directly to your bank. The remaining 20% covers operational costs.
+
+### Upgrade Levels
+
+The post starts at Level 1 and can be upgraded up to Level 5. Higher levels hold more stock and your prices move closer to standard market rates, which means better margins per sale.
+
+| Level | Upgrade Cost | XP Required | Stock Cap | Price vs Standard |
+|-------|-------------|-------------|-----------|------------------|
+| 1 | 100,000 cr (build) | None | 100 units | 50% below |
+| 2 | 50,000 cr | 5,000 | 250 units | 40% below |
+| 3 | 150,000 cr | 15,000 | 500 units | 30% below |
+| 4 | 400,000 cr | 40,000 | 1,000 units | 20% below |
+| 5 | 1,000,000 cr | 100,000 | 2,000 units | 10% below |
+
+The total investment to reach Level 5 is 1,700,000 cr and 160,000 XP. A max-level post running at full stock is a significant passive income source.
+
+### Robbery
+
+Pirate-aligned captains (alignment score of negative 500 or lower) can attempt to rob your Trading Post if they are in the same sector.
+
+Base success chance is 40%. A Goods Cloaking Device adds 15% to their odds and is consumed on the attempt. Each tier of garrison fighters on your planet (100 fighters per tier, up to 5 tiers) reduces their chance by 5%. Success is capped between 10% and 75% regardless of modifiers.
+
+On a successful robbery the attacker steals up to 30% of your current stock per commodity. Stolen goods are flagged as contraband in their hold.
+
+Every attempt — success or failure — triggers a galaxy-wide feed announcement naming the attacker and your post. Failed attempts are still visible to everyone and a natural reason for other players to post a bounty on the attacker.
