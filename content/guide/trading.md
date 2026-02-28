@@ -86,6 +86,31 @@ Ship with 40 holds, Agri port to Federation Port:
 
 With Cargo Compressors installed (48 holds): roughly 8,640 cr profit on the same route.
 
+
+## Cargo Lots and Cost Tracking
+
+Every purchase creates a separate cargo lot stored with its own cost basis. If you buy 10 equipment at 5 cr and later buy 10 more at 10 cr, you have two lots in your hold.
+
+When you sell, the game shows you the full breakdown before you confirm:
+
+```
+Sell 20 Equipment @ 12 cr?
+
+Lots:
+  10 @ 5 cr/unit (cost basis)
+  10 @ 10 cr/unit (cost basis)
+
+Avg Cost:    7 cr/unit
+Subtotal:    240 cr
+Est. Fees:   ~7 cr
+Est. Total:  ~233 cr
+Est. Profit: +93 cr
+```
+
+Lots sell in FIFO order, lowest purchase price first. This maximizes your reported profit and matches standard trading accounting. If you sell a partial quantity the cheapest lot goes first. Selling 15 of those 20 units would consume all 10 from the 5 cr lot and 5 from the 10 cr lot, leaving the remaining 5 at 10 cr still in your hold.
+
+The result dialog after the sale shows actual tax, port fee, and total profit from the confirmed trades, broken down by lot.
+
 ## Contraband Trading
 
 Contraband from the Black Market can be sold as its underlying commodity at federation ports, with a 75% chance of confiscation if you get scanned. See the [Smuggling guide](/guide/smuggling) for the full picture.
