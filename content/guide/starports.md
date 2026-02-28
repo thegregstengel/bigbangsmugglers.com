@@ -35,7 +35,7 @@ Both factions offer **identical services** with different branding:
 
 ## The Six Places
 
-Each starport has 6 "places" - specialized facilities for different services.
+Each starport has 6 "places": specialized facilities for different services.
 
 ### 🏦 Banking
 **Federation Reserve Bank / The Vault**
@@ -43,9 +43,9 @@ Each starport has 6 "places" - specialized facilities for different services.
 Store credits safely to protect against loss (future combat).
 
 **Services:**
-- **Deposit** - Store credits in your account
-- **Withdraw** - Take credits back to ship
-- **Balance** - View banked credits
+- **Deposit**: Store credits in your account
+- **Withdraw**: Take credits back to ship
+- **Balance**: View banked credits
 
 **Why use it:**
 - Safe storage (can't be stolen)
@@ -62,28 +62,28 @@ Ship maintenance and upgrade hub.
 **Services:**
 
 1. **Rename** (1,000 credits)
-   - Change your ship's name
-   - Personal touch
+  : Change your ship's name
+  : Personal touch
 
 2. **Repair** (variable cost)
-   - Full restoration: hull, shields, torpedoes to 100%
-   - Cheaper than field repairs
-   - One-click full service
+  : Full restoration: hull, shields, torpedoes to 100%
+  : Cheaper than field repairs
+  : One-click full service
 
 3. **Warp Drive**
-   - **Install:** 50,000 credits (Level 1)
-   - **Upgrade:** 15,000 per level (up to Level 5)
-   - Faster warps, better efficiency
+  : **Install:** 50,000 credits (Level 1)
+  : **Upgrade:** 15,000 per level (up to Level 5)
+  : Faster warps, better efficiency
 
 4. **Weapons Systems** (Exponential cost: base × 1.4^level)
-   - **Fighters:** Increase fighter capacity
-   - **Torpedoes:** Increase torpedo capacity
-   - Each upgrade adds +10 to base capacity
+  : **Fighters:** Increase fighter capacity
+  : **Torpedoes:** Increase torpedo capacity
+  : Each upgrade adds +10 to base capacity
 
 5. **Cargo Holds** (Exponential cost: base × 1.4^level)
-   - Increase cargo capacity
-   - More profit per trading run
-   - Essential for traders
+  : Increase cargo capacity
+  : More profit per trading run
+  : Essential for traders
 
 ---
 
@@ -93,9 +93,9 @@ Ship maintenance and upgrade hub.
 Buy new ships. Trade-in your current ship toward the purchase.
 
 **Ship Catalog:**
-- **15 Federation ships** - Trading, War, Balanced classes
-- **15 Pirate ships** - Smuggling, Raider, Corsair classes
-- **5 tiers per class** - Level 2 through Level 6 ships
+- **15 Federation ships**: Trading, War, Balanced classes
+- **15 Pirate ships**: Smuggling, Raider, Corsair classes
+- **5 tiers per class**: Level 2 through Level 6 ships
 
 **Ship Roles:**
 
@@ -126,16 +126,16 @@ Buy new ships. Trade-in your current ship toward the purchase.
 Accept and manage missions.
 
 **Features:**
-- View **Available Missions** - All offered missions
-- View **Active Mission** - Your current mission (1 max)
-- **Accept** - Take on a mission
-- **Abandon** - Drop your active mission (no penalty)
+- View **Available Missions**: All offered missions
+- View **Active Mission**: Your current mission (1 max)
+- **Accept**: Take on a mission
+- **Abandon**: Drop your active mission (no penalty)
 
 **Mission Types:**
-- Trading - Deliver cargo
-- Combat - Destroy enemies
-- Exploration - Scout sectors
-- Diplomacy - Deliver messages
+- Trading: Deliver cargo
+- Combat: Destroy enemies
+- Exploration: Scout sectors
+- Diplomacy: Deliver messages
 
 See the [Missions Guide](../missions) for full details.
 
@@ -148,15 +148,15 @@ Hire personnel for your ship.
 
 **Personnel Types:**
 
-1. **Fighters** - 500 credits each
-   - Combat craft for defense and offense
-   - Used in combat encounters
-   - Restocked after battles
+1. **Fighters**: 500 credits each
+  : Combat craft for defense and offense
+  : Used in combat encounters
+  : Restocked after battles
 
-2. **Workers** - 300 credits each
-   - Crew for ship operations (future)
-   - Mining, salvage, production
-   - Colony support
+2. **Workers**: 300 credits each
+  : Crew for ship operations (future)
+  : Mining, salvage, production
+  : Colony support
 
 **Purchase:**
 - Select quantity
@@ -172,15 +172,15 @@ Purchase deployable equipment.
 
 **Equipment Types:**
 
-1. **Navigation Beacons** - 2,500 credits each
-   - Mark sectors for navigation
-   - Share locations with allies (future)
-   - Territory control markers
+1. **Navigation Beacons**: 2,500 credits each
+  : Mark sectors for navigation
+  : Share locations with allies (future)
+  : Territory control markers
 
-2. **Proximity Mines** - 5,000 credits each
-   - Defensive weapons
-   - Deploy in sectors to damage enemies (future)
-   - Area denial
+2. **Proximity Mines**: 5,000 credits each
+  : Defensive weapons
+  : Deploy in sectors to damage enemies (future)
+  : Area denial
 
 **Purchase:**
 - Select item and quantity
@@ -193,7 +193,7 @@ Purchase deployable equipment.
 ## Using Starports
 
 ### First Visit
-1. **Nav screen** - Tap sector with starport
+1. **Nav screen**: Tap sector with starport
 2. **Warp** to that sector
 3. **Starport icon** appears in sector view
 4. **Tap Starport** to open directory
@@ -245,6 +245,6 @@ Purchase deployable equipment.
 - Repair cheaper here than at standard ports
 - Banking protects against future piracy/loss
 - Ship upgrades compound over time
-- Faction doesn't matter - services are identical
+- Faction doesn't matter: services are identical
 - Plan upgrades around your playstyle
-- Don't drain all credits - keep reserves
+- Don't drain all credits: keep reserves

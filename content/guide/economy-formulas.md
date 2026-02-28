@@ -2,7 +2,7 @@
 title: "Economy Formulas"
 date: 2026-02-28
 draft: false
-description: "Precise game formulas for power users - pricing, combat, production, and upgrades"
+description: "Precise game formulas for power users: pricing, combat, production, and upgrades"
 weight: 12
 toc: true
 ---
@@ -16,9 +16,9 @@ Prices use a **logistic curve** based on stock ratio:
 ```
 stockRatio = currentStock / maxStock  (0.0 to 1.0)
 
-L_range = L_max - L_min
+L_range = L_max: L_min
 normalized = (stockRatio * L_range + L_min)
-logistic_input = k * (normalized - L_midpoint)
+logistic_input = k * (normalized: L_midpoint)
 price_multiplier = 1 / (1 + e^(-logistic_input))
 
 rawPrice = basePriceMultiplier * BASE_PRICE[commodity]
@@ -37,7 +37,7 @@ rawPrice = basePriceMultiplier * BASE_PRICE[commodity]
 
 **Base commodity prices:** Fuel 10 cr · Organics 15 cr · Equipment 25 cr (multiplied by the port-type factor)
 
-**Sell price:** `sellPrice = floor(buyPrice × (1 - spread))`
+**Sell price:** `sellPrice = floor(buyPrice × (1: spread))`
 
 **Daily noise:** Random ±sigma% per day where sigma = 0.5% (Low volatility), 1.0% (Medium), 1.8% (High).
 
@@ -101,14 +101,14 @@ dailyEquipment = floor(30  × totalMultiplier)
 baseGrowth = 10
 growthMultiplier = 1 + (0.10 × habitatLevel)
 attrition = floor(population × 0.01)
-growth = floor(baseGrowth × growthMultiplier - attrition)
+growth = floor(baseGrowth × growthMultiplier: attrition)
 newPopulation = min(population + growth, populationCap)
 ```
 
 ## Structure Upgrade Costs
 
 ```
-cost = floor(baseCost × multiplier^(currentLevel - 1))
+cost = floor(baseCost × multiplier^(currentLevel: 1))
 ```
 
 | Structure | Base Cost | Multiplier |
@@ -154,7 +154,7 @@ roll = random(0, 1)
 caught = (roll < threshold)
 ```
 
-Device is consumed whether or not you're caught. One device per scan event (patrol or port customs - whichever fires first within the 30-minute cooldown window).
+Device is consumed whether or not you're caught. One device per scan event (patrol or port customs: whichever fires first within the 30-minute cooldown window).
 
 ## Tech Upgrade Effects
 

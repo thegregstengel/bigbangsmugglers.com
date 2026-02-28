@@ -11,7 +11,7 @@ Tech Hub ports (labeled **Research Station**, **Market Station**, and similar re
 
 ## Where to Buy
 
-Look for **Research Station** or **Market Station** ports on the Nav screen. These are **research_port** archetype stations - they appear in all territory types but are less common than standard trading ports.
+Look for **Research Station** or **Market Station** ports on the Nav screen. These are **research_port** archetype stations: they appear in all territory types but are less common than standard trading ports.
 
 Once in the sector, open the port and select **Tech Hub** from the services menu.
 
@@ -31,7 +31,7 @@ All upgrades are permanent and apply immediately. Each requires a minimum XP lev
 ## How Each Upgrade Works
 
 ### Cargo Compressors
-Increases your ship's cargo hold capacity by 20% of current maximum. Applied immediately - your ship gains the extra holds right away. This is a flat increase, so a 40-hold ship becomes a 48-hold ship.
+Increases your ship's cargo hold capacity by 20% of current maximum. Applied immediately: your ship gains the extra holds right away. This is a flat increase, so a 40-hold ship becomes a 48-hold ship.
 
 ### Shield Booster Arrays
 Increases max shield capacity by 15% of current shields. Also tops up your current shields by the bonus amount. A 200-shield ship gains +30 shields (200 → 230). The bonus is permanent and persists through repairs.
@@ -45,7 +45,7 @@ Stored as a flag on your ship. The combat system reads this and applies a 20% bo
 ### Stealth Hull Plating
 Stored as a flag. When the contraband scanner runs a check on your ship, this upgrade reduces the detection roll threshold by 30 percentage points. Combined with a Goods Cloaking Device (750 cr at black markets), this dramatically reduces your bust risk.
 
-> **Stacking:** Stealth Hull Plating applies before the cloaking device check. The exact stacking formula is handled in the scanner - consult the [Smuggling guide](/guide/smuggling) for detection odds.
+> **Stacking:** Stealth Hull Plating applies before the cloaking device check. The exact stacking formula is handled in the scanner: consult the [Smuggling guide](/guide/smuggling) for detection odds.
 
 ### Warp Optimizer
 Stored as a flag. When you execute a warp, the system reads this and deducts 1 fewer turn from the warp cost. Valuable for long-range traders who warp frequently.
@@ -53,7 +53,7 @@ Stored as a flag. When you execute a warp, the system reads this and deducts 1 f
 ## Upgrade Strategy
 
 **Early game (under 2,000 XP):**
-Start with **Cargo Compressors** - more cargo means more credits per run. The XP requirement is low and it pays back quickly.
+Start with **Cargo Compressors**: more cargo means more credits per run. The XP requirement is low and it pays back quickly.
 
 **Mid game (2,000–5,000 XP):**
 **Shield Booster Arrays** if you're combat-active. **Warp Optimizer** if you're a trader covering long distances.
@@ -63,6 +63,6 @@ Start with **Cargo Compressors** - more cargo means more credits per run. The XP
 
 ## Notes
 
-- Upgrades apply to your **current ship** - if you buy a new ship, upgrades do not transfer
+- Upgrades apply to your **current ship**: if you buy a new ship, upgrades do not transfer
 - Each upgrade can only be purchased once per ship
 - The Ship screen shows your installed upgrades so you can see what's active

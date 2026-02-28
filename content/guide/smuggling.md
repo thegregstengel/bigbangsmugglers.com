@@ -7,7 +7,7 @@ weight: 6
 toc: true
 ---
 
-High-risk, high-reward. The smuggling system rewards bold captains willing to operate outside Federation law - but getting caught means losing your cargo and your credits.
+High-risk, high-reward. The smuggling system rewards bold captains willing to operate outside Federation law: but getting caught means losing your cargo and your credits.
 
 ## What Is Contraband?
 
@@ -21,17 +21,17 @@ There are four types available:
 | Embargoed Organics | 30 cr/unit | ~160 cr/unit | Low | 1 hold/unit |
 | Black Tech | 150 cr/unit | ~500 cr/unit | High | 2 holds/unit |
 
-> **Note:** Equipment-type contraband (Stolen Equipment, Black Tech) uses **2 cargo holds per unit** - same as regular equipment.
+> **Note:** Equipment-type contraband (Stolen Equipment, Black Tech) uses **2 cargo holds per unit**: same as regular equipment.
 
 ## Where to Buy Contraband
 
-Contraband is only available at **Black Market** ports, which only appear in **pirate sectors**. Regular trading ports do not exist in pirate space - every port with trade goods in pirate territory is either a pirate base, black market, or repair/service station.
+Contraband is only available at **Black Market** ports, which only appear in **pirate sectors**. Regular trading ports do not exist in pirate space: every port with trade goods in pirate territory is either a pirate base, black market, or repair/service station.
 
 To access the black market:
 1. Navigate to a pirate sector
 2. Open the port from the Nav screen
 3. Select **Black Market** from the port services
-4. Purchase your contraband - no questions asked
+4. Purchase your contraband: no questions asked
 
 ## Where to Sell Contraband
 
@@ -69,7 +69,7 @@ When you **open the trading screen at a Federation port**, customs scans your ho
 - Same 30-minute global cooldown shared with patrol scans
 - Same consequences: confiscation + fine + alignment hit
 
-> The cooldown is **global** - one scan (patrol or port) resets the 30-minute window regardless of which triggered it.
+> The cooldown is **global**: one scan (patrol or port) resets the 30-minute window regardless of which triggered it.
 
 ## The Goods Cloaking Device
 
@@ -78,7 +78,7 @@ The single most important tool for a smuggler.
 - **Price:** 750 cr each
 - **Where to buy:** Black Market (Counter-Detection Tools section)
 - **Effect:** Reduces detection rate from 75% to 25%
-- **Usage:** Single-use - consumed automatically when a scan fires, whether you're caught or not
+- **Usage:** Single-use: consumed automatically when a scan fires, whether you're caught or not
 - **Stack:** Works with Stealth Hull Plating tech upgrade for further reductions
 
 Your current device count is shown in the black market UI. Devices are stored in your inventory.

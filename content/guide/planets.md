@@ -7,7 +7,7 @@ weight: 9
 toc: true
 ---
 
-Planets are the late-game cornerstone of Big Bang Smugglers. Claim one, develop it with structures, and it generates daily commodities you can collect and sell - passive income while you trade, fight, and explore.
+Planets are the late-game cornerstone of Big Bang Smugglers. Claim one, develop it with structures, and it generates daily commodities you can collect and sell: passive income while you trade, fight, and explore.
 
 ## Claiming a Planet
 
@@ -49,15 +49,15 @@ Build structures to increase production capacity, storage, population cap, and g
 | Factory | 7,500 cr | 1.8× per level | +15% production multiplier per level |
 | Shield Generator | 10,000 cr | 2.0× per level | Garrison defense bonus |
 
-**Cost formula:** `baseCost × 1.8^(currentLevel)` - each level costs 80% more than the last.
+**Cost formula:** `baseCost × 1.8^(currentLevel)`: each level costs 80% more than the last.
 
-**Example - Factory upgrade costs:**
+**Example: Factory upgrade costs:**
 - Level 1: 7,500 cr
 - Level 2: 13,500 cr
 - Level 3: 24,300 cr
 - Level 4: 43,740 cr
 
-Factories compound fast - higher levels are expensive but scale production dramatically.
+Factories compound fast: higher levels are expensive but scale production dramatically.
 
 ## Daily Production
 
@@ -73,7 +73,7 @@ daily organics = floor(60  × totalMultiplier)
 daily equipment = floor(30 × totalMultiplier)
 ```
 
-**Example - Fully developed planet (Factory 3, full population):**
+**Example: Fully developed planet (Factory 3, full population):**
 - factoryMultiplier = 1 + (0.45) = 1.45
 - populationMultiplier = 1.0 (full pop)
 - daily fuel: 116 units | organics: 87 units | equipment: 43 units
@@ -88,9 +88,9 @@ When production is ready (24 hours after the last collection):
 2. Open the planet
 3. Tap **Collect Production**
 
-Collected commodities go directly into your ship's cargo hold. Make sure you have enough free holds - excess production stays in planet storage until you collect it.
+Collected commodities go directly into your ship's cargo hold. Make sure you have enough free holds: excess production stays in planet storage until you collect it.
 
-**Storage cap:** Base 1,000 units, +2,000 per Warehouse level. Production accumulates in storage if not collected - useful for batching collection runs.
+**Storage cap:** Base 1,000 units, +2,000 per Warehouse level. Production accumulates in storage if not collected: useful for batching collection runs.
 
 ## Planet Storage
 
@@ -106,7 +106,7 @@ Garrison fighters defend your planet from attack. To garrison:
 
 1. Purchase fighters at any Starport (Recruitment section)
 2. Navigate to your planet
-3. Tap **Garrison Fighters** - transfers from your ship's fighter bay to the planet
+3. Tap **Garrison Fighters**: transfers from your ship's fighter bay to the planet
 
 Garrison fighters engage automatically when someone attacks your planet. Shield Generator structures increase garrison defense effectiveness.
 
@@ -122,6 +122,6 @@ Keep your garrison stocked and check your planet's feed notifications if you're 
 ## Strategic Notes
 
 - **Location matters:** Planets in pirate space are more exposed to attacks but no customs scans if you're running contraband through that zone
-- **Proximity mines** can be deployed in sectors where you own a planet - a first line of defense before garrison engages (see [Beacons & Mines](/guide/beacons-mines))
+- **Proximity mines** can be deployed in sectors where you own a planet: a first line of defense before garrison engages (see [Beacons & Mines](/guide/beacons-mines))
 - **Collect regularly:** Storage caps limit how much can accumulate; uncollected production after the cap is wasted
-- **Workers first:** Don't build factories until you have enough population to benefit - the population multiplier has a bigger impact at low levels than factory upgrades
+- **Workers first:** Don't build factories until you have enough population to benefit: the population multiplier has a bigger impact at low levels than factory upgrades

@@ -7,7 +7,7 @@ weight: 4
 toc: true
 ---
 
-Combat in Big Bang Smugglers is fast, automatic, and permanent. When ships fight, the outcome is determined by their stats and a probabilistic resolution system - no manual inputs, no turns. Win and you loot the loser. Lose and your ship is disabled.
+Combat in Big Bang Smugglers is fast, automatic, and permanent. When ships fight, the outcome is determined by their stats and a probabilistic resolution system: no manual inputs, no turns. Win and you loot the loser. Lose and your ship is disabled.
 
 ## PvP Zones
 
@@ -15,15 +15,15 @@ Not every sector allows player-vs-player combat.
 
 | Territory | PvP Status |
 |-----------|-----------|
-| Federation space | **Never** - always safe regardless of galaxy settings |
+| Federation space | **Never** (always safe regardless of galaxy settings) |
 | Neutral / Unincorporated | Enabled when galaxy PvP is on |
 | Pirate space | Enabled when galaxy PvP is on |
 
 **All ports are safe havens.** Docked ships cannot attack or be attacked, in any sector.
 
 The **territory badge** on the Nav screen shows your current status:
-- 🛡️ **Shield icon** - safe zone, no PvP
-- ⚔️ **Sword icon** - PvP enabled in this sector
+- 🛡️ **Shield icon**: safe zone, no PvP
+- ⚔️ **Sword icon**: PvP enabled in this sector
 
 ## Initiating Combat
 
@@ -43,7 +43,7 @@ The **territory badge** on the Nav screen shows your current status:
 
 ## Combat Resolution
 
-Combat is automatic - no manual moves. Here's how the system works:
+Combat is automatic: no manual moves. Here's how the system works:
 
 ### Power Calculation
 
@@ -58,7 +58,7 @@ effectivePower = rawPower × roleMultiplier × regionMultiplier × xpMultiplier
 
 ### Random Factor
 
-A small random "drizzle" is applied to each side's power before resolution. This prevents combat from being purely deterministic - an underdog can win, but the stronger ship wins more often.
+A small random "drizzle" is applied to each side's power before resolution. This prevents combat from being purely deterministic: an underdog can win, but the stronger ship wins more often.
 
 ### Win Probability
 
@@ -103,7 +103,7 @@ This prevents spawn-camping.
 
 The same resolution system applies to NPC encounters. Key differences:
 - NPCs may auto-aggress based on territory (see [NPCs & Encounters](/guide/npcs))
-- You can retreat from NPC combat if `allowRetreat` is set - success chance based on your escape stat
+- You can retreat from NPC combat if `allowRetreat` is set: success chance based on your escape stat
 - NPC loot is credits + commodity cargo (amounts vary by NPC type and region)
 
 ## Combat Notifications
@@ -118,13 +118,13 @@ The global combat listener in-app shows instant popup alerts for combat involvin
 ## Upgrading for Combat
 
 **Best combat investments:**
-- **Shield Booster Arrays** (Tech Hub, 10,000 cr) - +15% max shields, permanent
-- **Combat AI Core** (Tech Hub, 15,000 cr) - +20% fighter effectiveness, permanent
+- **Shield Booster Arrays** (Tech Hub, 10,000 cr): +15% max shields, permanent
+- **Combat AI Core** (Tech Hub, 15,000 cr): +20% fighter effectiveness, permanent
 - Restock fighters at any starport between fights
 - Restock torpedoes at any starport
 
 **Escape-focused:**
-- **Emergency Escape Pods** (Tech Hub, 12,000 cr) - +15% escape chance from NPC combat
+- **Emergency Escape Pods** (Tech Hub, 12,000 cr): +15% escape chance from NPC combat
 
 ## Ship Disable & Recovery
 
