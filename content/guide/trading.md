@@ -1,101 +1,100 @@
 ---
 title: "Trading & Economy"
-date: 2026-02-13
+date: 2026-02-28
 draft: false
 description: "Master the art of profitable trading"
 weight: 3
-toc: false
+toc: true
 ---
 
-Trading is the backbone of your career. Learn to read the markets and maximize profits.
+Trading is the backbone of your career. Learn to read the markets, find the spreads, and maximize your credits per turn.
 
 ## The Three Commodities
 
-### 🛢️ Fuel
-- **Production:** Mining stations, fuel depots, gas giants
-- **Demand:** High-traffic routes, industrial centers
-- **Price range:** 60-190 credits per unit
+| Commodity | Price Range (buy) | Notes |
+|-----------|------------------|-------|
+| Fuel | 60–220 cr/unit | 1 hold per unit |
+| Organics | 90–350 cr/unit | 1 hold per unit |
+| Equipment | 150–600 cr/unit | 2 holds per unit |
 
-### 🌾 Organics
-- **Production:** Agricultural worlds, habitable planets
-- **Demand:** Space stations, urban centers
-- **Price range:** 60-280 credits per unit
+> Equipment is bulky — each unit takes **2 cargo holds**, so a 40-hold ship carries only 20 units of equipment vs. 40 units of fuel or organics.
 
-### ⚙️ Equipment
-- **Production:** Tech hubs, industrial stations
-- **Demand:** Frontier outposts, repair stations
-- **Price range:** 200-1000 credits per unit
+## Port Types & Pricing
 
-## Port Types
+Different port archetypes have different price ranges and buy/sell spreads. The spread is the gap between buy price and sell price — it represents the port's margin.
 
-Different ports specialize in different goods:
+| Port Type | Price Range | Spread | Notes |
+|-----------|-------------|--------|-------|
+| Standard | Wide | 10% | General trading |
+| Fuel Depot / Agri / Mining | Narrow | 6% | Specialty commodity |
+| Tech Hub / Research | Wide | 15% | Equipment focus |
+| Black Market | Very wide | 22% | Contraband only |
+| Pirate Base | Very wide | 20% | Pirate faction |
+| Federation Port | Moderate | 8% | Stable, low variance |
 
-| Port Type | Fuel | Organics | Equipment | Notes |
-|-----------|------|----------|-----------|-------|
-| **Fuel Depot** | 🟢 Cheap | 🔴 Expensive | 🟡 Normal | Best for buying fuel |
-| **Agricultural** | 🔴 Expensive | 🟢 Cheap | 🔴 Expensive | Best for buying organics |
-| **Tech Hub** | 🟡 Normal | 🟡 Normal | 🟢 Cheap | Best for buying equipment |
-| **Trading Post** | 🟡 Normal | 🟡 Normal | 🟡 Normal | General trading |
-| **Stardock** | 🟡 Normal | 🟡 Normal | 🟡 Normal | Large capacity, central hub |
+**Spread** means the sell price is always `spread%` below the buy price at the same port. A port with a 10% spread buying equipment at 500 cr will sell it for ~450 cr. You make money by buying at one port and selling at another that values the commodity more highly.
+
+## How Prices Are Calculated
+
+Prices use a **logistic curve** based on the port's current stock level:
+
+- When a port is **fully stocked**, prices are at their lowest (supply > demand)
+- When a port is **nearly empty**, prices are at their highest (demand > supply)
+- Daily **price noise** adds variance (±0.5–1.8% depending on port volatility)
+
+This means prices shift throughout the day as players buy and sell. A port flooded by traders will drop prices; a neglected port will creep higher.
+
+**Volatility levels:**
+- **Low:** Prices barely move (stable, predictable)
+- **Medium:** Normal variance
+- **High:** Significant daily swings (riskier, higher potential reward)
+
+## Buy vs Sell Mechanics
+
+Every port has both a **buy price** (what you pay) and a **sell price** (what you receive). The sell price is always below buy — the port takes a cut. The spread percentage determines how large that cut is.
+
+**Port fee:** A small additional fee applies to all trades (based on transaction size). This is shown in the trade confirmation breakdown.
+
+## Port Availability by Territory
+
+Port type availability varies by territory:
+
+| Territory | Available Port Types |
+|-----------|---------------------|
+| Federation | Standard, Agri, Depot, Mining, Federation, Research |
+| Neutral | Standard, Agri, Depot, Mining, Research |
+| Pirate | **Pirate Base, Black Market only** — no regular trading ports |
+
+This is critical for route planning: **you cannot buy or sell standard commodities in pirate space**. Pirate sectors are for contraband and services, not commodity trading.
 
 ## Trading Strategy
 
 ### Basic Route Trading
-1. **Find a producer** - Port that sells cheap (specialty port)
-2. **Find a consumer** - Port that buys expensive (opposite specialty)
-3. **Calculate profit** - (Sell price - Buy price) × Cargo holds
-4. **Consider distance** - Fuel costs eat into profit
+1. Find a **producer port** — one that sells your commodity cheap (specialty port, well-stocked)
+2. Find a **consumer port** — one that buys expensive (low stock, high demand)
+3. Fill your holds at the producer
+4. Sell at the consumer
+5. Repeat — ideally buying something on the return trip (loop route)
 
-### Advanced Strategy
-- **Trade loops** - Buy X at Port A, sell at Port B, buy Y at Port B, sell at Port A
-- **Arbitrage** - Exploit price differences between nearby ports
-- **Speculation** - Buy when prices are low, wait for demand to rise (future)
+### Maximize Profit Per Turn
+- **More holds = more profit per trip** — Cargo Compressors tech upgrade adds 20% capacity
+- **Warp drive = more trips** — Cover longer routes in fewer turns
+- **Federation ports** are stable but lower margin; **outer rim ports** have more variance but bigger swings
+- **Equipment** has the highest price ceiling but costs 2 holds per unit — run the math before loading up
 
-## Price Mechanics
+### Example Run
 
-Prices fluctuate based on:
-- **Supply & Demand** - More buying = higher prices
-- **Port type** - Specialization affects base prices
-- **Region** - Federation vs Pirate vs Unincorporated
-- **Events** - Disasters, trade fairs, embargoes (future)
+Ship: 40 holds, no upgrades  
+Route: Agri port (organics cheap) → Federation Port (organics high demand)
 
-## Maximizing Profit
+- Buy organics at Agri port: 100 cr/unit × 40 units = 4,000 cr spent
+- Sell at Federation Port: 280 cr/unit × 40 units = 11,200 cr received
+- **Profit: 7,200 cr** (minus port fee ~1–2%)
 
-### Ship Upgrades
-- **Cargo holds** - More capacity = more profit per trip
-- **Warp drive** - Faster warps = more trips per hour
-- **Efficiency** - Less fuel per warp (future)
+Same route with Cargo Compressors (48 holds): **~8,640 cr profit**
 
-### Trade Routes
-1. **Short routes** - Lower profit per trip, but faster turnover
-2. **Long routes** - Higher profit per trip, but slower
-3. **Loops** - Trade both directions for maximum efficiency
+## Contraband Trading
 
-### Market Analysis
-- Check multiple ports before buying
-- Compare prices in your current region
-- Look for specialty ports (they have the best deals)
+Contraband from the Black Market follows different rules. See the [Smuggling guide](/guide/smuggling) for full details on risks, detection, and the Goods Cloaking Device.
 
-## Example: Profitable Run
-
-**Starting sector:** Federation space, Port Alpha (Tech Hub)  
-**Credits:** 10,000  
-**Ship holds:** 50
-
-**Step 1:** Buy at Port Alpha (Tech Hub)
-- Equipment: 300 cr/unit
-- Buy 33 units = 9,900 credits spent
-
-**Step 2:** Warp to Port Beta (Frontier Outpost)
-- Equipment demand high: 700 cr/unit
-- Sell 33 units = 23,100 credits earned
-
-**Profit:** 23,100 - 9,900 = **13,200 credits** (133% return)
-
-## Tips
-
-- Always leave credits for fuel and emergencies
-- Upgrade cargo holds early for better margins
-- Federation ports are safer but lower margins
-- Pirate territories have better deals but higher risk
-- Don't overextend - a safe profit beats a risky loss
+Short version: contraband buys cheap in pirate space and sells as the underlying commodity (organics or equipment) at federation ports — with a 75% chance of confiscation if you get scanned.
