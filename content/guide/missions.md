@@ -1,157 +1,90 @@
 ---
 title: "Missions"
-date: 2026-02-13
+date: 2026-02-28
 draft: false
-description: "Complete missions to earn credits and reputation"
-weight: 5
-toc: false
+description: "Mission types, how to accept and complete them, and rewards"
+weight: 10
+toc: true
 ---
 
-Earn credits, reputation, and rewards by completing missions from starports.
+Missions give you objectives beyond free trading — structured tasks that pay credits, XP, and faction reputation. They're available in most galaxies and refresh periodically.
 
-## Mission System
+## Finding Missions
 
-### Where to Find Missions
-- **Federation Starports:** Contract Office
-- **Pirate Havens:** The Bounty Board
+Missions are listed in the **Mission Board** at any Starport. The board shows available missions for your current galaxy, filtered by your faction access.
 
-### Mission Lifecycle
-1. **Available** - View all offered missions
-2. **Accept** - Take on a mission (1 active at a time)
-3. **Complete** - Fulfill objectives
-4. **Reward** - Automatic credits and reputation
-
-### Active Mission Limit
-You can only have **1 active mission at a time**. Choose wisely!
+Your faction determines which mission types you can see:
+- **Federation-aligned:** Access to Courier and Patrol missions
+- **Pirate-aligned:** Access to Smuggle, Raid, and Bounty missions
+- **Neutral:** Access to Courier and Patrol missions
 
 ## Mission Types
 
-### 🚚 Trading Missions
-**Objective:** Deliver specific cargo to a target port
+| Type | Faction | Description |
+|------|---------|-------------|
+| Courier | Federation / Neutral | Deliver cargo between sectors |
+| Patrol | Federation / Neutral | Clear NPCs from designated sectors |
+| Escort | Any | Protect a convoy through hostile space |
+| Bounty | Pirate | Hunt a specific NPC or player target |
+| Trade | Any | Execute trades at specified ports |
+| Smuggle | Pirate | Move contraband past enforcement |
+| Raid | Pirate | Attack and loot specified targets |
+| Recon | Any | Scout sectors and gather intelligence |
+| Resource Extraction | Any | Mine or harvest resources from planets |
 
-**Example:**
-- Deliver 50 units of Organics to Port Beta
-- Reward: 5,000 credits
+## Difficulty Tiers
 
-**Tips:**
-- You must buy the cargo yourself
-- Reward usually covers cost + profit
-- Deadline-based (complete before expiration)
+Missions come in four difficulty tiers that scale rewards and requirements:
 
-### ⚔️ Combat Missions
-**Objective:** Destroy enemy ships in specific sectors
+| Tier | Label | Reward Scale |
+|------|-------|-------------|
+| 1 | Easy | Base |
+| 2 | Medium | ~2× |
+| 3 | Hard | ~4× |
+| 4 | Elite | ~8× |
 
-**Example:**
-- Eliminate 3 pirate raiders in Sector 42
-- Reward: 10,000 credits
+Higher-tier missions may require minimum reputation with the issuing faction, minimum alignment score, or a specific ship class.
 
-**Tips:**
-- Requires combat-capable ship
-- Dangerous - repair costs can eat into profit
-- Higher rewards than trading missions
+## Accepting a Mission
 
-### 🔍 Exploration Missions
-**Objective:** Visit specific sectors or landmarks
+1. Open the Mission Board at any Starport
+2. Browse available missions — each shows type, difficulty, objectives, and rewards
+3. Tap **Accept** on any mission that interests you
+4. The mission moves to your Active Missions list on the Ship screen
 
-**Example:**
-- Scout sectors 15, 23, and 31
-- Reward: 3,000 credits
+You can have multiple missions active simultaneously.
 
-**Tips:**
-- Low risk, low reward
-- Good for new players
-- Often reveals new areas
+## Completing Objectives
 
-### 🤝 Diplomacy Missions
-**Objective:** Deliver messages or negotiate between factions
+Mission progress tracks automatically as you play. Common objective types:
 
-**Example:**
-- Deliver diplomatic message to Federation Outpost
-- Reward: 7,500 credits
+- **Travel to a sector** — just move there while the mission is active
+- **Defeat NPC ships** — combat victories in the right sector
+- **Trade at a port** — buy or sell at the specified location
+- **Claim or upgrade a planet** — planetary development actions
+- **Return to origin** — bring goods or proof back to the mission source
 
-**Tips:**
-- No cargo required
-- Travel-focused
-- Moderate rewards
+The Ship screen shows your active missions with a progress indicator per objective.
 
-## Mission Rewards
+## Collecting Rewards
 
-### Credits
-- Direct payment on completion
-- Amount varies by difficulty and type
+When all objectives are complete, return to any Starport and tap **Complete Mission** from your active missions list (or it may auto-complete).
 
-### Reputation (Future)
-- Faction standing
-- Unlocks better missions
-- Affects prices and access
+**Rewards per mission:**
+- Credits (deposited directly to your wallet)
+- XP (contributes to your level progression)
+- Faction reputation (Federation, Pirate, or Neutral standing)
+- Alignment adjustment (positive or negative)
 
-### Special Rewards (Future)
-- Rare ships
-- Unique equipment
-- Territory access
+## Mission Expiry
 
-## Mission Management
+Missions have expiry timers. If you don't complete a mission before it expires, it fails — you lose access to the objectives but keep anything you earned along the way.
 
-### Accepting Missions
-1. Open Contract Office or Bounty Board
-2. Review **Available Missions** tab
-3. Check objectives, rewards, and deadline
-4. Tap **Accept** if you want it
-
-### Tracking Progress
-- View **Active Missions** tab
-- See objectives and completion status
-- Missions auto-complete when objectives met
-
-### Abandoning Missions
-- Tap **Abandon** on active mission
-- **No penalty** - just forfeits the mission
-- Frees your slot for another mission
-
-## Strategy
-
-### Mission Selection
-- **New players:** Start with exploration or easy trading missions
-- **Traders:** Focus on trading missions that align with your routes
-- **Combat pilots:** Take combat missions in your patrol area
-- **Profit maximizers:** Calculate reward vs time vs risk
-
-### Efficiency
-- Accept missions near your trading routes
-- Deliver cargo missions while doing normal trades
-- Complete exploration while scouting new sectors
-
-### Risk Management
-- Don't accept combat missions beyond your ship's capability
-- Always have repair credits before dangerous missions
-- Read objectives carefully before accepting
-
-## Mission Examples
-
-### Low Risk: Scout Mission
-- **Objective:** Visit sectors 5, 8, and 12
-- **Reward:** 2,500 credits
-- **Time:** 10 minutes
-- **Good for:** New players, passive income
-
-### Medium Risk: Delivery
-- **Objective:** Deliver 30 Equipment to Tech Station Alpha
-- **Reward:** 8,000 credits
-- **Cost:** ~6,000 credits (cargo)
-- **Profit:** 2,000 credits
-- **Good for:** Traders, route optimization
-
-### High Risk: Pirate Elimination
-- **Objective:** Destroy 5 pirate raiders in Outer Rim
-- **Reward:** 15,000 credits
-- **Risk:** Damage, torpedoes, fighters
-- **Good for:** War ships, experienced pilots
+Check expiry times before accepting long or complex missions. A hard mission with a 1-hour timer is a different commitment than the same mission with a 24-hour window.
 
 ## Tips
 
-- Always read objectives before accepting
-- Plan missions around your normal activities
-- Combat missions require restocking after
-- Trading missions can be profitable if aligned with your routes
-- Don't be afraid to abandon missions that don't fit your plans
-- Check mission expiration times
+- **Stack compatible missions:** Two courier missions going in the same direction cost the same turns as one
+- **Patrol missions and NPC farming:** Patrol objectives align naturally with clearing dangerous sectors — you'd fight those NPCs anyway
+- **Smuggle missions for smugglers:** If you're already running contraband, pick up a smuggle mission going the same direction for bonus credit on top of your trade profit
+- **Check requirements first:** Elite missions may require faction reputation you haven't built yet — accept them too early and you'll fail immediately

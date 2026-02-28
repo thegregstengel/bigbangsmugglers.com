@@ -1,180 +1,136 @@
 ---
 title: "Combat"
-date: 2026-02-14
+date: 2026-02-28
 draft: false
-description: "Ship combat, PvP zones, and defense strategies"
+description: "Ship combat, PvP zones, combat resolution, and defense strategies"
 weight: 4
-toc: false
+toc: true
 ---
 
-Prepare for hostile encounters and defend your cargo. Engage in PvP combat or fight NPCs in the dangerous sectors of space.
+Combat in Big Bang Smugglers is fast, automatic, and permanent. When ships fight, the outcome is determined by their stats and a probabilistic resolution system — no manual inputs, no turns. Win and you loot the loser. Lose and your ship is disabled.
 
-## PvP Combat Zones
+## PvP Zones
 
-### Safe Zones vs PvP Zones
+Not every sector allows player-vs-player combat.
 
-Every sector shows a **territory badge** indicating faction and PvP status:
+| Territory | PvP Status |
+|-----------|-----------|
+| Federation space | **Never** — always safe regardless of galaxy settings |
+| Neutral / Unincorporated | Enabled when galaxy PvP is on |
+| Pirate space | Enabled when galaxy PvP is on |
 
-**Territory Badge Display:**
+**All ports are safe havens.** Docked ships cannot attack or be attacked, in any sector.
 
-| Territory | PvP Disabled | PvP Enabled |
-|-----------|--------------|-------------|
-| Federation | Federation Space 🛡️ | Federation Space 🛡️ |
-| Pirate | Pirate Territory 🛡️ | Pirate Territory ⚔️ |
-| Neutral | Neutral Space 🛡️ | Neutral Space ⚔️ |
+The **territory badge** on the Nav screen shows your current status:
+- 🛡️ **Shield icon** — safe zone, no PvP
+- ⚔️ **Sword icon** — PvP enabled in this sector
 
-**Icon Meaning:**
-- **🛡️ Shield** - Safe zone, no PvP combat allowed
-- **⚔️ Sword** - PvP zone, combat enabled
+## Initiating Combat
 
-**Federation Space: Always Safe**
-- Shield icon always shows
-- No PvP combat allowed (ever)
-- New players spawn here
-- Safe retreat zone for all players
-- Blue badge
+**To attack a player:**
+1. Be in the same sector (pirate or neutral, PvP enabled)
+2. Both ships must be undocked and not disabled
+3. Neither ship can be under PvP immunity
+4. Tap the players indicator → select target → Attack
 
-**Pirate & Neutral Space: PvP When Enabled**
-- Shield when galaxy PvP disabled
-- Sword when galaxy PvP enabled
-- Players indicator shows when others present (PvP zones only)
-- Tap indicator to engage
-- Red badge (Pirate), Gray badge (Neutral)
+**Turn cost:** 1 turn for the attacker. Defenders use no turns.
 
-**All Ports: Safe Havens**
-- Docked ships cannot attack or be attacked
-- Safe to manage inventory, repair, upgrade
-- Works in all sectors (Fed, Pirate, Neutral)
+**Requirements checklist:**
+- Galaxy PvP must be enabled
+- Sector must be pirate or neutral territory
+- You must have at least 1 turn remaining
+- Target must be in your sector, undocked, not disabled, not immune
 
-### Initiating PvP Combat
+## Combat Resolution
 
-**Requirements:**
-- Must be in PvP-enabled sector (Pirate/Neutral)
-- Must have at least 1 turn
-- Cannot be docked at port
-- Target must be in same sector
-- Target cannot be docked
+Combat is automatic — no manual moves. Here's how the system works:
 
-**How to Attack:**
-1. Enter Pirate or Neutral sector
-2. Look for "⚔️ X players in sector" indicator
-3. Tap indicator → Battle Station modal opens
-4. Select target → Tap Attack button
-5. Combat resolves immediately
-6. Results shown with XP, loot, and losses
+### Power Calculation
 
-**Turn Cost:** 1 turn per attack (defender loses no turns)
+Each ship's effective combat power is:
 
-### Escape & Defense
+```
+rawPower = basePower + (fighters × 0.8) + (shields × 1.2) + (torpedoes × 2.0)
+effectivePower = rawPower × roleMultiplier × regionMultiplier × xpMultiplier
+```
 
-**Escape Options:**
-- Move to Federation space (always safe)
-- Dock at any port (safe haven)
-- Move to a different sector (1 turn cost)
+**Shields are the most cost-effective** stat per point (coefficient 1.2). Torpedoes hit hardest individually (coefficient 2.0). Fighters provide solid base power (0.8) and are cheapest to restock.
 
-**Post-Combat Immunity:**
-- Losers receive 30-60s immunity
-- Cannot be attacked during immunity
-- Prevents spawn camping
+### Random Factor
 
-## Combat Basics
+A small random "drizzle" is applied to each side's power before resolution. This prevents combat from being purely deterministic — an underdog can win, but the stronger ship wins more often.
 
-### Ship Defenses
-- **Shields** - First line of defense, regenerate over time
-- **Hull** - Structural integrity, damaged when shields fail
-- **Fighters** - Defensive craft, intercept attackers
-- **Evasion** - Avoid combat before it starts
+### Win Probability
 
-### Ship Offense
-- **Torpedoes** - Primary weapons for attacking
-- **Fighters** - Can attack as well as defend
-- **Special weapons** - Mines, missiles (future)
+```
+winProbability = attackerPower / (attackerPower + defenderPower)
+```
 
-## Combat Encounter
+A ship with double the effective power wins roughly 67% of the time.
 
-When combat begins:
-1. **Auto-combat** - Ships fight automatically based on stats
-2. **Damage calculation** - Attacker weapons vs defender shields/hull
-3. **Resolution** - Winner determined by remaining health
-4. **Loot** - Victor may claim cargo/credits (future)
+### Region Bonuses
 
-## Ship Classes
+- **Federation Core / Federation Space:** +5–10% defense bonus for Federation-aligned ships defending
+- **Frontier space:** Small attacker bonus
+- Pirate and deep space: Standard rates
 
-### War Ships
-- **High attack** - More fighters and torpedoes
-- **Moderate defense** - Average shields
-- **Low cargo** - Less trading capacity
-- **Best for:** Combat missions, piracy, defense
+## Loot & Consequences
 
-### Trading Ships
-- **Low attack** - Minimal weapons
-- **High defense** - Strong shields
-- **High cargo** - Maximum trading capacity
-- **Best for:** Peaceful trading, running from fights
+### If the Attacker Wins
+- **Credits looted:** Up to 25% of the defender's credits, capped by the winner's ship tier (e.g. tier 2 caps at 5,000 cr, tier 5 caps at 200,000 cr)
+- **Cargo looted:** Up to 30% of the defender's cargo hold contents
+- **Defender ship:** Disabled for ~2 minutes, then auto-repaired to 50% capacity
+- **Defender gets:** 2-minute PvP immunity after recovery
 
-### Balanced Ships
-- **Moderate everything** - Jack of all trades
-- **Flexible** - Handle trading and light combat
-- **Best for:** General gameplay, adaptability
+### If the Defender Wins
+- Same loot logic applies (defender loots attacker)
+- Attacker ship disabled
 
-## Upgrades for Combat
+### Alignment Effects
+- Attacking players shifts your alignment toward Pirate
+- Defending and winning is neutral
+- The magnitude depends on combat context
 
-### Weapons
-- **Fighter bays** - Increase fighter capacity
-- **Torpedo tubes** - Increase torpedo capacity
-- **Fire control** - Better accuracy (future)
+## PvP Immunity
 
-### Defense
-- **Shield generators** - More shield strength
-- **Armor plating** - Better hull protection (future)
-- **ECM systems** - Evasion bonuses (future)
+After being disabled in combat, your ship has **2 minutes of PvP immunity**. During immunity:
+- You cannot be attacked
+- You cannot initiate attacks
 
-## Combat Strategies
+This prevents spawn-camping.
 
-### Offensive
-- Upgrade fighters and torpedoes
-- Target weaker ships
-- Attack in groups (future)
-- Use tactical advantages (ambush, terrain)
+## NPC Combat
 
-### Defensive
-- Upgrade shields first
-- Keep fighters stocked
-- Avoid dangerous sectors
-- Travel with escorts (future)
+The same resolution system applies to NPC encounters. Key differences:
+- NPCs may auto-aggress based on territory (see [NPCs & Encounters](/guide/npcs))
+- You can retreat from NPC combat if `allowRetreat` is set — success chance based on your escape stat
+- NPC loot is credits + commodity cargo (amounts vary by NPC type and region)
 
-### Evasion
-- Scout routes before trading
-- Avoid known pirate sectors
-- Use warp drive upgrades to escape faster
-- Store valuables in starport banks
+## Combat Notifications
 
-## Enemy Types (Future)
+Three feed messages are created per combat event:
+- **Private to attacker:** "You attacked [player] and won/lost. [Loot details]"
+- **Private to defender:** "You were attacked by [player] and won/lost. [Loot details]"
+- **Public galaxy feed:** "[Attacker] defeated [Defender]" (minor severity)
 
-### Pirates
-- **Aggressive** - Attack for cargo and credits
-- **Common** - Pirate territories and frontier
-- **Loot-focused** - Want your cargo, not your life
+The global combat listener in-app shows instant popup alerts for combat involving you.
 
-### Raiders
-- **Very aggressive** - Attack on sight
-- **Dangerous** - Well-armed, organized
-- **Territory control** - Control sectors
+## Upgrading for Combat
 
-### Mercenaries
-- **Conditional** - Attack based on faction standing
-- **Professional** - Tactical and efficient
-- **Contract-based** - Hired by others
+**Best combat investments:**
+- **Shield Booster Arrays** (Tech Hub, 10,000 cr) — +15% max shields, permanent
+- **Combat AI Core** (Tech Hub, 15,000 cr) — +20% fighter effectiveness, permanent
+- Restock fighters at any starport between fights
+- Restock torpedoes at any starport
 
-### Aliens
-- **Unknown** - Unpredictable behavior
-- **Rare** - Deep space encounters
-- **Variable** - From peaceful to hostile
+**Escape-focused:**
+- **Emergency Escape Pods** (Tech Hub, 12,000 cr) — +15% escape chance from NPC combat
 
-## Tips
+## Ship Disable & Recovery
 
-- Repair at starports for full restoration (cheaper than combat damage)
-- Restock fighters and torpedoes after encounters
-- Trading ships should avoid combat when possible
-- War ships can profit from bounty missions
-- Always have an escape route planned
+When your ship is disabled:
+- You cannot move or take most actions
+- Your ship auto-repairs to **50% capacity** at the next daily reset
+- You can also manually repair at a starport for full restoration (costs credits)
+
+If you're in a dangerous sector when disabled, dock at a nearby port to avoid being looted again while recovering.

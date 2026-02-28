@@ -1,136 +1,127 @@
 ---
 title: "Planets"
-weight: 6
+date: 2026-02-28
+draft: false
+description: "Claim and develop planets for passive income and strategic control"
+weight: 9
+toc: true
 ---
 
-Owning a planet is one of the most powerful moves in Big Bang Smugglers. A well-developed planet generates resources every day, gives you a private vault to store cargo, and can be fortified into a stronghold that holds off attackers. Here's everything you need to know.
-
----
+Planets are the late-game cornerstone of Big Bang Smugglers. Claim one, develop it with structures, and it generates daily commodities you can collect and sell — passive income while you trade, fight, and explore.
 
 ## Claiming a Planet
 
-When you enter a sector containing an unclaimed planet, the **Planet** tab appears on the Nav screen.
+To claim a planet:
+1. Navigate to a sector with an unclaimed planet (visible on the Nav screen as a POI)
+2. Open the planet from the sector's points of interest
+3. Tap **Claim Planet**
 
-1. Navigate to the sector with the planet
-2. Open the **Planet** tab
-3. Tap **Claim Planet** on the Overview screen
+**Requirements:**
+- Planet must be unclaimed (no current owner)
+- You must be in the sector with the planet
 
-**Cost:** 5,000 credits + 1 turn  
-**Requirement:** You must be in the planet's sector to claim it
+Once claimed, the planet is yours. Your name appears as the owner and it becomes visible on the galaxy feed.
 
-Once claimed, the planet starts producing resources on the next daily production cycle. No other player can claim it while you own it.
+## Colonizing with Workers
 
----
+Workers increase your planet's **population**, which directly scales production output.
 
-## Planet Storage
+**How to get workers:** Purchase Mining Workers at any Starport under the Supply/Recruitment section.
 
-Your planet has its own cargo vault, separate from your ship's hold. This is useful for stockpiling goods, staging resources for trade runs, or simply keeping your ship's hold free for contraband.
+**How to deploy:** Open your planet, tap **Deploy Workers**. Workers transfer from your inventory to the planet's population.
 
-### Depositing Cargo
+**Population mechanics:**
+- Starting population: 50
+- Population cap: 500 (base), expandable with Habitat structures
+- Daily growth: ~10 workers per day × Habitat level bonus, minus 1% attrition
+- Population multiplier: scales production from 20% (empty) to 100% (at cap)
 
-1. Travel to your planet's sector
-2. Open **Planet → Storage**
-3. Choose a commodity (Fuel, Organics, or Equipment)
-4. Enter a quantity and tap **Deposit**
-
-Your ship cargo drops; planet storage goes up. Simple.
-
-### Withdrawing Cargo
-
-Same screen — tap **Withdraw** instead. The planet transfers goods back into your ship's hold (up to your ship's remaining capacity).
-
-**Storage capacity** starts at 2,000 units and can be increased by upgrading your Warehouse structure.
-
----
-
-## Garrison: Defending Your Planet
-
-A garrison is a force of fighters stationed on your planet to defend against raids. Without a garrison, your planet is easy pickings.
-
-### How to Garrison
-
-First you need **Security Personnel** — trained fighters you hire at a starport:
-
-1. Visit a Starport → **Recruitment Office** (Federation) or **Bounty Board** (Pirate)
-2. Hire Security Personnel at **500 cr/unit**
-3. Travel to your planet's sector
-4. Open **Planet → Structures**
-5. Enter a fighter count and tap **Deploy**
-
-Hired fighters move from your personal inventory to the planet's garrison. They stay there permanently and defend the planet in combat.
-
-**Garrison capacity** starts at 500 fighters and can be increased by upgrading the Shield structure.
-
-> **Tip:** Garrison fighters are different from your ship's combat fighters. Ship fighters protect you in space; garrison fighters protect your planet on the ground.
-
----
-
-## Colonizing: Boosting Production
-
-Population directly controls how much your planet produces. A planet with zero colonists produces at 20% efficiency. A fully colonized planet produces at 100% — a 5× difference.
-
-### How to Colonize
-
-First you need **Mining Workers** — hired laborers from a starport:
-
-1. Visit a Starport → **Recruitment Office** (Federation) or **Bounty Board** (Pirate)
-2. Hire Mining Workers at **300 cr/unit**
-3. Travel to your planet's sector
-4. Open **Planet → Structures**
-5. Enter a worker count and tap **Colonize**
-
-Workers immediately settle the planet and start contributing to production. They're consumed permanently — think of it as building your colony.
-
-**Population capacity** starts at 500 and can be increased by upgrading the Habitat structure.
-
----
-
-## Daily Production
-
-Your planet generates Fuel, Organics, and Equipment every day automatically. The amount depends on:
-
-- **Population fill rate** — more colonists = more output
-- **Factory level** — each level adds 15% to production
-- **Galaxy region** — Core sectors produce more than Frontier or Deep Space
-
-### Collecting Production
-
-Open **Planet → Production** to see what's ready. Tap **Collect** to move it into your planet's storage. From there, you can withdraw it to your ship and trade it.
-
-> Production accumulates whether or not you collect it — but it won't overflow your storage cap, so check in regularly.
-
----
+At full population cap your planet produces roughly **5x more** than an empty one.
 
 ## Structures
 
-Upgrading structures improves your planet's capabilities. Each structure has 5 levels.
+Build structures to increase production capacity, storage, population cap, and garrison strength. Each structure type levels up independently.
 
-| Structure | What it does |
-|-----------|-------------|
-| 🏭 **Factory** | Boosts daily production output |
-| 🏠 **Habitat** | Raises max population (colonize more workers) |
-| 🏗️ **Warehouse** | Raises storage capacity |
-| 🛡️ **Shield** | Raises garrison capacity (station more fighters) |
+| Structure | Base Cost | Cost Multiplier | Effect |
+|-----------|-----------|-----------------|--------|
+| Warehouse | 5,000 cr | 1.8× per level | +2,000 storage capacity per level |
+| Habitat | 6,000 cr | 1.8× per level | +250 population cap per level |
+| Factory | 7,500 cr | 1.8× per level | +15% production multiplier per level |
+| Shield Generator | 10,000 cr | 2.0× per level | Garrison defense bonus |
 
-Upgrades cost credits and are purchased from **Planet → Structures**. Higher levels cost significantly more than lower ones.
+**Cost formula:** `baseCost × 1.8^(currentLevel)` — each level costs 80% more than the last.
 
----
+**Example — Factory upgrade costs:**
+- Level 1: 7,500 cr
+- Level 2: 13,500 cr
+- Level 3: 24,300 cr
+- Level 4: 43,740 cr
 
-## Viewing Your Personnel Inventory
+Factories compound fast — higher levels are expensive but scale production dramatically.
 
-Not sure how many fighters or workers you have on hand? Check **Ship → Stats** — there's a **👥 Personnel Inventory** section that shows your current fighters and workers count whenever you have any in stock.
+## Daily Production
 
----
+Planets generate commodities every 24 hours (daily tick). Production is calculated as:
 
-## Quick Reference
+```
+factoryMultiplier = 1 + (0.15 × factoryLevel)
+populationMultiplier = 0.2 + ((population / populationCap) × 0.8)
+totalMultiplier = factoryMultiplier × populationMultiplier
 
-| Action | Where | Requirement |
-|--------|-------|-------------|
-| Claim planet | Nav → Planet → Overview | 5,000 cr + in same sector |
-| Deposit / Withdraw | Nav → Planet → Storage | Own planet + in same sector |
-| Hire fighters | Starport → Recruitment | Credits |
-| Deploy garrison | Nav → Planet → Structures | Own planet + in sector + have fighters |
-| Hire workers | Starport → Recruitment | Credits |
-| Colonize | Nav → Planet → Structures | Own planet + in sector + have workers |
-| Upgrade structures | Nav → Planet → Structures | Own planet + credits |
-| Collect production | Nav → Planet → Production | Own planet + production ready |
+daily fuel     = floor(80  × totalMultiplier)
+daily organics = floor(60  × totalMultiplier)
+daily equipment = floor(30 × totalMultiplier)
+```
+
+**Example — Fully developed planet (Factory 3, full population):**
+- factoryMultiplier = 1 + (0.45) = 1.45
+- populationMultiplier = 1.0 (full pop)
+- daily fuel: 116 units | organics: 87 units | equipment: 43 units
+
+At standard port prices (~150 cr/fuel, ~200 cr/organics, ~400 cr/equipment):
+**~53,600 cr/day** from a well-developed planet.
+
+## Collecting Production
+
+When production is ready (24 hours after the last collection):
+1. Navigate to your planet's sector
+2. Open the planet
+3. Tap **Collect Production**
+
+Collected commodities go directly into your ship's cargo hold. Make sure you have enough free holds — excess production stays in planet storage until you collect it.
+
+**Storage cap:** Base 1,000 units, +2,000 per Warehouse level. Production accumulates in storage if not collected — useful for batching collection runs.
+
+## Planet Storage
+
+Beyond daily production, you can manually **deposit** and **withdraw** commodities from your planet's storage:
+
+- **Deposit:** Transfer cargo from your ship into planet storage
+- **Withdraw:** Pull stored commodities back into your ship's hold
+- Useful for stockpiling before a trade run or hiding credits-worth of goods
+
+## Garrison Fighters
+
+Garrison fighters defend your planet from attack. To garrison:
+
+1. Purchase fighters at any Starport (Recruitment section)
+2. Navigate to your planet
+3. Tap **Garrison Fighters** — transfers from your ship's fighter bay to the planet
+
+Garrison fighters engage automatically when someone attacks your planet. Shield Generator structures increase garrison defense effectiveness.
+
+## Planet Attacks
+
+Other players can attack your planet to steal stored commodities or attempt to claim it from you. Defense depends on:
+- Your garrison fighter count
+- Shield Generator level
+- The attacker's combat stats
+
+Keep your garrison stocked and check your planet's feed notifications if you're away.
+
+## Strategic Notes
+
+- **Location matters:** Planets in pirate space are more exposed to attacks but no customs scans if you're running contraband through that zone
+- **Proximity mines** can be deployed in sectors where you own a planet — a first line of defense before garrison engages (see [Beacons & Mines](/guide/beacons-mines))
+- **Collect regularly:** Storage caps limit how much can accumulate; uncollected production after the cap is wasted
+- **Workers first:** Don't build factories until you have enough population to benefit — the population multiplier has a bigger impact at low levels than factory upgrades
