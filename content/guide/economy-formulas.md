@@ -2,7 +2,7 @@
 title: "Economy Formulas"
 date: 2026-02-28
 draft: false
-description: "Precise game formulas for power users — pricing, combat, production, and upgrades"
+description: "Precise game formulas for power users - pricing, combat, production, and upgrades"
 weight: 12
 toc: true
 ---
@@ -154,7 +154,7 @@ roll = random(0, 1)
 caught = (roll < threshold)
 ```
 
-Device is consumed whether or not you're caught. One device per scan event (patrol or port customs — whichever fires first within the 30-minute cooldown window).
+Device is consumed whether or not you're caught. One device per scan event (patrol or port customs - whichever fires first within the 30-minute cooldown window).
 
 ## Tech Upgrade Effects
 

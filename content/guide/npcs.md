@@ -7,7 +7,7 @@ weight: 5
 toc: true
 ---
 
-The galaxy is not empty. As you move between sectors, you'll encounter NPC ships — pirates looking for prey, traders running their routes, and Federation patrols enforcing the law.
+The galaxy is not empty. As you move between sectors, you'll encounter NPC ships - pirates looking for prey, traders running their routes, and Federation patrols enforcing the law.
 
 ## How Encounters Work
 
@@ -41,7 +41,7 @@ The most dangerous encounter. Pirates are found throughout the galaxy but concen
 
 ### Federation Patrols
 
-Patrol ships enforce Federation law. They do **not** attack players on sight — they exist to scan for contraband.
+Patrol ships enforce Federation law. They do **not** attack players on sight - they exist to scan for contraband.
 
 - Patrols **never auto-aggress** regardless of territory
 - When a patrol is present in a sector you move into, it scans your cargo if you're in Federation or neutral space

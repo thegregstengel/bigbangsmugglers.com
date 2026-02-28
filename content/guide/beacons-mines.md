@@ -30,7 +30,7 @@ Beacons are persistent markers you place in sectors you've visited. They appear 
 2. Open the **Ship screen → Actions tab**
 3. Tap **Deploy Beacon**
 4. Give it a name (max 15 characters)
-5. Confirm — beacon is placed, inventory decremented
+5. Confirm - beacon is placed, inventory decremented
 
 **Limits:**
 - Maximum **5 beacons** per galaxy at any time
@@ -45,7 +45,7 @@ Deployed beacons appear in the **Nav screen's Beacons section**, visible from an
 - Territory type
 - Points of interest count
 
-You can see them from anywhere in the galaxy — no need to be in the sector.
+You can see them from anywhere in the galaxy - no need to be in the sector.
 
 ### Removing Your Own Beacon
 
@@ -69,22 +69,22 @@ Mines are defensive deployables placed in sectors where you own a planet. They t
 1. Navigate to a sector where you **own a planet** (mines require planetary ownership)
 2. Open the **Ship screen → Actions tab**
 3. Tap **Deploy Mine**
-4. Confirm — mine is placed, inventory decremented
+4. Confirm - mine is placed, inventory decremented
 
 **Requirements:**
 - You must own a planet in the sector
 - You must have at least 1 mine in inventory
 
-**Limits:** There is no hard cap on mines per sector, but each mine costs 5,000 credits — they're an investment.
+**Limits:** There is no hard cap on mines per sector, but each mine costs 5,000 credits - they're an investment.
 
 ### How Mines Trigger
 
 Proximity mines arm automatically when deployed. When a ship enters the sector:
 - The mine evaluates threat level
-- If triggered, it fires — dealing damage to the entering ship's fighters and shields
+- If triggered, it fires - dealing damage to the entering ship's fighters and shields
 - The mine is consumed on detonation
 
-Mines don't discriminate — they protect your planet from any hostile incursion.
+Mines don't discriminate - they protect your planet from any hostile incursion.
 
 ### Mine Strategy
 
@@ -94,4 +94,4 @@ Mines don't discriminate — they protect your planet from any hostile incursion
 
 ## Inventory Management
 
-Your beacon and mine counts are visible on the Ship screen. Track them before long expeditions into unknown space — you can't deploy what you don't have, and there's no way to recover a deployed beacon except by removing it manually.
+Your beacon and mine counts are visible on the Ship screen. Track them before long expeditions into unknown space - you can't deploy what you don't have, and there's no way to recover a deployed beacon except by removing it manually.
