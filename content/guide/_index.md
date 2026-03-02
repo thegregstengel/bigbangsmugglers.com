@@ -19,6 +19,9 @@ How galaxies are structured, what territory types mean, and how to read the Nav 
 ### [Gameplay Basics](gameplay)
 Core mechanics including navigation, ship stats, turns, credits, and faction territories.
 
+### [Ships](ships)
+Every ship class in the game. Federation and Pirate lines, six roles, five tiers each, with descriptions and how to choose the right one for your playstyle.
+
 ### [Trading & Economy](trading)
 How to find profitable routes, understand price mechanics, and maximize credits per run.
 
@@ -41,7 +44,10 @@ Permanent ship improvements from Tech Hub ports covering cargo, shields, combat,
 Mission types, difficulty tiers, how to accept and complete objectives, and how to stack missions efficiently.
 
 ### [Starports](starports)
-Banking, shipyards, ship sales, missions, recruitment, and all other port services.
+Banking, shipyards, ship sales, missions, recruitment, and all other starport services — with full descriptions of every facility.
+
+### [Locations](locations)
+Ports, landmarks, stations, and hazards across the galaxy. What each type is, where to find them, and what to expect.
 
 ### [Planets](planets)
 How to claim and develop planets for passive income, including structures, production formulas, and garrison defense.
