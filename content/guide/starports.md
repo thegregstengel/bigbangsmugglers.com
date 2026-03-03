@@ -59,8 +59,8 @@ Blackheart does not ask what happened to your ship and you do not need to explai
 - **Repair** hull, shields, and torpedoes to full. Costs scale with damage.
 - **Install a warp drive** for 50,000 credits. Required for warp travel.
 - **Upgrade your warp drive** through five levels for 15,000 credits per level. Each upgrade improves range and efficiency.
-- **Upgrade weapons systems** — fighters and torpedoes both. Each upgrade adds capacity at an exponentially increasing cost.
-- **Upgrade cargo holds** — more space for more goods. Exponential cost, high return if you are a trader.
+- **Upgrade weapons systems.** Fighters and torpedoes both. Each upgrade adds capacity at an exponentially increasing cost.
+- **Upgrade cargo holds.** More space for more goods. Exponential cost, high return if you are a trader.
 
 ---
 
