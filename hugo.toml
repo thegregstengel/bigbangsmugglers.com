@@ -20,7 +20,7 @@ enableGitInfo = false
     pageRef = "/guide"
     weight = 1
   [[menu.main]]
-    name = "Updates"
+    name = "Release Notes"
     pageRef = "/blog"
     weight = 2
 [params]

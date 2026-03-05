@@ -1,9 +1,9 @@
 ---
-title: "Updates"
-description: "Development updates, feature releases, and devlogs for Big Bang Smugglers"
+title: "Release Notes"
+description: "Release notes for Big Bang Smugglers — version history, new features, and bug fixes"
 sidebar:
   exclude: true
 toc: false
 ---
 
-Development updates, newest first.
+Release notes, newest first.
