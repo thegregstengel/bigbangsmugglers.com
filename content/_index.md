@@ -73,8 +73,8 @@ Upgrade everything:
 
 The void doesn't care who you were. It only cares what you become.
 
-**[Download the App](#play)** | **[Development Updates](/blog)**
+**[Download the App](#play)** | **[Release Notes](/blog)**
 
 ---
 
-<small>Big Bang Smugglers © 2024-2026 | [Guide](/guide) | [Updates](/blog)</small>
+<small>Big Bang Smugglers © 2024-2026 | [Guide](/guide) | [Release Notes](/blog)</small>
