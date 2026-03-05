@@ -1,7 +1,7 @@
 ---
 title: "v1.1.0 — Bounties, Trading Posts, and the Web Version"
 date: 2026-03-01T10:00:00
-description: "Version 1.1.0 ships the bounty system, player-built trading posts, a browser version of the game, past season history, and a round of stability fixes."
+description: "Version 1.1.0 ships the bounty system, player-built trading posts, past season history, and a round of stability fixes."
 ---
 
 Version 1.1.0 is a major feature release. Three new systems and a new way to play.
@@ -13,10 +13,6 @@ Players can now post bounties on other players from any tavern. Set a credit rew
 ## Player-Built Trading Posts
 
 Planet owners can now construct a trading post on their planet. Trading posts sell commodities to passing players at competitive prices, and the owner earns a percentage of every sale. Build from your planet screen once you have a Warehouse at level 2. Upgrade the post over time to increase stock capacity and revenue. Other players can attempt to rob your trading post, so a strong garrison matters.
-
-## play.bigbangsmugglers.com
-
-The game is now playable in any browser at [play.bigbangsmugglers.com](https://play.bigbangsmugglers.com). Same account, same galaxy, same game -- no install required. The web version is in alpha and requires an invite code to access.
 
 ## Past Seasons
 

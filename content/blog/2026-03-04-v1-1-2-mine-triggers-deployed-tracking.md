@@ -19,4 +19,3 @@ The Bridge deployment modal now shows a list of sectors where you have active mi
 ## Other Fixes
 
 - Fixed `planet.id` undefined error that was causing all trading post actions to fail
-- React Native Web peer dependency conflict resolved for the web version
