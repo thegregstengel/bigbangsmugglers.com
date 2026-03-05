@@ -1,6 +1,6 @@
 ---
 title: "v1.2.1 — Performance, Warp, and Combat Fixes"
-date: 2026-03-05
+date: 2026-03-05T10:00:00
 description: "Version 1.2.1 dramatically improves app-wide performance, fixes warp drive timeouts, corrects combat power display in NPC encounters, and polishes ship repair."
 ---
 

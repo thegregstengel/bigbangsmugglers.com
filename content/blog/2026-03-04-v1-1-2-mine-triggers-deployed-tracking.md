@@ -1,6 +1,6 @@
 ---
 title: "v1.1.2 — Mine Triggers and Deployed Mine Tracking"
-date: 2026-03-04
+date: 2026-03-04T10:00:00
 description: "Version 1.1.2 fixes mine triggers so enemy ships actually take damage when entering a mined sector, and adds a deployed mine tracker to the Bridge."
 ---
 
