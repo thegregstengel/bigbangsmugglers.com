@@ -1,18 +1,24 @@
 ---
-title: "v1.2.5 — Starport Polish & Ship Stats"
+title: "v1.2.6 — Starport Polish & Ship Stats"
 date: 2026-03-06T14:00:00
-description: "Version 1.2.5 fixes cargo hold display, ship upgrade resets, the repair button showing on healthy ships, and turn reset clock accuracy."
+description: "Version 1.2.6 overhauls the starport shipyard, fixes ship repair, corrects stat display across the ship screen, and fixes the turn reset clock."
 ---
 
-Version 1.2.5 is a polish pass on the starport and ship screen, fixing a cluster of display and behavior bugs reported by players.
+Version 1.2.6 is a polish pass on the starport and ship screen, fixing a cluster of display and behavior bugs reported by players.
+
+## Shipyard Overhaul
+
+The shipyard now shows fighters, torpedoes, and cargo holds as separate cards, each with a consistent layout: your current count, the maximum you can reach with upgrades, and a buy button with the cost shown inline. If a stat is fully upgraded the buy button is replaced with a confirmation so you know you have hit the ceiling.
+
+Repair now restores all combat stats. Previously, the repair backend only topped up shields on a functional ship and left fighters and torpedoes at whatever damaged value they were at. The repair cost calculation has also been corrected to account for total damage across all three stats rather than shields alone. The button is now simply labeled "Repair Ship."
 
 ## Ship Stats Display
 
-The ship screen stat cards now show consistent information across all four stats. Holds displays your current hold count with the maximum you can reach through upgrades underneath, matching the format used by fighters and torpedoes. The previous display was showing cargo used versus cargo capacity, which belongs in the cargo hold section below.
+The ship screen stat cards now show consistent information across all four stats. Holds displays your current hold count with the maximum you can reach through upgrades underneath, matching the format used by fighters, torpedoes, and shields. The previous display was showing cargo used versus cargo capacity, which belongs in the cargo section below.
 
-Fighters and torpedoes now correctly show the repair maximum — base stats plus purchased upgrades — instead of the upgrade ceiling. The upgrade ceiling (how high you can go with future purchases) was inflating the max value and making ships look more damaged than they were.
+Fighters and torpedoes now correctly show the repair maximum alongside the upgrade ceiling so you always know both where you are and how far you can go.
 
-## Starport Repair
+## Repair Button Visibility
 
 The repair button no longer appears when your ship is in full health. Previously, ships with zero base fighters or torpedoes (scouts, freighters, and most trading vessels) always showed the repair button because the fallback maximum was hardcoded to 100, making zero fighters look like damage. The repair section now only appears when there is actually something to repair.
 
