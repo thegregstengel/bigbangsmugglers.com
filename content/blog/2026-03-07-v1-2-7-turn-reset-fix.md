@@ -1,6 +1,7 @@
 ---
 title: "v1.2.7 — Turn Reset Fix"
-date: 2026-03-07T09:00:00-05:00
+date: 2026-03-07T14:00:00
+description: "Version 1.2.7 fixes the turn reset timer bug where countdowns could show up to 24 hours instead of the correct 4-hour cycle."
 ---
 
 Version 1.2.7 is a focused bug fix for the turn reset timer.
