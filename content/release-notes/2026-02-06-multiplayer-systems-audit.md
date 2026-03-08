@@ -2,6 +2,7 @@
 title: "Multiplayer Systems Audit"
 date: 2026-02-06
 description: "Part 2 of the Feb 6 sprint: PvP disabled, leaderboards hardcoded, no chat, no corps — the full multiplayer gap report."
+type: blog
 draft: false
 sidebar:
   exclude: true

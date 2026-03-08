@@ -2,6 +2,7 @@
 title: "Quality of Life Fixes"
 date: 2026-02-12
 description: "Four polish fixes: XP display, nav screen refresh after warp, mission persistence across seasons, and a screen notch overflow."
+type: blog
 draft: false
 sidebar:
   exclude: true

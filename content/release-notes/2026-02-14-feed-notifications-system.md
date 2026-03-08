@@ -2,6 +2,7 @@
 title: "Feed Notifications - Community Activity Without Surveillance"
 date: 2026-02-14
 description: "Real-time event feed with privacy-first design and admin broadcast tools"
+type: blog
 author: "Dev Team"
 ---
 

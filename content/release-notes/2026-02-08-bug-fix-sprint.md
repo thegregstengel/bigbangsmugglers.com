@@ -2,6 +2,7 @@
 title: "Bug Fix Sprint"
 date: 2026-02-08
 description: "8 quick bug fixes after the audit — credits in the wrong field, crashes, and a misnamed leaderboard tab."
+type: blog
 draft: false
 sidebar:
   exclude: true

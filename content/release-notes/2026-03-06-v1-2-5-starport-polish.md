@@ -2,6 +2,7 @@
 title: "v1.2.6 — Starport Polish & Ship Stats"
 date: 2026-03-06T14:00:00
 description: "Version 1.2.6 overhauls the starport shipyard, fixes ship repair, corrects stat display across the ship screen, and fixes the turn reset clock."
+type: blog
 ---
 
 Version 1.2.6 is a polish pass on the starport and ship screen, fixing a cluster of display and behavior bugs reported by players.

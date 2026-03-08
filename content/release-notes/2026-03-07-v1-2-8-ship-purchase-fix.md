@@ -2,6 +2,7 @@
 title: "v1.2.8 — Ship Purchase Fix"
 date: 2026-03-07T18:00:00
 description: "Version 1.2.8 fixes a bug where buying a new ship could leave your account pointing at a deleted ship, breaking ship-dependent features."
+type: blog
 ---
 
 Version 1.2.8 fixes a data integrity bug introduced when purchasing a new ship at a starport.

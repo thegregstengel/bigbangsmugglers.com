@@ -2,6 +2,7 @@
 title: "v1.2.9 — Battle Recap Fix"
 date: 2026-03-07T21:00:00
 description: "Version 1.2.9 fixes the battle results screen to show correct pre-battle stats and removes the duplicate combat popup."
+type: blog
 ---
 
 Version 1.2.9 fixes two problems with how combat results are displayed after an NPC encounter.

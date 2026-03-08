@@ -2,6 +2,7 @@
 title: "Galaxy Cleanup & Stability"
 date: 2026-02-14
 description: "Galaxy destruction now cleans up starports and all related collections; player stats reset properly on season exit."
+type: blog
 draft: false
 sidebar:
   exclude: true

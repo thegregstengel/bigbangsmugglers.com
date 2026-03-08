@@ -2,6 +2,7 @@
 title: "Starport Services Launch"
 date: 2026-02-13
 description: "12 starport features shipped in one day — the redesign is fully live with bank, shipyard, ship sales, contracts, recruitment, and tactical supply."
+type: blog
 draft: false
 sidebar:
   exclude: true

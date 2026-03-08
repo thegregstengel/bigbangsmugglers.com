@@ -2,6 +2,7 @@
 title: "Planets, Warp & Trade"
 date: 2026-02-06
 description: "Part 3 of the Feb 6 sprint: planet feature gaps catalogued, warp drive system designed and queued, trade system improvements scoped."
+type: blog
 draft: false
 sidebar:
   exclude: true

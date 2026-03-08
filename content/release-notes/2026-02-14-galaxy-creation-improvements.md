@@ -2,6 +2,7 @@
 title: "Galaxy Creation Improvements - Clean, Easy, Repeatable"
 date: 2026-02-14
 description: "Streamlined galaxy creation with Quick Create mode, 6 presets, and real-time validation"
+type: blog
 author: "Dev Team"
 ---
 

@@ -2,6 +2,7 @@
 title: "v1.2.1 — Performance, Warp, and Combat Fixes"
 date: 2026-03-05T10:00:00
 description: "Version 1.2.1 dramatically improves app-wide performance, fixes warp drive timeouts, corrects combat power display in NPC encounters, and polishes ship repair."
+type: blog
 ---
 
 Version 1.2.1 is a performance and bug fix release. The game should feel noticeably faster across the board.

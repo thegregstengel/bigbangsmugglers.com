@@ -2,6 +2,7 @@
 title: "v1.1.0 — Bounties, Trading Posts, and the Web Version"
 date: 2026-03-01T10:00:00
 description: "Version 1.1.0 ships the bounty system, player-built trading posts, past season history, and a round of stability fixes."
+type: blog
 ---
 
 Version 1.1.0 is a major feature release. Three new systems and a new way to play.
