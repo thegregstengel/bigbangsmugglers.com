@@ -1,10 +1,10 @@
 ---
-title: "v1.3.1 — Instant Combat"
-date: 2026-03-07T22:00:00
-description: "Version 1.3.1 delivers truly instant NPC combat results by computing the fight outcome during your move and writing results in the background."
+title: "v1.3.2 — Instant Combat"
+date: 2026-03-08T09:00:00-05:00
+description: "v1.3.2 delivers truly instant NPC combat results by computing the fight outcome during your move and writing results in the background."
 ---
 
-Version 1.3.1 is a significant architecture improvement to how NPC encounters work.
+v1.3.2 is a significant architecture improvement to how NPC encounters work.
 
 ## What Changed
 
