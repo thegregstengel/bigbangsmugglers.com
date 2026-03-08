@@ -21,7 +21,7 @@ enableGitInfo = false
     weight = 1
   [[menu.main]]
     name = "Release Notes"
-    pageRef = "/blog"
+    pageRef = "/release-notes"
     weight = 2
 [params]
   description = "Forge Your Legacy in the Void. Trade, fight, and dominate in a ruthless universe where every choice shapes your destiny."
