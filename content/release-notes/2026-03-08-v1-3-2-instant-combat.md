@@ -1,6 +1,6 @@
 ---
 title: "v1.3.2 — Instant Combat"
-date: 2026-03-08T09:00:00-05:00
+date: 2026-03-08T01:00:00
 description: "v1.3.2 delivers truly instant NPC combat results by computing the fight outcome during your move and writing results in the background."
 type: blog
 ---
