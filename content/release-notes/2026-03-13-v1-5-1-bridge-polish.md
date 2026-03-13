@@ -5,7 +5,11 @@ type: blog
 description: "v1.5.1 cleans up the Bridge tab on the Ship screen — consistent card styles, separate beacon and mine cards, better layout."
 ---
 
-v1.5.1 is a polish pass on the Bridge tab in the Ship screen.
+v1.5.1 is a polish pass on the Bridge tab and a fix for warp drive route calculation hanging on long distances.
+
+## Warp Drive Route Fix
+
+Calculating a warp route was timing out for long distances. The pathfinding was making a separate database read for every sector it explored — in a large galaxy that's hundreds of sequential round trips, easily pushing past the timeout limit. The fix loads all sector connections in a single batch query and runs the pathfinding entirely in memory. Warp route previews and navigation should now be instant regardless of distance.
 
 ## Bridge Tab Cleanup
 
