@@ -1,6 +1,6 @@
 ---
 title: "v1.7.0 — Corps Tab Rebuild"
-date: 2026-03-15T19:20:00-04:00
+date: 2026-03-15T19:05:00-04:00
 type: blog
 description: "v1.7.0 rebuilds the Corps tab with inline cards, fixes corp browse reliability, and cleans up corporation actions throughout the UI."
 ---
