@@ -1,6 +1,6 @@
 ---
 title: "Gameplay Basics"
-date: 2026-02-13
+date: 2026-04-01
 draft: false
 description: "Core mechanics and game systems"
 weight: 2
@@ -12,82 +12,82 @@ Master the fundamentals of Big Bang Smugglers.
 ## Navigation
 
 ### The Galaxy Map
-- **Sectors**: Each sector is a location you can warp to
-- **Links**: Lines between sectors show warp routes
+- **Sectors**: Each sector is a distinct location in the galaxy
+- **Links**: Lines between sectors show traversable routes
 - **Territories**: Federation (blue), Pirate (red), Unincorporated (gray)
-- **Current location**: Highlighted sector
+- **Current location**: Highlighted sector on the Nav screen
 
 ### Moving Around
 1. Open the Nav screen
-2. Tap a connected sector
-3. Confirm warp (uses fuel)
-4. Arrive at destination
+2. Tap a connected sector to move there (costs 1 turn)
+3. Use your warp drive to jump directly to any previously visited sector
 
-**Warp Drive Levels:**
-- Level 0: No warp drive (must install at starport)
-- Level 1-5: Faster warps, longer range
+Each sector move costs 1 turn. Warp jumps cost turns based on distance. The Warp Optimizer tech upgrade reduces warp turn cost by 1.
 
 ## Your Ship
 
 ### Ship Stats
-- **Shields**: Protection from damage
-- **Hull**: Structural integrity (if shields fail)
-- **Fighters**: Defensive craft for combat
-- **Torpedoes**: Offensive weapons
-- **Cargo Holds**: How much you can carry
+- **Shields**: Your primary defense in combat
+- **Fighters**: Escort craft that contribute to combat power
+- **Torpedoes**: Offensive weapons with high individual impact
+- **Cargo Holds**: Maximum units you can carry
 
-### Ship Types
-Ships come in different classes with different strengths:
-- **Trading ships**: Maximum cargo, light weapons
-- **War ships**: Heavy weapons, moderate cargo
-- **Balanced ships**: Middle ground
+### Ship Roles
+Ships come in six roles across two faction lines:
+- **Trading / Smuggling**: Maximum cargo capacity, 55% escape rating, light combat stats
+- **War / Raider**: High fighters and torpedoes, 25% escape rating, minimal cargo
+- **Balanced / Corsair**: Middle ground — Balanced ships have the highest shields, Corsairs have the highest escape rating
+
+See [Ships](/guide/ships) for the full catalog.
 
 ### Maintenance
-- **Repair** at ports or starports
-- **Restock** torpedoes and fighters
+- **Repair** at any starport for full restoration at a credit cost (auto-repairs to 50% at daily reset)
+- **Restock** torpedoes and fighters at any starport
 - **Refuel** at any port
 
 ## Credits & Economy
 
 Credits are the universal currency. Earn them through:
-- **Trading**: Buy low, sell high
-- **Missions**: Complete objectives
-- **Salvage**: Collect from destroyed ships (future)
-- **Piracy**: Attack other ships (future)
+- **Trading**: Buy commodities cheap, sell where prices are high
+- **Missions**: Complete objectives at starports for credits and XP
+- **Combat**: Loot credits and cargo from defeated ships
+- **Planets**: Develop planets to produce commodities and earn passive income from Trading Posts
+- **Bounties**: Collect player and faction bounty contracts
 
 Spend credits on:
-- **Cargo**: Trade goods
-- **Ships**: Buy better vessels at starports
-- **Upgrades**: Improve your ship's capabilities
-- **Services**: Repairs, refueling, recruitment
+- **Cargo**: Trade goods to fill your holds
+- **Ships**: Buy better vessels at starport ship sales terminals
+- **Upgrades**: Permanent tech improvements at the Tech Hub
+- **Services**: Repairs, restock, recruitment
 
 ## Banking
 
-Store credits safely at starport banks:
-- **Deposit**: Store credits (safe from loss)
-- **Withdraw**: Take credits back into ship's account
-- **Interest**: Earn passive income (future)
+Store credits at starport banks to protect them from combat loot. Credits in the bank cannot be taken by attackers.
+
+- **Deposit**: Move credits from wallet to bank
+- **Withdraw**: Move credits back into your wallet for spending
 
 ## Factions
 
-### Federation Space
-- **Law & Order**: Safer, regulated trade
-- **Federation Starports**: Corporate names, clean facilities
-- **Higher prices**: But safer routes
+### Federation
+Safer space with regulated trade. Federation Starports offer the full range of services. Patrols enforce contraband laws. Alignment toward Federation unlocks Federation ship lines and better standing at Federation ports.
 
-### Pirate Territories
-- **Wild West**: Dangerous but profitable
-- **Pirate Havens**: Criminal names, rough facilities
-- **Lower prices**: Risk vs reward
+### Pirate
+Dangerous but high-margin. Black Markets and Pirate Bases operate outside Federation law. Pirate Starports have their own contract offices and services. Alignment toward Pirate unlocks Pirate ship lines and access to contraband systems.
 
-### Unincorporated Space
-- **No Man's Land**: Independent ports
-- **Varied**: Safety and prices vary by location
+### Neutral / Unincorporated
+Independent territory. Standard ports without faction alignment requirements. PvP can be active here if galaxy settings enable it. No patrol presence, moderate risk.
+
+Alignment shifts gradually through play — trade in Federation space and run Federation missions to trend Federation; smuggle and fight in pirate territory to trend Pirate. Alignment affects pricing, NPC behavior, port access, and which ship lines you can buy from.
+
+## Corporations
+
+Players can form corporations. Corps group players for social coordination, shared reputation, and co-management of planets. Corp membership and role appear on your profile and leaderboard card. Corp sizes scale dynamically with the galaxy's player cap. See your corp from the Settings screen.
 
 ## Tips
 
-- Always keep enough credits for fuel and repairs
-- Store excess credits in starport banks
-- Upgrade your ship gradually: don't overextend
-- Federation space is safer for new pilots
-- Pirate space has better margins for experienced traders
+- Keep credits in the bank when you are done trading — they are safe from combat loot there
+- Federation space is safer for new pilots; move outward as you grow
+- Use the Warp drive to cover long routes efficiently once you have explored the sectors
+- Upgrade cargo holds early — more holds means more profit per run at the same turn cost
+- Check the Mission Board at every Starport visit; daily missions stack with whatever you are already doing
