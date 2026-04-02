@@ -1,6 +1,6 @@
 ---
 title: "Ships"
-date: 2026-03-02
+date: 2026-04-01
 draft: false
 description: "Every ship class in Big Bang Smugglers, with stats and role descriptions"
 weight: 3
@@ -21,6 +21,29 @@ Every ship has four core stats:
 Tier determines the base power level. Tier 1 ships are available to anyone. Tiers 2 through 5 require XP milestones before the seller will deal with you.
 
 Ships are purchased at starport ship sales terminals. Your old ship is traded in as partial payment. Any cargo that does not fit in your new ship is lost, so plan before you buy.
+
+---
+
+## Role Stat Profiles
+
+Each of the six roles has a distinct stat identity. Within a role, stats scale up with tier. The table below describes the character of each role, not the exact numbers — use the in-game Ship Store to see precise start and max values for any specific ship.
+
+| Role | Cargo | Shields | Fighters | Torpedoes | Escape | Primary Use |
+|------|-------|---------|----------|-----------|--------|-------------|
+| Trading (Nebula Merchant) | Highest | Low | Very low | Very low | 55% | Commodity hauling |
+| War (Patrol Corvette) | Minimal | Low | Very high | Very high | 25% | Combat and PvP |
+| Balanced (Frontier Scout) | Medium | Highest | Medium | Medium | ~30–45% | General purpose |
+| Smuggling (Shadow Runner) | Highest | Low | Low | Low | 55% | Contraband hauling |
+| Raider | Minimal | Low | Very high | Very high | 25% | Pirate combat |
+| Corsair | Medium | Medium | Medium | Medium | Highest | Pirate general |
+
+**Trading vs. Smuggling:** Both carry the most cargo and share the 55% escape rating. The difference is faction — Nebula Merchants are Federation, Shadow Runners are Pirate. Smuggling ships are optimized for moving contraband without drawing attention.
+
+**War vs. Raider:** Both are glass cannons built for maximum damage output and minimal cargo. War ships carry the Federation line; Raiders carry the Pirate line.
+
+**Balanced vs. Corsair:** Both split the difference between cargo and combat. Balanced ships have the highest shields in the game, making them the most durable option. Corsairs have the highest escape rating, making them the hardest to pin down. A Corsair gets away; a Balanced ship tanks through it.
+
+The Frontier Scout — the starter ship — is a Tier 1 Balanced ship: 20 cargo, 15 shields, 0 fighters, 0 torpedoes, 30% escape.
 
 ---
 

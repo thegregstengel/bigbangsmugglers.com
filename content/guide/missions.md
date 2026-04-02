@@ -1,23 +1,19 @@
 ---
-title: "Missions"
-date: 2026-02-28
+title: "Missions, Goals & Streaks"
+date: 2026-04-01
 draft: false
-description: "Mission types, how to accept and complete them, and rewards"
+description: "Mission types, daily contracts, goal milestones, and login streaks"
 weight: 10
 toc: true
 ---
 
-Missions give you structured objectives beyond free trading. They pay credits, XP, and faction reputation and are available at most starports throughout the galaxy.
-
-## Finding Missions
-
-Missions are listed on the Mission Board at any Starport. The board shows available missions for your current galaxy, filtered by your faction access.
-
-- Federation-aligned players access Courier and Patrol missions
-- Pirate-aligned players access Smuggle, Raid, and Bounty missions
-- Neutral players access Courier and Patrol missions
+Missions give you structured objectives beyond free trading. They pay credits, XP, and faction reputation. Three categories exist: standard missions, daily missions, and event missions.
 
 ## Mission Types
+
+### Standard Missions
+
+Always available at the Mission Board at any Starport.
 
 | Type | Faction | Description |
 |------|---------|-------------|
@@ -29,11 +25,26 @@ Missions are listed on the Mission Board at any Starport. The board shows availa
 | Smuggle | Pirate | Move contraband past enforcement |
 | Raid | Pirate | Attack and loot specified targets |
 | Recon | Any | Scout sectors and gather intelligence |
-| Resource Extraction | Any | Mine or harvest resources from planets |
+| Resource Extraction | Any | Mine or harvest from planets |
+
+Faction access governs which types you see:
+
+- Federation-aligned or Neutral: Courier and Patrol missions
+- Pirate-aligned: Smuggle, Raid, and Bounty missions
+
+### Daily Missions
+
+One shared daily mission is available to all players in the galaxy. Claim it once from any Starport and complete it for a bonus reward on top of the normal payout. Daily missions reset each day.
+
+### Event Missions
+
+Event missions appear during special in-game events and show a countdown timer. Miss the window and they disappear.
+
+Mission cards in the Starport show category badges so you can identify type at a glance.
+
+---
 
 ## Difficulty Tiers
-
-Missions come in four difficulty tiers that scale rewards and requirements.
 
 | Tier | Label | Reward Scale |
 |------|-------|-------------|
@@ -42,29 +53,44 @@ Missions come in four difficulty tiers that scale rewards and requirements.
 | 3 | Hard | ~4x |
 | 4 | Elite | ~8x |
 
-Higher-tier missions may require minimum faction reputation, a minimum alignment score, or a specific ship class.
+Higher-tier missions may require minimum faction reputation, minimum alignment, or a specific ship class. Check requirements before accepting.
 
-## Accepting a Mission
+---
 
-Open the Mission Board at any Starport, browse available missions, and tap Accept on any mission you want. The mission moves to your Active Missions list on the Ship screen. You can have multiple missions active simultaneously.
+## Accepting and Completing
 
-## Completing Objectives
+Open the Mission Board at any Starport, browse, and tap Accept. Missions move to your Active Missions list on the Ship screen. You can run multiple missions simultaneously.
 
-Mission progress tracks automatically as you play. Common objective types include traveling to a specific sector, defeating NPC ships, trading at a port, claiming or upgrading a planet, and returning to the mission origin.
+Progress tracks automatically as you play. Common objective types: move to a sector, defeat NPC ships, trade at a port, claim or upgrade a planet, return to mission origin.
 
-The Ship screen shows your active missions with a progress indicator per objective.
+When all objectives are complete, return to any Starport and collect from your active missions list. Rewards deposit directly to your wallet.
 
-## Collecting Rewards
+Missions have expiry timers. If you do not complete before expiry, the mission fails.
 
-When all objectives are complete, return to any Starport and complete the mission from your active missions list. Rewards include credits deposited directly to your wallet, XP toward your level, faction reputation, and alignment adjustment.
+---
 
-## Mission Expiry
+## Goals
 
-Missions have expiry timers. If you do not complete a mission before it expires, it fails. Check expiry times before accepting long or complex missions.
+Goals are cumulative milestones that reward long-term play. Each goal has three tiers — Bronze, Silver, and Gold — with increasing credit and XP payouts.
+
+Goals track things like total trades completed, sectors explored, enemies defeated, and missions finished. Progress updates automatically. Claim rewards manually when you hit a threshold. Goals persist across sessions.
+
+---
+
+## Login Streaks
+
+The game tracks how many consecutive days you use your turns. Use your turns in a day and your streak advances. Miss a day and you lose it, though a grace day gives you one free pass per cycle before the streak resets.
+
+**Milestone rewards at:** 3, 7, 14, and 30 consecutive days (credits and XP bonuses).
+
+Your current streak and next milestone are visible on the bounty board screen.
+
+---
 
 ## Tips
 
-- Stack compatible missions. Two courier missions going in the same direction cost the same turns as one.
-- Patrol objectives align naturally with clearing dangerous sectors. You would fight those NPCs anyway.
-- If you are already running contraband, pick up a smuggle mission going the same direction for bonus credits on top of your trade profit.
-- Check requirements before accepting elite missions. You may fail immediately if you do not meet faction reputation thresholds.
+- Stack compatible missions. Two courier missions in the same direction cost the same turns as one.
+- Patrol objectives align with clearing dangerous sectors — you would fight those NPCs anyway.
+- If you are already running contraband, pick up a smuggle mission in the same direction for bonus credits on top of your trade profit.
+- The daily mission is worth grabbing every session — the bonus payout stacks with whatever you were already doing.
+- Check requirements before accepting elite missions. Faction reputation thresholds can cause immediate failure.

@@ -1,60 +1,112 @@
 ---
 title: "NPCs & Encounters"
-date: 2026-02-28
+date: 2026-04-01
 draft: false
-description: "NPC ships, encounter rates, and territory aggression"
+description: "NPC ships, encounter interactions, and territory behavior"
 weight: 5
 toc: true
 ---
 
-The galaxy is not empty. As you move between sectors, you will encounter NPC ships. Some are pirates looking for prey. Others are traders running routes. Federation patrols enforce the law.
+The galaxy has NPCs moving through it at all times. Federation patrols enforce the law, pirates hunt for prey, and traders run commodity routes. Each type behaves differently and presents different interaction options when you encounter them.
 
 ## How Encounters Work
 
-Every time you move to a new sector, the game rolls for an NPC encounter. At most one NPC spawns per move. The probability depends on your current region, the NPC type, and the galaxy's base encounter rate.
+Every sector move rolls for an NPC encounter. At most one NPC spawns per move. Encounter probability depends on your current region, the NPC type, and the galaxy's base encounter rate. NPCs are visible in sectors on the Nav screen before you interact with them.
+
+When an encounter fires, you see an engagement modal. Each NPC type shows different options. Unlike earlier versions of the game, most encounters are not automatic — you choose how to respond.
+
+---
 
 ## NPC Types
 
-### Pirate Ships
+### Federation Patrols
 
-The most dangerous encounter. Pirates are found throughout the galaxy but concentrate heavily in outer and deep space.
+Patrols enforce Federation law. They scan cargo and enforce faction standing. They are not automatically aggressive unless you have an active bounty.
 
-**Aggression by territory:**
+**Encounter options:**
 
-- Federation space: never attacks first
-- Neutral space: 33% chance of auto-attacking on spawn
-- Pirate space: 66% chance of auto-attacking on spawn
+- **Scan** — let them scan your cargo (safe if you're clean)
+- **Bribe** — pay credits to avoid the scan
+- **Jettison** — dump your contraband before they check
+- **Attack** — engage the patrol in combat (generates a faction bounty)
+
+**Territory behavior:**
+
+- Heavy presence in Federation Core and Federation Space
+- Reduced in Frontier regions
+- Do not spawn in Pirate or Deep space
+
+**Aggression:** Patrols only initiate combat if you have an active bounty. Otherwise they scan and move on.
+
+---
+
+### Pirates
+
+Pirate ships attack for cargo and credits. They range from tier 2 Raider Skiffs through tier 5 Warlord Battleships, with higher tiers in deeper space.
+
+**Encounter options:**
+
+- **Surrender** — let them take cargo and credits without fighting
+- **Bribe** — pay to be left alone
+- **Jettison** — dump cargo to reduce what they take
+- **Attack** — fight back
+
+Bounty hunters (players with pirate bounties on them) face a more hostile interaction path with fewer options.
+
+**Territory behavior:**
+
+- Do not spawn in Federation space
+- Concentrate in Frontier, Pirate, and Deep regions
+- More frequent and higher tier in Deep space
 
 **Loot from defeating pirates:** 500 to 2,000 credits plus equipment cargo. Deep space pirates drop more.
 
-**Tiers:** Pirate ships range from tier 2 (Raider Skiff) to tier 5 (Warlord Battleship). Higher tiers appear in deeper, more dangerous regions.
-
-### Federation Patrols
-
-Patrol ships enforce Federation law. They do not attack players on sight. They exist to scan for contraband. When a patrol is present in a sector you move into, it scans your cargo if you are in Federation or neutral space. Carrying contraband triggers the detection roll described in the [Smuggling guide](/guide/smuggling).
-
-Patrol ships concentrate heavily in Federation Core and Federation Space regions, with reduced presence in frontier and outer zones. They almost never appear in deep space or pirate territory.
-
-**Tiers:** Fed Patrol Cutter (tier 2) through Star Defender (tier 5).
+---
 
 ### Traders
 
-Civilian merchant ships running trade routes. They never auto-aggress and carry cargo and modest credits. Traders are concentrated in core, inner, and Federation regions and are rare in pirate or deep space.
+Civilian merchant ships running commodity routes. They carry cargo and modest credits but are never automatically hostile.
+
+**Encounter options:**
+
+- **Trade** — buy or sell commodities with the NPC at current prices
+- **Rob** — attack and take their cargo
+- **Attack** — engage in combat without a trade offer
+
+Traders never auto-popup. Interactions are always player-initiated.
+
+**Territory behavior:**
+
+- Concentrated in Federation Core, Federation Space, and Frontier regions
+- Rare in Pirate or Deep space
 
 **Loot from defeating traders:** 100 to 500 credits plus mixed commodity cargo.
 
-## Territory and Safety
+---
 
-| Territory | Pirate Aggression | Patrol Presence | Contraband Risk |
-|-----------|-------------------|-----------------|-----------------|
-| Federation | 0% | High | Active scanning |
-| Neutral | 33% | Low | Active scanning |
-| Pirate | 66% | Minimal | No scanning |
+## Territory Summary
 
-Federation space is the safest for travel but actively hostile to smugglers. Pirate space is the most dangerous for combat but completely permissive for contraband.
+| Territory | Pirates | Patrols | Traders |
+|-----------|---------|---------|---------|
+| Federation Core | None | Heavy | Frequent |
+| Federation Space | None | Heavy | Frequent |
+| Frontier | Moderate | Light | Moderate |
+| Neutral | Moderate | Light | Moderate |
+| Pirate | Heavy | None | Rare |
+| Deep | Heavy | None | Very rare |
+
+---
+
+## Faction Reputation and NPC Memory
+
+NPCs respond to your faction history. Attacking Federation-aligned NPCs degrades your Federation reputation and generates faction bounties. Attacking Pirate-aligned NPCs does the same on the pirate side. Faction memory makes the galaxy more reactive over time — a reputation for piracy changes how patrols treat you, and a bounty on your head makes every patrol encounter hostile.
+
+See [Bounties](/guide/bounties) for how faction bounties are generated and collected.
+
+---
 
 ## NPC Combat
 
-When an NPC auto-aggresses, combat resolves automatically using your ship's stats versus the NPC's stats. You will see the result as an encounter notification. Win and you loot credits and cargo. Lose and your ship is disabled.
+When you choose to fight — or when an NPC attacks first — combat resolves automatically using the same formula as PvP. See [Combat](/guide/combat) for the full resolution system.
 
-NPC combat uses the same resolution system as PvP combat. Upgrade your fighters, shields, and torpedoes to handle tougher encounters in dangerous regions.
+NPC tiers scale with region danger. Be aware of win odds before engaging deep-space targets.
