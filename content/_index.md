@@ -1,80 +1,68 @@
 ---
 title: "Big Bang Smugglers"
-description: "Forge Your Legacy in the Void"
+description: "Turn-based space trading for Android. Two factions. 250 turns per day."
 sidebar:
   exclude: true
 toc: false
 ---
 
-# FORGE YOUR LEGACY IN THE VOID
+# TRADE. FIGHT. SMUGGLE.
 
-Trade, fight, and dominate in a ruthless universe where every choice shapes your destiny. Navigate dangerous sectors, build your fortune, and carve out your place among the stars.
+Turn-based space trading for Android. Two factions. Three commodities. 250 turns per day. Every 30 days, the galaxy resets.
 
-[Download the App](#play){.button}
+[Download on Google Play](https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers){.button}
 
 ---
 
-## WHO WILL YOU BE?
+## HOW IT PLAYS
 
-**Choose your path. Forge your legend.**
+### 🛢️ Trade Routes
+Three commodities: fuel, organics, equipment. Buy where prices are low, sell where they're high. Each cargo hold counts. Better ships carry more per run. Better routes mean bigger margins.
 
-### 🌿 The Trader
-Master the art of buy low, sell high. Navigate market fluctuations, exploit supply chains, and build wealth through strategic commerce. Every port is an opportunity. Every commodity tells a story.
+### ⚔️ PvP Combat
+Attack rival captains in neutral or pirate sectors. Win and loot up to 25% of their credits and 30% of their cargo. Your fighters, shields, and torpedoes decide the outcome — combat is automatic.
 
-### ⚔️ The Mercenary  
-Combat isn't just survival—it's profit. Take bounties, eliminate threats, and carve a bloody path through hostile territory. Your ship is your weapon. Your reputation is currency.
+### 🌍 Planet Development
+Claim an unclaimed planet. Deploy workers. Build factories and warehouses. Collect daily production and sell it. Build a Trading Post and earn passive income while you do other things.
 
-### 💰 The Tycoon
-Build an empire that spans sectors. Own planets, control trade routes, and dominate the galactic economy. Power isn't found—it's built, credit by credit, territory by territory.
-
-### ⭐ The Pioneer
-Explore uncharted sectors. Claim untouched worlds. The void is vast, and fortune favors the bold. Discovery is its own reward—but it pays well too.
+### 🎯 Bounty Hunting
+Post a price on a rival captain. Anyone who defeats them in PvP collects the reward automatically. Or hunt wanted players yourself and claim the payout at the contract office.
 
 ---
 
 ## NO TWO GALAXIES ARE THE SAME
 
-Every season, a new universe is born. Unique territories. Fresh opportunities. Dynamic challenges.
+### Federation or Pirate
+Start neutral. Run Federation trade routes and your alignment shifts toward law. Smuggle contraband through pirate havens and it shifts the other way. Alignment affects prices, port access, and how NPCs treat you.
 
-### 🌱 Dynamic Economy
-Real-time supply and demand across hundreds of ports. Prices shift based on player trades, faction wars, and galactic events. Adapt or get left behind.
+### Three Territories
+Federation space is safe, taxed, and PvP-free. Neutral sectors are the frontier — mixed risk, PvP-enabled. Pirate space has no law, high NPC aggression, and the only ports that will deal with you when your rep is in the red.
 
-### 🛡️ Choose Your Faction
-Join the Federation for structure and safety, or embrace the lawless freedom of Pirate space. Your allegiance shapes your experience—and your enemies.
+### 30-Day Seasons
+Every season starts in a new procedurally generated galaxy. Sectors, prices, and planets all reset. XP earns rank on the leaderboard. Your season record persists permanently. Final standings lock when the galaxy closes.
 
-### 💀 PvP Combat
-Hunt or be hunted. Engage in tactical ship-to-ship combat with real stakes. Every encounter is a gamble. Every victory earns respect.
-
-### 🌌 Custom Galaxy
-Procedurally generated sectors with unique trade routes, faction territories, and hidden treasures. No two playthroughs are the same.
+### Corporations
+Form or join a corporation. Corp membership shows on your public leaderboard profile. Leaders carry faction-specific titles. Coordinate planet defense, territory control, and the seasonal leaderboard together.
 
 ---
 
 ## YOUR SHIP. YOUR RULES.
 
-### Customize Your Fleet
-Your ship is your identity. Your mobile base. Your weapon.
+Six ship lines. Five tiers each. Federation and Pirate yards build differently.
 
-Choose from multiple ship classes:
-- **Scout** - Fast and agile
-- **Trader** - Maximum cargo capacity  
-- **Corvette** - Built for combat
-- **Smuggler** - Evade detection
+- **Federation:** Trading line for cargo, War line for firepower, Balanced line for flexibility
+- **Pirate:** Smuggling line moves contraband, Raider line attacks and withdraws, Corsair line hauls and escapes
 
-Upgrade everything:
-- ⚡ Warp Drives for efficient travel
-- 🛡️ Shields for defense
-- 🚀 Engines for speed
-- 📦 Holds for cargo expansion
+Tier 1 is open to anyone. Tier 5 requires 60,000 XP. Trade in your old ship at any Starport shipyard. Upgrade cargo holds, shields, fighters, and warp drive as you progress.
 
 ---
 
-## YOUR DESTINY AWAITS
+## 250 TURNS. TWO FACTIONS.
 
-The void doesn't care who you were. It only cares what you become.
+One galaxy. Thirty days. Make it count.
 
-**[Download the App](#play)** | **[Release Notes](/release-notes)**
+**[Download on Google Play](https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers)** | **[Player Guide](/guide)** | **[Release Notes](/release-notes)**
 
 ---
 
-<small>Big Bang Smugglers © 2024-2026 | [Guide](/guide) | [Release Notes](/release-notes)</small>
+<small>Big Bang Smugglers © 2024-2026 Protovision Games | [Guide](/guide) | [Release Notes](/release-notes) | [Privacy Policy](/privacy)</small>
