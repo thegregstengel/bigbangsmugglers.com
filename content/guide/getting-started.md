@@ -24,7 +24,7 @@ Big Bang Smugglers is played in seasons. Each season is a time-limited galaxy th
 Tap **Join** on any active season to enter its galaxy. Once you join, you'll start with:
 
 - 5,000 credits in your wallet
-- 250 turns for the day (resets daily at midnight UTC)
+- 250 turns (reset every 4 hours)
 - A Frontier Scout starter ship in Sector 0 (Federation Core)
 
 ## Your Starter Ship
@@ -67,7 +67,7 @@ Each round trip earns profit. As your credits grow you can upgrade your cargo ho
 
 ## Turns
 
-You get **250 turns per day**, resetting at midnight UTC.
+You get **250 turns every 4 hours**.
 
 - Moving one sector costs 1 turn
 - Warping (once you have a warp drive) costs turns based on distance
