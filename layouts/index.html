@@ -111,18 +111,44 @@
 
   <!-- Navigation -->
   <nav class="fixed top-8 left-0 right-0 z-50 bg-terminal-bg/90 backdrop-blur-sm border-b border-terminal-border">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
+    <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2 sm:gap-3">
         <img src="/big-bang-smugglers.png" alt="Big Bang Smugglers" class="w-7 h-7 rounded-sm" />
-        <span class="font-mono font-semibold text-phosphor-cyan text-sm tracking-widest uppercase glow-cyan">Big Bang Smugglers</span>
+        <span class="font-mono font-semibold text-phosphor-cyan text-xs sm:text-sm tracking-widest uppercase glow-cyan">Big Bang Smugglers</span>
       </div>
-      <div class="flex items-center gap-6">
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6">
         <a href="/guide" class="font-mono text-sm text-gray-500 hover:text-phosphor-cyan transition-colors duration-200 tracking-wide">Guide</a>
         <a href="/release-notes" class="font-mono text-sm text-gray-500 hover:text-phosphor-cyan transition-colors duration-200 tracking-wide">Releases</a>
         <a href="https://discord.gg/bigbangsmugglers" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-cyan/40 text-phosphor-cyan px-4 py-1.5 hover:bg-phosphor-cyan/10 transition-all duration-200 tracking-wide">Discord</a>
       </div>
+      <!-- Mobile hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden text-phosphor-cyan p-1" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-terminal-border bg-terminal-bg/95 backdrop-blur-sm">
+      <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+        <a href="/guide" class="font-mono text-sm text-gray-500 hover:text-phosphor-cyan transition-colors duration-200 tracking-wide">Guide</a>
+        <a href="/release-notes" class="font-mono text-sm text-gray-500 hover:text-phosphor-cyan transition-colors duration-200 tracking-wide">Releases</a>
+        <a href="https://discord.gg/bigbangsmugglers" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-cyan/40 text-phosphor-cyan px-4 py-1.5 hover:bg-phosphor-cyan/10 transition-all duration-200 tracking-wide text-center">Discord</a>
+      </div>
     </div>
   </nav>
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      var menu = document.getElementById('mobile-menu');
+      var iconOpen = document.getElementById('menu-icon-open');
+      var iconClose = document.getElementById('menu-icon-close');
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+      this.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center pt-24 scanlines grid-bg">
