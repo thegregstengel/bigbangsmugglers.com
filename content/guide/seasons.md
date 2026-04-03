@@ -43,9 +43,15 @@ The Leaderboard screen shows your current rank in the active season, top players
 
 ## Season End
 
-When a season ends, your standing is locked, the galaxy closes and you are removed from it, your ship and assets reset for the next season, and your final rank is saved to your permanent season history.
+When a season approaches its end date, the game begins a structured wind-down:
 
-The feed notifies you before the close, giving you time to finish trades, collect planet production, and make your final moves.
+1. **Countdown warnings** fire at consistent intervals in the feed and via in-app notifications, giving you advance notice to wrap up.
+2. **Grace period (24 hours):** After the scheduled end time, a 24-hour grace period activates. You can still trade, fight, and complete missions during the grace period, but the countdown is visible and final.
+3. **Season close:** When the grace period ends, the season locks. Your final standing is recorded, the galaxy closes, and you are removed from it.
+4. **Recap screen:** After the season closes, a recap screen shows your final stats — rank, XP, credits earned, and season record. This is your summary of the campaign.
+5. **Archival:** Season data is exported to long-term storage and the galaxy is cleaned up for the next season.
+
+Your ship and assets reset for the next season. Your final rank is saved to your permanent season history.
 
 ## New Season Strategy
 
