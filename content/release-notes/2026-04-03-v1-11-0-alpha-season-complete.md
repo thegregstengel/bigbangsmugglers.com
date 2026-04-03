@@ -1,11 +1,11 @@
 ---
-title: "v1.2 — Alpha Season Complete"
+title: "v1.11.0 — Alpha Season Complete"
 date: 2026-04-03T12:00:00-04:00
 type: blog
-description: "v1.2 closes the first alpha season with season-end recap, trader reputation pricing, in-app notifications, feed reactions, player feedback, and infrastructure fixes."
+description: "v1.11.0 closes the first alpha season with season-end recap, trader reputation pricing, in-app notifications, feed reactions, player feedback, and infrastructure fixes."
 ---
 
-Big Bang Smugglers v1.2 closes out the first alpha season and hands the ship over to beta. Here is what changed.
+Big Bang Smugglers v1.11.0 closes out the first alpha season and hands the ship over to beta. Here is what changed.
 
 ## Season End Recap
 
