@@ -25,6 +25,9 @@ Every ship class in the game. Federation and Pirate lines, six roles, five tiers
 ### [Trading & Economy](trading)
 How to find profitable routes, understand price mechanics, and maximize credits per run.
 
+### [Trader Reputation & Faction Alignment](reputation-factions)
+How your trader reputation and faction alignment scores affect port prices, what changes each one, and how the two systems interact.
+
 ### [Smuggling & Contraband](smuggling)
 How to run contraband, evade Federation patrols, use the black market, and protect your cargo with cloaking devices.
 
