@@ -103,9 +103,9 @@
 <body class="min-h-screen bg-terminal-bg text-gray-300 overflow-x-hidden font-sans">
 
   <!-- Alpha Banner -->
-  <div class="fixed top-0 left-0 right-0 z-50 bg-phosphor-amber/10 border-b border-phosphor-amber/20 text-center py-2 px-4">
-    <p class="font-mono text-xs text-phosphor-amber sm:tracking-wider glow-amber">
-      IN PRIVATE ALPHA — <a href="https://www.reddit.com/r/bigbangsmugglers/" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-white transition-colors">Join r/bigbangsmugglers</a><span class="hidden sm:inline"> to request early access</span>
+  <div class="fixed top-0 left-0 right-0 z-50 bg-phosphor-cyan/10 border-b border-phosphor-cyan/20 text-center py-2 px-4">
+    <p class="font-mono text-xs text-phosphor-cyan sm:tracking-wider glow-cyan">
+      v1.2 NOW AVAILABLE — <a href="#whats-new" class="underline underline-offset-2 hover:text-white transition-colors">See what's new</a><span class="hidden sm:inline"> · Public beta coming soon</span>
     </p>
   </div>
 
@@ -397,8 +397,96 @@
     </div>
   </section>
 
+  <!-- What's New in v1.2 -->
+  <section id="whats-new" class="py-24 bg-terminal-bg grid-bg relative">
+    <div class="container mx-auto px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-mono text-xs text-phosphor-green glow-green">!</span>
+        <span class="font-mono text-xs text-gray-600 tracking-widest uppercase">changelog // v1.2</span>
+      </div>
+      <h2 class="font-mono text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+        What's New in v1.2
+      </h2>
+      <p class="text-gray-500 text-sm mb-12 max-w-2xl">Alpha is over. Beta is next. v1.2 is now available on Google Play.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mb-16">
+        <!-- Season End Recap -->
+        <div class="terminal-card border border-terminal-border hover:border-phosphor-amber/30 p-6 group">
+          <div class="font-mono text-xs text-phosphor-amber mb-4 tracking-wider glow-amber">[SEASONS]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-amber transition-colors">Season End Recap</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            When a season closes, you now see a full breakdown of your run: stats, final ranks, and the top captains in each category before you return to the lobby.
+          </p>
+        </div>
+
+        <!-- Trader Reputation Pricing -->
+        <div class="terminal-card border border-terminal-border hover:border-phosphor-cyan/30 p-6 group">
+          <div class="font-mono text-xs text-phosphor-cyan mb-4 tracking-wider glow-cyan">[ECONOMY]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-cyan transition-colors">Trader Reputation Pricing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Killing NPC traders now follows you to every port. A new Trader Reputation score determines whether ports cut you a deal or charge a premium. Stacks with faction alignment.
+          </p>
+        </div>
+
+        <!-- In-App Notifications -->
+        <div class="terminal-card border border-terminal-border hover:border-purple-500/30 p-6 group">
+          <div class="font-mono text-xs text-purple-400 mb-4 tracking-wider" style="text-shadow: 0 0 8px rgba(168,85,247,0.4);">[COMMS]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors">In-App Notifications</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Mission alerts and admin messages now appear as in-app popups and toasts, so you do not have to keep an eye on the feed to know what is happening.
+          </p>
+        </div>
+
+        <!-- Feed Reactions -->
+        <div class="terminal-card border border-terminal-border hover:border-phosphor-red/30 p-6 group">
+          <div class="font-mono text-xs text-phosphor-red mb-4 tracking-wider glow-red">[SOCIAL]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-red transition-colors">Feed Reactions</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            React to galaxy events with five new reactions. Reaction counts are visible to everyone. Your active reactions are highlighted.
+          </p>
+        </div>
+
+        <!-- Feedback Form -->
+        <div class="terminal-card border border-terminal-border hover:border-phosphor-green/30 p-6 group">
+          <div class="font-mono text-xs text-phosphor-green mb-4 tracking-wider glow-green">[FEEDBACK]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-green transition-colors">Player Feedback</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            A feedback form is now available in Settings. Report bugs, request features, or leave general impressions. Submissions go directly to the development team.
+          </p>
+        </div>
+
+        <!-- Season Countdown -->
+        <div class="terminal-card border border-terminal-border hover:border-phosphor-amber/30 p-6 group">
+          <div class="font-mono text-xs text-phosphor-amber mb-4 tracking-wider glow-amber">[ALERTS]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-amber transition-colors">Season Countdown Alerts</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Push notifications fire at milestone intervals as a season approaches its end. Make your final moves and fight for your leaderboard position.
+          </p>
+        </div>
+      </div>
+
+      <!-- Beta Transition Banner -->
+      <div class="border border-phosphor-cyan/20 bg-terminal-surface p-8 max-w-3xl mx-auto text-center">
+        <p class="font-mono text-xs text-phosphor-cyan tracking-widest uppercase mb-4 glow-cyan">Transmission Incoming</p>
+        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Alpha Season Complete. Beta Begins Soon.</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xl mx-auto">
+          We are shifting from private alpha to public beta. Beta means wider access, longer seasons, and a more stable game loop.
+          If you played the alpha &mdash; thank you. The feedback and gameplay data from Season 1 directly shaped what v1.2 became.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-green/50 text-phosphor-green px-6 py-2.5 hover:bg-phosphor-green/10 transition-all duration-200 tracking-wider">
+            Download v1.2
+          </a>
+          <a href="/release-notes/2026-04-03-v1-2-0-alpha-season-complete/" class="font-mono text-sm border border-terminal-border text-gray-500 px-6 py-2.5 hover:border-gray-600 hover:text-gray-400 transition-all duration-200 tracking-wider">
+            Full Release Notes
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Final CTA -->
-  <section class="py-24 bg-terminal-bg grid-bg relative">
+  <section class="py-24 bg-terminal-surface border-y border-terminal-border">
     <div class="container mx-auto px-6 text-center">
       <p class="font-mono text-xs text-gray-600 tracking-[0.3em] uppercase mb-8">sys.status // season_active</p>
 
