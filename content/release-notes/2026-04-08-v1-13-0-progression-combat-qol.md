@@ -1,6 +1,6 @@
 ---
 title: "v1.13.0 — Progression, Combat, and QoL"
-date: 2026-04-08T18:15:00-04:00
+date: 2026-04-08T17:15:00-04:00
 type: blog
 description: "v1.13.0 redesigns cargo hold upgrades, improves combat and movement reliability, fixes wallet and upgrade validation edge cases, and folds faction reputation into the Stats screen."
 ---
