@@ -1,11 +1,11 @@
 ---
-title: "v1.14.0 — Security Hardening and Web Launch Prep"
+title: "v1.14.1 — Security Hardening and Web Launch Prep"
 date: 2026-04-09T12:00:00-04:00
 type: blog
-description: "v1.14.0 strengthens account and session security across all platforms, adds clickable links to notifications, fixes cargo hold upgrade costs in starport shipyards, and prepares the app for browser-based play."
+description: "v1.14.1 strengthens account and session security across all platforms, adds clickable links to notifications, fixes cargo hold upgrade costs in starport shipyards, and prepares the app for browser-based play."
 ---
 
-v1.14.0 is a security-focused release that hardens account protection, improves session safety, and lays the groundwork for the upcoming web launch.
+v1.14.1 is a security-focused release that hardens account protection, improves session safety, and lays the groundwork for the upcoming web launch.
 
 ## Stronger Account and Session Security
 
@@ -30,3 +30,7 @@ The five-tier cargo hold upgrade display now appears correctly in starport shipy
 ## Season Ending Improvements
 
 Season endings can now be triggered immediately when needed, instead of requiring a minimum one-day countdown. This gives us more flexibility to wrap up seasons cleanly during events or maintenance windows.
+
+## Stability Fixes
+
+Fixed an issue where the Android app could hang on startup under certain conditions. Resolved various configuration issues in preparation for the upcoming web client.

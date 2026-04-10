@@ -1,6 +1,6 @@
 ---
 title: "Big Bang Smugglers"
-description: "Turn-based space trading for Android. Two factions. 250 turns every 4 hours."
+description: "Turn-based space trading for Android. Web coming soon. Two factions. 250 turns every 4 hours."
 sidebar:
   exclude: true
 toc: false
@@ -8,7 +8,7 @@ toc: false
 
 # TRADE. FIGHT. SMUGGLE.
 
-Turn-based space trading for Android. Two factions. Three commodities. 250 turns every 4 hours. Every 30 days, the galaxy resets.
+Turn-based space trading for Android. Two factions. Three commodities. 250 turns every 4 hours. Every 30 days, the galaxy resets. Web version coming soon.
 
 [Download on Google Play](https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers){.button}
 
