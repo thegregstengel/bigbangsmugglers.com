@@ -1,6 +1,6 @@
 ---
 title: "v1.14.0 — Security Hardening and Web Launch Prep"
-date: 2026-04-09T17:30:00-04:00
+date: 2026-04-09T12:00:00-04:00
 type: blog
 description: "v1.14.0 strengthens account and session security across all platforms, adds clickable links to notifications, fixes cargo hold upgrade costs in starport shipyards, and prepares the app for browser-based play."
 ---
