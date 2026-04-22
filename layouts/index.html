@@ -105,7 +105,7 @@
   <!-- Alpha Banner -->
   <div class="fixed top-0 left-0 right-0 z-50 bg-phosphor-cyan/10 border-b border-phosphor-cyan/20 text-center py-2 px-4">
     <p class="font-mono text-xs text-phosphor-cyan sm:tracking-wider glow-cyan">
-      v1.14.4 NOW AVAILABLE — <a href="#whats-new" class="underline underline-offset-2 hover:text-white transition-colors">See what's new</a><span class="hidden sm:inline"> · Bugfix release out now</span>
+      v1.15.0 NOW AVAILABLE — <a href="#whats-new" class="underline underline-offset-2 hover:text-white transition-colors">See what's new</a><span class="hidden sm:inline"> · Early release out now</span>
     </p>
   </div>
 
@@ -397,52 +397,52 @@
     </div>
   </section>
 
-  <!-- What's New in v1.14.4 -->
+  <!-- What's New in v1.15.0 -->
   <section id="whats-new" class="py-24 bg-terminal-bg grid-bg relative">
     <div class="container mx-auto px-6">
       <div class="flex items-center gap-3 mb-4">
         <span class="font-mono text-xs text-phosphor-green glow-green">!</span>
-        <span class="font-mono text-xs text-gray-600 tracking-widest uppercase">changelog // v1.14.4</span>
+        <span class="font-mono text-xs text-gray-600 tracking-widest uppercase">changelog // v1.15.0</span>
       </div>
       <h2 class="font-mono text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-        What's New in v1.14.4
+        What's New in v1.15.0
       </h2>
-      <p class="text-gray-500 text-sm mb-12 max-w-2xl">v1.14.4 fixes sector crowding, duplicate pirate encounters, combat modal lockups, Sector Intelligence visibility, Federation reputation gains, ship stat mismatches, and in-sector player detail visibility.</p>
+      <p class="text-gray-500 text-sm mb-12 max-w-2xl">v1.15.0 improves trading, repair, travel, and UI stability while adding faster beacon movement tools.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mb-16">
-        <!-- Sector Traffic -->
+        <!-- Trading -->
         <div class="terminal-card border border-terminal-border hover:border-phosphor-amber/30 p-6 group">
-          <div class="font-mono text-xs text-phosphor-amber mb-4 tracking-wider glow-amber">[SECTORS]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-amber transition-colors">Sector Traffic Cleanup</h3>
+          <div class="font-mono text-xs text-phosphor-amber mb-4 tracking-wider glow-amber">[TRADING]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-amber transition-colors">Trading Fixes</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Federation patrol ships no longer crowd into a single sector, so space traffic is distributed more cleanly.
+            Max buy now respects hold capacity and available stock, so cargo calculations stop overshooting what your ship can actually carry.
           </p>
         </div>
 
-        <!-- Combat -->
+        <!-- Repair -->
         <div class="terminal-card border border-terminal-border hover:border-phosphor-cyan/30 p-6 group">
-          <div class="font-mono text-xs text-phosphor-cyan mb-4 tracking-wider glow-cyan">[COMBAT]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-cyan transition-colors">Cleaner Encounter Resolution</h3>
+          <div class="font-mono text-xs text-phosphor-cyan mb-4 tracking-wider glow-cyan">[REPAIR]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-cyan transition-colors">Repair Station Reliability</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Pirates now clear properly after wins, and the ambush flow no longer stacks overlapping combat result screens.
+            Repair Station behavior now lines up with real ship state, including the repair and refill flows players were seeing fail or misreport.
           </p>
         </div>
 
-        <!-- Intel -->
+        <!-- Stability -->
         <div class="terminal-card border border-terminal-border hover:border-purple-500/30 p-6 group">
-          <div class="font-mono text-xs text-purple-400 mb-4 tracking-wider" style="text-shadow: 0 0 8px rgba(168,85,247,0.4);">[INTEL]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors">Clearer Sector Feedback</h3>
+          <div class="font-mono text-xs text-purple-400 mb-4 tracking-wider" style="text-shadow: 0 0 8px rgba(168,85,247,0.4);">[STABILITY]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors">Stability and State Cleanup</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Sector Intelligence now applies correctly, and in-sector presence now shows who is there and what ship they are flying.
+            This release fixes Nav load failures, profile name saves, corp access state, planet personnel refresh issues, PvP immunity enforcement, and advanced upgrade state display.
           </p>
         </div>
 
-        <!-- Progression -->
+        <!-- Beacon -->
         <div class="terminal-card border border-terminal-border hover:border-phosphor-green/30 p-6 group">
-          <div class="font-mono text-xs text-phosphor-green mb-4 tracking-wider glow-green">[PROGRESSION]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-green transition-colors">Reputation and Stat Fixes</h3>
+          <div class="font-mono text-xs text-phosphor-green mb-4 tracking-wider glow-green">[BEACONS]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-green transition-colors">Beacon Travel Tools</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Federation reputation now awards correctly after qualifying combat, and ship fighter/torpedo max stats now match shipyard limits.
+            Beacons are easier to use now: you can recall or destroy your own beacon and warp directly from beacon cards when your ship has a warp drive.
           </p>
         </div>
       </div>
@@ -450,16 +450,16 @@
       <!-- Beta Transition Banner -->
       <div class="border border-phosphor-cyan/20 bg-terminal-surface p-8 max-w-3xl mx-auto text-center">
         <p class="font-mono text-xs text-phosphor-cyan tracking-widest uppercase mb-4 glow-cyan">Transmission Incoming</p>
-        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Bugfix Release Live</h3>
+        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">v1.15.0 Release Live</h3>
         <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xl mx-auto">
-          v1.14.4 cleans up sector traffic, combat flow, intel feedback, reputation gains, and ship stat accuracy.
+          v1.15.0 makes everyday trading and travel feel smoother while cleaning up several frustrating state bugs.
           Download now on Google Play and jump back in.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-green/50 text-phosphor-green px-6 py-2.5 hover:bg-phosphor-green/10 transition-all duration-200 tracking-wider">
-            Download v1.14.4
+            Download v1.15.0
           </a>
-          <a href="/release-notes/2026-04-21-v1-14-4-combat-intel-and-sector-stability/" class="font-mono text-sm border border-terminal-border text-gray-500 px-6 py-2.5 hover:border-gray-600 hover:text-gray-400 transition-all duration-200 tracking-wider">
+          <a href="/release-notes/2026-04-22-v1-15-0-trading-repair-and-beacon-travel-fixes/" class="font-mono text-sm border border-terminal-border text-gray-500 px-6 py-2.5 hover:border-gray-600 hover:text-gray-400 transition-all duration-200 tracking-wider">
             Full Release Notes
           </a>
         </div>
