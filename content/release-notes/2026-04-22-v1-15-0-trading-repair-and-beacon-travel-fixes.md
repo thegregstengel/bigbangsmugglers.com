@@ -1,6 +1,6 @@
 ---
 title: "v1.15.0 — Trading, Repair, and Beacon Travel Fixes"
-date: 2026-04-22T18:00:00-04:00
+date: 2026-04-22T17:59:00Z
 type: blog
 description: "v1.15.0 improves port trading, Repair Station reliability, navigation stability, and beacon travel quality of life across the live Android release."
 ---
