@@ -105,7 +105,7 @@
   <!-- Alpha Banner -->
   <div class="fixed top-0 left-0 right-0 z-50 bg-phosphor-cyan/10 border-b border-phosphor-cyan/20 text-center py-2 px-4">
     <p class="font-mono text-xs text-phosphor-cyan sm:tracking-wider glow-cyan">
-      v1.14.3 NOW AVAILABLE — <a href="#whats-new" class="underline underline-offset-2 hover:text-white transition-colors">See what's new</a><span class="hidden sm:inline"> · Early release out now</span>
+      v1.14.4 NOW AVAILABLE — <a href="#whats-new" class="underline underline-offset-2 hover:text-white transition-colors">See what's new</a><span class="hidden sm:inline"> · Bugfix release out now</span>
     </p>
   </div>
 
@@ -397,52 +397,52 @@
     </div>
   </section>
 
-  <!-- What's New in v1.14.3 -->
+  <!-- What's New in v1.14.4 -->
   <section id="whats-new" class="py-24 bg-terminal-bg grid-bg relative">
     <div class="container mx-auto px-6">
       <div class="flex items-center gap-3 mb-4">
         <span class="font-mono text-xs text-phosphor-green glow-green">!</span>
-        <span class="font-mono text-xs text-gray-600 tracking-widest uppercase">changelog // v1.14.3</span>
+        <span class="font-mono text-xs text-gray-600 tracking-widest uppercase">changelog // v1.14.4</span>
       </div>
       <h2 class="font-mono text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-        What's New in v1.14.3
+        What's New in v1.14.4
       </h2>
-      <p class="text-gray-500 text-sm mb-12 max-w-2xl">v1.14.3 smooths out first-time account setup, keeps invite-only access scoped to the web flow, and cleans up version display inside the app.</p>
+      <p class="text-gray-500 text-sm mb-12 max-w-2xl">v1.14.4 fixes sector crowding, duplicate pirate encounters, combat modal lockups, Sector Intelligence visibility, Federation reputation gains, ship stat mismatches, and in-sector player detail visibility.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mb-16">
-        <!-- New Captain Flow -->
+        <!-- Sector Traffic -->
         <div class="terminal-card border border-terminal-border hover:border-phosphor-amber/30 p-6 group">
-          <div class="font-mono text-xs text-phosphor-amber mb-4 tracking-wider glow-amber">[ONBOARDING]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-amber transition-colors">Cleaner First Launch</h3>
+          <div class="font-mono text-xs text-phosphor-amber mb-4 tracking-wider glow-amber">[SECTORS]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-amber transition-colors">Sector Traffic Cleanup</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            New captains now move through account setup in a clearer order, with fewer dead ends before they enter the galaxy.
+            Federation patrol ships no longer crowd into a single sector, so space traffic is distributed more cleanly.
           </p>
         </div>
 
-        <!-- Invite Access -->
+        <!-- Combat -->
         <div class="terminal-card border border-terminal-border hover:border-phosphor-cyan/30 p-6 group">
-          <div class="font-mono text-xs text-phosphor-cyan mb-4 tracking-wider glow-cyan">[INVITES]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-cyan transition-colors">Web Invite Access</h3>
+          <div class="font-mono text-xs text-phosphor-cyan mb-4 tracking-wider glow-cyan">[COMBAT]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-cyan transition-colors">Cleaner Encounter Resolution</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Invite codes remain part of the web onboarding flow while mobile setup stays direct and streamlined.
+            Pirates now clear properly after wins, and the ambush flow no longer stacks overlapping combat result screens.
           </p>
         </div>
 
-        <!-- Cross-Platform Consistency -->
+        <!-- Intel -->
         <div class="terminal-card border border-terminal-border hover:border-purple-500/30 p-6 group">
-          <div class="font-mono text-xs text-purple-400 mb-4 tracking-wider" style="text-shadow: 0 0 8px rgba(168,85,247,0.4);">[ACCESS]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors">Streamlined Mobile Setup</h3>
+          <div class="font-mono text-xs text-purple-400 mb-4 tracking-wider" style="text-shadow: 0 0 8px rgba(168,85,247,0.4);">[INTEL]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors">Clearer Sector Feedback</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Android and iOS keep the cleaner account activation flow without inheriting the separate web-only invite step.
+            Sector Intelligence now applies correctly, and in-sector presence now shows who is there and what ship they are flying.
           </p>
         </div>
 
-        <!-- Polish -->
+        <!-- Progression -->
         <div class="terminal-card border border-terminal-border hover:border-phosphor-green/30 p-6 group">
-          <div class="font-mono text-xs text-phosphor-green mb-4 tracking-wider glow-green">[POLISH]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-green transition-colors">Version Display Cleanup</h3>
+          <div class="font-mono text-xs text-phosphor-green mb-4 tracking-wider glow-green">[PROGRESSION]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-green transition-colors">Reputation and Stat Fixes</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            The release also cleans up a few rough edges around how the latest build is presented inside the app.
+            Federation reputation now awards correctly after qualifying combat, and ship fighter/torpedo max stats now match shipyard limits.
           </p>
         </div>
       </div>
@@ -450,16 +450,16 @@
       <!-- Beta Transition Banner -->
       <div class="border border-phosphor-cyan/20 bg-terminal-surface p-8 max-w-3xl mx-auto text-center">
         <p class="font-mono text-xs text-phosphor-cyan tracking-widest uppercase mb-4 glow-cyan">Transmission Incoming</p>
-        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Early Release Out Now</h3>
+        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Bugfix Release Live</h3>
         <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xl mx-auto">
-          v1.14.3 keeps web invite access where it belongs and leaves mobile onboarding smoother for new captains.
-          Download now on Google Play and jump in.
+          v1.14.4 cleans up sector traffic, combat flow, intel feedback, reputation gains, and ship stat accuracy.
+          Download now on Google Play and jump back in.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-green/50 text-phosphor-green px-6 py-2.5 hover:bg-phosphor-green/10 transition-all duration-200 tracking-wider">
-            Download v1.14.3
+            Download v1.14.4
           </a>
-          <a href="/release-notes/2026-04-21-v1-14-3-onboarding-and-web-invite-access/" class="font-mono text-sm border border-terminal-border text-gray-500 px-6 py-2.5 hover:border-gray-600 hover:text-gray-400 transition-all duration-200 tracking-wider">
+          <a href="/release-notes" class="font-mono text-sm border border-terminal-border text-gray-500 px-6 py-2.5 hover:border-gray-600 hover:text-gray-400 transition-all duration-200 tracking-wider">
             Full Release Notes
           </a>
         </div>
