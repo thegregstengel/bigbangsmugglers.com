@@ -105,7 +105,7 @@
   <!-- Alpha Banner -->
   <div class="fixed top-0 left-0 right-0 z-50 bg-phosphor-cyan/10 border-b border-phosphor-cyan/20 text-center py-2 px-4">
     <p class="font-mono text-xs text-phosphor-cyan sm:tracking-wider glow-cyan">
-      v1.15.0 NOW AVAILABLE — <a href="#whats-new" class="underline underline-offset-2 hover:text-white transition-colors">See what's new</a><span class="hidden sm:inline"> · Early release out now</span>
+      v1.16.0 NOW AVAILABLE — <a href="#whats-new" class="underline underline-offset-2 hover:text-white transition-colors">See what's new</a><span class="hidden sm:inline"> · Google Play release pending review</span>
     </p>
   </div>
 
@@ -397,52 +397,52 @@
     </div>
   </section>
 
-  <!-- What's New in v1.15.0 -->
+  <!-- What's New in v1.16.0 -->
   <section id="whats-new" class="py-24 bg-terminal-bg grid-bg relative">
     <div class="container mx-auto px-6">
       <div class="flex items-center gap-3 mb-4">
         <span class="font-mono text-xs text-phosphor-green glow-green">!</span>
-        <span class="font-mono text-xs text-gray-600 tracking-widest uppercase">changelog // v1.15.0</span>
+        <span class="font-mono text-xs text-gray-600 tracking-widest uppercase">changelog // v1.16.0</span>
       </div>
       <h2 class="font-mono text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-        What's New in v1.15.0
+        What's New in v1.16.0
       </h2>
-      <p class="text-gray-500 text-sm mb-12 max-w-2xl">v1.15.0 improves trading, repair, travel, and UI stability while adding faster beacon movement tools.</p>
+      <p class="text-gray-500 text-sm mb-12 max-w-2xl">v1.16.0 adds the new StarNav 2002 scanner system, giving ships a dedicated navigation intel upgrade with deeper progression and better nearby sector awareness.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mb-16">
-        <!-- Trading -->
+        <!-- Scanner -->
         <div class="terminal-card border border-terminal-border hover:border-phosphor-amber/30 p-6 group">
-          <div class="font-mono text-xs text-phosphor-amber mb-4 tracking-wider glow-amber">[TRADING]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-amber transition-colors">Trading Fixes</h3>
+          <div class="font-mono text-xs text-phosphor-amber mb-4 tracking-wider glow-amber">[SCANNER]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-amber transition-colors">New StarNav 2002</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Max buy now respects hold capacity and available stock, so cargo calculations stop overshooting what your ship can actually carry.
+            Install a permanent scanner upgrade for your ship in the TriStar Shipyard and turn navigation intel into a real progression path.
           </p>
         </div>
 
-        <!-- Repair -->
+        <!-- Progression -->
         <div class="terminal-card border border-terminal-border hover:border-phosphor-cyan/30 p-6 group">
-          <div class="font-mono text-xs text-phosphor-cyan mb-4 tracking-wider glow-cyan">[REPAIR]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-cyan transition-colors">Repair Station Reliability</h3>
+          <div class="font-mono text-xs text-phosphor-cyan mb-4 tracking-wider glow-cyan">[PROGRESSION]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-cyan transition-colors">5-Level Intel Progression</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Repair Station behavior now lines up with real ship state, including the repair and refill flows players were seeing fail or misreport.
+            Spend credits and XP to expand scanner range and detail level by level, revealing more about nearby sectors as you upgrade.
           </p>
         </div>
 
-        <!-- Stability -->
+        <!-- Nav -->
         <div class="terminal-card border border-terminal-border hover:border-purple-500/30 p-6 group">
-          <div class="font-mono text-xs text-purple-400 mb-4 tracking-wider" style="text-shadow: 0 0 8px rgba(168,85,247,0.4);">[STABILITY]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors">Stability and State Cleanup</h3>
+          <div class="font-mono text-xs text-purple-400 mb-4 tracking-wider" style="text-shadow: 0 0 8px rgba(168,85,247,0.4);">[NAV]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors">Dedicated Scanner View</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            This release fixes Nav load failures, profile name saves, corp access state, planet personnel refresh issues, PvP immunity enforcement, and advanced upgrade state display.
+            The Nav screen now shows a scanner card instead of the old Connected Sectors panel, making nearby sector awareness easier to read at a glance.
           </p>
         </div>
 
-        <!-- Beacon -->
+        <!-- Shipyard -->
         <div class="terminal-card border border-terminal-border hover:border-phosphor-green/30 p-6 group">
-          <div class="font-mono text-xs text-phosphor-green mb-4 tracking-wider glow-green">[BEACONS]</div>
-          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-green transition-colors">Beacon Travel Tools</h3>
+          <div class="font-mono text-xs text-phosphor-green mb-4 tracking-wider glow-green">[SHIPYARD]</div>
+          <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-green transition-colors">Ship-Based Upgrade Path</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Beacons are easier to use now: you can recall or destroy your own beacon and warp directly from beacon cards when your ship has a warp drive.
+            StarNav progression stays tied to the ship you install it on, giving captains a stronger reason to invest in their current build.
           </p>
         </div>
       </div>
@@ -450,16 +450,15 @@
       <!-- Beta Transition Banner -->
       <div class="border border-phosphor-cyan/20 bg-terminal-surface p-8 max-w-3xl mx-auto text-center">
         <p class="font-mono text-xs text-phosphor-cyan tracking-widest uppercase mb-4 glow-cyan">Transmission Incoming</p>
-        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">v1.15.0 Release Live</h3>
+        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">v1.16.0 Release Live</h3>
         <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xl mx-auto">
-          v1.15.0 makes everyday trading and travel feel smoother while cleaning up several frustrating state bugs.
-          Download now on Google Play and jump back in.
+          StarNav 2002 is now live. Install it in the TriStar Shipyard, expand your nearby sector intel as you level it up, and plan better routes directly from the Nav screen.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-green/50 text-phosphor-green px-6 py-2.5 hover:bg-phosphor-green/10 transition-all duration-200 tracking-wider">
-            Download v1.15.0
+            Download v1.16.0
           </a>
-          <a href="/release-notes/2026-04-22-v1-15-0-trading-repair-and-beacon-travel-fixes/" class="font-mono text-sm border border-terminal-border text-gray-500 px-6 py-2.5 hover:border-gray-600 hover:text-gray-400 transition-all duration-200 tracking-wider">
+          <a href="/release-notes/2026-04-23-v1-16-0-starnav-2002-scanner/" class="font-mono text-sm border border-terminal-border text-gray-500 px-6 py-2.5 hover:border-gray-600 hover:text-gray-400 transition-all duration-200 tracking-wider">
             Full Release Notes
           </a>
         </div>
