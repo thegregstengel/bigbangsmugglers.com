@@ -24,6 +24,18 @@ Master the fundamentals of Big Bang Smugglers.
 
 Each sector move costs 1 turn. Warp jumps cost turns based on distance. The Warp Optimizer tech upgrade reduces warp turn cost by 1.
 
+**Warp interruptions:** Long warp jumps can be intercepted by aggressive pirates. An interception forces combat — you cannot skip past the attacker. Interruption risk scales with warp distance.
+
+### Tesseract Drive
+
+The Tesseract Drive is a premium navigation upgrade that provides **instant, uninterruptible jumps** to any sector you have previously visited. Unlike standard warp, Tesseract jumps:
+
+- Cannot be intercepted or interrupted by pirates
+- Resolve instantly with no travel animation delay
+- Still cost turns based on distance
+
+Activate the Tesseract Drive from the Nav screen as an alternative to standard warp after installing it at a starport shipyard.
+
 ## Your Ship
 
 ### Ship Stats
@@ -39,6 +51,10 @@ Ships come in six roles across two faction lines:
 - **Balanced / Corsair**: Middle ground — Balanced ships have the highest shields, Corsairs have the highest escape rating
 
 See [Ships](/guide/ships) for the full catalog.
+
+### The Garage
+
+You can own multiple ships. When you buy a new ship, your old one goes into your **Garage** instead of being traded away. Switch your active ship from the Garage screen at any time. Sell stored ships from the garage or at any starport ship sales terminal.
 
 ### Maintenance
 - **Repair** at any starport for full restoration at a credit cost (auto-repairs to 50% at daily reset)
@@ -83,6 +99,12 @@ Alignment shifts gradually through play — trade in Federation space and run Fe
 ## Corporations
 
 Players can form corporations. Corps group players for social coordination, shared reputation, and co-management of planets. Corp membership and role appear on your profile and leaderboard card. Corp sizes scale dynamically with the galaxy's player cap. See your corp from the Settings screen.
+
+**Private corp chat:** Every corporation has a private chat channel visible only to members. Access it from the corp screen. Corp chat is separate from the public galaxy feed.
+
+**Corporation fleets:** Corp members in the same sector can form a fleet to attack together. The fleet leader initiates combat from the Battle Station screen. All fleet members' combat stats contribute to the fight, and loot is split and deposited to the corporation Starbase. See [Combat](/guide/combat) for fleet mechanics.
+
+**Corporation Starbase:** Corps can build a Starbase structure that holds a shared ship pool and cargo vault. Fleet loot is automatically deposited there after a fleet victory. See [Locations](/guide/locations) for details.
 
 ## Tips
 

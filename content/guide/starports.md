@@ -72,9 +72,9 @@ Nebula has been in the ship business long enough that half the vessels currently
 **Prize Vessels and Salvage**
 The inventory here changes constantly and the provenance of any given vessel is best left unexamined. Ships come in from captures, from salvage, from deals that went sideways for someone else. They are cleaned up, the more obvious damage is addressed, and they are priced to move. Trade-ins are accepted and the transaction will not appear anywhere official. Some of the best ships in pirate space started here.
 
-**What ship sales does:** Browse the full catalog of vessels available to your faction. Each ship shows its stats and XP requirement. Pay the price, trade in your old ship, and fly out in something better. Any cargo that does not fit in the new ship does not make the trip.
+**What ship sales does:** Browse the full catalog of vessels available to your faction. Each ship shows its stats and XP requirement. Pay the price and fly out in something new — your old ship moves to your **Garage** rather than being traded in, so you keep it. You can also sell any ship stored in your garage directly from the sales terminal. Any cargo that does not fit in the new ship is lost at purchase time.
 
-See the [Ships Guide](../ships) for full details on every vessel available.
+See the [Ships Guide](../ships) for full details on every vessel, the garage system, and how to sell stored ships.
 
 ---
 

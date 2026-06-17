@@ -84,6 +84,31 @@ Scientific facilities in isolated sectors where the research benefits from dista
 
 ---
 
+## Starbases
+
+Starbases are late-game player-built structures that provide persistent storage and services beyond what a ship alone can hold. They appear on the Nav screen in the sector where they were built.
+
+### Personal Starbase
+
+A personal Starbase is the capstone structure a captain can build for themselves. It provides:
+
+- **Credit vault** — store credits separately from your bank, accessible only when you are in the Starbase's sector
+- **Item vault** — deposit and withdraw cargo and equipment at any time you are docked
+
+Building a personal Starbase requires significant investment and cannot be moved once placed.
+
+### Corporation Starbase
+
+A corporation Starbase operates at the corporation level and is accessible to all corp members in the sector. It serves as:
+
+- **Ship pool** — corp members can retrieve ships stored in the Starbase's pool when they are in the sector
+- **Cargo vault** — fleet combat loot is deposited here automatically after a fleet victory
+- **Location-bound storage** — ships stored in the corp Starbase are tied to the sector where the Starbase was built; members must travel to that sector to access the pool
+
+Corp Starbases are managed by corporation officers. Access and deposit rules follow corp membership and rank.
+
+---
+
 ## Hazards
 
 Some sectors contain hazards that show on your scanner before you enter. Hazards are environmental — they do not attack you, but they affect navigation and combat conditions in the sector.
