@@ -20,7 +20,31 @@ Every ship has four core stats:
 
 Tier determines the base power level. Tier 1 ships are available to anyone. Tiers 2 through 5 require XP milestones before the seller will deal with you.
 
-Ships are purchased at starport ship sales terminals. Your old ship is traded in as partial payment. Any cargo that does not fit in your new ship is lost, so plan before you buy.
+Ships are purchased at starport ship sales terminals. When you buy a new ship your old vessel moves into your **Garage** rather than being lost — you can switch back or sell it later. Any cargo that does not fit in your new ship is lost at purchase time, so plan before you buy.
+
+## The Garage
+
+The Garage holds all the ships you own that are not currently active. Open it from the Ship screen to:
+
+- **View stored ships** and their current stats
+- **Switch active ship** — tap any stored ship and confirm to make it your active vessel (takes effect immediately)
+- **Sell a ship** — remove it from your garage for credits at current market value
+
+You must have garage space before buying a new ship. Garage capacity scales with your account level.
+
+## Buying Ships
+
+Browse the full catalog at any starport ship sales terminal. Ships show their stats, faction requirement, XP gate, and price. When you buy, your current active ship moves to your garage and the new ship becomes active. Cargo that does not fit the new hold is lost on purchase.
+
+## Selling Ships
+
+Sell any ship stored in your garage from the Garage screen, or sell your current active ship at a starport ship sales terminal. The sale price is based on the ship's tier and condition. Upgrades installed on the ship do not transfer when you sell.
+
+## Ship Destruction
+
+If your active ship is destroyed in combat (shields at zero when it loses a fight), it is gone permanently. Escape pods save your pilot. Your credits and XP carry over. If you have ships in the garage, one becomes active automatically. If you have none, you receive a replacement starter vessel.
+
+See [Combat](/guide/combat) for how to avoid destruction and what the depleted-defenses warning means.
 
 ---
 

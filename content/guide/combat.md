@@ -7,7 +7,7 @@ weight: 4
 toc: true
 ---
 
-Combat in Big Bang Smugglers is fast and automatic. When ships fight, the outcome is determined by their stats and a probabilistic resolution system with no manual inputs during the fight. Win and you loot the loser. Lose and your ship is disabled.
+Combat in Big Bang Smugglers is fast and automatic. When ships fight, the outcome is determined by their stats and a probabilistic resolution system with no manual inputs during the fight. Win and you loot the loser. Lose and your ship is disabled — or destroyed outright if your defenses were already depleted when the fight began.
 
 ## PvP Zones
 
@@ -28,6 +28,10 @@ The territory badge on the Nav screen shows your current status. A shield icon m
 To attack a player: be in the same pirate or neutral sector with PvP enabled, both ships undocked and not disabled, and neither under PvP immunity. Tap the players indicator, select your target, and tap Attack.
 
 The attacker spends 1 turn. Defenders use no turns.
+
+**Friendly-fire protection:** Corporation members cannot attack each other. Attempting to attack a corpmate is blocked automatically.
+
+**Attacking pirate ports:** Player-owned pirate ports can be attacked while you are in the same sector. Defeating the port's defenders loots credits and cargo from its storage.
 
 ## Combat Resolution
 
@@ -73,6 +77,7 @@ Federation-aligned ships defending in Federation Core get a 10% defense bonus. I
 - Cargo looted: up to 30% of the defender's cargo hold contents
 - Defender ship: disabled for roughly 2 minutes, then auto-repaired to 50% capacity
 - Defender receives 2 minutes of PvP immunity after recovery
+- If the defender's shields were already at zero before the fight, the ship is **destroyed** instead of disabled (see Ship Destruction below)
 
 If the defender wins, the same loot logic applies in reverse.
 
@@ -133,7 +138,6 @@ After every combat, a recap screen shows both sides' stats side by side: fighter
 - Combat AI Core — 15,000 cr — +20% fighter effectiveness permanently
 - Advanced Attack Systems — 22,000 cr, 6,000 XP required — +10% offense multiplier
 - Reinforced Armor Plating — 22,000 cr, 6,000 XP required — +10% defense multiplier
-- Emergency Escape Pods — 12,000 cr — +15% escape chance from NPC combat
 
 Restock fighters and torpedoes at any starport between fights.
 
@@ -150,6 +154,50 @@ Your Ship screen shows current Attack Power and Defense Power using the same for
 ## Ship Disable and Recovery
 
 When disabled you cannot move or take most actions. Your ship auto-repairs to 50% capacity at the next daily reset. You can manually repair at any starport for full restoration at a credit cost. If disabled in a dangerous sector, dock at a nearby port to prevent further attacks while you recover.
+
+---
+
+## Ship Destruction
+
+If your active ship's shields are at zero and it loses a combat, the ship is **permanently destroyed**. This is a step beyond a standard disable.
+
+### Depleted Defenses Warning
+
+When your active ship's defenses reach zero, you receive a prominent warning in the feed and on the Ship screen. A depleted ship is at risk of total destruction in the next combat it loses. Repair at any starport or retreat to safe space before engaging again.
+
+### Escape Pod Survival
+
+Destruction triggers an escape-pod cut-scene. Your pilot survives. Any cargo aboard the destroyed ship is lost, but your credits (wallet and bank) and XP carry over. If you own other ships stored in your garage, one becomes your new active ship automatically. If you have no backup ships, you respawn with a starter vessel.
+
+---
+
+## Fleet Combat
+
+Corporation members can form a fleet to fight together in the same sector.
+
+### Forming a Fleet
+
+Open the Battle Station screen while docked or in sector with other corp members. Tap **Form Fleet** to create a fleet, or **Join Fleet** if a corpmate has already formed one. The fleet leader initiates the attack; all fleet members' ships contribute to combat power.
+
+### Fleet Resolution
+
+Fleet combat pools all participating members' fighters, shields, and torpedoes into a combined combat power calculation. The opposing side fights the full fleet at once. Loot from fleet victories is split among members and deposited to the corporation Starbase cargo vault.
+
+### Leaving a Fleet
+
+Tap **Leave Fleet** in the Battle Station screen at any time. Leaving does not cost a turn.
+
+---
+
+## Warp Interruptions
+
+Long warp jumps can be interrupted mid-transit by pirates operating in the lanes. In v1.19.0, an auto-aggressive pirate who intercepts a warp now **forces combat immediately** — you cannot warp through and ignore the attacker. The probability of an interruption scales with warp distance: short hops carry low risk; sector-spanning jumps carry substantially higher risk. Combat that results from a warp interruption follows standard rules.
+
+---
+
+## Planet Fighter Deployables
+
+Fighters stationed at a planet garrison also engage during combat in that sector. When a hostile ship enters a sector where you have garrison fighters, those fighters contribute to the planet's defense alongside proximity mines. You can scan and recall your planet fighters from the planet screen.
 
 ---
 

@@ -64,6 +64,12 @@ When production is ready, navigate to your planet's sector, open the planet, and
 
 **Storage cap:** Base 1,000 units, plus 2,000 per Warehouse level. Production accumulates in storage if not collected, which is useful for batching collection runs.
 
+## Passive Export Income
+
+In addition to commodities, planets generate **passive credit income** directly to your bank on every production cycle. This income is calculated from your planet's output at current market export rates and deposited automatically — no collection trip required. The passive payout uses the stored output rate at cycle time, giving predictable deterministic ROI rather than fluctuating spot prices.
+
+Passive income scales with Factory level and population just like commodity production. At full development it provides meaningful revenue even during sessions when you cannot fly a collection run.
+
 ## Planet Storage
 
 You can deposit cargo from your ship into planet storage and withdraw stored commodities back to your ship's hold. This is useful for stockpiling before a trade run.
@@ -71,6 +77,10 @@ You can deposit cargo from your ship into planet storage and withdraw stored com
 ## Garrison Fighters
 
 Garrison fighters defend your planet from attack. Purchase fighters at any Starport, navigate to your planet, and tap Garrison Fighters. Fighters transfer from your ship's fighter bay to the planet and engage automatically when someone attacks. Shield Generator structures improve garrison defense effectiveness.
+
+**Scanning and recalling fighters:** You can scan your deployed garrison fighters from the planet screen to see the current count, and recall them back to your ship's fighter bay at any time. Recalled fighters return immediately and can be redeployed elsewhere.
+
+**Combat integration:** When a hostile ship enters a sector where you have garrison fighters, those fighters engage directly in any combat that occurs in that sector — they fight alongside your ship if you are present, or defend the planet on their own if you are not.
 
 ## Planet Attacks
 
