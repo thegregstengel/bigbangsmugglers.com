@@ -1,90 +1,130 @@
 ---
 title: "Galaxy & Territory"
-date: 2026-02-28
+date: 2026-07-02
 draft: false
-description: "How galaxies are structured, territory types, and what each zone means"
-weight: 2
+description: "How galaxies are structured, the six regions, territory types, and where PvP actually happens"
+weight: 3
 toc: true
 ---
 
-Every season takes place in a procedurally generated galaxy. It is a web of interconnected sectors with distinct territory types, regions, and rules.
+*Accurate as of v1.22.0 (July 2026).*
+
+Every season takes place in a procedurally generated galaxy: a web of interconnected sectors organized into six regions by distance from the center, with a territory overlay that determines law, ports, and who will shoot at you. Understanding the geography is the difference between a safe trade run and an ambush in the rim.
 
 ## Galaxy Structure
 
-The galaxy is divided into **sectors** connected by navigation links. Each sector has a sector number, a territory type (federation, neutral, or pirate), a region (from FED_CORE at the center to DEEP and PIRATE at the edges), and points of interest like ports, planets, landmarks, and wormholes.
+The galaxy is a grid of **sectors**. Sizes are chosen when the season is created: small (1,024 sectors), medium (4,096), large (16,384), or massive (65,536). Sectors are numbered by distance from the center — **Sector 0 is the exact center of the galaxy**, and the highest numbers sit on the outer rim. A low sector number means you are close to civilization; a high one means you are a long way from help.
 
-Navigation between sectors follows the link network. Every sector has between 2 and 4 neighbors. You move one sector at a time for 1 turn, or use a **warp drive** to jump multiple sectors at once.
+New players spawn at Sector 0, home of the Federation Starport.
 
-## Territory Types
+### Sector Links
 
-Territory is the most important property of a sector. It determines what you encounter, what is legal to carry, and what services are available.
+Movement follows the link network. Every sector links to its 2–4 adjacent grid neighbors (4 in the interior, fewer on the edges and corners), and some sectors have more:
+
+- About 1 in 5 sectors also links to its diagonal neighbors.
+- Federation Core sectors sometimes carry a long-range **Federation highway** link to a distant part of the galaxy.
+- Outer Rim sectors sometimes carry a one-way **smuggling route** exit to a random sector.
+
+Not every link works in both directions. Diagonal shortcuts, highways, and smuggling routes may be traversable from one side only — if you take an unusual exit, don't assume you can retrace your steps. Plan your return route before you commit.
+
+Each sector can hold points of interest — ports, planets, stations, landmarks — described in the [Locations guide](/guide/locations/). Wormholes are a special case: they only appear when you're standing in one of their endpoint sectors.
+
+## The Six Regions
+
+Regions are bands of distance from the galactic center. They set NPC spawn rates and mark where PvP is possible. From the safe core to the lawless rim:
+
+| Region | Where (distance from center) | Character |
+|--------|------------------------------|-----------|
+| FED_CORE | Innermost 10% | Federation heartland. Heavy patrols, zero pirates. Safe zone. |
+| FED_SPACE | 10–25% out | Federation-adjacent space. Well patrolled, still no pirates. |
+| INNER | 25–45% out | The first pirates appear (weak ones). Patrols still common. |
+| MIDDLE | 45–70% out | The working middle of the galaxy. Pirates at full strength, patrols thinning. |
+| OUTER | 70–90% out | Pirates common, patrols nearly gone. |
+| OUTER_RIM | Outermost 10% | The most dangerous pirates in the game, no patrols at all, and one-way smuggling routes. |
+
+There is no separate "danger rating" stat — danger in a region is the product of who spawns there, at what strength, and whether other players can attack you.
+
+## Territory: Federation, Neutral, Pirate
+
+Territory is an independent overlay on top of regions. The **innermost ~5% of sectors are Federation territory**, the **outermost ~5% are Pirate territory**, and everything in between is **Neutral Space** (the exact percentages can vary per galaxy). Territory determines law and infrastructure:
 
 ### Federation Space
 
-Safe, law-abiding, and actively patrolled.
+- **Pirates never appear here.** Not "won't attack first" — they do not spawn at all.
+- Patrols are everywhere and enforce contraband law. Federation-type ports run customs scans when you open their trade screen.
+- All the lawful port types operate here, and the Federation Starport sits at Sector 0.
+- **No PvP, ever** — Federation territory sits deep inside the safe core.
 
-- Pirate NPCs never attack first
-- Patrol NPCs enforce contraband laws
-- Carrying contraband here is illegal and will trigger customs scans
-- Ports include standard trading, Federation Starports, Tech Hubs, and repair stations
-- PvP is never enabled here, regardless of galaxy settings
-- New players spawn here
+### Neutral Space
 
-### Neutral / Unincorporated Space
+The vast middle of the galaxy. Contraband is still illegal — patrols operate here (thinning as you head outward) and Federation-type ports still run customs. Both pirates and patrols spawn, at rates set by the region you're in.
 
-The frontier between civilization and lawlessness.
-
-- Pirate NPCs attack first 33% of the time
-- Contraband is still illegal and patrol NPCs operate here
-- Ports include a mix of trading ports and independent stations
-- PvP is enabled when the galaxy has PvP turned on
+Most of Neutral Space is PvP-free. Only the neutral sectors that fall in the OUTER and OUTER_RIM regions allow PvP (see below).
 
 ### Pirate Space
 
-No law. High risk, high reward.
+The outer band. No law of any kind:
 
-- Pirate NPCs attack first 66% of the time
-- Contraband is legal to carry with no customs enforcement
-- Ports are pirate bases, black markets, and service stations only. Regular trading ports do not exist in pirate space.
-- PvP is enabled when the galaxy has PvP turned on
+- **Patrols never spawn here**, and there is no customs enforcement — contraband is effectively legal.
+- The only ports are pirate bases and black markets. None of the lawful port types generate in Pirate territory, and black markets generate *only* here.
+- The Pirate Starport sits in the middle of the pirate band.
+- Pirate NPCs are at their most aggressive (see the ambush table below).
 
-## Regions
+## Where PvP Happens
 
-Regions describe where a sector sits in the galaxy's geography. They affect NPC spawn rates and difficulty.
+PvP is gated by **territory**: when a galaxy has PvP enabled (the default), players can attack each other anywhere **outside Federation territory**. Federation territory — the innermost ~5% of sectors — is always safe no matter what the galaxy settings say. Neutral Space and Pirate territory are both fair game.
 
-| Region | Description | Danger |
-|--------|-------------|--------|
-| FED_CORE | Federation heartland | Minimal |
-| FED_SPACE | Federation territory | Low |
-| INNER | Inner systems | Low to Medium |
-| CORE | Central hub systems | Medium |
-| FRONTIER | Edge of known space | Medium |
-| OUTER | Outer rim | High |
-| PIRATE | Pirate-controlled | Very High |
-| DEEP | Deep space | Extreme |
-| NEBULA | Nebula sectors | Variable |
+Practical version: the territory badge is your safety indicator — shield means untouchable, sword means another player can shoot you. Danger still concentrates toward the rim in practice (that's where pirate players hunt), but there is no mechanically safe band of neutral space. If you're carrying a fortune, dock, park, bank, or take a wormhole.
 
-Higher-tier NPC ships appear in more dangerous regions. A Pirate tier 5 Warlord Battleship only shows up in PIRATE or DEEP space.
+## NPCs by Region
+
+Every move rolls a small chance of an NPC encounter. Three types roam the galaxy — pirates, Federation patrols, and traders — and where they concentrate follows the geography:
+
+- **Patrols** are thickest in the core (about 4× their base rate in FED_CORE, 3.5× in FED_SPACE), thin out through the middle, and are completely absent from the OUTER_RIM. They never spawn in Pirate territory.
+- **Pirates** don't exist in FED_CORE or FED_SPACE, appear weakly in INNER, and ramp up to 2× their base rate in the OUTER_RIM. They never spawn in Federation territory.
+- **Traders** are most common in the settled middle of the galaxy and scarce in the rim.
+
+Pirate ships also get tougher the further out you go: tiers 2–3 in INNER, 2–4 in MIDDLE, 3–4 in OUTER, and 3–5 in the OUTER_RIM. The tier 5 **Warlord Battleship** — the biggest pirate NPC in the game — spawns only in the OUTER_RIM.
+
+> **Naming trap:** the NPC "Warlord Battleship" (tier 5 pirate encounter) is a different ship from the **Warlord**, the tier 3 pirate raider players can buy at the Pirate Starport. Seeing a Warlord on the ship catalog does not mean you can fly the thing that ambushed you in the rim.
+
+### Pirate Ambush Odds Depend on YOUR Standing
+
+Whether a spawned pirate attacks first depends on your faction alignment and where you are:
+
+| Your alignment | Neutral Space | Pirate territory |
+|----------------|---------------|------------------|
+| Pirate-aligned (below −300) | Never ambushed | Never ambushed |
+| Neutral | 33% | 66% |
+| Federation-aligned (above +300) | 66% | Always |
+
+Two overrides: if you carry an active **pirate syndicate bounty**, pirates attack on sight regardless of alignment; if you carry an active **federation bounty**, patrols attack on sight. See [NPCs](/guide/npcs/) for what happens once an encounter fires.
 
 ## Reading the Nav Screen
 
-The Nav screen displays your current sector and its connections. Key information:
+The Nav screen shows your current sector and everything in it:
 
-- **Territory badge** shows federation, pirate, or neutral status and whether PvP is active (shield icon means safe, sword icon means PvP enabled)
-- **Sector number** is your unique sector identifier
-- **Neighbor grid** shows connected sectors you can move to directly
-- **Points of interest** lists ports, planets, and other features in this sector
-- **Players indicator** shows other players currently in this sector, visible in PvP zones
+- **Territory badge** — Federation, Neutral, or Pirate, with a shield icon (safe) or sword icon (PvP possible here).
+- **Sector number** — remember, lower = closer to the center.
+- **"Warp to" section** — despite the name, these buttons are **ordinary 1-turn moves** to adjacent sectors. The actual warp drive is the separate Warp Drive card.
+- **Points of interest** — ports, planets, stations, and landmarks in this sector, plus a Wormholes card when one is present.
+- **Players list** — every player with an active, undocked, unlanded, uncloaked ship in your sector, wherever you are. This list appears everywhere — in Federation territory it's information, everywhere else it's a target list (yours and theirs).
 
 ## Warp Drive
 
-Once you install a warp drive (available at starport shipyards), you can jump directly to any sector you have previously visited, regardless of how far away it is.
+A warp drive lets you jump multiple sectors in one action. Install one at a Starport shipyard for **15,000 cr** (requires a Tier 2+ ship and 100 XP); upgrades cost (next level × 15,000) cr up to level 5.
 
-- Warp costs turns based on distance
-- The Warp Optimizer tech upgrade reduces warp turn cost by 1
-- Warp can be interrupted by NPC encounters mid-route
-- You cannot warp to sectors you have not visited yet
+- **Visited sectors only.** You can warp to any sector already in your sector history. Tavern intel and Nav Beacon landmarks also add sectors to your history without visiting — see [Scanners & Intel](/guide/scanners-intel/).
+- **Cost**: turns = hops ÷ warp level, rounded up, minimum 1. The Warp Optimizer tech upgrade takes 1 more off (still minimum 1).
+- **Interruptions**: each hop has a small chance (about 5% on short jumps, capped near 30% across an entire journey) of an NPC encounter that halts the warp in that sector. Any NPC stops you, but only an auto-aggressive pirate forces combat — a patrol or trader just leaves you stranded mid-route. Unused turns are refunded proportionally.
+- **Arrival is not free**: enemy mines, sector defenses, and limpet trackers at the destination all still trigger. Hazards, however, never damage a warping ship — hazard damage only applies to plain moves.
 
-## Sector History
+The **Tesseract Drive** (10,000,000 cr, Tier 5 hull, level 100) is the endgame alternative: a flat **25 turns** to jump to any visited sector, any distance, with **zero chance of interruption**. Destination mines, defenses, and limpets still apply.
 
-Every sector you visit is recorded in your sector history. This powers warp targeting, the recent sectors list on the Nav screen, and beacon tracking. Your history persists for the life of the season and resets when a new season starts in a new galaxy.
+**Wormholes** are the third long-distance option — 1 turn, and the only travel that triggers nothing at all on arrival. See [Locations](/guide/locations/) for how they work.
+
+## Sector History & the Explored Map
+
+Every sector you visit is recorded: first visit, last visit, visit count, and what's there. Your history powers warp targeting, the Recent Sectors list on the Nav screen (your 8 most recent), and beacon tracking. It persists for the life of the season and starts fresh with the next galaxy.
+
+Exploration pays: your **first visit** to a sector awards XP — 10 base, +25 if it has a port, +50 for a planet, +100 for a landmark (scaled by the galaxy's XP multiplier).

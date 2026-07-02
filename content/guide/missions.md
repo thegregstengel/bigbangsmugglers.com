@@ -1,96 +1,112 @@
 ---
-title: "Missions, Goals & Streaks"
-date: 2026-04-01
+title: "Missions & Streaks"
+date: 2026-07-02
 draft: false
-description: "Mission types, daily contracts, goal milestones, and login streaks"
-weight: 10
+description: "Contract types, rewards, the one-mission rule, and turn streaks"
+weight: 13
 toc: true
 ---
 
-Missions give you structured objectives beyond free trading. They pay credits, XP, and faction reputation. Three categories exist: standard missions, daily missions, and event missions.
+*Accurate as of v1.22.0 (July 2026).*
 
-## Mission Types
+Missions are contracts you pick up at a Starport. They pay credits, XP, and faction reputation, and faction-flavored contracts also shift your alignment — Federation work pushes you toward the Federation, pirate work pushes you toward the pirates.
 
-### Standard Missions
+## Where to Find Missions
 
-Always available at the Mission Board at any Starport.
+Contracts are offered at exactly one place: the contracts office at either Starport.
 
-| Type | Faction | Description |
-|------|---------|-------------|
-| Courier | Federation / Neutral | Deliver cargo between sectors |
-| Patrol | Federation / Neutral | Clear NPCs from designated sectors |
-| Escort | Any | Protect a convoy through hostile space |
-| Bounty | Pirate | Hunt a specific NPC or player target |
-| Trade | Any | Execute trades at specified ports |
-| Smuggle | Pirate | Move contraband past enforcement |
-| Raid | Pirate | Attack and loot specified targets |
-| Recon | Any | Scout sectors and gather intelligence |
-| Resource Extraction | Any | Mine or harvest from planets |
+- **Federation Contract Office** — at the Federation Starport
+- **The Bounty Board** — at the pirate Starport
 
-Faction access governs which types you see:
+Watch the pirate name: **"The Bounty Board" is the missions office**, not the bounty office. Posting and collecting bounties happens at the Bounty Hunter Registry — see [Bounties](/guide/bounties/). Regular trade ports have no missions at all.
 
-- Federation-aligned or Neutral: Courier and Patrol missions
-- Pirate-aligned: Smuggle, Raid, and Bounty missions
-
-### Daily Missions
-
-One shared daily mission is available to all players in the galaxy. Claim it once from any Starport and complete it for a bonus reward on top of the normal payout. Daily missions reset each day.
-
-### Event Missions
-
-Event missions appear during special in-game events and show a countdown timer. Miss the window and they disappear.
-
-Mission cards in the Starport show category badges so you can identify type at a glance.
+The board is curated, not self-refilling. Contracts arrive in batches and the board can legitimately be empty — if nothing appeals, check back later.
 
 ---
 
-## Difficulty Tiers
+## Mission Types
 
-| Tier | Label | Reward Scale |
-|------|-------|-------------|
-| 1 | Easy | Base |
-| 2 | Medium | ~2x |
-| 3 | Hard | ~4x |
-| 4 | Elite | ~8x |
+Five types of contract appear on the board:
 
-Higher-tier missions may require minimum faction reputation, minimum alignment, or a specific ship class. Check requirements before accepting.
+| Type | What you do |
+|------|-------------|
+| Trade | Buy or sell specified commodities at ports |
+| Courier | Run a delivery or financial errand between locations |
+| Patrol | Defeat NPC ships in designated space — includes bounty-hunt style contracts |
+| Raid | Attack and disrupt targets (pirate work) |
+| Escort | Protect a convoy or merchant through hostile space |
+
+Every contract is open to every captain. There is no faction gating and no reputation, alignment, or ship-class requirement — if it's on the board, you can take it.
+
+### Categories
+
+- **Standard** — the regular board pool described above.
+- **Daily** — one shared daily contract per galaxy, marked with a DAILY badge. Each captain can claim it once.
+- **Special event** — time-limited contracts announced in the feed. They show up alongside standard contracts and vanish when the event window closes.
+
+### Difficulty and Rewards
+
+Contracts are labeled Easy, Medium, Hard, or Elite. Rewards are rolled per contract from that contract's own range — across the board roughly **2,000–35,000 credits**, **100–700 XP**, and **50–500 faction reputation**, plus an alignment shift on faction-flavored contracts (Federation +5 to +30, pirate −5 to −30). There is no fixed reward multiplier per difficulty tier: read the payout on the card. Harder contracts simply tend to carry bigger ranges.
+
+---
+
+## One Mission at a Time
+
+You can hold exactly **one active mission**. The accept button greys out until you complete or abandon your current contract.
+
+Plan around the single slot: take the contract that matches where you're already headed, and don't accept something you won't finish soon — it blocks everything else.
 
 ---
 
 ## Accepting and Completing
 
-Open the Mission Board at any Starport, browse, and tap Accept. Missions move to your Active Missions list on the Ship screen. You can run multiple missions simultaneously.
+Accept at the contracts office — it costs nothing, no credits and no turns. Your active contract is viewable on **Ship → Contracts** (abandoning happens back at the Starport office).
 
-Progress tracks automatically as you play. Common objective types: move to a sector, defeat NPC ships, trade at a port, claim or upgrade a planet, return to mission origin.
+**Progress tracks automatically** as you play:
 
-When all objectives are complete, return to any Starport and collect from your active missions list. Rewards deposit directly to your wallet.
+- Moving into sectors advances travel objectives
+- Defeating NPC ships advances Patrol, Raid, and Escort combat objectives
+- Buying and selling at ports advances Trade and Courier objectives
+- Scans, planet claims and upgrades, and bank transactions advance matching objectives
 
-Missions have expiry timers. If you do not complete before expiry, the mission fails.
+**Completion is automatic.** The moment your final objective is met, the mission completes on the spot — rewards land in your wallet immediately and a completion notice fires. There is no collection step and no return trip: even "return to origin" objectives finish on their own once everything else is done.
+
+### Abandoning
+
+Abandoning is free — no credit, reputation, or alignment penalty. But the contract is destroyed: your progress is lost and nobody, including you, can take it again.
+
+### Expiry
+
+Every contract has an expiry timer, and **accepting does not reset it** — you inherit whatever time was left on the board posting, so check the clock before you accept. An expired contract can no longer be completed — abandon it to free your mission slot.
+
+If the "missions" notification category is on in Settings, you get a push alert at roughly 24 hours remaining and again at roughly 1 hour.
 
 ---
 
-## Goals
+## Streaks
 
-Goals are cumulative milestones that reward long-term play. Each goal has three tiers — Bronze, Silver, and Gold — with increasing credit and XP payouts.
+The game rewards consecutive days of fully spending your turns — not just logging in.
 
-Goals track things like total trades completed, sectors explored, enemies defeated, and missions finished. Progress updates automatically. Claim rewards manually when you hit a threshold. Goals persist across sessions.
+**How a streak day counts:** run your turn balance all the way down to exactly 0, with a movement action as the final spend. Days are UTC calendar days.
 
----
+**Grace day:** each streak includes one free pass. Miss a single day and the streak survives; miss two in a row and it resets.
 
-## Login Streaks
+**Milestones:**
 
-The game tracks how many consecutive days you use your turns. Use your turns in a day and your streak advances. Miss a day and you lose it, though a grace day gives you one free pass per cycle before the streak resets.
+| Days | Reward |
+|------|--------|
+| 3 | 1,000 cr + 50 XP |
+| 7 | 5,000 cr + 200 XP + 5 bonus turns |
+| 14 | 10,000 cr + 500 XP |
+| 30 | 25,000 cr + 1,000 XP |
 
-**Milestone rewards at:** 3, 7, 14, and 30 consecutive days (credits and XP bonuses).
-
-Your current streak and next milestone are visible on the bounty board screen.
+Each milestone is claimable **once per account, ever** — milestone claims don't reset between seasons or when a streak breaks. Rewards are claimed from the streak card on **Ship → Stats**. (The in-app streak display and milestone claiming are currently being fixed; your streak is tracked regardless, and milestones remain claimable once the fix ships.)
 
 ---
 
 ## Tips
 
-- Stack compatible missions. Two courier missions in the same direction cost the same turns as one.
-- Patrol objectives align with clearing dangerous sectors — you would fight those NPCs anyway.
-- If you are already running contraband, pick up a smuggle mission in the same direction for bonus credits on top of your trade profit.
-- The daily mission is worth grabbing every session — the bonus payout stacks with whatever you were already doing.
-- Check requirements before accepting elite missions. Faction reputation thresholds can cause immediate failure.
+- One mission slot means opportunity cost. Take contracts along the route you were flying anyway.
+- Don't sit on a contract you won't finish. Abandoning is free — just know that contract is gone for good.
+- The daily contract is a free extra — claim it whenever you dock at a Starport.
+- Chasing a streak? End your day with a move that lands you on exactly 0 turns.

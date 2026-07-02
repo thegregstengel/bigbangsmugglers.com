@@ -8,58 +8,66 @@ cascade:
 
 Welcome to the Big Bang Smugglers official guide. Learn the mechanics, master the systems, and forge your legacy in the void.
 
+*Guide fully updated for v1.22.0 (July 2026).*
+
 ## Guide Sections
 
 ### [Getting Started](getting-started)
-Your first steps. Download the app, join a season, understand your starter ship, and make your first trade.
-
-### [Galaxy & Territory](galaxy-territory)
-How galaxies are structured, what territory types mean, and how to read the Nav screen.
+Your first steps. Download the app or play on the web, join a season, understand your starter ship, and make your first trade.
 
 ### [Gameplay Basics](gameplay)
-Core mechanics including navigation, ship stats, turns, credits, and faction territories.
+Core mechanics: movement, turns, warp and Tesseract travel, wormholes, landmarks, repair, and the wallet-versus-bank credit system.
 
-### [Ships](ships)
-Every ship class in the game. Federation and Pirate lines, six roles, five tiers each, with descriptions and how to choose the right one for your playstyle.
+### [Galaxy & Territory](galaxy-territory)
+How galaxies are structured, the six regions, territory types, where PvP actually happens, and how to read the Nav screen.
 
 ### [Trading & Economy](trading)
-How to find profitable routes, understand price mechanics, and maximize credits per run.
+How port prices really work, trade pressure, fees and taxes, cargo lots, and the routes that make money.
 
-### [Trader Reputation & Faction Alignment](reputation-factions)
-How your trader reputation and faction alignment scores affect port prices, what changes each one, and how the two systems interact.
-
-### [Smuggling & Contraband](smuggling)
-How to run contraband, evade Federation patrols, use the black market, and protect your cargo with cloaking devices.
-
-### [NPCs & Encounters](npcs)
-NPC ship types, aggression rates by territory, patrol enforcement, and what to expect in each region.
-
-### [Combat](combat)
-How combat resolves, PvP zone rules, loot mechanics, immunity, and upgrade priorities.
-
-### [Beacons & Mines](beacons-mines)
-Deploy navigation beacons to mark explored space and proximity mines to defend your planets.
+### [Ships](ships)
+Every ship class in the game. Federation and Pirate lines, six roles, five tiers each — plus the Hangar, ship destruction, and escape pods.
 
 ### [Tech Upgrades](tech-upgrades)
-Permanent ship improvements from Tech Hub ports covering cargo, shields, combat, stealth, and warp efficiency.
+Permanent ship improvements from the Upgrades service covering cargo, shields, combat, stealth, and warp efficiency — and the right order to buy them.
 
-### [Missions](missions)
-Mission types, difficulty tiers, how to accept and complete objectives, and how to stack missions efficiently.
+### [Combat](combat)
+How combat resolves, PvP zone rules, loot, disable and recovery, fleets, port sieges, and sector defenses.
 
-### [Starports](starports)
-Banking, shipyards, ship sales, missions, recruitment, and all other starport services — with full descriptions of every facility.
+### [NPCs & Encounters](npcs)
+Patrols, pirates, and traders: spawn rates by region, every encounter option with its real odds and costs, and what each NPC actually drops.
 
-### [Locations](locations)
-Ports, landmarks, stations, and hazards across the galaxy. What each type is, where to find them, and what to expect.
+### [Trader Reputation & Faction Alignment](reputation-factions)
+The two standing scores, everything that moves them, the full price-modifier ladders (buying and selling), and the access gates they control.
 
-### [Planets](planets)
-How to claim and develop planets for passive income, including structures, production formulas, and garrison defense.
+### [Smuggling & Contraband](smuggling)
+Contraband goods, the two detection systems, cloaking, real margins, and why a clean record is a smuggler's best tool.
 
-### [Seasons & Leaderboard](seasons)
-How seasons work, XP-based scoring, season end, and strategy for fresh-start galaxies.
+### [Deployables](deployables)
+Navigation beacons, proximity mines, limpet trackers, and sector-defense fighters — deploying them from the Bridge and what they mean for anyone flying through.
 
-### [Economy Formulas](economy-formulas)
-Precise formulas for power users covering trade pricing, combat resolution, planet production, and more.
+### [Scanners & Intel](scanners-intel)
+The StarNav 2002 scanner, active sector scans, buying intel, cloaking devices, and who can see your ship.
+
+### [Missions & Streaks](missions)
+Mission types, how accepting and completing works, the one-active-mission rule, expiry alerts, and turn-streak rewards.
 
 ### [Bounties](bounties)
-Post rewards on rival captains at any Starport. Bounties collect automatically when a hunter defeats the target in PvP.
+Player-posted and faction bounties: posting costs, how each type pays out, wanted status, and arrest at enemy starports.
+
+### [Starports](starports)
+All eight starport places at the Federation starport and the Pirate Haven — services, prices, and docking rules.
+
+### [Locations](locations)
+Ports, landmarks, stations, starbases, hazards, and wormholes across the galaxy. What each type is and what to expect.
+
+### [Planets](planets)
+Claiming and developing planets: all six structures, production and export income, garrisons, sieges, parking, and trading posts.
+
+### [Corporations & Fleets](corporations-fleets)
+Creating and running a corporation: roles, the corp bank, ship pool, corp starbases, and fleet combat.
+
+### [Seasons & Leaderboard](seasons)
+How seasons work, what persists between them, XP scoring, the six leaderboards, and season-end.
+
+### [Economy Formulas](economy-formulas)
+The live formulas for power users: trade pricing, combat resolution, planet production, NPC spawns, and contraband detection.

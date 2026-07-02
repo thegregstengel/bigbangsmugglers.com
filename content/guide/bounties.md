@@ -1,98 +1,114 @@
 ---
 title: "Bounties"
-date: 2026-04-01
+date: 2026-07-02
 draft: false
-description: "Post rewards on rival captains, collect faction contracts, and manage wanted status"
-weight: 11
+description: "Post rewards on rival captains, hunt wanted players, and manage your own wanted status"
+weight: 14
 toc: true
 ---
 
-The bounty system has two sides: player bounties that captains post on each other, and faction bounties that the Federation and Pirate organizations generate automatically. Both require traveling to a contract office to collect.
+*Accurate as of v1.22.0 (July 2026).*
+
+The bounty system has two sides, and they pay out differently:
+
+- **Player bounties** — posted by captains on each other — pay **automatically the moment the target is defeated**. No travel required.
+- **Faction bounties** — issued by the Federation and the Pirate Syndicate on troublemakers — are **two-step**: the kill creates a claim, and you redeem it in person at the issuing faction's registry.
 
 ## Player Bounties
 
 ### Posting a Bounty
 
-Go to a Starport and open the Wanted Postings board (called the Bounty Hunter Registry at pirate ports). Select a target by their player name, set a reward amount, and confirm.
+Bounties are posted at the bounty office at either Starport:
+
+- **Federation Bounty Registry** — at the Federation Starport
+- **Bounty Hunter Registry** — at the pirate Starport
+
+That's the only place — taverns don't handle bounties. And mind the pirate naming trap: at the pirate Starport, the place called "The Bounty Board" is the **missions** office, not the bounty office.
 
 **Rules:**
 
 - Minimum bounty: 500 cr
 - Maximum per posting: 100,000 cr
-- Posting fee: 10% of the bounty amount, charged upfront and non-refundable
+- Total cost: 110% of the bounty amount, charged upfront from your wallet
 - You cannot post a bounty on yourself
-- One active bounty per target at a time
-- Bounties expire after 7 days if uncollected
+- One active bounty per poster per target — but several captains can each stack a bounty on the same target
+- Bounties expire after 7 days if uncollected, and expired bounties are forfeit — nothing is refunded
 
-A 10,000 cr bounty costs 11,000 cr total. The fee burns regardless of outcome.
+A 10,000 cr bounty costs 11,000 cr total.
+
+Posting is quiet — there's no feed announcement. The target finds out from the bounty board or their own Ship screen.
 
 ### Collecting a Player Bounty
 
-Collecting a bounty is a two-step process.
+Automatic. Defeat the target in PvP combat and every active player bounty on their head pays straight into your wallet as part of the fight — the combat recap shows the payout. No claim to file, no office to visit. If several captains stacked bounties on the same target, one kill collects them all.
 
-1. **Defeat the target** in PvP combat.
-2. **Travel to a contract office** to file the claim.
-
-You cannot collect at the point of victory. You need to physically travel to the correct contract office:
-
-- **Federation Bounty Registry** — at Federation Starports
-- **Pirate Bay Contract Office** — at Pirate Starports
-
-You can collect at either office regardless of your alignment, but access to a given starport depends on your faction standing. See the Port Restrictions section below.
-
-You cannot collect a bounty you posted yourself. Defeating your own alt clears the bounty but pays nothing.
+You cannot collect a bounty you posted yourself. Your own posting is skipped and stays active until someone else collects it or it expires.
 
 ---
 
 ## Faction Bounties
 
-The Federation and Pirate factions post their own bounties independently of players.
+Kill a faction's ships and that faction puts a price on *your* head:
 
-- **Federation bounties** are generated when you attack Federation-aligned NPCs. Attacking enough triggers a faction contract on your head worth credits and alignment consequences.
-- **Pirate bounties** are generated when you attack Pirate-aligned NPCs. They pay credits and a pirate-side alignment shift to collectors.
+- Destroying **Federation patrols** → a **Federation** bounty on you
+- Destroying **pirate ships** → a **Pirate Syndicate** bounty on you
+- Attacking ports in Federation territory also grows your Federation bounty — win or lose
 
-Faction bounty values scale with the number of kills and the tier of NPCs attacked. The bounty board shows faction contracts in a separate section from player bounties.
+Each faction maintains one running bounty on you. It grows with every offense — scaling with your kill count against that faction and the tier of the ship you destroyed — up to a cap of **500,000 cr** per faction. Faction bounties **never expire**: the only exits are being hunted down, arrested at the dock, or paying it off yourself. You can carry a Federation and a Syndicate bounty at the same time.
 
-To collect a faction bounty: defeat the specified enemy type or accumulate enough kills, then claim at the appropriate contract office.
+### Collecting a Faction Bounty
+
+This is the two-step flow:
+
+1. **Defeat the wanted player** in PvP combat. The kill converts the faction bounty into a claim in your name.
+2. **Redeem the claim at the issuing faction's registry** — the Federation Bounty Registry at the Federation Starport for Federation claims, the Bounty Hunter Registry at the pirate haven for Syndicate claims. Your ship must physically be in that Starport's sector.
+
+Claims never expire, so you can bank up kills and redeem them later. Open the wrong faction's office and your claims show dimmed under "Other Claims" as a reminder of where to go.
 
 ---
 
 ## Wanted Status
 
-When you have active bounties on your head — player or faction — your Ship Stats tab shows a visible **WANTED** indicator with your total exposure. This information is public and visible on the bounty board. Hunters can see your last known location in the feed.
+Any active faction bounty makes you **WANTED** — the indicator appears on **Ship → Stats**, one entry per faction bounty on your head.
 
----
+Consequences:
 
-## Port Restrictions
+- **Auto-arrest at the dock.** Docking at a Starport of the faction that wants you triggers arrest: the full bounty amount is seized **from your wallet**, the record is cleared, and you can dock on your next attempt. Bank credits are untouchable — **bank your credits before risky docking** and arrest can't take a thing.
+- **Can't afford it? Docking denied.** If your wallet can't cover the bounty, you're refused entry instead — nothing is seized, but you stay locked out of that faction's Starport until the bounty is dealt with.
+- **Hostiles on sight.** Ships of the faction that wants you turn aggressive — Federation patrols (or pirates, for a Syndicate bounty) attack you on movement with no chance to avoid the fight.
 
-Active bounties create travel pressure.
+**Paying it off:** clear your own head voluntarily at the issuing faction's registry, for the full bounty amount from your wallet. It's the same price as arrest — the difference is choosing when and where.
 
-- **Federation starports** may arrest you if you have a Federation-faction bounty active and your alignment is sufficiently pirate-leaning.
-- **Pirate starports** may deny access based on alignment and standing.
-- To clear a wanted bounty, pay it off at the appropriate contract office before docking at a hostile port.
+Player-posted bounties on you do **not** trigger arrest or NPC aggression. That pressure comes only from faction bounties.
 
 ---
 
 ## The Bounty Board
 
-The bounty board at any Starport shows:
+The board at either bounty office shows:
 
-- **Player bounties** — all active contracts sorted by payout, with time remaining and last known location
-- **Faction bounties** — current faction contracts posted by the Federation and Pirates
-- **Your own exposure** — bounties currently on your head, summed prominently
+- **Player bounties** — active contracts sorted by payout, with time remaining
+- **Faction wanted lists** — the Federation Wanted List and the Pirate Syndicate Hit List
+- **Your uncollected claims** — kills waiting to be redeemed (dimmed if this isn't the right office)
+- **Your own exposure** — everything currently on your head, summed prominently, with a Pay Off button
+
+Bounty actions — posting, collecting, paying off — cost no turns.
 
 ---
 
 ## Leaderboards
 
-The Most Wanted and Top Bounty Hunters leaderboards track kill counts, total bounties claimed, and active exposure across the galaxy. These update in real time and serve as a measure of reputation in the criminal economy.
+Two boards in the Feed tab's leaderboards track the criminal economy:
+
+- **Most Wanted** — captains ranked by the sum of active bounties currently on their head
+- **Bounty Hunters** — captains ranked by bounty credits earned
 
 ---
 
 ## Strategic Notes
 
-**As a planet owner:** When a pirate robs your Trading Post the feed broadcasts their name to the galaxy. Post a bounty immediately — hunters will have intel and motive.
+**As a planet owner:** if your Trading Post is ever robbed, the feed broadcasts the thief's name to the galaxy — prime material for a bounty posting.
 
-**As a bounty hunter:** Sort by payout, cross-reference last-seen feed data, and plan your approach before committing turns. Remember you must reach a contract office after the kill to cash out.
+**As a bounty hunter:** faction bounty announcements in the feed include the target's last-seen sector, and the board shows it too. Player bounties pay at the kill; faction claims pay at the registry — plan your route to end at the right office. And note that only winning as the attacker in solo PvP collects: bring a fleet and the bounty goes unclaimed.
 
-**As a target:** There is no mechanic to remove a posted bounty. Paying off wanted status at a contract office clears the faction hold; player bounties expire on their own after 7 days. Staying in Federation space prevents PvP but does not protect you from faction arrest if your standing is wrong.
+**As a target:** bank first, always — an empty wallet turns arrest into a mere docking denial. Killing other players does nothing for the bounty on your own head; it stays until it's collected, paid off, or (player bounties only) expires after 7 days. Staying in Federation space prevents PvP, but it won't protect you from Federation patrols or dock arrest if the Federation is the faction that wants you.
