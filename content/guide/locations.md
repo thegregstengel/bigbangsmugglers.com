@@ -1,129 +1,154 @@
 ---
 title: "Locations"
-date: 2026-03-02
+date: 2026-07-02
 draft: false
-description: "Ports, landmarks, stations, and other points of interest across the galaxy"
-weight: 7
+description: "Ports, landmarks, stations, starbases, hazards, and wormholes — every point of interest in the galaxy"
+weight: 16
 toc: true
+aliases: ["/guide/descriptions/"]
 ---
 
-Every sector can contain points of interest beyond the standard warp routes. Ports where you trade, landmarks that mark the galaxy's history, stations that offer specialized services, and hazards best navigated carefully. They appear on the Nav screen when you enter a sector.
+*Accurate as of v1.22.0 (July 2026).*
+
+Every sector can contain points of interest beyond the standard travel links: ports where you trade, landmarks you can interact with for loot and shortcuts, stations with specialized services, and hazards best learned before they learn you. Ports, planets, stations, and landmarks appear on the Nav screen when you enter a sector. Wormholes show up only when you're standing at one of their endpoints. Starbases live on the planet screen, and hazards don't announce themselves at all — more on both below.
 
 ---
 
 ## Ports
 
-Ports are where you buy and sell cargo. Every port has a price spread on fuel, organics, and equipment. Buy where prices are low, sell where they are high. The spread varies by port type and location in the galaxy.
+Ports are where you buy and sell fuel, organics, and equipment. Every port type trades all three commodities — specialization is in the prices, not the shelves. Each type charges a fixed price per commodity, and selling at the same port returns 10% less than you paid, so profit comes from hauling goods between port types that value them differently. The full price table and route math live in the [Trading guide](/guide/trading/).
 
-Standard ports do not offer ship services, recruitment, or mission boards. They are trading posts in the original sense of the word.
+Standard ports offer trading and nothing else. Ship purchases, mission boards, and recruitment are Starport exclusives — see [Starports](/guide/starports/).
 
 ### Port Types
 
-**Fuel Depots**
-Operations built around one commodity — fuel — and built well. Fuel depots tend to be utilitarian facilities with fuel at volume pricing and crew that would rather handle a transaction than a conversation. Found throughout the mid-ring.
+| Port type | How common | Beyond trading |
+|-----------|------------|----------------|
+| **Stardock** | One per galaxy, at Sector 0 | The central hub: banking, repair, ship upgrades, and a tavern |
+| **Federation Port** | ~5% of sectors | Banking and repair — and customs scans (see below) |
+| **Standard Port** | ~10% of sectors (the most common port in the game) | Trading only |
+| **Fuel Depot** | ~3% of sectors | Repair and refueling; the cheap place for fuel |
+| **Agricultural Station** | ~3% of sectors | The only ports that sell **turns**: provisions at 800 cr per turn, max 5 per purchase. Cheapest organics in lawful space |
+| **Tech Hub** | ~2% of sectors | Ship upgrades (the Tech Hub catalog — see [Tech Upgrades](/guide/tech-upgrades/)) and repair. Found anywhere outside pirate territory |
+| **Mining Station** | ~1.5% of sectors | Cheap fuel — and the best organics prices in the galaxy, if you're selling |
+| **Research Complex** | ~1% of sectors | Equipment-heavy stock at friendly prices |
+| **Pirate Base** | ~1.5% of sectors, pirate territory only | Black Market shop and a tavern; no questions about your manifest |
+| **Black Market** | ~7% of pirate-territory sectors | The cheapest goods anywhere — but everything you buy here is flagged as **contraband** |
 
-**Agricultural Stations**
-Organics originate here more often than anywhere else in the galaxy. Agri stations range from tidy operations run by family enterprises to sprawling hydroponic complexes managed by interests you will never meet. The cargo is the same either way.
+None of the lawful port types generate inside pirate territory, and black markets generate only there. If you want the galaxy's cheapest fuel and organics, you're going to the rim — see [Smuggling](/guide/smuggling/) before you load up.
 
-**Tech Hubs**
-Equipment terminals, fabrication services, and the occasional ship component that fell off a manifest. Tech hubs sit in federation-leaning space and attract traders who know what the equipment is worth in other sectors.
+**Customs**: Federation-type ports scan your cargo for contraband the moment you open their trade screen (at most once per 30 minutes). Getting caught costs you the cargo, a fine, and alignment. Details in the [Smuggling guide](/guide/smuggling/).
 
-**Mining Stations**
-Built into asteroid formations or floating in ore-rich sectors. Mining stations smell like metal and recycled atmosphere, and the crew tends to be the type that appreciates directness. Good prices on bulk fuel. Everything else is secondary.
-
-**Research Complexes**
-Federation-sponsored, usually. Research complexes trade in equipment and sometimes in things that are not on the standard commodity list. The staff are distracted in ways that occasionally work in your favor.
-
-**Pirate Bases**
-The pirate equivalent of a port. Operates in pirate space, prices its goods accordingly, and does not ask about the contraband flag on your cargo manifest. Some are run like serious businesses. Some are run like the thing that happens before a serious business forms. All of them will take your credits.
+**Taverns**: found at the Stardock and pirate ports. Two services: hire mercenary fighters (50 cr each, up to 30 per hire) and **buy intel** — 500 cr reveals 5 sectors you've never visited and makes them warp-eligible, the only way to warp somewhere you've never been. See [Scanners & Intel](/guide/scanners-intel/).
 
 ### Player-Built Trading Posts
 
-Captains who own planets can build trading posts directly in their sector. These are buy-only for visitors and stocked from the owner's planet storage on a four-hour cycle. Prices run below standard market rates by a margin that depends on how much the owner has invested in upgrades.
+Captains who own planets can build a trading post in their planet's sector. On the Nav screen it appears as a port named **"{Planet} Trading Exchange ({Owner})"** — if you see one, someone invested at least 100,000 credits and a developed planet to put it there.
 
-A trading post is named after its owner. If you see one, someone spent a significant amount building it, which tells you something about how long they have been in the game.
+For visitors, trading posts are **buy-only** — you cannot sell to them. What makes them worth a detour is pricing: a trading post's price ceilings sit **below standard market maximums**, with the discount deepening as the owner upgrades the post. Their price scale is genuinely cheaper than any generated port's.
 
-See the [Planets Guide](../planets) for full details on building and operating a trading post.
+Stock comes only from the owner's planet production, transferred on a **4-hour restock cycle** (the owner can also trigger one manual refill per cycle). Empty shelves mean the planet hasn't produced enough or shoppers beat you to it — check back after the next cycle boundary.
+
+See the [Planets guide](/guide/planets/) for building and operating one.
 
 ---
 
 ## Landmarks
 
-Landmarks are fixed points of interest scattered across the galaxy. They do not offer services. They are simply there, marking what was or what is, visible on the sector map to anyone who passes through.
+Landmarks are fixed points of interest scattered across the galaxy — and they are not just scenery. Every landmark offers an interaction, each with its own per-player cooldown per landmark. Since cooldowns are per landmark, knowing where several of them sit turns into a farming rotation.
 
-### Landmark Types
+**Ancient Ruins** — *Explore: 2 turns, 24-hour cooldown.*
+The most common landmark. Exploring rolls on a weighted loot table: usually credits (500–5,000) or salvaged equipment paid out in credits, sometimes research data worth XP, occasionally nothing at all — and a rare jackpot of 10,000–25,000 credits. Nobody knows who built them; the payouts suggest they were doing well.
 
-**Black Holes**
-Rare. A black hole in a sector does not make the sector impassable, but it tends to make it memorable. Navigation near a black hole is an exercise in trusting your instruments and not thinking too hard about what happens if they are wrong.
+**Space Anomalies** — *Investigate: free, 6-hour cooldown.*
+The catch-all category for things the instruments measure but cannot describe. Investigating is free and random: boons include credits (2,000, rarely 8,000), a burst of XP, or **+3 turns**; banes include shield damage (−30), lost fighters (−10), or a forced jump to a random sector. Free to spin, not free of consequences.
 
-**Ancient Ruins**
-Scattered throughout unincorporated space and occasionally in older federation sectors. Nobody is sure who built them. The federation has commissioned several studies. None of them have concluded anything useful, which has done nothing to reduce the number of follow-up studies commissioned.
+**Black Holes** — *Transit: 1 turn, 24-hour cooldown.*
+Rare, and the sector remains passable. The interaction is a 1-turn jump to a distant sector — with a 20% chance of taking 10–40 shield damage on the way through. A shortcut for captains who trust their shields more than their patience.
 
-**Navigation Beacons**
-Automated relay stations placed by early galaxy explorers. Most of the original network is still running, which is a testament to whoever built the power cells. They ping your nav system when you enter the sector, which is useful if your instruments are having a bad day.
-
-**Space Anomalies**
-The catch-all category for things that did not fit the other classifications. Sensor readings that do not resolve into a coherent explanation. Spatial distortions that the instruments measure but cannot describe. Physics working as intended but in a way that makes you double-check. The federation classifies these and then quietly stops talking about them.
+**Navigation Beacons** — *Activate: free, 1-hour cooldown.*
+Automated relay stations from the early exploration era, still running. Activating one reveals up to 8 adjacent sectors into your sector history — meaning you can **warp to them without ever having visited**. Free map knowledge; take it every time you pass one.
 
 ---
 
 ## Stations
 
-Stations are larger than ports and smaller than starports. They offer specialized services for specific needs without the full infrastructure of a starport.
-
-### Station Types
+Stations are smaller than starports and bigger than an excuse to stop. Three types, each with one specialized service:
 
 **Defense Stations**
-Federation military installations. Defense stations exist to watch over contested sectors and provide a show of force in areas where pirate activity is a concern. They are not particularly welcoming to captains with negative alignment scores, which is intentional.
+Federation military installations that sell protection: **4,000 cr buys a 2-hour PvP-immunity contract**. While it runs, other players cannot attack you — and you cannot attack them — and enemy mines and sector defenses won't trigger on you either. Contracts stack on top of any immunity you already have. If your wallet is short, the bank covers the difference at a 10% fee. Cheap insurance for hauling a fortune through the outer bands.
 
 **Repair Stations**
-Independent operations offering hull and shield repair outside of starport facilities. Useful in deep space where the nearest starport is several warps away. Prices vary by how far from civilization you are, which is to say they are higher than you would like.
+Independent repair outside starport facilities — and the most complete repair in the game: a repair station restores shields, **fighters, and torpedoes** to maximum, the only repair path that replenishes your consumables. Cost is per unit of damage (5 cr per shield, 10 per fighter, 15 per torpedo, minimum 200 cr), adjusted by your reputation.
 
 **Research Stations**
-Scientific facilities in isolated sectors where the research benefits from distance from populated space. They occasionally trade in equipment and have been known to offer unusual mission contracts.
+Scientific facilities in isolated sectors. Their service is **Sector Intelligence**: 300 cr buys the locations of 3 random points of interest — ports, starports, wormholes, or landmarks — somewhere in the galaxy. See [Scanners & Intel](/guide/scanners-intel/) for how it compares to tavern intel.
 
 ---
 
 ## Starbases
 
-Starbases are late-game player-built structures that provide persistent storage and services beyond what a ship alone can hold. They appear on the Nav screen in the sector where they were built.
+A Starbase is the capstone structure of a fully developed planet: once all six planetary structures reach level 5, the owner can build one for **1,500,000 credits** (wallet only — the bank won't cover this one). One per player, permanent, cannot be moved.
+
+One thing to know before you go looking: **Starbases do not appear on the Nav screen or on scans.** A Starbase is part of its planet — you'll find it on the planet screen's Structures tab, and nowhere else.
 
 ### Personal Starbase
 
-A personal Starbase is the capstone structure a captain can build for themselves. It provides:
+What the owner gets:
 
-- **Credit vault** — store credits separately from your bank, accessible only when you are in the Starbase's sector
-- **Item vault** — deposit and withdraw cargo and equipment at any time you are docked
+- **Credit vault** — credit storage separate from your bank, usable only while your active ship is in the Starbase's sector. Unlimited capacity.
+- **Item vault** — stores six inventory item types: workers, fighters, beacons, mines, ship cloaking devices, and goods cloaking devices. Same in-sector requirement. Note this is *inventory* storage — cargo commodities don't go in the vault.
+- **Hangar** — switch between your ships here, the only place besides a Starport that allows it.
+- **Respawn point** — if your ship is destroyed, your escape pod returns here instead of Sector 0.
 
-Building a personal Starbase requires significant investment and cannot be moved once placed.
+The vault is strictly owner-only — even corpmates can't touch it.
 
 ### Corporation Starbase
 
-A corporation Starbase operates at the corporation level and is accessible to all corp members in the sector. It serves as:
+There's no separate corp Starbase structure: when a Starbase planet belongs to a corporation, the Starbase doubles as corp infrastructure.
 
-- **Ship pool** — corp members can retrieve ships stored in the Starbase's pool when they are in the sector
-- **Cargo vault** — fleet combat loot is deposited here automatically after a fleet victory
-- **Location-bound storage** — ships stored in the corp Starbase are tied to the sector where the Starbase was built; members must travel to that sector to access the pool
+- **Ship pool** — members donate spare ships into the pool and any corp member can claim one when in the sector. Claimed ships arrive inactive; switch to them at the hangar.
+- **Fleet loot dock** — cargo won in fleet combat is deposited into the planet's regular storage (shared with production, and capped), where any corp member can withdraw it. A corp with **no** built Starbase forfeits fleet cargo loot entirely.
 
-Corp Starbases are managed by corporation officers. Access and deposit rules follow corp membership and rank.
+Access follows two simple rules: the vault belongs to the planet's owner, everything else follows corp membership — there is no officer-level gatekeeping. See [Corporations & Fleets](/guide/corporations-fleets/).
+
+One more thing: Starbases are spoils of war. If the planet is captured, the Starbase — vault contents included — changes hands intact.
 
 ---
 
 ## Hazards
 
-Some sectors contain hazards that show on your scanner before you enter. Hazards are environmental — they do not attack you, but they affect navigation and combat conditions in the sector.
+Some sectors contain environmental hazards. Here is the honest version: **hazards are not currently shown anywhere in the UI.** No scanner lists them, no sector view flags them — the first you'll hear of one is the damage report after you fly into it. Experienced captains keep a mental map of which sectors bite.
 
-**Nebulae**
-Dense gas clouds that scatter sensor readings and make precise navigation more difficult. Warping into a nebula sector works fine. Knowing exactly where everything in the sector is once you arrive is another matter.
+The rules of engagement are simple:
 
-**Asteroid Fields**
-Rocky debris at various densities. Asteroid fields show up on long-range scans and are navigable with care. Ships that are not careful are eventually the reason the field gets slightly denser.
+- Hazard damage applies **only when you move into the sector with a plain, one-hop move**. Warp, Tesseract, wormhole, and black-hole travel never take hazard damage.
+- Sitting in a hazardous sector is safe. Entering it is what costs.
+- Hazards never affect combat.
 
-**Radiation Zones**
-Elevated radiation sectors that stress hull integrity over extended exposure. Short visits are fine. Sitting in a radiation zone while you work something out is inadvisable.
+The five types, from a shrug to a real problem:
 
-**Ion Storms**
-Electromagnetic interference that affects ship systems unpredictably. Ion storms move. A sector that was clear yesterday may not be clear today, which is the kind of thing that makes experienced captains check their route twice.
+**Nebulae** — dense gas clouds. Atmosphere only: no damage, no gameplay effect.
 
-**Minefields**
-Left over from conflicts nobody remembers clearly. Minefields are mapped where they are known, which is not the same as saying all minefields are known. The federation updates charts when it finds new ones, which is itself evidence that discovery is ongoing.
+**Ion Storms** — electromagnetic interference. Also atmosphere only, and they don't move — a stormy sector stays stormy.
+
+**Asteroid Fields** — about a 20% chance of 10–20 shield damage each time you move in.
+
+**Radiation Zones** — a flat 25 shield damage every time you move in. Not cumulative exposure — each entry costs the same, and short visits are not free.
+
+**Minefields** — leftover ordnance from forgotten conflicts (distinct from player-deployed mines — see [Deployables](/guide/deployables/)). The nastiest hazard in the game: a 40% chance of 40–60 shield damage on entry, enough to disable a ship that arrives with weak shields and no fighters.
+
+---
+
+## Wormholes
+
+Each galaxy contains a handful of wormholes (5–10) connecting distant sectors. You'll only see one when you're standing in an endpoint sector — the Nav screen shows a Wormholes card with its stability and direction.
+
+Transit costs **1 turn**, regardless of how far the other end is. And here is why they're worth memorizing: wormhole transit is **the safest travel in the game** — it bypasses NPC encounters, enemy mines, sector defenses, and hazards entirely. Nothing is waiting for you on the other side except whatever was already there.
+
+Two caveats:
+
+- About 70% of wormholes are **stable**. The unstable ones occasionally scatter you to a random sector instead of the far endpoint — same turn cost, wrong address.
+- Most wormholes work in both directions, but roughly 1 in 5 is **one-way**: usable from one side only, with nothing visible at the far end to warn you there's no ride back.
+
+Like all travel, taking a wormhole breaks your cloak.

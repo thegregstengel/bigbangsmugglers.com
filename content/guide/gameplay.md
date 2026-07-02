@@ -1,115 +1,162 @@
 ---
 title: "Gameplay Basics"
-date: 2026-04-01
+date: 2026-07-02
 draft: false
 description: "Core mechanics and game systems"
 weight: 2
-toc: false
+toc: true
 ---
+
+*Accurate as of v1.22.0 (July 2026).*
 
 Master the fundamentals of Big Bang Smugglers.
 
 ## Navigation
 
 ### The Galaxy Map
-- **Sectors**: Each sector is a distinct location in the galaxy
-- **Links**: Lines between sectors show traversable routes
-- **Territories**: Federation (blue), Pirate (red), Unincorporated (gray)
-- **Current location**: Highlighted sector on the Nav screen
+
+- **Sectors**: each sector is a distinct location in the galaxy, numbered outward from Sector 0 at the center
+- **Links**: lines between sectors show traversable routes
+- **Territories**: Federation (the core), Pirate (the rim), and Neutral space (everything between)
+- **Current location**: highlighted on the Nav screen
 
 ### Moving Around
-1. Open the Nav screen
-2. Tap a connected sector to move there (costs 1 turn)
-3. Use your warp drive to jump directly to any previously visited sector
 
-Each sector move costs 1 turn. Warp jumps cost turns based on distance. The Warp Optimizer tech upgrade reduces warp turn cost by 1.
+Tap a connected sector on the Nav screen to move there — **1 turn** per move. (The adjacent-sector list is titled "Warp to," but those are ordinary moves; real warp jumps are below.)
 
-**Warp interruptions:** Long warp jumps can be intercepted by aggressive pirates. An interception forces combat — you cannot skip past the attacker. Interruption risk scales with warp distance.
+Entering a sector isn't always quiet. A move can trigger enemy **mines**, **sector defense fighters**, and **limpet trackers** (see [Deployables](/guide/deployables/)), environmental hazard damage in asteroid fields, radiation zones, and minefields, and **NPC encounters** (about a 5% chance per move). Your first visit to any sector awards exploration XP, with bonuses for ports, planets, and landmarks.
+
+### What Costs Turns
+
+| Action | Turns |
+|--------|-------|
+| Move to adjacent sector | 1 |
+| Trade (each buy or sell) | 1 |
+| Warp jump | distance ÷ warp level, rounded up (min 1) |
+| Tesseract jump | 25 flat |
+| Wormhole transit | 1 |
+| Attack a player or NPC | 1 |
+| Port attack | 3 |
+| Sector scan | 1 per radius level |
+| Explore Ancient Ruins | 2 |
+| Black hole transit | 1 |
+
+Banking, ship and upgrade purchases, mission accepts, and deploying equipment are all turn-free.
+
+### Warp Travel
+
+A **warp drive** jumps you directly to any sector you've **previously visited** (nav-beacon landmark reveals and purchased intel also make sectors warp-eligible — see [Scanners & Intel](/guide/scanners-intel/)).
+
+- **Install**: 15,000 cr at a starport shipyard; requires a Tier 2+ ship and 100 XP
+- **Cost per jump**: distance ÷ warp level, rounded up, minimum 1 turn. Higher warp levels (up to 5) cover more sectors per turn; each level upgrade costs (level + 1) × 15,000 cr
+- The **Warp Drive Optimizer** tech upgrade takes 1 turn off every warp (minimum 1)
+
+**Warp interruptions:** each hop can spawn an NPC that halts your warp in that sector, but the total interruption chance is capped at roughly **30% per journey** no matter the distance, and unused turns are refunded. Only **auto-aggressive pirates force combat** when they interrupt — patrols, traders, and calmer pirates just leave you stranded a few hops short.
 
 ### Tesseract Drive
 
-The Tesseract Drive is a premium navigation upgrade that provides **instant, uninterruptible jumps** to any sector you have previously visited. Unlike standard warp, Tesseract jumps:
+The Tesseract Drive is the endgame travel option: **10,000,000 cr**, and you need a **Tier 5 hull** and **level 100** to install it.
 
-- Cannot be intercepted or interrupted by pirates
-- Resolve instantly with no travel animation delay
-- Still cost turns based on distance
+- **Flat 25 turns** per jump, any distance
+- Instant and **uninterruptible** — no encounters mid-jump
+- Mines, sector defenses, and limpet trackers waiting at the destination still trigger
+- Visited sectors only; the Warp Drive Optimizer does not reduce the 25
 
-Activate the Tesseract Drive from the Nav screen as an alternative to standard warp after installing it at a starport shipyard.
+Install it at the starport **Shipyard**; activate it with the **Tesseract Drive toggle** in the Nav screen's warp panel (it switches on automatically if it's your only drive). It coexists with a regular warp drive, so you can carry both.
+
+### Wormholes
+
+Wormholes connect distant sectors for **1 turn** and bypass everything — no encounters, no mines, no sector defenses on arrival. They only appear in the sector view when you're standing at an endpoint. Most are stable and two-way, but **unstable wormholes can scatter you** to a random sector instead, and some are one-way with no return trip.
+
+### Landmarks
+
+- **Nav Beacons** — activate for free to reveal up to 8 neighboring sectors on your map; revealed sectors become warp-eligible without visiting
+- **Ancient Ruins** — explore for 2 turns; loot roll ranges from nothing to a few thousand credits, XP finds, and rare 10,000–25,000 cr jackpots
+- **Anomalies** — investigate for free; a random boon or bane: credits, XP, even **+3 turns** — or shield damage, lost fighters, or a forced jump to parts unknown
+- **Black Holes** — transit for 1 turn; hurls your ship to a far-off sector you don't choose, with a 20% chance of shield damage on the way through
+
+Each landmark has a per-player cooldown (beacons 1 hour, anomalies 6 hours, ruins and black holes 24 hours), so ruins and anomalies are farmable on rotation.
 
 ## Your Ship
 
 ### Ship Stats
-- **Shields**: Your primary defense in combat
-- **Fighters**: Escort craft that contribute to combat power
-- **Torpedoes**: Offensive weapons with high individual impact
-- **Cargo Holds**: Maximum units you can carry
+
+- **Shields**: your defense in combat — repairable, never bought
+- **Fighters**: escort craft; steady attack power (75 cr each to restock)
+- **Torpedoes**: heavy ordnance; the hardest-hitting attack stat per unit (150 cr each)
+- **Cargo holds**: how much you can carry
+
+In combat, fighters and torpedoes drive your attack and shields drive your defense, on top of your hull's base power. See [Combat](/guide/combat/) for the exact formula.
 
 ### Ship Roles
-Ships come in six roles across two faction lines:
-- **Trading / Smuggling**: Maximum cargo capacity, 55% escape rating, light combat stats
-- **War / Raider**: High fighters and torpedoes, 25% escape rating, minimal cargo
-- **Balanced / Corsair**: Middle ground — Balanced ships have the highest shields, Corsairs have the highest escape rating
 
-See [Ships](/guide/ships) for the full catalog.
+Ships come in six roles across two faction lines — three archetypes, each with a Federation and Pirate version:
 
-### The Garage
+- **Trading / Smuggling**: maximum cargo, light weapons — escape 30% / 40%
+- **War / Raider**: high fighters and torpedoes, minimal cargo — escape 40% / 50%
+- **Balanced / Corsair**: middle cargo and weapons, **best escape** — 50% / 60%
 
-You can own multiple ships. When you buy a new ship, your old one goes into your **Garage** instead of being traded away. Switch your active ship from the Garage screen at any time. Sell stored ships from the garage or at any starport ship sales terminal.
+Shields are identical across all roles at a given tier — no role has "the highest shields." Every Pirate hull has **+10 escape** over its Federation mirror at the same price and stats (Tier 5 flagships give 10 points back in exchange for special abilities). See [Ships](/guide/ships/) for the full 30-ship catalog.
 
-### Maintenance
-- **Repair** at any starport for full restoration at a credit cost (auto-repairs to 50% at daily reset)
-- **Restock** torpedoes and fighters at any starport
-- **Refuel** at any port
+### The Hangar
+
+You can own any number of ships. Buying a new one keeps your old ship in the **Hangar** — there's no trade-in. Your cargo transfers automatically; if the new ship has fewer holds, the overflow is lost.
+
+The Hangar is a **place at every starport** (switch or sell) and at a planet with a Starbase you or your corp own (switch only). Switching your active ship is free, but only works at those locations. Selling pays a flat **64% of the purchase price**, only at starports — you can't sell your active ship or your last ship, and any cargo left on a sold hull is destroyed.
+
+### Destruction & Escape Pods
+
+Losing a fight normally leaves your ship **disabled**, not destroyed. But if you enter combat with **0 shields, 0 fighters, and 0 torpedoes** and lose, the ship is **destroyed**: the hull and everything installed on it are gone, cargo is lost, and your remaining turns are wiped. Your escape pod puts you at a planet where you own a built Starbase — otherwise Sector 0 — and reactivates your first surviving Hangar ship, or grants a free SS Starter if you have none. A warning banner appears whenever your defenses are fully depleted; don't fly past it. Full details in [Combat](/guide/combat/).
+
+### Maintenance & Repair
+
+Two repair paths, plus free recovery:
+
+- **Port repair** (the Repair service at Stardock, Federation, Standard, Depot, and Mining ports): restores everything — shields, fighters, and torpedoes — with no turn cost (minimum 200 cr). The only repair that replenishes your consumables.
+- **Shipyard and field-kit repair**: shields only. A field kit works anywhere while disabled (2 turns, shields to 50%); the starport shipyard restores full shields for 1 turn. Fighters and torpedoes are re-bought at the starport weapon bays.
+- **Disabled ships auto-recover** for free to 50% shields at the next 4-hour turn boundary.
+
+There is no refueling. Ships don't consume fuel — movement costs turns, and "fuel" is just a trade commodity.
 
 ## Credits & Economy
 
 Credits are the universal currency. Earn them through:
-- **Trading**: Buy commodities cheap, sell where prices are high
-- **Missions**: Complete objectives at starports for credits and XP
-- **Combat**: Loot credits and cargo from defeated ships
-- **Planets**: Develop planets to produce commodities and earn passive income from Trading Posts
-- **Bounties**: Collect player and faction bounty contracts
 
-Spend credits on:
-- **Cargo**: Trade goods to fill your holds
-- **Ships**: Buy better vessels at starport ship sales terminals
-- **Upgrades**: Permanent tech improvements at the Tech Hub
-- **Services**: Repairs, restock, recruitment
+- **Trading**: buy commodities cheap, haul them to a port type that pays more
+- **Missions**: complete objectives for credits and XP
+- **Combat**: loot credits from defeated ships (PvP victories loot credits, not cargo)
+- **Planets**: develop planets and earn passive income from Trading Posts
+- **Bounties**: collect player and faction bounty contracts
+- **Exploration**: ruins, anomalies, and first-visit XP
+
+Spend them on cargo, ships, permanent upgrades, deployables, and services. And if you run dry mid-cycle: **Agricultural Stations sell provisions** — 800 cr per turn restored, max 5 per purchase.
 
 ## Banking
 
-Store credits at starport banks to protect them from combat loot. Credits in the bank cannot be taken by attackers.
+Your wallet is at risk; your bank is not. Banked credits are safe from **combat looting** and from **bounty arrest** (an arrest seizes only your wallet). Deposits and withdrawals are free, cost no turns, and are available at starports and banking ports.
 
-- **Deposit**: Move credits from wallet to bank
-- **Withdraw**: Move credits back into your wallet for spending
+One caveat: ship repair can auto-draw from your bank if your wallet is short — shipyard repair charges a 10% fee on the shortfall it covers.
 
-## Factions
+## Factions & Alignment
 
-### Federation
-Safer space with regulated trade. Federation Starports offer the full range of services. Patrols enforce contraband laws. Alignment toward Federation unlocks Federation ship lines and better standing at Federation ports.
+Two separate scores shape how the galaxy treats you:
 
-### Pirate
-Dangerous but high-margin. Black Markets and Pirate Bases operate outside Federation law. Pirate Starports have their own contract offices and services. Alignment toward Pirate unlocks Pirate ship lines and access to contraband systems.
+- **Alignment** (−1000 to +1000): your Federation-vs-Pirate standing. Moved by missions, combat, smuggling busts, port and planet attacks and claims — **not** by ordinary trading.
+- **Trader reputation** (0–100): your merchant standing, built by trading. Affects prices at every port.
 
-### Neutral / Unincorporated
-Independent territory. Standard ports without faction alignment requirements. PvP can be active here if galaxy settings enable it. No patrol presence, moderate risk.
+What alignment does: faction port pricing (up to 20% off when friendly, +50% markup when hostile), NPC behavior (pirates and patrols flip aggressive around ±300), and docking rights (faction ports deny you past ∓300). One thing it does **not** do: gate ship purchases. Ship availability is by location — the Federation starport stocks Federation hulls, the Pirate starport stocks Pirate hulls.
 
-Alignment shifts gradually through play — trade in Federation space and run Federation missions to trend Federation; smuggle and fight in pirate territory to trend Pirate. Alignment affects pricing, NPC behavior, port access, and which ship lines you can buy from.
+**PvP** is region-gated: it's only possible in the outer reaches of the galaxy, and only when the season has PvP enabled. Federation space is always safe. See [Galaxy & Territory](/guide/galaxy-territory/) and [Reputation & Factions](/guide/reputation-factions/).
 
 ## Corporations
 
-Players can form corporations. Corps group players for social coordination, shared reputation, and co-management of planets. Corp membership and role appear on your profile and leaderboard card. Corp sizes scale dynamically with the galaxy's player cap. See your corp from the Settings screen.
-
-**Private corp chat:** Every corporation has a private chat channel visible only to members. Access it from the corp screen. Corp chat is separate from the public galaxy feed.
-
-**Corporation fleets:** Corp members in the same sector can form a fleet to attack together. The fleet leader initiates combat from the Battle Station screen. All fleet members' combat stats contribute to the fight, and loot is split and deposited to the corporation Starbase. See [Combat](/guide/combat) for fleet mechanics.
-
-**Corporation Starbase:** Corps can build a Starbase structure that holds a shared ship pool and cargo vault. Fleet loot is automatically deposited there after a fleet victory. See [Locations](/guide/locations) for details.
+Players can band together in **corporations** — founded for 50,000 cr, with private chat, a shared corp bank, a ship pool, a corp Starbase, and fleets of up to 3 ships that attack together. Your corp hub lives on the **Ship tab, under Corps**. Full coverage — roles, joining policies, fleets, and loot rules — is in [Corporations & Fleets](/guide/corporations-fleets/).
 
 ## Tips
 
-- Keep credits in the bank when you are done trading — they are safe from combat loot there
+- Bank your credits when you're done for the session — safe from looters and bounty hunters alike
 - Federation space is safer for new pilots; move outward as you grow
-- Use the Warp drive to cover long routes efficiently once you have explored the sectors
-- Upgrade cargo holds early — more holds means more profit per run at the same turn cost
-- Check the Mission Board at every Starport visit; daily missions stack with whatever you are already doing
+- Upgrade cargo holds early — the tiers cost only credits, no XP gates, and more holds means more profit per run
+- Pirate hulls have identical stats and prices to their Federation mirrors but +10 escape — worth it if you can dock at the pirate starport
+- You can hold only **one mission at a time** — finish or abandon it (no penalty) before taking another
+- When turns run out mid-cycle, provisions at an Agricultural Station are the only way to buy more
