@@ -16,7 +16,7 @@ Starports are the most advanced facilities in the galaxy. They are where you ban
 There are exactly **two starports in every galaxy**:
 
 - **The Federation starport sits at Sector 0** — the galactic center, where every captain starts the season. You have been to a starport whether you realized it or not.
-- **The Pirate Haven sits deep in pirate territory**, out in the middle of the outer rim, in a sector where nobody is checking credentials and the concept of a maintenance schedule is theoretical.
+- **The pirate haven sits deep in pirate territory** (its name varies by galaxy — Pirate Haven, Black Harbor, Skull Port...), out in the middle of the outer rim, in a sector where nobody is checking credentials and the concept of a maintenance schedule is theoretical.
 
 The Federation runs its starport like a corporate campus. Everything is labeled, everything is audited, and the staff will answer your questions with a smile that does not quite reach their eyes. The haven is run by people who found a need and filled it, no questions asked. The services are the same. The ambiance is considerably different.
 

@@ -13,7 +13,7 @@ Smuggling is a margin game. Contraband is bought at a steep black-market discoun
 
 ## What Is Contraband?
 
-Contraband is cargo purchased through the **Black Market** port service. Contraband lots are permanently flagged in your cargo hold and sell as the underlying commodity they mimic.
+Contraband is cargo purchased through the **Black Market** port service. Ordinary commodities bought at Black Market ports carry the same flag (silently, at full price), and so do goods stolen in trading-post robberies. Contraband lots are permanently flagged in your cargo hold and sell as the underlying commodity they mimic.
 
 | Item | Buy Price | Cargo Weight | Max per Purchase | Sells As |
 |------|-------|--------------|------------------|----------|
@@ -25,7 +25,7 @@ Black-market purchases **cost no turns**, and supply is unlimited — the only l
 
 ## Where to Buy Contraband
 
-Contraband is sold at the Black Market service of ports in pirate space — pirate bases and black-market ports. Navigate to the sector, open the port from the Nav screen, select **Black Market** from the port services, and purchase what you need.
+Contraband is sold at the Black Market service of Pirate Bases (found in pirate and unincorporated space) and Black Market ports (pirate space only). Navigate to the sector, open the port from the Nav screen, select **Black Market** from the port services, and purchase what you need.
 
 ## Sell Values and Margins
 
@@ -56,7 +56,7 @@ A Goods Cloaking Device is **consumed every time a scan fires — caught or not*
 
 If you're caught: **all your contraband is seized — everywhere in the galaxy, including lots stored on your other ships** — plus a fine of 10% of the contraband's purchase value and **−5 alignment**.
 
-**Patrol encounters** can also demand a scan. When you run into a Federation patrol while moving, you get choices: submit to the scan (a clean scan earns you **+2 alignment**), pay a bribe (500 to 25,000 cr depending on the patrol's tier, 60% success — a failed bribe costs the credits and forces the scan anyway), **jettison your contraband first (free, no penalty** — but it dumps all contraband you own, galaxy-wide), or fight.
+**Patrol encounters** can also demand a scan. When you run into a Federation patrol while moving, you get choices: submit to the scan (a clean scan earns you **+2 alignment**), pay a bribe (500 to 25,000 cr depending on the patrol's tier, 60% success, better odds for pirate-aligned captains — a failed bribe costs the credits, dings your alignment, and forces the scan anyway, with an extra 2,000 cr fine if it catches you), **jettison your contraband first (free, no penalty** — but it dumps all contraband you own, galaxy-wide), or fight.
 
 ### 2. Point-of-Sale Checks
 

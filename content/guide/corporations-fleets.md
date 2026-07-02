@@ -21,7 +21,7 @@ Corporations are scoped to a single galaxy and season. When the season ends, the
 | Corp bank | Communal credit pool anyone can pay into |
 | Ship pool | Donate spare ships to the corp; any member can claim one |
 | Corp planets | Land, park, and use storage on every planet your corp-mates own |
-| Corp Starbase | Shared hangar, ship pool, and the landing spot for fleet loot |
+| Corp Starbase | Shared hangar, ship pool, and a vault for corp assets |
 | Fleets | Up to 3 corp-mates attack one target as a single combined force |
 | Friendly-fire protection | Corp-mates cannot attack each other in direct PvP |
 | Corp leaderboard | Your corp competes as a unit in the Feed tab leaderboards |
@@ -60,7 +60,7 @@ Three roles: **Leader**, **Officer**, **Member**. What each can do:
 | Change join policy | Yes | — | — |
 | Kick members | Anyone but themselves | Members only (not other Officers) | — |
 | Approve / reject join requests | Yes | Yes | — |
-| Set policies and the corp notice | Yes | Yes | — |
+| Set corp policies | Yes | — | — |
 | Deposit to the corp bank | Yes | Yes | Yes |
 | Withdraw from the corp bank | Yes | Yes | Only if the bank-spend policy is on |
 | Corp chat, ship pool, fleets | Yes | Yes | Yes |
@@ -95,10 +95,9 @@ Planets owned by corp members carry the corp's tag, and every member gets real u
 A **corp Starbase** is simply a corp-owned planet with a Starbase built on it. It is the corp's shared infrastructure:
 
 - The **ship pool** (above) operates only here.
-- **Fleet cargo loot** is deposited into this planet's ordinary storage after a fleet victory.
 - Heads up: because fleet loot lands in plain planet storage, **any member can withdraw it**. Treasury discipline is a social contract, not a game rule.
 
-If your corp plans to run fleets, building a Starbase on a corp planet is not optional — see [Fleet Loot](#fleet-loot) for why.
+A corp Starbase is where the ship pool lives and where members can stage shared assets.
 
 ## Friendly Fire: What Protection Actually Covers
 
@@ -143,11 +142,7 @@ Win or lose, combat losses are split across members in proportion to what each c
 
 ### Fleet Loot
 
-Fleet loot does not go to individuals:
-
-- **Credits → the corp bank.**
-- **Cargo → the corp Starbase's planet storage**, limited by the storage space remaining there.
-- **No corp Starbase means cargo loot is forfeited entirely.** Build one before you start fleet raiding.
+Fleet loot does not go to individuals: **looted credits go to the corp bank**. As with all PvP, loot is credits only — the target's cargo is not transferred.
 
 Individual members still earn XP, reputation, and PvP win stats; the leader gets the kill credit.
 

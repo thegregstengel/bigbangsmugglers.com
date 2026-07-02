@@ -33,7 +33,7 @@ On top of the region multipliers, **territory** applies hard blocks: pirates nev
 NPC combat uses an **instant-resolution model**: the fight's outcome is computed the moment the encounter fires, during your move.
 
 - **Ambushes** (auto-aggressive NPCs): the combat result is committed before you see anything. The modal shows you a recap — you cannot flee an ambush.
-- **Non-aggressive encounters:** the result is pre-rolled and stored. Tapping **Attack** reveals and applies it; **fleeing costs nothing** — no roll, no penalty, no turn.
+- **Non-aggressive encounters:** the result is pre-rolled and stored. Tapping **Attack** reveals and applies it; **walking away costs nothing** — no roll, no penalty, no turn. (Fresh pirate and patrol encounters interrupt you with a modal where every option has a price — see below.)
 - A committed fight costs **1 turn** on top of the move that triggered it. All diplomacy options (scan, bribe, surrender, jettison, trade, rob) cost **0 turns**.
 
 You choose *how to respond* — diplomacy or violence — but once you commit to the fight, the dice were already thrown.
@@ -134,7 +134,7 @@ Civilian merchant ships running commodity routes. They spawn silently — no pop
 |--------|--------------|
 | **Trade** | Buy and sell at **fixed convenience prices** — never linked to port markets. Buy: fuel 30 / organics 45 / equipment 75 cr. Sell: fuel 13 / organics 20 / equipment 33 cr (all before reputation adjustment). Each transaction earns **+1 trader reputation**. |
 | **Rob** | **Always succeeds** — traders don't fight. Loot by tier (table below). Costs **−2 alignment and −3 trader reputation**. |
-| **Attack** | Full combat. Killing a trader costs **−5 trader reputation**. |
+| **Attack** | Full combat. Killing a trader costs **−5 trader reputation** and **−1 alignment**. |
 
 **Rob loot by trader tier:**
 
@@ -143,8 +143,6 @@ Civilian merchant ships running commodity routes. They spawn silently — no pop
 | 1 | 50–200 | 1–5 |
 | 2 | 150–500 | 3–10 |
 | 3 | 400–1,500 | 5–20 |
-| 4 | 1,000–4,000 | 10–35 |
-| 5 | 2,500–10,000 | 15–50 |
 
 **Territory behavior:** everywhere lawful, densest in the Middle Band and Inner Systems, sparse in the Outer Reaches and Outer Rim.
 

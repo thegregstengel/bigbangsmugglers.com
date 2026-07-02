@@ -87,7 +87,7 @@ Player-posted bounties on you do **not** trigger arrest or NPC aggression. That 
 
 The board at either bounty office shows:
 
-- **Player bounties** — active contracts sorted by payout, with time remaining and last-known location
+- **Player bounties** — active contracts sorted by payout, with time remaining
 - **Faction wanted lists** — the Federation Wanted List and the Pirate Syndicate Hit List
 - **Your uncollected claims** — kills waiting to be redeemed (dimmed if this isn't the right office)
 - **Your own exposure** — everything currently on your head, summed prominently, with a Pay Off button
@@ -101,13 +101,13 @@ Bounty actions — posting, collecting, paying off — cost no turns.
 Two boards in the Feed tab's leaderboards track the criminal economy:
 
 - **Most Wanted** — captains ranked by the sum of active bounties currently on their head
-- **Top Bounty Hunters** — captains ranked by bounty credits earned
+- **Bounty Hunters** — captains ranked by bounty credits earned
 
 ---
 
 ## Strategic Notes
 
-**As a planet owner:** when a pirate robs your Trading Post the feed broadcasts their name to the galaxy. Post a bounty immediately — hunters will have intel and motive.
+**As a planet owner:** if your Trading Post is ever robbed, the feed broadcasts the thief's name to the galaxy — prime material for a bounty posting.
 
 **As a bounty hunter:** faction bounty announcements in the feed include the target's last-seen sector, and the board shows it too. Player bounties pay at the kill; faction claims pay at the registry — plan your route to end at the right office. And note that only winning as the attacker in solo PvP collects: bring a fleet and the bounty goes unclaimed.
 

@@ -44,7 +44,7 @@ Population directly scales production output, from 20% when the planet is empty 
 
 **Growing population:**
 
-- Buy **Mining Workers** at any Starport (300 cr each, Recruitment) and deploy them from the planet screen. Workers transfer from your inventory to the population 1-for-1, free of turns.
+- Buy **Mining Workers** at any Starport (300 cr base, Recruitment) and deploy them from the planet screen. Workers transfer from your inventory to the population 1-for-1, free of turns.
 - Population also grows naturally every 4-hour cycle: a base of 10 new colonists, boosted 10% per Habitat level, minus 1% attrition on the existing population. Natural growth stalls out as attrition catches up — topping out a large planet means shipping workers.
 
 **Population cap:** base 500, plus 250 per Habitat level, up to 1,750 at Habitat 5.
@@ -113,7 +113,7 @@ Planet storage holds collected production and anything you deposit. Capacity is 
 
 ## Garrison
 
-The garrison is your planet's standing defense force. Buy **Security Personnel** at any Starport (500 cr each, Recruitment) and deploy them from the Garrison card on the planet's Overview tab. Garrison units move from your player inventory — they are a separate pool from your ship's combat fighters. The Barracks adds 4 free garrison fighters per level every cycle.
+The garrison is your planet's standing defense force. Buy **Security Personnel** at any Starport (500 cr base, Recruitment) and deploy them from the Garrison card on the planet's Overview tab. Garrison units move from your player inventory — they are a separate pool from your ship's combat fighters. The Barracks adds 4 free garrison fighters per level every cycle.
 
 **Garrison cap:** 500, doubled by each Citadel level (up to 16,000 at Citadel 5).
 
@@ -180,7 +180,7 @@ The post starts at Level 1 and can be upgraded up to Level 5. Higher levels hold
 | 4 | 400,000 cr | 40,000 | 1,000 units | 20% below |
 | 5 | 1,000,000 cr | 100,000 | 2,000 units | 10% below |
 
-The "% below standard" discount applies to the **top of the price band** — the ceiling is lowered, the floor stays put, and actual quotes land in between. The total investment to reach Level 5 is 1,700,000 cr and 160,000 XP. A max-level post running at full stock is a significant passive income source.
+The "% below standard" discount applies to the **top of the price band** — the ceiling is lowered, the floor stays put, and actual quotes land in between. The total investment to reach Level 5 is 1,700,000 cr; the XP figures are thresholds you must have reached, not amounts spent. A max-level post running at full stock is a significant passive income source.
 
 ### Defending Against Robbery
 
@@ -215,5 +215,4 @@ A Starbase never appears on the Nav map and cannot be attacked or destroyed. It 
 - Prioritize workers before factories. The population multiplier has a bigger impact at low population than additional Factory levels.
 - Deploy proximity mines and sector-defense fighters in your planet's sector as the first line of defense before a siege ever starts. See [Deployables](/guide/deployables/).
 - Rush Factory 3 and Shield 3 to unlock the Citadel — its garrison-cap doubling is what makes a planet genuinely hard to take.
-- Planets in pirate space are more exposed to attacks but carry no contraband enforcement risk.
 - Never let the garrison hit 0 — that is the only condition under which your planet can be captured.

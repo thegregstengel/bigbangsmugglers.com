@@ -43,13 +43,13 @@ The two standing scores, everything that moves them, the full price-modifier lad
 Contraband goods, the two detection systems, cloaking, real margins, and why a clean record is a smuggler's best tool.
 
 ### [Deployables](deployables)
-Navigation beacons, proximity mines, limpet trackers, and sector-defense fighters — deploying them from the Bridge and defending against them.
+Navigation beacons, proximity mines, limpet trackers, and sector-defense fighters — deploying them from the Bridge and what they mean for anyone flying through.
 
 ### [Scanners & Intel](scanners-intel)
 The StarNav 2002 scanner, active sector scans, buying intel, cloaking devices, and who can see your ship.
 
 ### [Missions & Streaks](missions)
-Mission types, how accepting and completing works, the one-active-mission rule, expiry alerts, and login streak rewards.
+Mission types, how accepting and completing works, the one-active-mission rule, expiry alerts, and turn-streak rewards.
 
 ### [Bounties](bounties)
 Player-posted and faction bounties: posting costs, how each type pays out, wanted status, and arrest at enemy starports.

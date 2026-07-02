@@ -42,7 +42,7 @@ Buy prices by port type:
 
 The **sell price is 90% of the buy price** at the same port. Selling back where you bought loses that 10% plus taxes and fees on both legs — always haul to a port type with a higher base price instead.
 
-Every port type trades all three commodities. Yes, including Pirate Bases and Black Markets — in fact the Black Market is the cheapest source of fuel and organics in the game. The catch: anything you buy at a Black Market port is silently flagged as contraband (Pirate Base purchases are not flagged). See [Smuggling](/guide/smuggling/) before you load up.
+Every port type trades all three commodities. Yes, including Pirate Bases and Black Markets — in fact the Black Market is the cheapest source of fuel and equipment in the game. The catch: anything you buy at a Black Market port is silently flagged as contraband (Pirate Base purchases are not flagged). See [Smuggling](/guide/smuggling/) before you load up.
 
 ## What Actually Moves Prices
 
@@ -92,7 +92,7 @@ You **can** buy and sell standard commodities in pirate space — Pirate Bases a
 4. Haul and sell at the expensive one
 5. Buy something for the return leg if the ports line up
 
-The flagship route: **organics from an Agricultural Station (60 cr) to a Mining Station (sells at 180 cr)**. Other strong pairs are fuel from a Black Market (60) or Fuel Depot (70) to a Federation Port, and equipment from a Black Market or Research Complex to an Agricultural Station.
+The flagship route: **organics from an Agricultural Station (60 cr) to a Mining Station (sells at 180 cr)**. Other strong pairs are fuel from a Fuel Depot (70) to a Federation Port, and equipment from a Research Complex to an Agricultural Station. Black Market fuel and equipment are cheaper still — but everything bought there is flagged contraband, and Federation Ports are exactly where customs scans happen. Route Black Market goods to neutral ports, and read [Smuggling](/guide/smuggling/) first.
 
 ### Example Run
 
@@ -120,7 +120,7 @@ The exception is player-built **Trading Posts**, which refill from their planet'
 
 ## Turns, Lots, and Cost Tracking
 
-Every buy or sell is **1 turn per transaction**. Every purchase creates a separate cargo lot stored with its own cost basis. If you buy 10 equipment at 200 cr and later buy 10 more at 450 cr, you have two lots in your hold.
+Every buy or sell is **1 turn per transaction**. Every purchase creates a separate cargo lot stored with its own cost basis. If you buy 10 equipment at 280 cr and later buy 10 more at 450 cr, you have two lots in your hold.
 
 When you sell, the game shows the breakdown before you confirm:
 
@@ -157,7 +157,7 @@ Rule of thumb: bank your profits before flying anywhere dangerous.
 
 ## Contraband Lots
 
-Contraband is stored as separate lots from regular cargo of the same type. If you buy normal equipment and then Black Market equipment, your hold shows two distinct groups:
+Contraband is stored as separate lots from regular cargo of the same type. If you buy normal equipment and then Stolen Equipment on the Black Market, your hold shows two distinct groups:
 
 ```
 ⚙️ Equipment      10 units   avg 450 cr

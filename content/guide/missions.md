@@ -77,7 +77,7 @@ Abandoning is free — no credit, reputation, or alignment penalty. But the cont
 
 ### Expiry
 
-Every contract has an expiry timer, and **accepting does not reset it** — you inherit whatever time was left on the board posting, so check the clock before you accept. An expired mission fails.
+Every contract has an expiry timer, and **accepting does not reset it** — you inherit whatever time was left on the board posting, so check the clock before you accept. An expired contract can no longer be completed — abandon it to free your mission slot.
 
 If the "missions" notification category is on in Settings, you get a push alert at roughly 24 hours remaining and again at roughly 1 hour.
 
@@ -100,7 +100,7 @@ The game rewards consecutive days of fully spending your turns — not just logg
 | 14 | 10,000 cr + 500 XP |
 | 30 | 25,000 cr + 1,000 XP |
 
-Each milestone is claimable **once per account, ever** — milestone claims don't reset between seasons or when a streak breaks. Rewards are claimed from the streak card on **Ship → Stats**. (The in-app streak display is currently being fixed; your streak is tracked regardless.)
+Each milestone is claimable **once per account, ever** — milestone claims don't reset between seasons or when a streak breaks. Rewards are claimed from the streak card on **Ship → Stats**. (The in-app streak display and milestone claiming are currently being fixed; your streak is tracked regardless, and milestones remain claimable once the fix ships.)
 
 ---
 

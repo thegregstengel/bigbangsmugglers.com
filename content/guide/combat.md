@@ -13,20 +13,17 @@ Combat in Big Bang Smugglers is fast and automatic. When ships fight, the server
 
 ## PvP Zones
 
-Player-vs-player combat is gated by **region**, not just territory:
+Player-vs-player combat is gated by **territory** and the galaxy's PvP setting:
 
-| Region | PvP Status |
-|--------|-----------|
-| Federation Core | Never |
-| Federation Space | Never |
-| Inner Systems | No PvP |
-| Middle Band | No PvP |
-| Outer Reaches | PvP enabled (when galaxy PvP is on) |
-| Outer Rim | PvP enabled (when galaxy PvP is on) |
+| Territory | PvP Status |
+|-----------|-----------|
+| Federation territory | Never — always safe, regardless of galaxy settings |
+| Neutral Space | PvP enabled (when galaxy PvP is on) |
+| Pirate territory | PvP enabled (when galaxy PvP is on) |
 
-Only the outer bands of the galaxy allow PvP — most neutral space has none, and Federation space is always safe regardless of galaxy settings. Galaxy PvP is on by default.
+Outside Federation territory, any sector is a potential battleground when the galaxy has PvP on (it's on by default). Danger still rises toward the rim in practice — that's where pirate players and the richest targets congregate — but there is no mechanical safe band in neutral space.
 
-Even inside a PvP zone, several protections apply in both directions:
+Even where PvP is live, several protections apply in both directions:
 
 - **Docked ships** cannot attack or be attacked. All ports are safe havens.
 - **Ships parked on a planet** they (or their corporation) own cannot be attacked until the planet is captured.
@@ -195,7 +192,7 @@ Corporation members in the same sector can fight as a fleet.
 - Only the **leader** initiates a fleet attack and pays the 1 turn — and the leader gets the kill credit. Every member shares the alignment change and earns reputation and XP.
 - Resolution is **one combined roll**: the fleet fights as a single attacker with the full sum of all members' fighters, shields, and torpedoes on the leader's hull profile.
 - **Credit loot goes to the corporation bank** — it is never split among members.
-- Cargo from fleet victories requires a corporation Starbase for storage; **without a corp Starbase, cargo is forfeited outright**. See [Corporations & Fleets](/guide/corporations-fleets/).
+- Fleet loot follows the same rule as all PvP: credits only, deposited to the corp bank. See [Corporations & Fleets](/guide/corporations-fleets/).
 - A fleet loss disables every member, and any member who entered at 0/0/0 is destroyed.
 
 Fleet combat shows a result toast rather than the full recap screen.
@@ -270,4 +267,4 @@ NPC fights use the same resolution system described above, with one big differen
 
 After every 1v1 fight (PvP or NPC), a recap screen shows both sides' stats, calculated power, your win probability, losses, loot, and any bounty collected. If you were disabled, it notes the next-reset repair timing. Fleet combat shows only a toast.
 
-Three feed messages are created per combat: one private to the attacker with loot details, one private to the defender with losses, and one public showing who defeated whom. Popup alerts fire instantly for combat involving your ship.
+Three feed messages are created per combat: one private to the attacker with loot details, one private to the defender with losses, and one public showing who defeated whom. A popup alert fires when your ship is attacked (while the app is open).

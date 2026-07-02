@@ -96,7 +96,7 @@ Ships come in six roles across two faction lines — three archetypes, each with
 - **War / Raider**: high fighters and torpedoes, minimal cargo — escape 40% / 50%
 - **Balanced / Corsair**: middle cargo and weapons, **best escape** — 50% / 60%
 
-Shields are identical across all roles at a given tier — no role has "the highest shields." Every Pirate hull has **+10 escape** over its Federation mirror at the same price and stats (Tier 5 flagships give 10 points back in exchange for special abilities). See [Ships](/guide/ships/) for the full 30-ship catalog.
+Shields are identical across all roles at a given tier — no role has "the highest shields." Every Pirate hull has **+10 escape** over its Federation mirror at the same price and stats (the Tier 5 War-line flagships give 10 points back in exchange for their special abilities; other lines keep full escape). See [Ships](/guide/ships/) for the full 30-ship catalog.
 
 ### The Hangar
 
@@ -112,7 +112,7 @@ Losing a fight normally leaves your ship **disabled**, not destroyed. But if you
 
 Two repair paths, plus free recovery:
 
-- **Port repair** (the Repair service at Stardock, Federation, Standard, Depot, and Mining ports): restores everything — shields, fighters, and torpedoes — with no turn cost (minimum 200 cr). The only repair that replenishes your consumables.
+- **Port repair** (the Repair service at Stardock, Federation, Standard, Depot, and Mining ports, plus dedicated Repair Stations): restores everything — shields, fighters, and torpedoes — with no turn cost (minimum 200 cr). The only repair that replenishes your consumables.
 - **Shipyard and field-kit repair**: shields only. A field kit works anywhere while disabled (2 turns, shields to 50%); the starport shipyard restores full shields for 1 turn. Fighters and torpedoes are re-bought at the starport weapon bays.
 - **Disabled ships auto-recover** for free to 50% shields at the next 4-hour turn boundary.
 
@@ -129,11 +129,11 @@ Credits are the universal currency. Earn them through:
 - **Bounties**: collect player and faction bounty contracts
 - **Exploration**: ruins, anomalies, and first-visit XP
 
-Spend them on cargo, ships, permanent upgrades, deployables, and services. And if you run dry mid-cycle: **Agricultural Stations sell provisions** — 800 cr per turn restored, max 5 per purchase.
+Spend them on cargo, ships, permanent upgrades, deployables, and services. And if you run dry mid-cycle: **agricultural ports sell provisions** — 800 cr per turn restored, max 5 per purchase.
 
 ## Banking
 
-Your wallet is at risk; your bank is not. Banked credits are safe from **combat looting** and from **bounty arrest** (an arrest seizes only your wallet). Deposits and withdrawals are free, cost no turns, and are available at starports and banking ports.
+Your wallet is at risk; your bank is not. Banked credits are safe from **combat looting** and from **bounty arrest** (an arrest seizes only your wallet). Deposits and withdrawals are free, cost no turns, and are available at starports and at ports with a Banking service (Stardock and Federation ports).
 
 One caveat: ship repair can auto-draw from your bank if your wallet is short — shipyard repair charges a 10% fee on the shortfall it covers.
 
@@ -142,11 +142,11 @@ One caveat: ship repair can auto-draw from your bank if your wallet is short —
 Two separate scores shape how the galaxy treats you:
 
 - **Alignment** (−1000 to +1000): your Federation-vs-Pirate standing. Moved by missions, combat, smuggling busts, port and planet attacks and claims — **not** by ordinary trading.
-- **Trader reputation** (0–100): your merchant standing, built by trading. Affects prices at every port.
+- **Trader reputation** (0–100): your merchant standing, built through dealings with NPC traders you meet in space (not port trades). Affects prices at every port.
 
-What alignment does: faction port pricing (up to 20% off when friendly, +50% markup when hostile), NPC behavior (pirates and patrols flip aggressive around ±300), and docking rights (faction ports deny you past ∓300). One thing it does **not** do: gate ship purchases. Ship availability is by location — the Federation starport stocks Federation hulls, the Pirate starport stocks Pirate hulls.
+What alignment does: faction port pricing (up to 20% off when friendly, +50% markup when hostile), NPC behavior (pirates and patrols flip aggressive around ±300), and docking rights at the two faction starports (denied past ∓300 — regular ports never turn you away). One thing it does **not** do: gate ship purchases. Ship availability is by location — the Federation starport stocks Federation hulls, the Pirate starport stocks Pirate hulls.
 
-**PvP** is region-gated: it's only possible in the outer reaches of the galaxy, and only when the season has PvP enabled. Federation space is always safe. See [Galaxy & Territory](/guide/galaxy-territory/) and [Reputation & Factions](/guide/reputation-factions/).
+**PvP** is territory-gated: Federation territory is always safe; everywhere else is fair game when the season has PvP enabled (the default). See [Galaxy & Territory](/guide/galaxy-territory/) and [Reputation & Factions](/guide/reputation-factions/).
 
 ## Corporations
 

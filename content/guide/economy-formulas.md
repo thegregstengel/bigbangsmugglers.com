@@ -64,7 +64,7 @@ buyTotal  = subtotal + round(subtotal × taxRate) + round(subtotal × 0.01)
 sellTotal = subtotal − tax − portFee
 ```
 
-taxRate: Federation 5% (7% for Pirate-faction players), Tech Outpost 3%, everything else 2%. The 1% port fee applies everywhere.
+taxRate: Federation 5% (7% for Pirate-faction players), Tech Outpost 3%, everything else 2% (player trading posts: 0% when you buy, 2% when you sell). The 1% port fee applies everywhere.
 
 ## Ship Combat
 
@@ -111,7 +111,7 @@ No fight is ever safer than 95% or more hopeless than 5%.
 
 ```
 escape = 0.25 + 0.35 × escapeRating − 0.15 × (atkFighters / totalFighters)
-         (+0.05 in FED_CORE/FED_SPACE) (+0.15 Stealth Plating) (+0.10 asteroid field)
+         (+0.05 in FED_CORE/FED_SPACE) (+0.15 Stealth Plating) (+ship-ability escape bonuses)
 clamped to [0.05, 0.85]
 ```
 
@@ -136,7 +136,7 @@ D = max(10, garrison × 0.8 × (1 + defenseBonus) + structuralDefense)
 p = clamp01(A / (A + D) ± 0.02)
 ```
 
-For planets, defenseBonus comes from Shield (+15%/level) and Citadel (+10%/level) structures, and structuralDefense = 12 × shieldLevel + 25 × citadelLevel. Win: garrison −50%. Loss: garrison −20%, your ship disabled with fighters and shields wiped.
+For planets, defenseBonus combines Shield and Citadel structures multiplicatively: defenseBonus = (1 + 0.15 × shieldLevel) × (1 + 0.10 × citadelLevel) − 1 (so 5/5 gives +158.75%, not +125%), and structuralDefense = 12 × shieldLevel + 25 × citadelLevel. Win: garrison −50%. Loss: garrison −20%, your ship disabled with fighters and shields wiped.
 
 ## Loot
 
@@ -276,7 +276,7 @@ Stealth Hull Plating:        −30 points, floor 5%
 | Cloaking Device only | 25% |
 | Device + Plating | 5% |
 
-Scans are skipped entirely if you carry no contraband or your alignment is above +300. Port customs scans fire when you open the trade screen at a Federation port, on a 30-minute cooldown (the cooldown gates customs only — patrol scans always run when you submit). If caught: all contraband seized galaxy-wide, fine = 10% of its value (capped at your wallet), −5 alignment.
+Scans are skipped entirely if you carry no contraband or your alignment is above +300. Port customs scans fire when you open the trade screen at a Federation port, on a 30-minute cooldown (the cooldown gates customs only — patrol scans always run when you submit). If customs catches you: all contraband seized galaxy-wide, fine = 10% of its value (capped at your wallet), −5 alignment. A patrol scan bust seizes contraband and costs −5 alignment but carries no fine — the only patrol fine is a flat 2,000 cr when a failed bribe's forced scan catches you.
 
 **Sale-time detection** (rolled when you sell a contraband lot):
 

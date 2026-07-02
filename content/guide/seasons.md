@@ -38,7 +38,7 @@ When you leave a season — voluntarily or because it ended — everything seaso
 
 | Wiped | Persists |
 |---|---|
-| All ships and cargo | Login streak |
+| All ships and cargo | Turn streak |
 | Credits — **wallet AND bank** | Account identity and settings |
 | XP and level | Your season-recap history (permanent) |
 | Reputation and alignment | |
@@ -73,7 +73,7 @@ Boards refresh roughly every **5 minutes** — they are not real-time. Your own 
 | Exploring a sector (first visit) | 10 base, +25 if it has a port, +50 a planet, +100 a landmark |
 | Combat | Both sides earn some; scales with your opponent's tier and how even the fight was |
 | Completing missions | Per-mission XP reward |
-| Login-streak milestones | 50 / 200 / 500 / 1,000 XP at day 3 / 7 / 14 / 30 |
+| Turn-streak milestones | 50 / 200 / 500 / 1,000 XP at day 3 / 7 / 14 / 30 |
 
 Note that claiming and developing planets pays **credits, not XP** — the only planet-related XP is the first-visit exploration bonus for the sector.
 

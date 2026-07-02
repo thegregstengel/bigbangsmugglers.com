@@ -97,7 +97,7 @@ When a ship is destroyed:
 - The hull is gone permanently, along with **everything installed on it** — tech upgrades, warp drive, StarNav, Tesseract, all of it.
 - All cargo aboard is lost.
 - **All of your remaining turns are wiped.** Your day is over.
-- Credits (wallet and bank) and XP are untouched.
+- Destruction itself takes no credits or XP — but the fight you just lost still applies normal combat looting to your wallet before the ship goes down. Bank credits stay safe.
 
 Your escape pod takes you to the sector of a planet where you own a built Starbase — or to Sector 0 if you don't have one. If you have surviving ships in the Hangar, the first one is reactivated there. If you own nothing else, you're granted a free starter ship.
 
@@ -155,7 +155,7 @@ This is where the war line starts feeling like a real warship. Heavy fighter com
 Federation heavy enforcement vessel. Slow to maneuver, impossible to ignore. The kind of ship that ends disputes by existing in the same sector.
 
 **Federation Battleship** — Tier 5 · 250,000 cr · 60,000 XP
-The apex of federation military shipbuilding. Capital class, full armament, and a +10% damage bonus in combat — paid for with the worst escape rating in the fleet. Very little cargo space, very few things that can stop it.
+The apex of federation military shipbuilding. Capital class, full armament, and a +10% damage bonus in combat — paid for with trading-freighter escape odds. Very little cargo space, very few things that can stop it.
 
 ---
 

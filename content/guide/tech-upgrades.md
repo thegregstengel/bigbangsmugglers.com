@@ -33,7 +33,7 @@ All upgrades are permanent and apply immediately. Each requires a minimum XP lev
 | Advanced Attack Systems | 22,000 cr | 6,000 XP | +10% combat offense multiplier |
 | Reinforced Armor Plating | 22,000 cr | 6,000 XP | +10% combat defense multiplier |
 
-Unlike most starport services, Tech Hub prices are flat — the price on the card is the price you pay, regardless of your standing.
+Unlike most shipyard and port services, Upgrades prices are flat — the price on the card is the price you pay, regardless of your standing.
 
 ## How Each Upgrade Works
 

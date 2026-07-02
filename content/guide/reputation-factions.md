@@ -213,7 +213,7 @@ Prices are only half the story. Alignment thresholds open and close doors across
 | Below −300 | Federation starports refuse you docking |
 | Above +300 | Pirate starports refuse you docking |
 | Above +300 | Federation contraband scans skip you entirely — customs and patrols never search your hold |
-| At or below −500 | Unlocks robbing trading posts |
+| At or below −500 | Meets the threshold to rob trading posts |
 | +100 / −100 | Required to claim planets in Federation (+100) or pirate (−100) territory |
 
 ### Where to See It In-Game

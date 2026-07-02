@@ -26,9 +26,9 @@ Prices are bases — the amount actually charged is adjusted by your faction ali
 
 ## Deploying: the Bridge Tab
 
-Everything deploys from one place: **Ship screen → Bridge tab**, in the sector your ship currently occupies. Deploying costs no turns, but a few rules apply to all deployables:
+Beacons, mines, and limpets all deploy from one place: **Ship screen → Bridge tab**, in the sector your ship currently occupies (sector-defense fighters deploy from your planet's screen instead). Deploying costs no turns, but a few rules apply to all deployables:
 
-- **Deploying breaks your ship cloak.** Buying does not.
+- **Deploying a beacon, mine, or limpet breaks your ship cloak.** Buying does not, and neither does deploying planet defenses.
 - **Your own deployables never harm you** — but **corp-mates are NOT immune**. Your mines hit them, your defenses shoot them, and your limpets latch onto them.
 - Freshly respawned players with PvP immunity are immune to all hostile deployables until it expires.
 - NPCs never trigger deployables — these are player-versus-player tools.
@@ -91,7 +91,7 @@ You get a feed and push notification every time your mines detonate on someone, 
 
 Honesty time: **there is currently no way for a victim to sweep or remove deployed mines**. They cannot be scanned reliably at small counts, cannot be attacked, and never decay. The only way through a minefield is to eat the damage — at most 150 shield damage per pass. Plan your shields accordingly, and if you are the mine owner, enjoy it while it lasts.
 
-Do not confuse player mines with the environmental **minefield hazard** some sectors have — that one is permanent scenery with no owner, a 40% chance of 40–60 damage on every entry.
+Do not confuse player mines with the environmental **minefield hazard** some sectors have — that one is permanent scenery with no owner, a 40% chance of 40–60 damage when you move through (warping in skips it).
 
 ## Limpet Trackers
 
@@ -139,7 +139,6 @@ For the full scanning toolkit, see [Scanners & Intel](/guide/scanners-intel/).
 | Mine detonation | Feed + push alert, per-sector mine list | Damage toast on arrival; public feed names them |
 | Limpet latch | Feed + push alert, live tracking list | Nothing — silent until they pay for a sweep |
 | Sector defense engages | Feed + push alert | Damage on entry; public feed names them |
-| Beacon destroyed | Feed notification | — |
 | Foreign beacon | — | Visible when in the same sector |
 
 ## Inventory Management

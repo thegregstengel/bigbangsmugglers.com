@@ -39,8 +39,8 @@ Regions are bands of distance from the galactic center. They set NPC spawn rates
 | FED_SPACE | 10–25% out | Federation-adjacent space. Well patrolled, still no pirates. |
 | INNER | 25–45% out | The first pirates appear (weak ones). Patrols still common. |
 | MIDDLE | 45–70% out | The working middle of the galaxy. Pirates at full strength, patrols thinning. |
-| OUTER | 70–90% out | **PvP zone.** Pirates common, patrols nearly gone. |
-| OUTER_RIM | Outermost 10% | **PvP zone.** The most dangerous pirates in the game, no patrols at all, and one-way smuggling routes. |
+| OUTER | 70–90% out | Pirates common, patrols nearly gone. |
+| OUTER_RIM | Outermost 10% | The most dangerous pirates in the game, no patrols at all, and one-way smuggling routes. |
 
 There is no separate "danger rating" stat — danger in a region is the product of who spawns there, at what strength, and whether other players can attack you.
 
@@ -72,9 +72,9 @@ The outer band. No law of any kind:
 
 ## Where PvP Happens
 
-PvP is gated by **region, not territory**: when a galaxy has PvP enabled, players can attack each other **only in the OUTER and OUTER_RIM regions** — the outer bands of the galaxy. Federation space and most of Neutral Space (everything through the MIDDLE region) are PvP-free no matter what the galaxy settings say.
+PvP is gated by **territory**: when a galaxy has PvP enabled (the default), players can attack each other anywhere **outside Federation territory**. Federation territory — the innermost ~5% of sectors — is always safe no matter what the galaxy settings say. Neutral Space and Pirate territory are both fair game.
 
-Practical version: your sector's territory badge tells you the law, but your distance from the center tells you whether another player can shoot you. If you're carrying a fortune, stay out of the outer bands or take a wormhole.
+Practical version: the territory badge is your safety indicator — shield means untouchable, sword means another player can shoot you. Danger still concentrates toward the rim in practice (that's where pirate players hunt), but there is no mechanically safe band of neutral space. If you're carrying a fortune, dock, park, bank, or take a wormhole.
 
 ## NPCs by Region
 
@@ -108,7 +108,7 @@ The Nav screen shows your current sector and everything in it:
 - **Sector number** — remember, lower = closer to the center.
 - **"Warp to" section** — despite the name, these buttons are **ordinary 1-turn moves** to adjacent sectors. The actual warp drive is the separate Warp Drive card.
 - **Points of interest** — ports, planets, stations, and landmarks in this sector, plus a Wormholes card when one is present.
-- **Players list** — every player with an active, undocked, unlanded, uncloaked ship in your sector, wherever you are. This list appears in all regions, not just PvP zones — in safe space it's information, in the outer bands it's a target list (yours and theirs).
+- **Players list** — every player with an active, undocked, unlanded, uncloaked ship in your sector, wherever you are. This list appears everywhere — in Federation territory it's information, everywhere else it's a target list (yours and theirs).
 
 ## Warp Drive
 

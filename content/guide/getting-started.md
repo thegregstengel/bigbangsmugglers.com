@@ -20,7 +20,7 @@ Big Bang Smugglers is playable two ways:
 
 Create an account with **email and password** (you'll need to verify your email before playing) or **sign in with Google**. Pick a captain name — 3 to 20 characters, letters, numbers, and spaces.
 
-There's no faction to choose and no character to build. You start as a **Neutral** captain, and your faction alignment shifts through what you do: missions, combat, smuggling busts, and territorial plays move it toward Federation or Pirate. Ordinary trading does not shift alignment — it builds a separate **trader reputation** that affects your prices everywhere. See [Reputation & Factions](/guide/reputation-factions/) for how the two scores work.
+There's no faction to choose and no character to build. You start as a **Neutral** captain, and your faction alignment shifts through what you do: missions, combat, smuggling busts, and territorial plays move it toward Federation or Pirate. Ordinary port trading shifts neither score. Your separate **trader reputation** — which affects prices everywhere — moves through dealings with NPC traders you meet in space, not through port trades. See [Reputation & Factions](/guide/reputation-factions/) for how the two scores work.
 
 ## Join a Season
 
@@ -92,8 +92,8 @@ What's free: banking, browsing ports, buying ships and upgrades, and accepting m
 
 When you hit 0 turns you cannot move, fight, or trade. You can still bank credits, browse, and use port services that don't consume turns. Two more things worth knowing:
 
-- **Agricultural Stations sell provisions** that restore turns at **800 cr each, up to 5 per purchase** — the only way to regain turns mid-cycle.
-- Spending your **last turn on a move** banks a day toward your login streak (reward milestones at 3, 7, 14, and 30 days). Only a move counts — a trade or fight as your last action doesn't. The in-app streak display currently has a known bug, but the days are recorded.
+- **Agricultural Stations sell provisions** that restore turns at **800 cr each, up to 5 per purchase** — the main way to regain turns mid-cycle (a lucky anomaly landmark can also grant a few).
+- Spending your **last turn on a move** banks a day toward your turn streak (reward milestones at 3, 7, 14, and 30 days). Only a move counts — a trade or fight as your last action doesn't. The in-app streak display currently has a known bug, but the days are recorded.
 
 ## What to Do First
 

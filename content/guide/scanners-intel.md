@@ -45,7 +45,7 @@ Level 4 is the counter-intelligence breakpoint: it is the first level that shows
 
 ### Reading the Map
 
-The STARNAV 2002 card on the Nav screen draws 1-hop sectors as large tappable circles and farther sectors as small dots, with POI icons per your detail tier. Sectors just beyond your range appear as dashed "?" blips at the map edge. Tap a 1-hop sector for a detail sheet with a **Warp to Sector** shortcut (a normal move — it costs a turn).
+The STARNAV 2002 card on the Nav screen draws 1-hop sectors as large tappable circles and farther sectors as small dots, with POI icons per your detail tier. At level 2 and up, sectors just beyond your range appear as dashed "?" blips at the map edge. Tap a 1-hop sector for a detail sheet with a **Warp to Sector** shortcut (a normal move — it costs a turn).
 
 When the neighborhood gets dense, an expand button opens a full-screen pinch-and-zoom map of the same data with a per-sector detail panel.
 
@@ -53,17 +53,17 @@ One caution: the map refreshes when you change sectors, not while you sit still 
 
 ## Active Sector Scans
 
-The passive map never shows hazards, landmarks, or region names. For those you run an **active scan**: **Ship tab → Bridge → Scanners card**, pick a radius, tap Scan Sector.
+The passive map never shows landmarks or region names. For those you run an **active scan**: **Ship tab → Bridge → Scanners card**, pick a radius, tap Scan Sector.
 
 - **Radius 1, 2, or 3 — the scan costs that many turns.**
 - **No StarNav required.** This works from any ship at any scanner level.
-- Each sector in radius reports: region, port count, planet count, landmark count, player count, NPC count, and **hazards** — the only intel source for hazards, landmarks, and region names.
+- Each sector in radius reports: region, port count, planet count, landmark count, player count, and NPC count — the only intel source for landmarks and region names. Hazards never appear in any scan: the damage report after moving through a sector is the only way to learn a hazard is there.
 
 Cloaked ships do not appear in scan results unless your ship carries StarNav level 4+. Scanning does not break your own cloak.
 
 ## Deployables Scan
 
-Mines and sector defenses never show up on sector scans. The **Scan Deployables** button (same Scanners card, 1 turn, current sector only) is the dedicated sweep — but it only detects **large concentrations**. A minefield below roughly half the sector's mine cap can slip past even then. See [Deployables](/guide/deployables/) for the full detection rules.
+Mines and sector defenses never show up on sector scans. The **Scan Deployables** button (same Scanners card, 1 turn, current sector only) is the dedicated sweep — but it only detects **large concentrations**. A minefield below roughly half the sector's mine cap always slips past; even above that it's a coin flip. See [Deployables](/guide/deployables/) for the full detection rules.
 
 Practical advice: treat the hostile-deployables warning banner as your tripwire. When a scan comes back hot, reroute; when it comes back clean, stay alert anyway.
 
@@ -76,7 +76,7 @@ Two venues sell sector reports, and both scale their price with your reputation 
 | Sector Intelligence | Nav → Stations → Research Station | 300 cr | 3 random sector reports (ports, starports, wormholes, landmarks) |
 | Buy Intel | Nav → Port → Tavern (pirate, stardock, and black-market ports) | 500 cr | 5 reports on sectors you have **never visited** |
 
-The tavern deal has a hidden bonus that makes it the better buy for explorers: **tavern reports make those sectors warp-eligible**. Warping normally requires prior knowledge of the destination, which means having visited it — tavern intel is the only way to add unvisited sectors to your warp map. At 500 cr for 5 sectors, it is a cheap way to extend your reach. Tavern intel is paid from your wallet only; the research-station purchase can dip into your bank if your wallet is short.
+The tavern deal has a hidden bonus that makes it the better buy for explorers: **tavern reports make those sectors warp-eligible**. Warping normally requires prior knowledge of the destination, which means having visited it — tavern intel and activated Nav Beacon landmarks (which reveal up to 8 neighbors) are the only ways to add unvisited sectors to your warp map. At 500 cr for 5 sectors, it is a cheap way to extend your reach. Tavern intel is paid from your wallet only; the research-station purchase can dip into your bank if your wallet is short.
 
 ## Pre-Warp Intel
 
