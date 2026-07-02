@@ -1,77 +1,108 @@
 ---
 title: "Smuggling & Contraband"
-date: 2026-02-28
+date: 2026-07-02
 draft: false
-description: "Run contraband, evade Federation patrols, and use the black market"
-weight: 6
+description: "Run contraband, handle Federation customs and patrols, and use the black market"
+weight: 10
 toc: true
 ---
 
-High-risk, high-reward. The smuggling system rewards captains willing to operate outside Federation law, but getting caught means losing your cargo and your credits.
+*Accurate as of v1.22.0 (July 2026).*
+
+Smuggling is a margin game. Contraband is bought at a steep black-market discount and sold at full commodity prices — the discount *is* the profit. The risk is real but specific: two separate detection checks, both of which you can plan around.
 
 ## What Is Contraband?
 
-Contraband is cargo purchased at Black Market ports in pirate space. Unlike standard commodities, contraband is illegal to carry in Federation and neutral space.
+Contraband is cargo purchased through the **Black Market** port service. Contraband lots are permanently flagged in your cargo hold and sell as the underlying commodity they mimic.
 
-| Item | Price | Est. Sell Value | Risk | Cargo Weight |
-|------|-------|-----------------|------|--------------|
-| Stolen Equipment | 40 cr/unit | ~80 cr/unit | Medium | 2 holds/unit |
-| Embargoed Organics | 30 cr/unit | ~160 cr/unit | Low | 1 hold/unit |
-| Black Tech | 150 cr/unit | ~500 cr/unit | High | 2 holds/unit |
+| Item | Buy Price | Cargo Weight | Max per Purchase | Sells As |
+|------|-------|--------------|------------------|----------|
+| Stolen Equipment | 40 cr/unit | 2 holds/unit | 50 | Equipment |
+| Embargoed Organics | 30 cr/unit | 1 hold/unit | 80 | Organics |
+| Black Tech | 150 cr/unit | 2 holds/unit | 10 | Equipment |
+
+Black-market purchases **cost no turns**, and supply is unlimited — the only limit is the per-purchase cap, so you can buy repeatedly until your holds or wallet run out.
 
 ## Where to Buy Contraband
 
-Contraband is only available at Black Market ports in pirate sectors. Regular trading ports do not exist in pirate space. Every commercial port in pirate territory is either a pirate base, black market, or service station.
+Contraband is sold at the Black Market service of ports in pirate space — pirate bases and black-market ports. Navigate to the sector, open the port from the Nav screen, select **Black Market** from the port services, and purchase what you need.
 
-To buy contraband, navigate to a pirate sector, open the port from the Nav screen, select Black Market from the port services, and purchase what you need.
+## Sell Values and Margins
 
-## Where to Sell Contraband
+Contraband sells as its underlying commodity at that port's normal prices — there is no special contraband price. That means the best outlet for each item is whichever port type pays the most for its commodity:
 
-Contraband sells at standard trading ports in Federation and neutral space as the underlying commodity it mimics.
+- **Stolen Equipment** is the standout. Agricultural ports pay the galaxy's top equipment prices — roughly **570 cr/unit net profit** on a 40 cr buy.
+- **Embargoed Organics** sell best at mining ports, for roughly **145 cr/unit net**.
+- **Black Tech** sells as equipment too, so it fetches the same price as Stolen Equipment everywhere — about **460 cr/unit net** after its much higher cost, and it's capped at 10 units per purchase. Credit for credit, Stolen Equipment is the better buy.
 
-- Stolen Equipment sells as equipment
-- Embargoed Organics sells as organics
-- Black Tech sells as equipment
+**Route advice: buy at pirate-space black markets, sell at neutral high-band ports.** Never sell at Federation ports — they're the only ports that run customs scans, *and* they pay less for equipment than agricultural ports do. There is no reason to bring contraband to a Federation dock.
 
-The sell price reflects the underlying commodity's current price at that port.
+## Detection: Two Separate Checks
 
-## Detection and Confiscation
+### 1. Federation Customs (Entry Scans)
 
-Carrying contraband into Federation or neutral space triggers enforcement. There are two detection systems.
+Customs fires when you **open the trade screen at a Federation-type port**. A 30-minute cooldown prevents back-to-back customs scans.
 
-### Federation Patrol Scans
+Detection odds:
 
-When you move into a federation or neutral sector that has a Federation patrol NPC present, your cargo is automatically scanned.
+| Your Gear | Chance of Being Caught |
+|---|---|
+| Nothing | 75% |
+| Stealth Hull Plating only | 45% |
+| Goods Cloaking Device only | 25% |
+| Both | 5% |
 
-- Base detection rate: 75%
-- With a Goods Cloaking Device: 25%
-- A 30-minute cooldown prevents back-to-back scans on the same player
+A Goods Cloaking Device is **consumed every time a scan fires — caught or not**. One device per scan.
 
-If caught, all contraband is confiscated, a fine of 10% of estimated cargo value is deducted from your credits, and your alignment takes a -5 hit. A private feed message is sent to you.
+If you're caught: **all your contraband is seized — everywhere in the galaxy, including lots stored on your other ships** — plus a fine of 10% of the contraband's purchase value and **−5 alignment**.
 
-### Port Customs Scans
+**Patrol encounters** can also demand a scan. When you run into a Federation patrol while moving, you get choices: submit to the scan (a clean scan earns you **+2 alignment**), pay a bribe (500 to 25,000 cr depending on the patrol's tier, 60% success — a failed bribe costs the credits and forces the scan anyway), **jettison your contraband first (free, no penalty** — but it dumps all contraband you own, galaxy-wide), or fight.
 
-When you open the trading screen at a Federation port, customs scans your hold on entry. The same detection rate and cooldown apply. The cooldown is global, so one scan of either type resets the 30-minute window.
+### 2. Point-of-Sale Checks
 
-## The Goods Cloaking Device
+Separately, every time you sell a contraband lot, the port may flag the sale. The chance varies by region — from about **1%** out in the rim to about **22%** in the Federation core — and rises with criminal alignment and a fuller cargo hold.
 
-The most important tool for a smuggler.
+- **Stealth Hull Plating helps here** (and usually zeroes the roll outside the Federation core).
+- **The Goods Cloaking Device does NOT** — it only affects entry scans.
+
+A flagged sale is simply **refused**: no fine, no seizure. The goods stay in your hold.
+
+## Counter-Detection Gear
+
+**Goods Cloaking Device** — the smuggler's staple.
 
 - Price: 750 cr each
-- Where to buy: Black Market, in the Counter-Detection Tools section
-- Effect: Reduces detection rate from 75% to 25%
-- Usage: Single-use, consumed automatically when a scan fires whether you are caught or not
+- Where to buy: Black Market, in the Counter-Detection Tools section (max 10 per purchase)
+- Effect: drops entry-scan detection from 75% to 25%
+- Usage: single-use, consumed automatically when an entry scan fires, whether you're caught or not. Does nothing at point of sale.
 
-Your current device count is shown in the black market UI. Devices stay in your inventory between sessions.
+Your current device count is shown in the black market UI. Devices stay in your inventory between sessions (within a season).
 
-## Alignment Consequences
+**Stealth Hull Plating** — the permanent upgrade.
 
-Getting caught degrades your alignment score by 5 points per bust. Repeated busts push you toward Pirate alignment, which opens pirate-faction benefits but closes Federation opportunities.
+- Price: 20,000 cr plus a 5,000 XP requirement, from the Tech Hub Upgrades service
+- Effect: −30 points on **both** checks — entry scans (75% → 45%, or 25% → 5% with a device) and point-of-sale rolls
+
+## The Standing Angle
+
+Your alignment changes the smuggling math more than any gadget:
+
+- **Alignment above +300 makes you immune to customs entirely.** Federation entry scans — port customs and patrol searches — skip you completely, and your cloaking devices are never consumed. Ironically, a captain in good Federation standing is the galaxy's most untouchable smuggler.
+- **Contraband can never be looted from you in combat.** Win or lose, PvP or NPC, contraband lots are ignored by looting — it's the safest cargo you can carry into a fight.
+- Put together: a clean-standing hauler running pirate goods through neutral space faces almost no risk at all.
+
+Getting caught pushes the other way: each bust is −5 alignment, and repeated busts drift you toward Pirate standing — which opens pirate-faction benefits but eventually closes Federation starports.
+
+## Cargo Mechanics
+
+Contraband lots are flagged in red on your Ship screen's cargo card and marked **"sells first"** — when you sell a commodity, the sell dialog automatically allocates contraband lots before your legitimate stock.
+
+Remember that seizures and jettisons apply to **all contraband you own in the galaxy**, not just what's on your active ship. Stashing contraband on a hangared ship does not protect it.
 
 ## Smuggling Strategy
 
-**Low-risk run:** Carry Embargoed Organics, buy cloaking devices before crossing into fed space, and use the 30-minute cooldown window to make multiple port stops safely.
+**The standard run:** buy Stolen Equipment at a black market, haul it to a neutral agricultural port, sell. No Federation port ever touches the route, so the only risks are patrol encounters on the way — where jettisoning is always a free out — and the point-of-sale roll, which is small in neutral space and smaller with plating.
 
-**High-profit run:** Black Tech has the best margin at roughly 3x purchase price but highest detection risk. Pair with a cloaking device and the Stealth Hull Plating tech upgrade for manageable odds.
+**The bulk-organics variant:** Embargoed Organics are half the profit per unit but only 1 hold each and an 80-unit purchase cap — better for small ships and quick loops between a black market and a nearby mining port.
 
-**Route planning:** Buy contraband deep in pirate space and sell at high-demand Federation ports. Fewer sector hops through fed space means fewer scan opportunities.
+**The lawful smuggler:** build alignment above +300 (patrol scans while clean, Federation missions, hunting pirates) and customs stops existing for you. Combine with plating and neutral-space selling, and smuggling becomes nearly risk-free income.
