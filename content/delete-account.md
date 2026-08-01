@@ -1,39 +1,54 @@
 ---
 title: "Delete Your Account"
-description: "Request deletion of your Big Bang Smugglers account and data"
+description: "Delete your Big Bang Smugglers account and data"
 type: page
 ---
 
 # Delete Your Account
 
-To request deletion of your **Big Bang Smugglers** account and all associated data, send an email to:
+You can delete your **Big Bang Smugglers** account yourself, from inside
+the game, at any time.
 
+## In the app or on the web (immediate)
+
+1. Sign in at [play.bigbangsmugglers.com](https://play.bigbangsmugglers.com)
+   or in the Android app.
+2. Open **Settings** and scroll to the danger zone.
+3. Tap **Delete Account** and type your captain name to confirm.
+
+Deletion takes effect **immediately** — your login is removed and you are
+signed out everywhere. This cannot be undone.
+
+## By email (if you can't sign in)
+
+Send a request to
 **[privacy@bigbangsmugglers.com](mailto:privacy@bigbangsmugglers.com?subject=Account%20Deletion%20Request)**
+from the email address associated with your account, with the subject
+**Account Deletion Request**. Email requests are processed within
+**7 business days**, with a confirmation reply when complete.
 
-Please include the following in your email:
+## What gets deleted
 
-- The email address associated with your account
-- Subject line: **Account Deletion Request**
+- Your login (Firebase Authentication account — email and/or Google sign-in)
+- Your email address and display name
+- Notification preferences and push-notification tokens
+- Session records and device information
+- Any administrative access tied to the account
 
-## What Gets Deleted
+## What is retained (anonymized)
 
-Upon confirmed deletion, the following data is permanently removed:
+Records of past gameplay are kept with all identifying information
+removed — the standard anonymized-aggregate practice:
 
-- Your Firebase Authentication account (email, Google login)
-- All player data: ship, credits, galaxy history, stats, missions
-- All planet ownership records
-- All corporation memberships
-- Feed posts and messages authored by your account
+- Season history and statistics (no name, no email — shown as a deleted
+  account)
+- Leaderboard and award history in past-season records
+- In-game action logs used for game integrity
 
-## What May Be Retained
-
-- Aggregated, anonymized leaderboard history (no personally identifiable information)
-- Crash and diagnostic logs (retained up to 90 days, then automatically purged)
-
-## Timeline
-
-Account deletion requests are processed within **7 business days**. You will receive a confirmation email when deletion is complete.
+If your account was banned, an internal record of the ban is retained to
+prevent ban evasion. It contains no personal information.
 
 ---
 
-For questions, contact **Protovision Games** at [privacy@bigbangsmugglers.com](mailto:privacy@bigbangsmugglers.com).
+For questions, contact **Protovision Games** at
+[privacy@bigbangsmugglers.com](mailto:privacy@bigbangsmugglers.com).
