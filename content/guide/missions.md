@@ -1,112 +1,166 @@
 ---
-title: "Missions & Streaks"
-date: 2026-07-02
+title: "Missions, Goals & Streaks"
+date: 2026-08-04
 draft: false
-description: "Contract types, rewards, the one-mission rule, and turn streaks"
-weight: 13
+description: "Daily and season events, goal ladders, epics, and the streak clock"
+weight: 19
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-Missions are contracts you pick up at a Starport. They pay credits, XP, and faction reputation, and faction-flavored contracts also shift your alignment — Federation work pushes you toward the Federation, pirate work pushes you toward the pirates.
+Three separate systems, and it's worth keeping them apart:
 
-## Where to Find Missions
+- **Events** are dated missions — daily, season-long, or ad-hoc GM drops.
+- **Goals** are permanent Bronze/Silver/Gold ladders that run all season.
+- **Epic goals** are one-sided dedication ladders that pay out in ships.
 
-Contracts are offered at exactly one place: the contracts office at either Starport.
+## Events
 
-- **Federation Contract Office** — at the Federation Starport
-- **The Bounty Board** — at the pirate Starport
+There is **no accept step and no limit**. You are enrolled lazily and your
+progress accrues from your ordinary play — including while you have never
+opened the Events screen. The 1.x "one mission at a time" rule is gone.
 
-Watch the pirate name: **"The Bounty Board" is the missions office**, not the bounty office. Posting and collecting bounties happens at the Bounty Hunter Registry — see [Bounties](/guide/bounties/). Regular trade ports have no missions at all.
+Every objective is bound to a real, trackable action: sell N of a commodity,
+defeat N of an NPC type, visit N sectors, win N combats, collect N bounties,
+move N contraband. Descriptions are display text and are never matched
+against — the structured objective is the truth.
 
-The board is curated, not self-refilling. Contracts arrive in batches and the board can legitimately be empty — if nothing appeals, check back later.
+Rewards are credits, XP, turns, faction standing, **alignment**, and
+sometimes items.
 
----
+### Dailies
 
-## Mission Types
+Fifteen templates. The ones with alignment attached are the **lawful ramp** —
+the main way an honest captain climbs toward Federation membership.
 
-Five types of contract appear on the board:
+| Mission | Objective | Credits / XP / Turns | Alignment |
+|---|---|---|---|
+| Organics Run | Sell 10 organics | 6,000 / 250 / 8 | +5 |
+| Fuel Run | Sell 10 fuel | 6,000 / 250 / 8 | +5 |
+| Hardware Contract | Sell 8 equipment | 6,500 / 260 / 8 | +5 |
+| Organics Haul | Buy 15 organics | 5,000 / 220 / 7 | +5 |
+| **Pirate Hunt** | Defeat 3 pirates | 8,000 / 300 / 10 | **+12** |
+| **Raider Cull** | Defeat 5 pirates | 8,000 / 300 / 10 | **+15** |
+| Convoy Raid | Defeat 3 traders | 7,000 / 270 / 9 | **−10** |
+| Duelist | Win 2 combats | 8,000 / 300 / 10 | — |
+| Bounty Board | Collect 2 bounties | 7,000 / 250 / 8 | +8 |
+| Bounty Spree | Collect 4 bounties | 8,000 / 280 / 10 | +10 |
+| Survey Run | Visit 10 sectors | 4,000 / 200 / 6 | — |
+| Deep Survey | Visit 15 sectors | 5,000 / 230 / 7 | — |
+| **The Black Ledger** | Sell 20 contraband | 8,000 / 300 / 10 | **−15** |
+| **Patrol Sweep** ⭐ | Defeat 4 pirates | 9,000 / 320 / 10 | **+25**, +100 Fed standing |
+| **The Syndicate's Toll** ⭐ | Defeat 4 patrols | 9,000 / 320 / 10 | **−25**, +100 Syndicate standing |
 
-| Type | What you do |
-|------|-------------|
-| Trade | Buy or sell specified commodities at ports |
-| Courier | Run a delivery or financial errand between locations |
-| Patrol | Defeat NPC ships in designated space — includes bounty-hunt style contracts |
-| Raid | Attack and disrupt targets (pirate work) |
-| Escort | Protect a convoy or merchant through hostile space |
+⭐ Faction missions require **±500 alignment** on that side **and 1,000
+standing** with it. They also count triple toward the war score.
 
-Every contract is open to every captain. There is no faction gating and no reputation, alignment, or ship-class requirement — if it's on the board, you can take it.
+Exploration and open duelling deliberately pay **no** alignment. Only taking
+a side moves your side.
 
-### Categories
+### Season arcs
 
-- **Standard** — the regular board pool described above.
-- **Daily** — one shared daily contract per galaxy, marked with a DAILY badge. Each captain can claim it once.
-- **Special event** — time-limited contracts announced in the feed. They show up alongside standard contracts and vanish when the event window closes.
+Nine long-running arcs. Legendary permanent items are earned, never
+randomized.
 
-### Difficulty and Rewards
+| Arc | Objective | Reward |
+|---|---|---|
+| The Muster | 50 sells, 15 sectors, 2 wins | 12,000 / 600 / 15 turns, participation badge |
+| The Magnate's Ledger | 1,500 organics, 1,500 fuel, 1,000 equipment | 40,000 / 2,000 / 30 turns |
+| Void Cartographer | Visit 200 sectors | 35,000 / 1,800 / 30, Void Cartographer badge |
+| Proving Grounds | 15 wins, 20 pirates, 6 bounties | 45,000 / 2,200 / 30 |
+| **Overdrive Protocol** | 50 wins, 75 pirates, 25 bounties | **Overdrive Module** — +12% attack, +8 fighters, +4 torpedoes |
+| **The Vanguard Commission** | 4,000 organics, 4,000 fuel, 2,500 equipment, 300 sectors | **Vanguard Hull Plating** — +12% defense, +40 shields, +12 holds |
+| The Champion's Gauntlet | 60 wins, 8,000 sells, 400 sectors, 25 bounties | 100,000 / 5,000 / 60, Event Champion title |
+| **High Command's Charge** ⭐ | 25 pirates, 10 bounties | 45,000 / 1,800 / 20, +30 alignment, **+400 Fed standing** |
+| **The Black Flag Council** ⭐ | 25 patrols, 100 contraband | 45,000 / 1,800 / 20, −30 alignment, **+400 Syndicate standing** |
 
-Contracts are labeled Easy, Medium, Hard, or Elite. Rewards are rolled per contract from that contract's own range — across the board roughly **2,000–35,000 credits**, **100–700 XP**, and **50–500 faction reputation**, plus an alignment shift on faction-flavored contracts (Federation +5 to +30, pirate −5 to −30). There is no fixed reward multiplier per difficulty tier: read the payout on the card. Harder contracts simply tend to carry bigger ranges.
+⭐ Elite faction arcs additionally require **|alignment| ≥ 750**.
 
----
+The two permanent items are the only equippable gear in the game. You have
+**three permanent slots**, and their bonuses add directly to your effective
+combat stats.
 
-## One Mission at a Time
+### Consumables
 
-You can hold exactly **one active mission**. The accept button greys out until you complete or abandon your current contract.
+Event rewards include consumables you activate when you want them:
 
-Plan around the single slot: take the contract that matches where you're already headed, and don't accept something you won't finish soon — it blocks everything else.
+| Item | Effect |
+|---|---|
+| Turn Pack (25) / (100) | Grants turns, cap-aware |
+| XP Booster / Credit Booster | +25% for 4 hours |
+| Emergency Cloak | One ship cloaking device |
 
----
+## Goals
 
-## Accepting and Completing
+Ten permanent Bronze/Silver/Gold ladders. Each tier is claimed once, pays
+credits and XP and sometimes standing, and grants a title that also lands in
+your **lifetime trophy case** — the title survives the season even though the
+progress doesn't.
 
-Accept at the contracts office — it costs nothing, no credits and no turns. Your active contract is viewable on **Ship → Contracts** (abandoning happens back at the Starport office).
+| Goal | Measures | Bronze / Silver / Gold |
+|---|---|---|
+| Merchant Prince | Units sold | 50 / 250 / 1,000 |
+| Long Hauler | Units bought | 100 / 500 / 2,000 |
+| Scourge of Pirates | Pirate NPCs defeated | 10 / 40 / 120 |
+| Terror of the Lanes | Trader NPCs defeated | 10 / 40 / 120 |
+| Duelist | Combat wins | 5 / 25 / 100 |
+| Wayfarer | Sectors visited | 50 / 200 / 600 |
+| Bounty Hunter | Bounties collected | 3 / 12 / 40 |
+| Colonist | Planets claimed | 1 / 3 / 6 |
+| Shadow Trader | Contraband units moved | 10 / 50 / 180 |
+| Made of Money | Credits banked (running total) | 50k / 500k / 5M |
 
-**Progress tracks automatically** as you play:
+Gold on four of them — Wayfarer, Merchant Prince, Duelist and Shadow Trader —
+also mints a **season insignia epithet**: the Kessel Runner, Merchant Prince,
+Dread Captain and Shadow Broker respectively.
 
-- Moving into sectors advances travel objectives
-- Defeating NPC ships advances Patrol, Raid, and Escort combat objectives
-- Buying and selling at ports advances Trade and Courier objectives
-- Scans, planet claims and upgrades, and bank transactions advance matching objectives
+## Epic goals
 
-**Completion is automatic.** The moment your final objective is met, the mission completes on the spot — rewards land in your wallet immediately and a completion notice fires. There is no collection step and no return trip: even "return to origin" objectives finish on their own once everything else is done.
+Six standalone ladders above the Bronze/Silver/Gold catalog. Each claim
+grants **one epic hull**, once per player per season, straight into your
+garage.
 
-### Abandoning
+| Ladder | Requirements | Hull |
+|---|---|---|
+| **Writ of the Council** | Redeem 50 Federation bounty claims **and** hold 2,500 Federation standing | FSS Writ of the Council |
+| **The Crimson Covenant** | 40 planet raids, 20 enemy port captures, 2,500 Syndicate standing | The Crimson Covenant |
+| **The Golden Ledger** | 4,000 trade legs **and** 3,000 Merchant Guild standing | The Golden Ledger |
+| **The Cartographer's Dream** | Explore **80% of the galaxy** | The Cartographer's Dream |
+| **The Phantom Manifest** | 7,500 contraband units sold with **zero** sale-time busts | The Phantom Manifest |
+| **The Warrant** | 100 bounty heads **and** 1,000,000 cr in bounty money | The Warrant |
 
-Abandoning is free — no credit, reputation, or alignment penalty. But the contract is destroyed: your progress is lost and nobody, including you, can take it again.
+These are calibrated at roughly **one player per season, each**. Do the
+arithmetic before you commit:
 
-### Expiry
+- 4,000 trade legs at 1 turn each is over half of every turn you will have all
+  season, before counting the moves between ports.
+- **Standing floors decay.** Holding 2,500 means earning about 125 standing a
+  day, every day. Banking it once and coasting fails.
+- 80% of a 500-sector map is 400 unique sectors, plus all the dead-end
+  backtracking the map itself charges you.
+- The Phantom Manifest's zero-bust condition is checked **at claim time**. One
+  unlucky premium sale in week one ends the run.
 
-Every contract has an expiry timer, and **accepting does not reset it** — you inherit whatever time was left on the board posting, so check the clock before you accept. An expired contract can no longer be completed — abandon it to free your mission slot.
-
-If the "missions" notification category is on in Settings, you get a push alert at roughly 24 hours remaining and again at roughly 1 hour.
-
----
+Requirements are evaluated against your live player row when you look and
+when you claim, so you can watch them tick.
 
 ## Streaks
 
-The game rewards consecutive days of fully spending your turns — not just logging in.
+A **streak day** is any UTC day you spent at least one turn. Not a login.
 
-**How a streak day counts:** run your turn balance all the way down to exactly 0, with a movement action as the final spend. Days are UTC calendar days.
+One missed day per streak is forgiven; two resets you to 1.
 
-**Grace day:** each streak includes one free pass. Miss a single day and the streak survives; miss two in a row and it resets.
+| Milestone | Credits | XP | Turns |
+|---|---|---|---|
+| Day 3 | 1,000 | 50 | — |
+| Day 7 | 5,000 | 200 | 5 |
+| Day 14 | 10,000 | 500 | 10 |
+| Day 30 | 25,000 | 1,000 | 20 |
 
-**Milestones:**
+The **count** is account-level and crosses season boundaries. The **rewards**
+are seasonal and need an active enrollment to claim. A reset clears your
+claims, so a new streak re-earns the same milestones.
 
-| Days | Reward |
-|------|--------|
-| 3 | 1,000 cr + 50 XP |
-| 7 | 5,000 cr + 200 XP + 5 bonus turns |
-| 14 | 10,000 cr + 500 XP |
-| 30 | 25,000 cr + 1,000 XP |
-
-Each milestone is claimable **once per account, ever** — milestone claims don't reset between seasons or when a streak breaks. Rewards are claimed from the streak card on **Ship → Stats**. (The in-app streak display and milestone claiming are currently being fixed; your streak is tracked regardless, and milestones remain claimable once the fix ships.)
-
----
-
-## Tips
-
-- One mission slot means opportunity cost. Take contracts along the route you were flying anyway.
-- Don't sit on a contract you won't finish. Abandoning is free — just know that contract is gone for good.
-- The daily contract is a free extra — claim it whenever you dock at a Starport.
-- Chasing a streak? End your day with a move that lands you on exactly 0 turns.
+Two actions deliberately don't count, because they cost 0 turns: landmark
+interaction and port repair.

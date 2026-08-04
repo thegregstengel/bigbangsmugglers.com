@@ -1,88 +1,152 @@
 ---
-title: "Tech Upgrades"
-date: 2026-07-02
+title: "Upgrades, Drives & Tech"
+date: 2026-08-04
 draft: false
-description: "Permanent one-time ship upgrades from the Tech Hub, and the order to buy them in"
-weight: 6
+description: "The upgrade ladder, warp and StarNav, and the ten tech modules"
+weight: 8
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-The Tech Hub offers permanent, one-time ship upgrades that make your ship more capable in specific ways.
+Three separate systems live behind the "upgrade" button, and they behave
+differently.
 
-## Where to Buy
+- **Stat upgrades** are five-tier ladders on holds, shields, fighters and
+  torpedoes. Bound to the ship.
+- **Drives** are warp, StarNav and Tesseract. Bound to the ship.
+- **Tech modules** are one-per-ship permanent installs. Bound to the ship.
 
-Tech Hub upgrades are sold through the **Upgrades** service at **Stardock** and **Tech Outpost** trading ports — look for those port types on the Nav screen. Open the port, select the Upgrades service, and the Tech Hub screen lists the full catalog with your installed upgrades marked.
+All three die with the ship. There is no salvage.
 
-You must be in the port's sector, and upgrades apply to your **active ship** only.
+## Stat upgrades
 
-Note this is a different system from the Shipyard capacity upgrades (hold, shield, fighter, and torpedo tiers) sold at [starports](/guide/starports/). The Shipyard sells you more capacity; the Tech Hub sells you permanent one-time enhancements.
+Each of the four stats has a five-tier ladder. The **total** you can add is a
+fixed fraction of the hull's base stat:
 
-## Upgrade Catalog
+| Archetype | Holds | Shields | Fighters | Torpedoes |
+|---|---|---|---|---|
+| Trading / Smuggling / Patrol | +100% | +50% | +100% | +100% |
+| War / Raider / Enforcer | +50% | +50% | +200% | +200% |
+| Balanced / Corsair / Dreadnought | +80% | +50% | +160% | +160% |
 
-All upgrades are permanent and apply immediately. Each requires a minimum XP level and credit payment. You can only purchase each upgrade once per ship.
+Notice the shape: **shields cap at +50% on everything**. The archetypes
+differ on holds and on weapons, never on shields.
 
-| Upgrade | Cost | XP Required | Effect |
-|---------|------|-------------|--------|
-| Cargo Compressors | 8,000 cr | 1,000 XP | +20% cargo capacity |
-| Shield Booster Arrays | 10,000 cr | 1,500 XP | +15% shields |
-| Combat AI Core | 15,000 cr | 3,000 XP | +20% fighter strength in combat |
-| Warp Drive Optimizer | 18,000 cr | 4,000 XP | Warp jumps cost 1 fewer turn |
-| Stealth Hull Plating | 20,000 cr | 5,000 XP | -30% contraband detection risk |
-| Advanced Attack Systems | 22,000 cr | 6,000 XP | +10% combat offense multiplier |
-| Reinforced Armor Plating | 22,000 cr | 6,000 XP | +10% combat defense multiplier |
+### How the ladder is priced
 
-Unlike most shipyard and port services, Upgrades prices are flat — the price on the card is the price you pay, regardless of your standing.
+Holds distribute the total gain **30 / 20 / 20 / 15 / 15%** across five
+tiers, at cost multipliers **×8 / 16 / 40 / 100 / 300** of the hull's hold
+base cost.
 
-## How Each Upgrade Works
+Combat stats reach cumulative **25 / 45 / 60 / 70 / 80%** of the shape at
+multipliers **×8 / 16 / 28 / 44 / 64**.
 
-### Cargo Compressors
+Two consequences worth internalizing:
 
-Adds 20% of your ship's **maximum cargo capacity at the moment of purchase**, applied immediately. A 40-hold ship becomes a 48-hold ship. The bonus is locked in at purchase and never rescales — so buy this **after** you've maxed out your Shipyard hold tiers. Buying it early on a small hold permanently shortchanges you.
+1. **Early tiers are absurdly cheap relative to late ones.** Tier 1 holds on
+   a hull with a 50 cr hold base costs 400 cr for 30% of the total gain. Tier
+   5 costs 15,000 for 15%.
+2. **Buying tier 1 and 2 on everything beats maxing anything.** The first two
+   hold tiers give you half the total gain for 24 of the 464 total multiplier
+   units. Spread wide before you go deep.
 
-### Shield Booster Arrays
+### What to buy first
 
-Adds 15% of your ship's **shields at the moment of purchase** to your maximum, and tops up your current shields by the same amount. Like the Compressors, the bonus is computed from your current value and locked in — buy it with your shields **fully repaired and after any shield capacity tiers**, or you permanently bake in a smaller bonus. The bonus persists through repairs and stacks with Shipyard shield tiers.
+Holds, if you're trading. It is the only upgrade that compounds — every extra
+hold multiplies the return on every run you make for the rest of the season.
 
-### Combat AI Core
+Shields, if you're fighting. Shields defend at weight 3.0, the highest
+defensive weight in the game, and they are the layer that regenerates for
+free every four hours.
 
-Stored as a flag on your ship. The combat system reads this and applies a 20% boost to your fighter effectiveness when attacking or defending. Best combined with high fighter counts from restocking.
+Torpedoes are the strongest attack stat (weight 5.0) but they are *consumed*
+in every fight — 20% base plus up to 50% more — and they cost 150 cr each to
+replace. Fighters attack at 2.0, defend at 1.0, and cost 75.
 
-### Warp Drive Optimizer
+## Drives
 
-Stored as a flag. Every warp jump costs 1 fewer turn, to a minimum of 1. Valuable for long-range traders who warp frequently. It does **not** apply to Tesseract Drive jumps — those cost a flat 25 turns no matter what.
+### Warp Drive
 
-### Stealth Hull Plating
+| | |
+|---|---|
+| Install | 15,000 cr |
+| Requires | Tier-2+ hull, 100 XP |
+| Upgrade | 15,000 cr × the new level |
+| Max level | 5 |
 
-Stored as a flag. Reduces the detection roll by 30 percentage points when customs scans your cargo. Combined with a Goods Cloaking Device (750 cr at black markets), this significantly reduces your bust risk.
+Cost of a jump is `max(1, ceil(hops ÷ level))`. At level 5, a 20-hop journey
+costs 4 turns.
 
-### Advanced Attack Systems
+Warp only reaches **sectors you have already visited**. See
+[Navigation](/guide/navigation/#warp-drive) for interruption rules.
 
-Applies a 10% offense multiplier to your combat power calculation. Stacks with Combat AI Core for captains focused on PvP output.
+### StarNav 2002
 
-### Reinforced Armor Plating
+| | |
+|---|---|
+| Install | 100,000 cr, requires 5,000 XP |
+| Upgrade | 100,000 cr × the new level (L2 = 200k, L5 = 500k) |
+| XP gates | 5,000 / 10,000 / 25,000 / 50,000 / 100,000 |
+| Max level | 5 |
 
-Applies a 10% defense multiplier to your combat power calculation. Best investment for captains who expect to be on the receiving end of attacks.
+The passive scanner. It costs nothing to use and it never stops working. See
+[Scanners & Intel](/guide/scanners-intel/) for what each level actually
+resolves.
 
-## Upgrade Strategy
+The single most important threshold: **StarNav 4 sees through ship cloaks.**
 
-The two percentage-of-current-value upgrades — Cargo Compressors and Shield Booster Arrays — reward patience. Both compute their bonus from your ship's value **at the moment you buy**, and neither ever recalculates. The optimal order is mechanical, not a matter of taste:
+### Tesseract Drive
 
-1. Max your Shipyard hold tiers, **then** buy Cargo Compressors — 20% of a fully upgraded hold is a lot more than 20% of a stock one.
-2. Repair to full shields (and buy any shield capacity tiers first), **then** buy Shield Booster Arrays.
+| | |
+|---|---|
+| Install | 10,000,000 cr |
+| Requires | Tier-5 hull |
+| Jump cost | Flat 25 turns, any distance, any visited sector |
 
-Beyond those two:
+> **Known problem.** The shipped catalog also gates it at *player level 100*,
+> but the progression curve caps levels at **50**. As configured, nobody can
+> install a Tesseract. Treat it as unavailable until a season fixes the gate.
 
-**Early game (under 2,000 XP):** Not much is open to you yet. Save toward hold tiers before touching the Tech Hub.
+## Tech modules
 
-**Mid game (2,000 to 5,000 XP):** Warp Drive Optimizer if you are covering long distances as a trader — one turn per jump adds up fast. Combat AI Core if you are combat-active.
+One of each per ship, permanent, wallet-only. Bought at ports running the
+`upgrade` or `research` service — Tech Ports, Research Ports, the Pirate
+Haven and the Merchant Exchange.
 
-**Late game (5,000+ XP):** Stealth Hull Plating is essential for dedicated smugglers. Advanced Attack Systems and Reinforced Armor Plating for PvP-focused players — the offense and defense multipliers have meaningful impact at high-tier fights.
+Every module's effect is computed **live from the flag**, not snapshotted into
+your stats when you buy it. Changing hulls never leaves a stale bonus behind.
 
-## Notes
+| Module | Cost | Level | Effect |
+|---|---|---|---|
+| Cargo Compressors | 8,000 | 5 | +20% holds, of the hull's **base** holds |
+| Shield Booster | 10,000 | 6 | +15% max shields, of **base** shields |
+| Attack Systems | 12,000 | 8 | +10% attack power |
+| Armor Plating | 12,000 | 8 | +10% defense power |
+| Combat AI | 15,000 | 10 | +20% fighter effectiveness, in combat **and** sieges |
+| Advanced Sensors | 15,000 | 12 | Cuts a stealth attacker's first strike from +12pp to +6pp |
+| Warp Optimizer | 18,000 | 12 | Warp jumps cost 1 fewer turn (never the Tesseract) |
+| Stealth Plating | 15,000 | 15 | **−30pp** on customs scans, **+15pp** escape chance, +12pp first strike when attacking |
+| **Patrol Transponder** | 20,000 | 15 | Federation only — patrols never materialize |
+| **False Manifest** | 20,000 | 15 | Pirate only — one failed customs scan per day quietly rerolls |
 
-- Upgrades apply to your active ship and **never transfer**. A new hull starts with none of them — factor that into the real cost of upgrading ships.
-- Each upgrade can only be purchased once per ship.
-- The Tech Hub screen shows which upgrades are installed on your current ship; the Ship screen surfaces the combat multipliers in the Combat Power card.
-- Emergency Escape Pods are no longer a Tech Hub upgrade (removed in v1.19.0). Escape chance comes from your ship class's base escape rating.
+The last two are faction-exclusive and require ±500 alignment on the matching
+side.
+
+### The ones that punch above their cost
+
+**Stealth Plating** is the best 15,000 cr in the game if you fly anywhere
+interesting. It is simultaneously the second-biggest customs counter, a
++15pp escape chance, and a first-strike bonus when you attack.
+
+**Combat AI** at +20% fighter effectiveness applies in ship combat *and* in
+port and planet sieges. If you siege anything, buy it.
+
+**Cargo Compressors** at +20% of base holds stacks additively with the
+trading line's signature ability. A Star Galleon (320 base holds, +10%
+signature) with compressors runs 320 + 32 + 64 = 416 effective holds before a
+single upgrade tier.
+
+**Ion storms degrade every tech bonus by 20%** while you're fighting in one.
+Attack Systems, Armor Plating and Combat AI all get shaved. Nebulas hit
+fighters directly for −15%; radiation zones cut shield defense by 10%.

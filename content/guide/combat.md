@@ -1,270 +1,271 @@
 ---
 title: "Combat"
-date: 2026-07-02
+date: 2026-08-04
 draft: false
-description: "Ship combat, PvP zones, combat resolution, loot, recovery, destruction, and fleet warfare"
-weight: 7
+description: "How a fight resolves, hull versus shields, immunity, and fleets"
+weight: 9
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-Combat in Big Bang Smugglers is fast and automatic. When ships fight, the server makes a single roll: your attack power against the defender's defense power, adjusted by a handful of pre-roll effects. There are no manual inputs during the fight. Win and you loot the loser's credits. Lose and your ship is disabled — or destroyed outright if your defenses were already depleted when the fight began.
+Combat is instant and automatic. You engage, the server resolves the whole
+fight in one shot, and you read the report. There is no round-by-round input.
 
-## PvP Zones
+## Before the dice: the gates
 
-Player-vs-player combat is gated by **territory** and the galaxy's PvP setting:
+Every engagement runs the same checks, in this order:
 
-| Territory | PvP Status |
-|-----------|-----------|
-| Federation territory | Never — always safe, regardless of galaxy settings |
-| Neutral Space | PvP enabled (when galaxy PvP is on) |
-| Pirate territory | PvP enabled (when galaxy PvP is on) |
+1. **Not yourself.**
+2. **Safe territory.** Federation territory and flagged safe zones are an
+   absolute block — they override even a PvP-enabled galaxy.
+3. **The galaxy has PvP enabled.**
+4. **Same sector, same galaxy.**
+5. **The target isn't cloaked** — a cloaked ship reads as simply not there
+   unless your effective StarNav is 4 or better.
+6. **Not in your corporation.**
+7. **The target isn't landed** on their own or their corp's planet.
+8. **Neither of you is under PvP immunity.**
 
-Outside Federation territory, any sector is a potential battleground when the galaxy has PvP on (it's on by default). Danger still rises toward the rim in practice — that's where pirate players and the richest targets congregate — but there is no mechanical safe band in neutral space.
+Engaging costs **1 turn**.
 
-Even where PvP is live, several protections apply in both directions:
+## The resolution
 
-- **Docked ships** cannot attack or be attacked. All ports are safe havens.
-- **Ships parked on a planet** they (or their corporation) own cannot be attacked until the planet is captured.
-- **Disabled ships** cannot be attacked at all — being disabled *is* your protection while you wait for repair.
-- **Cloaked ships** cannot be targeted unless the attacker's scanner reveals them (see [Scanners & Intel](/guide/scanners-intel/)).
-- **PvP-immune ships** (recently defeated, or holding a defense contract) can neither attack nor be attacked.
+### Power
 
-The Battle Station modal shows a sector badge: a shield icon means safe zone, a sword icon means PvP is live here.
-
-## Initiating Combat
-
-From the Nav tab, tap the **Battle Station** button (visible when other players are detected in your sector), pick your target, and tap **Attack**. The attacker spends **1 turn**; the defender spends nothing.
-
-**Friendly-fire protection:** Corporation members cannot attack each other — the attack is blocked automatically. One important caveat: this protection covers direct attacks only. Corp-mates still trigger each other's mines, sector defenses, and limpet trackers (see [Deployables](/guide/deployables/)).
-
----
-
-## How Combat Resolves
-
-Attack and defense are computed with **separate formulas**. Shields contribute nothing to attack; fighters and torpedoes contribute nothing to defense.
+Each side computes a power number:
 
 ```
-attack  = (basePower × 0.5) + (fighters × 2.0) + (torpedoes × 5.0)
-defense = (basePower × 0.5) + (shields × 3.0)
+raw   = (hullTier × 100) × 0.5
+      + 2.0 × fighters      (attack)   or  1.0 × fighters  (defense)
+      + 0   × shields       (attack)   or  3.0 × shields   (defense)
+      + 5.0 × torpedoes     (attack)   or  0   × torpedoes (defense)
+
+power = raw
+      × (role offense/defense + module bonus)
+      × region multiplier
+      × XP tier multiplier
+      × (1 + faction combat bonus)
+      × (1 + role combat bonus)
+      × ability multiplier
 ```
 
-Both sides then apply their multipliers:
+Read the weights carefully. **Shields do not attack. Torpedoes do not
+defend.** Fighters do both, unevenly. A pure-torpedo ship hits like a truck
+and folds like paper.
 
-| Multiplier | Effect |
-|------------|--------|
-| Ship role | Each hull class carries an offense and defense multiplier |
-| Tech upgrades | Advanced Attack Systems +10% offense; Reinforced Armor Plating +10% defense; Combat AI Core +20% effective fighters |
-| Ship tier bonus | +4% per tier above 1, up to +16% at Tier 5 — this is the **ship's** tier, not your pilot level |
-| Region bonus | See below |
+Modifiers in play:
 
-**Region bonuses** key off the **ship hull's faction** (Federation, Pirate, or neutral hull class), not your personal alignment:
+| Source | Effect |
+|---|---|
+| Attack Systems module | +10% attack |
+| Armor Plating module | +10% defense |
+| Combat AI module | +20% fighter effectiveness |
+| Faction alignment | +2 / 3 / 4 / 5% at \|alignment\| 500 / 600 / 750 / 900 |
+| Fighter role tier | +1% per tier, max +5% |
+| XP tier | ×0.95 to ×1.20 by hull tier |
+| Region | Federation defenders +10% in `fed_core`, +5% in `fed_space`; attackers +2% in `middle`, +5% in `outer`; pirates +10% in `outer_rim` |
+| Hull signature ability | combat / versatility / defense bonuses |
 
-| Region | Bonus |
-|--------|-------|
-| Federation Core | +10% defense for Federation hulls |
-| Federation Space | +5% defense for Federation hulls |
-| Middle Band | +2% attack for any attacker |
-| Outer Reaches | +5% attack for any attacker |
-| Outer Rim | +10% for Pirate hulls (attacking or defending) |
+### Win probability
 
-The base win probability is `attack / (attack + defense)`, then four pre-roll effects adjust it:
+```
+winProb = attackerPower / (attackerPower + defenderPower)      each side ×0.98–1.02
+        + (attackerFighterShare − 0.5) × 0.30                  fighter skirmish
+        + 0.12 stealth first strike (−0.06 vs Advanced Sensors or a sensor-edge hull)
+clamped to [5%, 95%]
+```
 
-- **Torpedo shield penetration:** each attacker torpedo bypasses 1% of the defender's shield defense contribution, capped at 50%.
-- **Fighter skirmish:** fighter superiority shifts win odds by up to ±15%.
-- **Stealth first strike:** an attacker with Stealth Hull Plating (or a stealth hull ability) gains +12% win probability; a defender with sensors negates 6 points of it.
-- **Random factor:** each side's power is multiplied by a random 0.98–1.02.
+Torpedoes also strip shields out of the defender's power before the ratio is
+taken: **1% shield penetration per torpedo, capped at 50%**, reduced by 10%
+in an asteroid field.
 
-The final win probability is always **clamped between 5% and 95%** — no fight is ever a sure thing, and none is truly hopeless.
+The 5–95% clamp is real. **You can always lose**, and a hopeless target can
+always get lucky one time in twenty.
 
-### Win Odds Labels
+## Hull and shields
 
-| Label | Win Chance |
-|-------|-----------|
-| Heavily Favored | 75%+ |
-| Favored | 60–74% |
-| Even Odds | 45–59% |
-| Risky | 30–44% |
-| Dangerous | Below 30% |
+Damage always lands on shields first. Whatever overflows spills into hull at
+**×1.5**.
 
-The Battle Station modal shows no odds preview for PvP targets — only ship class and alignment — so scout before you swing. NPC engage modals do show a power comparison, but the preview math is approximate; the server's roll is what counts.
+```
+shieldLoss = min(shields, damage)
+overflow   = damage − shieldLoss
+hullLoss   = floor(overflow × 1.5)
+```
 
-### Both Sides Take Losses
+That multiplier is the design. Fighting on stripped shields is not "a bit
+riskier" — every point that gets through costs you one and a half points of
+hull, and hull does not come back for free.
 
-Combat is attritional. The **winner** loses a fraction of fighters, shields, and torpedoes scaled by how close the fight was — shields mitigate your own losses. The **loser** loses between 50% and 97.5% of each stat depending on how lopsided the defeat was, and is disabled (or destroyed — see below).
+Damage is computed against your **whole defense pool** (shields + hull), so a
+big hull is not a bystander in the math; it makes the same attrition
+percentage into a bigger absolute number.
 
-### Escaping (Defenders Only)
+### Losses
 
-When you are *attacked*, your ship automatically attempts to escape before any shots are fired, based on its escape rating (clamped 5–85%; Stealth Hull Plating adds +15%). A successful escape ends combat with zero losses on both sides. Attackers never get an escape roll — once you initiate, you fight to the end.
+The **winner** loses:
 
----
+- fighters: `attrition × 40%`
+- shield-directed damage: `(shields + hull) × attrition × 25%`
+- torpedoes: `20% + 50% × attrition`
+
+The **loser** loses at least **50%**, scaled up by how badly they were
+outmatched, applied to fighters, torpedoes and the defense pool. A real fight
+always deals at least 1 damage, so a ground-down ship can't asymptote at hull
+1 forever.
+
+Both sides' shield loss is reduced by how healthy the shields were going in:
+up to a 50% reduction as shields approach 100 points and beyond.
+
+## Escape
+
+Only the **defender** gets an escape roll, and only if the engagement allows
+retreat.
+
+```
+chance = 0.25
+       + 0.35 × your hull's escape rating
+       − 0.15 × the attacker's share of total fighters
+       + 0.05  in Federation space
+       + 0.05–0.08  Corsair-line retreat bonus
+       + 0.15  Stealth Plating
+       + 0.10  asteroid field
+clamped to [5%, 85%]
+```
+
+A successful escape means **no losses on either side**. Nothing is looted,
+nothing is damaged, no alignment moves.
+
+Pirate hulls carry +0.10 escape over their Federation mirrors, which is worth
++3.5pp on the roll. The Corsair line at 0.60 escape plus its retreat
+signature is the slipperiest thing in the game.
 
 ## Loot
 
-**PvP loot is credits only.** The winner steals a percentage of the loser's on-hand (wallet) credits, determined by the winner's hull faction:
+Only the winner takes anything, and only from a **player** loser (NPCs drop
+their own loot table).
 
-| Winner's hull faction | Credits looted |
-|-----------------------|---------------|
-| Neutral | 25% |
-| Federation | 20% |
-| Pirate | 35% |
+| Winner's alignment | Credits | Cargo |
+|---|---|---|
+| Federation (≥ +300) | 20% | 25% |
+| Neutral | 25% | 30% |
+| Pirate (≤ −300) | **35%** | **40%** |
 
-The steal is capped by the **winner's ship tier**:
+The credit take is also capped by the winner's hull tier: 5,000 / 15,000 /
+40,000 / 100,000 / 200,000.
 
-| Winner's tier | Credit cap |
-|---------------|-----------|
-| 1 | 5,000 cr |
-| 2 | 15,000 cr |
-| 3 | 40,000 cr |
-| 4 | 100,000 cr |
-| 5 | 200,000 cr |
+**Only the wallet is ever looted. The bank is never touched.**
 
-Two things combat can never take from you:
+Cargo loot is taken proportionally across the loser's stacks, and it is
+capped by what the winner's holds can actually fit.
 
-- **Banked credits.** Only wallet credits are lootable. Bank your profits before flying into PvP space.
-- **Contraband.** Contraband cargo is never lootable in combat.
+## Alignment consequences
 
-If the defender wins, the same credit-loot logic applies in reverse. NPC kills pay from loot tables instead — see [NPCs & Encounters](/guide/npcs/).
+| Situation | Attacker wins | Attacker loses |
+|---|---|---|
+| Attacked a Federation-aligned player | −8 | −3 |
+| Attacked a neutral player | −2 | −1 |
+| Fought a Pirate-aligned player | +6 | +2 |
+| Attacked Federation forces (NPC) | −6 | −2 |
+| Attacked a neutral trader (NPC) | −1 | 0 |
+| Fought pirate raiders (NPC) | +4 | +1 |
 
-**Bounties:** if the attacker wins and the target carries active bounties, player-posted bounties pay out instantly; faction bounties create a claim you redeem at the issuing faction's registry. See [Bounties](/guide/bounties/).
+And, separately: **a defender who survives or beats a pirate aggressor earns
++2 alignment** — whether the aggressor was an NPC ambush or another player.
+This is one of the few reliable ways a law-abiding trader earns lawful
+standing without going hunting. It fires on NPC ambushes, which is the common
+case.
 
-### Alignment Effects
+Sides are decided by **your alignment**, at ±300 — never by what hull you
+fly.
 
-Combat shifts your alignment based on the target's **hull faction**: attacking Federation-hull players costs −8 on a win (−3 on a loss), Pirate-hull players pay +6/+2 toward Federation, neutral hulls −2/−1. Successfully defending against a pirate-hull attacker earns +2. See [Reputation & Factions](/guide/reputation-factions/) for the full ladder.
+## PvP immunity
 
----
+One clock, several sources, and it **always extends, never replaces**.
 
-## Disable and Recovery
+| Source | Duration |
+|---|---|
+| Losing a fight | 2 minutes |
+| **Any death**, from any cause | 2 minutes |
+| A purchased defense contract | 2 hours each, stacking |
 
-A disabled ship cannot move, attack, or be attacked. Recovery is automatic at the **next 4-hour turn-cycle boundary** (00/04/08/12/16/20 UTC): status returns to OK and shields are restored to 50% of max. Fighters and torpedoes are **not** restored — they are consumables you re-buy.
+**Defense contracts cover NPC ambushes too.** This changed in v2.0.2 — a
+contract now suppresses pirate and patrol ambushes as well as player attacks,
+not just PvP. It is genuine immunity, not just a PvP flag.
 
-You also get **2 minutes of PvP immunity** immediately after losing a fight. That 2-minute window is an anti-spawn-camping shield, not a repair timer — the repair is the 4-hour boundary (or a paid repair, below).
+Contracts cost **4,000 cr** for **2 hours**, sold where the `defense` service
+runs: Federation Ports, the Stardock and the Merchant Exchange. The Pirate
+Haven does not sell them.
 
-## Two Repair Paths
+Three things about immunity that bite people:
 
-You never have to wait for the boundary if you can pay:
+1. **You cannot attack while immune.** Immunity is protection, not a free
+   swing. Attempting to initiate returns `IMMUNE`.
+2. **Immunity is never shortened.** A lost fleet strike used to overwrite
+   nearly two hours of purchased contract with a two-minute window. It
+   doesn't anymore — every write extends the later of *now* and your current
+   window.
+3. **Immunity skips warp interruption rolls** entirely.
 
-| Path | Where | Restores | Cost | Turns |
-|------|-------|----------|------|-------|
-| **Port Repair** | Nav tab → port/repair-station card | Everything to max — shields, fighters, AND torpedoes; clears disabled status | 5 cr/shield + 10 cr/fighter + 15 cr/torpedo of damage, minimum 200 cr, scaled by reputation | 0 |
-| **Field Repair Kit** | Ship tab → disabled banner | Shields to 50% only | Tier 1/2/3: 600 / 1,500 / 2,500 cr (Tier 4+: 2,500 + 2 × max shields) | 2 |
-| **Shipyard Repair** | Starport → Shipyard | Shields to full only | Tier 1/2/3: 400 / 1,000 / 2,000 cr (Tier 4+: 2,500 + 1 × max shields) | 1 |
+Immunity also protects you from deployables: limpets cannot latch onto an
+immune ship.
 
-Port Repair is the only repair that replenishes fighters and torpedoes; the other two are shields-only. For field kit and shipyard repairs, if your wallet falls short the bank auto-draws the shortfall with a **10% fee**.
+## Destruction
 
-Fighters and torpedoes can also be restocked directly at any starport: **75 cr per fighter, 150 cr per torpedo**.
+Hull 0 is the only death. See
+[Ships → Destruction and escape pods](/guide/ships/#destruction-and-escape-pods)
+for the full sequence. In short: you lose the ship, everything installed on
+it, all its cargo, and **every remaining turn**. You keep your wallet, bank,
+XP, alignment and inventory.
 
-## Defense Contracts
+## NPC combat
 
-Defense Stations (Nav tab) sell purchasable PvP immunity: **4,000 cr for 2 hours**, and contracts stack additively on any existing window. Immunity blocks incoming attacks, your own attacks, and — usefully — enemy mines and sector-defense fire.
+Attacking an NPC checks only *your* immunity — NPCs have none.
 
----
+NPCs carry no hull pool of their own in the resolver's sense: they die on any
+loss. But **damage now sticks to a named NPC between fights** and they
+regenerate 25% of their spawn strength per world tick, so a boss you can't
+beat outright can be ground down over about four attempts — and will be back
+to full roughly sixteen hours later if you leave it alone.
 
-## Ship Destruction and Escape Pods
+**Losing a fight pays no XP.** That changed in v2.0.8: an unbeatable boss at
+1 turn a pull was a steady XP faucet.
 
-A losing ship is normally disabled. It is **destroyed** instead when it entered the fight already stripped: **0 shields AND 0 fighters AND 0 torpedoes at combat start**, then lost. All three must be empty — a ship with even one fighter left survives as disabled.
+Pirates drop 500–2,000 cr scaled by tier. Traders drop 100–500. **Patrols
+drop nothing** — killing them only buys you a warrant.
 
-### Depleted Defenses Warning
+## Fleets
 
-When your active ship hits 0/0/0, a warning banner appears on the Ship screen and Nav screen: one more lost fight destroys your ship. Repair or restock before engaging again.
+A fleet is up to **three ships** from the **same corporation** operating as
+one.
 
-### What Destruction Costs You
+- **Forming** a fleet requires level 15 and corp membership.
+- **Joining** requires level 10 and the same corp.
+- The leader leaving disbands the fleet.
 
-- The ship is gone permanently, along with **everything installed on it** — upgrades, warp drive, StarNav, Tesseract, cloak.
-- All cargo aboard is lost.
-- **All your remaining turns are wiped to 0.**
-- Wallet, bank, and XP survive. Other ships in your Hangar are untouched.
+A **fleet strike** costs 1 turn, is leader-only, and requires every counted
+member to be **in the leader's sector with an active ship**. Members
+elsewhere contribute nothing.
 
-### Escape Pod Respawn
+The strike runs exactly the same gates as solo combat, plus the leader's own
+immunity check.
 
-Your pilot survives. The pod flies to the sector of a planet where you have a built Starbase; if you have none, you respawn at **Sector 0** (the Federation home sector). If you own another ship in the galaxy, it activates there automatically. If not, you receive a free starter vessel — the "SS Starter" (20 holds, 15 shields, 0 fighters, 0 torpedoes).
+- **Loot goes to the corp bank**, not to the leader's wallet.
+- **Attrition is redistributed across members** — everyone bleeds.
+- **Any member's hull can reach 0**, and that member goes through the full
+  destruction and pod flow.
+- Fleet kills now apply the same alignment, statistics and immunity
+  consequences as solo kills. The leader personally earns any bounty claims.
 
----
+## Pending encounters
 
-## Fleet Combat
+Not every NPC contact is a fight. A non-aggressive NPC becomes a **pending
+encounter** you can act on: bribe, surrender, jettison, submit to a scan,
+trade, rob, or engage.
 
-Corporation members in the same sector can fight as a fleet.
+Confirming a fight re-rolls it under the **stored seed**, so the outcome is
+deterministic — and confirming does not allow retreat. Walking away means
+letting the contact expire.
 
-- **Fleet size is capped at 3**, including the leader.
-- Members must be in the same corporation, co-located in the sector, uncloaked, undocked, and not disabled. Docked corp-mates are not eligible.
-- Form, join, and leave from the **Battle Station modal** in the Nav tab (Corp Fleet section). Forming and leaving are free; the leader leaving disbands the fleet.
-- Only the **leader** initiates a fleet attack and pays the 1 turn — and the leader gets the kill credit. Every member shares the alignment change and earns reputation and XP.
-- Resolution is **one combined roll**: the fleet fights as a single attacker with the full sum of all members' fighters, shields, and torpedoes on the leader's hull profile.
-- **Credit loot goes to the corporation bank** — it is never split among members.
-- Fleet loot follows the same rule as all PvP: credits only, deposited to the corp bank. See [Corporations & Fleets](/guide/corporations-fleets/).
-- A fleet loss disables every member, and any member who entered at 0/0/0 is destroyed.
-
-Fleet combat shows a result toast rather than the full recap screen.
-
----
-
-## Warp Interruptions
-
-Every warp hop can spawn an NPC encounter. **Any** NPC — pirate, patrol, or trader — halts the warp at that hop, and your unused hop turns are refunded pro-rata. Only an **auto-aggressive pirate forces combat**, resolved and committed server-side before you see it — there is no fleeing a warp ambush. Non-aggressive interruptions just strand you in that sector with the NPC.
-
-Interruption risk is about 5% per hop on short warps, but the total chance over any single journey is **capped at roughly 30%** — long jumps are not proportionally more dangerous.
-
----
-
-## Sector Defenses and Mines
-
-Some sectors shoot back the moment you arrive — before you can act.
-
-- **Sector defenses:** enemy garrison-backed defenses deployed to a sector **auto-engage on every entry** (move or warp), dealing up to **2,000 damage** — shields first, overflow chipping fighters. The standing garrison is not consumed by firing on you, so a defended sector hurts every single pass.
-- **Mines:** up to 3 enemy mines trigger per pass, each dealing 30–50 shield damage. Triggered mines are consumed.
-
-PvP immunity (including defense contracts) blocks both. Your own deployables never fire on you — but your corp-mates' will. Full mechanics, deployment, and counterplay: [Deployables](/guide/deployables/).
-
----
-
-## Attacking Ports
-
-Ports can be raided and even destroyed. This uses a separate, simpler siege formula, not the ship-combat math above.
-
-**What you can attack:** depots, agricultural ports, tech ports, mining ports, research ports, pirate bases, and black markets — including pirate ports in pirate space. Starports and Federation hubs are never attackable.
-
-**Cost:** 3 turns per attack, with a 1-hour cooldown per player. You must be in the port's sector and not disabled.
-
-**Siege math:** your power = (fighters × 0.8) + (shields × 1.2) + (torpedoes × 2.0), against the port's garrison. (These are the old combat weights — they survive only in sieges.)
-
-**Winning an attack** cuts the garrison by 50% and skims credits: the lesser of 0.1% of the port's stock value or 2,000 cr. Grind the garrison to zero and the port is **destroyed**, paying out the lesser of 10% of stock value or 25,000 cr. **Losing** disables your ship and wipes your fighters and shields, while the garrison only drops 20%.
-
-**Every attempt has faction consequences**, win or lose:
-
-| Target | Consequence |
-|--------|-------------|
-| Pirate base or black market | +10 alignment, −15 pirate reputation |
-| Commerce port in Federation territory | −25 alignment, −15 Federation reputation, and a Federation bounty on you |
-| Commerce port in neutral space | −10 alignment |
-
-Destroyed ports don't leave a permanent hole: a replacement port of a random attackable type respawns elsewhere in the galaxy within about 4 hours.
-
----
-
-## Upgrading for Combat
-
-Tech upgrades that matter in a fight:
-
-| Upgrade | Cost | XP required | Effect |
-|---------|------|-------------|--------|
-| Shield Booster Arrays | 10,000 cr | 1,500 | +15% shields (applied at purchase — buy while fully repaired for full value) |
-| Combat AI Core | 15,000 cr | 3,000 | +20% fighter effectiveness |
-| Advanced Attack Systems | 22,000 cr | 6,000 | +10% offense multiplier |
-| Reinforced Armor Plating | 22,000 cr | 6,000 | +10% defense multiplier |
-
-Restock fighters (75 cr) and torpedoes (150 cr) at any starport between fights — or let Port Repair restore everything in one bill. See [Tech Upgrades](/guide/tech-upgrades/).
-
----
-
-## NPC Combat
-
-NPC fights use the same resolution system described above, with one big difference in timing: **encounter outcomes are pre-rolled the moment the encounter fires**. An ambush is committed before you see the modal; tapping Attack on a non-aggressive NPC reveals a result that was already decided. Fleeing a non-aggressive encounter is always free. See [NPCs & Encounters](/guide/npcs/) for the interaction options and loot tables.
-
----
-
-## Combat Recap and Feed
-
-After every 1v1 fight (PvP or NPC), a recap screen shows both sides' stats, calculated power, your win probability, losses, loot, and any bounty collected. If you were disabled, it notes the next-reset repair timing. Fleet combat shows only a toast.
-
-Three feed messages are created per combat: one private to the attacker with loot details, one private to the defender with losses, and one public showing who defeated whom. A popup alert fires when your ship is attacked (while the app is open).
+See [NPCs & Encounters](/guide/npcs/).

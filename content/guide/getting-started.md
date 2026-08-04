@@ -1,111 +1,152 @@
 ---
 title: "Getting Started"
-date: 2026-07-02
+date: 2026-08-04
 draft: false
-description: "Your first steps in Big Bang Smugglers"
+description: "Sign up, join a season, and survive your first ten minutes"
 weight: 1
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-Welcome to Big Bang Smugglers. This guide covers everything you need to get through your first session and start earning.
+## Get the game
 
-## Get the Game & Sign In
+- **Android**: Google Play.
+- **Web**: [play.bigbangsmugglers.com](https://play.bigbangsmugglers.com) — no
+  invite code, no download.
 
-Big Bang Smugglers is playable two ways:
+Sign in with **email and password** (you must verify the address before you
+can play) or **Google**. Then pick a captain handle: 3 to 20 characters,
+letters, numbers and spaces only. Runs of spaces collapse to one.
 
-- **Android**: download from Google Play
-- **Web**: play in your browser at [play.bigbangsmugglers.com](https://play.bigbangsmugglers.com) — sign-up is open, no invite code needed
+There is no class to pick and no faction to choose. Everyone starts neutral.
+What you become is decided by what you do.
 
-Create an account with **email and password** (you'll need to verify your email before playing) or **sign in with Google**. Pick a captain name — 3 to 20 characters, letters, numbers, and spaces.
+## Join a season
 
-There's no faction to choose and no character to build. You start as a **Neutral** captain, and your faction alignment shifts through what you do: missions, combat, smuggling busts, and territorial plays move it toward Federation or Pirate. Ordinary port trading shifts neither score. Your separate **trader reputation** — which affects prices everywhere — moves through dealings with NPC traders you meet in space, not through port trades. See [Reputation & Factions](/guide/reputation-factions/) for how the two scores work.
+Big Bang Smugglers is played in **seasons**. A season is a freshly generated
+galaxy with a fixed player cap and an end date, and it is the only container
+for anything you own. Browse seasons from the Settings tab.
 
-## Join a Season
+Three rules worth knowing before you tap Join:
 
-Big Bang Smugglers is played in seasons. Each season is a time-limited galaxy that its players compete in together, and you can be in **one season at a time**.
+1. **One season at a time.** You cannot be enrolled in two.
+2. **Leaving is permanent.** Leave a season and you can never rejoin *that*
+   season — the server refuses with `ALREADY_PARTICIPATED`. Everything you
+   held there is gone.
+3. **A full season is closed.** Seasons have a hard player cap, and joining
+   fails once it's reached.
 
-To join: open the **Settings** tab, find the **Season Management** card, tap **Browse Seasons**, and join an available season. Seasons hold up to 25 players by default.
+If you lead a corporation with other members in it, you must hand leadership
+over before you can leave.
 
-One warning before you ever tap **Leave Current Season**: leaving is permanent. You can never rejoin a season you've left, and leaving zeroes your credits and turns for that season.
+### What you start with
 
-Once you join, you start with:
+| | |
+|---|---|
+| Wallet | 5,000 cr |
+| Bank | 0 |
+| Turns | 250, resetting every 4 hours |
+| Alignment | 0 (True Neutral) |
+| Location | Sector 0 — the Stardock, the safest place in the galaxy |
+| Ship | SS Starter |
 
-- **5,000 credits** in your wallet (bank empty)
-- **250 turns** (refreshed every 4 hours — see Turns below)
-- **Neutral alignment**
-- Your ship in **Sector 0** — the exact center of the galaxy and home of the Federation starport
-
-## Your Starter Ship
-
-Your first ship is the **SS Starter**, a stripped-down starter hull. It can haul a small load of cargo, but it has no weapons and won't survive a real fight.
-
-| Stat | Value |
-|------|-------|
-| Cargo holds | 20 |
-| Shields | 15 |
-| Fighters | 0 |
-| Torpedoes | 0 |
-| Escape chance | 30% |
-
-Here's the classic first decision: the **Frontier Scout** at the starport's ship sales terminal costs exactly **5,000 cr** — your entire starting bankroll — and it's strictly better: **40 holds** (double), **150 shields**, actual fighters and torpedoes, and a **50% escape chance**. Spend everything on a real ship and trade your way back up, or keep the credits as trading capital and upgrade later. Either works; the Scout pays for itself quickly.
-
-## The Nav Screen
-
-You start in **Sector 0**, the safest spot in the galaxy. The **Nav screen** is where you'll spend most of your time: your current sector, its ports, planets, and other points of interest, plus the neighboring sectors you can move to.
-
-Each move to an adjacent sector costs **1 turn**. One quirk to know: the adjacent-sector list on the Nav screen is titled "Warp to," but tapping a neighbor there is an ordinary 1-turn move — actual warp drive jumps come later (see [Gameplay Basics](/guide/gameplay/)).
-
-## Make Your First Trade
-
-**Find a port.** From the Nav screen, tap a Port in your current sector or move to one nearby, then open Trading.
-
-**Know the goods.** There are three commodities:
-
-- **Fuel** — 1 hold per unit, typically 60–130 cr
-- **Organics** — 1 hold per unit, typically 60–200 cr
-- **Equipment** — 2 holds per unit, typically 200–700 cr
-
-Prices are fixed per port type and identical in every galaxy — the game is buying at a port type that sells a commodity cheap and hauling it to a port type that pays more. Every buy or sell transaction costs **1 turn**, and each leg loses roughly 3% to taxes and fees.
-
-**A proven first route:** buy organics at an **Agricultural Station** for about **60 cr**, then sell them at a **Mining Station** for about **180 cr**. With your 20 starter holds:
-
-- Buy 20 organics at 60 cr = 1,200 cr, plus fees ≈ **1,236 cr spent**
-- Sell 20 at 180 cr = 3,600 cr, minus fees ≈ **3,492 cr received**
-- **Profit: about 2,250 cr** on one hop — nearly half your starting bankroll
-
-The full price table for every port type is in [Trading & Economy](/guide/trading/).
+The **SS Starter**: 20 holds, 15 shields, **40 hull**, no fighters, no
+torpedoes, 30% escape. It is a delivery van with a radio. It cannot win a
+fight and it is not supposed to.
 
 ## Turns
 
-You get **250 turns per cycle**. Turns reset at fixed 4-hour UTC boundaries — **00:00, 04:00, 08:00, 12:00, 16:00, and 20:00 UTC** — not once a day. The header bar shows a live countdown to the next reset. Unused turns don't carry over.
+A turn is the unit of action. Moving one sector costs 1. Buying or selling
+cargo costs 1, however many units you move. Fighting costs 1.
 
-What costs turns:
+**Turns reset in full every 4 hours**, on the UTC boundaries: 00:00, 04:00,
+08:00, 12:00, 16:00 and 20:00. The reset is a *reset*, not a top-up — you go
+back to 250 whether you had 3 left or 240. **Turns never carry over.** That
+is doctrine, not a tuning knob: banking turns is not a strategy in this game.
 
-- Moving one sector: 1 turn
-- Every trade transaction (each buy, each sell): 1 turn
-- Attacking: 1 turn
-- Warping (once you have a warp drive): turns based on distance
+Cycle length and the turn cap are season configuration. Today's defaults are
+4 hours and 250 turns; the game always shows you the live figures and the
+countdown to the next reset.
 
-What's free: banking, browsing ports, buying ships and upgrades, and accepting missions.
+You can buy extra turns — see [Provisions](/guide/gameplay/#buying-turns) —
+but only 5 per cycle, at 800 cr each.
 
-When you hit 0 turns you cannot move, fight, or trade. You can still bank credits, browse, and use port services that don't consume turns. Two more things worth knowing:
+## Your first ten minutes
 
-- **Agricultural Stations sell provisions** that restore turns at **800 cr each, up to 5 per purchase** — the main way to regain turns mid-cycle (a lucky anomaly landmark can also grant a few).
-- Spending your **last turn on a move** banks a day toward your turn streak (reward milestones at 3, 7, 14, and 30 days). Only a move counts — a trade or fight as your last action doesn't. The in-app streak display currently has a known bug, but the days are recorded.
+You are in Sector 0, standing on the Stardock: the deepest market in the
+galaxy, a shipyard, a bank, repair, recruitment, defense contracts and a
+supply shop, all in one sector. It is also permanently PvP-free.
 
-## What to Do First
+**1. Decide about the Frontier Scout.**
+The classic opening: the Frontier Scout is a tier-1 balanced hull at
+**5,000 cr** — your entire bankroll. 40 holds against the Starter's 20, 150
+shields against 15, 100 hull against 40, real fighters and torpedoes, and a
+50% escape chance. Buying it leaves you broke with a real ship. Not buying it
+leaves you with capital and a hull that dies to a stiff breeze.
 
-1. **Use the starport under your feet.** You spawn at the Federation starport in Sector 0 — banking, ship sales, the shipyard, missions, and more are all right there. No need to go find one.
-2. **Decide on the Frontier Scout.** 5,000 cr for double the holds and real survivability is the best early purchase in the game.
-3. **Explore nearby sectors.** You must visit a sector before you can warp to it later, and first visits award bonus XP.
-4. **Find a trade route.** Look for an Agricultural Station and a Mining Station within a few sectors of each other and run organics between them.
-5. **Bank your profits.** Credits in the bank can't be looted in combat. Deposit before you log off.
+Either works. The Scout pays for itself inside an hour of trading, and the
+Starter's 20 holds throttle everything you do. Most captains buy.
 
-## Next Steps
+**2. Look at prices before you buy cargo.**
+Prices are not fixed in 2.0. Every port has an anchor price per commodity and
+the live stock level swings it by up to ±28%. A port that just got emptied
+charges a premium; a port you just flooded pays less. The port screen quotes
+your actual per-unit price, tax and fee before you commit.
 
-- [Gameplay Basics](/guide/gameplay/) covers movement, warp travel, ship roles, repair, and factions
-- [Trading & Economy](/guide/trading/) covers the full price table and how to maximize profit per run
-- [Ships](/guide/ships/) covers the full 30-ship catalog and when to upgrade
-- [Galaxy & Territory](/guide/galaxy-territory/) explains regions, territories, and where it's safe to fly
+**3. Buy where a port specializes.**
+Every commodity has a specialist that sells it cheapest — that ordering is
+enforced by the game's own catalog validation. Fuel Depots are the cheap fuel
+(anchor 90). Agricultural Ports are the cheap organics (75). Tech and
+Research Ports are the cheap equipment (375 and 350). The Stardock is deep
+and convenient but it is not cheap.
+
+**4. Sell where the anchor is high.**
+Organics bought at an agri port at ~75 sell at a mining port whose organics
+anchor is 240. That's the whole game in one sentence. Equipment carries
+**2 volume per unit**, so a hold full of equipment is half as many units as a
+hold full of fuel — factor that into every route.
+
+**5. Move, and expect company.**
+Each move to a linked sector is 1 turn. Entering a sector can trigger sector
+hazards, mines somebody left, and NPC encounters. Federation space is quiet;
+it gets louder the further out you go.
+
+**6. Bank what you can't afford to lose.**
+Your **wallet** is what gets looted when you lose a fight, robbed on a
+planet, or fined by customs. Your **bank** is never touched by any of it.
+Banking is free, instant, and available with no location requirement.
+
+## What changed from 1.x
+
+If you played the old game, these will bite you:
+
+- **Prices move.** The fixed price table is gone. Stock swings prices ±28%
+  and heavy trading at one port stacks pressure on top, up to ×2.
+- **Ports restock.** Every 4-hour tick pulls a port's stock back toward its
+  baseline. Scarcity is real but temporary.
+- **Cargo is pooled, not lotted.** One stack per commodity with a weighted
+  average cost basis. One sell is one turn regardless of how you acquired it.
+- **Ships have hull.** Shields absorb first; overflow spills to hull at ×1.5.
+  Hull 0 is the only way a ship dies, and hull never regenerates — only port
+  repair brings it back.
+- **The disabled state is deleted.** No disabled ships, no field kits, no
+  auto-recovery. You either survive damaged or you're in a pod.
+- **Reputation is gone; standing replaced it.** Trader reputation is now
+  Merchant Guild standing. Alignment and standing are two different axes.
+- **PvP is classified by your alignment**, at ±300 — not by what hull you fly.
+- **Three starports, not two**: the Stardock at Sector 0, the Pirate Haven in
+  the middle of the pirate band, and the Merchant Exchange out in the middle
+  ring.
+- **45 purchasable hulls** across three lines, plus six earn-only epics.
+- **Repair no longer refills your munitions.** Fighters and torpedoes are
+  bought back separately at the restock bay.
+- **Missions have no accept step and no cap.** You are enrolled lazily; your
+  progress accrues whether or not you opened the screen.
+
+## Where to go next
+
+- Making money: [Trading & the Market](/guide/trading/)
+- Getting around: [Navigation & Travel](/guide/navigation/)
+- Not dying: [Combat](/guide/combat/)
+- Picking a side: [Factions, Alignment & Standing](/guide/reputation-factions/)

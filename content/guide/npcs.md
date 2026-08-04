@@ -1,210 +1,153 @@
 ---
 title: "NPCs & Encounters"
-date: 2026-07-02
+date: 2026-08-04
 draft: false
-description: "NPC ships, encounter odds, interaction options, and loot"
-weight: 8
+description: "Pirates, patrols, traders, named captains, and every way out"
+weight: 13
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-The galaxy has NPCs moving through it at all times. Federation patrols enforce the law, pirates hunt for prey, and traders run commodity routes. Each type behaves differently and presents different options when you encounter it.
+## The three types
 
-## How Encounters Work
+| Type | Base rate per move | Never appears in | Max per sector | Drops |
+|---|---|---|---|---|
+| **Pirate** | 3.0% | Federation territory | 3 | 500–2,000 cr |
+| **Trader** | 2.0% | — | 2 | 100–500 cr |
+| **Patrol** | 1.5% | Pirate territory | 2 | **nothing** |
 
-Every sector move rolls once for an NPC encounter — at most one NPC spawns per move. Warp hops roll too (see Warp Encounters below). The base chance per move is **3% for pirates, 2% for traders, and 1.5% for patrols**, multiplied by where you are:
+Region multiplies the base rate:
 
-| Region | Pirates | Traders | Patrols |
-|--------|---------|---------|---------|
-| Federation Core | 0 | ×1.5 | ×4.0 |
-| Federation Space | 0 | ×1.5 | ×3.5 |
-| Inner Systems | ×0.4 | ×1.8 | ×1.5 |
-| Middle Band | ×1.0 | ×2.0 | ×0.8 |
-| Outer Reaches | ×1.5 | ×0.5 | ×0.1 |
-| Outer Rim | ×2.0 | ×0.3 | 0 |
+| Region | Pirate | Trader | Patrol |
+|---|---|---|---|
+| `fed_core` | — | — | ×4.0 |
+| `fed_space` | — | ×0.5 | ×2.5 |
+| `inner` | ×0.5 | ×1.0 | ×1.5 |
+| `middle` | ×1.0 | ×1.2 | ×1.0 |
+| `outer` | ×1.5 | ×0.8 | ×0.5 |
+| `outer_rim` | **×2.0** | ×0.5 | — |
 
-Note the trader hotspot is the **Middle Band**, not Federation space — mid-galaxy is where the commodity routes run.
+Pirates take priority over patrols, which take priority over traders. One NPC
+maximum per roll.
 
-On top of the region multipliers, **territory** applies hard blocks: pirates never spawn in Federation territory, and patrols never spawn in pirate territory, period. Sectors also have density caps — at most 2 active patrols and 3 active pirates per sector (traders are uncapped). Once a cap is hit, no more of that type spawn there.
+Loot scales by tier: ×0.75 / ×1.00 / ×1.25 / ×1.50 / ×1.75 at tiers 1–5.
 
-## Combat Is Decided When You Move
+**Patrols drop nothing.** Killing one buys you a Federation warrant and
+nothing else. That is deliberate.
 
-NPC combat uses an **instant-resolution model**: the fight's outcome is computed the moment the encounter fires, during your move.
+## Aggression
 
-- **Ambushes** (auto-aggressive NPCs): the combat result is committed before you see anything. The modal shows you a recap — you cannot flee an ambush.
-- **Non-aggressive encounters:** the result is pre-rolled and stored. Tapping **Attack** reveals and applies it; **walking away costs nothing** — no roll, no penalty, no turn. (Fresh pirate and patrol encounters interrupt you with a modal where every option has a price — see below.)
-- A committed fight costs **1 turn** on top of the move that triggered it. All diplomacy options (scan, bribe, surrender, jettison, trade, rob) cost **0 turns**.
+**Patrols never ambush. Traders never ambush.** Only pirates start fights,
+and only against people they consider fair game:
 
-You choose *how to respond* — diplomacy or violence — but once you commit to the fight, the dice were already thrown.
+| Your alignment | In pirate territory | Elsewhere |
+|---|---|---|
+| ≥ +300 (Federation) | **100%** | 66% |
+| Between | 66% | 33% |
+| ≤ −300 (Pirate) | **never** | **never** |
 
-## Seeing NPCs
+Pirates never ambush a Pirate-aligned captain. Being deeply criminal is, in
+the most literal sense, safe.
 
-NPCs are visible in the sector list on the Nav screen with an **Engage** button, so you can size them up (or ignore them) before acting. The exception is a freshly spawned pirate or patrol encounter, which interrupts you with a **blocking modal** — there is no Leave button; you must pick an option. Traders never interrupt: they appear silently in the sector list and every trader interaction is player-initiated. Any NPC lingering in a sector can simply be ignored — move on.
+Two overrides:
 
----
+- **A faction warrant on your head makes patrols and pirates shoot on
+  sight**, regardless of the table above.
+- The **Patrol Transponder** module (Federation-only) means patrols never
+  materialize at all. The epic **FSS Writ of the Council** does the same and
+  doesn't care about your current alignment.
 
-## NPC Types
+## Encounters that aren't fights
 
-### Federation Patrols
-
-Patrols enforce Federation law. They scan cargo and are never aggressive at spawn — **unless you carry an active Federation bounty, in which case they attack on sight** with no options offered.
-
-**Encounter options:**
-
-| Option | What happens |
-|--------|--------------|
-| **Allow Scan** | Clean: **+2 alignment**. Caught: all contraband seized, **−5 alignment**. |
-| **Bribe** | Cost by patrol tier (table below). **60% success** (+15% if your alignment is below −300). Success: patrol leaves, −1 alignment. Failure: credits lost, **−2 alignment, and the scan runs anyway** — if it catches contraband, add the seizure, −5 alignment, and a **2,000 cr fine**. |
-| **Jettison Contraband** | Dumps ALL your contraband. Free, no penalty, always works. |
-| **Attack** | Fight. Winning puts a **Federation bounty on your head**. |
-
-**Territory behavior:** heavy in Federation Core and Federation Space, moderate in the Inner Systems, thin in the Middle Band, nearly absent in the Outer Reaches, and never in the Outer Rim or pirate territory.
-
-**Patrol ships:**
-
-| Tier | Class | Fighters | Shields | Torpedoes |
-|------|-------|----------|---------|-----------|
-| 2 | Fed Patrol Cutter | 30–60 | 40–80 | 10–25 |
-| 3 | Federation Frigate | 60–140 | 80–180 | 15–40 |
-| 4 | Federation Cruiser | 140–300 | 180–350 | 30–60 |
-| 5 | Star Defender | 300–550 | 350–600 | 50–90 |
-
-The heaviest patrols (tiers 4–5) fly in Federation Core; the frontier gets cutters and frigates.
-
-**Patrols drop nothing.** Zero credits, zero cargo. Killing one shifts your alignment −6, raises your pirate reputation (+15 × tier), and generates a Federation bounty on you — it is a faction-politics play, never a profit play.
-
----
-
-### Pirates
-
-Pirate ships hunt cargo and credits. Whether a pirate ambushes you on sight depends on your alignment and where you are:
-
-| Your alignment | Pirate territory | Neutral space |
-|----------------|------------------|---------------|
-| Pirate-aligned (below −300) | Never attacked | Never attacked |
-| Neutral | 66% | 33% |
-| Federation-aligned (above +300) | 100% | 66% |
-
-An active **pirate bounty** on you overrides everything: pirates attack on sight, hunting the payout.
-
-**Encounter options** (non-aggressive pirates):
+An NPC that doesn't ambush becomes a **pending encounter**. Every option
+below costs **0 turns**.
 
 | Option | What happens |
-|--------|--------------|
-| **Surrender Cargo** | The pirate takes **30% of your cargo units**. If your holds are empty, it takes **10% of your wallet, capped at 5,000 cr** — never both. No fight, no alignment change. |
-| **Bribe** | Cost by pirate tier (table below). **65% success** (+15% if your alignment is below −300, capped 95%). The credits are **lost even on failure** — and a failed bribe forces immediate combat with no escape. |
-| **Jettison Cargo** | Dumps **25% of your cargo** (cheapest lots first) as a distraction. **Always works** — a guaranteed escape priced at a quarter of your hold. |
-| **Fight** | Combat. Winning shifts alignment +4, pays Federation reputation (+15 × tier), and generates a **pirate syndicate bounty on you**. |
+|---|---|
+| **Engage** | 1 turn, resolves as combat, no retreat roll |
+| **Surrender** (pirate) | They take **30% of your cargo units**. If your holds are empty, **10% of your wallet** instead, capped at 5,000 cr. Never both. No fight, no alignment change. |
+| **Jettison** | Dump **25% of cargo** as a distraction. Guaranteed escape from a pirate. |
+| **Jettison contraband** | Dump **all** contraband. The free alternative to submitting to a scan when you're dirty. |
+| **Bribe a pirate** | 500 / 1,500 / 4,000 / 10,000 / 25,000 cr by tier. 65% success, **+15pp if you're pirate-aligned** below −300. −1 alignment on success, −2 on failure. |
+| **Bribe a patrol** | 60% success. Failure costs a 2,000 cr fine. |
+| **Submit to a scan** | Clean holds: **+2 alignment**. Dirty: seizure. |
+| **Trade** | Buy and sell with a trader NPC at a **×1.5 markup** over engine prices, up to 1,000 units. |
+| **Rob a trader** | Requires alignment **≤ −500**. 60% success. Purse 2,000 / 5,000 / 12,000 / 25,000 / 50,000 cr by tier. Makes the trader faction hostile for 4 hours. |
 
-**Bribe costs** (identical for pirates and patrols):
+Fleeing a pending encounter means simply letting it expire — pending contacts
+time out on their own.
 
-| NPC tier | Bribe cost |
-|----------|-----------|
-| 1 | 500 cr |
-| 2 | 1,500 cr |
-| 3 | 4,000 cr |
-| 4 | 10,000 cr |
-| 5 | 25,000 cr |
+Confirming a fight re-rolls it under the **stored seed**, so the result is
+deterministic. Reloading the screen does not reroll the dice.
 
-**Territory behavior:** never in Federation space; density climbs from the Inner Systems outward, peaking in the Outer Rim, where the biggest hulls fly.
+## Customs scans
 
-**Pirate ships:**
+Patrol encounters can trigger a **customs scan**. This is not a menu option
+you pick; it happens inside a patrol contact during a move or a warp arrival.
+See [Smuggling](/guide/smuggling/#customs-scans) for the full mechanics.
 
-| Tier | Class | Fighters | Shields | Torpedoes |
-|------|-------|----------|---------|-----------|
-| 2 | Raider Skiff | 20–50 | 15–40 | 5–15 |
-| 3 | Smuggler Corvette | 50–120 | 40–100 | 10–30 |
-| 4 | Marauder Cruiser | 120–250 | 100–200 | 20–50 |
-| 5 | Warlord Battleship | 250–500 | 200–400 | 40–80 |
+The part everyone needs to know: **passing a customs scan with clean holds
+pays +2 alignment**, with a 30-minute cooldown that stops you farming it. If
+you fly lawfully, patrols are not a nuisance — they are your standing income.
 
-Inner Systems pirates run tiers 2–3; the Outer Rim fields tiers 3–5.
+## Warp interruption
 
-**Loot from defeating pirates:** 500–2,000 cr base plus cargo (equipment-heavy), scaled by the tier multiplier below. Outer Rim pirates use a richer table: 1,000–4,000 cr with bigger cargo drops.
+An NPC can stop you mid-warp. The journey truncates where you were
+intercepted and turns are refunded proportionally for the hops you didn't fly.
 
----
+The per-hop rate is bounded so **no journey exceeds a 30% total chance** of
+being interrupted, however long it is. Immune players skip the roll.
 
-### Traders
+An interrupted warp used to treat everybody as neutral. It doesn't anymore —
+real alignment and real warrants apply mid-flight.
 
-Civilian merchant ships running commodity routes. They spawn silently — no popup, ever — and are never hostile. Engage them from the sector list.
+## The living world
 
-**Encounter options:**
+Transient NPCs are not furniture:
 
-| Option | What happens |
-|--------|--------------|
-| **Trade** | Buy and sell at **fixed convenience prices** — never linked to port markets. Buy: fuel 30 / organics 45 / equipment 75 cr. Sell: fuel 13 / organics 20 / equipment 33 cr (all before reputation adjustment). Each transaction earns **+1 trader reputation**. |
-| **Rob** | **Always succeeds** — traders don't fight. Loot by tier (table below). Costs **−2 alignment and −3 trader reputation**. |
-| **Attack** | Full combat. Killing a trader costs **−5 trader reputation** and **−1 alignment**. |
+- Untouched NPCs **despawn after 2 hours**.
+- Survivors **wander to a linked sector with 20% chance per world tick**.
+- Trader NPCs actually **travel port to port**, picking destinations 3 to 10
+  hops out.
 
-**Rob loot by trader tier:**
+## Named NPCs
 
-| Tier | Credits | Cargo units |
-|------|---------|-------------|
-| 1 | 50–200 | 1–5 |
-| 2 | 150–500 | 3–10 |
-| 3 | 400–1,500 | 5–20 |
+Ten named characters generate per galaxy — five pirates, five Federation —
+and they roam their assigned regions permanently.
 
-**Territory behavior:** everywhere lawful, densest in the Middle Band and Inner Systems, sparse in the Outer Reaches and Outer Rim.
+| Name | Title | Type | Tier | Roams | Bounty |
+|---|---|---|---|---|---|
+| Redmaw Vex | the Warlord | Pirate | 5 | `outer_rim` | **150,000** |
+| Grim Tally | the Butcher | Pirate | 4 | `outer_rim` | 75,000 — **always ambushes** |
+| Iron Hessa | the Corsair Queen | Pirate | 4 | `outer`, `outer_rim` | 60,000 — escape 0.60 |
+| Blackline Kord | the Smuggler King | Pirate | 4 | `middle`, `outer` | 60,000 — drops contraband |
+| Saber Quill | the Phantom | Pirate | 3 | `outer` | 30,000 — escape 0.50, rarely sighted |
+| Adm. Aster Vale | Fleet Admiral | Patrol | 5 | `fed_core` | — |
+| Cmdr. Silva Trask | Border Commodore | Patrol | 4 | `inner` | — |
+| Cmdr. Ren Okafor | Customs Marshal | Patrol | 4 | `fed_space`, `inner` | — |
+| Capt. Odessa Rhee | Bounty Warden | Patrol | 4 | `inner`, `middle` | — |
+| Maj. Callum Dray | the Inquisitor | Patrol | 3 | `fed_space` | — |
 
-**Trader ships:**
+When a named NPC moves, it usually posts a **sighting rumor** to the feed —
+about 75% of the time by default, and Saber Quill only 25%. Rumors are
+deliberately fuzzed: they report a sector **within a couple of hops** of the
+real one, never the exact position.
 
-| Tier | Class | Fighters | Shields | Torpedoes |
-|------|-------|----------|---------|-----------|
-| 1 | Merchant Shuttle | 5–15 | 10–30 | 0–5 |
-| 2 | Cargo Hauler | 15–40 | 30–70 | 0–10 |
-| 3 | Star Trader | 40–90 | 70–150 | 5–20 |
+### Grinding a boss down
 
-**Loot from killing traders in combat:** 100–500 cr base (200–800 in the Middle Band) plus mixed commodity cargo, scaled by tier.
+Damage you deal a named NPC **sticks to its row between fights**. It
+regenerates **25% of its spawn strength per world tick** — roughly sixteen
+hours from wreck to full.
 
----
+So Redmaw Vex is not a wall you either clear or don't. Four good runs inside
+one day will grind him down. Come back a week later and he's fresh.
 
-## Loot Summary
+**Losing pays nothing.** Defeat awards no XP, which closed the old loop of
+pulling an unbeatable boss for a turn a time as an XP faucet.
 
-All kill loot is a base roll from the tables above multiplied by the NPC's tier:
+### The Bane
 
-| NPC tier | Loot multiplier |
-|----------|----------------|
-| 1 | ×0.75 |
-| 2 | ×1.0 |
-| 3 | ×1.25 |
-| 4 | ×1.5 |
-| 5 | ×1.75 |
-
-| Type | Credits (base) | Cargo | Worth fighting for profit? |
-|------|----------------|-------|---------------------------|
-| Pirates | 500–2,000 (Outer Rim: 1,000–4,000) | Yes, equipment-heavy | Yes |
-| Traders | 100–500 (Middle Band: 200–800) | Yes, mixed commodities | Yes, at a reputation price |
-| Patrols | **0** | **None** | Never — rep and bounty consequences only |
-
----
-
-## How NPCs React to You
-
-NPC reactivity comes entirely from **alignment thresholds and active bounties** — NPCs do not remember individual past interactions.
-
-- **Below −300 alignment:** pirates never ambush you, and your bribes get +15% success with both pirates and patrols.
-- **Above +300 alignment:** pirates ambush you more (66% in neutral space, always in pirate territory), but contraband scans skip you entirely.
-- **Active Federation bounty:** patrols attack on sight.
-- **Active pirate bounty:** pirates attack on sight.
-
-That's the whole list. There is no long-term grudge system — a patrol you bribed yesterday treats you exactly like one you've never met. See [Bounties](/guide/bounties/) for how faction bounties are generated and collected, and [Reputation & Factions](/guide/reputation-factions/) for the alignment ladder.
-
----
-
-## NPC Lifecycle
-
-NPCs are transient. Each one despawns about **2 hours** after spawning, and every 4-hour cycle a surviving NPC has a 20% chance to wander to an adjacent sector. NPCs are visible to every player in the sector, and defeating one removes it for everyone.
-
-NPCs carry randomized display names — "Black Marauder", "FSS Justice" — with the ship class shown separately. One naming trap: the tier-5 pirate NPC is a **Warlord Battleship**, while the player-purchasable pirate tier-3 raider is named **Warlord**. Different ships.
-
----
-
-## Warp Encounters
-
-Warp hops roll for encounters too, with the total interruption chance over any journey capped at roughly **30%**. Any NPC halts your warp at that hop (unused turns refunded); only an auto-aggressive pirate forces combat, committed before you see it. One quirk worth knowing: warp encounter rolls treat every player as neutral — your alignment and any bounties on you are ignored mid-warp, so pirate-aligned players lose their ambush immunity while warping.
-
----
-
-## NPC Combat
-
-When a fight commits, it resolves automatically with the same formula as PvP — see [Combat](/guide/combat/) for the full system, including the win-odds labels. NPCs never retreat or escape; and when you are the one attacking, neither do you. NPC tiers scale with region danger, so check the odds label before engaging deep-space targets — and treat the modal's power preview as rough guidance, since the server's pre-rolled result is what actually stands.
+The **first player to kill a named NPC** in a season earns a unique ship
+prefix insignia: *"«Name»'s Bane"*. One per named NPC per season. Nobody else
+can ever have it that season.

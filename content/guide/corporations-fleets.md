@@ -1,155 +1,200 @@
 ---
 title: "Corporations & Fleets"
-date: 2026-07-02
+date: 2026-08-04
 draft: false
-description: "Player corporations — shared bank, chat, ship pool, corp planets, and fleet combat"
-weight: 18
+description: "Founding, roles, the corp bank, policies, fleets and held ports"
+weight: 17
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-A corporation is your crew for the season. Solo captains can trade, fight, and build planets just fine — but a corp adds things you cannot get alone: a private chat channel, a communal credit bank, a shared ship pool, corp-affiliated planets your whole crew can use, protection from direct PvP between members, and fleets — the only way in the game to bring more than one ship to a fight.
+## Founding
 
-Corporations are scoped to a single galaxy and season. When the season ends, the corp — bank balance included — is deleted. Plan accordingly (see [The Corp Bank](#the-corp-bank)).
+| | |
+|---|---|
+| Level gate | **5** |
+| Cost | **50,000 cr** — wallet first, then bank |
+| Name | 3–50 characters, unique in the galaxy |
+| Member cap | `max(10, seasonPlayerCap ÷ 5)` |
 
-## Why Join a Corporation
+Corp founding is one of exactly two things in the game the bank can pay for.
+The other is ship repair.
 
-| Benefit | What you get |
-|---------|--------------|
-| Corp chat | Private channel, members only, separate from the galaxy feed |
-| Corp bank | Communal credit pool anyone can pay into |
-| Ship pool | Donate spare ships to the corp; any member can claim one |
-| Corp planets | Land, park, and use storage on every planet your corp-mates own |
-| Corp Starbase | Shared hangar, ship pool, and a vault for corp assets |
-| Fleets | Up to 3 corp-mates attack one target as a single combined force |
-| Friendly-fire protection | Corp-mates cannot attack each other in direct PvP |
-| Corp leaderboard | Your corp competes as a unit in the Feed tab leaderboards |
+**Join policy** is set at creation and changeable by the leader:
 
-## Creating a Corporation
+- `open` — anyone joins instantly
+- `request` — applications go to a queue leaders and officers approve
+- `invite` — invitation only
 
-Go to the **Ship** tab → **Corps** in-screen tab. If you are not in a corp, you will see the corporation browser and a Create Corporation card.
+## Roles
 
-- **Cost: 50,000 credits.** Paid from your wallet if it covers the full amount; otherwise the whole cost comes from your personal bank.
-- **Name:** up to 30 characters, unique within the galaxy. Names that differ only in punctuation or capitalization count as the same name.
-- **Alignment:** pick Federation, Pirate, or Independent.
-- **Join policy:** pick Open, Request, or Invite Only (you can change this later).
-- You must be in a galaxy, and you can only belong to one corp at a time.
-
-**Size cap:** corp size scales with the season's player cap — one member slot per 10 player slots, with a minimum of 3. A 60-player galaxy allows 6-member corps; a 100-player galaxy allows 10. The cap is fixed at creation, so bigger galaxies allow bigger corps.
-
-The creator becomes the corp's **Leader**. Read [A Warning for Founders](#a-warning-for-founders) before you tap Create.
-
-## Joining a Corporation
-
-Browse corps from **Ship → Corps**. Each row shows the name, alignment, member count, and join policy. Tap a corp to join.
-
-- **Open:** you join instantly as a Member.
-- **Request:** your tap files a join request. A Leader or Officer approves or rejects it. **Important:** approval does not add you automatically — once approved, return to the browser and tap the corp again to complete the join. Approval also does not reserve a slot, so a corp that fills up in the meantime will still turn you away.
-- **Invite Only:** joining requires a standing invitation, and there is currently no way to send one from the app. If you are setting a join policy for your own corp, use **Open** or **Request** — an Invite Only corp cannot grow.
-
-Joining tags every planet you own with your new corp, and leaving removes the tag.
-
-## Roles & Permissions
-
-Three roles: **Leader**, **Officer**, **Member**. What each can do:
+Three roles, and the ladder is deliberately blunt.
 
 | Action | Leader | Officer | Member |
-|--------|--------|---------|--------|
-| Promote (Member → Officer) / demote | Yes | — | — |
-| Change join policy | Yes | — | — |
-| Kick members | Anyone but themselves | Members only (not other Officers) | — |
-| Approve / reject join requests | Yes | Yes | — |
-| Set corp policies | Yes | — | — |
-| Deposit to the corp bank | Yes | Yes | Yes |
-| Withdraw from the corp bank | Yes | Yes | Only if the bank-spend policy is on |
-| Corp chat, ship pool, fleets | Yes | Yes | Yes |
+|---|---|---|---|
+| Invite | ✅ | ✅ | |
+| Approve join requests | ✅ | ✅ | |
+| Set policies | ✅ | ✅ | |
+| Set the notice | ✅ | ✅ | |
+| Kick | any non-leader | members only | |
+| Promote / demote | ✅ | | |
+| Transfer leadership | ✅ | | |
+| Set join policy | ✅ | | |
+| Withdraw from the bank | ✅ | ✅ | only if policy allows |
 
-The one policy toggle that matters is **"Members can withdraw"** — it controls whether ordinary Members can pull credits from the corp bank. Leaders and Officers can always withdraw.
+Nobody can kick the leader. Promotion goes member → officer; leadership can
+only be transferred to someone who is already an officer.
 
-## The Corp Bank
+**A leader with other members cannot leave the corporation, leave the season,
+or delete their account** until they hand leadership over. The last member
+out dissolves the corp.
 
-Any member can deposit credits from their **wallet** (not their personal bank) into the corp pool, up to 10,000,000 per transaction. Withdrawals go back to your wallet and follow the permission table above. Every deposit and withdrawal is recorded in the corp activity log.
+## The corp bank
 
-The bank has one automatic inflow besides deposits: **credit loot from fleet victories** lands here (see [Fleet Loot](#fleet-loot)).
+A shared balance, separate from every personal wallet and bank.
 
-**The corp bank is wiped with the corp at season end.** Nothing is refunded or carried over. Withdraw and distribute the balance before the season closes — treat the last days of a season as payout time.
+- **Deposits come from your wallet only.**
+- **Withdrawals** require Leader or Officer, *or* the `bank.spend` policy
+  toggle — which defaults **off**.
+- Transaction bounds: 1 to 10,000,000 cr.
+- **Fleet strike loot goes here**, not to the leader's wallet.
+- At season end, the corp bank is distributed **pro rata** among members.
 
-## Corp Chat
+## Policies
 
-Every corp has a private chat channel in the Corps tab, visible to members only and separate from the public galaxy feed. Messages are capped at 500 characters with a 3-second cooldown between sends, and the app shows the last 50 messages.
+Four toggles, and they are real gates enforced at the module that owns the
+resource — not decoration.
 
-## The Ship Pool
+| Policy | Default | Controls |
+|---|---|---|
+| `storage.view` | **on** | Seeing planet storage contents |
+| `storage.deposit` | **on** | Depositing into a corp planet's storage |
+| `storage.withdraw` | **off** | Taking out of it |
+| `defenses.view` | **on** | Seeing corp deployables |
+| `defenses.place` | **on** | Deploying under the corp |
+| `defenses.clear` | **off** | Removing them |
+| `planet.build` | **off** | Non-owners building structures on a corp planet |
+| `bank.spend` | **off** | Members withdrawing from the bank |
 
-The ship pool turns your corp's spare hulls into a shared garage. It lives at your **corp Starbase** (see below), and both ends of the exchange happen there:
+The defaults are "contribute freely, take carefully". Every toggle that lets
+a member *remove* something starts off.
 
-- **Donate:** fly to the corp Starbase's sector and donate any ship you own that is not your active ship. The ship converts to a stored spec — class, tier, holds, shields, fighters, torpedoes, upgrades, warp drive, and StarNav are all preserved. Any cargo aboard is deleted, so empty it first.
-- **Claim:** any member standing in the Starbase's sector can claim a pooled ship. It arrives in your hangar **inactive and empty** — you still have to switch to it before flying it.
+## Chat
 
-This is the fastest way to get a corp-mate who just lost a ship back into a real hull.
+The only chat in the game. 500 characters, a 3-second per-player cooldown,
+a 30-messages-per-minute corp-wide flood cap, profanity filtered. History
+retains the **last 500 messages or 14 days, whichever is longer**.
 
-## Corp Planets & the Corp Starbase
+There are **no direct messages** between players. If you need to reach
+someone outside your corp, you leave a beacon in a sector or you don't.
 
-Planets owned by corp members carry the corp's tag, and every member gets real utility from them: land and park behind the planet's defenses, deposit to and withdraw from planet storage, and collect production. See [Planets](/guide/planets/) for how planets work in general.
-
-A **corp Starbase** is simply a corp-owned planet with a Starbase built on it. It is the corp's shared infrastructure:
-
-- The **ship pool** (above) operates only here.
-- Heads up: because fleet loot lands in plain planet storage, **any member can withdraw it**. Treasury discipline is a social contract, not a game rule.
-
-A corp Starbase is where the ship pool lives and where members can stage shared assets.
-
-## Friendly Fire: What Protection Actually Covers
-
-Corp membership blocks **direct combat** between members: 1v1 PvP attacks and fleet attacks against a corp-mate are refused outright.
-
-That is the whole shield. It does **not** extend to indirect harm:
-
-- Corp-mates **trigger each other's mines** and **sector defenses**, and take full damage from them.
-- Corp-mates **can siege and capture each other's planets**.
-
-Coordinate deployments with your corp. Tell people where your mines are, and don't garrison a sector your corp-mates route through. One protection does run in your favor: a ship parked on a corp planet cannot be attacked until the planet itself falls.
-
-## A Warning for Founders
-
-**Leadership cannot be handed off.** There is no way to promote another member to Leader, and a Leader cannot leave the corp while other members remain. Your only exit as a founder is to kick every member and dissolve the corp — which destroys the corp bank with it.
-
-Choose to found a corp knowing you'll captain it for the season. If you just want to fly with a crew, join someone else's corp instead.
-
-Leaving as a Member or Officer is clean at any time. When the last member (the Leader) leaves, the corp dissolves and its bank balance is gone.
+Leaders and officers can also set a **notice** (500 characters) that every
+member sees.
 
 ## Fleets
 
-Fleets are corp-exclusive group combat: up to **3 ships, including the leader**, attack one player target as a single combined force.
+A fleet is up to **three ships** from the same corporation operating as one.
 
-### Forming a Fleet
+| | |
+|---|---|
+| Form a fleet | Level **15**, must be in a corp |
+| Join a fleet | Level **10**, same corp only |
+| Cap | **3 ships** |
 
-Open the **Battle Station** — Nav tab → the players-in-sector list → **Engage** — and use the Corp Fleet section to form a fleet or join one. Requirements:
+The leader leaving disbands the fleet.
 
-- Same corporation as the fleet.
-- Same sector as the fleet.
-- Not cloaked.
+### Fleet strikes
 
-Forming and joining are free — no credits, no turns. The player who forms the fleet is the fleet leader.
+Leader-only, **1 turn**, and it runs exactly the same gates as solo combat.
 
-### Fleet Attacks
+The requirement people miss: **every member you want counted must be in the
+leader's sector with an active ship**. Members elsewhere contribute nothing.
+The leader's own ship must be battle-ready. Otherwise you get
+`NOT_ASSEMBLED`.
 
-Only the **fleet leader** initiates a fleet attack, and it costs **1 turn — paid by the leader only**. Standard PvP rules apply to the target: no corp-mates, no Federation space, PvP must be enabled in the galaxy, and the target can't be docked, disabled, protected, or immune. See [Combat](/guide/combat/) for the underlying resolution rules.
+- **Loot goes to the corp bank.**
+- **Attrition is redistributed across members** — everyone bleeds, not just
+  the leader.
+- **Any member's hull can reach zero**, and that member goes through the full
+  destruction and pod flow, losing their ship, its upgrades, its cargo and
+  every remaining turn.
+- Fleet kills apply the same alignment, statistics and immunity consequences
+  as solo kills.
+- The **leader** personally earns any faction bounty claims.
 
-The fleet fights as one ship: the pooled fighters, shields, and torpedoes of every participating member, built on the leader's hull. One combined attack roll decides the whole fight — no per-member retreats. Members who are out of the sector, cloaked, docked, or disabled when the attack fires silently sit out. Everyone who participates has their cloak broken.
+A fleet is not a way to fight safely. It is a way to concentrate three ships'
+worth of power into one engagement, and it spreads the losses across three
+hulls when it goes wrong.
 
-Win or lose, combat losses are split across members in proportion to what each contributed. If the fleet **loses**, every participant's ship is disabled (with the standard 2-minute PvP immunity), a participant who entered with zero shields, fighters, and torpedoes is destroyed — and the target loots credits **from the leader**. Leading a fleet means holding the bag.
+## Holding ports
 
-### Fleet Loot
+Corporations can besiege and hold ports. Everything except the three
+starports and Federation Ports is capturable.
 
-Fleet loot does not go to individuals: **looted credits go to the corp bank**. As with all PvP, loot is credits only — the target's cargo is not transferred.
+### Sieging
 
-Individual members still earn XP, reputation, and PvP win stats; the leader gets the kill credit.
+| | |
+|---|---|
+| Level gate | **15** |
+| Turn cost | **3** per attack |
+| Cooldown | **1 hour** per port |
+| Blocked by | An active 24-hour post-capture truce |
 
-### Leaving and Disbanding
+Siege math is the same shape as a planet raid: fighters ×0.8 (×1.2 with
+Combat AI), shields ×1.2, torpedoes ×2.0 against a garrison seeded from the
+port's stock value (`stockValue ÷ 100,000`, clamped 30–200) and regrowing 10%
+per tick.
 
-Any member can leave a fleet at any time. If the leader leaves — or the last member does — the fleet disbands. Note that flying out of the sector does not formally remove you from the fleet roster; you simply won't participate in any attack fired while you're away.
+A win skims 0.1% of stock value, capped at 2,000 cr. A defeat costs you 75%
+of your fighters and 75% of your defense pool as damage — **which can destroy
+your ship.**
 
-## Corp Leaderboard
+Alignment cost per attack: **−25** at a Federation-aligned port, **−10** at a
+neutral one, **+10** at an underworld port.
 
-Corps compete as a category on the season leaderboards (Feed tab). A corp's score sums its members' missions, XP, and credits earned — so every member's grind counts.
+### Capturing and holding
+
+After a successful siege, `capture` costs 1 turn and **requires a
+corporation**. Your corp's hold cap is `max(1, members ÷ 3)` — a 12-member
+corp can hold four ports.
+
+A held port:
+
+- skims **50%** of its tax revenue to the corp bank (the rest burns)
+- charges **corp members half tax**
+- charges everyone else **+1 percentage point**
+- costs upkeep every tick: `max(500, stockValue × 0.25%)`
+- **reverts to neutral after 2 consecutive unpaid ticks**
+
+That last line is the whole balance. A corporation that captures more than it
+can fund watches its ports shake off the occupation publicly, on the feed.
+
+`raze` is the alternative to holding: 1 turn, loot 10% of stock value capped
+at 25,000 cr, and the port is wrecked rather than held. `release` hands a
+held port back voluntarily.
+
+## Corp alignment
+
+Corporations display a faction character and their leaders carry
+faction-flavored titles.
+
+**Today this is cosmetic.** Corp alignment does not gate membership, change
+prices, alter combat, or restrict what a corp can hold. Individual player
+alignment does all of that work. If a corp badge implies otherwise, the badge
+is flavor.
+
+## What a corp actually gets you
+
+Concretely, and nothing else:
+
+1. **Fleets** — three ships in one engagement.
+2. **Held ports** — half tax for members, a revenue skim to the bank.
+3. **Shared planet storage and building**, subject to policy.
+4. **A shared bank**, distributed pro rata at season end.
+5. **Chat** — the only communication channel in the game.
+6. **Landing protection on corp planets.**
+7. **Corp-internal planet deed transfers.**
+8. **Corp-mates cannot attack each other**, ever.
+9. **Corp Champion medals** at the ceremony for every member of the
+   top-scoring corp.

@@ -1,118 +1,145 @@
 ---
-title: "Scanners & Intel"
-date: 2026-07-02
+title: "Scanners, Cloaks & Intel"
+date: 2026-08-04
 draft: false
-description: "StarNav 2002, sector scans, purchased intel, cloaking, and who can see your ship"
+description: "StarNav tiers, active scans, cloaks, and paid intel"
 weight: 12
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-Information wins wars and funds trade runs. Big Bang Smugglers gives you several layers of intel — a passive scanner that maps nearby space for free, active scans that spend turns for detail, intel you can buy at stations and taverns, and a preview before every warp. The counter-tool is the Cloaking Device, which takes you off everyone's screens until you act.
+## StarNav 2002
 
-## StarNav 2002 — The Passive Scanner
+The passive scanner. Once installed it runs continuously, costs nothing, and
+takes no turns.
 
-The StarNav 2002 is a five-level ship scanner that renders a live spatial map of nearby sectors on the Nav screen. Reading it is free — it costs no turns and no credits — and it refreshes automatically when you change sectors.
+| | |
+|---|---|
+| Install | 100,000 cr, requires 5,000 XP |
+| Upgrade | 100,000 cr × the new level — L2 200k, L3 300k, L4 400k, L5 500k |
+| XP gates | 5,000 / 10,000 / 25,000 / 50,000 / 100,000 |
+| Max level | 5 |
 
-### Installing and Upgrading
+**Range** is `min(level, 3)` hops. Level 4 and 5 do not see further — they
+see *better*.
 
-Buy it at any starport's Shipyard. It is installed on the **ship**, not on you — switching hulls means buying it again (or claiming/keeping a hull that already has one; see [Ships](/guide/ships/)).
+**Detail** resolves per hop distance:
 
-| Level | Cost | XP required |
-|-------|------|-------------|
-| 1 (install) | 100,000 cr | 5,000 |
-| 2 | 200,000 cr | 10,000 |
-| 3 | 300,000 cr | 25,000 |
-| 4 | 400,000 cr | 50,000 |
-| 5 | 500,000 cr | 100,000 |
+| Level | 1 hop | 2 hops | 3 hops |
+|---|---|---|---|
+| 1 | empty | — | — |
+| 2 | empty | empty | — |
+| 3 | **POI** | empty | empty |
+| 4 | **full** | POI | empty |
+| 5 | **full** | **full** | POI |
 
-Prices are adjusted by your reputation standing, like other starport purchases.
+- **empty** — the sector exists and is linked; nothing else resolves.
+- **POI** — points of interest: ports, planets, landmarks.
+- **full** — everything the sector holds.
 
-### What Each Level Sees
+Sectors the device cannot fully resolve show as **unknown**, not as empty.
+That distinction matters: an unknown sector is not a safe sector.
 
-Range is measured in hops (warp connections) from your current sector. Detail comes in three tiers: **existence** (the sector's number, faction territory, and connections), **POI counts** (ports, planets, starports), and **full intel** (player count, NPC count, hostile-NPC count).
+**Deployables** — mines, drones, turrets, buoys — are only reported at
+**StarNav 2 or better**, by kind and quantity, never by owner.
 
-| Level | Range | What you get |
-|-------|-------|--------------|
-| 1 | 1 hop | Existence only |
-| 2 | 2 hops | Existence only |
-| 3 | 3 hops | POI counts at 1 hop; existence beyond |
-| 4 | 3 hops | **Full intel at 1 hop**; POI counts at 2 hops — **and sees through cloaks** |
-| 5 | 3 hops | Full intel to 2 hops; POI counts at 3 hops |
+## Active scans
 
-Level 4 is the counter-intelligence breakpoint: it is the first level that shows player counts, and it reveals cloaked ships everywhere (see [The Cloaking Device](#the-cloaking-device)).
+A deliberate sweep of a radius around you, costing **1 turn per ring**,
+radius 1 to 3. It reports sectors and hazards, plus deployables at StarNav 2+.
 
-### Reading the Map
+Use active scans when you're standing somewhere and need to know what's one
+jump out. Use StarNav for the ambient picture.
 
-The STARNAV 2002 card on the Nav screen draws 1-hop sectors as large tappable circles and farther sectors as small dots, with POI icons per your detail tier. At level 2 and up, sectors just beyond your range appear as dashed "?" blips at the map edge. Tap a 1-hop sector for a detail sheet with a **Warp to Sector** shortcut (a normal move — it costs a turn).
+## Cloaks
 
-When the neighborhood gets dense, an expand button opens a full-screen pinch-and-zoom map of the same data with a per-sector detail panel.
+### Ship cloaking devices
 
-One caution: the map refreshes when you change sectors, not while you sit still — player and NPC counts go stale if you stay parked.
+Bought at any `blackmarket` service for **2,500 cr**, up to 5 at a time.
+Activating one hides your ship for a **fixed 2 hours from activation**.
 
-## Active Sector Scans
+This used to run "until the next 4-hour world boundary", which meant
+activating at 03:59 bought you sixty seconds. It's a fixed window now.
 
-The passive map never shows landmarks or region names. For those you run an **active scan**: **Ship tab → Bridge → Scanners card**, pick a radius, tap Scan Sector.
+**A cloak breaks on action.** Trading, moving and warping all drop it. A
+cloak is for sitting still somewhere dangerous, not for travelling
+invisibly.
 
-- **Radius 1, 2, or 3 — the scan costs that many turns.**
-- **No StarNav required.** This works from any ship at any scanner level.
-- Each sector in radius reports: region, port count, planet count, landmark count, player count, and NPC count — the only intel source for landmarks and region names. Hazards never appear in any scan: the damage report after moving through a sector is the only way to learn a hazard is there.
+While cloaked:
 
-Cloaked ships do not appear in scan results unless your ship carries StarNav level 4+. Scanning does not break your own cloak.
+- You cannot be attacked. A cloaked ship reads as **not present** to an
+  attacker.
+- Limpets waiting in a sector cannot newly latch onto you.
+- **Limpets already attached keep reporting.** A cloak fools sensors, not a
+  device bolted to your hull.
 
-## Deployables Scan
+### Seeing through cloaks
 
-Mines and sector defenses never show up on sector scans. The **Scan Deployables** button (same Scanners card, 1 turn, current sector only) is the dedicated sweep — but it only detects **large concentrations**. A minefield below roughly half the sector's mine cap always slips past; even above that it's a coin flip. See [Deployables](/guide/deployables/) for the full detection rules.
+**StarNav 4** is the threshold. At effective StarNav 4 or better, cloaked
+ships are visible and attackable.
 
-Practical advice: treat the hostile-deployables warning banner as your tripwire. When a scan comes back hot, reroute; when it comes back clean, stay alert anyway.
+"Effective" because some hulls add to it for cloak detection only:
 
-## Buying Intel
+| Hull | Effect |
+|---|---|
+| Sector Warden (Federation patrol T3) | +1 — reveals from StarNav 3 |
+| **Starlane Guardian** (Federation patrol T4) | **+2** — reveals from StarNav 2 |
+| FSS Writ of the Council (epic) | +1 |
+| **The Cartographer's Dream** (epic) | Sees through cloaks at **any** StarNav level |
 
-Two venues sell sector reports, and both scale their price with your reputation standing:
+Your actual StarNav data is untouched by these. They only move the cloak
+threshold.
 
-| Venue | Where | Price (base) | You get |
-|-------|-------|--------------|---------|
-| Sector Intelligence | Nav → Stations → Research Station | 300 cr | 3 random sector reports (ports, starports, wormholes, landmarks) |
-| Buy Intel | Nav → Port → Tavern (pirate, stardock, and black-market ports) | 500 cr | 5 reports on sectors you have **never visited** |
+The Cartographer's Dream also reads the passive sweep **one level deeper**
+than your installed drive — a level-4 drive resolves like a 5.
 
-The tavern deal has a hidden bonus that makes it the better buy for explorers: **tavern reports make those sectors warp-eligible**. Warping normally requires prior knowledge of the destination, which means having visited it — tavern intel and activated Nav Beacon landmarks (which reveal up to 8 neighbors) are the only ways to add unvisited sectors to your warp map. At 500 cr for 5 sectors, it is a cheap way to extend your reach. Tavern intel is paid from your wallet only; the research-station purchase can dip into your bank if your wallet is short.
+### Goods cloaking devices
 
-## Pre-Warp Intel
+A different item entirely, and not a ship cloak. A **Goods Cloaking Device**
+(750 cr, blackmarket) reduces a customs scan chance by **50 percentage
+points** — and is **consumed by the attempt whether or not it worked**.
 
-Before you confirm a warp, the preview shows the route, hop count, turn cost, and the **deployed fighters waiting at your destination** (both the total and how many are yours) — so you don't warp blind into a defended sector.
+See [Smuggling](/guide/smuggling/#counters).
 
-Know its limits: the preview counts free-floating deployed fighters only. Planet-launched garrison fighters, turrets, and sentry drones — which also auto-engage arrivals — do not appear. A clean preview is not a guarantee. The preview also requires prior knowledge of the destination, which visiting or tavern intel provides.
+## Cloak fields
 
-## The Cloaking Device
+A sector-level deployable, not a ship system. 5,000 cr, one per sector, two
+per player, **expires after 48 hours**. It contributes no attack and no
+defense; it is area concealment.
 
-The Ship Cloaking Device is a single-use consumable from the Black Market: **2,500 cr each, up to 5 per purchase**. (Don't confuse it with the 750 cr Goods Cloaking Device, which hides contraband from cargo scans — that's a smuggling tool, not a ship cloak.)
+## Paid intel
 
-Activate it from **Ship → Bridge → Ship Cloak**. Activation is free and instant, consumes one device, and lasts **until the next 4-hour turn boundary** — the same clock that resets your turns. Activate right after a turn reset for the full 4 hours of cover; activate five minutes before one and you've wasted a device.
+Ports running the `tavern` or `research` service sell intel for **2,000 cr**.
 
-**While cloaked, you are hidden from:**
+It reveals the **five nearest unvisited sectors** and marks them visited.
+That last part is the important bit: **warp only reaches visited sectors**,
+so intel is how you extend your warp network without flying the hops.
 
-- The players-in-sector list on everyone's Nav screen
-- Sector scans
-- Attack targeting — attackers get the same "not in your sector" result as if you were truly gone
+It pays **no exploration XP** — you didn't go there. If the galaxy is fully
+explored you get `NOTHING_TO_REVEAL` and pay nothing.
 
-**The cloak breaks the moment you act.** Moving, warping, trading, fighting, or deploying anything drops it instantly. Scanning and buying intel do not.
+## The price board
 
-**What it is not:**
+The Merchant Exchange's exclusive service. Live prices and stock for **every
+port in every sector you have visited**, nearest first, up to 200 ports. Free,
+no turns.
 
-- It is **not a combat buff** — it adds nothing to any fight.
-- It is **not proof against StarNav level 4+** — those scanners see through it, and their owners can attack you.
-- It does **not work with fleets** — you cannot form or join a fleet while cloaked.
+It is the best intel in the game and it costs nothing but knowing where the
+Exchange is.
 
-Think of it as offline protection: pop one before you log off in dangerous space, timed just after a reset.
+## Advanced Sensors
 
-## Who Can See You
+The tech module (15,000 cr, level 12) is not a scanner. It is a combat
+counter: it cuts a stealth attacker's first-strike bonus from +12 percentage
+points of win probability down to +6.
 
-Your ship appears in a sector's presence list — and is attackable — only when **all** of the following are true:
+The Federation patrol line's sensor-edge signature counts as Advanced Sensors
+for this purpose, on top of its cloak-detection bonus.
 
-- It is your **active** ship
-- It is **not docked** at a port
-- It is **not parked** on a planet
-- It is **not cloaked** (or the viewer has StarNav 4+)
+## What nobody can see
 
-Docking, planet parking, and cloaking each take you off the board. That is the defensive playbook in one line: when you stop playing, be docked, parked, or cloaked — never floating in open space.
+- **Who owns a deployable.** Scans report kind and quantity only.
+- **Exact player balances.** Leaderboards stopped exposing them in v2.0.8.
+- **A limpet on your hull.** Attachment is silent. The only way to find out is
+  a 10,000 cr shipyard sweep.

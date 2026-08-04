@@ -1,162 +1,154 @@
 ---
-title: "Gameplay Basics"
-date: 2026-07-02
+title: "Turns, Credits & Basics"
+date: 2026-08-04
 draft: false
-description: "Core mechanics and game systems"
+description: "The turn cycle, buying turns, wallet versus bank, and streaks"
 weight: 2
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-Master the fundamentals of Big Bang Smugglers.
+## The turn cycle
 
-## Navigation
+Turns are the whole pacing system. You get a fixed allowance, you spend it,
+and you wait.
 
-### The Galaxy Map
+- **Cap:** 250 turns (season configuration).
+- **Cycle:** 4 hours (season configuration, valid range 1–24).
+- **Boundaries:** aligned to UTC — 00:00, 04:00, 08:00, 12:00, 16:00, 20:00.
+- **Reset behavior:** full reset to the cap, not an increment.
+- **Carryover:** none, ever. This is a design doctrine with no configuration
+  knob behind it.
 
-- **Sectors**: each sector is a distinct location in the galaxy, numbered outward from Sector 0 at the center
-- **Links**: lines between sectors show traversable routes
-- **Territories**: Federation (the core), Pirate (the rim), and Neutral space (everything between)
-- **Current location**: highlighted on the Nav screen
+The reset is lazy: it lands the moment you next touch the game after a
+boundary passes, so you never lose turns by being offline. When you're out,
+the game tells you how many minutes remain until the next reset.
 
-### Moving Around
+Note the split: the **turn cycle** is configurable, but the **world tick** —
+planet production, market restock, port upkeep, garrison regrowth, shield
+regen, ordnance decay — runs on a fixed 4-hour infrastructure schedule. Today
+they coincide. In a season with a different cycle length they would not.
 
-Tap a connected sector on the Nav screen to move there — **1 turn** per move. (The adjacent-sector list is titled "Warp to," but those are ordinary moves; real warp jumps are below.)
-
-Entering a sector isn't always quiet. A move can trigger enemy **mines**, **sector defense fighters**, and **limpet trackers** (see [Deployables](/guide/deployables/)), environmental hazard damage in asteroid fields, radiation zones, and minefields, and **NPC encounters** (about a 5% chance per move). Your first visit to any sector awards exploration XP, with bonuses for ports, planets, and landmarks.
-
-### What Costs Turns
+### What a turn costs
 
 | Action | Turns |
-|--------|-------|
-| Move to adjacent sector | 1 |
-| Trade (each buy or sell) | 1 |
-| Warp jump | distance ÷ warp level, rounded up (min 1) |
-| Tesseract jump | 25 flat |
+|---|---|
+| Move to a linked sector | 1 |
 | Wormhole transit | 1 |
-| Attack a player or NPC | 1 |
-| Port attack | 3 |
-| Sector scan | 1 per radius level |
-| Explore Ancient Ruins | 2 |
-| Black hole transit | 1 |
+| Buy or sell cargo (per leg, any quantity) | 1 |
+| Buy or sell contraband | 1 |
+| Engage in combat | 1 |
+| Fleet strike | 1 |
+| Deploy or attack ordnance | 1 |
+| Active scan | 1 per ring (radius 1–3) |
+| Claim a planet, build a structure | 1 |
+| Raid a planet, capture a planet | 1 each |
+| Attack a port | **3** |
+| Capture or raze a port after the siege | 1 |
+| Warp jump | `max(1, ceil(hops ÷ warpLevel))` |
+| Tesseract jump | **25 flat** |
+| Port repair | 0 |
+| Landmark interaction | 0 |
+| Banking, planting a limpet, deploying a beacon, redeeming bounty claims, vault transfers, planet storage | 0 |
 
-Banking, ship and upgrade purchases, mission accepts, and deploying equipment are all turn-free.
+Two turn discounts exist and both only touch **hop-based warp**: the Warp
+Optimizer module (−1) and the Explorer role (−1 to −3). They stack, they
+floor at 1 turn, and neither has ever applied to the Tesseract's flat 25.
 
-### Warp Travel
+### Buying turns
 
-A **warp drive** jumps you directly to any sector you've **previously visited** (nav-beacon landmark reveals and purchased intel also make sectors warp-eligible — see [Scanners & Intel](/guide/scanners-intel/)).
+Ports running the **supplies** service — the three starports and every
+Agricultural Port — sell provisions.
 
-- **Install**: 15,000 cr at a starport shipyard; requires a Tier 2+ ship and 100 XP
-- **Cost per jump**: distance ÷ warp level, rounded up, minimum 1 turn. Higher warp levels (up to 5) cover more sectors per turn; each level upgrade costs (level + 1) × 15,000 cr
-- The **Warp Drive Optimizer** tech upgrade takes 1 turn off every warp (minimum 1)
+- **800 cr per turn.**
+- **Maximum 5 turns per cycle.** This is a ration, not a per-purchase limit.
+  The old guide got this wrong.
+- You are charged only for turns actually delivered. If you're at 248/250 and
+  ask for 5, you get 2, you pay 1,600, and 2 counts against your ration.
+- A full tank returns `TANK_FULL` and charges nothing.
+- Wallet only.
 
-**Warp interruptions:** each hop can spawn an NPC that halts your warp in that sector, but the total interruption chance is capped at roughly **30% per journey** no matter the distance, and unused turns are refunded. Only **auto-aggressive pirates force combat** when they interrupt — patrols, traders, and calmer pirates just leave you stranded a few hops short.
+Turns also arrive as mission, event and streak rewards. Those grants are
+cap-aware: they will not push you above the cap, and they never reduce a
+tank that is somehow already over it.
 
-### Tesseract Drive
+## Credits: wallet versus bank
 
-The Tesseract Drive is the endgame travel option: **10,000,000 cr**, and you need a **Tier 5 hull** and **level 100** to install it.
+Two balances, and the distinction is the whole risk model.
 
-- **Flat 25 turns** per jump, any distance
-- Instant and **uninterruptible** — no encounters mid-jump
-- Mines, sector defenses, and limpet trackers waiting at the destination still trigger
-- Visited sectors only; the Warp Drive Optimizer does not reduce the 25
+**Wallet** is at-risk money. It pays for everything, and it is what gets
+taken:
 
-Install it at the starport **Shipyard**; activate it with the **Tesseract Drive toggle** in the Nav screen's warp panel (it switches on automatically if it's your only drive). It coexists with a regular warp drive, so you can carry both.
+- looted when you lose a PvP fight (20–40% by the winner's alignment, capped
+  by their hull tier)
+- skimmed when your planet is raided (10%, max 5,000 cr)
+- fined by customs, taken by pirate shakedowns, seized on arrest at dock
 
-### Wormholes
+**Bank** is safe storage. Nothing in the game takes credits out of it except
+you. There are no deposit fees, no withdrawal fees, no interest, no turn
+cost, and no location requirement — you can bank from anywhere.
 
-Wormholes connect distant sectors for **1 turn** and bypass everything — no encounters, no mines, no sector defenses on arrival. They only appear in the sector view when you're standing at an endpoint. Most are stable and two-way, but **unstable wormholes can scatter you** to a random sector instead, and some are one-way with no return trip.
+Almost everything in the game is **wallet-only**. There are exactly two
+exceptions that draw wallet first and then fall through to the bank:
 
-### Landmarks
+1. **Ship repair.**
+2. **Founding a corporation.**
 
-- **Nav Beacons** — activate for free to reveal up to 8 neighboring sectors on your map; revealed sectors become warp-eligible without visiting
-- **Ancient Ruins** — explore for 2 turns; loot roll ranges from nothing to a few thousand credits, XP finds, and rare 10,000–25,000 cr jackpots
-- **Anomalies** — investigate for free; a random boon or bane: credits, XP, even **+3 turns** — or shield damage, lost fighters, or a forced jump to parts unknown
-- **Black Holes** — transit for 1 turn; hurls your ship to a far-off sector you don't choose, with a 20% chance of shield damage on the way through
+Everything else — hulls, upgrades, drives, modules, items, provisions, intel,
+defense contracts, bounty postings, planet claims, structures, starbases,
+contraband — comes out of the wallet or not at all.
 
-Each landmark has a per-player cooldown (beacons 1 hour, anomalies 6 hours, ruins and black holes 24 hours), so ruins and anomalies are farmable on rotation.
+> The bank is a safe, not a bank. Loans, bonds and insurance are specified
+> but not built; the module lands after the pilot. Nothing currently pays
+> interest, and no credit is ever minted.
 
-## Your Ship
+Corporations have their own bank, which is separate again. See
+[Corporations](/guide/corporations-fleets/#the-corp-bank).
 
-### Ship Stats
+## Streaks
 
-- **Shields**: your defense in combat — repairable, never bought
-- **Fighters**: escort craft; steady attack power (75 cr each to restock)
-- **Torpedoes**: heavy ordnance; the hardest-hitting attack stat per unit (150 cr each)
-- **Cargo holds**: how much you can carry
+A **streak day** is any UTC day on which you spent at least one turn. Not a
+login, not a full depletion — any turn-spending action. Two actions are
+deliberately excluded because they cost 0 turns by default: landmark
+interaction and port repair.
 
-In combat, fighters and torpedoes drive your attack and shields drive your defense, on top of your hull's base power. See [Combat](/guide/combat/) for the exact formula.
+One missed day per streak is forgiven. Miss two and the streak resets to 1.
 
-### Ship Roles
+| Milestone | Credits | XP | Turns |
+|---|---|---|---|
+| Day 3 | 1,000 | 50 | — |
+| Day 7 | 5,000 | 200 | 5 |
+| Day 14 | 10,000 | 500 | 10 |
+| Day 30 | 25,000 | 1,000 | 20 |
 
-Ships come in six roles across two faction lines — three archetypes, each with a Federation and Pirate version:
+The streak **count** is account-level and survives season boundaries. The
+**rewards** are seasonal — you need an active enrollment to claim them, and a
+streak reset clears your claims so a fresh streak re-earns the same
+milestones.
 
-- **Trading / Smuggling**: maximum cargo, light weapons — escape 30% / 40%
-- **War / Raider**: high fighters and torpedoes, minimal cargo — escape 40% / 50%
-- **Balanced / Corsair**: middle cargo and weapons, **best escape** — 50% / 60%
+## The public feed
 
-Shields are identical across all roles at a given tier — no role has "the highest shields." Every Pirate hull has **+10 escape** over its Federation mirror at the same price and stats (the Tier 5 War-line flagships give 10 points back in exchange for their special abilities; other lines keep full escape). See [Ships](/guide/ships/) for the full 30-ship catalog.
+The galaxy keeps a news feed, and it is genuinely public. Battles are
+reported (destroyed / drove off / fled), tier-3+ ship commissionings post,
+planet claims and port captures post, ports shaking off their occupiers post,
+new captains and season honors post.
 
-### The Hangar
+You also have a private channel: your own events, and the "while you were
+away" recap that lists what happened since you last looked and which planets
+are ready to collect.
 
-You can own any number of ships. Buying a new one keeps your old ship in the **Hangar** — there's no trade-in. Your cargo transfers automatically; if the new ship has fewer holds, the overflow is lost.
+If you value operational secrecy, note what that means. Buying a capital-class
+hull tells everyone. Losing a fight tells everyone. Claiming a planet paints
+a target.
 
-The Hangar is a **place at every starport** (switch or sell) and at a planet with a Starbase you or your corp own (switch only). Switching your active ship is free, but only works at those locations. Selling pays a flat **64% of the purchase price**, only at starports — you can't sell your active ship or your last ship, and any cargo left on a sold hull is destroyed.
+## Chat and mail
 
-### Destruction & Escape Pods
+Corporation chat is the only in-galaxy chat: 500 characters, a 3-second
+per-player cooldown and a 30-messages-per-minute corp-wide flood cap, with
+the last 500 messages or 14 days of history retained — whichever is longer.
+There are no direct messages between players.
 
-Losing a fight normally leaves your ship **disabled**, not destroyed. But if you enter combat with **0 shields, 0 fighters, and 0 torpedoes** and lose, the ship is **destroyed**: the hull and everything installed on it are gone, cargo is lost, and your remaining turns are wiped. Your escape pod puts you at a planet where you own a built Starbase — otherwise Sector 0 — and reactivates your first surviving Hangar ship, or grants a free SS Starter if you have none. A warning banner appears whenever your defenses are fully depleted; don't fly past it. Full details in [Combat](/guide/combat/).
-
-### Maintenance & Repair
-
-Two repair paths, plus free recovery:
-
-- **Port repair** (the Repair service at Stardock, Federation, Standard, Depot, and Mining ports, plus dedicated Repair Stations): restores everything — shields, fighters, and torpedoes — with no turn cost (minimum 200 cr). The only repair that replenishes your consumables.
-- **Shipyard and field-kit repair**: shields only. A field kit works anywhere while disabled (2 turns, shields to 50%); the starport shipyard restores full shields for 1 turn. Fighters and torpedoes are re-bought at the starport weapon bays.
-- **Disabled ships auto-recover** for free to 50% shields at the next 4-hour turn boundary.
-
-There is no refueling. Ships don't consume fuel — movement costs turns, and "fuel" is just a trade commodity.
-
-## Credits & Economy
-
-Credits are the universal currency. Earn them through:
-
-- **Trading**: buy commodities cheap, haul them to a port type that pays more
-- **Missions**: complete objectives for credits and XP
-- **Combat**: loot credits from defeated ships (PvP victories loot credits, not cargo)
-- **Planets**: develop planets and earn passive income from Trading Posts
-- **Bounties**: collect player and faction bounty contracts
-- **Exploration**: ruins, anomalies, and first-visit XP
-
-Spend them on cargo, ships, permanent upgrades, deployables, and services. And if you run dry mid-cycle: **agricultural ports sell provisions** — 800 cr per turn restored, max 5 per purchase.
-
-## Banking
-
-Your wallet is at risk; your bank is not. Banked credits are safe from **combat looting** and from **bounty arrest** (an arrest seizes only your wallet). Deposits and withdrawals are free, cost no turns, and are available at starports and at ports with a Banking service (Stardock and Federation ports).
-
-One caveat: ship repair can auto-draw from your bank if your wallet is short — shipyard repair charges a 10% fee on the shortfall it covers.
-
-## Factions & Alignment
-
-Two separate scores shape how the galaxy treats you:
-
-- **Alignment** (−1000 to +1000): your Federation-vs-Pirate standing. Moved by missions, combat, smuggling busts, port and planet attacks and claims — **not** by ordinary trading.
-- **Trader reputation** (0–100): your merchant standing, built through dealings with NPC traders you meet in space (not port trades). Affects prices at every port.
-
-What alignment does: faction port pricing (up to 20% off when friendly, +50% markup when hostile), NPC behavior (pirates and patrols flip aggressive around ±300), and docking rights at the two faction starports (denied past ∓300 — regular ports never turn you away). One thing it does **not** do: gate ship purchases. Ship availability is by location — the Federation starport stocks Federation hulls, the Pirate starport stocks Pirate hulls.
-
-**PvP** is territory-gated: Federation territory is always safe; everywhere else is fair game when the season has PvP enabled (the default). See [Galaxy & Territory](/guide/galaxy-territory/) and [Reputation & Factions](/guide/reputation-factions/).
-
-## Corporations
-
-Players can band together in **corporations** — founded for 50,000 cr, with private chat, a shared corp bank, a ship pool, a corp Starbase, and fleets of up to 3 ships that attack together. Your corp hub lives on the **Ship tab, under Corps**. Full coverage — roles, joining policies, fleets, and loot rules — is in [Corporations & Fleets](/guide/corporations-fleets/).
-
-## Tips
-
-- Bank your credits when you're done for the session — safe from looters and bounty hunters alike
-- Federation space is safer for new pilots; move outward as you grow
-- Upgrade cargo holds early — the tiers cost only credits, no XP gates, and more holds means more profit per run
-- Pirate hulls have identical stats and prices to their Federation mirrors but +10 escape — worth it if you can dock at the pirate starport
-- You can hold only **one mission at a time** — finish or abandon it (no penalty) before taking another
-- When turns run out mid-cycle, provisions at an Agricultural Station are the only way to buy more
+Mail is account-scoped and works between seasons. Feedback goes straight to
+the developers from inside the app; 2,000 characters, and it works whether or
+not you're in a season.

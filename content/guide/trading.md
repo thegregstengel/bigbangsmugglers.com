@@ -1,174 +1,236 @@
 ---
-title: "Trading & Economy"
-date: 2026-07-02
+title: "Trading & the Market"
+date: 2026-08-04
 draft: false
-description: "Master the art of profitable trading"
-weight: 4
+description: "How prices are computed, taxes and fees, cost basis, and routes"
+weight: 5
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-Trading is the backbone of your career. The market is simpler than it looks: every port type charges a fixed price for each commodity, and profit comes from hauling goods between port types that value them differently. Learn the price table, mind the fees, and maximize your credits per turn.
+## The three commodities
 
-## The Three Commodities
+| Commodity | Volume per unit |
+|---|---|
+| Fuel | 1 |
+| Organics | 1 |
+| Equipment | **2** |
 
-| Commodity | Buy Price (by port type) | Notes |
-|-----------|--------------------------|-------|
-| Fuel | 60 to 130 cr/unit | 1 hold per unit |
-| Organics | 60 to 200 cr/unit | 1 hold per unit |
-| Equipment | 200 to 700 cr/unit | 2 holds per unit |
+A 200-hold ship carries 200 fuel or 100 equipment. Equipment has the highest
+prices in the game and the highest spread, but you move half as many units
+per run. That trade-off is the point.
 
-Equipment is bulky. Each unit takes 2 cargo holds, so a 40-hold ship carries only 20 units of equipment versus 40 units of fuel or organics.
+## How a price is actually computed
 
-## Port Types & Prices
+Every port archetype has an **anchor price** per commodity — the price it
+would charge if its shelves were exactly at baseline. Two forces move the
+real price off the anchor.
 
-Each port type has a fixed base price for each commodity, identical in every galaxy. Stock level does **not** move prices — a nearly empty port charges the same as a full one. The two things that do move prices are trade pressure and your reputation (see below).
+### 1. Stock
 
-Buy prices by port type:
-
-| Port Type | Fuel | Organics | Equipment |
-|-----------|------|----------|-----------|
-| Stardock | 100 | 120 | 500 |
-| Federation Port | 120 | 140 | 600 |
-| Standard Port | 90 | 110 | 450 |
-| Fuel Depot | 70 | 180 | 500 |
-| Agricultural Station | 130 | 60 | 700 |
-| Tech Outpost | 110 | 130 | 300 |
-| Pirate Base | 80 | 100 | 400 |
-| Black Market | 60 | 80 | 200 |
-| Mining Station | 85 | 200 | 450 |
-| Research Complex | 120 | 150 | 280 |
-
-The **sell price is 90% of the buy price** at the same port. Selling back where you bought loses that 10% plus taxes and fees on both legs — always haul to a port type with a higher base price instead.
-
-Every port type trades all three commodities. Yes, including Pirate Bases and Black Markets — in fact the Black Market is the cheapest source of fuel and equipment in the game. The catch: anything you buy at a Black Market port is silently flagged as contraband (Pirate Base purchases are not flagged). See [Smuggling](/guide/smuggling/) before you load up.
-
-## What Actually Moves Prices
-
-### Trade pressure
-
-Standard-economy ports (Standard, Fuel Depot, Agricultural, Tech, Mining, Research) track per-commodity trade pressure. Federation, Stardock, Pirate, and Black Market ports never accumulate it.
-
-- Every buy **transaction** adds 1 point of buy pressure to that commodity; every sell adds 1 point of sell pressure. Points count transactions, not units — one big trade is gentler on the market than many small ones.
-- Each point moves the price about **0.2%**: buy pressure pushes the buy price up (no ceiling), sell pressure pushes the sell price down (floored at 1 cr).
-- Pressure recovers **20 points per 4-hour cycle**, but only for commodities that saw zero trades during that cycle. Hammering the same port erodes your margin, and the port needs quiet cycles to recover.
-
-The ▲/▼ percentages on the trade screen show current pressure adjustments.
-
-### Reputation
-
-Your standing moves prices more than anything else. At Federation and Pirate ports, faction alignment swings buy prices from **20% off** (friendly) to **50% markup** (hostile). Trader reputation adds up to ±10% at every port. Sell prices move in the opposite direction — friendly factions also pay you more when you sell. See [Reputation & Factions](/guide/reputation-factions/) for the full ladders.
-
-## Fees & Taxes
-
-Every trade pays a flat **1% port fee** plus a port-type tax:
-
-| Port Type | Tax |
-|-----------|-----|
-| Federation Port | 5% (7% if you're Pirate faction) |
-| Tech Outpost | 3% |
-| Everything else | 2% |
-
-So a typical leg costs about 3% in overhead, and Federation ports cost 6–8%. The fee estimate shown in the sell dialog is a flat guess — the actual charge uses the real per-port rates above.
-
-## Port Availability by Territory
-
-| Territory | Port Types You'll Find |
-|-----------|------------------------|
-| Federation | Everything except Pirate Bases and Black Markets (the Stardock is always at Sector 0) |
-| Unincorporated | Everything except Black Markets — including Federation Ports and Pirate Bases |
-| Pirate | Pirate Bases and Black Markets only |
-
-You **can** buy and sell standard commodities in pirate space — Pirate Bases and Black Markets trade all three commodities at the prices in the table above.
-
-## Trading Strategy
-
-### Basic Route
-
-1. Pick a commodity and find the port type with the lowest base price
-2. Find a port type with a high base price for the same commodity
-3. Fill your holds at the cheap port
-4. Haul and sell at the expensive one
-5. Buy something for the return leg if the ports line up
-
-The flagship route: **organics from an Agricultural Station (60 cr) to a Mining Station (sells at 180 cr)**. Other strong pairs are fuel from a Fuel Depot (70) to a Federation Port, and equipment from a Research Complex to an Agricultural Station. Black Market fuel and equipment are cheaper still — but everything bought there is flagged contraband, and Federation Ports are exactly where customs scans happen. Route Black Market goods to neutral ports, and read [Smuggling](/guide/smuggling/) first.
-
-### Example Run
-
-Ship with 40 holds, Agricultural Station to Mining Station:
-
-- Buy 40 organics at 60 cr/unit = 2,400 cr, plus 2% tax and 1% fee = **2,472 cr spent**
-- Sell at the Mining Station for 180 cr/unit = 7,200 cr, minus 2% tax and 1% fee = **6,984 cr received**
-- **Profit: about 4,500 cr** — roughly 113 cr per hold
-
-With Cargo Compressors installed (48 holds): about 5,400 cr on the same route.
-
-Numbers assume neutral reputation and no trade pressure; your actual results shift with both.
-
-### Maximize Profit Per Turn
-
-More holds means more profit per trip. The Cargo Compressors tech upgrade adds 20% capacity permanently (see [Tech Upgrades](/guide/tech-upgrades/)). A warp drive lets you cover longer routes in fewer turns. Spread your trading across multiple ports rather than grinding one — trade pressure punishes repeat business.
-
-Equipment has the highest prices but costs 2 holds per unit. Run the math before committing your entire hold to equipment.
-
-## Port Stock Is Finite
-
-Ports never restock commodities. When you buy out a port's supply of something, it stays bought out until other players sell that commodity back to it. Popular routes near spawn areas can genuinely run dry over a season.
-
-The exception is player-built **Trading Posts**, which refill from their planet's storage every 4-hour cycle. See [Planets](/guide/planets/).
-
-## Turns, Lots, and Cost Tracking
-
-Every buy or sell is **1 turn per transaction**. Every purchase creates a separate cargo lot stored with its own cost basis. If you buy 10 equipment at 280 cr and later buy 10 more at 450 cr, you have two lots in your hold.
-
-When you sell, the game shows the breakdown before you confirm:
+Each commodity at each port has three numbers: current **stock**, a
+**baseline** it wants to sit at, and a **maximum** capacity. Deviation from
+baseline swings the price by up to **±28%**.
 
 ```
-Sell 20 Equipment @ 405 cr?
-
-Lots:
-  10 @ 200 cr/unit (cost basis)
-  10 @ 450 cr/unit (cost basis)
-
-Avg Cost:    325 cr/unit
-Subtotal:    8,100 cr
-Est. Fees:   ~243 cr
-Est. Total:  ~7,857 cr
-Est. Profit: +1,357 cr
+deviation = (baseline − stock) ÷ baseline                when stock ≤ baseline
+          = −(stock − baseline) ÷ (max − baseline)       when stock > baseline
+swung     = anchor × (1 + 0.28 × deviation)
 ```
 
-Lots sell **contraband first, then cheapest cost basis first** (not oldest first). If you sell a partial quantity, the cheapest lot is consumed first — selling 15 of those 20 units takes all 10 from the 200 cr lot and 5 from the 450 cr lot.
+Bought-out port, stock near zero: deviation near +1, price up to +28%.
+Flooded port, stock at maximum: deviation −1, price down to −28%.
 
-Two things to know about multi-lot sales:
+The swing applies to **both directions**. A port you flooded charges less
+*and pays less*.
 
-- Each lot is its own transaction — selling across 3 lots costs **3 turns** and pays 3 sets of tax and fees.
-- The profit figure shown after the sale is sale price minus cost basis. It does not subtract the taxes and fees you paid on either leg, so it slightly overstates your true profit.
+### 2. Trade pressure
 
-### Max Buttons
-
-**Buy Max** fills to the smaller of your free holds or the port's stock — it does **not** check your credits, so Max can propose a buy you can't afford (the trade is then rejected). **Sell Max** sells every unit of that commodity across all your lots.
-
-## Wallet vs Bank
-
-Trades pay from your **wallet** only. Combat loot also comes only from your wallet — banked credits can never be stolen in a fight. Deposits and withdrawals are free, unlimited, and cost no turns. The Banking service appears at Stardock and Federation ports and at every Starport.
-
-Rule of thumb: bank your profits before flying anywhere dangerous.
-
-## Contraband Lots
-
-Contraband is stored as separate lots from regular cargo of the same type. If you buy normal equipment and then Stolen Equipment on the Black Market, your hold shows two distinct groups:
+Pressure accrues **per unit traded** — not per transaction. It multiplies the
+buy side and divides the sell side.
 
 ```
-⚙️ Equipment      10 units   avg 450 cr
-⚙️ Equipment 🔴   10 units   avg 40 cr    Contraband
+pressure = 1 + min(1.00, unitsTraded × 0.0001)     capped at ×2.00
+buy      = floor(swung × pressure)
+sell     = floor(swung ÷ pressure × 0.90)
 ```
 
-Contraband lots are highlighted in red, marked "sells first," and always sell before regular lots regardless of price — minimizing your time carrying hot cargo.
+10,000 units through one port is a ×2 buy multiplier: the cap. Pressure
+decays by **1,000 units per idle tick**, so a hammered port recovers in a day
+or so of being left alone.
 
-Two detection systems apply:
+Pressure only accrues at **pressure-eligible** archetypes. The Stardock, the
+Merchant Exchange, the Pirate Haven, Federation Ports, Pirate Bases and Black
+Markets are exempt — you cannot price-shock a starport.
 
-- **Federation customs** scan you when you **open the trade screen** at a Federation port (not on arrival), on a 30-minute cooldown. If you're caught, *all* your contraband in the galaxy is seized, you pay a fine of 10% of its value (capped at your wallet), and you lose 5 alignment.
-- **Sale-time checks** can block a contraband sale outright — the sale simply fails with no penalty or turn cost, and you can retry.
+### 3. Restock
 
-See the [Smuggling guide](/guide/smuggling/) for detection rates, cloaking devices, and how to run contraband profitably.
+Every 4-hour world tick pulls each port's stock back toward its baseline by
+`ceil(gap × rate)`:
+
+| Ports | Rate |
+|---|---|
+| Stardock, Merchant Exchange | 1.00 — snaps all the way home every tick |
+| Pirate Haven | 0.50 |
+| Everything else | 0.15 |
+
+Scarcity is real, but it is temporary. A port you emptied is roughly 15% of
+the way back four hours later.
+
+### The rule nothing can break
+
+After every modifier and every rounding step, **a port's sell price is always
+strictly below its buy price** for the same player at the same market state.
+Buying and immediately selling at the same port always loses money. No
+alignment discount, guild band or configuration can invert it — the engine
+clamps the combined buy multiplier to keep the spread positive.
+
+## Taxes and fees
+
+Two charges sit on top of the unit price, both computed on the subtotal.
+
+**Port fee: 1%**, both directions, every port.
+
+**Tax: by archetype.**
+
+| Archetype | Tax |
+|---|---|
+| Fuel Depot | 1% |
+| Stardock, Trading Port, Mining Port | 2% |
+| Tech Port | 3% |
+| Agricultural Port | 4% |
+| Federation Port | 5% — **7%** if you are Pirate-aligned |
+| Research Port | 5% |
+| Merchant Exchange | **0.5%** |
+| Pirate Base, Black Market, Pirate Haven | **0%** |
+
+```
+buy total   = subtotal + floor(subtotal × tax) + floor(subtotal × fee)
+sell payout = subtotal − floor(subtotal × tax) − floor(subtotal × fee)
+```
+
+**Reductions.** The Trader role subtracts up to 2 percentage points from
+whatever rate applies, floored at 0. A corporation-held port charges its own
+members half rate and everyone else +1pp.
+
+## Cost basis and what "profit" means
+
+Cargo is **pooled**, one stack per commodity. There are no lots to manage,
+and there is no cheapest-first ordering.
+
+Each stack carries a **weighted average cost basis** that includes the taxes
+and fees you paid on every buy. Buy 50 organics at 80 and 50 more at 120, and
+your basis is 100 a unit plus the charges — one number.
+
+Selling never changes the basis of what's left. If you sell 30 of 100 units,
+the other 70 keep the same per-unit basis.
+
+When you sell, the game reports `costBasis` (basis × units sold) and
+`profit`. **Profit can be negative**, and the game will say so rather than
+hiding it. The buy leg's taxes and fees are baked into the basis; whether the
+sell leg's charges are netted out depends on the screen — always sanity-check
+against your wallet on a large sale.
+
+## Buying and selling
+
+- Each leg costs **1 turn**, regardless of unit count. Move 300 units in one
+  transaction, not thirty of ten.
+- **Wallet only.** The bank cannot buy cargo.
+- Trading **breaks a ship cloak**.
+- Trading pays XP: `floor(subtotal ÷ 500)` before weighting.
+- Every honest trade leg pays **+1 Merchant Guild standing**.
+- The docking gate applies. A hostile alignment can lock you out of a faction
+  capital's market entirely, and an outstanding faction warrant is an arrest.
+- **Contraband is a separate namespace.** The honest sell action can never
+  touch a contraband stack, though contraband still eats your holds. Selling
+  it is a different action — see [Smuggling](/guide/smuggling/).
+
+Common refusals: `NOT_AT_PORT`, `NOT_SOLD_HERE` (the port buys it but doesn't
+sell it), `INSUFFICIENT_STOCK`, `INSUFFICIENT_HOLDS`, `INSUFFICIENT_CREDITS`,
+`PORT_DESTROYED`.
+
+## Where the money is
+
+Anchor prices by archetype. The lowest anchor for a commodity is where you
+buy it; the highest is where you sell it. Asterisked entries are **buy-only**
+— the port pays you but never sells.
+
+| Archetype | Fuel | Organics | Equipment |
+|---|---|---|---|
+| Agricultural Port | 160* | **75** | 850* |
+| Fuel Depot | **90** | 215* | 600* |
+| Research Port | 145* | 185* | **350** |
+| Tech Port | 135* | 155* | **375** |
+| Black Market | 80 | 100 | 300 |
+| Pirate Base / Pirate Haven | 100 | 125 | 500 |
+| Mining Port | 105 | **240** | 550 |
+| Trading Port | 115 | 135 | 550 |
+| Merchant Exchange | 110 | 130 | 520 |
+| Stardock | 125 | 150 | 625 |
+| Federation Port | **150** | **170** | **750** |
+
+The catalog enforces that the cheapest *lawful* seller of each commodity is a
+specialist, not a generalist. That is why the Stardock and the Exchange are
+never the cheapest place to buy anything: they win on depth, tax and
+convenience.
+
+### The obvious routes
+
+- **Organics: Agricultural → Mining.** Anchor 75 to anchor 240. The widest
+  lawful spread in the game, and mining ports sit out in `outer` and
+  `outer_rim` where the trip is dangerous. That's the deal.
+- **Organics: Agricultural → Federation Port.** 75 to 170, entirely inside
+  PvP-free space. Narrower, safer, taxed at 5%.
+- **Fuel: Depot → Federation Port.** 90 to 150, and Federation Ports sit deep
+  in safe territory.
+- **Equipment: Research or Tech → Federation Port or Stardock.** 350 to 750
+  is the biggest absolute spread anywhere — but equipment is 2 volume, so per
+  hold it's 200 rather than 400.
+
+Underworld ports undercut everyone by design and pay no tax. A Black Market
+sells equipment at anchor 300, the cheapest in the galaxy, and charges
+nothing to trade there. Getting to one means being in pirate territory, and
+getting *back* to a good market means crossing the map with full holds.
+
+### Reading a route properly
+
+The anchor table is a starting point, not an answer. What actually matters:
+
+1. **Live prices, not anchors.** A mining port someone emptied yesterday is
+   paying 28% under its anchor. The Merchant Exchange price board shows you
+   this for every port you've visited, free.
+2. **Pool depth.** An Agricultural Port holds 60,000 organics; a Mining Port
+   will only buy into a 2,000-unit pool before its stock deviation starts
+   eating your price. You can flood a small port in one run.
+3. **Turns per credit.** A 30-hop round trip at 1 turn a hop plus 2 trade
+   turns is 32 turns. At 250 turns a cycle that's eight runs. A tighter loop
+   with a worse spread often wins.
+4. **Your alignment.** At a faction capital, deep alignment on the right side
+   is up to −20% on what you pay. On the wrong side it's up to +50%, plus a
+   sell penalty.
+
+## Price modifiers you carry
+
+Two per-player bands ride on top of the market:
+
+**Alignment band** — only at Federation Ports, the Stardock, Pirate Bases and
+the Pirate Haven. Linear in your alignment: at +1000 alignment you buy 20%
+cheaper at Federation ports; at −1000 you pay 50% more there *and* receive
+less when you sell. Mirrored at pirate ports.
+
+**Merchant Guild band** — at **every** port. Buys scale down to −10% as your
+guild standing approaches 1,000. Buy-side only; there is no sell-side guild
+bonus, because one would break the round-trip rule.
+
+Both are shown in the quote before you commit. Both are clamped so the
+combined discount can never invert the spread.
+
+## The price board
+
+The Merchant Exchange runs a **price board**: live prices and stock for every
+port in every sector you've visited, sorted nearest-first, up to 200 ports.
+Free, no turns, no credits.
+
+It is the single strongest trading tool in the game and it costs nothing but
+the trip to the Exchange.

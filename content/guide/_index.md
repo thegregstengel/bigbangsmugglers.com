@@ -6,68 +6,96 @@ cascade:
   type: docs
 ---
 
-Welcome to the Big Bang Smugglers official guide. Learn the mechanics, master the systems, and forge your legacy in the void.
+The official guide to Big Bang Smugglers 2.0. Mechanics, real numbers, and the
+gates that actually stop you.
 
-*Guide fully updated for v1.22.0 (July 2026).*
+*Rewritten from the source for v2.0.8 (August 2026). Every number here was
+read out of the shipped game, not the old guide.*
+
+**Returning from 1.x?** Almost nothing carried over. Prices are dynamic now,
+ships have hull, the disabled state is gone, reputation was replaced by
+faction standing, and the ship catalog went from 30 hulls to 45 plus six you
+can only earn. Start with [Getting Started](getting-started) and
+[What Changed From 1.x](getting-started/#what-changed-from-1x).
 
 ## Guide Sections
 
 ### [Getting Started](getting-started)
-Your first steps. Download the app or play on the web, join a season, understand your starter ship, and make your first trade.
+Signing up, joining a season, your first ten minutes, and what turns are.
 
-### [Gameplay Basics](gameplay)
-Core mechanics: movement, turns, warp and Tesseract travel, wormholes, landmarks, repair, and the wallet-versus-bank credit system.
+### [Turns, Credits & Basics](gameplay)
+The turn cycle, buying turns, wallet versus bank, streaks, and what a turn
+actually buys you.
 
-### [Galaxy & Territory](galaxy-territory)
-How galaxies are structured, the six regions, territory types, where PvP actually happens, and how to read the Nav screen.
+### [Navigation & Travel](navigation)
+Moving, warp drives, the Tesseract, wormholes, hazards, beacons, and naming
+a sector.
 
-### [Trading & Economy](trading)
-How port prices really work, trade pressure, fees and taxes, cargo lots, and the routes that make money.
+### [The Galaxy & Territory](galaxy-territory)
+Regions, territory, the three starports, where PvP is legal, landmarks, and
+how a galaxy is built.
+
+### [Trading & the Market](trading)
+How prices are actually computed, stock and pressure, taxes and fees, cost
+basis, and what "profit" means now.
+
+### [Ports & Services](starports)
+Every port archetype, what it stocks, what it buys, and which of the eleven
+services it runs.
 
 ### [Ships](ships)
-Every ship class in the game. Federation and Pirate lines, six roles, five tiers each — plus the Hangar, ship destruction, and escape pods.
+Three archetypes, three hull lines, five tiers, the Federation shield
+doctrine, allegiance locks, and the six earn-only epic hulls.
 
-### [Tech Upgrades](tech-upgrades)
-Permanent ship improvements from the Upgrades service covering cargo, shields, combat, stealth, and warp efficiency — and the right order to buy them.
+### [Upgrades, Drives & Tech](tech-upgrades)
+The upgrade ladder, warp and StarNav and Tesseract, tech modules, and why
+repair and restock are two different things.
 
 ### [Combat](combat)
-How combat resolves, PvP zone rules, loot, disable and recovery, fleets, port sieges, and sector defenses.
-
-### [NPCs & Encounters](npcs)
-Patrols, pirates, and traders: spawn rates by region, every encounter option with its real odds and costs, and what each NPC actually drops.
-
-### [Trader Reputation & Faction Alignment](reputation-factions)
-The two standing scores, everything that moves them, the full price-modifier ladders (buying and selling), and the access gates they control.
-
-### [Smuggling & Contraband](smuggling)
-Contraband goods, the two detection systems, cloaking, real margins, and why a clean record is a smuggler's best tool.
-
-### [Deployables](deployables)
-Navigation beacons, proximity mines, limpet trackers, and sector-defense fighters — deploying them from the Bridge and what they mean for anyone flying through.
-
-### [Scanners & Intel](scanners-intel)
-The StarNav 2002 scanner, active sector scans, buying intel, cloaking devices, and who can see your ship.
-
-### [Missions & Streaks](missions)
-Mission types, how accepting and completing works, the one-active-mission rule, expiry alerts, and turn-streak rewards.
+How a fight resolves, hull versus shields, escape, immunity, destruction and
+escape pods, and fleets.
 
 ### [Bounties](bounties)
-Player-posted and faction bounties: posting costs, how each type pays out, wanted status, and arrest at enemy starports.
+Posting, collecting, the two-step faction claim, and buying off your own
+warrant.
 
-### [Starports](starports)
-All eight starport places at the Federation starport and the Pirate Haven — services, prices, and docking rules.
+### [Ordnance, Limpets & Beacons](deployables)
+Mines, drones, turrets, buoys, cloak fields, trackers, and the things you
+leave behind.
 
-### [Locations](locations)
-Ports, landmarks, stations, starbases, hazards, and wormholes across the galaxy. What each type is and what to expect.
+### [Scanners, Cloaks & Intel](scanners-intel)
+StarNav tiers, active scans, what cloaks hide and what they don't, and paid
+intel.
+
+### [NPCs & Encounters](npcs)
+Pirates, patrols, traders, named captains, and every way out of a contact
+that isn't a fight.
+
+### [Factions, Alignment & Standing](reputation-factions)
+The two axes, how to actually earn alignment, price bands, docking gates,
+hull locks, and arrest at dock.
+
+### [Smuggling & Contraband](smuggling)
+The fence, the premium sale, customs scans, hidden holds, and the career
+that pays for the risk.
 
 ### [Planets](planets)
-Claiming and developing planets: all six structures, production and export income, garrisons, sieges, parking, and trading posts.
+Claiming, six structures, storage, garrisons, raids, starbases, vaults, and
+trading posts.
 
 ### [Corporations & Fleets](corporations-fleets)
-Creating and running a corporation: roles, the corp bank, ship pool, corp starbases, and fleet combat.
+Founding, roles, the corp bank, policies, fleets, and corp-held ports.
 
-### [Seasons & Leaderboard](seasons)
-How seasons work, what persists between them, XP scoring, the six leaderboards, and season-end.
+### [Progression](progression)
+XP, levels, every level gate in one table, roles, insignia, prestige, and
+the leaderboards.
 
-### [Economy Formulas](economy-formulas)
-The live formulas for power users: trade pricing, combat resolution, planet production, NPC spawns, and contraband detection.
+### [Missions, Goals & Streaks](missions)
+Daily and season events, the Bronze/Silver/Gold ladders, the epic ladders,
+and the streak clock.
+
+### [Seasons](seasons)
+What a season is, what carries over, what doesn't, and how one ends.
+
+### [Formulas & Numbers](economy-formulas)
+Every constant on one page, generated from the shipped configuration.
