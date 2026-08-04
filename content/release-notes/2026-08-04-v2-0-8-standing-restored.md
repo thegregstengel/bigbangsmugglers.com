@@ -1,44 +1,61 @@
 ---
-title: "v2.0.8 — Standing Restored"
+title: "v2.0.8"
 date: 2026-08-04T00:00:00Z
 type: blog
-description: "Standing finally rises for lawful play, the galaxy tick stops charging you twice, and the shops, stations and planets all work — the biggest fix release since launch."
+description: "Standing gains from clean scans and missions, single-run galaxy ticks, and fixes across trading, ships, planets and combat."
 ---
 
-We spent a day playing our own game from the outside — thousands of real actions against the live servers — and then had every line of it reviewed. This is what came back.
+Changelog for v2.0.8.
 
-## Your Standing Works Now
+## Standing
 
-If you've been flying clean and wondering why your standing never moved: it genuinely never moved. A clean customs scan wrote nothing at all — as far as the galaxy was concerned, you'd never been scanned. Warping into a patrol contact silently dropped the inspection. Fighting off a pirate that jumped *you* paid nothing.
+- Clean customs scans now award standing, with an on-screen confirmation.
+- Daily, seasonal and ad-hoc missions carry standing rewards (lawful positive, underworld negative).
+- Surviving a pirate ambush awards defensive standing.
+- Warp arrivals surface patrol inspections; previously the contact expired unused.
 
-All of it is fixed:
+## World tick
 
-- **Clean scans pay.** Pass an inspection with an honest hold and your standing rises, with a confirmation so you can see it happen.
-- **Missions pay.** Daily and seasonal contracts now carry standing rewards — lawful work raises you, underworld work lowers you. A captain running honest dailies can reach Federation standing inside a week.
-- **Self-defense counts.** Surviving a pirate ambush now earns what it always should have.
-- **Warp arrivals** no longer swallow the inspection.
+- The four-hour cycle ran twice per boundary. Port upkeep, delinquency accrual and market restock were applied twice each cycle; now applied once. The backup trigger remains in place.
 
-## The Galaxy Was Charging You Twice
+## Trading and ships
 
-Every four-hour cycle was running **twice**, five minutes apart. Port upkeep was billed double, delinquency grace was effectively halved, and market restock ran twice. It now runs exactly once — while keeping the backup that guarantees it runs at all.
+- Cargo could not be sold while carrying contraband of the same commodity.
+- Ship capacity upgrades (holds, shields, fighters, torpedoes) were unreachable from the starport.
+- Hull repair was unavailable when shields were full; repair results now report actual restoration.
+- Ship rename reported failure on success.
+- Restock, rename and upgrade prices now come from the server catalog.
+- Repairs no longer refill fighters and torpedoes; munitions come from restock.
 
-## Everything in the Shops Works
+## Planets and stations
 
-Trading while carrying contraband (you couldn't sell clean cargo at all), ship capacity upgrades, hull repairs, planet ownership and its whole starbase and garrison chain, trading posts and their income — all fixed.
+- Planet ownership checks failed for all owners; owner-only features were unreachable.
+- Garrison staffing, starbase construction and trading posts were not connected to the current backend.
+- Trading post income was accruing with no way to collect it.
+- Planet rename and corp-internal deed transfer added.
 
-## Combat Is Fairer
+## Combat
 
-- A defense contract can no longer be used as cover to attack from
-- Losing a fleet strike no longer destroys the contract you paid for
-- Fleet kills carry the same consequences as solo kills
-- Everyone gets respawn protection after any death, not just some deaths
-- Named NPCs now carry their wounds between fights — bosses can be worn down
-- Losing a fight no longer pays experience
+- Defense contracts no longer permit attacking while protected.
+- A lost fleet strike no longer overwrites a purchased contract.
+- Fleet kills apply the same alignment, statistics and immunity consequences as solo kills.
+- Respawn protection applies after every death.
+- Named NPCs retain damage between engagements and regenerate over time.
+- Losing an engagement no longer awards experience.
 
-## Under the Hood
+## Progression
 
-Level calculations are consistent everywhere, mission completions actually count toward the leaderboard, event progress accrues whether or not you open the Events screen, and the top-tier scanner no longer reports empty space where there's a galaxy. Plus a round of security hardening across the API and live connections.
+- Player level is derived from the season curve at every write path.
+- Mission completions count toward the missions leaderboard.
+- Event progress accrues without opening the Events screen.
+- Maximum-tier scanners reported empty sectors.
+- Starting sector is marked visited on join.
+- Provisions charge only for turns delivered; cloaks last a fixed duration.
 
-Android: version 2.0.8 is rolling out on Google Play. Web players are already on it.
+## Other
 
-Thanks to the captains filing reports. You keep finding the things we can't.
+- Economy pricing corrections.
+- Security hardening across the API and live connections.
+- Leaderboards no longer expose exact player balances.
+
+Migrations: galaxy tick boundary claims, ban revocation notifications.
