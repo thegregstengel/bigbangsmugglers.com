@@ -1,108 +1,190 @@
 ---
 title: "Smuggling & Contraband"
-date: 2026-07-02
+date: 2026-08-04
 draft: false
-description: "Run contraband, handle Federation customs and patrols, and use the black market"
-weight: 10
+description: "The fence, the premium sale, customs scans, and hidden holds"
+weight: 15
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-Smuggling is a margin game. Contraband is bought at a steep black-market discount and sold at full commodity prices — the discount *is* the profit. The risk is real but specific: two separate detection checks, both of which you can plan around.
+## The catalog
 
-## What Is Contraband?
+Three contraband rows, each riding on a real commodity's price and volume.
 
-Contraband is cargo purchased through the **Black Market** port service. Ordinary commodities bought at Black Market ports carry the same flag (silently, at full price), and so do goods stolen in trading-post robberies. Contraband lots are permanently flagged in your cargo hold and sell as the underlying commodity they mimic.
+| Contraband | Rides on | Buy | Max per purchase | Sell multiplier | Risk |
+|---|---|---|---|---|---|
+| Illicit Organics | Organics (1 vol) | 30 | 80 | ×2.0 | low |
+| Stolen Equipment | Equipment (2 vol) | 40 | 50 | ×2.0 | medium |
+| **Black Tech** | Equipment (2 vol) | 150 | 10 | **×3.5** | high |
 
-| Item | Buy Price | Cargo Weight | Max per Purchase | Sells As |
-|------|-------|--------------|------------------|----------|
-| Stolen Equipment | 40 cr/unit | 2 holds/unit | 50 | Equipment |
-| Embargoed Organics | 30 cr/unit | 1 hold/unit | 80 | Organics |
-| Black Tech | 150 cr/unit | 2 holds/unit | 10 | Equipment |
+Contraband lives in a separate cargo namespace from honest goods. The regular
+sell action can never touch it — but **it still consumes your holds** at the
+mapped commodity's volume.
 
-Black-market purchases **cost no turns**, and supply is unlimited — the only limit is the per-purchase cap, so you can buy repeatedly until your holds or wallet run out.
+## Buying
 
-## Where to Buy Contraband
+Requires **level 3** and a port running the `blackmarket` service: Pirate
+Bases, Black Markets and the Pirate Haven.
 
-Contraband is sold at the Black Market service of Pirate Bases (found in pirate and unincorporated space) and Black Market ports (pirate space only). Navigate to the sector, open the port from the Nav screen, select **Black Market** from the port services, and purchase what you need.
+- **1 turn** per purchase, wallet only.
+- Capped per transaction by the row.
+- **Buying is never detected.** Nobody scans you at a fence.
 
-## Sell Values and Margins
+## Selling: two completely different actions
 
-Contraband sells as its underlying commodity at that port's normal prices — there is no special contraband price. That means the best outlet for each item is whichever port type pays the most for its commodity:
+Requires **level 8**. Both cost 1 turn.
 
-- **Stolen Equipment** is the standout. Agricultural ports pay the galaxy's top equipment prices — roughly **570 cr/unit net profit** on a 40 cr buy.
-- **Embargoed Organics** sell best at mining ports, for roughly **145 cr/unit net**.
-- **Black Tech** sells as equipment too, so it fetches the same price as Stolen Equipment everywhere — about **460 cr/unit net** after its much higher cost, and it's capped at 10 units per purchase. Credit for credit, Stolen Equipment is the better buy.
+### At a fence — safe and flat
 
-**Route advice: buy at pirate-space black markets, sell at neutral high-band ports.** Never sell at Federation ports — they're the only ports that run customs scans, *and* they pay less for equipment than agricultural ports do. There is no reason to bring contraband to a Federation dock.
+Sell at a `blackmarket` port and you get the honest local price × **1.20**,
+with **zero detection risk**. No roll, no fine, no alignment change.
 
-## Detection: Two Separate Checks
+That last part is worth reading twice. **Fence sales pay no alignment.** A
+smuggler who only ever sells to fences can move enormous volume and remain
+perfectly neutral all season.
 
-### 1. Federation Customs (Entry Scans)
+### Anywhere else — the premium sale
 
-Customs fires when you **open the trade screen at a Federation-type port**. A 30-minute cooldown prevents back-to-back customs scans.
+Sell contraband at any other port and you get:
 
-Detection odds:
+```
+price = localSellPrice × rowMultiplier × regionHeat
+```
 
-| Your Gear | Chance of Being Caught |
-|---|---|
-| Nothing | 75% |
-| Stealth Hull Plating only | 45% |
-| Goods Cloaking Device only | 25% |
-| Both | 5% |
+...and you roll for detection.
 
-A Goods Cloaking Device is **consumed every time a scan fires — caught or not**. One device per scan.
+| Region | Heat multiplier | Detection chance |
+|---|---|---|
+| `fed_core` | **×1.50** | **22%** |
+| `fed_space` | ×1.40 | 18% |
+| `inner` | ×1.25 | 12% |
+| `middle` | ×1.15 | 8% |
+| `outer` | ×1.00 | 4% |
+| `outer_rim` | ×1.00 | 1% |
 
-If you're caught: **all your contraband is seized — everywhere in the galaxy, including lots stored on your other ships** — plus a fine of 10% of the contraband's purchase value and **−5 alignment**.
+The inversion is the whole design: **the best prices are where you are most
+likely to get caught.** Black Tech in the Federation core sells at 3.5 × 1.5
+= **5.25×** the local equipment price, and 22% of those sales go wrong.
 
-**Patrol encounters** can also demand a scan. When you run into a Federation patrol while moving, you get choices: submit to the scan (a clean scan earns you **+2 alignment**), pay a bribe (500 to 25,000 cr depending on the patrol's tier, 60% success, better odds for pirate-aligned captains — a failed bribe costs the credits, dings your alignment, and forces the scan anyway, with an extra 2,000 cr fine if it catches you), **jettison your contraband first (free, no penalty** — but it dumps all contraband you own, galaxy-wide), or fight.
+The detection roll is **not counterable**. Cloaking devices, stealth plating,
+hidden compartments, the smuggler role — none of them touch it. Those counter
+*customs scans*, which is a different system entirely.
 
-### 2. Point-of-Sale Checks
+### Getting caught on a sale
 
-Separately, every time you sell a contraband lot, the port may flag the sale. The chance varies by region — from about **1%** out in the rim to about **22%** in the Federation core — and rises with criminal alignment and a fuller cargo hold.
+- **All the cargo is confiscated.**
+- **Proceeds are zero.**
+- **A fine of 50% of what the sale would have been**, minimum 500 cr, capped
+  at your wallet.
+- **−25 alignment.**
+- The turn is still spent. There is no retry.
 
-- **Stealth Hull Plating helps here** (and usually zeroes the roll outside the Federation core).
-- **The Goods Cloaking Device does NOT** — it only affects entry scans.
+## Customs scans
 
-A flagged sale is simply **refused**: no fine, no seizure. The goods stay in your hold.
+Different system, different counters. A customs scan happens inside a
+**patrol NPC encounter** during a move or a warp arrival. It is not something
+you invoke.
 
-## Counter-Detection Gear
+### The chance
 
-**Goods Cloaking Device** — the smuggler's staple.
+```
+chance = 0.75
+       − 0.50  Goods Cloaking Device
+       − 0.30  Stealth Plating module
+       − up to 0.08  smuggler role tier
+floored at 5%
+```
 
-- Price: 750 cr each
-- Where to buy: Black Market, in the Counter-Detection Tools section (max 10 per purchase)
-- Effect: drops entry-scan detection from 75% to 25%
-- Usage: single-use, consumed automatically when an entry scan fires, whether you're caught or not. Does nothing at point of sale.
+There is a **30-minute per-player cooldown** on scans. That cooldown is the
+anti-farm mechanism, and it applies to clean scans too.
 
-Your current device count is shown in the black market UI. Devices stay in your inventory between sessions (within a season).
+### If you're clean
 
-**Stealth Hull Plating** — the permanent upgrade.
+The scan registers, you're waved through, and you earn **+2 alignment** with
+an on-screen confirmation. This works now; it silently did nothing before
+v2.0.8.
 
-- Price: 20,000 cr plus a 5,000 XP requirement, from the Tech Hub Upgrades service
-- Effect: −30 points on **both** checks — entry scans (75% → 45%, or 25% → 5% with a device) and point-of-sale rolls
+If you run honest cargo through patrolled space, patrols are your alignment
+income, not a nuisance.
 
-## The Standing Angle
+### If you're dirty
 
-Your alignment changes the smuggling math more than any gadget:
+- **Auto-bribe** (a flag you can set on movement): pays **25% of street
+  value**, clamped 500–25,000 cr, and costs **−2 alignment**.
+- Otherwise: **all contraband seized**, a **10% fine**, and **−5 alignment**.
 
-- **Alignment above +300 makes you immune to customs entirely.** Federation entry scans — port customs and patrol searches — skip you completely, and your cloaking devices are never consumed. Ironically, a captain in good Federation standing is the galaxy's most untouchable smuggler.
-- **Contraband can never be looted from you in combat.** Win or lose, PvP or NPC, contraband lots are ignored by looting — it's the safest cargo you can carry into a fight.
-- Put together: a clean-standing hauler running pirate goods through neutral space faces almost no risk at all.
+### Counters
 
-Getting caught pushes the other way: each bust is −5 alignment, and repeated busts drift you toward Pirate standing — which opens pirate-faction benefits but eventually closes Federation starports.
+| Counter | Effect | Notes |
+|---|---|---|
+| **Goods Cloaking Device** | −50pp | **Consumed by the attempt**, win or lose. 750 cr. |
+| **Stealth Plating** module | −30pp | Permanent. Also +15pp escape and +12pp first strike. |
+| **Smuggler role** | −2pp per tier, max −8pp | Free, earned by volume |
+| **Pirate-line hull** | **Hides 25% of your holds outright** | The scan never happens for cargo under the threshold |
+| **Hidden compartments** signature | +15% (T3) / +25% (T4) of holds, additive with the above | Plunder Barge, Marauder's Fortune |
+| **The Phantom Manifest** (epic) | **+60% of holds** | Plus the pirate-line 25% |
+| **False Manifest** module | One failed scan a day silently rerolls | Pirate-only, 20,000 cr, level 15 |
+| **Patrol Transponder** module | Patrols never appear at all | Federation-only — mutually exclusive with being a smuggler in practice |
 
-## Cargo Mechanics
+Stack a Marauder's Fortune (25% line + 25% signature = 50% of holds hidden)
+with stealth plating and a max smuggler role and you are running at the 5%
+scan floor with half your hold volume invisible.
 
-Contraband lots are flagged in red on your Ship screen's cargo card and marked **"sells first"** — when you sell a commodity, the sell dialog automatically allocates contraband lots before your legitimate stock.
+## Hidden holds, precisely
 
-Remember that seizures and jettisons apply to **all contraband you own in the galaxy**, not just what's on your active ship. Stashing contraband on a hangared ship does not protect it.
+"Hidden" volume is subtracted before the scan is considered at all. If your
+contraband volume sits **under** the hidden threshold, **the scan does not
+happen** — there is nothing for it to find.
 
-## Smuggling Strategy
+```
+hidden = floor(holds × 0.25)             pirate-line hull
+       + floor(holds × abilityValue)     hidden_compartments signature
+```
 
-**The standard run:** buy Stolen Equipment at a black market, haul it to a neutral agricultural port, sell. No Federation port ever touches the route, so the only risks are patrol encounters on the way — where jettisoning is always a free out — and the point-of-sale roll, which is small in neutral space and smaller with plating.
+A 320-hold Pirate Leviathan hides 80 volume. A Marauder's Fortune at 210
+holds hides 52 + 52 = 104 volume — 52 units of Black Tech, which is five
+times the per-purchase cap.
 
-**The bulk-organics variant:** Embargoed Organics are half the profit per unit but only 1 hold each and an 80-unit purchase cap — better for small ships and quick loops between a black market and a nearby mining port.
+## The career pays — provably
 
-**The lawful smuggler:** build alignment above +300 (patrol scans while clean, Federation missions, hunting pirates) and customs stops existing for you. Combine with plating and neutral-space selling, and smuggling becomes nearly risk-free income.
+The game's configuration loader **refuses to start** with a contraband
+catalog whose risk-adjusted expected value per hold-volume doesn't beat the
+best honest route in every region. Detected sales lose the cargo *and* pay
+the fine, and that's priced into the check.
+
+You cannot ship a season where smuggling is a trap. That's an invariant, not
+a promise.
+
+## Playing it
+
+**The disciplined fence run.** Buy at a Black Market, sell at another fence
+at ×1.2. Safe, flat, zero alignment movement, no scan exposure from the sale
+itself. Modest but completely reliable, and it's the only way to run the
+Phantom Manifest epic ladder — which demands 7,500 units sold with **zero
+sale-time busts all season**.
+
+**The core run.** Black Tech bought at 150 in the rim, sold in `fed_core` at
+5.25× the local equipment price. Enormous margins, a 22% chance per sale of
+losing everything and −25 alignment, and you have to get through Federation
+space — the most heavily patrolled region in the galaxy — to do it.
+
+**The middle path.** `inner` and `middle` at ×1.25 and ×1.15 heat with 12%
+and 8% detection. Better than the fence, survivable variance, and the regions
+are more accessible than the core.
+
+Note that repeated busts drive your alignment down fast (−25 each), which
+eventually locks you out of the Stardock at −300 and takes the `fed_core`
+market with it. The premium run erodes its own best market.
+
+## Counters and statistics
+
+Three counters track your career:
+
+- `contrabandSold` — units. Drives the **Smuggler role** and the smuggler
+  leaderboard, and only clean sales count.
+- `contrabandBusts` — sale-time detections. Must be **exactly zero** at claim
+  time for the Phantom Manifest.
+- The **Shadow Trader** goal ladder pays at 10 / 50 / 180 units, and the Gold
+  tier mints the *Shadow Broker* epithet insignia.

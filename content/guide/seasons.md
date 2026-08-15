@@ -1,105 +1,122 @@
 ---
-title: "Seasons & Leaderboard"
-date: 2026-07-02
+title: "Seasons"
+date: 2026-08-04
 draft: false
-description: "How seasons work, joining, scoring, what resets between seasons, and what happens when a season ends"
-weight: 19
+description: "What a season is, what carries over, and how one ends"
+weight: 20
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-Big Bang Smugglers is played in seasons. Each season is a time-limited campaign in a fresh galaxy where players compete on the leaderboards. When a season ends, standings are recorded permanently, everyone is removed from the galaxy, and your seasonal progress is wiped clean for the next one.
+## What a season is
 
-## What a Season Is
+A season is a **freshly generated galaxy** with a player cap and an end date.
+It is the container for essentially everything you own.
 
-A season is a newly generated galaxy plus a time limit. The default season length is **30 days** (individual seasons can be configured anywhere from 7 to 90), and each season holds up to **25 players** by default.
+Sector count is set per season — anywhere from 20 to 65,536, with 500 as the
+working default. Player cap, duration, PvP on or off, the XP multiplier, and
+every tuning number in the [formulas appendix](/guide/economy-formulas/) are
+all per-season configuration.
 
-Everything in the galaxy starts fresh — sectors, ports, planets, NPCs. You carry nothing in from a previous season, and you take nothing out except your place in the record books.
+Very large galaxies (over 5,000 sectors) are generated in the background, and
+the season sits unjoinable until generation finishes.
 
-## Joining a Season
+## Joining and leaving
 
-Open the **Settings** tab → **Season Management** card → **Browse Seasons**, pick a season, and tap **Join**.
+**One active season at a time.** You cannot enroll in two.
 
-- Joining is **free** — no credit cost, no level requirement.
-- You can be in **exactly one season at a time**. To join another, you must leave your current one first.
-- **You can never rejoin a season you have left or finished.** The game warns you about this before you leave — take it seriously. Leaving mid-season also wipes everything seasonal immediately.
+**Leaving is permanent and irreversible.** Leave a season and you can never
+rejoin *that* season — the server refuses outright. Everything you held there
+is gone: credits, bank, ships, planets, standing, insignia, all of it.
 
-On joining you receive:
+You cannot leave while you lead a corporation that has other members. Hand
+leadership over first.
 
-- **5,000 credits** (wallet)
-- **250 turns**
-- A tier-1 starter ship in sector 0
-- Neutral standing (alignment 0, Trader Reputation 50)
+A season at its player cap is closed to new joins.
 
-## What Resets vs What Persists
+## What carries over
 
-When you leave a season — voluntarily or because it ended — everything seasonal is wiped:
+Almost nothing, and that is the design.
 
-| Wiped | Persists |
+| Carries over | Dies with the season |
 |---|---|
-| All ships and cargo | Turn streak |
-| Credits — **wallet AND bank** | Account identity and settings |
-| XP and level | Your season-recap history (permanent) |
-| Reputation and alignment | |
-| Missions, goals, and inventory | |
-| Corporation membership | |
+| **Prestige tier** and lifetime titles | Credits and bank |
+| **Lifetime statistics** | Every ship, including epics |
+| **Season award medals** | Planets, structures, starbases, vaults |
+| **Goal titles** in your trophy case | Corporations and corp banks |
+| **Streak count** (not its rewards) | Alignment and all three standings |
+| **Seasons played** | XP, level, and every level gate you cleared |
+| Your account and display name | **Season insignia — they burn** |
+| Mail | Role tiers |
+| | Held ports, deployables, limpets, beacons |
+| | Turns (which never carry over even within a season) |
 
-Two things players get burned by:
+### The fairness contract
 
-- **Bank credits do not survive.** The bank protects you from combat looting during a season, not from the season ending.
-- **Corp banks are deleted at season end.** Corporations are galaxy-scoped, and the corp treasury is destroyed with the galaxy. Withdraw your share before the countdown hits zero. See [Corporations & Fleets](/guide/corporations-fleets/).
+Everything that crosses a season boundary is **purely cosmetic**. No title,
+tier, award or rank has ever fed a ship stat, a credit amount, a turn count,
+a combat roll, a price or a standing.
 
-## Scoring and Leaderboards
+Every season starts mechanically identical for everyone, permanently. A
+Mythic-tier veteran and a first-day captain begin with the same 5,000
+credits, the same 250 turns and the same SS Starter.
 
-Leaderboards live in the **Feed** tab → **Leaderboards** in-screen tab. There are six categories, all scoped to the current season:
+This is enforced by a doctrine test that walks every read site. It is not an
+aspiration.
 
-| Category | Ranks by |
+Note the deliberate contrast between the two cosmetic systems: **prestige
+titles are lifetime and permanent; insignia are seasonal and burn.** Insignia
+are meant to say *what you did this season*, and they say it only while the
+season is live.
+
+## Season end
+
+When a season closes, the ceremony compiles:
+
+**Category medals** — the top player in each of twelve categories:
+
+| Medal | Category |
 |---|---|
-| Overall | XP (credits earned breaks ties) |
-| Combat | Kills |
-| Missions | Missions completed |
-| Corps | Combined member score |
-| Most Wanted | Active bounty value on the player |
-| Bounty Hunters | Bounty credits collected |
+| 💰 Tycoon | Credits (wallet + bank) |
+| ⭐ Grand Admiral | XP |
+| ⚔️ Warlord | Kills |
+| 🌍 Planet Baron | Planets colonized |
+| 📋 Mission Master | Missions completed |
+| 🗺️ Trailblazer | Sectors explored |
+| 🎯 Overachiever | Goals completed |
+| 🏴‍☠️ Bounty Hunter | Bounties collected |
+| 🔥 Iron Will | Longest streak |
+| 🧭 The Wayfarer's Crown | Distance travelled |
+| 📈 Market Mover | Trades executed |
+| 🏰 Siege Engine | Sieges fought |
 
-Boards refresh roughly every **5 minutes** — they are not real-time. Your own rank is always shown even if you're outside the visible top of the list, and tapping a row opens that player's (or corp's) profile.
+A category with no meaningful leader goes unawarded.
 
-### How to Earn XP
+**Podium medals** — 🥇 Season Champion, 🥈 Runner-Up, 🥉 Podium, from the
+final standings.
 
-| Action | XP |
-|---|---|
-| Trading | 1 XP per 500 credits traded, on both buys and sells |
-| Exploring a sector (first visit) | 10 base, +25 if it has a port, +50 a planet, +100 a landmark |
-| Combat | Both sides earn some; scales with your opponent's tier and how even the fight was |
-| Completing missions | Per-mission XP reward |
-| Turn-streak milestones | 50 / 200 / 500 / 1,000 XP at day 3 / 7 / 14 / 30 |
+**🛡️ Corp Champion** — awarded to **every member** of the corporation whose
+members' summed scores are highest.
 
-Note that claiming and developing planets pays **credits, not XP** — the only planet-related XP is the first-visit exploration bonus for the sector.
+**The faction war** — enemy NPC kills count ×1, enemy port captures ×10,
+faction missions ×3. The winning faction is named in the closing headline and
+takes the campaign medal.
 
-## Season End
+The headline reads something like: *"«Champion» conquered «Season» — 47
+captains flew, the Federation won the war."*
 
-Do not rely on advance warnings — **watch the countdown**. It's displayed in the header bar, the Leaderboards header, and the Settings → Season Management card. Treat the end date as final: wrap up trades, empty the corp bank, and spend what you want to spend before the timer runs out.
+Medals are permanent. They count toward the Decorated / Distinguished / Hall
+of Famer lifetime titles at 3, 8 and 15 awards, and therefore toward your
+prestige tier.
 
-When the end date passes:
+At the close, corporation banks are distributed **pro rata** among members
+before standings are computed.
 
-1. **Final stats are frozen** and winners are recorded.
-2. A **~1-hour grace period** begins. The app switches to a "Season has ended — Read-only mode" banner; this hour is a wind-down window for viewing the recap, not extra playtime.
-3. The galaxy is **archived** — all players are removed, and season data is exported to permanent storage.
+## After a season
 
-## The Recap Screen
+Your season record is rolled up into lifetime statistics and stays browsable
+in the past-seasons list. Your account, your prestige, your titles and your
+mail persist.
 
-After the season closes, the recap screen shows the season's **category award winners** — including Richest Captain, Most Experienced, Most Kills, Planet Baron, Mission Master, Explorer, Bounty Hunter, and Longest Streak — plus the final top-10 leaderboard and your own final stats and rank. If you were offline when the season ended, the recap appears on your next login.
-
-## Past Seasons
-
-Every season you've played is preserved forever. Open the **Feed** tab → **Past Seasons** in-screen tab to see cards for each of your past seasons, with duration, player count, top winners, and a **View Full Results** modal showing the complete final leaderboard. Over time this builds your permanent career record.
-
-## New Season Strategy
-
-Since every season is a fresh start, early decisions matter.
-
-1. **Explore fast.** Sectors you have not visited cannot be warped to, so cover ground early to build your warp network. (Tavern intel can reveal warp-eligible sectors without visiting — see [Scanners & Intel](/guide/scanners-intel/).)
-2. **Learn the routes once.** Price bands are fixed per port type and identical in every galaxy — a route that worked last season works this season. What changes is live stock and trade pressure, so scout conditions, not prices.
-3. **Work toward a planet.** Claiming a planet costs **150,000 credits**, so it's an early-to-mid-season goal, not a day-one move from your 5,000-credit seed. Planets compound once you have one, so build toward it deliberately.
-4. **Keep a mission running.** You can hold only **one active mission at a time**, so keep one going that aligns with the route you're already flying.
+Everything else you have to earn again. That's the game.

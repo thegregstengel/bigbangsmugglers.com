@@ -1,218 +1,226 @@
 ---
 title: "Planets"
-date: 2026-07-02
+date: 2026-08-04
 draft: false
-description: "Claim and develop planets for passive income and strategic control"
-weight: 17
+description: "Claiming, structures, storage, garrisons, raids and starbases"
+weight: 16
 toc: true
 ---
 
-*Accurate as of v1.22.0 (July 2026).*
+*Accurate as of v2.0.8 (August 2026).*
 
-Planets are the late-game cornerstone of Big Bang Smugglers. Claim one, develop it with structures, and it generates commodities and passive credit income on every production cycle while you trade, fight, and explore. A developed planet is also a fortress: garrison it, mine its sector, park your ship behind its shields, and — at the very top — crown it with a Starbase.
+Planets are the late-game economy: a slow, compounding, defensible income
+that runs whether or not you're logged in — and a fixed target other captains
+can find.
 
-One thing to internalize early: **planet life runs on the 4-hour cycle**, not a daily one. Production, population growth, trading post refills — all of it ticks every 4 hours at 00:00, 04:00, 08:00, 12:00, 16:00, and 20:00 UTC. That is 6 cycles per day.
+## Claiming
 
-## Planet Types
+| | |
+|---|---|
+| Level gate | **10** |
+| Cost | **150,000 cr**, wallet only |
+| Turns | 1 |
+| Requirements | Be in the sector, planet unowned |
+| Truce after claim | 12 hours |
 
-Planets come in four types:
+**Alignment gates by territory:**
 
-- **Habitable World** — temperate, capable of supporting large populations
-- **Resource Planet** — mineral-rich, high production potential
-- **Gas Giant** — massive, inhospitable, and visually striking
-- **Barren World** — sparse and unforgiving, but claimable
+- In **Federation territory** you need alignment **≥ +100**.
+- In **pirate territory** you need alignment **≤ −100**.
+- Unincorporated space has no alignment gate.
 
-Type is flavor only — all planet types use the same production rates, costs, and caps. Claim whichever one is in the right sector.
+Claiming in aligned territory pays **±250 alignment** — the single largest
+alignment swing available from one action.
 
-## Claiming a Planet
-
-Navigate to a sector with an unclaimed planet, which you will see listed as a point of interest on the Nav screen. Open the planet and tap **Claim Planet**. The planet must be unclaimed and you must be in the same sector.
-
-**Claiming costs 150,000 credits from your wallet — bank credits do not count — plus 1 turn.** Withdraw from the bank first if you need to.
-
-**Alignment gates apply by territory:**
-
-- Federation territory: requires alignment of **+100 or higher**, and claiming grants **+250 alignment**
-- Pirate territory: requires alignment of **−100 or lower**, and claiming grants **−250 alignment**
-- Unincorporated territory: no gate, no alignment change
-
-A freshly claimed planet starts with population 50, all structures at level 0, and a **12-hour truce** during which it cannot be attacked or captured. Your name appears as the owner and the claim is announced on the galaxy feed. If you belong to a corporation, the planet is tagged with your corp — corp members can collect production, use storage, and land there.
-
-## Population and Workers
-
-Population directly scales production output, from 20% when the planet is empty up to 100% at the population cap. A full planet produces five times what an empty one does.
-
-**Growing population:**
-
-- Buy **Mining Workers** at any Starport (300 cr base, Recruitment) and deploy them from the planet screen. Workers transfer from your inventory to the population 1-for-1, free of turns.
-- Population also grows naturally every 4-hour cycle: a base of 10 new colonists, boosted 10% per Habitat level, minus 1% attrition on the existing population. Natural growth stalls out as attrition catches up — topping out a large planet means shipping workers.
-
-**Population cap:** base 500, plus 250 per Habitat level, up to 1,750 at Habitat 5.
+A fresh planet starts at population 50, population cap 500, storage cap 2,000
+and no structures.
 
 ## Structures
 
-Six structures, each upgradeable from level 0 to 5. Every upgrade costs **1 turn plus credits from your wallet** (bank credits do not count).
+Six of them, each maxing at **level 5**. Cost of level *n* is
+`floor(baseCost × multiplier^(n−1))`, and building costs 1 turn.
 
-| Structure | Base Cost | Cost Multiplier | Effect per Level |
-|-----------|-----------|-----------------|------------------|
-| Warehouse | 5,000 cr | 1.8x | +2,000 storage capacity |
-| Habitat | 6,000 cr | 1.8x | +250 population cap, +10% population growth |
-| Factory | 7,500 cr | 1.8x | +15% production |
-| Shield Generator | 10,000 cr | 2.0x | +15% garrison defense, +12 flat defense |
-| Barracks | 7,500 cr | 1.9x | +4 free garrison fighters per cycle |
-| Citadel | 25,000 cr | 2.0x | +10% production, +10% defense, +25 flat defense, doubles garrison cap |
+| Structure | Base | Multiplier | Level gate | Per level |
+|---|---|---|---|---|
+| **Warehouse** | 5,000 | ×1.8 | — | +2,000 storage |
+| **Habitat** | 6,000 | ×1.8 | — | +250 population cap, +10% growth |
+| **Factory** | 7,500 | ×1.8 | 5 | +15% production |
+| **Shield Generator** | 10,000 | ×2.0 | 5 | +15% defense (multiplicative), +12 flat defense |
+| **Barracks** | 7,500 | ×1.9 | 12 | +4 garrison fighters per tick |
+| **Citadel** | 25,000 | ×2.0 | 18 | +10% production, +10% defense, **×2 garrison cap**, +25 flat defense |
 
-Each level's cost is the base times the multiplier raised once per level already built:
+The **Citadel additionally requires Factory and Shield Generator at level 3**.
 
-| Structure | L1 | L2 | L3 | L4 | L5 | Total |
-|-----------|-----|-----|-----|-----|-----|-------|
-| Warehouse | 5,000 | 9,000 | 16,200 | 29,160 | 52,488 | 111,848 |
-| Habitat | 6,000 | 10,800 | 19,440 | 34,992 | 62,985 | 134,217 |
-| Factory | 7,500 | 13,500 | 24,300 | 43,740 | 78,732 | 167,772 |
-| Shield Generator | 10,000 | 20,000 | 40,000 | 80,000 | 160,000 | 310,000 |
-| Barracks | 7,500 | 14,250 | 27,075 | 51,442 | 97,740 | 198,007 |
-| Citadel | 25,000 | 50,000 | 100,000 | 200,000 | 400,000 | 775,000 |
-
-Maxing all six structures runs about **1,700,000 cr** on top of the 150,000 cr claim.
-
-**The Citadel is the endgame structure.** Building or upgrading it requires **Factory level 3 and Shield Generator level 3 or higher**. Besides its production and defense bonuses, each Citadel level **doubles the planet's garrison cap**: 500 base, then 1,000 / 2,000 / 4,000 / 8,000 / 16,000 at Citadel 1 through 5.
+The ×2.0 multipliers bite. A level-5 Citadel costs 25,000 × 2⁴ = 400,000 on
+its own, and the full ladder to Citadel 5 is 775,000 cr.
 
 ## Production
 
-Every 4-hour cycle, the planet produces commodities:
+Every 4-hour world tick:
 
 ```
-factoryMultiplier    = 1 + (0.15 × factoryLevel)
-populationMultiplier = 0.2 + ((population / populationCap) × 0.8)
-citadelMultiplier    = 1 + (0.10 × citadelLevel)
-
-fuel per cycle      = floor(35 × factory × population × citadel)
-organics per cycle  = floor(25 × factory × population × citadel)
-equipment per cycle = floor(13 × factory × population × citadel)
+output = floor(baseRate
+              × (1 + 0.15 × factoryLevel)
+              × (0.2 + 0.8 × population ÷ populationCap)
+              × regionMultiplier
+              × (1 + 0.10 × citadelLevel))
 ```
 
-A fully maxed planet — Factory 5, Citadel 5, full population — produces about **91 fuel, 65 organics, and 34 equipment per cycle** (190 units), six times a day.
+Base rates: **fuel 35, organics 25, equipment 13** per tick. Region
+multiplier is **1.10 in `outer`**, **1.05 in `outer_rim`**, 1.00 everywhere
+else.
 
-**Uncollected output is overwritten every cycle.** Production does not accumulate: each new cycle replaces whatever you did not collect from the last one. Collect often — you can bank at most one cycle's worth of resources per cycle.
+Read the population term carefully. At zero population you still get 20% of
+base; at cap you get 100%. **Population is a 5× multiplier on everything the
+planet makes**, and it is the cheapest one to buy.
 
-**Collecting:** tap Collect on the planet's Production tab. Collection is free (0 turns), works from anywhere in the galaxy, and can be done by you or any member of your corporation. Collected commodities go into **planet storage**, not your ship — use Withdraw on the Storage tab to load them into your cargo hold.
+Population grows per tick by:
 
-Note: some in-app production and export figures currently disagree with what the planet actually produces. The numbers above reflect the real backend output.
+```
+floor(10 × (1 + 0.10 × habitatLevel)) − floor(population × 1%)
+```
 
-## Passive Export Income
+At 1,000 population, attrition is 10 a tick — which exactly cancels base
+growth. Without Habitat levels, a planet stalls near 1,000. Habitats raise
+both the cap and the growth rate.
 
-On top of commodities, planets pay **passive credit income directly to your bank** every production cycle, whether or not you collect. The planet auto-exports its output at a flat **30 cr per unit produced**.
+You can also **colonize**: deploy Mining Workers from your inventory 1:1 into
+population, 0 turns, clamped at the cap. Workers cost 300 cr each at any
+`recruitment` service. Buying the population is dramatically faster than
+growing it.
 
-A maxed planet producing 190 units per cycle banks about 5,700 cr per cycle — roughly **34,000 cr per day** — with zero effort. Because it goes to the bank, not your wallet, export income is safe from raiders.
+Production must be **collected** — it accrues until you show up.
 
-## Planet Storage
+## Storage
 
-Planet storage holds collected production and anything you deposit. Capacity is **2,000 units base, plus 2,000 per Warehouse level** (12,000 at Warehouse 5). Equipment takes 2 units of storage space; fuel and organics take 1.
+Base 2,000, +2,000 per Warehouse level, so a maxed Warehouse holds 12,000.
+Equipment counts **double** against the cap, exactly as it does in your holds.
 
-**Deposit and Withdraw** move cargo between your ship and planet storage. Both are free (0 turns), require your ship to be in the planet's sector, and are available to you and your corp members. If storage is nearly full, collection is scaled down to fit — keep it drained.
+Deposits and withdrawals cost **0 turns** and are capped by your holds.
 
-## Garrison
+Corp-mates' access is governed by corporation policy: `storage.view` and
+`storage.deposit` default **on**, `storage.withdraw` defaults **off**.
 
-The garrison is your planet's standing defense force. Buy **Security Personnel** at any Starport (500 cr base, Recruitment) and deploy them from the Garrison card on the planet's Overview tab. Garrison units move from your player inventory — they are a separate pool from your ship's combat fighters. The Barracks adds 4 free garrison fighters per level every cycle.
+## Garrisons
 
-**Garrison cap:** 500, doubled by each Citadel level (up to 16,000 at Citadel 5).
+Garrison fighters are the planet's defense.
 
-The garrison defends against **planet sieges only** — it does not join ship combat in the sector. If you want automated defense that fires on hostile ships entering the sector, push garrison fighters out as sector defense from the planet screen — see [Deployables](/guide/deployables/) for how deployed fighters, mines, and the rest of the sector defense stack work.
+- Base cap **500**, **doubled per Citadel level** — a Citadel 5 planet caps
+  at 16,000.
+- Staff it with **Security Personnel** bought at any `recruitment` service
+  for 100 cr each, deployed in-sector, 0 turns.
+- Barracks add **4 fighters per level per tick** automatically.
 
-## Defense and Sieges
+## Landing
 
-Other players can raid your planet (PvP-enabled galaxies only, and never during a truce). Attacking costs the raider 1 turn.
+Landing on **your own or your corporation's** planet grants **landing
+protection**: attackers get `TARGET_PROTECTED`. It is the single best place
+to sit out a hostile window — better than a defense contract, and free.
 
-The defense is a single power formula fed by three things: **garrison size**, boosted 15% per Shield Generator level and 10% per Citadel level, plus **flat structural defense** of 12 per Shield level and 25 per Citadel level. The attacker's power comes from their fighters, shields, and torpedoes.
+It lasts until the planet falls.
 
-**If the attacker wins:**
+## Raids
 
-- They steal 25% of each stored commodity (limited by their free cargo holds)
-- They steal 10% of your **wallet** credits, capped at 5,000 — bank credits are never touched
-- Your garrison is cut in half
+Level 15 to attack, 1 turn.
 
-**If the attacker loses, it is catastrophic for them:** their ship is disabled and **all of their fighters and shields are wiped out**. Your garrison drops 20%.
+```
+attackerPower = (fighters × 0.8 × combatAI + shields × 1.2 + torpedoes × 2.0)
+                × (1 + siegeBonus)
+defenderPower = max(10, garrison × 0.8 × (1 + structureDefense) + structuralDefense)
 
-**Capture:** once a planet's garrison hits **exactly 0**, an attacker in the sector can capture it outright for 1 turn. Everything transfers — structures, storage, population, any Trading Post, even a Starbase — as spoils of war. Capture starts a **24-hour truce** protecting the new owner.
+structureDefense   = (1 + 0.15 × shieldLevel) × (1 + 0.10 × citadelLevel) − 1
+structuralDefense  = 12 × shieldLevel + 25 × citadelLevel
 
-The defensive loop is simple: keep the garrison topped up so raids stay expensive, and never let it hit zero.
+winChance = attackerPower ÷ (attackerPower + defenderPower) ± 0.02
+```
 
-## Planet Parking
+**Structure defense is multiplicative, not additive.** At Shield 5 and
+Citadel 5 that's 1.75 × 1.5 − 1 = **+162.5%**, not the +125% you'd get by
+adding them. Fortifying compounds.
 
-You can **land your ship on your own planet** (or a corp member's) from the Ship Landing card on the planet screen. Landing and launching are free.
+The `structuralDefense` term is **garrison-independent** — a Shield 5 /
+Citadel 5 planet contributes 185 defense power even with an empty garrison.
+Fortresses defend themselves.
 
-A landed ship is **hidden from sector target lists and cannot be attacked** while the planet stands — attackers must defeat the planet first. It is the safest place to log off in hostile space, as long as the planet holds. Moving or warping launches your ship automatically.
+**On a win:** garrison drops to 50%, you take **25% of each stored
+commodity** (as much as your holds fit) plus **10% of the owner's wallet**
+capped at 5,000 cr. Raider-line hulls multiply both.
 
-## Renaming
+**On a loss:** garrison drops to 80%, you lose **every fighter**, and you
+take `max(shields, 75% of shields + hull)` damage through the hull spill. A
+failed raid on a fortified planet will destroy your ship.
 
-The owner can rename a planet for free from the planet screen. If the planet has a Trading Post, its port name updates to match.
+Blocked by: your own corporation's planet, an active truce, your own PvP
+immunity, or a galaxy with PvP off.
 
-## Trading Posts
+## Capture
 
-A Trading Post is a player-built port that lets other captains buy commodities from your planet. It is a late-game investment — expensive to build, but it generates passive income while you do other things.
+Level 15, 1 turn, and **the garrison must be at zero**. Raid until it's
+empty, then take it.
 
-### Building a Trading Post
+Capture transfers **everything** — structures, storage, population,
+everything. Any of the old owner's ships parked there are launched. A
+24-hour truce protects the new owner.
 
-You need two things before you can build:
-
-- Warehouse Level 2 on the planet
-- 100,000 credits in your wallet or bank
-
-Open your planet screen, go to the **Trading Post** tab, and tap Build Trading Post. The cost comes from your wallet first, then your bank if the wallet falls short. The post is permanent and cannot be demolished.
-
-### How It Works
-
-Once built, the post appears in your sector as a named port on the Nav screen — other players will see it as "**{Planet} Trading Exchange ({your name})**". Any player who enters the sector can open it and buy commodities. The post is buy-only — players cannot sell to it.
-
-Stock transfers free of charge from your planet storage to the post every 4 hours at the same boundaries as turn resets. You can also trigger a free manual refill from the Trading Post tab once per 4-hour window. If your planet storage is empty, the post runs dry until production refills it.
-
-You earn 80% of every sale, deposited directly to your bank. The remaining 20% covers operational costs.
-
-### Upgrade Levels
-
-The post starts at Level 1 and can be upgraded up to Level 5. Higher levels hold more stock and your prices move closer to standard market rates, which means better margins per sale.
-
-| Level | Upgrade Cost | XP Required | Stock Cap | Price vs Standard |
-|-------|-------------|-------------|-----------|------------------|
-| 1 | 100,000 cr (build) | None | 100 units | 50% below |
-| 2 | 50,000 cr | 5,000 | 250 units | 40% below |
-| 3 | 150,000 cr | 15,000 | 500 units | 30% below |
-| 4 | 400,000 cr | 40,000 | 1,000 units | 20% below |
-| 5 | 1,000,000 cr | 100,000 | 2,000 units | 10% below |
-
-The "% below standard" discount applies to the **top of the price band** — the ceiling is lowered, the floor stays put, and actual quotes land in between. The total investment to reach Level 5 is 1,700,000 cr; the XP figures are thresholds you must have reached, not amounts spent. A max-level post running at full stock is a significant passive income source.
-
-### Defending Against Robbery
-
-Pirate-aligned captains (alignment of −500 or lower) in your sector can attempt to rob your Trading Post. Each robber gets **one attempt per post per 4-hour window**.
-
-Their base success chance is 40%. A Goods Cloaking Device adds 15% to their odds and is consumed on the attempt. **Your defense is the planet garrison**: each tier of 100 garrison fighters cuts their chance by 5%, up to 5 tiers — so 500+ garrison drops an uncloaked robber to 15%. Success is clamped between 10% and 75% regardless of modifiers.
-
-A successful robbery steals up to 30% of the post's **current stock** per commodity. Only stock sitting in the post is at risk — planet storage and your bank are never touched, so keeping stock lean between shopper visits limits your exposure.
-
-Every attempt — success or failure — triggers a galaxy-wide feed announcement naming the attacker and your post, and you get a private alert. Failed attempts are still visible to everyone and a natural reason for other players to post a bounty on the attacker.
+Corporation-on-corporation capture within the same corp is blocked.
 
 ## Starbases
 
-The Starbase is the capstone of planet development. Requirements:
+The capstone. **1,500,000 cr**, level **26**, and it requires **every
+structure at level 5**. One starbase per player per galaxy.
 
-- **All six structures at level 5** on the planet
-- **1,500,000 credits in your wallet** — wallet only, no bank fallback
-- **One Starbase per player** — grow your corporation to command more
+What it buys:
 
-A Starbase never appears on the Nav map and cannot be attacked or destroyed. It lives on the planet's Structures tab, and it changes hands intact if the planet is captured.
+**Respawn priority.** Owning a starbase and having at least one other ship in
+your garage gives you a *choice* when you die: Sector 0, or your starbase's
+sector. Without it, you're dropped at Sector 0 and that's that. For anyone
+operating in the rim, that is the difference between a 2-turn recovery and a
+40-turn crawl back out.
 
-**What it gives you:**
+**A vault.** Owner-only storage for credits and items, accessible in-sector,
+0 turns. Corp-mates cannot see it, let alone touch it.
 
-- **Credit and item vault** — unlimited storage for credits and inventory items (workers, fighters, beacons, mines, cloaking devices). Owner-only, and you must be in the planet's sector to use it.
-- **Hangar** — store and switch ships at the planet without flying to a starport. Ships cannot be sold here.
-- **Escape-pod respawn point** — if your ship is destroyed, your escape pod returns to your Starbase sector instead of Sector 0.
-- **Corp infrastructure** — if the planet belongs to your corporation, the Starbase becomes the corp's shared ship pool and the landing dock for fleet combat loot. See [Corporations & Fleets](/guide/corporations-fleets/).
+**A ship pool.** Corp members can donate ships to a corp starbase (cargo is
+deleted on donation) and claim pooled ships into their own garage — arriving
+inactive and empty.
 
-## Strategic Notes
+**A fleet cargo destination.**
 
-- Collect every cycle you can. Uncollected production is overwritten, not banked.
-- Prioritize workers before factories. The population multiplier has a bigger impact at low population than additional Factory levels.
-- Deploy proximity mines and sector-defense fighters in your planet's sector as the first line of defense before a siege ever starts. See [Deployables](/guide/deployables/).
-- Rush Factory 3 and Shield 3 to unlock the Citadel — its garrison-cap doubling is what makes a planet genuinely hard to take.
-- Never let the garrison hit 0 — that is the only condition under which your planet can be captured.
+If the starbase falls before you resolve a pod choice, the choice degrades to
+Sector 0.
+
+## Trading posts
+
+A trading post turns a planet into passive income: it sells your stored
+production automatically and accumulates credits in a till you collect.
+
+Build it, upgrade it, refill it from storage, and collect the till. Exports
+pay **30 cr per unit**. Others can **rob** it — which pays them loot and
+earns them a bounty.
+
+The full economics — build cost, upgrade cost per level, max level, units
+sold per tick per level, price factor — are season configuration and are
+shipped to the client on the planet info screen. Read them there rather than
+trusting a number on this page.
+
+## Renaming and transferring
+
+**Rename** is owner-only, requires being in the sector, costs 0 turns, runs
+through the profanity gate, and posts nothing publicly. 3 to 30 characters.
+
+**Transfer** hands the deed to another member of your corporation. That is
+the only ownership transfer in the game that doesn't involve a siege.
+
+## Is it worth it?
+
+A bare claim is 150,000 cr for roughly 15 credits' worth of production a tick.
+That's a bad deal on its own.
+
+The compounding case: Habitats to raise population toward the cap (5× on
+everything), a Factory ladder (+75% at level 5), Warehouses so the output has
+somewhere to go, and a trading post to sell it without you flying there.
+Fortification (Shield + Citadel) is what stops another corporation taking the
+whole investment in an afternoon.
+
+Half-built planets are the worst outcome in the game: expensive enough to
+hurt, productive enough to notice, and defenseless.
