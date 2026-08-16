@@ -19,6 +19,10 @@ the game, at any time.
 Deletion takes effect **immediately** — your login is removed and you are
 signed out everywhere. This cannot be undone.
 
+One condition: if you currently **lead a corporation**, you must transfer
+leadership (or disband the corp) before deleting — the game will tell you
+if this applies to you.
+
 ## By email (if you can't sign in)
 
 Send a request to
@@ -47,6 +51,10 @@ removed — the standard anonymized-aggregate practice:
 
 If your account was banned, an internal record of the ban is retained to
 prevent ban evasion. It contains no personal information.
+
+Separately, routine server request logs (retained up to 30 days) and
+crash reports (retained up to 90 days) are not connected to deletion —
+they age out and purge automatically on those schedules.
 
 ---
 
