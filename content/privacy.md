@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "Privacy Policy for Big Bang Smugglers"
 ---
 
-*Last updated: July 31, 2026*
+*Last updated: August 16, 2026*
 
 Protovision Games ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect information when you play Big Bang Smugglers (the "Game").
 
@@ -30,6 +30,10 @@ We automatically collect:
 - Session records, including IP address and the general region derived
   from it (used for account security and moderation — never precise
   location)
+- Server request logs — our servers automatically record the IP address
+  and technical details of each request (used for security, abuse
+  prevention, and operations). These logs are retained for up to
+  **30 days**, then automatically purged.
 
 We do **not** collect your real name, phone number, payment information, or precise location.
 
@@ -75,9 +79,9 @@ We use Firebase (provided by Google) for:
 - **Firebase App Check** — abuse protection that verifies requests come
   from genuine copies of the Game (reCAPTCHA Enterprise on the web,
   Play Integrity on Android)
-- **Firebase Crashlytics** — crash reporting on the Android app
-- **Firebase Cloud Messaging** — push notifications on Android, if you
-  enable them
+- **Firebase Crashlytics** — crash reporting on the Android app. Crash
+  reports are associated with your account identifier and retained by
+  Crashlytics for up to **90 days**.
 
 Firebase may collect technical data in accordance with
 [Google's Privacy Policy](https://policies.google.com/privacy).
@@ -94,7 +98,10 @@ Deletion removes your login and all personally identifying information.
 Anonymized gameplay records (season history, leaderboards, integrity
 logs) are retained with no connection to your identity.
 
-Crash and diagnostic logs are retained up to 90 days, then automatically purged.
+Crash reports and server request logs run on their own automatic
+schedules — up to 90 days for crash reports and up to 30 days for request
+logs — and are **not** erased at the moment you delete your account; any
+residual entries purge automatically within those windows.
 
 ---
 
