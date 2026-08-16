@@ -524,20 +524,12 @@
           <a href="/privacy" class="font-mono text-xs text-gray-600 hover:text-gray-400 transition-colors tracking-wider">Privacy</a>
           <a href="/delete-account" class="font-mono text-xs text-gray-600 hover:text-gray-400 transition-colors tracking-wider">Delete Account</a>
         </div>
-        {{/* Rights notice — the target of the asterisk on the Pritchett quote in
-             the hero. Same text as _partials/custom/footer.html (#tw-rights): his
-             words and the Trade Wars attribution travel together on every page.
-             This standalone template doesn't render the theme footer partial, so
-             the notice is carried inline here. Do not reword. */}}
+        {{/* The target of the asterisk on the Pritchett quote in the hero.
+             Wording lives in custom/tw-rights.html, shared with the theme
+             footer partial; this standalone template doesn't render that
+             footer, so it renders the notice itself in its own styling. */}}
         <div id="tw-rights" class="max-w-2xl mx-auto mb-6 text-xs text-gray-600 leading-relaxed">
-          <p>
-            <span aria-hidden="true">*</span>
-            Big Bang Smugglers is an independent game, inspired by the classic BBS door game
-            <em>Trade Wars</em>.
-            <em>Trade Wars 2002</em> is copyright &copy; John Pritchett.
-            <em>Trade Wars</em>&trade; is a trademark of John Pritchett.
-            Big Bang Smugglers is not affiliated with or endorsed by John Pritchett.
-          </p>
+          {{ partial "custom/tw-rights.html" . }}
         </div>
         <p class="font-mono text-xs text-gray-700">
           &copy; 2024&ndash;2026 <a href="https://protovisiongames.com" target="_blank" rel="noopener" class="hover:text-gray-500 transition-colors underline underline-offset-2 decoration-gray-800">Protovision Games</a>
