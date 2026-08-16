@@ -7,7 +7,7 @@ weight: 5
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## The three commodities
 
@@ -204,8 +204,8 @@ The anchor table is a starting point, not an answer. What actually matters:
    will only buy into a 2,000-unit pool before its stock deviation starts
    eating your price. You can flood a small port in one run.
 3. **Turns per credit.** A 30-hop round trip at 1 turn a hop plus 2 trade
-   turns is 32 turns. At 250 turns a cycle that's eight runs. A tighter loop
-   with a worse spread often wins.
+   turns is 32 turns. At the default 250-turn cycle that's eight runs. A
+   tighter loop with a worse spread often wins.
 4. **Your alignment.** At a faction capital, deep alignment on the right side
    is up to −20% on what you pay. On the wrong side it's up to +50%, plus a
    sell penalty.
@@ -225,6 +225,21 @@ bonus, because one would break the round-trip rule.
 
 Both are shown in the quote before you commit. Both are clamped so the
 combined discount can never invert the spread.
+
+## Two markets that aren't ports
+
+**Trader NPCs deal on the roadside.** A trader contact you don't fight can be
+traded with: they sell at **×1.35** of the standard anchor and buy at
+**×0.65** — always worse than a real port, priced for convenience, three
+deals per trader. Deeper toward the rim they sometimes carry contraband. See
+[NPCs & Encounters](/guide/npcs/#trading-with-a-trader).
+
+**Player trading posts sell planet production.** A planet with a trading post
+runs a real storefront: visiting captains buy off its shelf at roughly 10%
+under the commodity anchor, floored just above whatever the best port in the
+same sector would pay — so there is never a same-sector flip, but a post on
+your route can genuinely undercut the port next door. The proceeds accrue in
+the owner's robbable till. See [Planets](/guide/planets/#trading-posts).
 
 ## The price board
 

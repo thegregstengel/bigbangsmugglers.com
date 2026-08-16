@@ -7,15 +7,17 @@ weight: 10
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 There are two kinds of bounty and they pay out completely differently.
 
 ## Player-posted bounties
 
-Anyone at level 3 or above can put a price on a rival's head at a **bounty
-office** — the `tavern` service, which runs at the Stardock and at Pirate
-Bases.
+Anyone past an early level gate can put a price on a rival's head at a
+**bounty office**. Offices exist at exactly two docks — the faction
+capitals: the **Stardock** and the **Pirate Haven**. (They used to be keyed
+to the tavern; since v2.0.15 the office and the registry are the same two
+sectors.)
 
 | | |
 |---|---|
@@ -33,7 +35,10 @@ No paperwork, no travel, no registry. Win the fight, the money lands.
 ## Faction bounties
 
 Faction bounties are generated automatically. Kill enough of a faction's
-people and that faction posts a warrant on you.
+people and that faction posts a warrant on you. **Robbing trader NPCs in the
+shipping lanes** — Federation space and the inner belt — feeds the same
+Federation counter; robbing a merchant prince counts double. The deep rim is
+lawless: robberies out there draw no warrant.
 
 ```
 amount = min(500 × tierMultiplier × sqrt(kills), 500,000)
@@ -95,6 +100,12 @@ exactly the bounty amount.
 
 Looking at prices is a query and only checks alignment. **Buying anything is
 a mutation and runs the arrest check.** You can window-shop while wanted.
+
+One deliberate exception: **you can withdraw from your bank while wanted.**
+A wanted captain whose wallet couldn't cover the warrant used to be frozen —
+unable to reach their own money to settle it. Withdrawal now passes the
+docking gate, precisely because it moves credits *into* the one pot the
+arrest can take.
 
 ### Paying it off
 

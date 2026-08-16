@@ -7,7 +7,7 @@ weight: 14
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 There are two numbers, they are not the same thing, and confusing them will
 cost you money.
@@ -83,7 +83,7 @@ until v2.0.8. It works now.
 | Siege a neutral port | −10 |
 | Caught in a customs scan | −5 |
 | Bribe a patrol out of a scan | −2 |
-| Rob a trader NPC | −2 |
+| **Rob a trader NPC** | **−10** — plus Syndicate standing, a Merchant Guild hit, and Federation heat in the lanes |
 | Underworld daily missions | −10 to −15 |
 | **Syndicate faction missions** | **−25 / −30** |
 | Claim a planet in pirate territory | **−250** |
@@ -209,6 +209,7 @@ missions.
 | Capture a port in enemy space | +100 |
 | Attack a faction's port | −15 |
 | **Every honest trade leg** | **+1 Merchant Guild** |
+| Rob a trader NPC | +5 × NPC tier Syndicate, **−25 Merchant Guild** |
 | Faction daily mission | +100 |
 | Elite faction season arc | +400 |
 | Goal ladder tiers | +50 to +150 |

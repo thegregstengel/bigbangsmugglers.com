@@ -7,7 +7,7 @@ weight: 11
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 Everything in this section follows the same model: **buy it as an item, carry
 it, consume it at deploy**. Deploying charges no credits — the purchase was
@@ -18,17 +18,25 @@ Agricultural Ports.
 
 ## The catalog
 
-| Item | Price | Max per purchase | Sector cap | Your cap |
-|---|---|---|---|---|
-| Proximity Mine | 250 | 50 | 100 | 50 |
-| Sentry Drone | 1,500 | 20 | 50 | 20 |
-| Turret | 3,000 | 8 | 20 | 8 |
-| Sensor Buoy | 800 | 5 | 10 | 5 |
-| Cloak Field | 5,000 | 2 | 1 | 2 |
-| Limpet Tracker | 4,000 | 10 | — | 10 live |
-| Navigation Beacon | 2,500 | 5 | — | one per sector |
+| Item | Price | Sector cap | Your cap |
+|---|---|---|---|
+| Proximity Mine | 250 | 100 | 50 |
+| Sentry Drone | 1,500 | 50 | 20 |
+| Turret | 3,000 | 20 | 8 |
+| Sensor Buoy | 800 | 10 | 5 |
+| Cloak Field | 5,000 | 1 | 2 |
+| Limpet Tracker | 4,000 | — | 10 live |
+| Navigation Beacon | 2,500 | — | one per sector |
+
+There is no per-purchase cap any more (v2.0.16 dropped it — it never limited
+anything, it just made you tap the buy button repeatedly). What actually
+bounds an arsenal is the **sector cap** and **your cap** at deploy time,
+plus cargo room and your wallet.
 
 Deploying costs **1 turn** for ordnance. Limpets and beacons cost **0**.
+**You cannot deploy anything while PvP-immune** — laying a minefield from
+behind an immunity window is aggression, and every aggressive act is blocked
+while the window runs.
 
 ## No-deploy zones
 
@@ -64,6 +72,21 @@ What they do spare:
 
 Mines decay at **2% per day**, compounding.
 
+**Detonations are on the record.** The victim's report names the mine's
+owner, a kill posts a public *ship mined* story naming both parties, and the
+owner gets a private field report — victim, sector, damage dealt, mines
+spent and mines remaining. (Kills report immediately; mere-damage reports
+are batched.) A minefield is not an anonymous weapon; it just doesn't need
+you present.
+
+**Planets can lay mines too.** A planet with a Barracks can convert garrison
+fighters into ordinary mines in its own sector — 6 garrison fighters plus
+150 cr per mine, up to 20 per order, behind a level gate. The conversion is
+one-way: fighters spent on the approaches are gone from the siege garrison.
+The mines themselves are indistinguishable from ship-laid ones — same entry
+triggers, same decay, same corp friendly-fire, same attackability. See
+[Planets](/guide/planets/#minelaying).
+
 ## Passive stacks
 
 Sentry drones, turrets, sensor buoys and cloak fields sit in a sector and do
@@ -93,6 +116,12 @@ clamped to [5%, 95%]
 Losing hurts. A defeat applies the **75% defeat loss rate** — you lose 75% of
 your fighters and take 75% of your defense pool as damage, through the hull
 spill. **Attacking a heavy stack can destroy your ship.**
+
+The confirm screen quotes server-computed odds, the expected swing and the
+turn cost before you commit, and since v2.0.17 **the stack's owner is told
+their ordnance was destroyed** — by whom, and where. Decay is quieter: when
+the daily tick finally rots your field away you get an expiry notice, and
+the deploy screen previews how long a stack has left.
 
 ## Seeing deployables
 
@@ -132,6 +161,10 @@ planter's handle and the sector they planted in**.
 If you think you're being followed, the sweep is how you find out who. If
 you're wrong, it cost you 10,000 for the peace of mind.
 
+The sweep cuts both ways: **the planter is told their tracker was swept**.
+And when an attached limpet simply times out, its owner gets an expiry
+notice rather than silence.
+
 ### The Warrant
 
 The epic hull **The Warrant** makes any limpet planted while flying it
@@ -148,11 +181,14 @@ Everyone who passes through sees your handle on it, and the glyph of any
 beacon-mark insignia you hold — the **Corsair Sigil** (☠) is a GM-event
 exclusive that marks every beacon you plant.
 
-Remove your own at any time.
+Remove your own at any time. You can also **destroy someone else's beacon**
+— 1 turn, you must be in the sector, and the demolition posts to the public
+feed. A beacon war is a real thing you can have.
 
-Beacons are also the closest thing the game has to public communication
-outside a corporation. There are no direct messages. If you want to leave
-someone a note, you leave it in a sector.
+Beacons are, with [paid announcements](/guide/gameplay/#announcements), the
+closest thing the game has to public communication outside a corporation.
+There are no direct messages. If you want to leave someone a note, you leave
+it in a sector.
 
 ## Private notes
 

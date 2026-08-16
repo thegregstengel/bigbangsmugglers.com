@@ -7,7 +7,7 @@ weight: 4
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## How a galaxy is built
 
@@ -19,7 +19,8 @@ Sector count is **free-form per season** — the default is 500, the admissible
 range is 20 to 65,536. The old game's four fixed sizes are gone.
 
 Default densities: **15%** of sectors have a port, **10%** a planet, **6%** a
-hazard. Three landmarks and ten named NPCs per galaxy.
+hazard. Three landmarks and twelve named NPCs per galaxy — five pirates,
+five Federation officers, and two merchant princes.
 
 ## Regions
 

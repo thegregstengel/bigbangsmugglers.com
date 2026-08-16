@@ -7,7 +7,7 @@ weight: 16
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 Planets are the late-game economy: a slow, compounding, defensible income
 that runs whether or not you're logged in — and a fixed target other captains
@@ -17,7 +17,7 @@ can find.
 
 | | |
 |---|---|
-| Level gate | **10** |
+| Level gate | A mid-early ladder gate — roughly a fifth of the way up |
 | Cost | **150,000 cr**, wallet only |
 | Turns | 1 |
 | Requirements | Be in the sector, planet unowned |
@@ -44,12 +44,14 @@ Six of them, each maxing at **level 5**. Cost of level *n* is
 |---|---|---|---|---|
 | **Warehouse** | 5,000 | ×1.8 | — | +2,000 storage |
 | **Habitat** | 6,000 | ×1.8 | — | +250 population cap, +10% growth |
-| **Factory** | 7,500 | ×1.8 | 5 | +15% production |
-| **Shield Generator** | 10,000 | ×2.0 | 5 | +15% defense (multiplicative), +12 flat defense |
-| **Barracks** | 7,500 | ×1.9 | 12 | +4 garrison fighters per tick |
-| **Citadel** | 25,000 | ×2.0 | 18 | +10% production, +10% defense, **×2 garrison cap**, +25 flat defense |
+| **Factory** | 7,500 | ×1.8 | early | +15% production |
+| **Shield Generator** | 10,000 | ×2.0 | early | +15% defense (multiplicative), +12 flat defense |
+| **Barracks** | 7,500 | ×1.9 | about a quarter up | +4 garrison fighters per tick |
+| **Citadel** | 25,000 | ×2.0 | about a third up | +10% production, +10% defense, **×2 garrison cap**, +25 flat defense |
 
-The **Citadel additionally requires Factory and Shield Generator at level 3**.
+Level gates are the season ladder's — the build screen shows your season's
+numbers. The **Citadel additionally requires Factory and Shield Generator at
+structure level 3**.
 
 The ×2.0 multipliers bite. A level-5 Citadel costs 25,000 × 2⁴ = 400,000 on
 its own, and the full ladder to Citadel 5 is 775,000 cr.
@@ -98,6 +100,12 @@ Equipment counts **double** against the cap, exactly as it does in your holds.
 
 Deposits and withdrawals cost **0 turns** and are capped by your holds.
 
+**Storage preserves your cost basis** (since v2.0.15): cargo you deposit
+keeps its weighted average cost and hands it back on withdrawal, so your
+profit readout stays honest through a warehouse trip. The planet's own
+production enters storage at cost 0 — it was grown, not bought — and a pile
+that mixes the two blends them.
+
 Corp-mates' access is governed by corporation policy: `storage.view` and
 `storage.deposit` default **on**, `storage.withdraw` defaults **off**.
 
@@ -111,6 +119,17 @@ Garrison fighters are the planet's defense.
   for 100 cr each, deployed in-sector, 0 turns.
 - Barracks add **4 fighters per level per tick** automatically.
 
+### Minelaying
+
+A planet with a **Barracks** can push its defense out into the approaches:
+convert garrison fighters into **ordinary proximity mines in the planet's
+own sector** — 6 garrison fighters plus 150 cr per mine, up to 20 per order,
+1 turn, behind a level gate. The conversion is one-way; fighters spent on
+mines are gone from the siege garrison, so fortifying the doorstep
+measurably weakens the keep. The mines are standard catalog mines in every
+respect: entry triggers, decay, corp friendly-fire, and attackability. See
+[Ordnance, Limpets & Beacons](/guide/deployables/).
+
 ## Landing
 
 Landing on **your own or your corporation's** planet grants **landing
@@ -121,7 +140,8 @@ It lasts until the planet falls.
 
 ## Raids
 
-Level 15 to attack, 1 turn.
+Raiding sits behind the same mid-ladder gate as port sieges. 1 turn per
+attack.
 
 ```
 attackerPower = (fighters × 0.8 × combatAI + shields × 1.2 + torpedoes × 2.0)
@@ -144,7 +164,9 @@ Fortresses defend themselves.
 
 **On a win:** garrison drops to 50%, you take **25% of each stored
 commodity** (as much as your holds fit) plus **10% of the owner's wallet**
-capped at 5,000 cr. Raider-line hulls multiply both.
+capped at 5,000 cr. Raider-line hulls multiply both. One exception: if the
+owner is under PvP immunity, the wallet skim is skipped — immunity covers
+the captain's purse, though never the territory itself.
 
 **On a loss:** garrison drops to 80%, you lose **every fighter**, and you
 take `max(shields, 75% of shields + hull)` damage through the hull spill. A
@@ -155,8 +177,8 @@ immunity, or a galaxy with PvP off.
 
 ## Capture
 
-Level 15, 1 turn, and **the garrison must be at zero**. Raid until it's
-empty, then take it.
+Same gate as raiding, 1 turn, and **the garrison must be at zero**. Raid
+until it's empty, then take it.
 
 Capture transfers **everything** — structures, storage, population,
 everything. Any of the old owner's ships parked there are launched. A
@@ -166,8 +188,9 @@ Corporation-on-corporation capture within the same corp is blocked.
 
 ## Starbases
 
-The capstone. **1,500,000 cr**, level **26**, and it requires **every
-structure at level 5**. One starbase per player per galaxy.
+The capstone. **1,500,000 cr**, a level gate past the midpoint of the
+season ladder, and it requires **every structure at level 5**. One starbase
+per player per galaxy.
 
 What it buys:
 
@@ -191,17 +214,31 @@ Sector 0.
 
 ## Trading posts
 
-A trading post turns a planet into passive income: it sells your stored
-production automatically and accumulates credits in a till you collect.
+A trading post turns a planet into income: it sells your stored production
+and accumulates credits in a till you collect.
 
-Build it, upgrade it, refill it from storage, and collect the till. Exports
-pay **30 cr per unit**. Others can **rob** it — which pays them loot and
-earns them a bounty.
+Since v2.0.17 a post is a real **storefront**, not just a passive earner.
+Visiting captains browse its shelf and buy directly — priced roughly 10%
+under the commodity anchor, floored just above whatever the best port in the
+same sector would pay, so a post can genuinely undercut the port next door
+but a same-sector buy-and-flip always loses. The world tick still clears
+shelf stock on its own on top of player traffic, and since v2.0.14 the post
+**auto-restocks from planet storage** every tick, so it runs without you
+flying out.
 
-The full economics — build cost, upgrade cost per level, max level, units
-sold per tick per level, price factor — are season configuration and are
-shipped to the client on the planet info screen. Read them there rather than
-trusting a number on this page.
+Two things to respect:
+
+- **The till is robbable.** Sale proceeds accrue in the till until you
+  collect, and a robbery is repeatable — each one escalates the robber's
+  faction bounty, but the money sits at risk until you pick it up.
+- **Only genuine production earns.** Since v2.0.16 the shelf is priced so
+  routing port-bought cargo through a post always loses money; a post is an
+  outlet for what the planet grows, not a laundering machine.
+
+The full economics — build cost, upgrade cost per level, max level, shelf
+cap, units sold per tick per level, price factor — are season configuration
+and are shipped to the client on the planet info screen. Read them there
+rather than trusting a number on this page.
 
 ## Renaming and transferring
 

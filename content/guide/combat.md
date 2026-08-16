@@ -7,7 +7,7 @@ weight: 9
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 Combat is instant and automatic. You engage, the server resolves the whole
 fight in one shot, and you read the report. There is no round-by-round input.
@@ -186,9 +186,13 @@ One clock, several sources, and it **always extends, never replaces**.
 
 | Source | Duration |
 |---|---|
-| Losing a fight | 2 minutes |
+| **Being attacked** — the defender gets it win *or* lose | 2 minutes |
+| Losing a fight you started | 2 minutes |
 | **Any death**, from any cause | 2 minutes |
 | A purchased defense contract | 2 hours each, stacking |
+
+A winning or retreating **attacker** earns nothing — the qualifying event is
+being attacked, not swinging.
 
 **Defense contracts cover NPC ambushes too.** This changed in v2.0.2 — a
 contract now suppresses pirate and patrol ambushes as well as player attacks,
@@ -200,8 +204,13 @@ Haven does not sell them.
 
 Three things about immunity that bite people:
 
-1. **You cannot attack while immune.** Immunity is protection, not a free
-   swing. Attempting to initiate returns `IMMUNE`.
+1. **You cannot commit aggression while immune** — any aggression. Starting
+   a fight, deploying or attacking ordnance, planting limpets, sieging or
+   capturing ports, raiding planets, robbing traders and trading posts: all
+   of it returns `IMMUNE`. (v2.0.15 closed the loophole where an immune
+   captain could still mine a lane or strip a planet untouchable.) Peaceful
+   acts — trading, moving, even a roadside deal with a trader NPC — stay
+   legal.
 2. **Immunity is never shortened.** A lost fleet strike used to overwrite
    nearly two hours of purchased contract with a two-minute window. It
    doesn't anymore — every write extends the later of *now* and your current
@@ -235,13 +244,19 @@ to full roughly sixteen hours later if you leave it alone.
 Pirates drop 500–2,000 cr scaled by tier. Traders drop 100–500. **Patrols
 drop nothing** — killing them only buys you a warrant.
 
+**A hired retinue helps here and only here.** A tavern
+[mercenary contract](/guide/npcs/#the-tavern-retinue) adds up to +12% combat
+power against NPC opponents — pirates, patrols, traders, named captains. It
+contributes exactly nothing in PvP, port sieges or planet raids; that
+firewall is structural, not a tuning choice.
+
 ## Fleets
 
 A fleet is up to **three ships** from the **same corporation** operating as
 one.
 
-- **Forming** a fleet requires level 15 and corp membership.
-- **Joining** requires level 10 and the same corp.
+- **Forming** a fleet requires corp membership and a mid-ladder level gate.
+- **Joining** requires the same corp and an earlier gate.
 - The leader leaving disbands the fleet.
 
 A **fleet strike** costs 1 turn, is leader-only, and requires every counted

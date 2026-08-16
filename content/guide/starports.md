@@ -7,7 +7,7 @@ weight: 6
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## The eleven services
 
@@ -17,7 +17,7 @@ service isn't there, the action isn't available.
 | Service | What it does | Where |
 |---|---|---|
 | `trading` | Buy and sell commodities | Every port |
-| `banking` | Deposit and withdraw (also works anywhere) | The three starports, Federation Ports |
+| `banking` | Deposit and withdraw — you must be at a teller | The three starports, Federation Ports |
 | `shipyard` | Buy, sell and switch hulls; restock; limpet sweeps | The three starports |
 | `repair` | Restore shields and hull | The three starports, Federation Ports |
 | `upgrade` | Buy stat upgrades, drives and tech modules | Tech Ports, Pirate Haven, Merchant Exchange |
@@ -26,15 +26,22 @@ service isn't there, the action isn't available.
 | `recruitment` | Security personnel and mining workers | The three starports |
 | `defense` | **Defense contracts** (purchased PvP immunity) | Stardock, Merchant Exchange, Federation Ports |
 | `blackmarket` | Buy and fence contraband; cloaking devices | Pirate Bases, Black Markets, Pirate Haven |
-| `tavern` | Bounty office; intel | Stardock, Pirate Bases |
+| `tavern` | Rumors and intel; **mercenary retinue hiring** | Stardock, Pirate Bases, Pirate Haven |
 | `priceboard` | Galaxy-wide live price sheet | Merchant Exchange only |
 
-Two things follow from that table:
+The **bounty office** is not a service key: posting a bounty and redeeming
+faction claims happen at the two faction **capitals** — the Stardock and the
+Pirate Haven — and nowhere else.
+
+Three things follow from all that:
 
 - **The Pirate Haven does not sell defense contracts.** It is a full-service
   capital in every other respect. It does not sell law.
 - **The Merchant Exchange has no bounty office and no black market.** It is
   deliberately clean.
+- **The tavern is where mercenaries drink.** The Stardock hires the
+  Federation Auxiliary, Pirate Bases and the Haven hire the Cutthroat
+  Company. See [NPCs & Encounters](/guide/npcs/#the-tavern-retinue).
 
 ## The three starports
 
@@ -48,7 +55,8 @@ it is never out of anything. Anchors 125 / 150 / 625, tax **2%**.
 Services: trading, banking, shipyard, tavern, repair, recruitment, defense,
 supplies.
 
-Stocks the **Federation line + neutral spine**. Federation bounty claims are
+Stocks the **Federation line + neutral spine**. The Federation bounty office
+lives here: player bounties are posted here, and Federation bounty claims are
 redeemed here in person.
 
 **Docks deny alignment below −300.** If you have a Federation warrant and the
@@ -62,9 +70,10 @@ At the center of the pirate band. Pools 60k / 50k / 100k, restock 0.5,
 anchors 100 / 125 / 500, **no tax at all**.
 
 Services: trading, banking, shipyard, repair, upgrade, blackmarket,
-recruitment, supplies.
+recruitment, supplies, tavern.
 
-Stocks the **Pirate line + neutral spine**. Syndicate bounty claims are
+Stocks the **Pirate line + neutral spine**. The Syndicate bounty office lives
+here: player bounties are posted here, and Syndicate bounty claims are
 redeemed here.
 
 **Docks deny alignment above +300.** Pirate warrants arrest here on the same

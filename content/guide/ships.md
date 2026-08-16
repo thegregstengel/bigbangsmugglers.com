@@ -7,7 +7,7 @@ weight: 7
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## The shape of the catalog
 
@@ -42,15 +42,18 @@ the baseline.**
 
 ## The tier ladder
 
-| Tier | Cost | XP | Level | Shields (neutral/pirate) | Shields (Federation) |
-|---|---|---|---|---|---|
-| 1 | 5,000 | none | — | 150 | **165** |
-| 2 | 15,000 | 2,000 | 5 | 225 | **250** |
-| 3 | 40,000 | 8,000 | 12 | 350 | **385** |
-| 4 | 100,000 | 25,000 | 22 | 525 | **580** |
-| 5 | 250,000 | 60,000 | 35 | 800 | **880** |
+| Tier | Cost | Level gate | Shields (neutral/pirate) | Shields (Federation) |
+|---|---|---|---|---|
+| 1 | 5,000 | none | 150 | **165** |
+| 2 | 15,000 | early ladder | 225 | **250** |
+| 3 | 40,000 | about a quarter up | 350 | **385** |
+| 4 | 100,000 | near the middle | 525 | **580** |
+| 5 | 250,000 | about two-thirds up | 800 | **880** |
 
-Both gates apply. You need the XP total *and* the level.
+The gate *levels* are per-season: every season pins its own ladder, and each
+tier's gate lands at the same fraction of the ladder whatever its length.
+The shipyard shows your season's exact level and XP numbers, and the two
+always agree — they are derived from the same curve.
 
 Stocking is unlimited. There is no finite allocation of hulls at a shipyard —
 if the yard carries the line, it will sell you as many as you can pay for.
@@ -189,7 +192,8 @@ earning about 125 a day *every* day, not banking it once.
 ## The hangar
 
 Ships you own but aren't flying sit in your garage. You can switch between
-them at any shipyard.
+them at any shipyard — or at your own starbase, which is what makes a rim
+starbase a real forward base.
 
 - **Selling** a ship pays **64% of its purchase price**. You cannot sell your
   active ship, and you cannot sell your last ship.

@@ -7,19 +7,19 @@ weight: 17
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## Founding
 
 | | |
 |---|---|
-| Level gate | **5** |
+| Level gate | Early ladder — your first sessions |
 | Cost | **50,000 cr** — wallet first, then bank |
 | Name | 3–50 characters, unique in the galaxy |
 | Member cap | `max(10, seasonPlayerCap ÷ 5)` |
 
-Corp founding is one of exactly two things in the game the bank can pay for.
-The other is ship repair.
+Corp founding is one of only three things in the game the bank can pay for
+— the others are ship repair and public announcements.
 
 **Join policy** is set at creation and changeable by the leader:
 
@@ -61,6 +61,11 @@ A shared balance, separate from every personal wallet and bank.
 - **Fleet strike loot goes here**, not to the leader's wallet.
 - At season end, the corp bank is distributed **pro rata** among members.
 
+Since v2.0.14 the corporation also keeps a **ledger**: a members-only record
+of who deposited, withdrew, joined, was kicked, captured what, and so on —
+nineteen action kinds, every financial entry carrying its amount. Trust, but
+verify.
+
 ## Policies
 
 Four toggles, and they are real gates enforced at the module that owns the
@@ -87,7 +92,8 @@ a 30-messages-per-minute corp-wide flood cap, profanity filtered. History
 retains the **last 500 messages or 14 days, whichever is longer**.
 
 There are **no direct messages** between players. If you need to reach
-someone outside your corp, you leave a beacon in a sector or you don't.
+someone outside your corp, you leave a beacon in a sector, buy a
+[public announcement](/guide/gameplay/#announcements), or you don't.
 
 Leaders and officers can also set a **notice** (500 characters) that every
 member sees.
@@ -98,8 +104,8 @@ A fleet is up to **three ships** from the same corporation operating as one.
 
 | | |
 |---|---|
-| Form a fleet | Level **15**, must be in a corp |
-| Join a fleet | Level **10**, same corp only |
+| Form a fleet | A mid-ladder level gate, must be in a corp |
+| Join a fleet | An earlier gate, same corp only |
 | Cap | **3 ships** |
 
 The leader leaving disbands the fleet.
@@ -136,7 +142,7 @@ starports and Federation Ports is capturable.
 
 | | |
 |---|---|
-| Level gate | **15** |
+| Level gate | Mid-ladder — the same gate as planet raids |
 | Turn cost | **3** per attack |
 | Cooldown | **1 hour** per port |
 | Blocked by | An active 24-hour post-capture truce |

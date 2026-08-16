@@ -7,7 +7,7 @@ weight: 15
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## The catalog
 
@@ -25,16 +25,21 @@ mapped commodity's volume.
 
 ## Buying
 
-Requires **level 3** and a port running the `blackmarket` service: Pirate
-Bases, Black Markets and the Pirate Haven.
+Requires clearing an **early ladder gate** and a port running the
+`blackmarket` service: Pirate Bases, Black Markets and the Pirate Haven.
 
 - **1 turn** per purchase, wallet only.
 - Capped per transaction by the row.
 - **Buying is never detected.** Nobody scans you at a fence.
 
+Rim-going **trader NPCs** sometimes carry an off-market lot too — the same
+level gate applies, priced at ×1.25 of the fence shelf. See
+[NPCs](/guide/npcs/#trading-with-a-trader).
+
 ## Selling: two completely different actions
 
-Requires **level 8**. Both cost 1 turn.
+Selling sits behind its own gate, a bit deeper in the ladder than buying.
+Both actions cost 1 turn.
 
 ### At a fence — safe and flat
 
@@ -125,7 +130,7 @@ income, not a nuisance.
 | **Pirate-line hull** | **Hides 25% of your holds outright** | The scan never happens for cargo under the threshold |
 | **Hidden compartments** signature | +15% (T3) / +25% (T4) of holds, additive with the above | Plunder Barge, Marauder's Fortune |
 | **The Phantom Manifest** (epic) | **+60% of holds** | Plus the pirate-line 25% |
-| **False Manifest** module | One failed scan a day silently rerolls | Pirate-only, 20,000 cr, level 15 |
+| **False Manifest** module | One failed scan a day silently rerolls | Pirate-only, 20,000 cr, level-gated |
 | **Patrol Transponder** module | Patrols never appear at all | Federation-only — mutually exclusive with being a smuggler in practice |
 
 Stack a Marauder's Fortune (25% line + 25% signature = 50% of holds hidden)
