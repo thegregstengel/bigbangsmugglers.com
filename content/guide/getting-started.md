@@ -7,7 +7,7 @@ weight: 1
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## Get the game
 
@@ -17,7 +17,9 @@ toc: true
 
 Sign in with **email and password** (you must verify the address before you
 can play) or **Google**. Then pick a captain handle: 3 to 20 characters,
-letters, numbers and spaces only. Runs of spaces collapse to one.
+letters, numbers and spaces only. Runs of spaces collapse to one. You can
+rename yourself later — but renames carry a cooldown and post a public feed
+story connecting the old name to the new one, so a handle is not a disguise.
 
 There is no class to pick and no faction to choose. Everyone starts neutral.
 What you become is decided by what you do.
@@ -46,7 +48,7 @@ over before you can leave.
 |---|---|
 | Wallet | 5,000 cr |
 | Bank | 0 |
-| Turns | 250, resetting every 4 hours |
+| Turns | A full tank — 250 resetting every 4 hours on the default settings |
 | Alignment | 0 (True Neutral) |
 | Location | Sector 0 — the Stardock, the safest place in the galaxy |
 | Ship | SS Starter |
@@ -115,7 +117,9 @@ it gets louder the further out you go.
 **6. Bank what you can't afford to lose.**
 Your **wallet** is what gets looted when you lose a fight, robbed on a
 planet, or fined by customs. Your **bank** is never touched by any of it.
-Banking is free, instant, and available with no location requirement.
+Banking is free and instant, but **you must be docked at a port with a bank
+teller** — the three starports and Federation Ports. You are standing on one
+right now; use it before you fly somewhere dangerous.
 
 ## What changed from 1.x
 

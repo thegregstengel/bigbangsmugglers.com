@@ -7,7 +7,7 @@ weight: 12
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## StarNav 2002
 
@@ -16,9 +16,9 @@ takes no turns.
 
 | | |
 |---|---|
-| Install | 100,000 cr, requires 5,000 XP |
+| Install | 100,000 cr |
 | Upgrade | 100,000 cr × the new level — L2 200k, L3 300k, L4 400k, L5 500k |
-| XP gates | 5,000 / 10,000 / 25,000 / 50,000 / 100,000 |
+| Gates | Each level has its own season-ladder gate, mid-early at L1 to deep at L5 |
 | Max level | 5 |
 
 **Range** is `min(level, 3)` hops. Level 4 and 5 do not see further — they
@@ -112,9 +112,11 @@ defense; it is area concealment.
 
 Ports running the `tavern` or `research` service sell intel for **2,000 cr**.
 
-It reveals the **five nearest unvisited sectors** and marks them visited.
-That last part is the important bit: **warp only reaches visited sectors**,
-so intel is how you extend your warp network without flying the hops.
+It reveals the **five nearest unvisited sectors** and marks them visited —
+and since v2.0.14 the reveal names what's actually there: real ports,
+planets and landmarks, not just "a stretch of space". The visited part is
+the important bit: **warp only reaches visited sectors**, so intel is how
+you extend your warp network without flying the hops.
 
 It pays **no exploration XP** — you didn't go there. If the galaxy is fully
 explored you get `NOTHING_TO_REVEAL` and pay nothing.
@@ -130,7 +132,7 @@ Exchange is.
 
 ## Advanced Sensors
 
-The tech module (15,000 cr, level 12) is not a scanner. It is a combat
+The tech module (15,000 cr) is not a scanner. It is a combat
 counter: it cuts a stealth attacker's first-strike bonus from +12 percentage
 points of win probability down to +6.
 
@@ -139,7 +141,9 @@ for this purpose, on top of its cloak-detection bonus.
 
 ## What nobody can see
 
-- **Who owns a deployable.** Scans report kind and quantity only.
+- **Who owns a deployable** — from a scan. Scans report kind and quantity
+  only. Detonations are another matter: a mine that hits you names its
+  owner in your report.
 - **Exact player balances.** Leaderboards stopped exposing them in v2.0.8.
 - **A limpet on your hull.** Attachment is silent. The only way to find out is
   a 10,000 cr shipyard sweep.

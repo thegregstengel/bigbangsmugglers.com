@@ -7,7 +7,7 @@ weight: 20
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## What a season is
 
@@ -60,7 +60,7 @@ a combat roll, a price or a standing.
 
 Every season starts mechanically identical for everyone, permanently. A
 Mythic-tier veteran and a first-day captain begin with the same 5,000
-credits, the same 250 turns and the same SS Starter.
+credits, the same full turn tank and the same SS Starter.
 
 This is enforced by a doctrine test that walks every read site. It is not an
 aspiration.
@@ -71,6 +71,9 @@ are meant to say *what you did this season*, and they say it only while the
 season is live.
 
 ## Season end
+
+The galaxy warns you it's coming: countdown notices land at **seven days,
+three days, twenty-four hours and one hour** before the close.
 
 When a season closes, the ceremony compiles:
 

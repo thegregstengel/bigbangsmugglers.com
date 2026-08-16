@@ -7,7 +7,7 @@ weight: 2
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## The turn cycle
 
@@ -40,7 +40,11 @@ they coincide. In a season with a different cycle length they would not.
 | Buy or sell contraband | 1 |
 | Engage in combat | 1 |
 | Fleet strike | 1 |
+| Trade with a trader NPC (per deal) | 1 |
+| Rob a trader NPC | 1 |
 | Deploy or attack ordnance | 1 |
+| Destroy a foreign beacon | 1 |
+| Lay mines from a planet garrison | 1 |
 | Active scan | 1 per ring (radius 1–3) |
 | Claim a planet, build a structure | 1 |
 | Raid a planet, capture a planet | 1 each |
@@ -84,16 +88,25 @@ taken:
   by their hull tier)
 - skimmed when your planet is raided (10%, max 5,000 cr)
 - fined by customs, taken by pirate shakedowns, seized on arrest at dock
+- drawn on every world tick for wages while you hold a
+  [mercenary retinue contract](/guide/npcs/#the-tavern-retinue) — and the
+  retinue deserts the moment the wallet can't cover a tick
 
 **Bank** is safe storage. Nothing in the game takes credits out of it except
-you. There are no deposit fees, no withdrawal fees, no interest, no turn
-cost, and no location requirement — you can bank from anywhere.
+you. There are no deposit fees, no withdrawal fees, no interest, and no turn
+cost — but **moving money in or out requires a teller**: you must be docked
+at a port running the `banking` service, which means the three starports and
+Federation Ports. (This changed in v2.0.13 — banking from deep space let a
+player zero their lootable wallet from anywhere, which made credit robbery
+effectively opt-out.) Your bank *balance* still spends from nowhere at all:
+nothing buys out of the bank except the fall-through cases below.
 
-Almost everything in the game is **wallet-only**. There are exactly two
+Almost everything in the game is **wallet-only**. There are exactly three
 exceptions that draw wallet first and then fall through to the bank:
 
 1. **Ship repair.**
 2. **Founding a corporation.**
+3. **Posting a public announcement.**
 
 Everything else — hulls, upgrades, drives, modules, items, provisions, intel,
 defense contracts, bounty postings, planet claims, structures, starbases,
@@ -132,11 +145,30 @@ milestones.
 The galaxy keeps a news feed, and it is genuinely public. Battles are
 reported (destroyed / drove off / fled), tier-3+ ship commissionings post,
 planet claims and port captures post, ports shaking off their occupiers post,
-new captains and season honors post.
+new captains and season honors post. Ships lost to a minefield post, naming
+both the victim and the mine's owner. Captain renames post publicly — the
+one place the galaxy connects an old name to a new one. Goal-tier and
+streak-milestone brags post too.
+
+You can **react** to feed stories — five reaction types, pick as many as
+apply.
 
 You also have a private channel: your own events, and the "while you were
 away" recap that lists what happened since you last looked and which planets
-are ready to collect.
+are ready to collect. Since v2.0.17 the private lane also tells you when
+things happen to your *stuff*: someone destroyed your deployed ordnance,
+someone swept off your limpet tracker, or your ordnance simply decayed away.
+
+### Announcements
+
+You can buy your way onto the public feed. A **player announcement** costs
+**1,000 cr** (a pure sink — nobody receives it), is limited to **one per
+turn cycle**, runs 3–280 characters through the profanity gate, and is
+level-gated so a throwaway account is not a megaphone. Other players can
+report an announcement to the moderation desk, so make it worth the credits.
+
+Operators can also post galaxy notices of their own — those arrive as an
+in-app banner you dismiss once, not just a feed line.
 
 If you value operational secrecy, note what that means. Buying a capital-class
 hull tells everyone. Losing a fight tells everyone. Claiming a planet paints
@@ -147,7 +179,9 @@ a target.
 Corporation chat is the only in-galaxy chat: 500 characters, a 3-second
 per-player cooldown and a 30-messages-per-minute corp-wide flood cap, with
 the last 500 messages or 14 days of history retained — whichever is longer.
-There are no direct messages between players.
+There are no direct messages between players. If you need to say something
+to the whole galaxy, that's a [beacon](/guide/deployables/#navigation-beacons)
+or a paid [announcement](#announcements).
 
 Mail is account-scoped and works between seasons. Feedback goes straight to
 the developers from inside the app; 2,000 characters, and it works whether or

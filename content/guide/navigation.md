@@ -7,7 +7,7 @@ weight: 3
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## Moving
 
@@ -35,7 +35,8 @@ Moving **breaks a ship cloak**.
 
 The Warp Drive turns hops into jumps.
 
-- **Install:** 15,000 cr, requires a **tier-2+ hull** and **100 XP**.
+- **Install:** 15,000 cr, requires a **tier-2+ hull** and a few levels on
+  the season ladder — an early gate you'll clear in your first sessions.
 - **Upgrade:** 15,000 cr × the new level, to **level 5**.
 - **Cost:** `max(1, ceil(hops ÷ warpLevel))` turns.
 
@@ -70,14 +71,17 @@ Warping breaks a cloak and clears landed status.
 
 An instant jump to any visited sector, any distance, for a flat **25 turns**.
 
-- **Install:** 10,000,000 cr, tier-5 hull.
+- **Install:** 10,000,000 cr, tier-5 hull, and a level gate sitting at the
+  very top of the season's ladder.
 - No hop discovery, no interruption roll, no hazard pass-through.
 - **Exempt from every turn discount in the game.**
 
-> **Known problem.** The shipped ship catalog gates the Tesseract at *player
-> level 100*, while the progression curve caps levels at **50**. With the
-> current defaults the Tesseract cannot be installed by anyone. Treat it as
-> unavailable until a season config corrects the gate.
+> **The last unlock in the game.** The Tesseract is gated deeper in the
+> ladder than anything else — deliberately. Whether a given season's ladder
+> actually reaches it depends on that season's tuning: some running seasons
+> cap out below the gate, in which case nobody installs one there, ever.
+> Check the in-game unlock list for your season's numbers before you plan
+> around it.
 
 ## Wormholes
 

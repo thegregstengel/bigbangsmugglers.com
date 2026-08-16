@@ -7,28 +7,30 @@ weight: 18
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 ## The level curve
 
 ```
-level = floor(sqrt(XP ÷ 100)) + 1        capped at 50
-XP for level n = (n − 1)² × 100
+level = floor(sqrt(XP ÷ divisor)) + 1        capped at the season's max level
+XP for level n = (n − 1)² × divisor
 ```
 
-| Level | XP needed | Level | XP needed |
-|---|---|---|---|
-| 5 | 1,600 | 26 | 62,500 |
-| 10 | 8,100 | 30 | 84,100 |
-| 12 | 12,100 | 35 | 115,600 |
-| 15 | 19,600 | 40 | 152,100 |
-| 18 | 28,900 | 45 | 193,600 |
-| 22 | 44,100 | 50 | 240,100 |
+**The ladder is pinned per season.** The curve's divisor and level cap are
+set when a season's galaxy is created and never move mid-season. Seasons
+created before the ladder migration run a 50-level ladder; every newer
+season runs a **100-level ladder** whose divisor is tuned to its length, so
+each unlock lands at the same *fraction* of the season whether it's a 30-day
+sprint or a long grind. Same content spine, different pace.
 
-The curve is deliberately calibrated to a season: the ladder is validated at
-build time against a reference play rate of **4,500 XP a day over 12 weeks**.
-A season that shipped a top gate you couldn't reach in the time available
-wouldn't load.
+Because the numbers differ season to season, this guide describes gates by
+**depth in the ladder**, not by level number. The in-game unlock list always
+shows your season's exact levels and XP totals.
+
+The curve is deliberately calibrated to a season: the reference ladder is
+validated against a play rate of **4,500 XP a day over 12 weeks**. A season
+that shipped a top gate you couldn't reach in the time available wouldn't
+load.
 
 ## Where XP comes from
 
@@ -46,30 +48,40 @@ wouldn't load.
 Every source runs through one award path with a per-source weight (all 1.0
 today) and an optional season multiplier. There is no XP loss mechanic.
 
-## Every level gate
+## The unlock ladder, in order
 
-| Level | Unlocks |
+The *order* of unlocks is fixed doctrine; the level numbers belong to your
+season. Roughly by depth:
+
+| Depth in the ladder | Unlocks |
 |---|---|
-| 3 | Post a bounty; buy contraband |
-| **5** | **Tier 2 hulls**; Factory and Shield Generator; found a corporation |
-| 8 | Sell contraband |
-| **10** | **Claim a planet**; join a fleet |
-| **12** | **Tier 3 hulls**; Barracks |
-| **15** | Siege a port; **raid or capture a planet**; lead a fleet |
-| 18 | Citadel |
-| **22** | **Tier 4 hulls** |
-| 26 | Build a starbase |
-| **35** | **Tier 5 hulls** |
-| 40 | Tesseract drive |
+| First sessions | Post a bounty; buy contraband |
+| Early | **Tier 2 hulls**; Factory and Shield Generator; found a corporation; first retinue tier |
+| Early-mid | Sell contraband |
+| About a fifth up | **Claim a planet**; join a fleet |
+| About a quarter up | **Tier 3 hulls**; Barracks |
+| Just under a third | Siege a port; **raid or capture a planet**; lead a fleet |
+| About a third | Citadel |
+| Past two-fifths | **Tier 4 hulls** |
+| Past the midpoint | Build a starbase |
+| About two-thirds | **Tier 5 hulls** |
+| **The top of the ladder** | **Tesseract drive** |
 
-Ship tiers carry a **second** gate: an XP total (2,000 / 8,000 / 25,000 /
-60,000). Both must clear. Drives have their own XP gates on top.
+Whether a given season's ladder *reaches* the last rungs depends on its
+tuning — the older 50-level seasons cap out below the Tesseract's gate, so
+it never unlocks there. Check the unlock list in game for your season.
 
-Anything not in this table is level 1 — the gate table fails open by design.
+Ship tiers and drives also quote an **XP total** beside the level. The two
+are one gate expressed two ways — both are derived from the season's own
+curve and always agree.
+
+Anything not in this table is ungated at level 1 — the gate table fails open
+by design.
 
 ## Level ranks
 
-Cosmetic titles derived from level:
+Cosmetic titles derived from level. These thresholds are fixed in code, not
+per-season — so on a longer ladder you simply keep the top rank longer:
 
 | Level | Rank |
 |---|---|

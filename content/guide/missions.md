@@ -7,7 +7,7 @@ weight: 19
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 Three separate systems, and it's worth keeping them apart:
 
@@ -24,7 +24,9 @@ opened the Events screen. The 1.x "one mission at a time" rule is gone.
 Every objective is bound to a real, trackable action: sell N of a commodity,
 defeat N of an NPC type, visit N sectors, win N combats, collect N bounties,
 move N contraband. Descriptions are display text and are never matched
-against — the structured objective is the truth.
+against — the structured objective is the truth. Sector-visit objectives
+count **new ground only** — pacing between two charted sectors stopped
+counting in v2.0.15.
 
 Rewards are credits, XP, turns, faction standing, **alignment**, and
 sometimes items.

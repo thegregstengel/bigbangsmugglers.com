@@ -7,7 +7,7 @@ weight: 21
 toc: true
 ---
 
-*Accurate as of v2.0.8 (August 2026).*
+*Accurate as of v2.0.18 (August 2026).*
 
 Everything on this page is a **current season default**. Almost every number
 here is season configuration and can be retuned between seasons — or
@@ -40,8 +40,12 @@ right** and this page is stale. Tell us.
 | Buy or sell contraband | 1 |
 | Engage in combat | 1 |
 | Fleet strike | 1 |
+| Trade with a trader NPC (per deal) | 1 |
+| Rob a trader NPC | 1 |
 | Deploy ordnance | 1 |
 | Attack ordnance | 1 |
+| Destroy a foreign beacon | 1 |
+| Lay mines from a planet garrison | 1 |
 | Active scan | 1 per ring (radius 1–3) |
 | Warp jump | `max(1, ceil(hops ÷ warpLevel))` |
 | Tesseract jump | 25, flat |
@@ -146,13 +150,16 @@ sell payout = subtotal − floor(subtotal × tax) − floor(subtotal × fee)
 
 ### Tier ladder
 
-| Tier | Cost | XP | Level | Shields (neutral/pirate) | Shields (Federation) |
-|---|---|---|---|---|---|
-| 1 | 5,000 | — | — | 150 | 165 |
-| 2 | 15,000 | 2,000 | 5 | 225 | 250 |
-| 3 | 40,000 | 8,000 | 12 | 350 | 385 |
-| 4 | 100,000 | 25,000 | 22 | 525 | 580 |
-| 5 | 250,000 | 60,000 | 35 | 800 | 880 |
+| Tier | Cost | Ladder gate (fraction of the season ladder) | Shields (neutral/pirate) | Shields (Federation) |
+|---|---|---|---|---|
+| 1 | 5,000 | — | 150 | 165 |
+| 2 | 15,000 | early (~8%) | 225 | 250 |
+| 3 | 40,000 | ~22% | 350 | 385 |
+| 4 | 100,000 | ~43% | 525 | 580 |
+| 5 | 250,000 | ~two-thirds | 800 | 880 |
+
+Tier gates are pinned per season as a level **and** the matching XP total on
+that season's curve; the shipyard quotes both and they always agree.
 
 ### Base stats by archetype (T1 → T5)
 
@@ -211,13 +218,14 @@ regenerates.**
 
 | Drive | Install | Upgrade | Gates |
 |---|---|---|---|
-| Warp | 15,000 | 15,000 × level, to L5 | Tier 2+ hull, 100 XP |
-| StarNav 2002 | 100,000 | 100,000 × next level (L5 = 500k) | XP 5k / 10k / 25k / 50k / 100k |
-| Tesseract | 10,000,000 | — | Tier 5 hull, level 40 gate **and** catalog level 100 |
+| Warp | 15,000 | 15,000 × level, to L5 | Tier 2+ hull, an early ladder gate |
+| StarNav 2002 | 100,000 | 100,000 × next level (L5 = 500k) | Per-level ladder gates, mid-early at L1 to ~two-thirds at L5 |
+| Tesseract | 10,000,000 | — | Tier 5 hull, **the top gate of the ladder** |
 
-> The Tesseract's two gates disagree: the progression gate is level 40, the
-> catalog demands level 100, and levels cap at 50. As configured it cannot be
-> installed.
+> Whether a season's ladder reaches the Tesseract's gate is that season's
+> tuning: 50-ladder seasons created before the migration cap out below it,
+> and it never unlocks there. New seasons place it near the top of a
+> 100-level ladder. The in-game unlock list is authoritative.
 
 ### StarNav detail table
 
@@ -234,18 +242,21 @@ report at StarNav **2**.
 
 ### Tech modules
 
-| Module | Cost | Level | Effect |
-|---|---|---|---|
-| Cargo Compressors | 8,000 | 5 | +20% of base holds |
-| Shield Booster | 10,000 | 6 | +15% of base shields |
-| Attack Systems | 12,000 | 8 | +10% attack |
-| Armor Plating | 12,000 | 8 | +10% defense |
-| Combat AI | 15,000 | 10 | +20% fighter effectiveness |
-| Advanced Sensors | 15,000 | 12 | Halves a stealth first strike |
-| Warp Optimizer | 18,000 | 12 | −1 warp turn |
-| Stealth Plating | 15,000 | 15 | −30pp customs scan, +15pp escape, +12pp first strike |
-| Patrol Transponder | 20,000 | 15 | Federation only — no patrol encounters |
-| False Manifest | 20,000 | 15 | Pirate only — one failed scan/day rerolls |
+All modules are level-gated (utility modules early, stealth/faction modules
+deeper — the shop shows your season's numbers).
+
+| Module | Cost | Effect |
+|---|---|---|
+| Cargo Compressors | 8,000 | +20% of base holds |
+| Shield Booster | 10,000 | +15% of base shields |
+| Attack Systems | 12,000 | +10% attack |
+| Armor Plating | 12,000 | +10% defense |
+| Combat AI | 15,000 | +20% fighter effectiveness |
+| Advanced Sensors | 15,000 | Halves a stealth first strike |
+| Warp Optimizer | 18,000 | −1 warp turn |
+| Stealth Plating | 15,000 | −30pp customs scan, +15pp escape, +12pp first strike |
+| Patrol Transponder | 20,000 | Federation only — no patrol encounters |
+| False Manifest | 20,000 | Pirate only — one failed scan/day rerolls |
 
 ---
 
@@ -269,7 +280,7 @@ report at StarNav **2**.
 | Loser minimum loss rate | 50% |
 | Defeat loss rate (sieges, ordnance) | 75% |
 | Shield damage reduction | up to 50%, scaling on shields ÷ (shields + 100) |
-| **PvP immunity after a loss or death** | **2 minutes** |
+| **PvP immunity** — defender attacked (win or lose), attacker's loss, any death | **2 minutes** |
 | Defense contract | 4,000 cr / 2 hours, stacking |
 | XP tier multiplier | ×0.95 to ×1.20 |
 | Faction combat bonus cap | +5% |
@@ -353,14 +364,47 @@ clamped 5–95%. No-deploy in `fed_core` and `fed_space`.
 
 ### Other items
 
-| Item | Price | Max per purchase | Service |
-|---|---|---|---|
-| Goods Cloaking Device | 750 | 10 | blackmarket |
-| Ship Cloaking Device | 2,500 | 5 | blackmarket |
-| Security Personnel | 100 | 100 | recruitment |
-| Mining Workers | 300 | 100 | recruitment |
+| Item | Price | Service |
+|---|---|---|
+| Goods Cloaking Device | 750 | blackmarket |
+| Ship Cloaking Device | 2,500 | blackmarket |
+| Security Personnel | 100 | recruitment |
+| Mining Workers | 300 | recruitment |
+
+Per-purchase caps were dropped in v2.0.16 (they never limited anything); a
+10,000-unit single-order ceiling remains as a typo guard, not a game rule.
 
 Ship cloak duration: **2 hours**, fixed from activation.
+
+### Mercenary retinues
+
+| Tier | PvE bonus | Hire fee | Wage per tick |
+|---|---|---|---|
+| Escort Wing | +4% | 2,000 | 250 |
+| Veteran Wing | +8% | 8,000 | 750 |
+| Elite Wing | +12% | 25,000 | 2,000 |
+
+One contract at a time; each tier behind its own ladder gate. Wages draw
+from the **wallet** each world tick — an uncovered wage deserts before
+charging. Desertion on PvE defeat; hard cap 12 ticks (48 h). Bonus applies
+at NPC-opponent sites only — never PvP, never sieges. Hiring: stardock =
+Federation Auxiliary; pirate bases and the Haven = Cutthroat Company;
+each line refuses the hostile ±300 bucket.
+
+### Trader NPC interactions
+
+| Knob | Default |
+|---|---|
+| Buy price | standard anchor × **1.35** (guild band applies) |
+| Sell price | standard anchor × **0.65** |
+| Deals per trader per player | 3 |
+| Manifest depth (T1/T2/T3 cap per commodity) | 20 / 60 / 150 |
+| Contraband carry chance | 0 core → 35% `outer_rim`, priced fence × 1.25 |
+| Named (merchant prince) multiplier | ×5 manifest and loot, once per season |
+| Rob yield chance | `clamp(winProb − 0.15, 0.05, 0.90)` |
+| Rob cargo band (T1/T2/T3) | 5–15 / 15–40 / 40–100 units of one commodity |
+| Rob consequences | −10 alignment, +5 × tier Syndicate, −25 Guild |
+| Rob heat regions | `fed_core`, `fed_space`, `inner` → Federation bounty counter (princes ×2) |
 
 ---
 
@@ -427,7 +471,7 @@ Terror <−750 · Scourge ≤−900.
 | Siege an underworld port | +10 |
 | Siege a neutral port | −10 |
 | Bribe a patrol | −2 |
-| Rob a trader NPC | −2 |
+| Rob a trader NPC | **−10** (plus +5 × tier Syndicate, −25 Guild standing) |
 | Caught in a customs scan | −5 |
 | Contraband sale detected | −25 |
 | Siege a Federation-aligned port | −25 |
@@ -492,7 +536,7 @@ floored at 0.05
 | Knob | Default |
 |---|---|
 | Claim cost | 150,000 cr |
-| Claim level gate | 10 |
+| Claim level gate | ~a fifth up the season ladder |
 | Claim alignment gate | ±100 in aligned territory |
 | Claim alignment reward | ±250 |
 | Claim truce | 12 hours |
@@ -502,19 +546,21 @@ floored at 0.05
 | Base storage cap | 2,000 (+2,000 / Warehouse level) |
 | Base garrison cap | 500 (×2 per Citadel level) |
 | Structure max level | 5 |
-| Starbase | 1,500,000 cr, level 26, all structures at 5 |
+| Starbase | 1,500,000 cr, a past-midpoint ladder gate, all structures at 5 |
 | Export rate | 30 cr per unit |
+| Minelaying (Barracks 1+) | 6 garrison fighters + 150 cr per mine, max 20/order, 1 turn, level-gated |
+| Trading post shelf price | anchor × 0.9, floored 2% above the best local port sell price |
 
 ### Structures
 
-| Structure | Base | Multiplier | Level gate |
+| Structure | Base | Multiplier | Ladder gate |
 |---|---|---|---|
 | Warehouse | 5,000 | ×1.8 | — |
 | Habitat | 6,000 | ×1.8 | — |
-| Factory | 7,500 | ×1.8 | 5 |
-| Shield Generator | 10,000 | ×2.0 | 5 |
-| Barracks | 7,500 | ×1.9 | 12 |
-| Citadel | 25,000 | ×2.0 | 18 + Factory 3 & Shield 3 |
+| Factory | 7,500 | ×1.8 | early |
+| Shield Generator | 10,000 | ×2.0 | early |
+| Barracks | 7,500 | ×1.9 | ~a quarter up |
+| Citadel | 25,000 | ×2.0 | ~a third up + Factory 3 & Shield 3 |
 
 Level *n* costs `floor(base × multiplier^(n−1))`.
 
@@ -558,7 +604,7 @@ Capture requires the garrison at **zero**.
 
 | Knob | Default |
 |---|---|
-| Siege cost | 3 turns, level 15 |
+| Siege cost | 3 turns, behind the mid-ladder siege gate |
 | Attack cooldown | 1 hour |
 | Post-capture truce | 24 hours |
 | Corp hold cap | `max(1, members ÷ 3)` |
@@ -579,36 +625,36 @@ Never capturable: Stardock, Federation Ports, Pirate Haven, Merchant Exchange.
 ## Progression
 
 ```
-level = floor(sqrt(XP ÷ 100)) + 1        capped at 50
-XP for level n = (n − 1)² × 100
+level = floor(sqrt(XP ÷ divisor)) + 1        capped at the season's maxLevel
+XP for level n = (n − 1)² × divisor
 ```
 
-| Level | XP | Level | XP |
-|---|---|---|---|
-| 5 | 1,600 | 26 | 62,500 |
-| 10 | 8,100 | 30 | 84,100 |
-| 12 | 12,100 | 35 | 115,600 |
-| 15 | 19,600 | 40 | 152,100 |
-| 18 | 28,900 | 45 | 193,600 |
-| 22 | 44,100 | 50 | 240,100 |
+**The curve is pinned per season.** Pre-migration seasons run a 50-level
+ladder; every new season runs a 100-level ladder whose divisor is tuned to
+the season's length, so each gate lands at the same fraction of the season
+regardless of pace. Catalog XP gates (ship tiers, drives) are re-derived on
+the season's own curve, so level and XP requirements always agree.
 
-Curve validation target: 4,500 XP/day over 12 weeks.
+Curve validation target: 4,500 XP/day over 12 weeks on the reference ladder.
 
-### Level gates
+### Level gates, in ladder order
 
-| Level | Unlocks |
+| Depth (fraction of the ladder) | Unlocks |
 |---|---|
-| 3 | bounty_post, blackmarket_buy |
-| 5 | ship tier 2, factory, shield, corp_create |
-| 8 | contraband_sell |
-| 10 | planet_claim, fleet_join |
-| 12 | ship tier 3, barracks |
-| 15 | port_siege, fleet_lead |
-| 18 | citadel |
-| 22 | ship tier 4 |
-| 26 | starbase_build |
-| 35 | ship tier 5 |
-| 40 | tesseract |
+| first rungs | bounty_post, blackmarket_buy |
+| early (~8%) | ship tier 2, factory, shield, corp_create |
+| ~14% | contraband_sell |
+| ~18% | planet_claim, fleet_join |
+| ~22% | ship tier 3, barracks |
+| ~28% | port_siege, fleet_lead |
+| ~34% | citadel |
+| ~43% | ship tier 4 |
+| ~51% | starbase_build |
+| ~70% | ship tier 5 |
+| ~80% | tesseract |
+
+The in-game unlock list shows your season's exact levels. Gates fail open:
+anything not listed is available at level 1.
 
 ### Exploration XP
 
@@ -685,8 +731,8 @@ Loot tier multipliers ×0.75 / ×1.00 / ×1.25 / ×1.50 / ×1.75.
 | Jettison contraband | all contraband |
 | Bribe a pirate | 500 / 1,500 / 4,000 / 10,000 / 25,000 by tier; 65% base, +15pp if pirate-aligned |
 | Bribe a patrol | 60%, 2,000 cr fine on failure |
-| Rob a trader | alignment ≤ −500, 60%, purse 2,000 / 5,000 / 12,000 / 25,000 / 50,000 |
-| Trade with a trader | ×1.5 markup |
+| Rob a trader | yield-or-resist — see the trader-interactions table above |
+| Trade with a trader | anchor ×1.35 buy / ×0.65 sell, 3 deals — see above |
 
 Pirate ambush chance: 100% against Federation-aligned in pirate territory,
 66% elsewhere; 66% / 33% against neutrals; never against pirate-aligned.
@@ -702,7 +748,7 @@ Pirate ambush chance: 100% against Federation-aligned in pirate territory,
 | Planet density | 10% |
 | Hazard density | 6% |
 | Landmarks | 3, each with a shared 50,000 cr budget, 24h per-player cooldown |
-| Named NPCs | 10 (5 pirate, 5 Federation) |
+| Named NPCs | 12 (5 pirate, 5 Federation, 2 merchant princes) |
 | Pirate band | outermost 8% of sectors, contiguous |
 | Diagonal link fraction | 20%, of which 10% are one-way |
 | Federation highways | `max(2, sectors ÷ 500)` |
@@ -721,12 +767,12 @@ Region bands by distance from Sector 0 as a fraction of map radius:
 | Knob | Default |
 |---|---|
 | Founding cost | 50,000 cr (wallet, then bank) |
-| Level gate | 5 |
+| Level gate | early ladder |
 | Member cap | `max(10, seasonPlayerCap ÷ 5)` |
 | Name length | 3–50 |
 | Bank transaction bounds | 1 – 10,000,000 |
 | Fleet cap | 3 ships |
-| Fleet form / join | level 15 / level 10 |
+| Fleet form / join | mid-ladder gate to lead / an earlier gate to join |
 | Chat message limit | 500 characters |
 | Chat cooldown | 3s per player, 30/min per corp |
 | Chat retention | 500 messages or 14 days, whichever is longer |
@@ -734,3 +780,15 @@ Region bands by distance from Sector 0 as a fraction of map radius:
 Policy defaults: `storage.view` on, `storage.deposit` on,
 `storage.withdraw` **off**, `defenses.view` on, `defenses.place` on,
 `defenses.clear` **off**, `planet.build` **off**, `bank.spend` **off**.
+
+---
+
+## Social
+
+| Knob | Default |
+|---|---|
+| Player announcement fee | 1,000 cr (pure sink; wallet then bank) |
+| Announcements per cycle | 1 |
+| Announcement length | 3–280 characters, profanity-gated, level-gated |
+| Captain rename cooldown | 24 hours |
+| Rename feed story | public, on |

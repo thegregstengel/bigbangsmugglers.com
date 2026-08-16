@@ -9,8 +9,15 @@ cascade:
 The official guide to Big Bang Smugglers 2.0. Mechanics, real numbers, and the
 gates that actually stop you.
 
-*Rewritten from the source for v2.0.8 (August 2026). Every number here was
-read out of the shipped game, not the old guide.*
+*Rewritten from the source for v2.0.8 and refreshed for v2.0.18
+(August 2026). Every number here was read out of the shipped game, not the
+old guide.*
+
+**A note on level gates.** Unlocks in this game are level-gated, and the gate
+*numbers* are set per season: every season pins its own ladder, so the same
+unlock sits at a different level on a short ladder than on a long one. This
+guide describes gates by where they sit in the ladder — early, mid, late —
+and the in-game unlock list always shows your season's exact numbers.
 
 **Returning from 1.x?** Almost nothing carried over. Prices are dynamic now,
 ships have hull, the disabled state is gone, reputation was replaced by
@@ -68,8 +75,8 @@ StarNav tiers, active scans, what cloaks hide and what they don't, and paid
 intel.
 
 ### [NPCs & Encounters](npcs)
-Pirates, patrols, traders, named captains, and every way out of a contact
-that isn't a fight.
+Pirates, patrols, traders, named captains, roadside deals and robberies,
+tavern retinues, and every way out of a contact that isn't a fight.
 
 ### [Factions, Alignment & Standing](reputation-factions)
 The two axes, how to actually earn alignment, price bands, docking gates,
@@ -87,8 +94,8 @@ trading posts.
 Founding, roles, the corp bank, policies, fleets, and corp-held ports.
 
 ### [Progression](progression)
-XP, levels, every level gate in one table, roles, insignia, prestige, and
-the leaderboards.
+XP, levels, the unlock ladder in order, roles, insignia, prestige, and the
+leaderboards.
 
 ### [Missions, Goals & Streaks](missions)
 Daily and season events, the Bronze/Silver/Gold ladders, the epic ladders,
