@@ -82,6 +82,10 @@ We use Firebase (provided by Google) for:
 - **Firebase Crashlytics** — crash reporting on the Android app. Crash
   reports are associated with your account identifier and retained by
   Crashlytics for up to **90 days**.
+- **Google Analytics for Firebase** — anonymous usage analytics on the
+  **web version** of the Game (page views, session counts, and device
+  characteristics), used to understand overall usage. We do not use it
+  for advertising.
 
 Firebase may collect technical data in accordance with
 [Google's Privacy Policy](https://policies.google.com/privacy).
