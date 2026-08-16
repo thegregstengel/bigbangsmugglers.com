@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Big Bang Smugglers — Turn-Based Space Trading</title>
-  <meta name="description" content="Turn-based space trading for Android. Trade commodities, fight rivals, hunt bounties, and build planets across procedurally generated galaxies. Two factions. 250 turns every 4 hours." />
+  <meta name="description" content="Turn-based space trading for Android and web. Trade commodities, fight rivals, run contraband, and build planets across procedurally generated galaxies. Every season is its own galaxy — sprints and marathons, each tuned to its length." />
   <link rel="icon" href="/big-bang-smugglers.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
@@ -102,10 +102,10 @@
 </head>
 <body class="min-h-screen bg-terminal-bg text-gray-300 overflow-x-hidden font-sans">
 
-  <!-- Alpha Banner -->
+  <!-- Announcement Banner -->
   <div class="fixed top-0 left-0 right-0 z-50 bg-phosphor-cyan/10 border-b border-phosphor-cyan/20 text-center py-2 px-4">
     <p class="font-mono text-xs text-phosphor-cyan sm:tracking-wider glow-cyan">
-      v2.0.0 NOW AVAILABLE — <a href="#whats-new" class="underline underline-offset-2 hover:text-white transition-colors">See what's new</a>
+      BIG BANG SMUGGLERS 2.0 IS LIVE — <a href="#whats-new" class="underline underline-offset-2 hover:text-white transition-colors">See what's new</a>
     </p>
   </div>
 
@@ -184,8 +184,8 @@
       </h1>
 
       <p class="text-lg md:text-xl text-gray-400 mb-14 max-w-2xl mx-auto font-light leading-relaxed">
-        Two factions. Three commodities. 250 turns every 4 hours.<br class="hidden md:block" />
-        Every 30 days, the galaxy resets.
+        Two factions. Three commodities. A galaxy full of rivals.<br class="hidden md:block" />
+        Every season is its own galaxy — sprints and marathons, each tuned to its length.
       </p>
 
       {{/* Quote used with permission (2026-08-12). The asterisk targets the
@@ -210,13 +210,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             Google Play
           </a>
-          <span class="font-mono text-sm border border-terminal-border text-gray-600 px-8 py-3.5 tracking-wider flex items-center gap-3 cursor-default opacity-60">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.82.487 3.53 1.338 5L2 22l5-1.338A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/><path d="M17 12H7M12 7v10"/></svg>
-            Apple &middot; Coming Soon
-          </span>
           <a href="https://play.bigbangsmugglers.com" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-amber/40 text-phosphor-amber px-8 py-3.5 tracking-wider flex items-center gap-3 hover:bg-phosphor-amber/10 transition-all duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            Web &middot; Beta Live
+            Play on the Web
           </a>
         </div>
         <!-- Community buttons -->
@@ -255,7 +251,7 @@
           <div class="font-mono text-xs text-phosphor-green mb-4 tracking-wider glow-green">[TRADE]</div>
           <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-green transition-colors">Trade Routes</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Three commodities: fuel, organics, equipment. Buy where prices are low, sell where they're high. Better ships carry more per run. Better routes mean bigger margins.
+            Three commodities: fuel, organics, equipment. Ports run a living supply-and-demand market — buy where prices are low, sell where they're high. Better ships carry more per run. Better routes mean bigger margins.
           </p>
         </div>
 
@@ -264,7 +260,7 @@
           <div class="font-mono text-xs text-phosphor-amber mb-4 tracking-wider glow-amber">[COMBAT]</div>
           <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-amber transition-colors">PvP Combat</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Attack rival captains in neutral or pirate sectors. Win and loot up to 25% of their credits and 30% of their cargo. Fighters, shields, and torpedoes decide the outcome.
+            Attack rival captains anywhere outside patrolled Federation space. Win and loot a cut of their credits and cargo — pirate captains loot hardest. Fighters, shields, torpedoes, and your hull decide the outcome; when it fails, there's always the escape pod.
           </p>
         </div>
 
@@ -273,7 +269,7 @@
           <div class="font-mono text-xs text-phosphor-cyan mb-4 tracking-wider glow-cyan">[PLANETS]</div>
           <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-cyan transition-colors">Planet Development</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Claim an unclaimed planet. Deploy workers. Build factories and warehouses. Collect daily production and sell it. Build a Trading Post for passive income.
+            Claim an unclaimed planet and grow its population. Build up six structures — factories, warehouses, habitats, shields, barracks, a citadel. Production rolls in every 4-hour cycle; a starbase caps it all off.
           </p>
         </div>
 
@@ -282,7 +278,7 @@
           <div class="font-mono text-xs text-red-400 mb-4 tracking-wider" style="text-shadow: 0 0 8px rgba(239,68,68,0.4);">[BOUNTY]</div>
           <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-red-400 transition-colors">Bounty Hunting</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Post a price on a rival captain. Anyone who defeats them collects the reward. Or hunt wanted players yourself and claim the payout at the contract office.
+            Post a price on a rival captain — anyone who defeats them collects. Faction bounties turn your wins into claims you redeem in person at the issuing faction's registry. The wanted list is always hiring.
           </p>
         </div>
       </div>
@@ -299,7 +295,7 @@
       <h2 class="font-mono text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
         No Two Galaxies Are the Same
       </h2>
-      <p class="text-gray-600 text-sm mb-16 max-w-lg">Procedurally generated. Seasonally reset. Your choices shape every run.</p>
+      <p class="text-gray-600 text-sm mb-16 max-w-lg">Procedurally generated. Reborn every season. Your choices shape every run.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
         <!-- Federation or Pirate -->
@@ -309,7 +305,7 @@
             <h3 class="text-lg font-semibold text-white group-hover:text-phosphor-green transition-colors">Federation or Pirate</h3>
           </div>
           <p class="text-gray-500 text-sm leading-relaxed pl-8">
-            Start neutral. Run Federation trade routes and your alignment shifts toward law. Smuggle contraband through pirate havens and it shifts the other way. Your faction affects prices, port access, and how NPCs treat you.
+            Start neutral. Every action moves your standing — hunt pirates and run clean routes, or sell contraband and shoot first. Alignment changes your prices, your port access, which hulls you can fly, and whether patrols wave you through or open fire.
           </p>
         </div>
 
@@ -317,10 +313,10 @@
         <div class="terminal-card border border-terminal-border hover:border-phosphor-cyan/30 p-6 group">
           <div class="flex items-baseline gap-3 mb-3">
             <span class="font-mono text-phosphor-cyan text-xs glow-cyan">02</span>
-            <h3 class="text-lg font-semibold text-white group-hover:text-phosphor-cyan transition-colors">Three Territories</h3>
+            <h3 class="text-lg font-semibold text-white group-hover:text-phosphor-cyan transition-colors">A Gradient of Danger</h3>
           </div>
           <p class="text-gray-500 text-sm leading-relaxed pl-8">
-            Federation space is safe, taxed, and PvP-free. Neutral sectors are the frontier — mixed risk, PvP-enabled. Pirate space has no law, high NPC aggression, and the only ports that deal when your rep is in the red.
+            From the Federation core to the outer rim, every galaxy runs a danger gradient: patrolled, PvP-free Federation space; open frontier sectors; and lawless pirate pockets on the rim — where the richest planets and the black markets wait.
           </p>
         </div>
 
@@ -328,10 +324,10 @@
         <div class="terminal-card border border-terminal-border hover:border-phosphor-amber/30 p-6 group">
           <div class="flex items-baseline gap-3 mb-3">
             <span class="font-mono text-phosphor-amber text-xs glow-amber">03</span>
-            <h3 class="text-lg font-semibold text-white group-hover:text-phosphor-amber transition-colors">30-Day Seasons</h3>
+            <h3 class="text-lg font-semibold text-white group-hover:text-phosphor-amber transition-colors">Seasons of Every Size</h3>
           </div>
           <p class="text-gray-500 text-sm leading-relaxed pl-8">
-            Every season starts in a new procedurally generated galaxy. Sectors, prices, and planets all reset. XP earns rank. Your season record persists permanently. Final standings lock when the galaxy closes.
+            Every season is a freshly generated galaxy — sprints and marathons, small maps and sprawling ones, each tuned to its length. Final standings lock when the galaxy closes, and your record carries forward as permanent prestige.
           </p>
         </div>
 
@@ -342,7 +338,7 @@
             <h3 class="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors">Corporations</h3>
           </div>
           <p class="text-gray-500 text-sm leading-relaxed pl-8">
-            Form or join a corporation. Corp membership shows on the leaderboard. Leaders hold faction-specific titles. Coordinate planet defense, territory control, and the seasonal standings together.
+            Form or join a corporation. Fly together as a fleet, capture and hold ports, share planets under corp policy, and climb the seasonal standings under one banner.
           </p>
         </div>
       </div>
@@ -364,26 +360,26 @@
         <div class="border border-terminal-border p-8 md:p-10">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div>
-              <h3 class="font-mono text-lg font-semibold mb-5 text-phosphor-cyan glow-cyan">Six Lines &middot; Five Tiers</h3>
+              <h3 class="font-mono text-lg font-semibold mb-5 text-phosphor-cyan glow-cyan">Nine Lines &middot; Five Tiers</h3>
               <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                Federation and Pirate yards build differently. Federation ships favor cargo capacity and defense. Pirate ships lean aggressive — more fighters, better escape ratings.
+                45 purchasable hulls across nine lines. The neutral spine is open to anyone. Federation hulls ship with reinforced shields; Pirate hulls run better escape ratings and hidden compartments customs scans can't see. Six epic hulls can't be bought at all — only earned.
               </p>
               <div class="space-y-3 font-mono text-sm">
                 <div class="flex items-center gap-3">
+                  <span class="text-phosphor-green text-xs">></span>
+                  <span class="text-gray-300">Neutral: Trading, War, Balanced</span>
+                </div>
+                <div class="flex items-center gap-3">
                   <span class="text-phosphor-cyan text-xs">></span>
-                  <span class="text-gray-300">Fed: Trading, War, Balanced</span>
+                  <span class="text-gray-300">Fed: Patrol, Enforcer, Dreadnought</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <span class="text-phosphor-amber text-xs">></span>
                   <span class="text-gray-300">Pirate: Smuggling, Raider, Corsair</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <span class="text-phosphor-green text-xs">></span>
-                  <span class="text-gray-300">T1 open to all. T5 requires 60,000 XP</span>
-                </div>
-                <div class="flex items-center gap-3">
                   <span class="text-gray-600 text-xs">></span>
-                  <span class="text-gray-300">Upgrade holds, shields, fighters, warp</span>
+                  <span class="text-gray-300">Tiers unlock as you level. Upgrade holds, shields, fighters, torpedoes</span>
                 </div>
               </div>
             </div>
@@ -391,18 +387,18 @@
               <div class="font-mono text-center">
                 <p class="text-xs text-gray-600 mb-4 tracking-widest">SHIP PROGRESSION</p>
                 <div class="border border-terminal-border p-4 mb-3">
-                  <p class="text-phosphor-green text-sm glow-green">Frontier Scout</p>
-                  <p class="text-gray-600 text-xs mt-1">Tier 1 · 0 XP</p>
+                  <p class="text-phosphor-green text-sm glow-green">SS Starter</p>
+                  <p class="text-gray-600 text-xs mt-1">Where every season begins</p>
                 </div>
                 <div class="text-gray-600 text-xs my-2 tracking-widest">· · ·</div>
                 <div class="border border-phosphor-cyan/20 p-4 mt-3">
-                  <p class="text-phosphor-cyan text-sm glow-cyan">Federation Galleon</p>
-                  <p class="text-gray-600 text-xs mt-1">Tier 5 · 60,000 XP</p>
+                  <p class="text-phosphor-cyan text-sm glow-cyan">Star Galleon</p>
+                  <p class="text-gray-600 text-xs mt-1">Tier 5 · Trading flagship</p>
                 </div>
                 <p class="text-gray-600 text-[10px] mt-3 tracking-wider">— OR —</p>
                 <div class="border border-phosphor-amber/20 p-4 mt-3">
                   <p class="text-phosphor-amber text-sm glow-amber">Pirate Leviathan</p>
-                  <p class="text-gray-600 text-xs mt-1">Tier 5 · 60,000 XP</p>
+                  <p class="text-gray-600 text-xs mt-1">Tier 5 · Smuggling flagship</p>
                 </div>
               </div>
             </div>
@@ -417,12 +413,12 @@
     <div class="container mx-auto px-6">
       <div class="flex items-center gap-3 mb-4">
         <span class="font-mono text-xs text-phosphor-green glow-green">!</span>
-        <span class="font-mono text-xs text-gray-600 tracking-widest uppercase">changelog // v2.0.0</span>
+        <span class="font-mono text-xs text-gray-600 tracking-widest uppercase">changelog // 2.0</span>
       </div>
       <h2 class="font-mono text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-        What's New in v2.0.0
+        What's New in 2.0
       </h2>
-      <p class="text-gray-500 text-sm mb-12 max-w-2xl">Not an update — a re-founding. The entire game has been rebuilt from the engine up, seventeen game systems were redesigned, the universe starts fresh with no carried history, and the game now lives at play.bigbangsmugglers.com.</p>
+      <p class="text-gray-500 text-sm mb-12 max-w-2xl">Not an update — a re-founding. The entire game was rebuilt from the engine up, seventeen game systems were redesigned, the universe started fresh with no carried history, and the game now lives at play.bigbangsmugglers.com.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mb-16">
         <!-- Daily Events -->
@@ -430,7 +426,7 @@
           <div class="font-mono text-xs text-phosphor-cyan mb-4 tracking-wider glow-cyan">[UNIVERSE]</div>
           <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-cyan transition-colors">A Fresh Universe</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            A clean slate for everyone — veterans and new captains alike start from zero: new accounts, new galaxies, no carried history. The v1 record books are archived with honor; the new ones open today. Sign up takes seconds with Google or email.
+            A clean slate for everyone — veterans and new captains alike started from zero: new accounts, new galaxies, no carried history. The v1 record books are archived with honor; the new ones are open. Signing up takes seconds.
           </p>
         </div>
 
@@ -439,7 +435,7 @@
           <div class="font-mono text-xs text-phosphor-green mb-4 tracking-wider glow-green">[ENGINE]</div>
           <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-phosphor-green transition-colors">A New Engine</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            A completely new platform: instant turn resolution, galaxy generation in seconds instead of half-hours, and live balance tuning that lets seasons run different rules without app updates. You will feel it as speed, everywhere.
+            A completely new platform: instant turn resolution, galaxy generation in seconds instead of half-hours, and live balance tuning that lets every season run its own rules — different sizes, different lengths, different knobs — without app updates.
           </p>
         </div>
 
@@ -457,21 +453,21 @@
           <div class="font-mono text-xs text-red-400 mb-4 tracking-wider" style="text-shadow: 0 0 8px rgba(239,68,68,0.4);">[PLAY ANYWHERE]</div>
           <h3 class="text-lg font-semibold mb-3 text-white group-hover:text-red-400 transition-colors">Browser &amp; Android</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
-            The web game is live now at play.bigbangsmugglers.com — no install needed. The Android 2.0 update rolls out on Google Play, and existing installs update in place.
+            Play in your browser at play.bigbangsmugglers.com — no install needed — or on Android from Google Play. One account, the same galaxy, wherever you sign in.
           </p>
         </div>
       </div>
 
       <!-- Release Banner -->
       <div class="border border-phosphor-cyan/20 bg-terminal-surface p-8 max-w-3xl mx-auto text-center">
-        <p class="font-mono text-xs text-phosphor-cyan tracking-widest uppercase mb-4 glow-cyan">Transmission Incoming</p>
-        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">v2.0.0 — Big Bang Smugglers 2.0: A New Universe</h3>
+        <p class="font-mono text-xs text-phosphor-cyan tracking-widest uppercase mb-4 glow-cyan">Transmission</p>
+        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Big Bang Smugglers 2.0: A New Universe</h3>
         <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xl mx-auto">
-          A completely rebuilt engine, seventeen redesigned game systems, a fresh universe with no carried history, and a new home in your browser at play.bigbangsmugglers.com — with the Android 2.0 update rolling out on Google Play.
+          A completely rebuilt engine, seventeen redesigned game systems, a fresh universe with no carried history, and a new home in your browser at play.bigbangsmugglers.com — plus the full game on Android via Google Play.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-green/50 text-phosphor-green px-6 py-2.5 hover:bg-phosphor-green/10 transition-all duration-200 tracking-wider">
-            Download v2.0.0
+            Get It on Google Play
           </a>
           <a href="/release-notes/2026-07-31-v2-0-0-a-new-universe/" class="font-mono text-sm border border-terminal-border text-gray-500 px-6 py-2.5 hover:border-gray-600 hover:text-gray-400 transition-all duration-200 tracking-wider">
             Full Release Notes
@@ -487,16 +483,20 @@
       <p class="font-mono text-xs text-gray-600 tracking-[0.3em] uppercase mb-8">sys.status // season_active</p>
 
       <h2 class="font-mono text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 tracking-tight">
-        250 Turns. Two Factions.
+        Two Factions. One Galaxy.
       </h2>
       <p class="text-xl md:text-2xl text-gray-500 mb-14 font-light">
-        One galaxy. Thirty days. Make it count.
+        Yours until the season ends. Make it count.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
         <a href="https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-green/50 text-phosphor-green px-8 py-3.5 hover:bg-phosphor-green/10 transition-all duration-200 tracking-wider flex items-center gap-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           Google Play
+        </a>
+        <a href="https://play.bigbangsmugglers.com" target="_blank" rel="noopener" class="font-mono text-sm border border-phosphor-amber/40 text-phosphor-amber px-8 py-3.5 hover:bg-phosphor-amber/10 transition-all duration-200 tracking-wider flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Play on the Web
         </a>
         <a href="/guide" class="font-mono text-sm border border-terminal-border text-gray-500 px-8 py-3.5 hover:border-gray-600 hover:text-gray-400 transition-all duration-200 tracking-wider">
           Player Guide
@@ -523,6 +523,21 @@
           <a href="/release-notes" class="font-mono text-xs text-gray-600 hover:text-gray-400 transition-colors tracking-wider">Release Notes</a>
           <a href="/privacy" class="font-mono text-xs text-gray-600 hover:text-gray-400 transition-colors tracking-wider">Privacy</a>
           <a href="/delete-account" class="font-mono text-xs text-gray-600 hover:text-gray-400 transition-colors tracking-wider">Delete Account</a>
+        </div>
+        {{/* Rights notice — the target of the asterisk on the Pritchett quote in
+             the hero. Same text as _partials/custom/footer.html (#tw-rights): his
+             words and the Trade Wars attribution travel together on every page.
+             This standalone template doesn't render the theme footer partial, so
+             the notice is carried inline here. Do not reword. */}}
+        <div id="tw-rights" class="max-w-2xl mx-auto mb-6 text-xs text-gray-600 leading-relaxed">
+          <p>
+            <span aria-hidden="true">*</span>
+            Big Bang Smugglers is an independent game, inspired by the classic BBS door game
+            <em>Trade Wars</em>.
+            <em>Trade Wars 2002</em> is copyright &copy; John Pritchett.
+            <em>Trade Wars</em>&trade; is a trademark of John Pritchett.
+            Big Bang Smugglers is not affiliated with or endorsed by John Pritchett.
+          </p>
         </div>
         <p class="font-mono text-xs text-gray-700">
           &copy; 2024&ndash;2026 <a href="https://protovisiongames.com" target="_blank" rel="noopener" class="hover:text-gray-500 transition-colors underline underline-offset-2 decoration-gray-800">Protovision Games</a>
