@@ -1,0 +1,38 @@
+{{/* Palette bridge: pulls the Hextra-themed pages (guide, release notes,
+     privacy, delete-account) onto the game client's navy/mint theme so they
+     match the custom homepage. Drop-in; no theme files are edited. */}}
+<style>
+  :root, html.dark {
+    --bbs-bg: #0a192f;
+    --bbs-surface: #112240;
+    --bbs-inset: #0f3460;
+    --bbs-border: #1e2a4a;
+    --bbs-text: #ccd6f6;
+    --bbs-text-dim: #8892b0;
+    --bbs-mint: #64ffda;
+    --bbs-gold: #fbbf24;
+    --bbs-coral: #ff6b6b;
+  }
+  html, body { background: var(--bbs-bg) !important; color: var(--bbs-text) !important; }
+  body { font-family: "Archivo", system-ui, -apple-system, sans-serif; }
+  h1, h2, h3, h4, h5 { color: var(--bbs-text) !important; letter-spacing: -0.02em; }
+  p, li, td, dd { color: var(--bbs-text-dim) !important; }
+  a { color: var(--bbs-mint) !important; }
+  a:hover { color: #9df0dd !important; }
+  code, pre, kbd { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  code { background: var(--bbs-inset) !important; color: var(--bbs-text) !important; }
+  pre { background: var(--bbs-surface) !important; border: 1px solid var(--bbs-border) !important; }
+  /* chrome: navbar, sidebar, footer, cards */
+  .hextra-navbar, nav, aside, footer, .sidebar-container { background: var(--bbs-bg) !important; }
+  .hextra-navbar, footer, aside { border-color: var(--bbs-border) !important; }
+  hr, .hx\:border-gray-200, [class*="border-neutral-800"], [class*="border-gray-200"] { border-color: var(--bbs-border) !important; }
+  blockquote { border-left: 3px solid var(--bbs-mint) !important; background: var(--bbs-surface) !important; }
+  table th { background: var(--bbs-inset) !important; color: var(--bbs-text) !important; }
+  table td, table th { border-color: var(--bbs-border) !important; }
+  /* active sidebar/toc item picks up the signature mint */
+  aside a[class*="text-primary"], aside a[aria-current="page"] { color: var(--bbs-mint) !important; }
+  /* search + inputs */
+  input, select, textarea { background: var(--bbs-surface) !important; color: var(--bbs-text) !important; border-color: var(--bbs-border) !important; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
