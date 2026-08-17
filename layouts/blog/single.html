@@ -1,4 +1,6 @@
-{{/* One release note. */}}
+{{/* One release note. Lives in layouts/blog/ (not layouts/release-notes/)
+     because every release note sets `type: blog` in front matter, and Hugo
+     resolves layouts by type. */}}
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}">
   <head>{{ partial "custom/bbs-head.html" . }}</head>

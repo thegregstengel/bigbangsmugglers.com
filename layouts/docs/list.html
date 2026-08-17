@@ -1,4 +1,6 @@
-{{/* Guide index — the section's own copy, then a card per section. */}}
+{{/* Guide index — the section's own copy, then a card per section.
+     Lives in layouts/docs/ (not layouts/guide/) because content/guide/_index.md
+     cascades `type: docs`, and Hugo resolves layouts by type. */}}
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}">
   <head>{{ partial "custom/bbs-head.html" . }}</head>

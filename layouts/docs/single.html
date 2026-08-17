@@ -1,5 +1,7 @@
 {{/* Standalone guide page — sidebar of every guide section, markdown body,
-     in-page contents, and prev/next. Does not use the Hextra docs layout. */}}
+     in-page contents, and prev/next. Does not use the Hextra docs layout.
+     Lives in layouts/docs/ (not layouts/guide/) because content/guide/_index.md
+     cascades `type: docs`, and Hugo resolves layouts by type. */}}
 {{- $guide := site.GetPage "/guide" -}}
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}">

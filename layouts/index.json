@@ -1,0 +1,10 @@
+{{- /* Site search index consumed by custom/bbs-search.html.
+     Emitted at /index.json because hugo.toml lists "JSON" in outputs.home. */ -}}
+{{- $docs := slice -}}
+{{- range site.RegularPages -}}
+  {{- $docs = $docs | append (dict
+        "title" .Title
+        "url" .RelPermalink
+        "content" (replaceRE `\s+` " " .Plain | chomp)) -}}
+{{- end -}}
+{{- $docs | jsonify -}}

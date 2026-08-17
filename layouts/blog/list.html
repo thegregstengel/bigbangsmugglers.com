@@ -1,4 +1,6 @@
-{{/* Release notes index, grouped by year, newest first. */}}
+{{/* Release notes index, grouped by year, newest first. Lives in
+     layouts/blog/ (not layouts/release-notes/) because the section sets
+     `type: blog` in front matter, and Hugo resolves layouts by type. */}}
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}">
   <head>{{ partial "custom/bbs-head.html" . }}</head>

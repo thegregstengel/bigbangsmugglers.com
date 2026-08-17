@@ -1,3 +1,8 @@
 
 # Paperclip/agent scaffolding — never part of the site
 .agents/
+.claude/
+
+# Local Hugo build output — deploys happen in CI
+public/
+.hugo_build.lock
