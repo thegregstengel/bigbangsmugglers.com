@@ -40,6 +40,7 @@ load.
 | **Trade** | `floor(subtotal ÷ 500)` per leg |
 | **Combat** | Scaled by how close the fight was and both hull tiers, 50–450 for the winner |
 | **Missions** | 200–5,000 per event |
+| **Planets** | `60 × weight × level reached` per structure level (60–900), 1 per Mining Worker colonized — see [Planets](/guide/planets/) |
 | **Goals** | 100–2,000 per tier |
 | **Streaks** | 50–1,000 per milestone |
 
