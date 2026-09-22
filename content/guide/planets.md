@@ -56,6 +56,30 @@ structure level 3**.
 The ×2.0 multipliers bite. A level-5 Citadel costs 25,000 × 2⁴ = 400,000 on
 its own, and the full ladder to Citadel 5 is 775,000 cr.
 
+### Planet XP
+
+Since v2.3.0, building earns experience. Each structure level pays
+`60 × weight × the level you just reached`, where the weight tracks how
+expensive the structure is:
+
+| Structure | Weight | Level 1 | Level 5 | All five levels |
+|---|---|---|---|---|
+| Warehouse | 1 | 60 | 300 | 900 |
+| Habitat | 1 | 60 | 300 | 900 |
+| Factory | 1.25 | 75 | 375 | 1,125 |
+| Barracks | 1.25 | 75 | 375 | 1,125 |
+| Shield Generator | 1.5 | 90 | 450 | 1,350 |
+| Citadel | 3 | 180 | 900 | 2,700 |
+
+Maxing every structure on one planet pays **8,100 XP**. Colonizing pays
+**1 XP per Mining Worker** deployed. Each level pays once per planet — a
+captured planet's structures come with it, so there is nothing to re-farm.
+Your season's XP multiplier applies on top, and these are season
+configuration, so the numbers can differ between seasons.
+
+Building a structure also counts toward **"upgrade a planet" mission
+objectives**, which could never complete before v2.3.0.
+
 ## Production
 
 Every 4-hour world tick:
