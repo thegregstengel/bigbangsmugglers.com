@@ -155,7 +155,8 @@ apply.
 
 You also have a private channel: your own events, and the "while you were
 away" recap that lists what happened since you last looked and which planets
-are ready to collect. Since v2.0.17 the private lane also tells you when
+have full storage (production collects itself since v2.3.0, so a full
+warehouse is the one thing that loses you output). Since v2.0.17 the private lane also tells you when
 things happen to your *stuff*: someone destroyed your deployed ordnance,
 someone swept off your limpet tracker, or your ordnance simply decayed away.
 

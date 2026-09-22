@@ -23,7 +23,7 @@ Three commodities: fuel, organics, equipment. Buy where prices are low, sell whe
 Attack rival captains in neutral or pirate sectors. Win and loot up to 25% of their credits and 30% of their cargo. Your fighters, shields, and torpedoes decide the outcome — combat is automatic.
 
 ### 🌍 Planet Development
-Claim an unclaimed planet. Deploy workers. Build factories and warehouses. Collect daily production and sell it. Build a Trading Post and earn passive income while you do other things.
+Claim an unclaimed planet. Deploy workers. Build factories and warehouses. Production stores itself on the planet every cycle — haul it out and sell it. Build a Trading Post and earn passive income while you do other things.
 
 ### 🎯 Bounty Hunting
 Post a price on a rival captain. Anyone who defeats them in PvP collects the reward automatically. Or hunt wanted players yourself and claim the payout at the contract office.

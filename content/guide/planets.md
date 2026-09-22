@@ -91,12 +91,23 @@ population, 0 turns, clamped at the cap. Workers cost 300 cr each at any
 `recruitment` service. Buying the population is dramatically faster than
 growing it.
 
-Production must be **collected** — it accrues until you show up.
+**Production collects itself** (since v2.3.0). Every tick, the output goes
+straight into the planet's storage — you never have to fly out and press
+Collect. A fresh claim banks its first batch the moment you claim it.
+
+The one thing to watch is **storage space**. If a cycle's output doesn't
+fit, every commodity is scaled down by the same ratio to what does fit, and
+the rest is lost. The planet screen shows each cycle's output against your
+free storage and warns you before that happens, and the "while you were
+away" summary names any planet whose storage is full. Haul goods out, feed a
+trading post, or build Warehouse levels to keep it flowing.
 
 ## Storage
 
 Base 2,000, +2,000 per Warehouse level, so a maxed Warehouse holds 12,000.
 Equipment counts **double** against the cap, exactly as it does in your holds.
+Because production now lands here automatically, storage is also your
+production buffer: a full warehouse means lost output (see Production above).
 
 Deposits and withdrawals cost **0 turns** and are capped by your holds.
 
