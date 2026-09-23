@@ -1,299 +1,186 @@
-{{/* Homepage. Sections are still inline-styled; Phase 4 rebuilds them on the shared components. */}}
+{{/* Homepage, built on the shared components. Sections: hero + phone, stat strip, a turn on the phone,
+     core systems, the galaxy, fleet registry, progression, quote, latest release + start here, final CTA. */}}
 {{ define "main" }}
-<div class="home-sections">
+{{- $d := site.Data.site -}}
+{{- $releases := where (where site.RegularPages "Section" "releases") ".Params.entry" "release" -}}
+{{- $latest := index ($releases.ByDate.Reverse) 0 -}}
+{{- $guide := site.GetPage "/guide" -}}
 
-  
-  <section style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-bottom: 1px solid var(--line);">
-    <div style="padding: 72px 56px 64px 28px; border-right: 1px solid var(--line);">
-      <div style="display: flex; gap: 10px; margin-bottom: 26px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;">
-        <span style="padding: 5px 9px; background: var(--mint); color: var(--bg);">Mobile-first</span>
-        <span style="padding: 5px 9px; border: 1px solid var(--line-strong); color: var(--muted);">Turn-based</span>
-        <span style="padding: 5px 9px; border: 1px solid var(--line-strong); color: var(--muted);">Async multiplayer</span>
-        <span style="padding: 5px 9px; border: 1px solid var(--line-strong); color: var(--muted);">Free</span>
+<section class="home-hero">
+  <div class="wrap home-hero-grid">
+    <div class="home-hero-copy">
+      <div class="tag-row">
+        <span class="chip chip-mint">Turn-based</span><span class="chip">Async multiplayer</span><span class="chip">Free</span><span class="chip">Android + browser</span>
       </div>
-      <h1 style="font-family: var(--sans); font-weight: 700; font-size: 64px; line-height: 1.0; letter-spacing: -0.035em; margin: 0 0 22px;">Run a galaxy from your phone.</h1>
-      <p style="font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 32em; margin: 0 0 32px; text-wrap: pretty;">Built for the phone in your pocket, five minutes at a time. Trade three commodities, pick a faction, take a planet, hunt a bounty — the season keeps running while you're away.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px;">
-        <a href="https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers" style="padding: 14px 24px; border-radius: var(--r-sm); background: var(--mint); color: var(--bg); font-size: 15.5px; font-weight: 600;">Install on Android</a>
-        <a href="https://play.bigbangsmugglers.com" style="padding: 14px 24px; border-radius: var(--r-sm); border: 1px solid var(--line-strong); color: var(--text); font-size: 15.5px; font-weight: 600;">Play in browser</a>
+      <h1>Run a galaxy from your phone.</h1>
+      <p class="home-lede">Built for the phone in your pocket, five minutes at a time. Trade three commodities, pick a faction, take a planet, hunt a bounty. The season keeps running while you're away.</p>
+      <div class="home-cta">
+        <a class="btn btn-primary" href="{{ $d.play.android }}">Install on Android</a>
+        <a class="btn btn-ghost" href="{{ $d.play.web }}">Play in browser</a>
       </div>
-      <div style="font-family: var(--mono); font-size: 12px; color: var(--muted);">One account · same galaxy on phone and web</div>
+      <p class="home-fine mono">One account · same galaxy on phone and web</p>
     </div>
-    <div style="display: grid; grid-template-rows: auto 1fr;">
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line);">
-        <div style="padding: 20px 18px; border-right: 1px solid var(--line);">
-          <div style="font-family: var(--mono); font-size: 26px; font-weight: 600; letter-spacing: -0.02em;">45</div>
-          <div style="font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px;">Hulls</div>
-        </div>
-        <div style="padding: 20px 18px; border-right: 1px solid var(--line);">
-          <div style="font-family: var(--mono); font-size: 26px; font-weight: 600; letter-spacing: -0.02em;">9</div>
-          <div style="font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px;">Ship lines</div>
-        </div>
-        <div style="padding: 20px 18px; border-right: 1px solid var(--line);">
-          <div style="font-family: var(--mono); font-size: 26px; font-weight: 600; letter-spacing: -0.02em;">6</div>
-          <div style="font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px;">Structures</div>
-        </div>
-        <div style="padding: 20px 18px;">
-          <div style="font-family: var(--mono); font-size: 26px; font-weight: 600; letter-spacing: -0.02em;">4h</div>
-          <div style="font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px;">Prod. cycle</div>
-        </div>
+    <div class="home-hero-phone">
+      <div class="phone-frame">
+        <img src="/screens/ship.webp" alt="The Ship screen in Big Bang Smugglers: holds, shields, fighters and torpedoes for the Nebula Merchant" width="302" height="592" loading="eager" />
       </div>
-      <div style="background: var(--surface); padding: 24px 26px 28px; min-height: 380px;">
-        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;">
-          <span style="color: var(--muted);">A turn on the phone</span>
-          <span style="color: var(--mint);">~5 min</span>
-        </div>
-        <div style="display: grid; gap: 10px;">
-          <div style="display: grid; grid-template-columns: 62px 1fr; gap: 14px; padding: 13px 16px; border-radius: var(--r-sm); background: var(--raised);">
-            <span style="font-family: var(--mono); font-size: 12px; color: var(--mint);">00:00</span>
-            <span style="font-size: 14.5px; line-height: 1.45; color: var(--text);">Check what four hours of production banked on your planet</span>
-          </div>
-          <div style="display: grid; grid-template-columns: 62px 1fr; gap: 14px; padding: 13px 16px; border-radius: var(--r-sm); background: var(--raised);">
-            <span style="font-family: var(--mono); font-size: 12px; color: var(--muted);">00:40</span>
-            <span style="font-size: 14.5px; line-height: 1.45; color: var(--text);">Check the market — equipment is up 18% at your home port</span>
-          </div>
-          <div style="display: grid; grid-template-columns: 62px 1fr; gap: 14px; padding: 13px 16px; border-radius: var(--r-sm); background: var(--raised);">
-            <span style="font-family: var(--mono); font-size: 12px; color: var(--muted);">01:30</span>
-            <span style="font-size: 14.5px; line-height: 1.45; color: var(--text);">Fill the hold and run one route out to the frontier</span>
-          </div>
-          <div style="display: grid; grid-template-columns: 62px 1fr; gap: 14px; padding: 13px 16px; border-radius: var(--r-sm); background: var(--raised);">
-            <span style="font-family: var(--mono); font-size: 12px; color: var(--gold);">03:10</span>
-            <span style="font-size: 14.5px; line-height: 1.45; color: var(--text);">Buy the tier-3 hull you've been saving for</span>
-          </div>
-          <div style="display: grid; grid-template-columns: 62px 1fr; gap: 14px; padding: 13px 16px; border-radius: var(--r-sm); background: var(--raised);">
-            <span style="font-family: var(--mono); font-size: 12px; color: var(--coral);">04:25</span>
-            <span style="font-size: 14.5px; line-height: 1.45; color: var(--text);">Queue a structure, dock somewhere safe, close the app</span>
-          </div>
-        </div>
-        <p style="margin: 20px 0 0; font-size: 14px; line-height: 1.55; color: var(--muted);">No session to sit through. Nothing lost by putting it down.</p>
-      </div>
+      <div class="phone-glow" aria-hidden="true"></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="systems" style="border-bottom: 1px solid var(--line);">
-    <div style="padding: 18px 28px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);">01 / Core systems</div>
-    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));">
-      <article style="padding: 34px 26px; border-right: 1px solid var(--line); background: var(--surface);">
-        <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--mint); margin-bottom: 18px;">TRADE</div>
-        <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 12px;">Living markets</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); text-wrap: pretty;">Fuel, organics, equipment. Ports price on real supply and demand — find the route, run it before someone else does.</p>
-      </article>
-      <article style="padding: 34px 26px; border-right: 1px solid var(--line); background: var(--surface);">
-        <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--coral); margin-bottom: 18px;">COMBAT</div>
-        <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 12px;">PvP anywhere outside Fed space</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); text-wrap: pretty;">Fighters, shields, torpedoes, hull. Win and take the cargo; lose and hope the escape pod holds.</p>
-      </article>
-      <article style="padding: 34px 26px; border-right: 1px solid var(--line); background: var(--surface);">
-        <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--mint); margin-bottom: 18px;">PLANETS</div>
-        <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 12px;">Claim and build</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); text-wrap: pretty;">Six structures, population growth, production every four hours, and a starbase when you're ready to hold ground.</p>
-      </article>
-      <article style="padding: 34px 26px; background: var(--surface);">
-        <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--coral); margin-bottom: 18px;">BOUNTY</div>
-        <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 12px;">Names on a list</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); text-wrap: pretty;">Post a price on a rival, or collect one. Faction bounties pay out in person at the issuing registry.</p>
-      </article>
-    </div>
-  </section>
+<section class="home-strip">
+  <div class="wrap tiles tiles-4">
+    <div class="tile"><small>Hulls</small><b>45</b><span>plus six earn-only epics</span></div>
+    <div class="tile"><small>Ship lines</small><b>9</b><span>neutral, Federation, pirate</span></div>
+    <div class="tile"><small>Structures</small><b>6</b><span>per planet, five levels each</span></div>
+    <div class="tile"><small>Production cycle</small><b>4h</b><span>turns reset on the same clock</span></div>
+  </div>
+</section>
 
-  <section id="galaxy" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-bottom: 1px solid var(--line); background: var(--surface);">
-    <div style="padding: 60px 48px 60px 28px; border-right: 1px solid var(--line);">
-      <div style="font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px;">02 / The galaxy</div>
-      <h2 style="font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 18px;">Three zones. Risk priced accordingly.</h2>
-      <p style="font-size: 16.5px; line-height: 1.62; color: var(--muted); margin: 0 0 30px; text-wrap: pretty;">Patrolled Federation core with no PvP. Open frontier in between. Lawless pirate rim, where the richest planets and the black markets are.</p>
-      <div style="display: grid; gap: 0; border: 1px solid var(--line);">
-        <div style="display: grid; grid-template-columns: 130px 1fr; border-bottom: 1px solid var(--line);">
-          <div style="padding: 14px 16px; background: var(--raised); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mint);">Fed core</div>
-          <div style="padding: 14px 16px; font-size: 14.5px; color: var(--muted);">Safe, patrolled, thin margins</div>
-        </div>
-        <div style="display: grid; grid-template-columns: 130px 1fr; border-bottom: 1px solid var(--line);">
-          <div style="padding: 14px 16px; background: var(--raised); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">Frontier</div>
-          <div style="padding: 14px 16px; font-size: 14.5px; color: var(--muted);">Contested, unclaimed worlds, real money</div>
-        </div>
-        <div style="display: grid; grid-template-columns: 130px 1fr;">
-          <div style="padding: 14px 16px; background: var(--coral-soft); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--coral);">Pirate rim</div>
-          <div style="padding: 14px 16px; font-size: 14.5px; color: var(--muted);">No law, black markets, best planets</div>
-        </div>
-      </div>
-    </div>
-    <div style="padding: 60px 28px 60px 48px; display: grid; gap: 34px; align-content: start;">
-      <div>
-        <h3 style="font-size: 20px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 10px;">Federation or pirate — you choose by playing</h3>
-        <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--muted); text-wrap: pretty;">Start neutral. Clean routes push you one way; contraband and first strikes push the other. Alignment sets your prices, port access, and which hulls you're allowed to fly.</p>
-      </div>
-      <div>
-        <h3 style="font-size: 20px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 10px;">Seasons of every length</h3>
-        <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--muted); text-wrap: pretty;">Sprints and marathons, small maps and sprawling ones, each balanced for its length. Standings lock when the galaxy closes and carry forward as permanent prestige.</p>
-      </div>
-      <div>
-        <h3 style="font-size: 20px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 10px;">Corporations</h3>
-        <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--muted); text-wrap: pretty;">Fly as a fleet, capture and hold ports, share planets under corp policy, climb the standings under one banner.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="fleet" style="border-bottom: 1px solid var(--line);">
-    <div style="padding: 18px 28px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);">03 / Fleet registry</div>
-    <div style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);">
-      <div style="padding: 56px 48px 56px 28px; align-self: start;">
-        <h2 style="font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 18px;">45 hulls, five tiers deep.</h2>
-        <p style="font-size: 16.5px; line-height: 1.62; color: var(--muted); margin: 0 0 28px; text-wrap: pretty;">The neutral spine is open to anyone. Federation hulls carry reinforced shields. Pirate hulls run better escape odds and hidden compartments customs can't scan. Six epic hulls can't be bought — only earned.</p>
-        <div style="display: grid; gap: 12px; max-width: 30em;">
-          <div style="display: grid; grid-template-columns: 8px 1fr; gap: 14px; align-items: start;"><span style="margin-top: 7px; width: 8px; height: 8px; border-radius: 50%; background: var(--text);"></span><span style="font-size: 15px; line-height: 1.5; color: var(--muted);">Three neutral lines anyone can buy, at any standing.</span></div>
-          <div style="display: grid; grid-template-columns: 8px 1fr; gap: 14px; align-items: start;"><span style="margin-top: 7px; width: 8px; height: 8px; border-radius: 50%; background: var(--mint);"></span><span style="font-size: 15px; line-height: 1.5; color: var(--muted);">Three Federation lines unlocked by legal standing.</span></div>
-          <div style="display: grid; grid-template-columns: 8px 1fr; gap: 14px; align-items: start;"><span style="margin-top: 7px; width: 8px; height: 8px; border-radius: 50%; background: var(--coral);"></span><span style="font-size: 15px; line-height: 1.5; color: var(--muted);">Three pirate lines earned on the wrong side of the law.</span></div>
-        </div>
-      </div>
-      <div style="padding: 56px 28px 56px 48px;">
-        <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr); border: 1px solid var(--line); border-radius: var(--r-sm); overflow: hidden;">
-          <div style="padding: 12px 16px; background: var(--raised); font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text);">Line</div>
-          <div style="padding: 12px 16px; background: var(--raised); font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text);">Access</div>
-          <div style="padding: 12px 16px; background: var(--raised); font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text);">Built for</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; color: var(--text);">Trading</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Open</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted);">Cargo volume</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; color: var(--text);">War</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Open</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted);">Fighters and torpedoes</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; color: var(--text);">Balanced</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Open</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted);">A little of both</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; color: var(--mint);">Patrol</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Fed standing</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted);">Fast, well shielded</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; color: var(--mint);">Enforcer</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Fed standing</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted);">Shields and firepower</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; color: var(--mint);">Dreadnought</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Fed standing</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted);">Heaviest legal hull</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; color: var(--coral);">Smuggling</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Pirate standing</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted);">Hidden compartments</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; color: var(--coral);">Raider</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Pirate standing</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted);">Speed and escape odds</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; font-weight: 600; color: var(--coral);">Corsair</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Pirate standing</div>
-          <div style="padding: 15px 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted);">Rim-built brawler</div>
-        </div>
-        <p style="margin: 18px 0 0; font-size: 14.5px; line-height: 1.55; color: var(--muted);">Plus six epic hulls outside the registry — never sold, only earned.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="progression" style="border-bottom: 1px solid var(--line); background: var(--bg);">
-    <div style="padding: 18px 28px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);">04 / Progression</div>
-    <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);">
-      <div style="padding: 56px 48px 56px 28px; align-self: start;">
-        <h2 style="font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 18px;">The game is always watching the work.</h2>
-        <p style="font-size: 16.5px; line-height: 1.62; color: var(--muted); margin: 0 0 26px; text-wrap: pretty;">Every real act — a trade, a kill, a scan, a bounty collected, a sector seen for the first time — goes into one action stream. Missions, goals and streaks all read from it. Nothing is self-reported, and objectives bind to actual things in the galaxy, not to descriptions of them.</p>
-        <div style="font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px;">Everything pays in five currencies</div>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px;">
-          <span style="padding: 7px 12px; border-radius: var(--r-sm); background: var(--raised); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold);">Credits</span>
-          <span style="padding: 7px 12px; border-radius: var(--r-sm); background: var(--raised); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mint);">XP</span>
-          <span style="padding: 7px 12px; border-radius: var(--r-sm); background: var(--raised); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mint);">Turns</span>
-          <span style="padding: 7px 12px; border-radius: var(--r-sm); background: var(--raised); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text);">Alignment</span>
-          <span style="padding: 7px 12px; border-radius: var(--r-sm); background: var(--raised); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--coral);">Standing</span>
-        </div>
-        <p style="font-size: 15.5px; line-height: 1.6; color: var(--muted); margin: 0 0 32px; text-wrap: pretty;">Turns are the important one: finishing your dailies hands back more turns, so the reward for playing well is a longer session.</p>
-        <div style="padding: 26px 24px; border-radius: 8px; background: var(--surface);">
-          <span style="display: inline-block; padding: 4px 9px; border-radius: 4px; border: 1px solid var(--line-strong); color: var(--muted); font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; margin-bottom: 14px;">STREAK</span>
-          <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 10px;">Streaks</h3>
-          <p style="margin: 0 0 16px; font-size: 14.5px; line-height: 1.56; color: var(--muted);">Any day you spend a turn counts. Miss one day and it's forgiven. Your streak is the only thing that crosses season boundaries — payouts are seasonal, showing up isn't.</p>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span style="padding: 8px 14px; border-radius: var(--r-sm); background: var(--raised); font-family: var(--mono); font-size: 12px; color: var(--text);">3 days</span>
-            <span style="padding: 8px 14px; border-radius: var(--r-sm); background: var(--raised); font-family: var(--mono); font-size: 12px; color: var(--text);">7 days</span>
-            <span style="padding: 8px 14px; border-radius: var(--r-sm); background: var(--raised); font-family: var(--mono); font-size: 12px; color: var(--mint);">14 days</span>
-            <span style="padding: 8px 14px; border-radius: var(--r-sm); background: var(--raised); font-family: var(--mono); font-size: 12px; color: var(--gold);">30 days</span>
-          </div>
-        </div>
-      </div>
-      <div style="display: grid; align-content: start; border-left: 1px solid var(--line);">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line);">
-          <div style="padding: 30px 26px; border-right: 1px solid var(--line);">
-            <span style="display: inline-block; padding: 4px 9px; border-radius: 4px; background: var(--mint); color: var(--bg); font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; margin-bottom: 14px;">DAILY</span>
-            <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 10px;">Daily missions</h3>
-            <p style="margin: 0 0 12px; font-size: 14.5px; line-height: 1.56; color: var(--muted);">A rotating slate — trade runs, cargo hauls, pirate hunts, convoy raids, surveys, contraband moves. Honest work nudges your alignment up; underworld work drags it down. Exploring and duelling stay neutral on purpose.</p>
-            <div style="font-family: var(--mono); font-size: 11.5px; color: var(--text);">Credits · XP · bonus turns</div>
-          </div>
-          <div style="padding: 30px 26px;">
-            <span style="display: inline-block; padding: 4px 9px; border-radius: 4px; background: var(--gold); color: var(--bg); font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; margin-bottom: 14px;">SEASON</span>
-            <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 10px;">Season arcs</h3>
-            <p style="margin: 0 0 12px; font-size: 14.5px; line-height: 1.56; color: var(--muted);">Seven long hauls that run the length of a season, from an easy opening muster up to elite gauntlets. This is where legendary gear is earned rather than rolled — the Overdrive module, the Vanguard hull, champion titles.</p>
-            <div style="font-family: var(--mono); font-size: 11.5px; color: var(--text);">Up to 80k credits · 4,000 XP · 50 turns</div>
-          </div>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr;">
-          <div style="padding: 30px 26px; border-right: 1px solid var(--line);">
-            <span style="display: inline-block; padding: 4px 9px; border-radius: 4px; border: 1px solid var(--line-strong); color: var(--muted); font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; margin-bottom: 14px;">LADDERS</span>
-            <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 10px;">Goals</h3>
-            <p style="margin: 0 0 12px; font-size: 14.5px; line-height: 1.56; color: var(--muted);">Bronze → Silver → Gold ladders per category: combat, trade, exploration, economy, piracy. Progress accrues on its own as you play. Top tiers grant titles that stay in your lifetime trophy case.</p>
-            <div style="font-family: var(--mono); font-size: 11.5px; color: var(--text);">Credits · XP · titles</div>
-          </div>
-          <div style="padding: 30px 26px;">
-            <span style="display: inline-block; padding: 4px 9px; border-radius: 4px; border: 1px solid var(--coral); color: var(--coral); font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; margin-bottom: 14px;">EPIC</span>
-            <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 10px;">Epic goals</h3>
-            <p style="margin: 0 0 12px; font-size: 14.5px; line-height: 1.56; color: var(--muted);">Commissioned for the impossible. Compound conditions above Gold — stat floors, standing floors, a clean record, a measured fraction of the galaxy explored. Tuned so maybe one captain a season gets there.</p>
-            <div style="font-family: var(--mono); font-size: 11.5px; color: var(--text);">One epic hull · grant-only, never sold</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <section style="padding: 64px 28px; background: var(--surface); border-bottom: 1px solid var(--line);">
-      <blockquote style="margin: 0 auto; max-width: 52em;">
-        <p style="margin: 0 0 16px; font-size: 25px; font-weight: 500; line-height: 1.42; letter-spacing: -0.02em; text-wrap: pretty;">“It feels like a sort of Trade Wars meets Privateer vibe… My favorite part are the cutscenes — I feel rewarded every time I see a new one.”</p>
-        <footer style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--muted);">John Pritchett — <em>Trade Wars 2002</em> developer, <em>Trade Wars</em>&trade; rights holder<a href="#tw-rights" aria-label="See rights notice" style="color: var(--mint);">*</a></footer>
-              </blockquote>
-    </section>
-
-  <section id="whats-new" style="background: var(--surface); color: var(--text);">
-    <div style="padding: 18px 28px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);">05 / the 2.0 re-founding</div>
-    <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);">
-      <div style="padding: 56px 48px 56px 28px; border-right: 1px solid var(--line);">
-        <h2 style="font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 18px;">Not an update. A re-founding.</h2>
-        <p style="font-size: 16.5px; line-height: 1.62; color: var(--muted); margin: 0 0 26px; text-wrap: pretty;">Rebuilt from the engine up. Seventeen systems redesigned. The universe restarted with no carried history — and the game now runs in your browser too.</p>
-        <a href="/releases/2026-07-31-v2-0-0-a-new-universe/" style="font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em; color: var(--gold); border-bottom: 1px solid currentColor;">The v2.0.0 release notes →</a>
-        <span style="margin: 0 10px; color: var(--line);">·</span>
-        <a href="/releases/" style="font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em; color: var(--gold); border-bottom: 1px solid currentColor;">All releases →</a>
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr;">
-        <div style="padding: 28px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-          <div style="font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; color: var(--mint); margin-bottom: 12px;">UNIVERSE</div>
-          <h3 style="font-size: 18px; font-weight: 600; margin: 0 0 8px;">Fresh start for everyone</h3>
-          <p style="margin: 0; font-size: 14.5px; line-height: 1.56; color: var(--muted);">New accounts, new galaxies, no carried history. The v1 record books are archived with honor.</p>
-        </div>
-        <div style="padding: 28px 24px; border-bottom: 1px solid var(--line);">
-          <div style="font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; color: var(--mint); margin-bottom: 12px;">ENGINE</div>
-          <h3 style="font-size: 18px; font-weight: 600; margin: 0 0 8px;">New engine</h3>
-          <p style="margin: 0; font-size: 14.5px; line-height: 1.56; color: var(--muted);">Instant turn resolution, galaxies generated in seconds, live balance tuning per season.</p>
-        </div>
-        <div style="padding: 28px 24px; border-right: 1px solid var(--line);">
-          <div style="font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 12px;">SYSTEMS</div>
-          <h3 style="font-size: 18px; font-weight: 600; margin: 0 0 8px;">Seventeen systems redesigned</h3>
-          <p style="margin: 0; font-size: 14.5px; line-height: 1.56; color: var(--muted);">Living markets, smuggling careers, port capture, starbases, factions, corporations, bounty claims.</p>
-        </div>
-        <div style="padding: 28px 24px;">
-          <div style="font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 12px;">MOBILE FIRST</div>
-          <h3 style="font-size: 18px; font-weight: 600; margin: 0 0 8px;">Designed for the phone</h3>
-          <p style="margin: 0; font-size: 14.5px; line-height: 1.56; color: var(--muted);">Every screen built for one thumb on Android first, with the browser as the same galaxy on a bigger screen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding: 76px 28px; background: var(--surface); border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between;">
+<section class="home-section">
+  <div class="wrap home-two">
     <div>
-      <h2 style="font-size: 38px; font-weight: 700; letter-spacing: -0.03em; margin: 0 0 10px;">The season is open.</h2>
-      <p style="margin: 0; font-size: 17px; color: var(--muted);">Install it, run a route on the walk home, and you're in it.</p>
+      <h2>A turn on the phone.</h2>
+      <p class="home-sub">About five minutes. No session to sit through, nothing lost by putting it down.</p>
+      <ol class="timeline">
+        <li><span class="mono t-mint">00:00</span><span>Check what four hours of production banked on your planet</span></li>
+        <li><span class="mono">00:40</span><span>Check the market: equipment is up 18% at your home port</span></li>
+        <li><span class="mono">01:30</span><span>Fill the hold and run one route out to the frontier</span></li>
+        <li><span class="mono t-gold">03:10</span><span>Buy the tier-3 hull you've been saving for</span></li>
+        <li><span class="mono t-coral">04:25</span><span>Queue a structure, dock somewhere safe, close the app</span></li>
+      </ol>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-      <a href="https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers" style="padding: 15px 26px; border-radius: var(--r-sm); background: var(--mint); color: var(--bg); font-size: 15.5px; font-weight: 600;">Install on Android</a>
-      <a href="https://play.bigbangsmugglers.com" style="padding: 15px 26px; border-radius: var(--r-sm); border: 1px solid var(--line-strong); color: var(--text); font-size: 15.5px; font-weight: 600;">Play in browser</a>
+    <div>
+      <h2>Four systems, one action stream.</h2>
+      <p class="home-sub">Every real act feeds missions, goals and streaks. Nothing is self-reported.</p>
+      <div class="side-links">
+        <a class="row" href="/guide/trading/"><span class="row-ic" aria-hidden="true">🛢️</span><span class="row-text"><b>Living markets</b><span>Fuel, organics, equipment. Ports price on real supply and demand.</span></span><span class="row-go" aria-hidden="true">→</span></a>
+        <a class="row" href="/guide/combat/"><span class="row-ic" aria-hidden="true">⚔️</span><span class="row-text"><b>PvP anywhere outside Fed space</b><span>Fighters, shields, torpedoes, hull. Win and take the cargo.</span></span><span class="row-go" aria-hidden="true">→</span></a>
+        <a class="row" href="/guide/planets/"><span class="row-ic" aria-hidden="true">🌍</span><span class="row-text"><b>Claim and build</b><span>Six structures, population growth, a starbase when you're ready to hold ground.</span></span><span class="row-go" aria-hidden="true">→</span></a>
+        <a class="row" href="/guide/bounties/"><span class="row-ic" aria-hidden="true">🎯</span><span class="row-text"><b>Names on a list</b><span>Post a price on a rival, or collect one at the issuing registry.</span></span><span class="row-go" aria-hidden="true">→</span></a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-</div>
+<section class="home-section home-alt">
+  <div class="wrap home-two">
+    <div>
+      <h2>Three zones. Risk priced accordingly.</h2>
+      <p class="home-sub">Patrolled Federation core with no PvP. Open frontier in between. Lawless pirate rim, where the richest planets and the black markets are.</p>
+      <div class="zones">
+        <div class="zone"><span class="chip chip-sky">Fed core</span><span>Safe, patrolled, thin margins</span></div>
+        <div class="zone"><span class="chip">Frontier</span><span>Contested, unclaimed worlds, real money</span></div>
+        <div class="zone"><span class="chip chip-coral">Pirate rim</span><span>No law, black markets, the best planets</span></div>
+      </div>
+    </div>
+    <div class="home-cards">
+      <div class="card"><h3>Federation or pirate, decided by playing</h3><p>Start neutral. Clean routes push you one way; contraband and first strikes push the other. Alignment sets your prices, port access, and which hulls you may fly.</p></div>
+      <div class="card"><h3>Seasons of every length</h3><p>Sprints and marathons, small maps and sprawling ones, each balanced for its length. Standings lock when the galaxy closes and carry forward as prestige.</p></div>
+      <div class="card"><h3>Corporations</h3><p>Fly as a fleet, capture and hold ports, share planets under corp policy, climb the standings under one banner.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="wrap home-two home-two-wide">
+    <div>
+      <h2>45 hulls, five tiers deep.</h2>
+      <p class="home-sub">The neutral spine is open to anyone. Federation hulls carry reinforced shields. Pirate hulls run better escape odds and hidden compartments customs can't scan. Six epic hulls can't be bought, only earned.</p>
+      <ul class="dots">
+        <li><i></i>Three neutral lines anyone can buy, at any standing.</li>
+        <li><i class="dot-mint"></i>Three Federation lines unlocked by legal standing.</li>
+        <li><i class="dot-coral"></i>Three pirate lines earned on the wrong side of the law.</li>
+      </ul>
+      <a class="btn btn-soft" href="/guide/ships/">Every hull, with stats →</a>
+    </div>
+    <div class="table-wrap fleet">
+      <table>
+        <thead><tr><th>Line</th><th>Access</th><th>Built for</th></tr></thead>
+        <tbody>
+          <tr><td>Trading</td><td><span class="chip">Open</span></td><td>Cargo volume</td></tr>
+          <tr><td>War</td><td><span class="chip">Open</span></td><td>Fighters and torpedoes</td></tr>
+          <tr><td>Balanced</td><td><span class="chip">Open</span></td><td>A little of both</td></tr>
+          <tr><td class="t-sky">Patrol</td><td><span class="chip chip-sky">Fed standing</span></td><td>Fast, well shielded</td></tr>
+          <tr><td class="t-sky">Enforcer</td><td><span class="chip chip-sky">Fed standing</span></td><td>Shields and firepower</td></tr>
+          <tr><td class="t-sky">Dreadnought</td><td><span class="chip chip-sky">Fed standing</span></td><td>Heaviest legal hull</td></tr>
+          <tr><td class="t-coral">Smuggling</td><td><span class="chip chip-coral">Pirate standing</span></td><td>Hidden compartments</td></tr>
+          <tr><td class="t-coral">Raider</td><td><span class="chip chip-coral">Pirate standing</span></td><td>Speed and escape odds</td></tr>
+          <tr><td class="t-coral">Corsair</td><td><span class="chip chip-coral">Pirate standing</span></td><td>Rim-built brawler</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="home-section home-alt">
+  <div class="wrap">
+    <div class="home-head">
+      <h2>The game is always watching the work.</h2>
+      <p class="home-sub">A trade, a kill, a scan, a bounty collected, a sector seen for the first time: it all goes into one action stream, and everything below reads from it.</p>
+    </div>
+    <div class="home-grid-4">
+      <div class="card"><span class="chip chip-mint">Daily</span><h3>Daily missions</h3><p>A rotating slate: trade runs, hauls, pirate hunts, convoy raids, surveys, contraband moves. Honest work nudges alignment up; underworld work drags it down.</p><span class="card-foot mono">Credits · XP · bonus turns</span></div>
+      <div class="card"><span class="chip chip-gold">Season</span><h3>Season arcs</h3><p>Seven long hauls that run the length of a season, from an easy opening muster to elite gauntlets. Where legendary gear is earned rather than rolled.</p><span class="card-foot mono">Up to 80k cr · 4,000 XP · 50 turns</span></div>
+      <div class="card"><span class="chip">Ladders</span><h3>Goals</h3><p>Bronze, Silver and Gold ladders per category: combat, trade, exploration, economy, piracy. Progress accrues on its own. Top tiers grant lifetime titles.</p><span class="card-foot mono">Credits · XP · titles</span></div>
+      <div class="card"><span class="chip chip-violet">Epic</span><h3>Epic goals</h3><p>Compound conditions above Gold: stat floors, standing floors, a clean record, a measured fraction of the galaxy explored. Tuned so maybe one captain a season gets there.</p><span class="card-foot mono">One epic hull · never sold</span></div>
+    </div>
+    <div class="streak">
+      <div><span class="chip">Streak</span><h3>Any day you spend a turn counts.</h3><p>Miss one day and it's forgiven. Your streak is the only thing that crosses season boundaries: payouts are seasonal, showing up isn't.</p></div>
+      <div class="streak-days"><span class="chip">3 days</span><span class="chip">7 days</span><span class="chip chip-mint">14 days</span><span class="chip chip-gold">30 days</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="home-section home-quote">
+  <div class="wrap">
+    <blockquote>
+      <p>“It feels like a sort of Trade Wars meets Privateer vibe… My favorite part are the cutscenes — I feel rewarded every time I see a new one.”</p>
+      <footer>John Pritchett, <em>Trade Wars 2002</em> developer and <em>Trade Wars</em>&trade; rights holder<a href="#tw-rights" aria-label="See rights notice">*</a></footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="wrap home-two">
+    <div>
+      <h2>Latest release</h2>
+      <p class="home-sub">What changed in the newest build. <a href="/releases/">Every release →</a></p>
+      {{ with $latest }}
+      <a class="latest-card" href="{{ .RelPermalink }}">
+        <div class="latest-meta"><span class="chip chip-gold">v{{ .Params.version }}</span><span class="mono">{{ .Date.Format "2 Jan 2006" }}</span></div>
+        <h3>{{ partial "release-title.html" . }}</h3>
+        <p>{{ .Description }}</p>
+        <div class="tag-row">{{ range first 4 .Params.tags }}{{ $t := index site.Data.tags . }}<span class="chip{{ with $t }}{{ if ne .color "none" }} chip-{{ .color }}{{ end }}{{ end }}">{{ with $t }}{{ .title }}{{ else }}{{ . }}{{ end }}</span>{{ end }}</div>
+      </a>
+      {{ end }}
+    </div>
+    <div>
+      <h2>Start here</h2>
+      <p class="home-sub">The four guide pages a new captain actually needs. <a href="/guide/">The whole guide →</a></p>
+      <div class="side-links">
+        {{ range slice "getting-started" "gameplay" "trading" "combat" }}
+          {{ with site.GetPage (printf "/guide/%s" .) }}
+          <a class="row" href="{{ .RelPermalink }}"><span class="row-text"><b>{{ .Title }}</b><span>{{ .Description }}</span></span><span class="row-go" aria-hidden="true">→</span></a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-final">
+  <div class="wrap home-final-row">
+    <div>
+      <h2>The season is open.</h2>
+      <p class="home-sub">Install it, run a route on the walk home, and you're in it.</p>
+    </div>
+    <div class="home-cta">
+      <a class="btn btn-primary" href="{{ $d.play.android }}">Install on Android</a>
+      <a class="btn btn-ghost" href="{{ $d.play.web }}">Play in browser</a>
+      <a class="btn btn-soft" href="{{ $d.community.discord }}" rel="noopener">Join the Discord</a>
+    </div>
+  </div>
+</section>
 {{ end }}
