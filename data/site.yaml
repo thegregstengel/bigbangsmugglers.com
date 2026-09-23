@@ -1,10 +1,24 @@
-# Site-wide facts rendered into the HUD header and footer.
+# Site-wide facts rendered into the HUD header, the homepage season bar and the footer.
 # The build number is derived from the newest release note, not stored here.
+
 season:
-  status: Active        # shown in the HUD; Phase 6 replaces this with live data
+  status: Active            # Active | Ending soon | Between seasons
+  name: ""                  # e.g. "Season 3" — leave empty to hide
+  ends: ""                  # ISO date, e.g. 2026-10-15 — days-left is computed from it; empty hides it
+  players: ""               # e.g. "128"
+  player_cap: ""            # e.g. "250"
+  sectors: ""               # e.g. "500"
+  # Live data (Phase 6). When the game publishes a JSON document at this URL, the site fetches it
+  # on load and overwrites the values above. Leave empty until then. Expected shape:
+  #   { "status": "Active", "name": "Season 3", "ends": "2026-10-15T00:00:00Z",
+  #     "players": 128, "player_cap": 250, "sectors": 500 }
+  # The endpoint must send Access-Control-Allow-Origin for https://bigbangsmugglers.com.
+  endpoint: ""
+
 play:
   android: https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers
   web: https://play.bigbangsmugglers.com
+
 community:
   discord: https://discord.gg/A52xxB2VT9
   reddit: https://www.reddit.com/r/bigbangsmugglers/

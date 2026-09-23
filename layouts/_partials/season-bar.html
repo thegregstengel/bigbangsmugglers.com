@@ -1,0 +1,25 @@
+{{- /* Season readout for the homepage: status, name, days left, players, sectors. Values come from
+     data/site.yaml at build time; season.html refreshes them from the live endpoint when one is set.
+     Every field hides itself when empty, so the bar degrades to "Season · Active" today. */ -}}
+{{- $s := site.Data.site.season -}}
+{{- $days := "" -}}
+{{- with $s.ends }}{{ $t := time . }}{{ $days = div (sub $t.Unix now.Unix) 86400 }}{{ end -}}
+<div class="season-bar" data-season-bar>
+  <div class="season-item">
+    <small>Season</small>
+    <b><span data-season="name">{{ $s.name }}</span>{{ if $s.name }} · {{ end }}<span class="t-mint" data-season="status">{{ $s.status }}</span></b>
+  </div>
+  <div class="season-item" data-season-wrap="ends" {{ if not $s.ends }}hidden{{ end }}>
+    <small>Ends</small>
+    <b><span class="mono" data-season="days">{{ with $days }}{{ . }}d{{ end }}</span> <span class="season-dim" data-season="ends">{{ with $s.ends }}{{ (time .).Format "2 Jan" }}{{ end }}</span></b>
+  </div>
+  <div class="season-item" data-season-wrap="players" {{ if not $s.players }}hidden{{ end }}>
+    <small>Captains</small>
+    <b class="mono"><span data-season="players">{{ $s.players }}</span>{{ if $s.player_cap }} / {{ end }}<span data-season="player_cap">{{ $s.player_cap }}</span></b>
+  </div>
+  <div class="season-item" data-season-wrap="sectors" {{ if not $s.sectors }}hidden{{ end }}>
+    <small>Sectors</small>
+    <b class="mono" data-season="sectors">{{ $s.sectors }}</b>
+  </div>
+  <a class="btn btn-primary btn-sm season-cta" href="{{ site.Data.site.play.web }}">Join the season</a>
+</div>
