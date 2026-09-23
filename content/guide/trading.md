@@ -1,13 +1,12 @@
 ---
 title: "Trading & the Market"
 date: 2026-08-04
-draft: false
 description: "How prices are computed, taxes and fees, cost basis, and routes"
 weight: 5
-toc: true
+group: trade
+tags: [trading]
+changed_in: []
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## The three commodities
 

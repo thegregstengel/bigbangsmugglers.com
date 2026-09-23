@@ -1,8 +1,11 @@
 ---
 title: "v1.5.3 — Inventory & Ship Services Fix"
-date: 2026-03-13T21:00:00
+date: 2026-03-13T21:00:00Z
 type: blog
 description: "v1.5.3 fixes mining workers not showing on the planet screen and Ship Services being unusable."
+kind: release
+version: 1.5.3
+tags: [planets]
 ---
 
 v1.5.3 is a hotfix for two broken screens introduced in v1.5.2.

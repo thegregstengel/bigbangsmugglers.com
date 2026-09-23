@@ -1,13 +1,12 @@
 ---
 title: "Progression"
 date: 2026-08-04
-draft: false
 description: "XP, levels, gates, roles, insignia, prestige and leaderboards"
 weight: 18
-toc: true
+group: compete
+tags: [progression]
+changed_in: [2.0.8]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## The level curve
 

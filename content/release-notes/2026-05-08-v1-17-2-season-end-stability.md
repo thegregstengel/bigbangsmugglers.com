@@ -3,6 +3,9 @@ title: "v1.17.2 — Season-End Stability"
 date: 2026-05-08T12:00:00Z
 type: blog
 description: "v1.17.2 fixes a blank-screen issue after season end and corrects post-season world cleanup so old sectors, ports, and planets are properly removed."
+kind: release
+version: 1.17.2
+tags: [seasons, planets, ports, navigation]
 ---
 
 v1.17.2 is a stability patch addressing two issues uncovered after the Red Dwarf beta season ended.

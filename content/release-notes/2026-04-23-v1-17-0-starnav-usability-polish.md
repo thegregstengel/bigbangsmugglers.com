@@ -3,6 +3,9 @@ title: "v1.17.0 — StarNav Usability Polish"
 date: 2026-04-23T18:46:00Z
 type: blog
 description: "v1.17.0 improves StarNav 2002 with safe-area fixes, working tap and pinch-zoom interactions, cleaner compact presentation, level-aware scanner labels, and pricing breakdown clarity."
+kind: release
+version: 1.17.0
+tags: [upgrades, navigation]
 ---
 
 v1.17.0 focuses on making StarNav 2002 feel more readable, interactive, and trustworthy in day-to-day navigation.

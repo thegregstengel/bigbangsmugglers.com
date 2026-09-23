@@ -9,9 +9,8 @@ cascade:
 The official guide to Big Bang Smugglers 2.0. Mechanics, real numbers, and the
 gates that actually stop you.
 
-*Rewritten from the source for v2.0.8 and refreshed for v2.0.18
-(August 2026). Every number here was read out of the shipped game, not the
-old guide.*
+*Every number here was read out of the shipped game. Each page lists the
+releases that changed it.*
 
 **A note on level gates.** Unlocks in this game are level-gated, and the gate
 *numbers* are set per season: every season pins its own ladder, so the same

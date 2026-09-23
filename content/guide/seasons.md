@@ -1,13 +1,12 @@
 ---
 title: "Seasons"
 date: 2026-08-04
-draft: false
 description: "What a season is, what carries over, and how one ends"
 weight: 20
-toc: true
+group: compete
+tags: [seasons]
+changed_in: [2.3.0]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## What a season is
 
@@ -29,6 +28,8 @@ the season sits unjoinable until generation finishes.
 **Leaving is permanent and irreversible.** Leave a season and you can never
 rejoin *that* season — the server refuses outright. Everything you held there
 is gone: credits, bank, ships, planets, standing, insignia, all of it.
+Your planets are **released for others to claim** (since v2.3.0; they used
+to stay locked to a captain who had left).
 
 You cannot leave while you lead a corporation that has other members. Hand
 leadership over first.

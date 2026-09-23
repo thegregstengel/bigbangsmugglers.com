@@ -1,13 +1,12 @@
 ---
 title: "Combat"
 date: 2026-08-04
-draft: false
 description: "How a fight resolves, hull versus shields, immunity, and fleets"
 weight: 9
-toc: true
+group: fight
+tags: [combat]
+changed_in: [2.3.0, 2.0.15, 2.0.8, 2.0.2]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 Combat is instant and automatic. You engage, the server resolves the whole
 fight in one shot, and you read the report. There is no round-by-round input.
@@ -144,7 +143,9 @@ signature is the slipperiest thing in the game.
 ## Loot
 
 Only the winner takes anything, and only from a **player** loser (NPCs drop
-their own loot table).
+their own loot table). **Defenders loot too** (since v2.3.0): beat someone
+who attacked you and you take a cut of their wallet, exactly as an attacker
+would. Their bank stays safe.
 
 | Winner's alignment | Credits | Cargo |
 |---|---|---|

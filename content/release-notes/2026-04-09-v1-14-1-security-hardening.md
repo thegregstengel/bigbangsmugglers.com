@@ -3,6 +3,9 @@ title: "v1.14.1 — Security Hardening and Web Launch Prep"
 date: 2026-04-09T12:00:00-04:00
 type: blog
 description: "v1.14.1 strengthens account and session security across all platforms, adds clickable links to notifications, fixes cargo hold upgrade costs in starport shipyards, and prepares the app for browser-based play."
+kind: release
+version: 1.14.1
+tags: [platform, ports, trading, upgrades]
 ---
 
 v1.14.1 is a security-focused release that hardens account protection, improves session safety, and lays the groundwork for the upcoming web launch.

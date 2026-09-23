@@ -3,6 +3,9 @@ title: "v1.15.0 — Trading, Repair, and Beacon Travel Fixes"
 date: 2026-04-22T17:59:00Z
 type: blog
 description: "v1.15.0 improves port trading, Repair Station reliability, navigation stability, and beacon travel quality of life across the live Android release."
+kind: release
+version: 1.15.0
+tags: [ports, ordnance, trading, navigation]
 ---
 
 v1.15.0 improves several of the most common day-to-day actions in Big Bang Smugglers: trading, repairing, navigating, and moving between beacon locations.

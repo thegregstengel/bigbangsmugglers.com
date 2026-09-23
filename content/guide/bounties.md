@@ -1,13 +1,12 @@
 ---
 title: "Bounties"
 date: 2026-08-04
-draft: false
 description: "Posting, collecting, faction claims, and buying off your warrant"
 weight: 10
-toc: true
+group: fight
+tags: [bounties]
+changed_in: [2.3.0, 2.0.15]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 There are two kinds of bounty and they pay out completely differently.
 
@@ -72,6 +71,13 @@ claims and back to the Stardock to cash them. And a Federation registry
 denies docking to anyone below −300 alignment.
 
 In a fleet strike, the **leader** personally earns the claims.
+
+### Bounties pay both ways
+
+Since v2.3.0 a win as the **defender** counts exactly like a win as the
+attacker. If a wanted captain attacks you and loses, a player bounty on
+them pays out on the spot and a faction bounty mints you a claim. Being a
+tempting target is now a way to earn.
 
 ## Being wanted
 

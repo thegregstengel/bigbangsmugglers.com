@@ -1,13 +1,12 @@
 ---
 title: "Factions, Alignment & Standing"
 date: 2026-08-04
-draft: false
 description: "The two axes, how to earn them, and every gate they control"
 weight: 14
-toc: true
+group: compete
+tags: [factions]
+changed_in: [2.3.0, 2.0.8]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 There are two numbers, they are not the same thing, and confusing them will
 cost you money.
@@ -87,6 +86,7 @@ until v2.0.8. It works now.
 | Underworld daily missions | −10 to −15 |
 | **Syndicate faction missions** | **−25 / −30** |
 | Claim a planet in pirate territory | **−250** |
+| **Jettison mining workers** | **−10 per worker**. Dump them from your hold; since v2.3.0 this is the fast road to the pirate side |
 
 ### The realistic paths
 
@@ -101,7 +101,9 @@ single +250 jump.
 you get *caught* (−25 per detected sale) or bribe your way out (−2). The
 reliable criminal path is the underworld daily missions and the Syndicate
 faction missions at −25 to −30, plus attacking lawful targets. Claiming a
-planet in pirate territory is a single −250 jump.
+planet in pirate territory is a single −250 jump. And since v2.3.0 there is
+a blunt instrument: **jettison mining workers** at −10 each. Fifty workers
+cost 15,000 cr at any recruitment desk and buy a −500 swing in one action.
 
 **Note the asymmetry**: fence sales are undetectable and therefore pay *no*
 alignment at all. A disciplined smuggler who only ever sells to fences can

@@ -1,13 +1,12 @@
 ---
 title: "Corporations & Fleets"
 date: 2026-08-04
-draft: false
 description: "Founding, roles, the corp bank, policies, fleets and held ports"
 weight: 17
-toc: true
+group: build
+tags: [corps]
+changed_in: [2.3.0, 2.0.14]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## Founding
 
@@ -145,7 +144,7 @@ starports and Federation Ports is capturable.
 | Level gate | Mid-ladder — the same gate as planet raids |
 | Turn cost | **3** per attack |
 | Cooldown | **1 hour** per port |
-| Blocked by | An active 24-hour post-capture truce |
+| Blocked by | An active 24-hour post-capture truce; a port your own corporation holds; your own PvP immunity (both since v2.3.0) |
 
 Siege math is the same shape as a planet raid: fighters ×0.8 (×1.2 with
 Combat AI), shields ×1.2, torpedoes ×2.0 against a garrison seeded from the

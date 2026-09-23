@@ -1,13 +1,10 @@
 ---
 title: "Federation Starports: From Menus to Living Spaces"
-date: 2026-02-12
-draft: false
+date: 2026-02-12T12:00:00Z
 description: "We tore down the old starport menu system and rebuilt it as an immersive directory of businesses. Here's why it matters."
 type: blog
-tags: ["features", "ui", "starports"]
-sidebar:
-  exclude: true
-toc: false
+kind: devlog
+tags: [ports, factions]
 ---
 
 **The old starports felt like a vending machine.**

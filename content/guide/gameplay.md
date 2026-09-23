@@ -1,13 +1,12 @@
 ---
 title: "Turns, Credits & Basics"
 date: 2026-08-04
-draft: false
 description: "The turn cycle, buying turns, wallet versus bank, and streaks"
 weight: 2
-toc: true
+group: start
+tags: [platform, progression]
+changed_in: [2.3.0, 2.0.17, 2.0.13]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## The turn cycle
 

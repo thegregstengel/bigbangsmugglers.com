@@ -1,13 +1,12 @@
 ---
 title: "Upgrades, Drives & Tech"
 date: 2026-08-04
-draft: false
 description: "The upgrade ladder, warp and StarNav, and the ten tech modules"
 weight: 8
-toc: true
+group: fight
+tags: [upgrades]
+changed_in: []
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 Three separate systems live behind the "upgrade" button, and they behave
 differently.

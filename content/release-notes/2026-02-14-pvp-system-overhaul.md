@@ -1,9 +1,11 @@
 ---
 title: "PvP System Overhaul - Sector-Based Combat with Safe Zones"
-date: 2026-02-14
+date: 2026-02-14T12:00:00Z
 description: "PvP moved from ports to sectors with faction-based safety rules"
 type: blog
 author: "Dev Team"
+kind: devlog
+tags: [combat, factions]
 ---
 
 ## The Problem

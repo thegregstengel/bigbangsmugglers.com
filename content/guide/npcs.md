@@ -1,13 +1,12 @@
 ---
 title: "NPCs & Encounters"
 date: 2026-08-04
-draft: false
 description: "Pirates, patrols, traders, named captains, and every way out"
 weight: 13
-toc: true
+group: fly
+tags: [npcs]
+changed_in: [2.3.0, 2.0.9]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## The three types
 
@@ -96,7 +95,8 @@ anchors:
 - **Three deals per trader**, 1 turn each. A trader is a stop, not a port.
 - **Contraband rides deeper holds.** Traders in the core carry none; toward
   the rim, an off-market lot turns up more and more often (up to about a
-  third of rim traders), priced at ×1.25 of the fence's shelf price. Buying
+  third of rim traders), priced above whatever the nearest fence would charge (since v2.3.0 a
+  trader is never cheaper than a Black Market). Buying
   it needs the same early level gate as any black-market buy — and traders
   never *buy* contraband back; fences keep the sell-side monopoly.
 

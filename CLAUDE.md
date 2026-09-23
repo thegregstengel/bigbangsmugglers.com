@@ -18,9 +18,8 @@ Marketing site, player guide, and release notes for Big Bang Smugglers.
 
 ```
 content/
-  _index.md              # Homepage content
-  guide/                 # Player guide (19 pages)
-  release-notes/         # Version history (30+ entries)
+  guide/                 # Player guide (21 pages, grouped via front matter)
+  release-notes/         # Releases + Feb 2026 dev log (80+ entries)
   privacy.md             # Privacy policy
   delete-account.md      # Account deletion page
 layouts/
@@ -60,12 +59,26 @@ Or create manually in `content/release-notes/` with front matter:
 
 ```yaml
 ---
-title: "v1.10.0 -- Title"
-date: 2026-03-29T12:00:00-05:00
+title: "v2.4.0 — Title"
+date: 2026-10-01T12:00:00Z
 type: blog
 description: ""
+kind: release            # release | devlog
+version: 2.4.0
+tags: [planets, combat]  # see the tag list below
 ---
 ```
+
+Dates are always explicit UTC (`Z`). Every note carries `kind`, `version`
+(releases only) and `tags`. Guide pages carry `group`, `tags` and
+`changed_in` (versions that changed the page), and the guide never states
+"accurate as of" in prose — update `changed_in` instead.
+
+Shared tags (both sections): planets, starbases, corps, combat, bounties,
+ordnance, trading, ports, smuggling, ships, upgrades, seasons, progression,
+missions, navigation, factions, npcs, platform.
+
+Guide groups: start, fly, trade, fight, build, compete, numbers.
 
 ---
 

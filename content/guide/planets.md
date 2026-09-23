@@ -1,13 +1,12 @@
 ---
 title: "Planets"
 date: 2026-08-04
-draft: false
 description: "Claiming, structures, storage, garrisons, raids and starbases"
 weight: 16
-toc: true
+group: build
+tags: [planets, starbases]
+changed_in: [2.3.0, 2.0.17, 2.0.16, 2.0.15, 2.0.14]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 Planets are the late-game economy: a slow, compounding, defensible income
 that runs whether or not you're logged in — and a fixed target other captains

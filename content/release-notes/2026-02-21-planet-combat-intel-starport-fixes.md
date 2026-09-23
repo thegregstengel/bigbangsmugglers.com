@@ -1,12 +1,10 @@
 ---
 title: "Planet Combat, Intel Brokers & Starport Fixes"
-date: 2026-02-21
+date: 2026-02-21T12:00:00Z
 description: "Planet attack system, intel broker service, defense station PvP immunity, structure building UI, and 4 parallel agent fixes. 14 issues closed."
 type: blog
-draft: false
-sidebar:
-  exclude: true
-toc: false
+kind: devlog
+tags: [planets, combat, ports]
 ---
 
 Big night. 14 issues closed across two parallel workstreams — new features going in while bugs from yesterday's QA session got fixed simultaneously.
@@ -15,7 +13,7 @@ Big night. 14 issues closed across two parallel workstreams — new features goi
 
 **Planet Combat**
 
-You can now attack enemy planets. Raid them for loot, hold them with your garrison, lose them if you leave them exposed. The planet raid system closes the loop on one of the biggest gaps from the [Feb 6th planets audit](/blog/2026-02-06-planets-warp-trade) — we had colonization and production, but no way to actually fight over territory. That changes today.
+You can now attack enemy planets. Raid them for loot, hold them with your garrison, lose them if you leave them exposed. The planet raid system closes the loop on one of the biggest gaps from the [Feb 6th planets audit](/release-notes/2026-02-06-planets-warp-trade/) — we had colonization and production, but no way to actually fight over territory. That changes today.
 
 **Intel Broker**
 

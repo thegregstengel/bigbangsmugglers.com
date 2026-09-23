@@ -1,15 +1,13 @@
 ---
 title: "Starport Services Launch"
-date: 2026-02-13
+date: 2026-02-13T12:00:00Z
 description: "12 starport features shipped in one day — the redesign is fully live with bank, shipyard, ship sales, contracts, recruitment, and tactical supply."
 type: blog
-draft: false
-sidebar:
-  exclude: true
-toc: false
+kind: devlog
+tags: [ports, missions]
 ---
 
-Remember the [Federation Starports redesign post](/blog/federation-starports-redesign)? The one where most sections said "coming soon"?
+Remember the [Federation Starports redesign post](/release-notes/2026-02-12-federation-starports-redesign/)? The one where most sections said "coming soon"?
 
 Today we crossed them off.
 
@@ -39,7 +37,7 @@ Navigation beacons and proximity mines are purchasable. Beacons had backend logi
 
 ## How We Got Here
 
-The [audit on Feb 5th](/blog/2026-02-05-auditing-the-foundation) identified what was wired and what wasn't. The [Feb 6th sprint](/blog/2026-02-06-mission-performance-docs-audit) designed the mission system that the contract office relies on. The [bug fix sprint on Feb 8th](/blog/2026-02-08-bug-fix-sprint) cleared the credits and XP field bugs that would have broken purchases.
+The [audit on Feb 5th](/release-notes/2026-02-05-auditing-the-foundation/) identified what was wired and what wasn't. The [Feb 6th sprint](/release-notes/2026-02-06-mission-performance-docs-audit/) designed the mission system that the contract office relies on. The [bug fix sprint on Feb 8th](/release-notes/2026-02-08-bug-fix-sprint/) cleared the credits and XP field bugs that would have broken purchases.
 
 Twelve issues in one day wasn't a rush job. It was the result of three weeks of foundation work making the final connections obvious.
 

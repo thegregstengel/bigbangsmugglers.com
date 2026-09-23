@@ -3,6 +3,9 @@ title: "v1.14.4 -- Combat, Intel, and Sector Stability"
 date: 2026-04-21T22:01:00-04:00
 type: blog
 description: "v1.14.4 fixes sector crowding, duplicate pirate encounters, combat modal lockups, Sector Intelligence visibility, Federation reputation gains, ship stat mismatches, and in-sector player detail visibility."
+kind: release
+version: 1.14.4
+tags: [navigation, factions, combat, ships]
 ---
 
 v1.14.4 is a bugfix release focused on keeping moment-to-moment sector play cleaner and more predictable.

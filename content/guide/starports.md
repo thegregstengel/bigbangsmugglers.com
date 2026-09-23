@@ -1,13 +1,12 @@
 ---
 title: "Ports & Services"
 date: 2026-08-04
-draft: false
 description: "Every port archetype, what it stocks, and which services it runs"
 weight: 6
-toc: true
+group: trade
+tags: [ports]
+changed_in: []
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## The eleven services
 

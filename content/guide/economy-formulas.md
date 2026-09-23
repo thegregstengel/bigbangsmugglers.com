@@ -1,13 +1,12 @@
 ---
 title: "Formulas & Numbers"
 date: 2026-08-04
-draft: false
 description: "Every constant on one page, current season defaults"
 weight: 21
-toc: true
+group: numbers
+tags: [platform]
+changed_in: [2.3.0, 2.0.16]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 Everything on this page is a **current season default**. Almost every number
 here is season configuration and can be retuned between seasons — or
@@ -317,7 +316,8 @@ clamped to [5%, 85%]
 | Pirate (≤ −300) | 35% | 40% |
 
 Credit cap by hull tier: 5,000 / 15,000 / 40,000 / 100,000 / 200,000.
-**Wallet only — the bank is never looted.**
+**Wallet only — the bank is never looted.** Defenders who win loot too
+(since v2.3.0).
 
 ### Alignment from combat
 
@@ -350,7 +350,7 @@ exempt.
 
 | Item | Price | Volume | Sector cap | Your cap | Attack | Defense | Lifetime |
 |---|---|---|---|---|---|---|---|
-| Proximity Mine | 250 | 2 | 100 | 50 | 8 | 0 | 2%/day decay |
+| Proximity Mine | 250 | 2 | 100 (+50 where you own a planet) | 500 | 8 | 0 | 2%/day decay |
 | Sentry Drone | 1,500 | 8 | 50 | 20 | 5 | 3 | 3%/day |
 | Turret | 3,000 | 15 | 20 | 8 | 12 | 2 | 3%/day |
 | Sensor Buoy | 800 | 3 | 10 | 5 | 0 | 1 | 1%/day |
@@ -399,7 +399,7 @@ each line refuses the hostile ±300 bucket.
 | Sell price | standard anchor × **0.65** |
 | Deals per trader per player | 3 |
 | Manifest depth (T1/T2/T3 cap per commodity) | 20 / 60 / 150 |
-| Contraband carry chance | 0 core → 35% `outer_rim`, priced fence × 1.25 |
+| Contraband carry chance | 0 core → 35% `outer_rim`, always priced above the fence |
 | Named (merchant prince) multiplier | ×5 manifest and loot, once per season |
 | Rob yield chance | `clamp(winProb − 0.15, 0.05, 0.90)` |
 | Rob cargo band (T1/T2/T3) | 5–15 / 15–40 / 40–100 units of one commodity |
@@ -474,6 +474,7 @@ Terror <−750 · Scourge ≤−900.
 | Rob a trader NPC | **−10** (plus +5 × tier Syndicate, −25 Guild standing) |
 | Caught in a customs scan | −5 |
 | Contraband sale detected | −25 |
+| Jettison mining workers | −10 per worker |
 | Siege a Federation-aligned port | −25 |
 | Daily missions | ±5 to ±15 |
 | Faction missions | ±25 daily, ±30 elite arc |
@@ -484,11 +485,11 @@ Mission alignment rewards are capped at **±30** by validation.
 
 ## Smuggling
 
-| Contraband | Rides on | Buy | Max/txn | Sell × | Risk |
+| Contraband | Rides on | Fence buy | Max/txn | Sell × | Risk |
 |---|---|---|---|---|---|
-| Illicit Organics | organics | 30 | 80 | ×2.0 | low |
-| Stolen Equipment | equipment | 40 | 50 | ×2.0 | medium |
-| Black Tech | equipment | 150 | 10 | ×3.5 | high |
+| Illicit Organics | organics | market-priced | 100 | ×2.0 | low |
+| Stolen Equipment | equipment | market-priced | 100 | ×2.0 | medium |
+| Black Tech | equipment | market-priced | 100 | ×3.5 | high |
 
 | Region | Premium | Sale detection |
 |---|---|---|
@@ -499,7 +500,8 @@ Mission alignment rewards are capped at **±30** by validation.
 | `outer` | ×1.00 | 4% |
 | `outer_rim` | ×1.00 | 1% |
 
-Fence price: flat **×1.20** of the local sell price, no detection roll.
+Fence sale price: **×1.20** of the local sell price, no detection roll.
+Fence buy prices follow the local market (since v2.3.0).
 
 ```
 scan chance = 0.75 − 0.50 (goods cloak) − 0.30 (stealth plating)
@@ -510,7 +512,7 @@ floored at 0.05
 | Knob | Default |
 |---|---|
 | Scan cooldown | 30 minutes |
-| Seizure fine | 10% of street value |
+| Seizure fine | 10% of cost basis, on the overflow above hidden holds only |
 | Sale-detection fine | 50% of the sale, min 500 cr, capped at wallet |
 | Bribe | 25% of street value, clamped 500–25,000 |
 | Pirate-line hidden holds | 25% |

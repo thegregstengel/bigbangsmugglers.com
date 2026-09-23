@@ -1,8 +1,11 @@
 ---
 title: "v1.4.1 — Starport Weapon Purchase"
-date: 2026-03-10T13:00:00
+date: 2026-03-10T13:00:00Z
 type: blog
 description: "v1.4.1 wires up bulk fighter/torpedo purchase in the TriStar Shipyard and fixes combat loot not triggering when a player had zero credits."
+kind: release
+version: 1.4.1
+tags: [combat, ports]
 ---
 
 v1.4.1 finishes the weapon purchase system introduced in v1.4.0 and fixes a loot calculation bug.

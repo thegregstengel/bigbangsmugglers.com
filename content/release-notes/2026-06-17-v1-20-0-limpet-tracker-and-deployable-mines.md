@@ -3,6 +3,9 @@ title: "v1.20.0 — Limpet Tracker and Deployable Mines"
 date: 2026-06-17T18:00:00Z
 type: blog
 description: "v1.20.0 introduces the Limpet Tracker, a new deployable that plants in a sector and latches onto passing ships for real-time location tracking. Proximity mines now trigger on warp entry. The Hangar moves to Starport and Starbase with improved ship valuation and a sell payout increase to 64%. Critical fixes for bounty collection, Starbase construction, planet fighter deployment, and pirate port alignment."
+kind: release
+version: 1.20.0
+tags: [ordnance, ports, navigation, starbases]
 ---
 
 v1.20.0 sharpens the deployable layer and ships a batch of critical fixes from v1.19.0.

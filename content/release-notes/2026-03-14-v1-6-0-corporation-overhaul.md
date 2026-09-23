@@ -1,8 +1,11 @@
 ---
 title: "v1.6.0 — Corporation Overhaul"
-date: 2026-03-14T20:00:00
+date: 2026-03-14T20:00:00Z
 type: blog
 description: "v1.6.0 is a major corporation update — real-time sync, join policies, dynamic sizing, leader titles, and bug fixes throughout."
+kind: release
+version: 1.6.0
+tags: [corps, factions, platform]
 ---
 
 v1.6.0 is a major overhaul of the corporation system, fixing several long-standing bugs and adding new mechanics for how corps are managed and joined.

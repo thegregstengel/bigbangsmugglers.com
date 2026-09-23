@@ -3,6 +3,9 @@ title: "v1.8.0 — Combat Overhaul"
 date: 2026-03-21T21:58:00-04:00
 type: blog
 description: "v1.8.0 overhauls combat with stronger consumable impact, smarter NPC behavior, visible sector NPCs, stealth integration, PvP progression, diplomacy, and faction memory."
+kind: release
+version: 1.8.0
+tags: [combat, npcs, factions, navigation]
 ---
 
 v1.8.0 is a major combat overhaul release.

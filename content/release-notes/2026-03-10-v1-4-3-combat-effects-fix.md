@@ -1,8 +1,11 @@
 ---
 title: "v1.4.3 — Combat Loss Fixes"
-date: 2026-03-10T20:00:00
+date: 2026-03-10T20:00:00Z
 type: blog
 description: "v1.4.3 fixes several bugs where losing a fight had no real consequences — damage, credit loss, cargo theft, and ship disable now all apply correctly."
+kind: release
+version: 1.4.3
+tags: [combat, trading, ports]
 ---
 
 v1.4.3 fixes a series of bugs where losing a fight had no real consequences.

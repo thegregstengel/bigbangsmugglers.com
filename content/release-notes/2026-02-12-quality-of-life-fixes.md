@@ -1,12 +1,10 @@
 ---
 title: "Quality of Life Fixes"
-date: 2026-02-12
+date: 2026-02-12T12:00:00Z
 description: "Four polish fixes: XP display, nav screen refresh after warp, mission persistence across seasons, and a screen notch overflow."
 type: blog
-draft: false
-sidebar:
-  exclude: true
-toc: false
+kind: devlog
+tags: [platform, missions]
 ---
 
 Not every update is a major feature. Sometimes you just fix the things that quietly annoy players every session.

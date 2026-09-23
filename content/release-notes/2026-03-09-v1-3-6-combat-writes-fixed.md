@@ -1,8 +1,11 @@
 ---
 title: "v1.3.6 — Combat Rewards Fixed"
-date: 2026-03-09T12:00:00
+date: 2026-03-09T12:00:00Z
 type: blog
 description: "v1.3.6 fixes NPC combat writes not applying — loot, damage, and ship disable were all silently broken."
+kind: release
+version: 1.3.6
+tags: [combat, npcs]
 ---
 
 v1.3.6 fixes a significant bug where NPC combat had no real consequences.

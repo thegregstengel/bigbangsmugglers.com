@@ -1,8 +1,11 @@
 ---
 title: "v1.5.4 — Max Buttons & Toast Fix"
-date: 2026-03-14T11:00:00
+date: 2026-03-14T11:00:00Z
 type: blog
 description: "v1.5.4 adds Max buttons to all trading interfaces and fixes notification positioning."
+kind: release
+version: 1.5.4
+tags: [trading, platform]
 ---
 
 v1.5.4 is a quality-of-life update with two improvements.

@@ -1,13 +1,12 @@
 ---
 title: "Scanners, Cloaks & Intel"
 date: 2026-08-04
-draft: false
 description: "StarNav tiers, active scans, cloaks, and paid intel"
 weight: 12
-toc: true
+group: fly
+tags: [navigation, upgrades]
+changed_in: [2.3.0, 2.0.14, 2.0.8]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## StarNav 2002
 
@@ -62,8 +61,9 @@ Activating one hides your ship for a **fixed 2 hours from activation**.
 This used to run "until the next 4-hour world boundary", which meant
 activating at 03:59 bought you sixty seconds. It's a fixed window now.
 
-**A cloak breaks on action.** Trading, moving and warping all drop it. A
-cloak is for sitting still somewhere dangerous, not for travelling
+**A cloak breaks on action.** Trading, moving and warping drop it, and
+since v2.3.0 so do sieges, raids, Black Market deals, banking and buying a
+ship. A cloak is for sitting still somewhere dangerous, not for acting
 invisibly.
 
 While cloaked:
