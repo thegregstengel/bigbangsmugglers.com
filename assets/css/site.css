@@ -335,9 +335,6 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; letter-spacing: -0.015em; text-wr
 .phone-frame img { display: block; width: 100%; height: auto; border-radius: 26px; }
 .phone-glow { position: absolute; width: 60%; height: 60%; border-radius: 50%; background: radial-gradient(circle, rgba(94, 234, 212, 0.18), transparent 70%); filter: blur(24px); }
 .home-strip { border-block: 1px solid var(--line); background: var(--surface); padding-block: 18px; }
-.tiles-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; }
-@media (max-width: 760px) { .tiles-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tiles-4 .tile:last-child { grid-column: auto; } }
-.home-strip .tile { background: var(--bg); }
 .home-section { padding-block: 56px; }
 .home-alt { background: var(--surface); border-block: 1px solid var(--line); }
 .home-section h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 800; letter-spacing: -0.02em; }
@@ -397,14 +394,14 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; letter-spacing: -0.015em; text-wr
 .search-results mark { background: var(--mint-soft); color: var(--mint); border-radius: 3px; padding: 0 2px; }
 
 /* ---------- season bar (Phase 6) ---------- */
-.season-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; padding: 12px 18px; margin-bottom: 14px; border-radius: var(--r); background: var(--bg); border: 1px solid var(--line); }
+.season-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; padding: 12px 18px; margin-bottom: 0; border-radius: var(--r); background: var(--bg); border: 1px solid var(--line); }
 .season-item { display: grid; line-height: 1.15; }
 .season-item small { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
 .season-item b { font-size: 14px; font-weight: 700; color: var(--text); }
 .season-dim { color: var(--muted); font-weight: 600; font-size: 12.5px; }
 .season-cta { margin-left: auto; }
 @media (max-width: 560px) { .season-cta { margin-left: 0; width: 100%; } }
-.season-leaders { margin: 0 0 14px; }
+.season-leaders { margin: 14px 0 0; }
 .season-leaders-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 6px 20px; margin-bottom: 10px; }
 .season-leaders-note { font-size: 12px; }
 .home-strip .leaders { margin: 0; background: var(--bg); }

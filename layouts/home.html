@@ -1,4 +1,4 @@
-{{/* Homepage, built on the shared components. Sections: hero + phone, stat strip, a turn on the phone,
+{{/* Homepage, built on the shared components. Sections: hero + phone, season strip (bar + standings), a turn on the phone,
      core systems, the galaxy, fleet registry, progression, quote, latest release + start here, final CTA. */}}
 {{ define "main" }}
 {{- $d := site.Data.site -}}
@@ -31,12 +31,6 @@
 
 <section class="home-strip" id="season">
   <div class="wrap">{{ partial "season-bar.html" . }}{{ partial "season-leaders.html" . }}</div>
-  <div class="wrap tiles tiles-4">
-    <div class="tile"><small>Hulls</small><b>45</b><span>plus six earn-only epics</span></div>
-    <div class="tile"><small>Ship lines</small><b>9</b><span>neutral, Federation, pirate</span></div>
-    <div class="tile"><small>Structures</small><b>6</b><span>per planet, five levels each</span></div>
-    <div class="tile"><small>Production cycle</small><b>4h</b><span>turns reset on the same clock</span></div>
-  </div>
 </section>
 
 <section class="home-section">
