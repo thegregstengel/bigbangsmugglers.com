@@ -1,0 +1,18 @@
+{{- /* Season standings for the homepage: the featured season's top 10 by XP, filled client-side from
+     stats.json by season.html. Hidden until live rows arrive, so a build without the feed (or a
+     stalled publisher) shows nothing rather than an empty table. */ -}}
+<div class="season-leaders" data-season-wrap="leaders" hidden>
+  <div class="season-leaders-head">
+    <div class="season-item">
+      <small>Standings</small>
+      <b><span data-season="leaders_name"></span> <span class="season-dim">· top 10 by XP</span></b>
+    </div>
+    <span class="season-dim season-leaders-note">Refreshes every four hours with the production cycle. Credits are rounded.</span>
+  </div>
+  <div class="table-wrap leaders">
+    <table>
+      <thead><tr><th>#</th><th>Captain</th><th>Level</th><th>XP</th><th>Credits</th></tr></thead>
+      <tbody data-season-leaders></tbody>
+    </table>
+  </div>
+</div>
