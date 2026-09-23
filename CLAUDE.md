@@ -32,7 +32,7 @@ content/
   privacy.md
   delete-account.md
 data/
-  site.yaml              # season readout (status, name, ends, players, sectors, live endpoint), store/community links
+  site.yaml              # season readout (live endpoints), turn economy (cap, cycle, provisions), store/community links
   guide.yaml             # guide groups in reading order (title, icon, blurb)
   tags.yaml              # shared tag vocabulary: title, chip color, guide page
 assets/css/site.css      # tokens + components; the only stylesheet
@@ -46,7 +46,8 @@ layouts/
   404.html, robots.txt, index.json (search index)
   _partials/             # head, header, footer, tabbar, search, icon, tw-rights, tag-chip, release-title,
                          # season-bar (homepage readout), season-leaders (standings table),
-                         # season (live refresh script: season.json + stats.json)
+                         # season (live refresh script: season.json + stats.json),
+                         # reset-clock (countdown to the next cycle boundary; pure arithmetic)
   _markup/render-table.html  # wraps every markdown table in .table-wrap
 static/                  # favicon set, og-image.png, site.webmanifest, screens/ (game screenshots)
 assets/img/logo-source.png  # 1280px wordmark; source for icons and og-image, not published
@@ -126,6 +127,11 @@ Do not use `kind` as a front matter key — Hugo reserves it.
 - Only elements with `data-pagefind-body` are searchable (guide articles,
   releases, utility pages); pass `section:` via `data-pagefind-filter`.
 - The tab bar renders only on guide and release pages (see `baseof.html`).
+- The site tells the turn story, not a "five minutes" story: 250 turns every
+  4 hours, full reset, no carryover. Turn constants live in `data/site.yaml`
+  → `turns`; the hero tank, HUD reset countdown and world clock read them.
+- Components toggled with the `hidden` attribute rely on the global
+  `[hidden] { display: none !important }` rule; don't remove it.
 - The Trade Wars rights notice in `_partials/tw-rights.html` is never reworded
   and must appear on every page (it does, via the footer).
 

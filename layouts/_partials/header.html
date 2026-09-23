@@ -18,6 +18,7 @@
       {{- $season := site.Data.site.season -}}
       {{- $days := "" -}}{{- with $season.ends }}{{ $days = div (sub (time .).Unix now.Unix) 86400 }}{{ end -}}
       <a class="hud-stat" href="/#season"><small>Season</small><b class="mint"><span data-season="status">{{ $season.status }}</span><span data-season-wrap="days" {{ if not $days }}hidden{{ end }}> · <span data-season="days">{{ with $days }}{{ . }}d{{ end }}</span></span></b></a>
+      <a class="hud-stat" href="/#turns" title="Turns reset on every {{ site.Data.site.turns.cycle_hours }}-hour UTC boundary"><small>Reset</small><b class="gold" data-countdown>—</b></a>
       {{ with $latest }}<a class="hud-stat" href="{{ .RelPermalink }}" title="{{ .Title }}"><small>Build</small><b>v{{ .Params.version }}</b></a>{{ end }}
       {{ partial "search.html" . }}
       <a class="btn btn-primary btn-sm" href="{{ site.Data.site.play.web }}">Play</a>

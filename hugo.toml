@@ -21,7 +21,7 @@ disableKinds = ['taxonomy']
   endLevel = 3
 
 [params]
-  description = "Turn-based space trading for Android and the browser. Trade, fight, smuggle, and build across a galaxy that keeps running while you're away."
+  description = "Turn-based space trading for Android and the browser, in the tradition of the classic BBS door games. 250 turns every four hours: trade, fight, smuggle and build across a galaxy that moves on the same clock."
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

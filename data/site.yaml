@@ -24,6 +24,14 @@ season:
   endpoint: https://storage.googleapis.com/bigbangsmugglers-prod-public-stats/season.json
   stats_endpoint: https://storage.googleapis.com/bigbangsmugglers-prod-public-stats/stats.json
 
+# Turn economy, as configured for the current season (the guide describes the same defaults).
+# Read by the hero tank, the HUD reset countdown and the world clock strip.
+turns:
+  cap: 250
+  cycle_hours: 4
+  provision_price: 800
+  provision_cap: 5
+
 play:
   android: https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers
   web: https://play.bigbangsmugglers.com

@@ -9,6 +9,9 @@ cascade:
 The official guide to Big Bang Smugglers 2.0. Mechanics, real numbers, and the
 gates that actually stop you.
 
+The game runs on turns: 250 every four hours, none carried over. If that's
+new to you, start with [Turns, Credits & Basics](gameplay).
+
 *Every number here was read out of the shipped game. Each page lists the
 releases that changed it.*
 
