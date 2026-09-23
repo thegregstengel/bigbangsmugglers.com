@@ -1,0 +1,21 @@
+# Shared tag vocabulary for the guide and releases.
+# color: chip color class suffix (mint | coral | sky | violet | gold | none)
+# guide: the guide page that explains the system (path under /guide/)
+planets:     { title: Planets,     color: mint,   guide: planets }
+starbases:   { title: Starbases,   color: mint,   guide: planets }
+corps:       { title: Corps,       color: mint,   guide: corporations-fleets }
+combat:      { title: Combat,      color: coral,  guide: combat }
+bounties:    { title: Bounties,    color: coral,  guide: bounties }
+ordnance:    { title: Ordnance,    color: coral,  guide: deployables }
+trading:     { title: Trading,     color: sky,    guide: trading }
+ports:       { title: Ports,       color: sky,    guide: starports }
+smuggling:   { title: Smuggling,   color: sky,    guide: smuggling }
+ships:       { title: Ships,       color: violet, guide: ships }
+upgrades:    { title: Upgrades,    color: violet, guide: tech-upgrades }
+seasons:     { title: Seasons,     color: gold,   guide: seasons }
+progression: { title: Progression, color: gold,   guide: progression }
+missions:    { title: Missions,    color: gold,   guide: missions }
+navigation:  { title: Navigation,  color: none,   guide: navigation }
+factions:    { title: Factions,    color: none,   guide: reputation-factions }
+npcs:        { title: NPCs,        color: none,   guide: npcs }
+platform:    { title: Platform,    color: none,   guide: "" }

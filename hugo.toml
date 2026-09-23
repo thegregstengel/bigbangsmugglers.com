@@ -7,8 +7,8 @@ enableEmoji = true
 enableRobotsTXT = true
 enableGitInfo = false
 
-# Tag pages get their own layout in the redesign (Phase 3); keep them out of the build until then.
-disableKinds = ['taxonomy', 'term']
+# Tag term pages render via layouts/taxonomy/term.html; the bare /tags/ index stays off.
+disableKinds = ['taxonomy']
 
 [markup.goldmark.renderer]
   unsafe = true
