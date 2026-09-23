@@ -404,3 +404,15 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; letter-spacing: -0.015em; text-wr
 .season-dim { color: var(--muted); font-weight: 600; font-size: 12.5px; }
 .season-cta { margin-left: auto; }
 @media (max-width: 560px) { .season-cta { margin-left: 0; width: 100%; } }
+.season-leaders { margin-top: 14px; }
+.season-leaders-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 6px 20px; margin-bottom: 10px; }
+.season-leaders-note { font-size: 12px; }
+.home-strip .leaders { margin: 0; background: var(--bg); }
+.leaders table { font-size: 13.5px; }
+.leaders th, .leaders td { padding: 8px 12px; text-align: left; white-space: nowrap; }
+.leaders th { font-size: 10.5px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--faint); border-bottom: 1px solid var(--line); }
+.leaders td { border-top: 1px solid var(--line); }
+.leaders tr:first-child td { border-top: 0; }
+.leaders .leaders-rank { color: var(--faint); width: 2.5em; }
+.leaders .leaders-handle { font-weight: 700; }
+.leaders tbody tr:first-child .leaders-handle { color: var(--gold); }

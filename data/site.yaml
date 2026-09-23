@@ -8,12 +8,21 @@ season:
   players: ""               # e.g. "128"
   player_cap: ""            # e.g. "250"
   sectors: ""               # e.g. "500"
-  # Live data (Phase 6). When the game publishes a JSON document at this URL, the site fetches it
-  # on load and overwrites the values above. Leave empty until then. Expected shape:
-  #   { "status": "Active", "name": "Season 3", "ends": "2026-10-15T00:00:00Z",
-  #     "players": 128, "player_cap": 250, "sectors": 500 }
-  # The endpoint must send Access-Control-Allow-Origin for https://bigbangsmugglers.com.
-  endpoint: ""
+  # Live data (Phase 6, wired 2026-09-23). The game's worker publishes two JSON documents into a
+  # public-read bucket (prod: bigbangsmugglers-prod-public-stats) on boot, every 4h tick, and within
+  # ~5 minutes of a season being created, activated or ended. The site fetches them on load and
+  # overwrites the values above; a document older than 48h is ignored. Nothing here needs updating
+  # by hand. Shapes live in the game repo, packages/contracts/src/publicStats.ts:
+  #   season.json { "generatedAt": ISO, "status": "Active" | "Ending soon" | "Between seasons",
+  #                 "name": "Season 3" | null, "ends": ISO | null, "players": 128 | null,
+  #                 "player_cap": 250 | null, "sectors": 500 | null }
+  #   stats.json  { "generatedAt", "seasons": [{ id, name, status, startAt, endAt, daysLeft, players,
+  #                 playerCap, sectors, pvpEnabled, leaders: [{ rank, handle, level, xp, credits }] }],
+  #                 "past": [{ id, name, headline, endedAt, players, champion, topBoard }] }
+  # The bucket's CORS policy admits https://bigbangsmugglers.com (and localhost:1313 on the
+  # staging bucket, bigbangsmugglers-stag-public-stats, for `hugo server`).
+  endpoint: https://storage.googleapis.com/bigbangsmugglers-prod-public-stats/season.json
+  stats_endpoint: https://storage.googleapis.com/bigbangsmugglers-prod-public-stats/stats.json
 
 play:
   android: https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers
