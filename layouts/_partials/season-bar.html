@@ -5,9 +5,13 @@
 {{- $days := "" -}}
 {{- with $s.ends }}{{ $t := time . }}{{ $days = div (sub $t.Unix now.Unix) 86400 }}{{ end -}}
 <div class="season-bar" data-season-bar>
-  <div class="season-item">
+  <div class="season-item" data-season-wrap="name" {{ if not $s.name }}hidden{{ end }}>
     <small>Season</small>
-    <b><span data-season="name">{{ $s.name }}</span>{{ if $s.name }} · {{ end }}<span class="t-mint" data-season="status">{{ $s.status }}</span></b>
+    <b data-season="name">{{ $s.name }}</b>
+  </div>
+  <div class="season-item">
+    <small>Status</small>
+    <b class="t-mint" data-season="status">{{ $s.status }}</b>
   </div>
   <div class="season-item" data-season-wrap="ends" {{ if not $s.ends }}hidden{{ end }}>
     <small>Ends</small>
@@ -15,7 +19,7 @@
   </div>
   <div class="season-item" data-season-wrap="players" {{ if not $s.players }}hidden{{ end }}>
     <small>Captains</small>
-    <b class="mono"><span data-season="players">{{ $s.players }}</span>{{ if $s.player_cap }} / {{ end }}<span data-season="player_cap">{{ $s.player_cap }}</span></b>
+    <b class="mono"><span data-season="players">{{ $s.players }}</span><span data-season-wrap="player_cap" {{ if not $s.player_cap }}hidden{{ end }}><span class="season-dim"> / </span><span data-season="player_cap">{{ $s.player_cap }}</span></span></b>
   </div>
   <div class="season-item" data-season-wrap="sectors" {{ if not $s.sectors }}hidden{{ end }}>
     <small>Sectors</small>
