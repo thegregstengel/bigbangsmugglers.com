@@ -17,7 +17,7 @@
     <div class="hud">
       {{- $season := site.Data.site.season -}}
       {{- $days := "" -}}{{- with $season.ends }}{{ $days = div (sub (time .).Unix now.Unix) 86400 }}{{ end -}}
-      <a class="hud-stat" href="/#season"><small>Season</small><b class="mint"><span data-season="status">{{ $season.status }}</span>{{ with $days }} · <span data-season="days">{{ . }}d</span>{{ end }}</b></a>
+      <a class="hud-stat" href="/#season"><small>Season</small><b class="mint"><span data-season="status">{{ $season.status }}</span><span data-season-wrap="days" {{ if not $days }}hidden{{ end }}> · <span data-season="days">{{ with $days }}{{ . }}d{{ end }}</span></span></b></a>
       {{ with $latest }}<a class="hud-stat" href="{{ .RelPermalink }}" title="{{ .Title }}"><small>Build</small><b>v{{ .Params.version }}</b></a>{{ end }}
       {{ partial "search.html" . }}
       <a class="btn btn-primary btn-sm" href="{{ site.Data.site.play.web }}">Play</a>

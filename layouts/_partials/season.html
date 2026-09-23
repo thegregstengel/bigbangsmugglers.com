@@ -30,17 +30,21 @@
     if (s.status) set('status', s.status);
     if (s.status === 'Between seasons') {
       set('name', ''); set('days', '');
-      show('ends', false); show('players', false); show('sectors', false); show('leaders', false);
+      show('name', false); show('days', false); show('ends', false); show('players', false); show('sectors', false); show('leaders', false);
       return;
     }
-    if (s.name) set('name', s.name);
+    if (s.name) { set('name', s.name); show('name', true); }
     if (s.ends) {
       var end = new Date(s.ends), days = Math.max(0, Math.ceil((end - Date.now()) / 86400000));
-      set('days', days + 'd'); set('ends', end.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })); show('ends', true);
+      set('days', days + 'd'); set('ends', end.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })); show('days', true); show('ends', true);
     } else {
-      set('days', ''); show('ends', false);
+      set('days', ''); show('days', false); show('ends', false);
     }
-    if (s.players != null) { set('players', s.players); if (s.player_cap != null) set('player_cap', s.player_cap); show('players', true); }
+    if (s.players != null) {
+      set('players', s.players);
+      if (s.player_cap != null) { set('player_cap', s.player_cap); show('player_cap', true); } else { show('player_cap', false); }
+      show('players', true);
+    }
     if (s.sectors != null) { set('sectors', s.sectors); show('sectors', true); }
   }).catch(function () {});
 
