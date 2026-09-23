@@ -404,7 +404,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; letter-spacing: -0.015em; text-wr
 .season-dim { color: var(--muted); font-weight: 600; font-size: 12.5px; }
 .season-cta { margin-left: auto; }
 @media (max-width: 560px) { .season-cta { margin-left: 0; width: 100%; } }
-.season-leaders { margin-top: 14px; }
+.season-leaders { margin: 0 0 14px; }
 .season-leaders-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 6px 20px; margin-bottom: 10px; }
 .season-leaders-note { font-size: 12px; }
 .home-strip .leaders { margin: 0; background: var(--bg); }
