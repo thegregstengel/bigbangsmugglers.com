@@ -6,7 +6,8 @@ The site is mid-redesign (Sept 2026). The approved plan, design tokens and
 page templates are in the review artifact linked from Claude's memory
 (`site-redesign-plan`). Phases: 0 content hygiene ✓, 1 foundation ✓,
 2 guide ✓, 3 releases ✓, 4 homepage ✓,
-5 search/RSS/polish ✓, 6 live season metrics in the HUD.
+5 search/RSS/polish ✓, 6 season metrics ✓ (placeholder wiring; live data
+when the game publishes `season.endpoint`). The redesign plan is complete.
 
 ---
 
@@ -30,7 +31,7 @@ content/
   privacy.md
   delete-account.md
 data/
-  site.yaml              # season status, store/community links (HUD + footer)
+  site.yaml              # season readout (status, name, ends, players, sectors, live endpoint), store/community links
   guide.yaml             # guide groups in reading order (title, icon, blurb)
   tags.yaml              # shared tag vocabulary: title, chip color, guide page
 assets/css/site.css      # tokens + components; the only stylesheet
@@ -42,7 +43,8 @@ layouts/
   taxonomy/term.html     # /tags/<tag>/: guide page(s) first, then releases
   page.html              # privacy, delete-account (hero + narrow prose + contents rail)
   404.html, robots.txt, index.json (search index)
-  _partials/             # head, header, footer, tabbar, search, icon, tw-rights, tag-chip, release-title
+  _partials/             # head, header, footer, tabbar, search, icon, tw-rights, tag-chip, release-title,
+                         # season-bar (homepage readout), season (live refresh script)
   _markup/render-table.html  # wraps every markdown table in .table-wrap
 static/                  # favicon set, og-image.png, site.webmanifest, screens/ (game screenshots)
 assets/img/logo-source.png  # 1280px wordmark; source for icons and og-image, not published
@@ -84,6 +86,10 @@ where the version is shown separately. Old `/release-notes/...` URLs live
 on as per-note `aliases`; new notes don't need one.
 
 The HUD "Build" readout is the newest `entry: release` note's `version`.
+The HUD "Season" readout and the homepage season bar come from
+`data/site.yaml` → `season`; every field hides itself when empty. When the
+game can publish a JSON document (shape documented in that file), set
+`season.endpoint` and the site refreshes the values on load.
 Release-note commits: "Release notes: v[VERSION]".
 
 ## Guide
