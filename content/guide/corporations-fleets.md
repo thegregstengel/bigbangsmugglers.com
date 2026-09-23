@@ -2,10 +2,14 @@
 title: "Corporations & Fleets"
 date: 2026-08-04
 description: "Founding, roles, the corp bank, policies, fleets and held ports"
-weight: 17
+weight: 61
 group: build
 tags: [corps]
 changed_in: [2.3.0, 2.0.14]
+stats:
+  - { label: "Found", value: "50k cr", sub: "the bank can pay" }
+  - { label: "Roles", value: "3", sub: "leader, officer, member" }
+  - { label: "Held ports", value: "n ÷ 3", sub: "members, minimum 1" }
 ---
 
 ## Founding

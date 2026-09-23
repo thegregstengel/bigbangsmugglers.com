@@ -1,0 +1,2 @@
+{{- /* A release note's title without its version prefix ("v2.3.0 — You Asked" → "You Asked"). */ -}}
+{{- replaceRE `^v[\d.]+(?:\s*/\s*v[\d.]+)?\s*(?:—|–|--|-|:)\s*` "" .Title -}}

@@ -2,10 +2,14 @@
 title: "Getting Started"
 date: 2026-08-04
 description: "Sign up, join a season, and survive your first ten minutes"
-weight: 1
+weight: 10
 group: start
 tags: [platform, seasons]
 changed_in: []
+stats:
+  - { label: "Wallet", value: "5,000 cr", sub: "to start" }
+  - { label: "Turns", value: "250", sub: "reset every 4 hours" }
+  - { label: "Handle", value: "3–20", sub: "characters" }
 ---
 
 ## Get the game

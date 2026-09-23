@@ -2,10 +2,14 @@
 title: "Factions, Alignment & Standing"
 date: 2026-08-04
 description: "The two axes, how to earn them, and every gate they control"
-weight: 14
+weight: 70
 group: compete
 tags: [factions]
 changed_in: [2.3.0, 2.0.8]
+stats:
+  - { label: "Alignment", value: "±1,000", sub: "one axis, starts at 0" }
+  - { label: "Membership", value: "±500", sub: "Ally or Rogue" }
+  - { label: "Standing decay", value: "1%", sub: "per day, all three" }
 ---
 
 There are two numbers, they are not the same thing, and confusing them will

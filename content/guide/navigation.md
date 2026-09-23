@@ -2,10 +2,14 @@
 title: "Navigation & Travel"
 date: 2026-08-04
 description: "Moving, warp, the Tesseract, wormholes, hazards and beacons"
-weight: 3
+weight: 30
 group: fly
 tags: [navigation]
 changed_in: [2.3.0]
+stats:
+  - { label: "Move", value: "1 turn", sub: "per linked sector" }
+  - { label: "Warp L5", value: "4 turns", sub: "for a 20-hop trip" }
+  - { label: "Tesseract", value: "25 turns", sub: "to any visited sector" }
 ---
 
 ## Moving

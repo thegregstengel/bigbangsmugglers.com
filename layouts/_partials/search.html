@@ -1,0 +1,101 @@
+{{- /* Site search. Uses the Pagefind index built in CI (/pagefind/pagefind.js); falls back to the
+     Hugo JSON index (/index.json) when Pagefind isn't present, e.g. under `hugo server`.
+     Cmd/Ctrl-K or "/" opens it. Styles live in site.css. */ -}}
+<button type="button" id="bbs-search-open" class="search-open" aria-label="Search the site">
+  {{ partial "icon.html" "search" }}<span>Search</span><kbd>⌘K</kbd>
+</button>
+
+<div id="bbs-search-modal" class="search-modal" hidden>
+  <div class="search-dialog" role="dialog" aria-modal="true" aria-label="Search">
+    <input id="bbs-search-input" class="search-input" type="search" placeholder="Search the guide and releases…" autocomplete="off" />
+    <div id="bbs-search-results" class="search-results"></div>
+    <div class="search-hint">↑↓ move · ↵ open · esc close</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var openBtn = document.getElementById('bbs-search-open');
+  var modal = document.getElementById('bbs-search-modal');
+  var input = document.getElementById('bbs-search-input');
+  var out = document.getElementById('bbs-search-results');
+  if (!openBtn || !modal || !input || !out) return;
+  var engine = null, loading = null, active = -1, hits = [], seq = 0;
+
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+
+  // Pagefind (production) --------------------------------------------------
+  function pagefindEngine() {
+    return import('/pagefind/pagefind.js').then(function (pf) {
+      return pf.init().then(function () {
+        return function (q) {
+          return pf.search(q).then(function (r) {
+            return Promise.all(r.results.slice(0, 8).map(function (x) { return x.data(); }));
+          }).then(function (docs) {
+            return docs.map(function (d) {
+              return { title: d.meta.title || d.url, url: d.url, snippet: d.excerpt, section: (d.filters && d.filters.section && d.filters.section[0]) || '' , html: true };
+            });
+          });
+        };
+      });
+    });
+  }
+  // Hugo JSON index (dev fallback) -----------------------------------------
+  function jsonEngine() {
+    return fetch('/index.json', { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.json() : []; }).then(function (j) {
+      var docs = (Array.isArray(j) ? j : []).map(function (d) { return { title: d.title || '', url: d.url || '', body: (d.content || '').slice(0, 4000) }; });
+      return function (q) {
+        q = q.toLowerCase();
+        return Promise.resolve(docs.map(function (d) {
+          var t = d.title.toLowerCase(), b = d.body.toLowerCase(), ti = t.indexOf(q), bi = b.indexOf(q);
+          if (ti < 0 && bi < 0) return null;
+          var score = (ti === 0 ? 0 : ti < 0 ? 40 : 10) + (bi < 0 ? 20 : 0);
+          var snippet = bi >= 0 ? '…' + d.body.slice(Math.max(0, bi - 45), bi + 95).trim() + '…' : d.body.slice(0, 110);
+          return { title: d.title, url: d.url, snippet: snippet, score: score, section: '' };
+        }).filter(Boolean).sort(function (a, b) { return a.score - b.score; }).slice(0, 8));
+      };
+    });
+  }
+  function load() {
+    if (engine) return Promise.resolve(engine);
+    if (loading) return loading;
+    loading = pagefindEngine().catch(jsonEngine).catch(function () { return function () { return Promise.resolve([]); }; })
+      .then(function (fn) { engine = fn; return fn; });
+    return loading;
+  }
+
+  function render() {
+    if (!hits.length) { out.innerHTML = '<p class="search-empty">' + (input.value.trim() ? 'No matches.' : 'Type to search the guide and releases.') + '</p>'; return; }
+    out.innerHTML = hits.map(function (h, i) {
+      var snippet = h.html ? String(h.snippet).replace(/<(?!\/?mark\b)[^>]*>/g, '') : esc(h.snippet);
+      return '<a href="' + esc(h.url) + '" class="' + (i === active ? 'active' : '') + '"><b>' + esc(h.title) + (h.section ? ' <em>' + esc(h.section) + '</em>' : '') + '</b><span>' + snippet + '</span></a>';
+    }).join('');
+  }
+  function run() {
+    var q = input.value.trim(), my = ++seq;
+    if (!q) { hits = []; active = -1; render(); return; }
+    load().then(function (fn) { return fn(q); }).then(function (r) {
+      if (my !== seq) return;
+      hits = r; active = hits.length ? 0 : -1; render();
+    });
+  }
+  var timer = null;
+  function debounced() { clearTimeout(timer); timer = setTimeout(run, 120); }
+  function open() { modal.hidden = false; document.body.style.overflow = 'hidden'; load(); render(); input.focus(); }
+  function close() { modal.hidden = true; document.body.style.overflow = ''; input.value = ''; hits = []; active = -1; render(); }
+
+  openBtn.addEventListener('click', open);
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  input.addEventListener('input', debounced);
+  document.addEventListener('keydown', function (e) {
+    var typing = /^(input|textarea|select)$/i.test((e.target.tagName || ''));
+    if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing && modal.hidden)) { e.preventDefault(); open(); return; }
+    if (modal.hidden) return;
+    if (e.key === 'Escape') { close(); }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); if (hits.length) { active = (active + 1) % hits.length; render(); } }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (hits.length) { active = (active - 1 + hits.length) % hits.length; render(); } }
+    else if (e.key === 'Enter' && hits[active]) { window.location.href = hits[active].url; }
+  });
+  render();
+})();
+</script>

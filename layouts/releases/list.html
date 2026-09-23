@@ -1,0 +1,100 @@
+{{/* Releases index: latest release card, Releases / Dev log tabs, tag filter, releases grouped by major version. */}}
+{{ define "main" }}
+{{- $all := .RegularPages.ByDate.Reverse -}}
+{{- $releases := where $all ".Params.entry" "release" -}}
+{{- $devlog := where $all ".Params.entry" "devlog" -}}
+{{- $latest := index $releases 0 -}}
+{{- $majors := slice -}}
+{{- range $releases }}{{ $m := index (split (string .Params.version) ".") 0 }}{{ if not (in $majors $m) }}{{ $majors = $majors | append $m }}{{ end }}{{ end -}}
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="chip chip-mint" style="margin-bottom: 14px;">{{ len $releases }} releases · {{ len $devlog }} dev log posts</div>
+    <h1>What changed, and when.</h1>
+    <p class="hero-desc">{{ .Description }}</p>
+  </div>
+</section>
+
+<div class="wrap releases-page">
+  {{ with $latest }}
+  <a class="latest-card" href="{{ .RelPermalink }}">
+    <div class="latest-meta"><span class="chip chip-gold">Latest</span><span class="mono">{{ .Date.Format "2 Jan 2006" }}</span></div>
+    <h2><span class="mono">v{{ .Params.version }}</span> · {{ partial "release-title.html" . }}</h2>
+    <p>{{ .Description }}</p>
+    <div class="tag-row">{{ range first 4 .Params.tags }}{{ $t := index site.Data.tags . }}<span class="chip{{ with $t }}{{ if ne .color "none" }} chip-{{ .color }}{{ end }}{{ end }}">{{ with $t }}{{ .title }}{{ else }}{{ . }}{{ end }}</span>{{ end }}</div>
+  </a>
+  {{ end }}
+
+  <div class="tabs" role="tablist">
+    <button type="button" class="tab" role="tab" aria-selected="true" data-tab="releases">Releases</button>
+    <button type="button" class="tab" role="tab" aria-selected="false" data-tab="devlog">Dev log</button>
+  </div>
+
+  <div id="tab-releases" class="tab-panel">
+    <div class="filter-row" aria-label="Filter by system">
+      <button type="button" class="chip chip-active" data-filter="">All</button>
+      {{ range $key, $t := site.Data.tags }}<button type="button" class="chip{{ if ne $t.color "none" }} chip-{{ $t.color }}{{ end }}" data-filter="{{ $key }}">{{ $t.title }}</button>{{ end }}
+    </div>
+
+    {{ range $majors }}
+      {{ $major := . }}
+      <section class="rel-group" data-major="{{ $major }}">
+        <div class="rel-group-title"><span class="mono">{{ $major }}.x</span></div>
+        <div class="rel-list">
+          {{ range $releases }}
+            {{ if eq (index (split (string .Params.version) ".") 0) $major }}
+            <a class="rel-row" href="{{ .RelPermalink }}" data-tags="{{ delimit (.Params.tags | default slice) " " }}">
+              <span class="rel-version mono">v{{ .Params.version }}</span>
+              <span class="rel-text"><b>{{ partial "release-title.html" . }}</b><span>{{ .Description | plainify | truncate 140 }}</span></span>
+              <span class="rel-date mono">{{ .Date.Format "2 Jan 2006" }}</span>
+              <span class="rel-tags">{{ range first 3 (.Params.tags | default slice) }}{{ $t := index site.Data.tags . }}<span class="chip{{ with $t }}{{ if ne .color "none" }} chip-{{ .color }}{{ end }}{{ end }}">{{ with $t }}{{ .title }}{{ else }}{{ . }}{{ end }}</span>{{ end }}</span>
+            </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+    <p class="filter-empty" hidden>No releases carry that tag yet.</p>
+  </div>
+
+  <div id="tab-devlog" class="tab-panel" hidden>
+    <p class="devlog-intro">Before the first numbered build, the rebuild was written up day by day: audits, sprints, and the AI assistant playing the game. Kept as history.</p>
+    <div class="rel-list">
+      {{ range $devlog }}
+      <a class="rel-row devlog" href="{{ .RelPermalink }}">
+        <span class="rel-version mono">{{ .Date.Format "2 Jan" }}</span>
+        <span class="rel-text"><b>{{ .Title }}</b><span>{{ .Description | plainify | truncate 140 }}</span></span>
+        <span class="rel-date mono">{{ .Date.Format "2006" }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab');
+  function show(name) {
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.tab === name)); });
+    document.getElementById('tab-releases').hidden = name !== 'releases';
+    document.getElementById('tab-devlog').hidden = name !== 'devlog';
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.tab); if (history.replaceState) history.replaceState(null, '', t.dataset.tab === 'devlog' ? '#devlog' : location.pathname); }); });
+  if (location.hash === '#devlog') show('devlog');
+
+  var rows = document.querySelectorAll('.rel-row[data-tags]');
+  var groups = document.querySelectorAll('.rel-group');
+  var empty = document.querySelector('.filter-empty');
+  document.querySelectorAll('[data-filter]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var tag = b.dataset.filter;
+      document.querySelectorAll('[data-filter]').forEach(function (x) { x.classList.toggle('chip-active', x === b); });
+      var any = false;
+      rows.forEach(function (r) { var on = !tag || (' ' + r.dataset.tags + ' ').indexOf(' ' + tag + ' ') >= 0; r.hidden = !on; any = any || on; });
+      groups.forEach(function (g) { g.hidden = !g.querySelector('.rel-row:not([hidden])'); });
+      empty.hidden = any;
+    });
+  });
+})();
+</script>
+{{ end }}

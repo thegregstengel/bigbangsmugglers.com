@@ -8,10 +8,12 @@ built with [Hugo](https://gohugo.io/) and deployed to GitHub Pages.
 ```
 content/
   guide/            Player guide (21 pages, grouped by front matter)
-  release-notes/    Releases (v1.1.0 →) and the Feb 2026 dev log
+  releases/         Releases (v1.1.0 →) and the Feb 2026 dev log
   privacy.md        Privacy policy
   delete-account.md Account deletion instructions
-layouts/            Site templates and partials (see CLAUDE.md)
+assets/css/site.css The only stylesheet (tokens + components)
+data/site.yaml      Season status and store/community links
+layouts/            Base layout, page templates, partials (see CLAUDE.md)
 static/             Logo and favicon
 hugo.toml           Site configuration
 .github/workflows/  Build and deploy on push to main
@@ -24,7 +26,6 @@ Requires **Hugo extended** 0.155 or later.
 ```bash
 git clone https://github.com/thegregstengel/bigbangsmugglers.com.git
 cd bigbangsmugglers.com
-git submodule update --init --recursive
 hugo server -D
 ```
 
@@ -36,8 +37,8 @@ Visit http://localhost:1313.
 ~/.aiops/scripts/bbs-release-notes-site "<filename>.md" "v<version> -- <Title>"
 ```
 
-Or create a file in `content/release-notes/` by hand. Every note needs
-`title`, `date` (explicit UTC), `description`, `type: blog`, `kind`
+Or create a file in `content/releases/` by hand. Every note needs
+`title`, `date` (explicit UTC), `description`, `entry`
 (`release` or `devlog`), `version` (releases only) and `tags`. The tag list
 and guide conventions live in `CLAUDE.md`.
 

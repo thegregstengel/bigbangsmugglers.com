@@ -2,10 +2,14 @@
 title: "Turns, Credits & Basics"
 date: 2026-08-04
 description: "The turn cycle, buying turns, wallet versus bank, and streaks"
-weight: 2
+weight: 20
 group: start
 tags: [platform, progression]
 changed_in: [2.3.0, 2.0.17, 2.0.13]
+stats:
+  - { label: "Turn cap", value: "250", sub: "a reset, not a top-up" }
+  - { label: "Cycle", value: "4h", sub: "on UTC boundaries" }
+  - { label: "Provisions", value: "800 cr", sub: "per turn, 5 a cycle" }
 ---
 
 ## The turn cycle

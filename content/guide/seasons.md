@@ -2,10 +2,14 @@
 title: "Seasons"
 date: 2026-08-04
 description: "What a season is, what carries over, and how one ends"
-weight: 20
+weight: 73
 group: compete
 tags: [seasons]
 changed_in: [2.3.0]
+stats:
+  - { label: "Sectors", value: "500", sub: "default per season" }
+  - { label: "Carries over", value: "prestige", sub: "titles, stats, streak" }
+  - { label: "Rejoin", value: "never", sub: "leaving is final" }
 ---
 
 ## What a season is

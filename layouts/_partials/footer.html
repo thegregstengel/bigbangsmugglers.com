@@ -1,0 +1,33 @@
+{{- /* Footer shared by every page. The Trade Wars rights notice lives in tw-rights.html and is never reworded. */ -}}
+{{- $d := site.Data.site -}}
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">{{ partial "icon.html" "star" }}</span><span>Big Bang Smugglers</span></a>
+        <div id="tw-rights" class="footer-rights">{{ partial "tw-rights.html" . }}</div>
+      </div>
+      <div class="footer-col">
+        <h4>Play</h4>
+        <a href="{{ $d.play.android }}">Google Play</a>
+        <a href="{{ $d.play.web }}">Play in the browser</a>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="/guide/">Player guide</a>
+        <a href="/releases/">Releases</a>
+        <a href="/releases/index.xml">Release feed (RSS)</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="{{ $d.community.discord }}" rel="noopener">Discord</a>
+        <a href="{{ $d.community.reddit }}" rel="noopener">Reddit</a>
+        <a href="mailto:{{ $d.community.feedback }}">Send feedback</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024–{{ now.Year }} Protovision Games</span>
+      <span><a href="/privacy/">Privacy</a> · <a href="/delete-account/">Delete account</a></span>
+    </div>
+  </div>
+</footer>

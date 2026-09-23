@@ -2,10 +2,14 @@
 title: "Upgrades, Drives & Tech"
 date: 2026-08-04
 description: "The upgrade ladder, warp and StarNav, and the ten tech modules"
-weight: 8
+weight: 52
 group: fight
 tags: [upgrades]
 changed_in: []
+stats:
+  - { label: "Stat tiers", value: "5", sub: "per stat, per ship" }
+  - { label: "Shields", value: "+50%", sub: "cap on every hull" }
+  - { label: "Modules", value: "10", sub: "one per ship, permanent" }
 ---
 
 Three separate systems live behind the "upgrade" button, and they behave

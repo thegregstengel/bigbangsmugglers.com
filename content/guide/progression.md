@@ -2,10 +2,14 @@
 title: "Progression"
 date: 2026-08-04
 description: "XP, levels, gates, roles, insignia, prestige and leaderboards"
-weight: 18
+weight: 71
 group: compete
 tags: [progression]
 changed_in: [2.0.8]
+stats:
+  - { label: "Ladder", value: "100", sub: "levels, pinned per season" }
+  - { label: "Reference pace", value: "4,500 XP", sub: "a day over 12 weeks" }
+  - { label: "Landmark", value: "+100 XP", sub: "first visit" }
 ---
 
 ## The level curve

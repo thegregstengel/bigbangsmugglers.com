@@ -1,57 +1,100 @@
-{{/* Standalone guide page — sidebar of every guide section, markdown body,
-     in-page contents, and prev/next. Does not use the Hextra docs layout.
-     Lives in layouts/docs/ (not layouts/guide/) because content/guide/_index.md
-     cascades `type: docs`, and Hugo resolves layouts by type. */}}
+{{/* Guide page. Desktop: grouped section sidebar / article / rail (contents + changed-in).
+     Phone: chip row of the page's group, collapsible contents, article, tab bar.
+     Lives in layouts/docs/ because content/guide/_index.md cascades `type: docs`. */}}
+{{ define "main" }}
 {{- $guide := site.GetPage "/guide" -}}
-<!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}">
-  <head>{{ partial "custom/bbs-head.html" . }}</head>
-  <body>
-    {{ partial "custom/bbs-nav.html" (dict "section" "guide" "eyebrow" "PLAYER GUIDE" "status" (printf "%d SECTIONS" (len $guide.RegularPages))) }}
+{{- $pages := $guide.RegularPages.ByWeight -}}
+{{- $groups := site.Data.guide.groups -}}
+{{- $group := "" -}}
+{{- range $groups }}{{ if eq .key $.Params.group }}{{ $group = . }}{{ end }}{{ end -}}
+{{- $siblings := where $pages ".Params.group" .Params.group -}}
+{{- $releases := where (where site.RegularPages "Section" "releases") ".Params.entry" "release" -}}
+{{- $changed := .Params.changed_in | default slice -}}
+{{- $latestNote := "" -}}
+{{- with index $changed 0 }}{{ range where $releases ".Params.version" . }}{{ $latestNote = . }}{{ end }}{{ end -}}
 
-    <div class="bbs-shell" style="display: grid; grid-template-columns: 268px minmax(0, 1fr) 232px;">
-      <aside class="bbs-side" style="border-right: 1px solid #1e2a4a;">
-        <div style="position: sticky; top: 63px; padding: 30px 22px;">
-          <div class="bbs-mono" style="font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8892b0; margin-bottom: 16px;">Contents</div>
-          <nav style="display: grid; gap: 2px;">
-            {{ range $guide.RegularPages.ByWeight }}
-              {{ $active := eq $.RelPermalink .RelPermalink }}
-              <a href="{{ .RelPermalink }}" style="padding: 9px 10px; font-size: 14px; color: {{ if $active }}#ccd6f6{{ else }}#8892b0{{ end }}; background: {{ if $active }}#112240{{ else }}transparent{{ end }}; border-left: 2px solid {{ if $active }}#64ffda{{ else }}#1e2a4a{{ end }};">{{ .Title }}</a>
-            {{ end }}
-          </nav>
-          <div style="margin-top: 26px; padding: 16px; background: #112240; border: 1px solid #1e2a4a; border-radius: 6px;">
-            <p style="margin: 0 0 12px; font-size: 13.5px; line-height: 1.55; color: #8892b0;">Stuck on something the guide doesn't cover?</p>
-            <a href="https://discord.gg/A52xxB2VT9" class="bbs-mono" style="font-size: 12px; letter-spacing: 0.04em; border-bottom: 1px solid currentColor;">Ask in Discord →</a>
-          </div>
+<div class="wrap guide-shell">
+  <aside class="side-nav" aria-label="Guide sections">
+    <div class="side-nav-inner">
+      {{ range $groups }}
+        {{ $g := . }}
+        <div class="side-group">
+          <div class="side-group-title"><span aria-hidden="true">{{ .icon }}</span> {{ .title }}</div>
+          {{ range where $pages ".Params.group" .key }}
+            <a href="{{ .RelPermalink }}" {{ if eq $.RelPermalink .RelPermalink }}aria-current="page"{{ end }}>{{ .Title }}</a>
+          {{ end }}
         </div>
-      </aside>
-
-      <main style="padding: 52px 44px 72px; min-width: 0;">
-        <nav aria-label="Breadcrumb" class="bbs-mono" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;">
-          <a href="/" style="color: #8892b0;">Home</a>
-          <span style="color: #1e2a4a;" aria-hidden="true">/</span>
-          <a href="/guide/" style="color: #8892b0;">{{ $guide.Title }}</a>
-          <span style="color: #1e2a4a;" aria-hidden="true">/</span>
-          <span style="color: #64ffda;">{{ .Title }}</span>
-        </nav>
-        <h1 style="font-size: 46px; font-weight: 700; letter-spacing: -0.032em; line-height: 1.05; margin: 0 0 16px; color: #ccd6f6;">{{ .Title }}</h1>
-        {{ with .Description }}<p style="font-size: 18px; line-height: 1.6; color: #8892b0; max-width: 42em; margin: 0 0 36px; text-wrap: pretty;">{{ . }}</p>{{ end }}
-        <article class="bbs-prose">{{ .Content }}</article>
-
-        <nav style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px; padding-top: 28px; border-top: 1px solid #1e2a4a;">
-          <div>{{ with .PrevInSection }}<a href="{{ .RelPermalink }}" style="display: block; padding: 18px 20px; border: 1px solid #1e2a4a; border-radius: 6px;"><span class="bbs-mono" style="display: block; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8892b0; margin-bottom: 8px;">← Previous</span><span style="font-size: 16px; font-weight: 600; color: #ccd6f6;">{{ .Title }}</span></a>{{ end }}</div>
-          <div>{{ with .NextInSection }}<a href="{{ .RelPermalink }}" style="display: block; padding: 18px 20px; border: 1px solid #1e2a4a; border-radius: 6px; text-align: right;"><span class="bbs-mono" style="display: block; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8892b0; margin-bottom: 8px;">Next →</span><span style="font-size: 16px; font-weight: 600; color: #ccd6f6;">{{ .Title }}</span></a>{{ end }}</div>
-        </nav>
-      </main>
-
-      <aside class="bbs-toc-rail" style="border-left: 1px solid #1e2a4a;">
-        <div style="position: sticky; top: 63px; padding: 30px 20px;">
-          <div class="bbs-mono" style="font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8892b0; margin-bottom: 14px;">On this page</div>
-          <div class="bbs-toc">{{ .TableOfContents }}</div>
-        </div>
-      </aside>
+      {{ end }}
+      <div class="side-help">
+        <p>Stuck on something the guide doesn't cover?</p>
+        <a href="{{ site.Data.site.community.discord }}" rel="noopener">Ask in Discord →</a>
+      </div>
     </div>
+  </aside>
 
-    {{ partial "custom/bbs-footer.html" . }}
-  </body>
-</html>
+  <article class="guide-main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><a href="/guide/">Guide</a><span aria-hidden="true">/</span><span class="here">{{ .Title }}</span>
+    </nav>
+
+    {{ with $group }}
+    <div class="chip-row" aria-label="{{ .title }} section">
+      <span class="chip chip-mint">{{ .icon }} {{ .title }}</span>
+      {{ range $siblings }}<a class="chip {{ if eq $.RelPermalink .RelPermalink }}chip-active{{ end }}" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+    </div>
+    {{ end }}
+
+    <header class="guide-head">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="guide-desc">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ with .Params.stats }}
+    <div class="tiles">
+      {{ range . }}<div class="tile"><small>{{ .label }}</small><b>{{ .value }}</b>{{ with .sub }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+    </div>
+    {{ end }}
+
+    {{ with $latestNote }}
+    <div class="callout">
+      <i></i>
+      <div><b>Updated in v{{ .Params.version }}.</b> {{ .Description }} <a href="{{ .RelPermalink }}">Read the release →</a></div>
+    </div>
+    {{ end }}
+
+    {{ with .TableOfContents }}{{ if ne . "<nav id=\"TableOfContents\"></nav>" }}
+    <details class="toc-sheet">
+      <summary><span>On this page</span></summary>
+      <div class="bbs-toc">{{ . }}</div>
+    </details>
+    {{ end }}{{ end }}
+
+    <div class="bbs-prose" data-pagefind-body data-pagefind-filter="section:Guide" data-pagefind-meta="title:{{ .Title }}">{{ .Content }}</div>
+
+    <nav class="pager" aria-label="Guide pages">
+      {{/* Hugo's Next/Prev run against the default sort (weight ascending), where "Next" means earlier in the list. */}}
+      {{ with .NextInSection }}<a class="pager-link" href="{{ .RelPermalink }}"><small>← Previous</small><b>{{ .Title }}</b></a>{{ else }}<span></span>{{ end }}
+      {{ with .PrevInSection }}<a class="pager-link next" href="{{ .RelPermalink }}"><small>Next →</small><b>{{ .Title }}</b></a>{{ end }}
+    </nav>
+  </article>
+
+  <aside class="rail" aria-label="Page details">
+    <div class="rail-inner">
+      {{ with .TableOfContents }}{{ if ne . "<nav id=\"TableOfContents\"></nav>" }}
+      <div class="rail-title">On this page</div>
+      <div class="bbs-toc">{{ . }}</div>
+      {{ end }}{{ end }}
+      {{ with $changed }}
+      <div class="rail-title" style="margin-top: 22px;">Changed in</div>
+      <div class="rail-versions">
+        {{ range . }}
+          {{ $v := . }}
+          {{ $hit := "" }}{{ range where $releases ".Params.version" $v }}{{ $hit = . }}{{ end }}
+          {{ with $hit }}<a class="chip" href="{{ .RelPermalink }}" title="{{ .Title }}">v{{ $v }}</a>{{ else }}<span class="chip">v{{ $v }}</span>{{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </aside>
+</div>
+{{ end }}

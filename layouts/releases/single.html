@@ -1,0 +1,56 @@
+{{/* One release (or dev log post): header with version, date and tags; article; guide pages this changed; older / newer. */}}
+{{ define "main" }}
+{{- $isRelease := eq .Params.entry "release" -}}
+{{- $version := .Params.version -}}
+{{- $guide := site.GetPage "/guide" -}}
+{{- $changedPages := slice -}}
+{{- if $version }}{{ range $guide.RegularPages.ByWeight }}{{ if in (.Params.changed_in | default slice) $version }}{{ $changedPages = $changedPages | append . }}{{ end }}{{ end }}{{ end -}}
+{{- if not $changedPages }}{{ range .Params.tags }}{{ with (index site.Data.tags .) }}{{ with .guide }}{{ with site.GetPage (printf "/guide/%s" .) }}{{ if not (in $changedPages .) }}{{ $changedPages = $changedPages | append . }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end -}}
+
+<div class="wrap release-page">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a><span aria-hidden="true">/</span><a href="/releases/{{ if not $isRelease }}#devlog{{ end }}">{{ if $isRelease }}Releases{{ else }}Dev log{{ end }}</a><span aria-hidden="true">/</span><span class="here">{{ if $isRelease }}v{{ $version }}{{ else }}{{ .Date.Format "2 Jan 2006" }}{{ end }}</span>
+  </nav>
+
+  <header class="release-head">
+    <div class="release-meta">
+      {{ if $isRelease }}<span class="chip chip-gold mono">v{{ $version }}</span>{{ else }}<span class="chip chip-sky">Dev log</span>{{ end }}
+      <span class="mono">{{ .Date.Format "2 January 2006" }}</span>
+      {{ with .Params.platforms }}{{ range . }}<span class="chip">{{ . }}</span>{{ end }}{{ end }}
+    </div>
+    <h1>{{ if $isRelease }}{{ partial "release-title.html" . }}{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ with .Description }}<p class="release-desc">{{ . }}</p>{{ end }}
+    {{ with .Params.tags }}<div class="tag-row">{{ range . }}{{ partial "tag-chip.html" . }}{{ end }}</div>{{ end }}
+  </header>
+
+  <div class="release-body">
+    <article class="bbs-prose" data-pagefind-body data-pagefind-filter="section:{{ if $isRelease }}Release{{ else }}Dev log{{ end }}" data-pagefind-meta="title:{{ if $isRelease }}v{{ $version }} · {{ partial "release-title.html" . }}{{ else }}{{ .Title }}{{ end }}">{{ .Content }}</article>
+
+    <aside class="release-side">
+      {{ with $changedPages }}
+      <div class="side-card">
+        <div class="rail-title">{{ if $version }}Guide pages this changed{{ else }}Related guide pages{{ end }}</div>
+        <div class="side-links">
+          {{ range . }}<a class="row" href="{{ .RelPermalink }}"><span class="row-text"><b>{{ .Title }}</b><span>{{ .Description }}</span></span><span class="row-go" aria-hidden="true">→</span></a>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ if $isRelease }}
+      <div class="side-card">
+        <div class="rail-title">Get this build</div>
+        <div class="side-links">
+          <a class="btn btn-primary" href="{{ site.Data.site.play.android }}">Google Play</a>
+          <a class="btn btn-ghost" href="{{ site.Data.site.play.web }}">Play in the browser</a>
+        </div>
+        <p class="side-note">Web players are always on the newest build. Android updates in place.</p>
+      </div>
+      {{ end }}
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Other releases">
+    {{ with .PrevInSection }}<a class="pager-link" href="{{ .RelPermalink }}"><small>← Older</small><b>{{ .Title }}</b></a>{{ else }}<span></span>{{ end }}
+    {{ with .NextInSection }}<a class="pager-link next" href="{{ .RelPermalink }}"><small>Newer →</small><b>{{ .Title }}</b></a>{{ end }}
+  </nav>
+</div>
+{{ end }}

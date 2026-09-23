@@ -1,0 +1,26 @@
+{{- /* HUD header: brand, five destinations, season + build readouts, search, Play. Identical on every page. */ -}}
+{{- $releases := where (where site.RegularPages "Section" "releases") ".Params.entry" "release" -}}
+{{- $latest := index ($releases.ByDate.Reverse) 0 -}}
+{{- $section := .Section -}}
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/" aria-label="Big Bang Smugglers home">
+      <span class="brand-mark" aria-hidden="true">{{ partial "icon.html" "star" }}</span>
+      <span>Big Bang Smugglers</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
+      <a href="/guide/" {{ if eq $section "guide" }}aria-current="page"{{ end }}>Guide</a>
+      <a href="/releases/" {{ if eq $section "releases" }}aria-current="page"{{ end }}>Releases</a>
+      <a href="{{ site.Data.site.community.discord }}" rel="noopener">Discord</a>
+    </nav>
+    <div class="hud">
+      {{- $season := site.Data.site.season -}}
+      {{- $days := "" -}}{{- with $season.ends }}{{ $days = div (sub (time .).Unix now.Unix) 86400 }}{{ end -}}
+      <a class="hud-stat" href="/#season"><small>Season</small><b class="mint"><span data-season="status">{{ $season.status }}</span>{{ with $days }} · <span data-season="days">{{ . }}d</span>{{ end }}</b></a>
+      {{ with $latest }}<a class="hud-stat" href="{{ .RelPermalink }}" title="{{ .Title }}"><small>Build</small><b>v{{ .Params.version }}</b></a>{{ end }}
+      {{ partial "search.html" . }}
+      <a class="btn btn-primary btn-sm" href="{{ site.Data.site.play.web }}">Play</a>
+    </div>
+  </div>
+</header>

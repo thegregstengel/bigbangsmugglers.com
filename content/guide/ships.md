@@ -2,10 +2,14 @@
 title: "Ships"
 date: 2026-08-04
 description: "Three archetypes, three hull lines, five tiers, and the epics"
-weight: 7
+weight: 51
 group: fight
 tags: [ships]
 changed_in: []
+stats:
+  - { label: "Hulls", value: "45", sub: "plus 6 earn-only epics" }
+  - { label: "Tiers", value: "5", sub: "three lines each" }
+  - { label: "Fed shields", value: "+10%", sub: "at every tier" }
 ---
 
 ## The shape of the catalog

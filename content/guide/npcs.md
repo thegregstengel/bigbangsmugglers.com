@@ -2,10 +2,14 @@
 title: "NPCs & Encounters"
 date: 2026-08-04
 description: "Pirates, patrols, traders, named captains, and every way out"
-weight: 13
+weight: 33
 group: fly
 tags: [npcs]
 changed_in: [2.3.0, 2.0.9]
+stats:
+  - { label: "Pirate", value: "3.0%", sub: "base chance per move" }
+  - { label: "Trader", value: "2.0%", sub: "three deals each" }
+  - { label: "Patrol", value: "1.5%", sub: "drops nothing" }
 ---
 
 ## The three types

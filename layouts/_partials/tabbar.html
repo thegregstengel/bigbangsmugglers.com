@@ -1,0 +1,7 @@
+{{- /* Phone-only bottom tab bar, mirroring the game client. Rendered on guide and release pages only. */ -}}
+<nav class="tabbar" aria-label="Sections">
+  <a href="/">{{ partial "icon.html" "home" }}Home</a>
+  <a href="/guide/" {{ if eq .Section "guide" }}aria-current="page"{{ end }}>{{ partial "icon.html" "book" }}Guide</a>
+  <a href="/releases/" {{ if eq .Section "releases" }}aria-current="page"{{ end }}>{{ partial "icon.html" "notes" }}Releases</a>
+  <a href="{{ site.Data.site.play.web }}">{{ partial "icon.html" "rocket" }}Play</a>
+</nav>

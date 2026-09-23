@@ -2,10 +2,14 @@
 title: "Bounties"
 date: 2026-08-04
 description: "Posting, collecting, faction claims, and buying off your warrant"
-weight: 10
+weight: 53
 group: fight
 tags: [bounties]
 changed_in: [2.3.0, 2.0.15]
+stats:
+  - { label: "Post", value: "500–100k", sub: "credits, +10% fee" }
+  - { label: "Expiry", value: "7 days", sub: "player bounties only" }
+  - { label: "Faction cap", value: "500k", sub: "never expires" }
 ---
 
 There are two kinds of bounty and they pay out completely differently.

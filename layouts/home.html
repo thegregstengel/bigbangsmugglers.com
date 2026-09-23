@@ -1,0 +1,187 @@
+{{/* Homepage, built on the shared components. Sections: hero + phone, stat strip, a turn on the phone,
+     core systems, the galaxy, fleet registry, progression, quote, latest release + start here, final CTA. */}}
+{{ define "main" }}
+{{- $d := site.Data.site -}}
+{{- $releases := where (where site.RegularPages "Section" "releases") ".Params.entry" "release" -}}
+{{- $latest := index ($releases.ByDate.Reverse) 0 -}}
+{{- $guide := site.GetPage "/guide" -}}
+
+<section class="home-hero">
+  <div class="wrap home-hero-grid">
+    <div class="home-hero-copy">
+      <div class="tag-row">
+        <span class="chip chip-mint">Turn-based</span><span class="chip">Async multiplayer</span><span class="chip">Free</span><span class="chip">Android + browser</span>
+      </div>
+      <h1>Run a galaxy from your phone.</h1>
+      <p class="home-lede">Built for the phone in your pocket, five minutes at a time. Trade three commodities, pick a faction, take a planet, hunt a bounty. The season keeps running while you're away.</p>
+      <div class="home-cta">
+        <a class="btn btn-primary" href="{{ $d.play.android }}">Install on Android</a>
+        <a class="btn btn-ghost" href="{{ $d.play.web }}">Play in browser</a>
+      </div>
+      <p class="home-fine mono">One account · same galaxy on phone and web</p>
+    </div>
+    <div class="home-hero-phone">
+      <div class="phone-frame">
+        <img src="/screens/ship.webp" alt="The Ship screen in Big Bang Smugglers: holds, shields, fighters and torpedoes for the Nebula Merchant" width="302" height="592" loading="eager" />
+      </div>
+      <div class="phone-glow" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<section class="home-strip" id="season">
+  <div class="wrap">{{ partial "season-bar.html" . }}</div>
+  <div class="wrap tiles tiles-4">
+    <div class="tile"><small>Hulls</small><b>45</b><span>plus six earn-only epics</span></div>
+    <div class="tile"><small>Ship lines</small><b>9</b><span>neutral, Federation, pirate</span></div>
+    <div class="tile"><small>Structures</small><b>6</b><span>per planet, five levels each</span></div>
+    <div class="tile"><small>Production cycle</small><b>4h</b><span>turns reset on the same clock</span></div>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="wrap home-two">
+    <div>
+      <h2>A turn on the phone.</h2>
+      <p class="home-sub">About five minutes. No session to sit through, nothing lost by putting it down.</p>
+      <ol class="timeline">
+        <li><span class="mono t-mint">00:00</span><span>Check what four hours of production banked on your planet</span></li>
+        <li><span class="mono">00:40</span><span>Check the market: equipment is up 18% at your home port</span></li>
+        <li><span class="mono">01:30</span><span>Fill the hold and run one route out to the frontier</span></li>
+        <li><span class="mono t-gold">03:10</span><span>Buy the tier-3 hull you've been saving for</span></li>
+        <li><span class="mono t-coral">04:25</span><span>Queue a structure, dock somewhere safe, close the app</span></li>
+      </ol>
+    </div>
+    <div>
+      <h2>Four systems, one action stream.</h2>
+      <p class="home-sub">Every real act feeds missions, goals and streaks. Nothing is self-reported.</p>
+      <div class="side-links">
+        <a class="row" href="/guide/trading/"><span class="row-ic" aria-hidden="true">🛢️</span><span class="row-text"><b>Living markets</b><span>Fuel, organics, equipment. Ports price on real supply and demand.</span></span><span class="row-go" aria-hidden="true">→</span></a>
+        <a class="row" href="/guide/combat/"><span class="row-ic" aria-hidden="true">⚔️</span><span class="row-text"><b>PvP anywhere outside Fed space</b><span>Fighters, shields, torpedoes, hull. Win and take the cargo.</span></span><span class="row-go" aria-hidden="true">→</span></a>
+        <a class="row" href="/guide/planets/"><span class="row-ic" aria-hidden="true">🌍</span><span class="row-text"><b>Claim and build</b><span>Six structures, population growth, a starbase when you're ready to hold ground.</span></span><span class="row-go" aria-hidden="true">→</span></a>
+        <a class="row" href="/guide/bounties/"><span class="row-ic" aria-hidden="true">🎯</span><span class="row-text"><b>Names on a list</b><span>Post a price on a rival, or collect one at the issuing registry.</span></span><span class="row-go" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-section home-alt">
+  <div class="wrap home-two">
+    <div>
+      <h2>Three zones. Risk priced accordingly.</h2>
+      <p class="home-sub">Patrolled Federation core with no PvP. Open frontier in between. Lawless pirate rim, where the richest planets and the black markets are.</p>
+      <div class="zones">
+        <div class="zone"><span class="chip chip-sky">Fed core</span><span>Safe, patrolled, thin margins</span></div>
+        <div class="zone"><span class="chip">Frontier</span><span>Contested, unclaimed worlds, real money</span></div>
+        <div class="zone"><span class="chip chip-coral">Pirate rim</span><span>No law, black markets, the best planets</span></div>
+      </div>
+    </div>
+    <div class="home-cards">
+      <div class="card"><h3>Federation or pirate, decided by playing</h3><p>Start neutral. Clean routes push you one way; contraband and first strikes push the other. Alignment sets your prices, port access, and which hulls you may fly.</p></div>
+      <div class="card"><h3>Seasons of every length</h3><p>Sprints and marathons, small maps and sprawling ones, each balanced for its length. Standings lock when the galaxy closes and carry forward as prestige.</p></div>
+      <div class="card"><h3>Corporations</h3><p>Fly as a fleet, capture and hold ports, share planets under corp policy, climb the standings under one banner.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="wrap home-two home-two-wide">
+    <div>
+      <h2>45 hulls, five tiers deep.</h2>
+      <p class="home-sub">The neutral spine is open to anyone. Federation hulls carry reinforced shields. Pirate hulls run better escape odds and hidden compartments customs can't scan. Six epic hulls can't be bought, only earned.</p>
+      <ul class="dots">
+        <li><i></i>Three neutral lines anyone can buy, at any standing.</li>
+        <li><i class="dot-mint"></i>Three Federation lines unlocked by legal standing.</li>
+        <li><i class="dot-coral"></i>Three pirate lines earned on the wrong side of the law.</li>
+      </ul>
+      <a class="btn btn-soft" href="/guide/ships/">Every hull, with stats →</a>
+    </div>
+    <div class="table-wrap fleet">
+      <table>
+        <thead><tr><th>Line</th><th>Access</th><th>Built for</th></tr></thead>
+        <tbody>
+          <tr><td>Trading</td><td><span class="chip">Open</span></td><td>Cargo volume</td></tr>
+          <tr><td>War</td><td><span class="chip">Open</span></td><td>Fighters and torpedoes</td></tr>
+          <tr><td>Balanced</td><td><span class="chip">Open</span></td><td>A little of both</td></tr>
+          <tr><td class="t-sky">Patrol</td><td><span class="chip chip-sky">Fed standing</span></td><td>Fast, well shielded</td></tr>
+          <tr><td class="t-sky">Enforcer</td><td><span class="chip chip-sky">Fed standing</span></td><td>Shields and firepower</td></tr>
+          <tr><td class="t-sky">Dreadnought</td><td><span class="chip chip-sky">Fed standing</span></td><td>Heaviest legal hull</td></tr>
+          <tr><td class="t-coral">Smuggling</td><td><span class="chip chip-coral">Pirate standing</span></td><td>Hidden compartments</td></tr>
+          <tr><td class="t-coral">Raider</td><td><span class="chip chip-coral">Pirate standing</span></td><td>Speed and escape odds</td></tr>
+          <tr><td class="t-coral">Corsair</td><td><span class="chip chip-coral">Pirate standing</span></td><td>Rim-built brawler</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="home-section home-alt">
+  <div class="wrap">
+    <div class="home-head">
+      <h2>The game is always watching the work.</h2>
+      <p class="home-sub">A trade, a kill, a scan, a bounty collected, a sector seen for the first time: it all goes into one action stream, and everything below reads from it.</p>
+    </div>
+    <div class="home-grid-4">
+      <div class="card"><span class="chip chip-mint">Daily</span><h3>Daily missions</h3><p>A rotating slate: trade runs, hauls, pirate hunts, convoy raids, surveys, contraband moves. Honest work nudges alignment up; underworld work drags it down.</p><span class="card-foot mono">Credits · XP · bonus turns</span></div>
+      <div class="card"><span class="chip chip-gold">Season</span><h3>Season arcs</h3><p>Seven long hauls that run the length of a season, from an easy opening muster to elite gauntlets. Where legendary gear is earned rather than rolled.</p><span class="card-foot mono">Up to 80k cr · 4,000 XP · 50 turns</span></div>
+      <div class="card"><span class="chip">Ladders</span><h3>Goals</h3><p>Bronze, Silver and Gold ladders per category: combat, trade, exploration, economy, piracy. Progress accrues on its own. Top tiers grant lifetime titles.</p><span class="card-foot mono">Credits · XP · titles</span></div>
+      <div class="card"><span class="chip chip-violet">Epic</span><h3>Epic goals</h3><p>Compound conditions above Gold: stat floors, standing floors, a clean record, a measured fraction of the galaxy explored. Tuned so maybe one captain a season gets there.</p><span class="card-foot mono">One epic hull · never sold</span></div>
+    </div>
+    <div class="streak">
+      <div><span class="chip">Streak</span><h3>Any day you spend a turn counts.</h3><p>Miss one day and it's forgiven. Your streak is the only thing that crosses season boundaries: payouts are seasonal, showing up isn't.</p></div>
+      <div class="streak-days"><span class="chip">3 days</span><span class="chip">7 days</span><span class="chip chip-mint">14 days</span><span class="chip chip-gold">30 days</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="home-section home-quote">
+  <div class="wrap">
+    <blockquote>
+      <p>“It feels like a sort of Trade Wars meets Privateer vibe… My favorite part are the cutscenes — I feel rewarded every time I see a new one.”</p>
+      <footer>John Pritchett, <em>Trade Wars 2002</em> developer and <em>Trade Wars</em>&trade; rights holder<a href="#tw-rights" aria-label="See rights notice">*</a></footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="wrap home-two">
+    <div>
+      <h2>Latest release</h2>
+      <p class="home-sub">What changed in the newest build. <a href="/releases/">Every release →</a></p>
+      {{ with $latest }}
+      <a class="latest-card" href="{{ .RelPermalink }}">
+        <div class="latest-meta"><span class="chip chip-gold">v{{ .Params.version }}</span><span class="mono">{{ .Date.Format "2 Jan 2006" }}</span></div>
+        <h3>{{ partial "release-title.html" . }}</h3>
+        <p>{{ .Description }}</p>
+        <div class="tag-row">{{ range first 4 .Params.tags }}{{ $t := index site.Data.tags . }}<span class="chip{{ with $t }}{{ if ne .color "none" }} chip-{{ .color }}{{ end }}{{ end }}">{{ with $t }}{{ .title }}{{ else }}{{ . }}{{ end }}</span>{{ end }}</div>
+      </a>
+      {{ end }}
+    </div>
+    <div>
+      <h2>Start here</h2>
+      <p class="home-sub">The four guide pages a new captain actually needs. <a href="/guide/">The whole guide →</a></p>
+      <div class="side-links">
+        {{ range slice "getting-started" "gameplay" "trading" "combat" }}
+          {{ with site.GetPage (printf "/guide/%s" .) }}
+          <a class="row" href="{{ .RelPermalink }}"><span class="row-text"><b>{{ .Title }}</b><span>{{ .Description }}</span></span><span class="row-go" aria-hidden="true">→</span></a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-final">
+  <div class="wrap home-final-row">
+    <div>
+      <h2>The season is open.</h2>
+      <p class="home-sub">Install it, run a route on the walk home, and you're in it.</p>
+    </div>
+    <div class="home-cta">
+      <a class="btn btn-primary" href="{{ $d.play.android }}">Install on Android</a>
+      <a class="btn btn-ghost" href="{{ $d.play.web }}">Play in browser</a>
+      <a class="btn btn-soft" href="{{ $d.community.discord }}" rel="noopener">Join the Discord</a>
+    </div>
+  </div>
+</section>
+{{ end }}

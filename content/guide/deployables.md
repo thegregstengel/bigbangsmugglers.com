@@ -2,10 +2,14 @@
 title: "Ordnance, Limpets & Beacons"
 date: 2026-08-04
 description: "Mines, drones, turrets, trackers, and the things you leave behind"
-weight: 11
+weight: 54
 group: fight
 tags: [ordnance]
 changed_in: [2.3.0, 2.0.17, 2.0.16]
+stats:
+  - { label: "Mines", value: "500", sub: "per captain, galaxy-wide" }
+  - { label: "Fire", value: "60%", sub: "per mine, max 3 per entry" }
+  - { label: "Decay", value: "2%", sub: "per day, compounding" }
 ---
 
 Everything in this section follows the same model: **buy it as an item, carry

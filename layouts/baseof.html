@@ -1,0 +1,14 @@
+{{- /* Shared chrome for every page: head, HUD header, main, tab bar (content sections on phones), footer. */ -}}
+{{- $tabbar := in (slice "guide" "releases") .Section -}}
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+  <head>{{ partial "head.html" . }}</head>
+  <body class="{{ if .IsHome }}home{{ end }}{{ if $tabbar }} has-tabbar{{ end }}">
+    <a class="skip-link" href="#main">Skip to content</a>
+    {{ partial "header.html" . }}
+    <main id="main" class="site-main">{{ block "main" . }}{{ end }}</main>
+    {{ if $tabbar }}{{ partial "tabbar.html" . }}{{ end }}
+    {{ partial "footer.html" . }}
+    {{ partial "season.html" . }}
+  </body>
+</html>

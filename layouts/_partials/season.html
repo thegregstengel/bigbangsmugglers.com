@@ -1,0 +1,25 @@
+{{- /* Live season refresh. Does nothing unless data/site.yaml sets season.endpoint. */ -}}
+{{- with site.Data.site.season.endpoint }}
+<script>
+(function () {
+  var url = {{ . | jsonify }};
+  function set(key, value) {
+    document.querySelectorAll('[data-season="' + key + '"]').forEach(function (el) { el.textContent = value; });
+  }
+  function show(key, on) {
+    document.querySelectorAll('[data-season-wrap="' + key + '"]').forEach(function (el) { el.hidden = !on; });
+  }
+  fetch(url, { mode: 'cors', credentials: 'omit' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (s) {
+    if (!s) return;
+    if (s.status) set('status', s.status);
+    if (s.name) set('name', s.name);
+    if (s.ends) {
+      var end = new Date(s.ends), days = Math.max(0, Math.ceil((end - Date.now()) / 86400000));
+      set('days', days + 'd'); set('ends', end.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })); show('ends', true);
+    }
+    if (s.players != null) { set('players', s.players); if (s.player_cap != null) set('player_cap', s.player_cap); show('players', true); }
+    if (s.sectors != null) { set('sectors', s.sectors); show('sectors', true); }
+  }).catch(function () {});
+})();
+</script>
+{{- end }}

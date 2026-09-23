@@ -2,10 +2,14 @@
 title: "The Galaxy & Territory"
 date: 2026-08-04
 description: "Regions, territory, the three starports, and where PvP is legal"
-weight: 4
+weight: 31
 group: fly
 tags: [navigation, factions]
 changed_in: []
+stats:
+  - { label: "Sectors", value: "500", sub: "default; 20 to 65,536" }
+  - { label: "Regions", value: "6", sub: "core to rim" }
+  - { label: "Pirate band", value: "8%", sub: "outermost sectors" }
 ---
 
 ## How a galaxy is built

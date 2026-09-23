@@ -1,0 +1,5 @@
+{{- /* One tag chip linking to its tag page. Usage: partial "tag-chip.html" "planets" */ -}}
+{{- $t := index site.Data.tags . -}}
+{{- $color := "" -}}{{- $title := . -}}
+{{- with $t }}{{ $title = .title }}{{ if ne .color "none" }}{{ $color = printf " chip-%s" .color }}{{ end }}{{ end -}}
+<a class="chip{{ $color }}" href="/tags/{{ . | urlize }}/">{{ $title }}</a>

@@ -1,15 +1,14 @@
 baseURL = 'https://bigbangsmugglers.com/'
 languageCode = 'en-us'
 title = 'Big Bang Smugglers'
-theme = 'hextra'
-copyright = '© 2024–2026 [Protovision Games](https://protovisiongames.com). All rights reserved.'
+copyright = '© 2024–2026 Protovision Games. All rights reserved.'
 
 enableEmoji = true
 enableRobotsTXT = true
 enableGitInfo = false
 
-# Tag pages get their own layout in the redesign (Phase 3); keep them out of the build until then.
-disableKinds = ['taxonomy', 'term']
+# Tag term pages render via layouts/taxonomy/term.html; the bare /tags/ index stays off.
+disableKinds = ['taxonomy']
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -17,29 +16,13 @@ disableKinds = ['taxonomy', 'term']
 [markup.highlight]
   noClasses = false
 
-[menu]
-  [[menu.main]]
-    name = "Guide"
-    pageRef = "/guide"
-    weight = 1
-  [[menu.main]]
-    name = "Release Notes"
-    url = "/release-notes"
-    weight = 2
-[params]
-  description = "Forge Your Legacy in the Void. Trade, fight, and dominate in a ruthless universe where every choice shapes your destiny."
-  
-  navbar.displayTitle = true
-  navbar.displayLogo = false
-  
-  page.width = "normal"
-  
-  footer.displayCopyright = true
-  footer.displayPoweredBy = false
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
 
-[params.search]
-  enable = true
-  type = "flexsearch"
+[params]
+  description = "Turn-based space trading for Android and the browser. Trade, fight, smuggle, and build across a galaxy that keeps running while you're away."
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
