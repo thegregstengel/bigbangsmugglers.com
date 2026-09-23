@@ -5,7 +5,7 @@ Marketing site, player guide, and release notes for Big Bang Smugglers.
 The site is mid-redesign (Sept 2026). The approved plan, design tokens and
 page templates are in the review artifact linked from Claude's memory
 (`site-redesign-plan`). Phases: 0 content hygiene ✓, 1 foundation ✓,
-2 guide ✓, 3 releases ✓, 4 homepage,
+2 guide ✓, 3 releases ✓, 4 homepage ✓,
 5 search/RSS/polish, 6 live season metrics in the HUD.
 
 ---
@@ -34,7 +34,7 @@ data/
 assets/css/site.css      # tokens + components; the only stylesheet
 layouts/
   baseof.html            # shared chrome: head, HUD header, main, tab bar, footer
-  home.html              # homepage (inline-styled sections until Phase 4)
+  home.html              # homepage, built on the shared components
   docs/{list,single}.html    # guide (type: docs)
   releases/{list,single}.html  # releases index (tabs, filters) and single release
   taxonomy/term.html     # /tags/<tag>/: guide page(s) first, then releases
@@ -42,7 +42,7 @@ layouts/
   404.html, robots.txt, index.json (search index)
   _partials/             # head, header, footer, tabbar, search, icon, tw-rights, tag-chip, release-title
   _markup/render-table.html  # wraps every markdown table in .table-wrap
-static/                  # favicon set, og-image.png, site.webmanifest, logo
+static/                  # favicon set, og-image.png, site.webmanifest, logo, screens/ (game screenshots)
 hugo.toml
 .github/workflows/hugo.yml
 ```
