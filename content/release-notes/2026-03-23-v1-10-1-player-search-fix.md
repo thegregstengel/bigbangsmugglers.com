@@ -3,6 +3,9 @@ title: "v1.10.1 — Player Search & Keyboard Fix"
 date: 2026-03-23T17:55:00-04:00
 type: blog
 description: "v1.10.1 improves player search reliability with case-insensitive matching and fixes keyboard overlay issues in the search flow."
+kind: release
+version: 1.10.1
+tags: [platform]
 ---
 
 v1.10.1 is a focused usability fix for player search.

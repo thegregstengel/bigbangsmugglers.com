@@ -1,23 +1,29 @@
 ---
 title: "Smuggling & Contraband"
 date: 2026-08-04
-draft: false
 description: "The fence, the premium sale, customs scans, and hidden holds"
 weight: 15
-toc: true
+group: trade
+tags: [smuggling]
+changed_in: [2.3.0, 2.0.8]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## The catalog
 
 Three contraband rows, each riding on a real commodity's price and volume.
 
-| Contraband | Rides on | Buy | Max per purchase | Sell multiplier | Risk |
+| Contraband | Rides on | Fence buy price | Max per purchase | Sell multiplier | Risk |
 |---|---|---|---|---|---|
-| Illicit Organics | Organics (1 vol) | 30 | 80 | ×2.0 | low |
-| Stolen Equipment | Equipment (2 vol) | 40 | 50 | ×2.0 | medium |
-| **Black Tech** | Equipment (2 vol) | 150 | 10 | **×3.5** | high |
+| Illicit Organics | Organics (1 vol) | follows local organics | 100 | ×2.0 | low |
+| Stolen Equipment | Equipment (2 vol) | follows local equipment | 100 | ×2.0 | medium |
+| **Black Tech** | Equipment (2 vol) | follows local equipment, ×3+ | 100 | **×3.5** | high |
+
+**Fence prices follow the market** (since v2.3.0). A Black Market's buy
+price rides on the port's own price for the underlying commodity, so the
+same Black Tech costs more where equipment is dear. The old flat shelf
+(30 / 40 / 150) is gone. Selling straight back to the same fence still
+turns a modest, safe profit; the big money is still in lawful space, at
+real risk.
 
 Contraband lives in a separate cargo namespace from honest goods. The regular
 sell action can never touch it — but **it still consumes your holds** at the
@@ -29,11 +35,13 @@ Requires clearing an **early ladder gate** and a port running the
 `blackmarket` service: Pirate Bases, Black Markets and the Pirate Haven.
 
 - **1 turn** per purchase, wallet only.
-- Capped per transaction by the row.
+- Capped at **100 units per purchase** for every row (since v2.3.0; the
+  caps used to be 80 / 50 / 10).
 - **Buying is never detected.** Nobody scans you at a fence.
 
 Rim-going **trader NPCs** sometimes carry an off-market lot too — the same
-level gate applies, priced at ×1.25 of the fence shelf. See
+level gate applies, and since v2.3.0 a trader always charges **more than a
+Black Market would**, never less. See
 [NPCs](/guide/npcs/#trading-with-a-trader).
 
 ## Selling: two completely different actions
@@ -41,7 +49,7 @@ level gate applies, priced at ×1.25 of the fence shelf. See
 Selling sits behind its own gate, a bit deeper in the ladder than buying.
 Both actions cost 1 turn.
 
-### At a fence — safe and flat
+### At a fence — safe
 
 Sell at a `blackmarket` port and you get the honest local price × **1.20**,
 with **zero detection risk**. No roll, no fine, no alignment change.
@@ -118,7 +126,11 @@ income, not a nuisance.
 
 - **Auto-bribe** (a flag you can set on movement): pays **25% of street
   value**, clamped 500–25,000 cr, and costs **−2 alignment**.
-- Otherwise: **all contraband seized**, a **10% fine**, and **−5 alignment**.
+- Otherwise: the contraband **above your hidden allowance** is seized, you
+  pay a **10% fine on what that cargo cost you**, and take **−5 alignment**.
+  Since v2.3.0 hidden compartments stay hidden even on a failed scan — the
+  patrol takes only the overflow, and the fine is priced on your cost basis,
+  not the street value.
 
 ### Counters
 
@@ -149,8 +161,12 @@ hidden = floor(holds × 0.25)             pirate-line hull
 ```
 
 A 320-hold Pirate Leviathan hides 80 volume. A Marauder's Fortune at 210
-holds hides 52 + 52 = 104 volume — 52 units of Black Tech, which is five
-times the per-purchase cap.
+holds hides 52 + 52 = 104 volume — 52 units of Black Tech, half of a single
+100-unit purchase.
+
+If you are *over* the threshold, only the overflow is at risk (since
+v2.3.0). Everything under the hidden line stays yours even when the scan
+goes wrong.
 
 ## The career pays — provably
 
@@ -165,7 +181,7 @@ a promise.
 ## Playing it
 
 **The disciplined fence run.** Buy at a Black Market, sell at another fence
-at ×1.2. Safe, flat, zero alignment movement, no scan exposure from the sale
+at ×1.2. Safe, zero alignment movement, no scan exposure from the sale
 itself. Modest but completely reliable, and it's the only way to run the
 Phantom Manifest epic ladder — which demands 7,500 units sold with **zero
 sale-time busts all season**.

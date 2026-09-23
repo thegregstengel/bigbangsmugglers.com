@@ -1,13 +1,12 @@
 ---
 title: "The Galaxy & Territory"
 date: 2026-08-04
-draft: false
 description: "Regions, territory, the three starports, and where PvP is legal"
 weight: 4
-toc: true
+group: fly
+tags: [navigation, factions]
+changed_in: []
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## How a galaxy is built
 

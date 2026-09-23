@@ -1,8 +1,10 @@
 ---
 title: "Combat System Highlights: v1.2.6 through v1.4.3"
-date: 2026-03-10T21:00:00
+date: 2026-03-10T21:00:00Z
 type: blog
 description: "A look back at everything that changed with combat, ship repair, and weapons from v1.2.6 through v1.4.3 — shields, fighters, torpedoes, and what it actually means to lose a fight."
+kind: devlog
+tags: [combat, ships, ports]
 ---
 
 Over the past couple of weeks, combat has seen the most significant overhaul in Big Bang Smugglers history. This is a quick summary of what changed and why.

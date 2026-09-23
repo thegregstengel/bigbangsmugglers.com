@@ -1,12 +1,10 @@
 ---
 title: "Bug Fix Sprint"
-date: 2026-02-08
+date: 2026-02-08T12:00:00Z
 description: "8 quick bug fixes after the audit — credits in the wrong field, crashes, and a misnamed leaderboard tab."
 type: blog
-draft: false
-sidebar:
-  exclude: true
-toc: false
+kind: devlog
+tags: [platform, progression]
 ---
 
 After the audit blitz on Feb 5-6, we had a clear list of what to fix first. February 8th was pure execution — 8 bugs closed, fast.

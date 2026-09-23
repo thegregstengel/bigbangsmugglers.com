@@ -1,13 +1,12 @@
 ---
 title: "Missions, Goals & Streaks"
 date: 2026-08-04
-draft: false
 description: "Daily and season events, goal ladders, epics, and the streak clock"
 weight: 19
-toc: true
+group: compete
+tags: [missions]
+changed_in: [2.0.15]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 Three separate systems, and it's worth keeping them apart:
 

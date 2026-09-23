@@ -1,8 +1,11 @@
 ---
 title: "v1.5.5 — Trading UI & Toast Fixes"
-date: 2026-03-14T14:00:00
+date: 2026-03-14T14:00:00Z
 type: blog
 description: "v1.5.5 fixes the trading commodity layout and makes toast notifications visible above all modals."
+kind: release
+version: 1.5.5
+tags: [platform, trading]
 ---
 
 v1.5.5 is a polish update with two UI fixes.

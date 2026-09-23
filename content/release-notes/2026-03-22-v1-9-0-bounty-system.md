@@ -3,6 +3,9 @@ title: "v1.9.0 — NPC Engagement & Faction Bounty System"
 date: 2026-03-22T12:40:00-04:00
 type: blog
 description: "v1.9.0 adds a full NPC engagement overhaul, faction bounties, wanted status, contract offices, and much richer faction consequences."
+kind: release
+version: 1.9.0
+tags: [bounties, npcs, factions]
 ---
 
 v1.9.0 is a major NPC interaction and bounty system update.

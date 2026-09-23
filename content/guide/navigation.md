@@ -1,13 +1,12 @@
 ---
 title: "Navigation & Travel"
 date: 2026-08-04
-draft: false
 description: "Moving, warp, the Tesseract, wormholes, hazards and beacons"
 weight: 3
-toc: true
+group: fly
+tags: [navigation]
+changed_in: [2.3.0]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## Moving
 
@@ -54,9 +53,9 @@ Three hard rules:
 
 ### Interruption
 
-A warp can be interrupted mid-flight by an NPC. The journey truncates where
-you were stopped and **turns are refunded proportionally** for the hops you
-did not fly.
+A warp charges its **full cost up front** (since v2.3.0). If an NPC
+interrupts you mid-flight, the journey truncates where you were stopped and
+**the turns for the hops you didn't fly come back**.
 
 The per-hop interruption chance is bounded so that **no journey exceeds a 30%
 total chance** of being stopped, no matter how long it is. Players under PvP
@@ -66,6 +65,10 @@ Warping through a hazard sector rolls that hazard at **25%** of the normal
 chance. Arriving at a hazard destination rolls the full chance.
 
 Warping breaks a cloak and clears landed status.
+
+Sectors you pass through on a warp count as **explored** for missions and
+goals (since v2.3.0). Exploration objectives no longer demand that you fly
+every hop by hand.
 
 ## The Tesseract
 

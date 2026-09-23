@@ -1,13 +1,12 @@
 ---
 title: "Ships"
 date: 2026-08-04
-draft: false
 description: "Three archetypes, three hull lines, five tiers, and the epics"
 weight: 7
-toc: true
+group: fight
+tags: [ships]
+changed_in: []
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## The shape of the catalog
 

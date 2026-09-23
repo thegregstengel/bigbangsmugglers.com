@@ -1,12 +1,10 @@
 ---
 title: "Planets, Warp & Trade"
-date: 2026-02-06
+date: 2026-02-06T12:00:00Z
 description: "Part 3 of the Feb 6 sprint: planet feature gaps catalogued, warp drive system designed and queued, trade system improvements scoped."
 type: blog
-draft: false
-sidebar:
-  exclude: true
-toc: false
+kind: devlog
+tags: [planets, trading, navigation, upgrades]
 ---
 
 The third track from February 6th covered the planet system, warp drive, and trade. A lot of backend was there — UI wasn't keeping up.

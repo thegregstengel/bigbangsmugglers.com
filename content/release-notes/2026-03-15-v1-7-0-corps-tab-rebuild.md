@@ -3,6 +3,9 @@ title: "v1.7.0 — Corps Tab Rebuild"
 date: 2026-03-15T19:05:00-04:00
 type: blog
 description: "v1.7.0 rebuilds the Corps tab with inline cards, fixes corp browse reliability, and cleans up corporation actions throughout the UI."
+kind: release
+version: 1.7.0
+tags: [corps, ports, platform]
 ---
 
 v1.7.0 is a bigger corporation update that rolls the recent corps fixes into a cleaner, more integrated interface.

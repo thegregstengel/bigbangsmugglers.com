@@ -3,6 +3,9 @@ title: "v2.0.0 — Big Bang Smugglers 2.0: A New Universe"
 date: 2026-07-31T00:00:00Z
 type: blog
 description: "Big Bang Smugglers 2.0 is a re-founding: a completely rebuilt engine, seventeen redesigned game systems, a fresh universe with no carried history, and a new home at play.bigbangsmugglers.com."
+kind: release
+version: 2.0.0
+tags: [seasons, platform, trading, planets]
 ---
 
 v2.0.0 is not an update — it's a re-founding. The entire game has been rebuilt from the engine up, the universe starts fresh, and the game now lives at **play.bigbangsmugglers.com**.

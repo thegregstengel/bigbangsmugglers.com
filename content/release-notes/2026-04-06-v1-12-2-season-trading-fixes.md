@@ -3,6 +3,9 @@ title: "v1.12.2 — Season & Trading Fixes"
 date: 2026-04-06T12:00:00-04:00
 type: blog
 description: "v1.12.2 fixes season setup screens, trading and pirate combat edge cases, trader reputation displays, and adds clearer visited-sector history."
+kind: release
+version: 1.12.2
+tags: [trading, seasons, combat, navigation]
 ---
 
 v1.12.2 is a stability and accuracy pass across seasons, trading, combat, and exploration.

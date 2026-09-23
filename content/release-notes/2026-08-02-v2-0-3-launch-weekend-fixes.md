@@ -3,6 +3,9 @@ title: "v2.0.2 / v2.0.3 — Launch Weekend Fixes"
 date: 2026-08-02T00:00:00Z
 type: blog
 description: "Two rapid patches from the first prod weekend: real trade profit tracking, full combat immunity from defense contracts, real feed details, correct ship tiers, and two crash fixes — thanks to sharp-eyed launch players."
+kind: release
+version: 2.0.3
+tags: [trading, platform, combat, ships]
 ---
 
 The first weekend of 2.0 brought real players, and real players find real bugs. Two patches went out in response — thank you to the captains who filed reports. You know who you are, and soon the galaxy will too.

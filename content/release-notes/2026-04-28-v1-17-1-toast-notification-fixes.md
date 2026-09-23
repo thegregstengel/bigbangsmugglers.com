@@ -3,6 +3,9 @@ title: "v1.17.1 — Toast Notification Fixes"
 date: 2026-04-28T12:00:00Z
 type: blog
 description: "v1.17.1 adds swipe and tap gestures to dismiss toast notifications instantly, replacing the forced auto-expire wait."
+kind: release
+version: 1.17.1
+tags: [platform]
 ---
 
 v1.17.1 is a small hotfix focused on toast notification dismissal. Toasts can now be cleared on demand instead of lingering on screen until they auto-expire.

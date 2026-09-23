@@ -1,13 +1,12 @@
 ---
 title: "Ordnance, Limpets & Beacons"
 date: 2026-08-04
-draft: false
 description: "Mines, drones, turrets, trackers, and the things you leave behind"
 weight: 11
-toc: true
+group: fight
+tags: [ordnance]
+changed_in: [2.3.0, 2.0.17, 2.0.16]
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 Everything in this section follows the same model: **buy it as an item, carry
 it, consume it at deploy**. Deploying charges no credits — the purchase was
@@ -20,7 +19,7 @@ Agricultural Ports.
 
 | Item | Price | Sector cap | Your cap |
 |---|---|---|---|
-| Proximity Mine | 250 | 100 | 50 |
+| Proximity Mine | 250 | 100 (+50 where you own a planet) | **500** |
 | Sentry Drone | 1,500 | 50 | 20 |
 | Turret | 3,000 | 20 | 8 |
 | Sensor Buoy | 800 | 10 | 5 |
@@ -32,6 +31,10 @@ There is no per-purchase cap any more (v2.0.16 dropped it — it never limited
 anything, it just made you tap the buy button repeatedly). What actually
 bounds an arsenal is the **sector cap** and **your cap** at deploy time,
 plus cargo room and your wallet.
+
+**Since v2.3.0 a captain can field 500 mines** across the galaxy, up from
+50, and a sector where you own a planet accepts 50 more than the usual
+sector cap. Minefields are now a real territorial tool, not a garnish.
 
 Deploying costs **1 turn** for ordnance. Limpets and beacons cost **0**.
 **You cannot deploy anything while PvP-immune** — laying a minefield from
@@ -144,7 +147,9 @@ sector for you**.
 - A **cloak fools sensors, not a device bolted to your hull.** Limpets keep
   reporting through a cloak. A cloaked ship arriving in a sector cannot be
   *newly* latched, but an existing limpet keeps working.
-- **PvP-immune ships cannot be latched.**
+- **PvP-immune ships cannot be latched.** And since v2.3.0 you cannot
+  *plant* one while you are immune yourself — a tracker is an aggressive
+  act like any other.
 - **Corp membership is not checked.** You will tag your own people.
 - Cap: **10 live limpets** per player per galaxy, planted and attached
   combined.

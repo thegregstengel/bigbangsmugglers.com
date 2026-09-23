@@ -3,6 +3,9 @@ title: "v1.23.0 — Events, Roles, End-game, and New Player Onboarding"
 date: 2026-07-05T00:00:00Z
 type: blog
 description: "v1.23.0 launches a live daily events system, a role specialization tree, cross-season prestige tiers, season end-game recaps, and a three-phase new-player onboarding flow, alongside 80+ bug fixes and balance changes."
+kind: release
+version: 1.23.0
+tags: [progression, missions, seasons, smuggling]
 ---
 
 v1.23.0 is the biggest content release since the game launched. Daily events, role specialization, prestige tiers, a full season end-game, and new-player onboarding are all live. An extensive bug-fix and balance pass ships alongside them — over 80 issues closed.

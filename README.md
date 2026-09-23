@@ -1,47 +1,25 @@
-# Big Bang Smugglers Website
+# bigbangsmugglers.com
 
-Hugo-based website for Big Bang Smugglers game. Uses the [Blowfish](https://github.com/nunocoracao/blowfish) theme.
+Marketing site, player guide and release notes for **Big Bang Smugglers**,
+built with [Hugo](https://gohugo.io/) and deployed to GitHub Pages.
 
 ## Structure
 
 ```
-├── content/
-│   ├── _index.md           # Homepage
-│   ├── blog/               # Dev blog posts
-│   │   ├── _index.md
-│   │   └── *.md            # Individual posts
-│   └── roadmap/            # Development roadmap
-│       └── _index.md
-├── themes/
-│   └── blowfish/           # Theme (submodule)
-├── hugo.toml               # Site configuration
-└── .github/workflows/      # GitHub Actions for deployment
+content/
+  guide/            Player guide (21 pages, grouped by front matter)
+  release-notes/    Releases (v1.1.0 →) and the Feb 2026 dev log
+  privacy.md        Privacy policy
+  delete-account.md Account deletion instructions
+layouts/            Site templates and partials (see CLAUDE.md)
+static/             Logo and favicon
+hugo.toml           Site configuration
+.github/workflows/  Build and deploy on push to main
 ```
 
-## Local Development
+## Local development
 
-### Prerequisites
-- Hugo Extended (v0.112.0 or later)
-
-### Install Hugo
-
-**Ubuntu/Debian:**
-```bash
-sudo apt update
-sudo apt install hugo
-```
-
-**macOS:**
-```bash
-brew install hugo
-```
-
-**Snap:**
-```bash
-sudo snap install hugo
-```
-
-### Clone & Run
+Requires **Hugo extended** 0.155 or later.
 
 ```bash
 git clone https://github.com/thegregstengel/bigbangsmugglers.com.git
@@ -50,53 +28,20 @@ git submodule update --init --recursive
 hugo server -D
 ```
 
-Visit http://localhost:1313
+Visit http://localhost:1313.
 
-## Creating Content
-
-### New Blog Post
+## Adding a release note
 
 ```bash
-hugo new blog/my-post-title.md
+~/.aiops/scripts/bbs-release-notes-site "<filename>.md" "v<version> -- <Title>"
 ```
 
-Edit the frontmatter:
-```yaml
----
-title: "My Post Title"
-date: 2026-02-12
-draft: false
-description: "Short description"
-tags: ["features", "ui"]
----
-```
-
-### Update Roadmap
-
-Edit `content/roadmap/_index.md` directly.
+Or create a file in `content/release-notes/` by hand. Every note needs
+`title`, `date` (explicit UTC), `description`, `type: blog`, `kind`
+(`release` or `devlog`), `version` (releases only) and `tags`. The tag list
+and guide conventions live in `CLAUDE.md`.
 
 ## Deployment
 
-GitHub Actions automatically builds and deploys the site when you push to `main`.
-
-## Theme Customization
-
-Blowfish configuration lives in `hugo.toml`. See [Blowfish docs](https://blowfish.page/docs/) for customization options.
-
-## Content Guidelines
-
-### Blog Posts
-- Use present tense for current features
-- Include screenshots when showing UI
-- Tag posts appropriately
-- Link to related GitHub issues when relevant
-
-### Roadmap
-- Keep status accurate (✅ ✓ 🚧 📋)
-- Update "Last Updated" date
-- Group features logically
-- Link to GitHub issues/projects
-
----
-
-Built with [Hugo](https://gohugo.io/) and [Blowfish](https://blowfish.page/)
+Pushing to `main` builds the site with `hugo --gc --minify` and deploys it
+to GitHub Pages. There are no manual steps.

@@ -1,9 +1,11 @@
 ---
 title: "3x Faster Load Times — The Composite Endpoint Overhaul"
-date: 2026-02-18
+date: 2026-02-18T12:00:00Z
 description: "How we cut screen load times by 3x by rethinking how the game talks to the backend"
 type: blog
 author: "Dev Team"
+kind: devlog
+tags: [platform]
 ---
 
 ## The Problem We Didn't Notice (Until We Did)

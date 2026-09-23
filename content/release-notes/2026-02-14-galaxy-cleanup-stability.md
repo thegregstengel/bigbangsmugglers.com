@@ -1,12 +1,10 @@
 ---
 title: "Galaxy Cleanup & Stability"
-date: 2026-02-14
+date: 2026-02-14T12:00:00Z
 description: "Galaxy destruction now cleans up starports and all related collections; player stats reset properly on season exit."
 type: blog
-draft: false
-sidebar:
-  exclude: true
-toc: false
+kind: devlog
+tags: [seasons, platform]
 ---
 
 When a galaxy ends, it should actually end.

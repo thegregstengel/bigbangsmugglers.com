@@ -1,13 +1,12 @@
 ---
 title: "Getting Started"
 date: 2026-08-04
-draft: false
 description: "Sign up, join a season, and survive your first ten minutes"
 weight: 1
-toc: true
+group: start
+tags: [platform, seasons]
+changed_in: []
 ---
-
-*Accurate as of v2.0.18 (August 2026).*
 
 ## Get the game
 
