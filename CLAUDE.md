@@ -5,7 +5,7 @@ Marketing site, player guide, and release notes for Big Bang Smugglers.
 The site is mid-redesign (Sept 2026). The approved plan, design tokens and
 page templates are in the review artifact linked from Claude's memory
 (`site-redesign-plan`). Phases: 0 content hygiene ✓, 1 foundation ✓,
-2 guide ✓, 3 releases (section renamed to `/releases/`), 4 homepage,
+2 guide ✓, 3 releases ✓, 4 homepage,
 5 search/RSS/polish, 6 live season metrics in the HUD.
 
 ---
@@ -24,21 +24,23 @@ page templates are in the review artifact linked from Claude's memory
 ```
 content/
   guide/                 # Player guide (22 pages; front matter: group, tags, changed_in, stats)
-  release-notes/         # Releases + Feb 2026 dev log (front matter: entry, version, tags)
+  releases/              # Releases + Feb 2026 dev log (front matter: entry, version, tags, aliases)
   privacy.md
   delete-account.md
 data/
   site.yaml              # season status, store/community links (HUD + footer)
   guide.yaml             # guide groups in reading order (title, icon, blurb)
+  tags.yaml              # shared tag vocabulary: title, chip color, guide page
 assets/css/site.css      # tokens + components; the only stylesheet
 layouts/
   baseof.html            # shared chrome: head, HUD header, main, tab bar, footer
   home.html              # homepage (inline-styled sections until Phase 4)
   docs/{list,single}.html    # guide (type: docs)
-  blog/{list,single}.html    # release notes (type: blog)
+  releases/{list,single}.html  # releases index (tabs, filters) and single release
+  taxonomy/term.html     # /tags/<tag>/: guide page(s) first, then releases
   page.html              # privacy, delete-account
   404.html, robots.txt, index.json (search index)
-  _partials/             # head, header, footer, tabbar, search, icon, tw-rights
+  _partials/             # head, header, footer, tabbar, search, icon, tw-rights, tag-chip, release-title
   _markup/render-table.html  # wraps every markdown table in .table-wrap
 static/                  # favicon set, og-image.png, site.webmanifest, logo
 hugo.toml
@@ -61,19 +63,22 @@ hugo.toml
 
 Helper: `~/.aiops/scripts/bbs-release-notes-site "<filename>.md" "v<version> -- <Title>"`
 
-Or create `content/release-notes/YYYY-MM-DD-vX-Y-Z-slug.md`:
+Or create `content/releases/YYYY-MM-DD-vX-Y-Z-slug.md`:
 
 ```yaml
 ---
 title: "v2.4.0 — Title"
 date: 2026-10-01T12:00:00Z    # always explicit UTC
-type: blog
 description: ""
 entry: release                # release | devlog
 version: 2.4.0                # releases only
 tags: [planets, combat]
 ---
 ```
+
+Titles keep the `vX.Y.Z — Name` form; layouts strip the version prefix
+where the version is shown separately. Old `/release-notes/...` URLs live
+on as per-note `aliases`; new notes don't need one.
 
 The HUD "Build" readout is the newest `entry: release` note's `version`.
 Release-note commits: "Release notes: v[VERSION]".
@@ -122,10 +127,9 @@ Work happens on branches with PRs to `main` (`site/phase-N-…` for redesign wor
 
 # Gotchas
 
-- Hugo resolves layouts by front-matter `type`: guide pages cascade `type: docs`
-  and release notes set `type: blog`, so their layouts live in `layouts/docs/`
-  and `layouts/blog/`, not `layouts/guide/` or `layouts/release-notes/`.
-- Taxonomy pages are disabled in `hugo.toml` until Phase 3 gives tags a layout.
+- Guide pages cascade `type: docs`, so their layouts live in `layouts/docs/`,
+  not `layouts/guide/`. Releases use the section name (`layouts/releases/`).
+- The `/tags/` index is disabled; individual tag pages render.
 - Unsafe HTML rendering is on in `hugo.toml` for custom content.
 - Hugo extended is required.
 

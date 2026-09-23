@@ -1,5 +1,5 @@
 {{- /* Shared chrome for every page: head, HUD header, main, tab bar (content sections on phones), footer. */ -}}
-{{- $tabbar := in (slice "guide" "release-notes") .Section -}}
+{{- $tabbar := in (slice "guide" "releases") .Section -}}
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}">
   <head>{{ partial "head.html" . }}</head>
