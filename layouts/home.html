@@ -1,24 +1,31 @@
-{{/* Homepage, built on the shared components. Sections: hero + phone, season strip (bar + standings), a turn on the phone,
-     core systems, the galaxy, fleet registry, progression, quote, latest release + start here, final CTA. */}}
+{{/* Homepage, built on the shared components. Sections: hero + turn tank + phone, season strip (bar + standings + world clock), spend your turns
+     (ledger + worked cycles) + core systems, the galaxy, fleet registry, progression, quote, latest release + start here, final CTA. */}}
 {{ define "main" }}
 {{- $d := site.Data.site -}}
 {{- $releases := where (where site.RegularPages "Section" "releases") ".Params.entry" "release" -}}
 {{- $latest := index ($releases.ByDate.Reverse) 0 -}}
 {{- $guide := site.GetPage "/guide" -}}
+{{- $t := $d.turns -}}
 
 <section class="home-hero">
   <div class="wrap home-hero-grid">
     <div class="home-hero-copy">
       <div class="tag-row">
-        <span class="chip chip-mint">Turn-based</span><span class="chip">Async multiplayer</span><span class="chip">Free</span><span class="chip">Android + browser</span>
+        <span class="chip chip-mint">{{ $t.cap }} turns · every {{ $t.cycle_hours }}h</span><span class="chip">Turn-based</span><span class="chip">Async multiplayer</span><span class="chip">Free</span>
       </div>
       <h1>Run a galaxy from your phone.</h1>
-      <p class="home-lede">Built for the phone in your pocket, five minutes at a time. Trade three commodities, pick a faction, take a planet, hunt a bounty. The season keeps running while you're away.</p>
+      <p class="home-lede">A turn-based space trader in the tradition of the classic BBS door games. You get {{ $t.cap }} turns every {{ $t.cycle_hours }} hours. Markets restock, planets produce and rivals spend theirs on the same clock. Every turn is a decision.</p>
       <div class="home-cta">
         <a class="btn btn-primary" href="{{ $d.play.android }}">Install on Android</a>
         <a class="btn btn-ghost" href="{{ $d.play.web }}">Play in browser</a>
       </div>
       <p class="home-fine mono">One account · same galaxy on phone and web</p>
+      <div class="tank" id="turns">
+        <div class="tank-head"><small>Your turns</small><small>Resets in <span class="mono t-gold" data-countdown>—</span></small></div>
+        <div class="tank-num">{{ $t.cap }} <span>/ {{ $t.cap }}</span></div>
+        <div class="bar"><i style="width: 100%"></i></div>
+        <div class="tank-foot"><span>Full reset every {{ $t.cycle_hours }}h · nothing carries over</span><span>+{{ $t.provision_cap }} provisions a cycle · <b>{{ $t.provision_price }} cr</b> each</span></div>
+      </div>
     </div>
     <div class="home-hero-phone">
       <div class="phone-frame">
@@ -30,26 +37,83 @@
 </section>
 
 <section class="home-strip" id="season">
-  <div class="wrap">{{ partial "season-bar.html" . }}{{ partial "season-leaders.html" . }}</div>
+  <div class="wrap">{{ partial "season-bar.html" . }}{{ partial "season-leaders.html" . }}
+    <div class="clock-strip">
+      <div class="clock-head">
+        <div><h3>Six resets a day. The galaxy ticks on the same ones.</h3><p>Turns refill, markets restock, planets produce, garrisons regrow, minefields decay. Make every reset and that's {{ mul $t.cap (div 24 $t.cycle_hours) | lang.FormatNumber 0 }} turns a day.</p></div>
+        <span class="chip chip-gold">Next reset in <span class="mono" data-countdown>—</span></span>
+      </div>
+      <div class="clock" data-clock>
+        {{ range $i := seq 0 (sub (div 24 $t.cycle_hours) 1) }}{{ $h := mul $i $t.cycle_hours }}<div data-h="{{ $h }}"><b>{{ printf "%02d:00" $h }}</b><small>UTC</small></div>{{ end }}
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="home-section">
-  <div class="wrap home-two">
-    <div>
-      <h2>A turn on the phone.</h2>
-      <p class="home-sub">About five minutes. No session to sit through, nothing lost by putting it down.</p>
-      <ol class="timeline">
-        <li><span class="mono t-mint">00:00</span><span>Check what four hours of production banked on your planet</span></li>
-        <li><span class="mono">00:40</span><span>Check the market: equipment is up 18% at your home port</span></li>
-        <li><span class="mono">01:30</span><span>Fill the hold and run one route out to the frontier</span></li>
-        <li><span class="mono t-gold">03:10</span><span>Buy the tier-3 hull you've been saving for</span></li>
-        <li><span class="mono t-coral">04:25</span><span>Queue a structure, dock somewhere safe, close the app</span></li>
-      </ol>
+<section class="home-section" id="spend">
+  <div class="wrap">
+    <div class="home-head">
+      <h2>Spend your turns.</h2>
+      <p class="home-sub">{{ $t.cap }} land every {{ $t.cycle_hours }} hours, none carry over, and the whole game is what you do with them. A move is a turn. A trade is a turn. A fight is a turn. A siege is three. A Tesseract jump is twenty-five.</p>
     </div>
-    <div>
+    <div class="home-two home-two-wide">
+      <div>
+        <div class="rail-title">What a turn buys</div>
+        <div class="ledger">
+          <div><span>Move to a linked sector</span><b>1</b></div>
+          <div><span>Buy or sell cargo, any quantity</span><b>1</b></div>
+          <div><span>Engage in combat</span><b>1</b></div>
+          <div><span>Claim a planet, build a structure, raid</span><b>1</b></div>
+          <div><span>Warp jump</span><b>⌈hops ÷ level⌉</b></div>
+          <div><span>Attack a port</span><b>3</b></div>
+          <div><span>Tesseract jump, anywhere you've been</span><b>25</b></div>
+          <div class="zero"><span>Banking, beacons, limpets, planet storage, bounty claims</span><b>0</b></div>
+        </div>
+        <a class="btn btn-soft" style="margin-top: 14px" href="/guide/gameplay/">The full turn rules →</a>
+      </div>
+      <div>
+        <div class="rail-title">A cycle, three ways <span class="rail-note">worked examples, real costs</span></div>
+        <div class="cycles">
+          <div class="card cycle">
+            <span class="chip chip-sky">The trade run</span>
+            <h3>Fifteen laps of a six-hop loop</h3>
+            <div class="spend">
+              <div><span>Moves</span><div class="bar s"><i style="width: 72%"></i></div><span>180</span></div>
+              <div><span>Trade legs</span><div class="bar s"><i style="width: 24%"></i></div><span>60</span></div>
+              <div><span>Active scans</span><div class="bar s"><i style="width: 4%"></i></div><span>10</span></div>
+            </div>
+            <p class="payoff">Agri organics at 75, sold at a mining port anchored at 240. Fifteen times.</p>
+          </div>
+          <div class="card cycle">
+            <span class="chip chip-coral">The hunt</span>
+            <h3>Warp to the rim and work the lanes</h3>
+            <div class="spend">
+              <div><span>Warps</span><div class="bar c"><i style="width: 10%"></i></div><span>26</span></div>
+              <div><span>Stalking moves</span><div class="bar c"><i style="width: 44%"></i></div><span>110</span></div>
+              <div><span>Fights</span><div class="bar c"><i style="width: 18%"></i></div><span>45</span></div>
+              <div><span>Scans and mines</span><div class="bar c"><i style="width: 28%"></i></div><span>69</span></div>
+            </div>
+            <p class="payoff">Bounty claims cost nothing to redeem. The registry is the only part that's free.</p>
+          </div>
+          <div class="card cycle">
+            <span class="chip chip-gold">The builder</span>
+            <h3>Fund it, build it, hold it</h3>
+            <div class="spend">
+              <div><span>Trade to fund</span><div class="bar g"><i style="width: 40%"></i></div><span>100</span></div>
+              <div><span>Build and colonize</span><div class="bar g"><i style="width: 3%"></i></div><span>7</span></div>
+              <div><span>Siege a port</span><div class="bar g"><i style="width: 4%"></i></div><span>10</span></div>
+              <div><span>Raids and patrol</span><div class="bar g"><i style="width: 43%"></i></div><span>108</span></div>
+              <div><span>Tesseract home</span><div class="bar g"><i style="width: 10%"></i></div><span>25</span></div>
+            </div>
+            <p class="payoff">Deposits, storage and the vault are free. Your turns go to the fight, not the paperwork.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home-systems">
       <h2>Four systems, one action stream.</h2>
       <p class="home-sub">Every real act feeds missions, goals and streaks. Nothing is self-reported.</p>
-      <div class="side-links">
+      <div class="home-grid-4 systems">
         <a class="row" href="/guide/trading/"><span class="row-ic" aria-hidden="true">🛢️</span><span class="row-text"><b>Living markets</b><span>Fuel, organics, equipment. Ports price on real supply and demand.</span></span><span class="row-go" aria-hidden="true">→</span></a>
         <a class="row" href="/guide/combat/"><span class="row-ic" aria-hidden="true">⚔️</span><span class="row-text"><b>PvP anywhere outside Fed space</b><span>Fighters, shields, torpedoes, hull. Win and take the cargo.</span></span><span class="row-go" aria-hidden="true">→</span></a>
         <a class="row" href="/guide/planets/"><span class="row-ic" aria-hidden="true">🌍</span><span class="row-text"><b>Claim and build</b><span>Six structures, population growth, a starbase when you're ready to hold ground.</span></span><span class="row-go" aria-hidden="true">→</span></a>
@@ -169,7 +233,7 @@
   <div class="wrap home-final-row">
     <div>
       <h2>The season is open.</h2>
-      <p class="home-sub">Install it, run a route on the walk home, and you're in it.</p>
+      <p class="home-sub">Your next {{ $t.cap }} turns land in <span class="mono t-gold" data-countdown>—</span>. Spend the ones you have first.</p>
     </div>
     <div class="home-cta">
       <a class="btn btn-primary" href="{{ $d.play.android }}">Install on Android</a>

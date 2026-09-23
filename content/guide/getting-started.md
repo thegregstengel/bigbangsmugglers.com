@@ -1,14 +1,14 @@
 ---
 title: "Getting Started"
 date: 2026-08-04
-description: "Sign up, join a season, and survive your first ten minutes"
+description: "Sign up, join a season, and spend your first 250 turns well"
 weight: 10
 group: start
 tags: [platform, seasons]
 changed_in: []
 stats:
+  - { label: "Turns", value: "250", sub: "full reset every 4 hours" }
   - { label: "Wallet", value: "5,000 cr", sub: "to start" }
-  - { label: "Turns", value: "250", sub: "reset every 4 hours" }
   - { label: "Handle", value: "3–20", sub: "characters" }
 ---
 
@@ -77,7 +77,10 @@ countdown to the next reset.
 You can buy extra turns — see [Provisions](/guide/gameplay/#buying-turns) —
 but only 5 per cycle, at 800 cr each.
 
-## Your first ten minutes
+## Your first cycle
+
+You start with a full tank of 250 turns and the reset clock already running.
+Here is how to spend them.
 
 You are in Sector 0, standing on the Stardock: the deepest market in the
 galaxy, a shipyard, a bank, repair, recruitment, defense contracts and a

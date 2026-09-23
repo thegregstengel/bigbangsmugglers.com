@@ -1,0 +1,27 @@
+{{- /* Turn-reset countdown. Pure arithmetic on the cycle length in data/site.yaml (UTC boundaries),
+     no endpoint. Fills every [data-countdown] element and highlights the next boundary in [data-clock]. */ -}}
+{{- $cycle := site.Data.site.turns.cycle_hours | default 4 -}}
+<script>
+(function () {
+  var CYCLE = {{ $cycle }};
+  function nextBoundary() {
+    var n = new Date();
+    var h = n.getUTCHours(), b = (Math.floor(h / CYCLE) + 1) * CYCLE;
+    var t = new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate(), 0, 0, 0));
+    t.setUTCHours(b);
+    return t;
+  }
+  function fmt(ms) {
+    var m = Math.max(0, Math.ceil(ms / 60000)), h = Math.floor(m / 60);
+    return h + 'h ' + String(m % 60).padStart(2, '0') + 'm';
+  }
+  function tick() {
+    var t = nextBoundary(), ms = t - Date.now(), text = fmt(ms);
+    document.querySelectorAll('[data-countdown]').forEach(function (el) { el.textContent = text; });
+    var nh = t.getUTCHours() % 24;
+    document.querySelectorAll('[data-clock] [data-h]').forEach(function (d) { d.classList.toggle('is-next', Number(d.dataset.h) === nh); });
+  }
+  tick();
+  setInterval(tick, 30000);
+})();
+</script>
