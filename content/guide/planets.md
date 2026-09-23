@@ -2,10 +2,14 @@
 title: "Planets"
 date: 2026-08-04
 description: "Claiming, structures, storage, garrisons, raids and starbases"
-weight: 16
+weight: 60
 group: build
 tags: [planets, starbases]
 changed_in: [2.3.0, 2.0.17, 2.0.16, 2.0.15, 2.0.14]
+stats:
+  - { label: "Claim", value: "150k cr", sub: "wallet only, 1 turn" }
+  - { label: "Structures", value: "6", sub: "max level 5" }
+  - { label: "Starbase", value: "1.5M cr", sub: "everything at level 5" }
 ---
 
 Planets are the late-game economy: a slow, compounding, defensible income

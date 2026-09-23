@@ -5,7 +5,7 @@ Marketing site, player guide, and release notes for Big Bang Smugglers.
 The site is mid-redesign (Sept 2026). The approved plan, design tokens and
 page templates are in the review artifact linked from Claude's memory
 (`site-redesign-plan`). Phases: 0 content hygiene ✓, 1 foundation ✓,
-2 guide, 3 releases (section renamed to `/releases/`), 4 homepage,
+2 guide ✓, 3 releases (section renamed to `/releases/`), 4 homepage,
 5 search/RSS/polish, 6 live season metrics in the HUD.
 
 ---
@@ -23,12 +23,13 @@ page templates are in the review artifact linked from Claude's memory
 
 ```
 content/
-  guide/                 # Player guide (21 pages; front matter: group, tags, changed_in)
+  guide/                 # Player guide (22 pages; front matter: group, tags, changed_in, stats)
   release-notes/         # Releases + Feb 2026 dev log (front matter: entry, version, tags)
   privacy.md
   delete-account.md
 data/
   site.yaml              # season status, store/community links (HUD + footer)
+  guide.yaml             # guide groups in reading order (title, icon, blurb)
 assets/css/site.css      # tokens + components; the only stylesheet
 layouts/
   baseof.html            # shared chrome: head, HUD header, main, tab bar, footer
@@ -79,8 +80,10 @@ Release-note commits: "Release notes: v[VERSION]".
 
 ## Guide
 
-Every guide page carries `group`, `tags` and `changed_in` (the release
-versions that changed it). Never write "accurate as of vX" in prose; add the
+Every guide page carries `group`, `tags`, `changed_in` (the release
+versions that changed it, newest first) and `stats` (three tiles: label,
+value, sub). Weights follow group order (start 10s, fly 30s, trade 40s,
+fight 50s, build 60s, compete 70s, numbers 80s). Never write "accurate as of vX" in prose; add the
 version to `changed_in` and say "since vX" inline where a rule changed.
 
 Guide groups: start, fly, trade, fight, build, compete, numbers.

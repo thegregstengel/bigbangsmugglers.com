@@ -1,23 +1,36 @@
-{{/* Guide index — the section's own copy, then a card per section.
-     Lives in layouts/docs/ (not layouts/guide/) because content/guide/_index.md
-     cascades `type: docs`, and Hugo resolves layouts by type. */}}
+{{/* Guide index: intro, then one card per group with its pages as rows.
+     Lives in layouts/docs/ because content/guide/_index.md cascades `type: docs`. */}}
 {{ define "main" }}
+{{- $pages := .RegularPages.ByWeight -}}
+<section class="page-hero">
+  <div class="wrap">
+    <div class="chip chip-mint" style="margin-bottom: 14px;">Player guide · {{ len $pages }} pages</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="hero-desc">{{ . }}</p>{{ end }}
+  </div>
+</section>
 
-    <section style="padding: 56px 28px 44px; background: var(--surface); border-bottom: 1px solid var(--line);">
-      <h1 style="font-size: 56px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; margin: 0 0 18px; max-width: 22ch; color: var(--text);">{{ .Title }}</h1>
-      {{ with .Description }}<p style="font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 40em; margin: 0;">{{ . }}</p>{{ end }}
-    </section>
+<div class="wrap">
+  <div class="bbs-prose guide-intro">{{ .Content }}</div>
 
-    <main style="padding: 52px 28px 72px;">
-      <article class="bbs-prose" style="margin-bottom: 48px;">{{ .Content }}</article>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4px; border: 1px solid var(--line); border-radius: var(--r-sm); overflow: hidden;">
-        {{ range .RegularPages.ByWeight }}
-          <a href="{{ .RelPermalink }}" style="display: block; padding: 26px 24px; background: var(--surface);">
-            <h2 style="font-size: 19px; font-weight: 600; margin: 0 0 8px; color: var(--text);">{{ .Title }}</h2>
-            <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--muted);">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 120 }}{{ end }}</p>
-          </a>
-        {{ end }}
-      </div>
-    </main>
-
+  <div class="group-grid">
+    {{ range site.Data.guide.groups }}
+      {{ $g := . }}
+      <section class="group-card" id="{{ .key }}">
+        <div class="group-head">
+          <span class="group-icon" aria-hidden="true">{{ .icon }}</span>
+          <div><h2>{{ .title }}</h2><p>{{ .blurb }}</p></div>
+        </div>
+        <div class="group-rows">
+          {{ range where $pages ".Params.group" .key }}
+            <a class="row" href="{{ .RelPermalink }}">
+              <span class="row-text"><b>{{ .Title }}</b><span>{{ .Description }}</span></span>
+              <span class="row-go" aria-hidden="true">→</span>
+            </a>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  </div>
+</div>
 {{ end }}

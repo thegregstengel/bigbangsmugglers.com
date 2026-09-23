@@ -1,0 +1,30 @@
+# Guide groups, in reading order. Pages pick a group in front matter (`group: fly`).
+groups:
+  - key: start
+    title: Start
+    icon: "🚀"
+    blurb: Sign up, join a season, and learn what a turn actually buys you.
+  - key: fly
+    title: Fly
+    icon: "🧭"
+    blurb: Moving, warping, reading the map, and what's waiting in it.
+  - key: trade
+    title: Trade
+    icon: "🛢️"
+    blurb: How prices move, what every port sells, and the contraband career.
+  - key: fight
+    title: Fight
+    icon: "⚔️"
+    blurb: Combat, bounties, ordnance, and the hulls and upgrades that win.
+  - key: build
+    title: Build
+    icon: "🌍"
+    blurb: Planets, starbases, and corporations that hold ground.
+  - key: compete
+    title: Compete
+    icon: "🏆"
+    blurb: Factions, XP, missions, and what a season leaves behind.
+  - key: numbers
+    title: Numbers
+    icon: "🔢"
+    blurb: Every constant on one page, and every term defined.

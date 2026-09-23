@@ -2,10 +2,14 @@
 title: "Missions, Goals & Streaks"
 date: 2026-08-04
 description: "Daily and season events, goal ladders, epics, and the streak clock"
-weight: 19
+weight: 72
 group: compete
 tags: [missions]
 changed_in: [2.0.15]
+stats:
+  - { label: "Accept step", value: "none", sub: "you are enrolled by playing" }
+  - { label: "Dailies", value: "15", sub: "templates in rotation" }
+  - { label: "Goal tiers", value: "3", sub: "Bronze, Silver, Gold" }
 ---
 
 Three separate systems, and it's worth keeping them apart:

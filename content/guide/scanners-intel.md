@@ -2,10 +2,14 @@
 title: "Scanners, Cloaks & Intel"
 date: 2026-08-04
 description: "StarNav tiers, active scans, cloaks, and paid intel"
-weight: 12
+weight: 32
 group: fly
 tags: [navigation, upgrades]
 changed_in: [2.3.0, 2.0.14, 2.0.8]
+stats:
+  - { label: "StarNav", value: "100k cr", sub: "per level, to L5" }
+  - { label: "Range", value: "3 hops", sub: "L4–5 see better, not further" }
+  - { label: "Cloak", value: "2 h", sub: "fixed window, 2,500 cr" }
 ---
 
 ## StarNav 2002

@@ -2,10 +2,14 @@
 title: "Smuggling & Contraband"
 date: 2026-08-04
 description: "The fence, the premium sale, customs scans, and hidden holds"
-weight: 15
+weight: 42
 group: trade
 tags: [smuggling]
 changed_in: [2.3.0, 2.0.8]
+stats:
+  - { label: "Contraband", value: "3 rows", sub: "organics, equipment, black tech" }
+  - { label: "Per purchase", value: "100", sub: "units, 1 turn" }
+  - { label: "Core heat", value: "×1.5", sub: "22% detection" }
 ---
 
 ## The catalog

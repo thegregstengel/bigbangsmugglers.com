@@ -2,10 +2,14 @@
 title: "Formulas & Numbers"
 date: 2026-08-04
 description: "Every constant on one page, current season defaults"
-weight: 21
+weight: 80
 group: numbers
 tags: [platform]
 changed_in: [2.3.0, 2.0.16]
+stats:
+  - { label: "Cycle", value: "4h", sub: "00:00 UTC and every 4h" }
+  - { label: "Turn cap", value: "250", sub: "no carryover" }
+  - { label: "Tesseract", value: "25 turns", sub: "flat, no discounts" }
 ---
 
 Everything on this page is a **current season default**. Almost every number

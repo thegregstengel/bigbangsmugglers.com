@@ -2,10 +2,14 @@
 title: "Trading & the Market"
 date: 2026-08-04
 description: "How prices are computed, taxes and fees, cost basis, and routes"
-weight: 5
+weight: 40
 group: trade
 tags: [trading]
 changed_in: []
+stats:
+  - { label: "Commodities", value: "3", sub: "fuel, organics, equipment" }
+  - { label: "Stock swing", value: "±28%", sub: "off the anchor price" }
+  - { label: "Port fee", value: "1%", sub: "both directions" }
 ---
 
 ## The three commodities

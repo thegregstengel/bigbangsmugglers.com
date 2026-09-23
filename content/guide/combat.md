@@ -2,10 +2,14 @@
 title: "Combat"
 date: 2026-08-04
 description: "How a fight resolves, hull versus shields, immunity, and fleets"
-weight: 9
+weight: 50
 group: fight
 tags: [combat]
 changed_in: [2.3.0, 2.0.15, 2.0.8, 2.0.2]
+stats:
+  - { label: "Engage", value: "1 turn", sub: "resolved instantly" }
+  - { label: "Immunity", value: "2 min", sub: "whenever you are attacked" }
+  - { label: "Loot", value: "20–35%", sub: "of the wallet, by alignment" }
 ---
 
 Combat is instant and automatic. You engage, the server resolves the whole

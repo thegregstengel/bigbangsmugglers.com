@@ -2,10 +2,14 @@
 title: "Ports & Services"
 date: 2026-08-04
 description: "Every port archetype, what it stocks, and which services it runs"
-weight: 6
+weight: 41
 group: trade
 tags: [ports]
 changed_in: []
+stats:
+  - { label: "Services", value: "11", sub: "fixed per archetype" }
+  - { label: "Starports", value: "3", sub: "Stardock, Exchange, Haven" }
+  - { label: "Capitals", value: "2", sub: "the only bounty offices" }
 ---
 
 ## The eleven services
