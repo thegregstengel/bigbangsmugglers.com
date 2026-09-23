@@ -5,8 +5,10 @@
 {{- with site.Data.site.season.endpoint }}
 <script>
 (function () {
-  var url = {{ . | jsonify }};
-  var statsUrl = {{ site.Data.site.season.stats_endpoint | default "" | jsonify }};
+  {{- /* Inside <script>, Go's html/template already emits a JS string literal for a bare {{ . }};
+       piping through jsonify here double-encodes it into '"https://…"' and the fetch fails. */ -}}
+  var url = {{ . }};
+  var statsUrl = {{ site.Data.site.season.stats_endpoint | default "" }};
   var STALE_MS = 48 * 3600 * 1000;
   function set(key, value) {
     document.querySelectorAll('[data-season="' + key + '"]').forEach(function (el) { el.textContent = value; });
