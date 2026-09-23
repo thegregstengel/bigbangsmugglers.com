@@ -3,7 +3,7 @@ title: "v1.6.1 — Corp Layout Fix"
 date: 2026-03-14T21:00:00Z
 type: blog
 description: "v1.6.1 fixes corp alignment buttons overflowing their cards on smaller screens."
-kind: release
+entry: release
 version: 1.6.1
 tags: [corps, factions]
 ---

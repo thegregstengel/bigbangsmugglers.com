@@ -3,7 +3,7 @@ title: "v2.0.2 / v2.0.3 — Launch Weekend Fixes"
 date: 2026-08-02T00:00:00Z
 type: blog
 description: "Two rapid patches from the first prod weekend: real trade profit tracking, full combat immunity from defense contracts, real feed details, correct ship tiers, and two crash fixes — thanks to sharp-eyed launch players."
-kind: release
+entry: release
 version: 2.0.3
 tags: [trading, platform, combat, ships]
 ---

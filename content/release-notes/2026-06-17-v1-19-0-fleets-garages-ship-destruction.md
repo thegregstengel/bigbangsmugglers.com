@@ -3,7 +3,7 @@ title: "v1.19.0 — Fleets, Garages, and Ship Destruction"
 date: 2026-06-17T12:00:00Z
 type: blog
 description: "v1.19.0 adds ship destruction and escape-pod recovery, multi-ship garages and Starbase storage, corporation fleets and fleet combat, corp chat, Tesseract Drive travel, stronger planet economy, and a broad set of combat and UI fixes."
-kind: release
+entry: release
 version: 1.19.0
 tags: [corps, ships, combat, planets]
 ---

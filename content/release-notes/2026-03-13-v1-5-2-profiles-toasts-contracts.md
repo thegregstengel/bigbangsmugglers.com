@@ -3,7 +3,7 @@ title: "v1.5.2 — Player Profiles, Toasts & Contracts"
 date: 2026-03-13T19:00:00Z
 type: blog
 description: "v1.5.2 adds player profile cards, replaces system alerts with themed notifications, and fixes the Ship Contracts tab to show bounties alongside missions."
-kind: release
+entry: release
 version: 1.5.2
 tags: [platform, missions, bounties]
 ---

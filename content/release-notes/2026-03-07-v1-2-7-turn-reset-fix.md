@@ -3,7 +3,7 @@ title: "v1.2.7 — Turn Reset Fix"
 date: 2026-03-07T14:00:00Z
 description: "Version 1.2.7 fixes the turn reset timer bug where countdowns could show up to 24 hours instead of the correct 4-hour cycle."
 type: blog
-kind: release
+entry: release
 version: 1.2.7
 tags: [platform]
 ---

@@ -3,7 +3,7 @@ title: "v2.0.8 — Standing Restored"
 date: 2026-08-04T00:00:00Z
 type: blog
 description: "Standing gains from clean scans and missions, single-run galaxy ticks, and fixes across trading, ships, planets and combat."
-kind: release
+entry: release
 version: 2.0.8
 tags: [factions, planets, combat, trading]
 ---

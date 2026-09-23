@@ -3,7 +3,7 @@ title: "v1.3.5 — Repair Modal & Feed Polish"
 date: 2026-03-08T22:00:00Z
 type: blog
 description: "v1.3.5 replaces the plain system repair dialog with a styled in-game modal and trims the feed highlights to one item."
-kind: release
+entry: release
 version: 1.3.5
 tags: [ports, platform]
 ---

@@ -3,7 +3,7 @@ title: "v1.4.4 — Alignment, Level Progression, and Feed Pins"
 date: 2026-03-11T21:00:00Z
 type: blog
 description: "v1.4.4 fixes alignment always showing as neutral, levels stuck at Recruit, and adds pinned announcements to the feed."
-kind: release
+entry: release
 version: 1.4.4
 tags: [progression, factions, platform]
 ---

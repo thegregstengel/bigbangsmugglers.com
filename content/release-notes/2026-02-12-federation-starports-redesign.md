@@ -3,7 +3,7 @@ title: "Federation Starports: From Menus to Living Spaces"
 date: 2026-02-12T12:00:00Z
 description: "We tore down the old starport menu system and rebuilt it as an immersive directory of businesses. Here's why it matters."
 type: blog
-kind: devlog
+entry: devlog
 tags: [ports, factions]
 ---
 

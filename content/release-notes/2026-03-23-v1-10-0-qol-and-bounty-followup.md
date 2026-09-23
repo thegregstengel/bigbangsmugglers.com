@@ -3,7 +3,7 @@ title: "v1.10.0 — QoL and Bounty Follow-Up"
 date: 2026-03-23T07:30:00-04:00
 type: blog
 description: "v1.10.0 adds corp profile access from leaderboards, player platform/version tracking, most wanted leaderboards, and more reputation-aware pricing and bounty follow-up improvements."
-kind: release
+entry: release
 version: 1.10.0
 tags: [bounties, progression, corps, factions]
 ---

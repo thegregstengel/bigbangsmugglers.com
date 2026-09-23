@@ -3,7 +3,7 @@ title: "v1.4.0 — Combat Overhaul"
 date: 2026-03-10T11:00:00Z
 type: blog
 description: "v1.4.0 overhauls combat mechanics, separates attack and defense roles, reworks weapon purchasing, and redesigns the Ship Stats screen."
-kind: release
+entry: release
 version: 1.4.0
 tags: [combat, ships, ports, progression]
 ---

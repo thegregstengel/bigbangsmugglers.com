@@ -3,7 +3,7 @@ title: "v1.9.5 — NPC & Bounty Stability Update"
 date: 2026-03-22T19:25:00-04:00
 type: blog
 description: "v1.9.5 fixes attack flow wiring, federation scan/bribe errors, corp withdrawal policy handling, bounty service auth guards, and fully wires trading and research stations into gameplay."
-kind: release
+entry: release
 version: 1.9.5
 tags: [bounties, platform, corps, combat]
 ---

@@ -3,7 +3,7 @@ title: "v1.1.1 — Planet Production and Stability Fixes"
 date: 2026-03-03T10:00:00Z
 description: "Version 1.1.1 fixes the planet production system, aligns production ticks to 4-hour boundaries, and adds region multipliers to actual output."
 type: blog
-kind: release
+entry: release
 version: 1.1.1
 tags: [planets, platform]
 ---

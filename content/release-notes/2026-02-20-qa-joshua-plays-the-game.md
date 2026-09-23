@@ -3,7 +3,7 @@ title: "QA: Joshua Plays the Game"
 date: 2026-02-20T12:00:00Z
 description: "The AI assistant played Big Bang Smugglers via backend CLI and found 11 bugs — trading exploits, cooldown bypasses, data crashes, and worse."
 type: blog
-kind: devlog
+entry: devlog
 tags: [platform, trading]
 ---
 

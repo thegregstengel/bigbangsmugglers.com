@@ -3,7 +3,7 @@ title: "v1.22.0 — Planet Parking, Active Defenses, and Mission Alerts"
 date: 2026-07-01T00:00:00Z
 type: blog
 description: "v1.22.0 lets ships land on owned planets for citadel protection, scales garrison strength by citadel level, adds mission-expiry push notifications, ships an in-app catalog with full specs, and fixes several mine and combat bugs."
-kind: release
+entry: release
 version: 1.22.0
 tags: [planets, missions, combat, ordnance]
 ---

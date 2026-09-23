@@ -3,7 +3,7 @@ title: "v1.14.3 — Onboarding and Web Invite Access"
 date: 2026-04-21T16:15:00-04:00
 type: blog
 description: "v1.14.3 smooths out first-time account setup, keeps invite-only access scoped to the web flow, and cleans up version display inside the app."
-kind: release
+entry: release
 version: 1.14.3
 tags: [platform]
 ---

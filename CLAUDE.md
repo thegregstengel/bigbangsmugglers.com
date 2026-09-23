@@ -2,15 +2,20 @@
 
 Marketing site, player guide, and release notes for Big Bang Smugglers.
 
+The site is mid-redesign (Sept 2026). The approved plan, design tokens and
+page templates are in the review artifact linked from Claude's memory
+(`site-redesign-plan`). Phases: 0 content hygiene ✓, 1 foundation ✓,
+2 guide, 3 releases (section renamed to `/releases/`), 4 homepage,
+5 search/RSS/polish, 6 live season metrics in the HUD.
+
 ---
 
 # Tech stack
 
-- Hugo (static site generator, v0.155.3+)
-- Hextra theme (via git submodule at `themes/hextra`)
-- Tailwind CSS (CDN, used in custom homepage layout)
-- GitHub Actions (CI/CD)
-- GitHub Pages (hosting)
+- Hugo extended (v0.155.3, pinned in CI) — no theme, all layouts are ours
+- One stylesheet, `assets/css/site.css`, built through Hugo Pipes
+- Google Fonts: Nunito Sans (everything humans read) + JetBrains Mono (numbers, versions, formulas)
+- GitHub Actions → GitHub Pages
 
 ---
 
@@ -18,101 +23,108 @@ Marketing site, player guide, and release notes for Big Bang Smugglers.
 
 ```
 content/
-  guide/                 # Player guide (21 pages, grouped via front matter)
-  release-notes/         # Releases + Feb 2026 dev log (80+ entries)
-  privacy.md             # Privacy policy
-  delete-account.md      # Account deletion page
+  guide/                 # Player guide (21 pages; front matter: group, tags, changed_in)
+  release-notes/         # Releases + Feb 2026 dev log (front matter: entry, version, tags)
+  privacy.md
+  delete-account.md
+data/
+  site.yaml              # season status, store/community links (HUD + footer)
+assets/css/site.css      # tokens + components; the only stylesheet
 layouts/
-  index.html             # Custom homepage (standalone, navy/mint palette)
-  index.json             # Search index consumed by bbs-search.html
-  docs/                  # Guide layouts (guide pages have type: docs)
-  blog/                  # Release-note layouts (notes have type: blog)
-  page.html              # Privacy, delete-account, other single pages
-  _partials/custom/      # Shared chrome: bbs-head, bbs-nav, bbs-search,
-                         # bbs-footer, head-end (Hextra palette bridge)
-themes/hextra/           # Hextra theme (git submodule, do not edit)
-static/                  # Static assets (logo, favicon)
-hugo.toml                # Site configuration
-.github/workflows/
-  hugo.yml               # CI/CD pipeline
+  baseof.html            # shared chrome: head, HUD header, main, tab bar, footer
+  home.html              # homepage (inline-styled sections until Phase 4)
+  docs/{list,single}.html    # guide (type: docs)
+  blog/{list,single}.html    # release notes (type: blog)
+  page.html              # privacy, delete-account
+  404.html, robots.txt, index.json (search index)
+  _partials/             # head, header, footer, tabbar, search, icon, tw-rights
+  _markup/render-table.html  # wraps every markdown table in .table-wrap
+static/                  # favicon set, og-image.png, site.webmanifest, logo
+hugo.toml
+.github/workflows/hugo.yml
 ```
 
 ---
 
 # Common commands
 
-- Install submodules: `git submodule update --init --recursive`
 - Dev server: `hugo server -D`
 - Production build: `hugo --gc --minify`
+- Hugo is not installed on wopr; download the extended binary into the session scratchpad to build locally.
 
 ---
 
-# Adding release notes
+# Content conventions
 
-Use the helper script:
+## Release notes
 
-```bash
-~/.aiops/scripts/bbs-release-notes-site "<filename>.md" "v<version> -- <Title>"
-```
+Helper: `~/.aiops/scripts/bbs-release-notes-site "<filename>.md" "v<version> -- <Title>"`
 
-Or create manually in `content/release-notes/` with front matter:
+Or create `content/release-notes/YYYY-MM-DD-vX-Y-Z-slug.md`:
 
 ```yaml
 ---
 title: "v2.4.0 — Title"
-date: 2026-10-01T12:00:00Z
+date: 2026-10-01T12:00:00Z    # always explicit UTC
 type: blog
 description: ""
-kind: release            # release | devlog
-version: 2.4.0
-tags: [planets, combat]  # see the tag list below
+entry: release                # release | devlog
+version: 2.4.0                # releases only
+tags: [planets, combat]
 ---
 ```
 
-Dates are always explicit UTC (`Z`). Every note carries `kind`, `version`
-(releases only) and `tags`. Guide pages carry `group`, `tags` and
-`changed_in` (versions that changed the page), and the guide never states
-"accurate as of" in prose — update `changed_in` instead.
+The HUD "Build" readout is the newest `entry: release` note's `version`.
+Release-note commits: "Release notes: v[VERSION]".
 
-Shared tags (both sections): planets, starbases, corps, combat, bounties,
-ordnance, trading, ports, smuggling, ships, upgrades, seasons, progression,
-missions, navigation, factions, npcs, platform.
+## Guide
+
+Every guide page carries `group`, `tags` and `changed_in` (the release
+versions that changed it). Never write "accurate as of vX" in prose; add the
+version to `changed_in` and say "since vX" inline where a rule changed.
 
 Guide groups: start, fly, trade, fight, build, compete, numbers.
+
+## Shared tags (guide + releases)
+
+planets, starbases, corps, combat, bounties, ordnance, trading, ports,
+smuggling, ships, upgrades, seasons, progression, missions, navigation,
+factions, npcs, platform.
+
+Do not use `kind` as a front matter key — Hugo reserves it.
+
+---
+
+# Design rules
+
+- Colors come from the tokens in `site.css`; never hard-code hex in layouts.
+- Mint is the only interactive color. Gold = credits/season, coral =
+  pirate/danger, sky = Federation/info, violet = epic. Semantic, not decorative.
+- Mono only for numbers, versions, formulas. Sans for labels and headings.
+- Phone first: nothing wider than the screen; tables scroll inside `.table-wrap`.
+- The tab bar renders only on guide and release pages (see `baseof.html`).
+- The Trade Wars rights notice in `_partials/tw-rights.html` is never reworded
+  and must appear on every page (it does, via the footer).
 
 ---
 
 # Deployment
 
-Automatic via GitHub Actions on push to `main`:
-1. Checkout with recursive submodules
-2. Install Hugo, Go, Node, Dart Sass
-3. `hugo --gc --minify`
-4. Deploy to GitHub Pages
+Push to `main` → GitHub Actions installs Hugo, runs `hugo --gc --minify`,
+deploys to GitHub Pages. No manual steps. Custom domain: `bigbangsmugglers.com`.
 
-No manual deploy steps needed.
-
----
-
-# Conventions
-
-- All work on `main` branch (no feature branches currently used)
-- Release note commits: "Release notes: v[VERSION]"
-- Custom domain: `bigbangsmugglers.com` (configured via GitHub Pages)
+Work happens on branches with PRs to `main` (`site/phase-N-…` for redesign work).
 
 ---
 
 # Gotchas
 
-- Theme is Hextra, not Blowfish (README is outdated on this point)
-- Hugo resolves layouts by front-matter `type`, not section name: guide pages
-  cascade `type: docs` and release notes set `type: blog`, so their layouts
-  live in `layouts/docs/` and `layouts/blog/` — NOT `layouts/guide/` or
-  `layouts/release-notes/` (templates in those paths would silently never render)
-- The homepage (`layouts/index.html`) is custom HTML with Tailwind via CDN, not generated by Hugo/Hextra
-- `git submodule update --init --recursive` is required after a fresh clone
-- Hugo extended edition is required (standard Hugo will not build the site)
-- Unsafe HTML rendering is enabled in `hugo.toml` for custom content
+- Hugo resolves layouts by front-matter `type`: guide pages cascade `type: docs`
+  and release notes set `type: blog`, so their layouts live in `layouts/docs/`
+  and `layouts/blog/`, not `layouts/guide/` or `layouts/release-notes/`.
+- Taxonomy pages are disabled in `hugo.toml` until Phase 3 gives tags a layout.
+- Unsafe HTML rendering is on in `hugo.toml` for custom content.
+- Hugo extended is required.
 
 ---
 

@@ -3,7 +3,7 @@ title: "v1.2.0 — Ship Class Overhaul and Upgrade Improvements"
 date: 2026-03-04T12:00:00Z
 description: "Version 1.2.0 reshapes ship class identities, doubles fighter and torpedo upgrade limits, and improves how upgrade information is presented throughout the game."
 type: blog
-kind: release
+entry: release
 version: 1.2.0
 tags: [ships, upgrades, combat]
 ---

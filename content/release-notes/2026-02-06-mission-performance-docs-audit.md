@@ -3,7 +3,7 @@ title: "Mission, Performance & Docs Audit"
 date: 2026-02-06T12:00:00Z
 description: "Part 1 of the Feb 6 sprint: mission system breakdowns, P0 performance work, and a full documentation overhaul."
 type: blog
-kind: devlog
+entry: devlog
 tags: [missions, platform]
 ---
 

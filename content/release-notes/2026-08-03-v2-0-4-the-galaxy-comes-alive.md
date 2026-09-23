@@ -3,7 +3,7 @@ title: "v2.0.4 — The Galaxy Comes Alive"
 date: 2026-08-03T00:00:00Z
 type: blog
 description: "The public feed now tells the galaxy's story — battles, captures, claims, and commissions — plus hull differentiation for all 45 ships, warp fixes, and honest hangar values."
-kind: release
+entry: release
 version: 2.0.4
 tags: [platform, ports, ships, missions]
 ---

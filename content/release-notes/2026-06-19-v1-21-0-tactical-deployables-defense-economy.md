@@ -3,7 +3,7 @@ title: "v1.21.0 — Tactical Deployables, Defense, and Economy Fixes"
 date: 2026-06-19T12:00:00Z
 type: blog
 description: "v1.21.0 expands tactical deployable control, restores combat-capacity upgrade visibility, rebalances planets and starbases, and fixes several combat, defense, and stale-state issues."
-kind: release
+entry: release
 version: 1.21.0
 tags: [combat, ordnance, planets, upgrades]
 ---

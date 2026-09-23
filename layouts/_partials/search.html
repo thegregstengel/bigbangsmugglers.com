@@ -1,0 +1,70 @@
+{{- /* Site search: reads /index.json (layouts/index.json). Cmd/Ctrl-K or "/" opens it. Styles live in site.css. */ -}}
+<button type="button" id="bbs-search-open" class="search-open" aria-label="Search the site">
+  {{ partial "icon.html" "search" }}<span>Search</span><kbd>⌘K</kbd>
+</button>
+
+<div id="bbs-search-modal" class="search-modal" hidden>
+  <div class="search-dialog" role="dialog" aria-modal="true" aria-label="Search">
+    <input id="bbs-search-input" class="search-input" type="search" placeholder="Search the guide and releases…" autocomplete="off" />
+    <div id="bbs-search-results" class="search-results"></div>
+    <div class="search-hint">↑↓ move · ↵ open · esc close</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var openBtn = document.getElementById('bbs-search-open');
+  var modal = document.getElementById('bbs-search-modal');
+  var input = document.getElementById('bbs-search-input');
+  var out = document.getElementById('bbs-search-results');
+  if (!openBtn || !modal || !input || !out) return;
+  var docs = null, loading = null, active = -1, hits = [];
+
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function load() {
+    if (docs) return Promise.resolve(docs);
+    if (loading) return loading;
+    loading = fetch('/index.json', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (j) { docs = (Array.isArray(j) ? j : []).map(function (d) { return { title: d.title || '', url: d.url || '', body: (d.content || '').slice(0, 4000) }; }); return docs; })
+      .catch(function () { docs = []; return docs; });
+    return loading;
+  }
+  function render() {
+    if (!hits.length) { out.innerHTML = '<p class="search-empty">' + (input.value.trim() ? 'No matches.' : 'Type to search the guide and releases.') + '</p>'; return; }
+    out.innerHTML = hits.map(function (h, i) {
+      return '<a href="' + esc(h.url) + '" class="' + (i === active ? 'active' : '') + '"><b>' + esc(h.title) + '</b><span>' + esc(h.snippet) + '</span></a>';
+    }).join('');
+  }
+  function run() {
+    var q = input.value.trim().toLowerCase();
+    if (!q || !docs) { hits = []; active = -1; render(); return; }
+    hits = docs.map(function (d) {
+      var t = d.title.toLowerCase(), b = d.body.toLowerCase();
+      var ti = t.indexOf(q), bi = b.indexOf(q);
+      if (ti < 0 && bi < 0) return null;
+      var score = (ti === 0 ? 0 : ti < 0 ? 40 : 10) + (bi < 0 ? 20 : 0);
+      var snippet = bi >= 0 ? '…' + d.body.slice(Math.max(0, bi - 45), bi + 95).trim() + '…' : d.body.slice(0, 110);
+      return { title: d.title, url: d.url, snippet: snippet, score: score };
+    }).filter(Boolean).sort(function (a, b) { return a.score - b.score; }).slice(0, 8);
+    active = hits.length ? 0 : -1;
+    render();
+  }
+  function open() { modal.hidden = false; document.body.style.overflow = 'hidden'; load().then(run); input.focus(); }
+  function close() { modal.hidden = true; document.body.style.overflow = ''; input.value = ''; hits = []; active = -1; render(); }
+
+  openBtn.addEventListener('click', open);
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  input.addEventListener('input', run);
+  document.addEventListener('keydown', function (e) {
+    var typing = /^(input|textarea|select)$/i.test((e.target.tagName || ''));
+    if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing && modal.hidden)) { e.preventDefault(); open(); return; }
+    if (modal.hidden) return;
+    if (e.key === 'Escape') { close(); }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); if (hits.length) { active = (active + 1) % hits.length; render(); } }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (hits.length) { active = (active - 1 + hits.length) % hits.length; render(); } }
+    else if (e.key === 'Enter' && hits[active]) { window.location.href = hits[active].url; }
+  });
+  render();
+})();
+</script>

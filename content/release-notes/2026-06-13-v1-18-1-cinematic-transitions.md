@@ -3,7 +3,7 @@ title: "v1.18.1 — Cinematic Transitions"
 date: 2026-06-13T16:55:57Z
 type: blog
 description: "v1.18.1 completes the cinematic transition system with 19 purpose-built scenes, and ships three bug fixes for planet renames, card styling, and a Nav-tab header."
-kind: release
+entry: release
 version: 1.18.1
 tags: [planets, navigation]
 ---

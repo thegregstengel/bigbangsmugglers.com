@@ -3,7 +3,7 @@ title: "Planet Combat, Intel Brokers & Starport Fixes"
 date: 2026-02-21T12:00:00Z
 description: "Planet attack system, intel broker service, defense station PvP immunity, structure building UI, and 4 parallel agent fixes. 14 issues closed."
 type: blog
-kind: devlog
+entry: devlog
 tags: [planets, combat, ports]
 ---
 

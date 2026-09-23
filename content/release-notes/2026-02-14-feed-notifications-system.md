@@ -4,7 +4,7 @@ date: 2026-02-14T12:00:00Z
 description: "Real-time event feed with privacy-first design and admin broadcast tools"
 type: blog
 author: "Dev Team"
-kind: devlog
+entry: devlog
 tags: [platform]
 ---
 

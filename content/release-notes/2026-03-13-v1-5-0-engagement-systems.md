@@ -3,7 +3,7 @@ title: "v1.5.0 — Missions, Goals, Streaks & Faction Bounties"
 date: 2026-03-13T12:00:00Z
 type: blog
 description: "v1.5.0 is a major update adding a full engagement system — daily missions, goal rewards, login streaks, and faction bounties."
-kind: release
+entry: release
 version: 1.5.0
 tags: [missions, bounties, factions, platform]
 ---

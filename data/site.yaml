@@ -1,0 +1,11 @@
+# Site-wide facts rendered into the HUD header and footer.
+# The build number is derived from the newest release note, not stored here.
+season:
+  status: Active        # shown in the HUD; Phase 6 replaces this with live data
+play:
+  android: https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers
+  web: https://play.bigbangsmugglers.com
+community:
+  discord: https://discord.gg/A52xxB2VT9
+  reddit: https://www.reddit.com/r/bigbangsmugglers/
+  feedback: feedback@bigbangsmugglers.com

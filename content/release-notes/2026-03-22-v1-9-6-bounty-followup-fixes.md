@@ -3,7 +3,7 @@ title: "v1.9.6 — Bounty & NPC Follow-Up Fixes"
 date: 2026-03-22T21:50:00-04:00
 type: blog
 description: "v1.9.6 fixes pirate spawns in Federation space, adds sector validation to remaining NPC interaction functions, and ensures the Wanted HUD updates correctly after bounty generation."
-kind: release
+entry: release
 version: 1.9.6
 tags: [bounties, npcs, navigation, factions]
 ---

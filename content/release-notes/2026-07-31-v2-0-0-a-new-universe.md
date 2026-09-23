@@ -3,7 +3,7 @@ title: "v2.0.0 — Big Bang Smugglers 2.0: A New Universe"
 date: 2026-07-31T00:00:00Z
 type: blog
 description: "Big Bang Smugglers 2.0 is a re-founding: a completely rebuilt engine, seventeen redesigned game systems, a fresh universe with no carried history, and a new home at play.bigbangsmugglers.com."
-kind: release
+entry: release
 version: 2.0.0
 tags: [seasons, platform, trading, planets]
 ---

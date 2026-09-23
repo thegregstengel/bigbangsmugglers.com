@@ -3,7 +3,7 @@ title: "v1.10.3 — Scanning, Factions & Pricing"
 date: 2026-04-02T19:00:00-04:00
 type: blog
 description: "v1.10.3 delivers instant sector scanning, faction reputation pricing, deployable scan fixes, and clearer port pricing labels."
-kind: release
+entry: release
 version: 1.10.3
 tags: [factions, ordnance, navigation, ports]
 ---

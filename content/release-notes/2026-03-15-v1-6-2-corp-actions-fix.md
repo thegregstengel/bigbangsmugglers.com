@@ -3,7 +3,7 @@ title: "v1.6.2 — Corp Actions and Browse Fixes"
 date: 2026-03-15T11:45:00-04:00
 type: blog
 description: "v1.6.2 fixes corporation actions showing false errors and restores the corp browse list by removing a missing-index query path."
-kind: release
+entry: release
 version: 1.6.2
 tags: [corps]
 ---

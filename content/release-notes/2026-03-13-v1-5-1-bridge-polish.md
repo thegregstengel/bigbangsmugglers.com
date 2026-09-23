@@ -3,7 +3,7 @@ title: "v1.5.1 — Bridge Tab Polish"
 date: 2026-03-13T14:00:00Z
 type: blog
 description: "v1.5.1 cleans up the Bridge tab on the Ship screen — consistent card styles, separate beacon and mine cards, better layout."
-kind: release
+entry: release
 version: 1.5.1
 tags: [ordnance, ships, upgrades, navigation]
 ---

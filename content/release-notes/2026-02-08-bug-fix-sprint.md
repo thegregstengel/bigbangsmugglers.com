@@ -3,7 +3,7 @@ title: "Bug Fix Sprint"
 date: 2026-02-08T12:00:00Z
 description: "8 quick bug fixes after the audit — credits in the wrong field, crashes, and a misnamed leaderboard tab."
 type: blog
-kind: devlog
+entry: devlog
 tags: [platform, progression]
 ---
 

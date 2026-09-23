@@ -3,7 +3,7 @@ title: "v2.0.5 — StarNav Restored"
 date: 2026-08-03T12:00:00Z
 type: blog
 description: "The StarNav 2002 long-range sweep works again — full sector map with routes, territory colors, and hostile contacts."
-kind: release
+entry: release
 version: 2.0.5
 tags: [upgrades, navigation]
 ---

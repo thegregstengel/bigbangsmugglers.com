@@ -3,7 +3,7 @@ title: "Auditing the Foundation"
 date: 2026-02-05T12:00:00Z
 description: "23 issues filed across UI wiring gaps, dead buttons, and broken API chains — setting the stage for the build sprint."
 type: blog
-kind: devlog
+entry: devlog
 tags: [platform]
 ---
 

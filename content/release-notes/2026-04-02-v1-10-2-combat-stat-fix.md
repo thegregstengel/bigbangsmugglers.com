@@ -3,7 +3,7 @@ title: "v1.10.2 — Combat Stat Fix"
 date: 2026-04-02T08:00:35-04:00
 type: blog
 description: "v1.10.2 fixes a combat bug where ship stat advantages — shields, power, and firepower — were not correctly influencing battle outcomes, resulting in disproportionate losses."
-kind: release
+entry: release
 version: 1.10.2
 tags: [combat, ships]
 ---

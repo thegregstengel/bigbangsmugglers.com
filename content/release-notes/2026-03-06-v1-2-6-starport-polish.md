@@ -5,7 +5,7 @@ description: "Version 1.2.6 overhauls the starport shipyard, fixes ship repair, 
 type: blog
 aliases:
   - /release-notes/2026-03-06-v1-2-5-starport-polish/
-kind: release
+entry: release
 version: 1.2.6
 tags: [ports, ships, planets, trading]
 ---

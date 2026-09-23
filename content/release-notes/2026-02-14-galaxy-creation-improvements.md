@@ -4,7 +4,7 @@ date: 2026-02-14T12:00:00Z
 description: "Streamlined galaxy creation with Quick Create mode, 6 presets, and real-time validation"
 type: blog
 author: "Dev Team"
-kind: devlog
+entry: devlog
 tags: [seasons, platform]
 ---
 
