@@ -4,7 +4,6 @@ description: "Delete your Big Bang Smugglers account and data"
 type: page
 ---
 
-# Delete Your Account
 
 You can delete your **Big Bang Smugglers** account yourself, from inside
 the game, at any time.

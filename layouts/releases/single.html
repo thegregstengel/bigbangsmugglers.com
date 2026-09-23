@@ -24,7 +24,7 @@
   </header>
 
   <div class="release-body">
-    <article class="bbs-prose">{{ .Content }}</article>
+    <article class="bbs-prose" data-pagefind-body data-pagefind-filter="section:{{ if $isRelease }}Release{{ else }}Dev log{{ end }}" data-pagefind-meta="title:{{ if $isRelease }}v{{ $version }} · {{ partial "release-title.html" . }}{{ else }}{{ .Title }}{{ end }}">{{ .Content }}</article>
 
     <aside class="release-side">
       {{ with $changedPages }}

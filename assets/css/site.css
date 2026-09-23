@@ -387,3 +387,11 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; letter-spacing: -0.015em; text-wr
 .home-final-row { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
 .home-final h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 800; }
 .home-final .home-sub { margin-bottom: 0; }
+
+/* ---------- utility pages, search extras ---------- */
+.util-shell { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 40px; align-items: start; padding-block: 36px 56px; }
+@media (max-width: 900px) { .util-shell { grid-template-columns: 1fr; } .util-shell .rail { display: none; } }
+.util-prose { max-width: 46em; }
+.page-hero .crumbs { margin-bottom: 12px; }
+.search-results a b em { font-style: normal; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); margin-left: 8px; }
+.search-results mark { background: var(--mint-soft); color: var(--mint); border-radius: 3px; padding: 0 2px; }

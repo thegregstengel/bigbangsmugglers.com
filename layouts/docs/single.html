@@ -69,7 +69,7 @@
     </details>
     {{ end }}{{ end }}
 
-    <div class="bbs-prose">{{ .Content }}</div>
+    <div class="bbs-prose" data-pagefind-body data-pagefind-filter="section:Guide" data-pagefind-meta="title:{{ .Title }}">{{ .Content }}</div>
 
     <nav class="pager" aria-label="Guide pages">
       {{/* Hugo's Next/Prev run against the default sort (weight ascending), where "Next" means earlier in the list. */}}

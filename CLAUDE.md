@@ -6,7 +6,7 @@ The site is mid-redesign (Sept 2026). The approved plan, design tokens and
 page templates are in the review artifact linked from Claude's memory
 (`site-redesign-plan`). Phases: 0 content hygiene ✓, 1 foundation ✓,
 2 guide ✓, 3 releases ✓, 4 homepage ✓,
-5 search/RSS/polish, 6 live season metrics in the HUD.
+5 search/RSS/polish ✓, 6 live season metrics in the HUD.
 
 ---
 
@@ -15,6 +15,8 @@ page templates are in the review artifact linked from Claude's memory
 - Hugo extended (v0.155.3, pinned in CI) — no theme, all layouts are ours
 - One stylesheet, `assets/css/site.css`, built through Hugo Pipes
 - Google Fonts: Nunito Sans (everything humans read) + JetBrains Mono (numbers, versions, formulas)
+- Search: Pagefind index built in CI after Hugo (`npx pagefind --site public`);
+  the modal falls back to Hugo's `/index.json` under `hugo server`
 - GitHub Actions → GitHub Pages
 
 ---
@@ -38,11 +40,12 @@ layouts/
   docs/{list,single}.html    # guide (type: docs)
   releases/{list,single}.html  # releases index (tabs, filters) and single release
   taxonomy/term.html     # /tags/<tag>/: guide page(s) first, then releases
-  page.html              # privacy, delete-account
+  page.html              # privacy, delete-account (hero + narrow prose + contents rail)
   404.html, robots.txt, index.json (search index)
   _partials/             # head, header, footer, tabbar, search, icon, tw-rights, tag-chip, release-title
   _markup/render-table.html  # wraps every markdown table in .table-wrap
-static/                  # favicon set, og-image.png, site.webmanifest, logo, screens/ (game screenshots)
+static/                  # favicon set, og-image.png, site.webmanifest, screens/ (game screenshots)
+assets/img/logo-source.png  # 1280px wordmark; source for icons and og-image, not published
 hugo.toml
 .github/workflows/hugo.yml
 ```
@@ -110,6 +113,8 @@ Do not use `kind` as a front matter key — Hugo reserves it.
   pirate/danger, sky = Federation/info, violet = epic. Semantic, not decorative.
 - Mono only for numbers, versions, formulas. Sans for labels and headings.
 - Phone first: nothing wider than the screen; tables scroll inside `.table-wrap`.
+- Only elements with `data-pagefind-body` are searchable (guide articles,
+  releases, utility pages); pass `section:` via `data-pagefind-filter`.
 - The tab bar renders only on guide and release pages (see `baseof.html`).
 - The Trade Wars rights notice in `_partials/tw-rights.html` is never reworded
   and must appear on every page (it does, via the footer).
