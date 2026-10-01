@@ -5,7 +5,7 @@ description: "Every constant on one page, current season defaults"
 weight: 80
 group: numbers
 tags: [platform]
-changed_in: [2.3.0, 2.0.16]
+changed_in: [2.5.0, 2.3.0, 2.0.16]
 stats:
   - { label: "Cycle", value: "4h", sub: "00:00 UTC and every 4h" }
   - { label: "Turn cap", value: "250", sub: "no carryover" }
@@ -793,8 +793,11 @@ Policy defaults: `storage.view` on, `storage.deposit` on,
 
 | Knob | Default |
 |---|---|
-| Player announcement fee | 1,000 cr (pure sink; wallet then bank) |
-| Announcements per cycle | 1 |
-| Announcement length | 3–280 characters, profanity-gated, level-gated |
+| Galaxy post | free, ≤ 280 characters, level 5, ≤ 5 @mentions, links blocked |
+| Chat spam gate (all surfaces, per captain) | 3 messages / 10 s and 30 / 10 min |
+| Channel flood caps | corp 30 / min, galaxy 60 / min |
+| Hail | ≤ 280 characters, level 5 to start a thread, none to reply |
+| Chat retention (newest N or days, whichever keeps more) | corp 500 / 14 d · galaxy 1,000 / 7 d · hails 200 / 30 d per thread |
+| Auto-hide | 3 distinct reports |
 | Captain rename cooldown | 24 hours |
 | Rename feed story | public, on |

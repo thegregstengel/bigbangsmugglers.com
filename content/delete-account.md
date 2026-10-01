@@ -47,6 +47,10 @@ removed — the standard anonymized-aggregate practice:
   account)
 - Leaderboard and award history in past-season records
 - In-game action logs used for game integrity
+- Messages you posted to shared spaces — corporation chat, galaxy posts,
+  and hails sent to another captain — until the Game's normal message
+  retention removes them (14, 7 and 30 days respectively, or sooner by
+  volume), shown as a deleted account
 
 If your account was banned, an internal record of the ban is retained to
 prevent ban evasion. It contains no personal information.

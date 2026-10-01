@@ -5,7 +5,7 @@ description: "Mines, drones, turrets, trackers, and the things you leave behind"
 weight: 54
 group: fight
 tags: [ordnance]
-changed_in: [2.3.0, 2.0.17, 2.0.16]
+changed_in: [2.5.0, 2.3.0, 2.0.17, 2.0.16]
 stats:
   - { label: "Mines", value: "500", sub: "per captain, galaxy-wide" }
   - { label: "Fire", value: "60%", sub: "per mine, max 3 per entry" }
@@ -194,10 +194,11 @@ Remove your own at any time. You can also **destroy someone else's beacon**
 — 1 turn, you must be in the sector, and the demolition posts to the public
 feed. A beacon war is a real thing you can have.
 
-Beacons are, with [paid announcements](/guide/gameplay/#announcements), the
-closest thing the game has to public communication outside a corporation.
-There are no direct messages. If you want to leave someone a note, you leave
-it in a sector.
+Beacons are the one message that lives in a *place*: anyone who flies
+through the sector reads it. For the whole galaxy, post to the
+[Galaxy channel](/guide/gameplay/#galaxy-posts); for one captain,
+[hail](/guide/gameplay/#comms) them. A beacon is for the note you want found
+*here*.
 
 ## Private notes
 
