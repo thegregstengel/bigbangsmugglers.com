@@ -108,6 +108,12 @@ killable.
 | Sensor Buoy | 0 | 1 | decays 1%/day |
 | Cloak Field | 0 | 0 | **expires in 48 hours** |
 
+A **sensor buoy** has no teeth. It is the cheap way to keep a stake in a
+sector: 800 cr, the slowest decay in the catalog, one point of defense added
+to whatever else you stack with it, and it shows on any scan at StarNav 2 or
+better, so a passing captain knows the sector is held. It does not report
+who flies through to you. Its job is presence, not intel.
+
 Deployable **sector fighters no longer exist**. Fighters belong to planet
 garrisons. Sectors get mines.
 
