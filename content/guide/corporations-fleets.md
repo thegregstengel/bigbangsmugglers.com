@@ -5,7 +5,7 @@ description: "Founding, roles, the corp bank, policies, fleets and held ports"
 weight: 61
 group: build
 tags: [corps]
-changed_in: [2.3.0, 2.0.14]
+changed_in: [2.5.0, 2.3.0, 2.0.14]
 stats:
   - { label: "Found", value: "50k cr", sub: "the bank can pay" }
   - { label: "Roles", value: "3", sub: "leader, officer, member" }
@@ -21,8 +21,8 @@ stats:
 | Name | 3–50 characters, unique in the galaxy |
 | Member cap | `max(10, seasonPlayerCap ÷ 5)` |
 
-Corp founding is one of only three things in the game the bank can pay for
-— the others are ship repair and public announcements.
+Corp founding is one of only two things in the game the bank can pay for —
+the other is ship repair.
 
 **Join policy** is set at creation and changeable by the leader:
 
@@ -91,12 +91,15 @@ a member *remove* something starts off.
 ## Chat
 
 The only chat in the game. 500 characters, a 3-second per-player cooldown,
-a 30-messages-per-minute corp-wide flood cap, profanity filtered. History
-retains the **last 500 messages or 14 days, whichever is longer**.
+a 30-messages-per-minute corp-wide flood cap, profanity filtered, links
+blocked. History retains the **last 500 messages or 14 days, whichever is
+longer**. The per-captain [spam gate](/guide/gameplay/#comms) — 3 messages
+per 10 seconds, 30 per 10 minutes — is shared with galaxy posts and hails.
 
-There are **no direct messages** between players. If you need to reach
-someone outside your corp, you leave a beacon in a sector, buy a
-[public announcement](/guide/gameplay/#announcements), or you don't.
+To reach someone outside your corp, **hail** them from Comms → Hails (a
+direct, text-only thread; level 5 to start one), post to the
+[Galaxy channel](/guide/gameplay/#galaxy-posts) with an `@mention`, or
+leave a beacon in a sector.
 
 Leaders and officers can also set a **notice** (500 characters) that every
 member sees.

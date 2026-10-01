@@ -21,6 +21,15 @@ As you play, we collect and store:
 - Game progress, including your ship, credits, sector location, and player statistics
 - In-game actions such as trades, combat, missions, and galaxy activity
 - Galaxy membership and corporation (corp) affiliations
+- **Messages you write in the Game** — corporation chat, galaxy posts, and
+  direct hails between captains. These are visible to the other players
+  they are addressed to (a corp, the galaxy, or one captain), and to our
+  moderation staff when a message is reported or a report is reviewed.
+  The Game keeps the most recent messages only: corp chat for the last
+  500 messages or 14 days per corporation, galaxy posts for the last 1,000
+  messages or 7 days per galaxy, and hails for the last 200 messages or 30
+  days per thread — whichever keeps more — after which they are deleted.
+  Reported messages are kept as a frozen copy in the moderation record.
 
 ### Technical Data
 We automatically collect:
@@ -100,7 +109,11 @@ You can **delete your account yourself, immediately, from Settings in
 the Game** — see [Delete Your Account](/delete-account/) for details.
 Deletion removes your login and all personally identifying information.
 Anonymized gameplay records (season history, leaderboards, integrity
-logs) are retained with no connection to your identity.
+logs) are retained with no connection to your identity. Messages you
+posted to shared spaces — corporation chat, galaxy posts, and hails sent to
+another captain — remain in those spaces for the other participants until
+the Game's normal message retention removes them, shown as a deleted
+account.
 
 Crash reports and server request logs run on their own automatic
 schedules — up to 90 days for crash reports and up to 30 days for request

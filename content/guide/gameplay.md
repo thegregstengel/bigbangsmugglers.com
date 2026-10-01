@@ -5,7 +5,7 @@ description: "The turn cycle, buying turns, wallet versus bank, and streaks"
 weight: 20
 group: start
 tags: [platform, progression]
-changed_in: [2.3.0, 2.0.17, 2.0.13]
+changed_in: [2.5.0, 2.3.0, 2.0.17, 2.0.13]
 stats:
   - { label: "Turn cap", value: "250", sub: "a reset, not a top-up" }
   - { label: "Cycle", value: "4h", sub: "on UTC boundaries" }
@@ -104,12 +104,14 @@ player zero their lootable wallet from anywhere, which made credit robbery
 effectively opt-out.) Your bank *balance* still spends from nowhere at all:
 nothing buys out of the bank except the fall-through cases below.
 
-Almost everything in the game is **wallet-only**. There are exactly three
+Almost everything in the game is **wallet-only**. There are exactly two
 exceptions that draw wallet first and then fall through to the bank:
 
 1. **Ship repair.**
 2. **Founding a corporation.**
-3. **Posting a public announcement.**
+
+(Paid announcements used to be the third. Since v2.5.0 posting to the galaxy
+is free — see [Comms](#comms).)
 
 Everything else — hulls, upgrades, drives, modules, items, provisions, intel,
 defense contracts, bounty postings, planet claims, structures, starbases,
@@ -163,13 +165,16 @@ warehouse is the one thing that loses you output). Since v2.0.17 the private lan
 things happen to your *stuff*: someone destroyed your deployed ordnance,
 someone swept off your limpet tracker, or your ordnance simply decayed away.
 
-### Announcements
+### Galaxy posts
 
-You can buy your way onto the public feed. A **player announcement** costs
-**1,000 cr** (a pure sink — nobody receives it), is limited to **one per
-turn cycle**, runs 3–280 characters through the profanity gate, and is
-level-gated so a throwaway account is not a megaphone. Other players can
-report an announcement to the moderation desk, so make it worth the credits.
+Anyone at **level 5** can post to the whole galaxy from the Galaxy channel —
+**free**, up to **280 characters**, through the profanity gate, no links.
+Write `@captain` or `@corp` and the name lights up; whoever you named sees an
+**@ you** chip and a count on their Galaxy chip until they open it. A corp
+mention reaches every member. One post can name up to five targets. Posts
+share the [spam gate](#comms) with every other chat surface, and other
+captains can report one — three reports hide it automatically, pending the
+moderation desk.
 
 Operators can also post galaxy notices of their own — those arrive as an
 in-app banner you dismiss once, not just a feed line.
@@ -178,14 +183,34 @@ If you value operational secrecy, note what that means. Buying a capital-class
 hull tells everyone. Losing a fight tells everyone. Claiming a planet paints
 a target.
 
-## Chat and mail
+## Comms
 
-Corporation chat is the only in-galaxy chat: 500 characters, a 3-second
-per-player cooldown and a 30-messages-per-minute corp-wide flood cap, with
-the last 500 messages or 14 days of history retained — whichever is longer.
-There are no direct messages between players. If you need to say something
-to the whole galaxy, that's a [beacon](/guide/deployables/#navigation-beacons)
-or a paid [announcement](#announcements).
+The **Comms** tab (the old Feed tab) holds every way captains talk, as
+channels: **Galaxy** (world events, operator notices, [galaxy posts](#galaxy-posts)
+and your own dispatches — the things that happened to *you*), **Corp**
+(corporation chat, only while you are in one), **Hails** (direct chat) and
+**Leaderboards** (with a season selector for finished seasons).
+
+**One spam gate covers all three chat surfaces**, counted per captain across
+them: **3 messages per 10 seconds and 30 per 10 minutes**. Over it, the game
+tells you how many seconds to wait. Links are blocked everywhere.
+
+**Corporation chat** takes 500 characters, with a 30-messages-per-minute
+corp-wide cap on top of the gate. History keeps the last 500 messages or 14
+days, whichever is longer. Messages land instantly, the roster's joins and
+leaves show inline, and you can see how many corpmates are online.
+
+**Hails** are direct, text-only chats between two captains in the same
+season: one thread per pair, 280 characters a message, kept for the last
+200 messages or 30 days per thread. Starting a hail needs **level 5**;
+replying needs nothing. Tap **Hail** to find a captain by name. **Block**
+from a thread header and that captain's hails and galaxy posts stop
+reaching you, in both directions — silently; they are not told.
+
+Report any message with ⚑ (posts) or a long press (hails and corp chat).
+Reports go to the moderation desk; three reports hide a message
+automatically, and a moderator can **silence** a captain on every surface
+for an hour, a day, a week or the season. Reading is never silenced.
 
 Mail is account-scoped and works between seasons. Feedback goes straight to
 the developers from inside the app; 2,000 characters, and it works whether or
