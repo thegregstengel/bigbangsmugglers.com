@@ -122,6 +122,25 @@ growing it.
 straight into the planet's storage — you never have to fly out and press
 Collect. A fresh claim banks its first batch the moment you claim it.
 
+### Export income
+
+Owning a planet also pays cash. Every tick, each planet you own **exports
+its production** at **30 cr per unit** — fuel, organics and equipment all
+count the same — and the credits land **directly in your bank**, not your
+wallet. The goods still arrive in storage; the export payout is on top of
+them, not instead of them.
+
+```
+exportIncome = (fuel + organics + equipment produced this tick) × 30
+```
+
+A bare claim at starting population makes 19 units a tick, about 570 cr. A
+planet with full population and a maxed Factory and Citadel makes several
+hundred units, so a few developed planets will bank tens of thousands of
+credits every four hours while you sleep. If your bank balance keeps growing
+and you can't place it, this is where it comes from. The planet screen
+quotes the figure as *Export income* with per-tick and per-day numbers.
+
 The one thing to watch is **storage space**. If a cycle's output doesn't
 fit, every commodity is scaled down by the same ratio to what does fit, and
 the rest is lost. The planet screen shows each cycle's output against your
@@ -288,8 +307,8 @@ the only ownership transfer in the game that doesn't involve a siege.
 
 ## Is it worth it?
 
-A bare claim is 150,000 cr for roughly 15 credits' worth of production a tick.
-That's a bad deal on its own.
+A bare claim is 150,000 cr for 19 units of production a tick — about 570
+cr of export income, plus the goods. That's a bad deal on its own.
 
 The compounding case: Habitats to raise population toward the cap (5× on
 everything), a Factory ladder (+75% at level 5), Warehouses so the output has
