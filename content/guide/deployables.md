@@ -65,14 +65,11 @@ When a ship enters a sector with hostile mines:
 Damage runs through the standard shields-then-hull-at-×1.5 pipeline. **Mines
 can kill you outright.**
 
-What mines do *not* spare:
+What mines spare:
 
-- **They do not spare your corp-mates.** Deployables have never checked corp
-  membership. If you mine a lane your corporation uses, you will hit your own
-  people.
-
-What they do spare:
-
+- **You and your corp-mates.** Your own mines never fire on you, and neither
+  do mines laid by anyone in your corporation. Mining a lane your corp uses
+  is safe for your own people.
 - **PvP-immune ships.** Immunity covers deployables.
 - **Anyone arriving by stable wormhole transit.** A stable wormhole bypasses
   mines and hazards entirely. A *scattered* unstable exit does not.
@@ -91,7 +88,7 @@ fighters into ordinary mines in its own sector — 6 garrison fighters plus
 150 cr per mine, up to 20 per order, behind a level gate. The conversion is
 one-way: fighters spent on the approaches are gone from the siege garrison.
 The mines themselves are indistinguishable from ship-laid ones — same entry
-triggers, same decay, same corp friendly-fire, same attackability. See
+triggers, same decay, same corp-mate exemption, same attackability. See
 [Planets](/guide/planets/#minelaying).
 
 ## Passive stacks

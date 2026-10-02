@@ -184,7 +184,7 @@ own sector** — 6 garrison fighters plus 150 cr per mine, up to 20 per order,
 1 turn, behind a level gate. The conversion is one-way; fighters spent on
 mines are gone from the siege garrison, so fortifying the doorstep
 measurably weakens the keep. The mines are standard catalog mines in every
-respect: entry triggers, decay, corp friendly-fire, and attackability. See
+respect: entry triggers, decay, the corp-mate exemption, and attackability. See
 [Ordnance, Limpets & Beacons](/guide/deployables/).
 
 ## Landing
