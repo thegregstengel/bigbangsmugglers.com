@@ -51,6 +51,23 @@ The Shipyard shows the layer next to each level, so you know what you're buying.
 Layer chips sit above the chart. Tap one to hide or show that layer. A 🔒 chip
 tells you which level opens it.
 
+### Who holds what
+
+By default the chart colours sectors by **control**:
+
+| Colour | Means |
+|---|---|
+| Grey | Unexplored — you've never been there or resolved it |
+| Green | Explored |
+| Blue | You or your corp hold something there: a planet, a port, or your own deployments |
+| Red | An enemy held a planet or port there **when you last saw it** |
+
+Red is what *you* saw, dated like everything else on the chart — it is never a
+live feed of other captains' territory, and enemy mines and drones never make a
+sector red (their owners stay secret). A sector that is both yours and an
+enemy's shows as **contested**. Switch the chart to **Region** colouring with
+one tap.
+
 Sectors the device cannot fully resolve show as **unknown**, not as empty.
 An unknown sector is not a safe sector.
 
@@ -67,7 +84,14 @@ that is, and what you can do from here, with the turn cost on each button:
 - **Buy the visit** on an unvisited sector, when you're docked where intel is
   sold — see below.
 
-The chart's search box finds sectors by number, name, your note or your tag.
+The chart's search box finds sectors by number, name, your note or your tag,
+with quick filters for ★ only, has a port, has a planet, has a landmark, and
+noted. The old Explored list, Favorites and Recent Sectors all live here now:
+the ★ Favorites link on the Sector panel opens the chart filtered to your stars,
+and the Trail layer is your recent route.
+
+**Clear hostile ordnance** — mines or drones in your own sector can be attacked
+from your sector's card.
 
 ## Active scans
 
@@ -141,7 +165,8 @@ defense; it is area concealment.
 Ports running the `tavern` or `research` service sell intel for **2,000 cr**.
 There are two ways to buy it:
 
-- **Five nearest** — reveals the five nearest sectors you haven't visited.
+- **Five nearest** — the Research Lab row in a port's services reveals the five
+  nearest sectors you haven't visited.
 - **Buy the visit** — tap any unvisited sector on the chart and buy exactly
   that one. Same price.
 
@@ -156,9 +181,9 @@ already visited can't be bought again.
 ## The price board
 
 The Merchant Exchange's exclusive service, and since 3.0 the **chart updater**:
-refreshing from the board writes the live prices of **every port in every
+**Refresh prices from the board** in the Exchange's services writes the live prices of **every port in every
 sector you have visited** (nearest first, up to 200 ports) into your chart's
-price layer. Free, no turns.
+price layer and opens the chart with the Ports layer on. Free, no turns.
 
 Your chart also remembers every price you see yourself — the quote sheet at a
 port, a quote, and what you actually paid. The Ports & prices layer (StarNav 3)
