@@ -1,59 +1,107 @@
 ---
 title: "Scanners, Cloaks & Intel"
 date: 2026-08-04
-description: "StarNav tiers, active scans, cloaks, and paid intel"
+description: "The STARNAV chart, its layers, active scans, cloaks, and paid intel"
 weight: 32
 group: fly
 tags: [navigation, upgrades]
-changed_in: [2.3.0, 2.0.14, 2.0.8]
+changed_in: [3.0.0, 2.3.0, 2.0.14, 2.0.8]
 stats:
   - { label: "StarNav", value: "100k cr", sub: "per level, to L5" }
-  - { label: "Range", value: "3 hops", sub: "L4–5 see better, not further" }
+  - { label: "Layers", value: "7", sub: "each level lights one up" }
   - { label: "Cloak", value: "2 h", sub: "fixed window, 2,500 cr" }
 ---
 
-## StarNav 2002
+## STARNAV 2002 — the chart
 
-The passive scanner. Once installed it runs continuously, costs nothing, and
-takes no turns.
+Since 3.0, STARNAV is a **chart**: a map of every sector you have ever seen,
+drawn on the galaxy's real grid. It lives on the Nav tab and opens full screen
+with the ⤢ button. You can move it anywhere on the Nav tab, but not hide it.
+
+The chart **remembers**. A sector you swept, scanned, visited or bought intel
+on stays drawn, with the date you last saw it. Old information fades so you can
+tell "last seen this morning" from "last seen last week". Nothing on the chart
+is ever live unless you are looking at it right now.
+
+### What each level lights up
+
+The device costs what it always did, and each level still has its own season
+gate:
 
 | | |
 |---|---|
 | Install | 100,000 cr |
 | Upgrade | 100,000 cr × the new level — L2 200k, L3 300k, L4 400k, L5 500k |
-| Gates | Each level has its own season-ladder gate, mid-early at L1 to deep at L5 |
 | Max level | 5 |
 
-**Range** is `min(level, 3)` hops. Level 4 and 5 do not see further — they
-see *better*.
+Every level now switches on a **layer** you can see:
 
-**Detail** resolves per hop distance:
+| Level | Range | Layer it adds |
+|---|---|---|
+| 0 | — | **Chart + Trail** — every sector you've visited, the links between them, your recent route, ★ and notes, beacons, your planets and your corp's |
+| 1 | 1 hop | **Sweep ring** — the sectors around you, live |
+| 2 | 2 hops | **Hazards** — hazard glyphs, and mines/drones/buoys by kind and count from your scans |
+| 3 | 3 hops | **Ports & prices** — ports and planets nearby, and the last prices you saw at every port |
+| 4 | 3 hops | **Contacts** — ships and NPCs one hop out, cloaked ships, and the ghost ring of sectors one hop past your range |
+| 5 | 3 hops | **Traffic** — full detail two hops out, and when you last saw ships in each sector |
 
-| Level | 1 hop | 2 hops | 3 hops |
-|---|---|---|---|
-| 1 | empty | — | — |
-| 2 | empty | empty | — |
-| 3 | **POI** | empty | empty |
-| 4 | **full** | POI | empty |
-| 5 | **full** | **full** | POI |
+Range is `min(level, 3)` hops. Levels 4 and 5 don't see further; they see more.
+The Shipyard shows the layer next to each level, so you know what you're buying.
 
-- **empty** — the sector exists and is linked; nothing else resolves.
-- **POI** — points of interest: ports, planets, landmarks.
-- **full** — everything the sector holds.
+Layer chips sit above the chart. Tap one to hide or show that layer. A 🔒 chip
+tells you which level opens it.
+
+### Who holds what
+
+By default the chart colours sectors by **control**:
+
+| Colour | Means |
+|---|---|
+| Grey | Unexplored — you've never been there or resolved it |
+| Green | Explored |
+| Blue | You or your corp hold something there: a planet, a port, or your own deployments |
+| Red | An enemy held a planet or port there **when you last saw it** |
+
+Red is what *you* saw, dated like everything else on the chart — it is never a
+live feed of other captains' territory, and enemy mines and drones never make a
+sector red (their owners stay secret). A sector that is both yours and an
+enemy's shows as **contested**. Switch the chart to **Region** colouring with
+one tap.
 
 Sectors the device cannot fully resolve show as **unknown**, not as empty.
-That distinction matters: an unknown sector is not a safe sector.
+An unknown sector is not a safe sector.
 
-**Deployables** — mines, drones, turrets, buoys — are only reported at
-**StarNav 2 or better**, by kind and quantity, never by owner.
+### Tap a sector
+
+Tapping any sector opens its card: what your chart knows about it, how old
+that is, and what you can do from here, with the turn cost on each button:
+
+- **Move** (next door) · **Warp** (visited and reachable) · **Plan route** (draws
+  the route on the chart; sectors you've never visited show as `?`)
+- **Peek** (next door, a radius-1 scan) · **Scan around me** (from your own
+  sector; pick 1–3 rings and see them on the chart first)
+- **★, tag and note** · **Beacon** · **Wormhole transit**
+- **Buy the visit** on an unvisited sector, when you're docked where intel is
+  sold — see below.
+
+The chart's search box finds sectors by number, name, your note or your tag,
+with quick filters for ★ only, has a port, has a planet, has a landmark, and
+noted. The old Explored list, Favorites and Recent Sectors all live here now:
+the ★ Favorites link on the Sector panel opens the chart filtered to your stars,
+and the Trail layer is your recent route.
+
+**Clear hostile ordnance** — mines or drones in your own sector can be attacked
+from your sector's card.
 
 ## Active scans
 
 A deliberate sweep of a radius around you, costing **1 turn per ring**,
-radius 1 to 3. It reports sectors and hazards, plus deployables at StarNav 2+.
+radius 1 to 3. Start it from your own sector's card on the chart. It reports
+sectors and hazards, plus deployables at StarNav 2+, and everything it finds
+stays on your chart with the time you scanned it.
 
-Use active scans when you're standing somewhere and need to know what's one
-jump out. Use StarNav for the ambient picture.
+Use active scans when you need to know what's out there *now*. Use the chart
+for everything you've already seen.
 
 ## Cloaks
 
@@ -115,24 +163,31 @@ defense; it is area concealment.
 ## Paid intel
 
 Ports running the `tavern` or `research` service sell intel for **2,000 cr**.
+There are two ways to buy it:
 
-It reveals the **five nearest unvisited sectors** and marks them visited —
-and since v2.0.14 the reveal names what's actually there: real ports,
-planets and landmarks, not just "a stretch of space". The visited part is
-the important bit: **warp only reaches visited sectors**, so intel is how
-you extend your warp network without flying the hops.
+- **Five nearest** — the Research Lab row in a port's services reveals the five
+  nearest sectors you haven't visited.
+- **Buy the visit** — tap any unvisited sector on the chart and buy exactly
+  that one. Same price.
 
-It pays **no exploration XP** — you didn't go there. If the galaxy is fully
-explored you get `NOTHING_TO_REVEAL` and pay nothing.
+Either way the sectors are named, their ports, planets and landmarks are
+revealed, and they are **marked visited**. That matters because **warp only
+reaches visited sectors**: intel is how you extend your warp network without
+flying the hops.
+
+Intel pays **no exploration XP** — you didn't go there. A sector you've
+already visited can't be bought again.
 
 ## The price board
 
-The Merchant Exchange's exclusive service. Live prices and stock for **every
-port in every sector you have visited**, nearest first, up to 200 ports. Free,
-no turns.
+The Merchant Exchange's exclusive service, and since 3.0 the **chart updater**:
+**Refresh prices from the board** in the Exchange's services writes the live prices of **every port in every
+sector you have visited** (nearest first, up to 200 ports) into your chart's
+price layer and opens the chart with the Ports layer on. Free, no turns.
 
-It is the best intel in the game and it costs nothing but knowing where the
-Exchange is.
+Your chart also remembers every price you see yourself — the quote sheet at a
+port, a quote, and what you actually paid. The Ports & prices layer (StarNav 3)
+draws them all, each with its age.
 
 ## Advanced Sensors
 

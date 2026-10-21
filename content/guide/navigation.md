@@ -5,7 +5,7 @@ description: "Moving, warp, the Tesseract, wormholes, hazards and beacons"
 weight: 30
 group: fly
 tags: [navigation]
-changed_in: [2.3.0]
+changed_in: [3.0.0, 2.3.0]
 stats:
   - { label: "Move", value: "1 turn", sub: "per linked sector" }
   - { label: "Warp L5", value: "4 turns", sub: "for a 20-hop trip" }
@@ -123,16 +123,26 @@ thin.
 Arrivals by move, warp destination and tesseract destination all roll the
 full chance. Warp pass-through rolls at 25%. Wormhole transit is exempt.
 
+## Navigating from the chart
+
+Since 3.0 the STARNAV chart on the Nav tab is where you travel from. Tap a
+sector to move there (next door), warp there (visited), plan a route, peek,
+scan, star it or leave a note — each button shows its turn cost. The Move and
+Warp panels are still there if you prefer them. See
+[Scanners & Intel](/guide/scanners-intel/) for the chart, its layers and
+what each StarNav level adds.
+
 ## Scanning
 
 Two different things share the word "scan".
 
 **Active scan** costs turns and reveals a radius around you: 1 turn per ring,
 radius 1 to 3. It reports sectors and hazards, and — at StarNav 2 or better —
-deployed ordnance by kind and quantity, though never who owns it.
+deployed ordnance by kind and quantity, though never who owns it. Results stay
+on your chart.
 
-**The StarNav passive sweep** is free and always available if you have the
-drive. See [Scanners & Intel](/guide/scanners-intel/).
+**The StarNav sweep** is free and runs whenever you have the device. It paints
+the sectors around you onto the chart as you fly.
 
 ## Beacons
 
