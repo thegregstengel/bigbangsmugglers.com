@@ -5,7 +5,7 @@ description: "The fence, the premium sale, customs scans, and hidden holds"
 weight: 42
 group: trade
 tags: [smuggling]
-changed_in: [2.3.0, 2.0.8]
+changed_in: [2.9.0, 2.4.0, 2.3.0, 2.0.8]
 stats:
   - { label: "Contraband", value: "3 rows", sub: "organics, equipment, black tech" }
   - { label: "Per purchase", value: "100", sub: "units, 1 turn" }
@@ -85,9 +85,15 @@ The inversion is the whole design: **the best prices are where you are most
 likely to get caught.** Black Tech in the Federation core sells at 3.5 × 1.5
 = **5.25×** the local equipment price, and 22% of those sales go wrong.
 
-The detection roll is **not counterable**. Cloaking devices, stealth plating,
-hidden compartments, the smuggler role — none of them touch it. Those counter
-*customs scans*, which is a different system entirely.
+The sale roll is **almost never counterable**. Since v2.4.0, only a
+**hidden compartments** signature scales the regional rate by `(1 − value)`,
+so The Phantom Manifest's 60% cuts a Fed-core 22% down to about 9%. The sell
+screen shows your real number.
+
+**Full-Hold Cloak**, Goods Cloaking Devices, Stealth Plating, the smuggler
+role, and pirate-line hold hiding do **not** reduce premium / contraband sale
+detection. Those counter *customs scans*, which is a different system
+entirely. Fence sales still skip the roll completely.
 
 ### Getting caught on a sale
 
@@ -140,14 +146,19 @@ income, not a nuisance.
 
 | Counter | Effect | Notes |
 |---|---|---|
+| **Full-Hold Cloak** (luxury) | Hold reads empty; **scan does not register** | **25,000,000** cr at `blackmarket`. **24 hours** from purchase; timed, not spent per scan. Since v2.9.0. **Does not help on premium sales.** |
 | **Goods Cloaking Device** | −50pp | **Consumed by the attempt**, win or lose. 750 cr. |
 | **Stealth Plating** module | −30pp | Permanent. Also +15pp escape and +12pp first strike. |
 | **Smuggler role** | −2pp per tier, max −8pp | Free, earned by volume |
 | **Pirate-line hull** | **Hides 25% of your holds outright** | The scan never happens for cargo under the threshold |
-| **Hidden compartments** signature | +15% (T3) / +25% (T4) of holds, additive with the above | Plunder Barge, Marauder's Fortune |
+| **Hidden compartments** signature | +15% (T3) / +25% (T4) of holds, additive with the above | Plunder Barge, Marauder's Fortune. **Also** the only counter that scales the *sale* detection rate. |
 | **The Phantom Manifest** (epic) | **+60% of holds** | Plus the pirate-line 25% |
 | **False Manifest** module | One failed scan a day silently rerolls | Pirate-only, 20,000 cr, level-gated |
 | **Patrol Transponder** module | Patrols never appear at all | Federation-only — mutually exclusive with being a smuggler in practice |
+
+While a Full-Hold Cloak is running, the other patrol counters are moot: the
+scan never starts. A live cloak still leaves you exposed on a non-fence
+premium sale.
 
 Stack a Marauder's Fortune (25% line + 25% signature = 50% of holds hidden)
 with stealth plating and a max smuggler role and you are running at the 5%

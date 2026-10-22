@@ -5,7 +5,7 @@ description: "The STARNAV chart, its layers, active scans, cloaks, and paid inte
 weight: 32
 group: fly
 tags: [navigation, upgrades]
-changed_in: [3.0.0, 2.3.0, 2.0.14, 2.0.8]
+changed_in: [3.0.0, 2.9.0, 2.3.0, 2.0.14, 2.0.8]
 stats:
   - { label: "StarNav", value: "100k cr", sub: "per level, to L5" }
   - { label: "Layers", value: "7", sub: "each level lights one up" }
@@ -153,6 +153,26 @@ A different item entirely, and not a ship cloak. A **Goods Cloaking Device**
 points** — and is **consumed by the attempt whether or not it worked**.
 
 See [Smuggling](/guide/smuggling/#counters).
+
+### Full-Hold Cloak
+
+A timed **luxury**, not a ship cloak and not a Goods Cloaking Device. Bought
+at any port with the `blackmarket` service for **25,000,000** credits (since
+v2.9.0). For **24 hours** from purchase, your whole hold reads empty to
+**Federation patrol customs scans**: the scan does not register at all (no
+seizure, no Goods Cloak spent, no clean-scan alignment reward either). It is
+**not consumed** per use; it expires when the window ends. One live cloak at
+a time.
+
+It does **not** affect contraband **sale** detection at ports. Premium /
+street sales still roll the regional chance; only a **hidden compartments**
+signature scales that rate down. Fence sales never roll. Full-Hold Cloak,
+Goods Cloaks, Stealth Plating, the smuggler role, and pirate-line hold
+hiding do not help on sales.
+
+See [Smuggling](/guide/smuggling/#selling-two-completely-different-actions)
+for the sale path, and [customs counters](/guide/smuggling/#counters) for
+the patrol stack.
 
 ## Cloak fields
 
