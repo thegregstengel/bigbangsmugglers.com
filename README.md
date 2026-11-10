@@ -1,27 +1,30 @@
 # bigbangsmugglers.com
 
-Marketing site, player guide and release notes for **Big Bang Smugglers**,
-built with [Hugo](https://gohugo.io/) and deployed to GitHub Pages.
+Source for the Big Bang Smugglers marketing site, player guide, and release notes. The live site is [bigbangsmugglers.com](https://bigbangsmugglers.com).
 
-## Structure
+The site is [Hugo](https://gohugo.io/) extended with no theme. Layouts, styles, and content are in this repository. GitHub Pages hosts the built site.
+
+## Repository layout
 
 ```
-content/
-  guide/            Player guide (21 pages, grouped by front matter)
-  releases/         Releases (v1.1.0 →) and the Feb 2026 dev log
-  privacy.md        Privacy policy
-  delete-account.md Account deletion instructions
-assets/css/site.css The only stylesheet (tokens + components)
-data/site.yaml      Season status and store/community links
-layouts/            Base layout, page templates, partials (see CLAUDE.md)
-static/             Logo and favicon
-hugo.toml           Site configuration
-.github/workflows/  Build and deploy on push to main
+content/guide/                 Player guide
+content/releases/              Release notes and the February 2026 dev log
+content/privacy.md             Privacy policy
+content/delete-account.md      Account deletion instructions
+data/                          Season readout, turn settings, guide groups, and tags
+layouts/                       HTML templates and partials
+assets/css/site.css            The only stylesheet
+assets/img/logo-source.png     Wordmark source for icons and the social image
+static/                        Favicon, web manifest, and screenshots
+hugo.toml                      Site configuration
+.github/workflows/hugo.yml     GitHub Actions workflow that deploys the site
 ```
 
-## Local development
+Content conventions, design rules, and gotchas are in [CLAUDE.md](CLAUDE.md).
 
-Requires **Hugo extended** 0.155 or later.
+## Build locally
+
+Install [Hugo extended](https://gohugo.io/installation/) 0.155.3, the version pinned in `.github/workflows/hugo.yml`.
 
 ```bash
 git clone https://github.com/thegregstengel/bigbangsmugglers.com.git
@@ -29,20 +32,12 @@ cd bigbangsmugglers.com
 hugo server -D
 ```
 
-Visit http://localhost:1313.
+Open [http://localhost:1313](http://localhost:1313).
 
-## Adding a release note
+To build the site files, run `hugo --gc --minify`. Hugo writes them to `public/`.
 
-```bash
-~/.aiops/scripts/bbs-release-notes-site "<filename>.md" "v<version> -- <Title>"
-```
+## Publish a change
 
-Or create a file in `content/releases/` by hand. Every note needs
-`title`, `date` (explicit UTC), `description`, `entry`
-(`release` or `devlog`), `version` (releases only) and `tags`. The tag list
-and guide conventions live in `CLAUDE.md`.
-
-## Deployment
-
-Pushing to `main` builds the site with `hugo --gc --minify` and deploys it
-to GitHub Pages. There are no manual steps.
+1. Create a branch named `site/<topic>`.
+2. Open a pull request to `main`.
+3. After you merge the pull request, GitHub Actions builds the site and deploys it to GitHub Pages.
