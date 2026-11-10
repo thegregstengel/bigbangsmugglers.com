@@ -1,48 +1,16 @@
-# bigbangsmugglers.com
+# Big Bang Smugglers
 
-Marketing site, player guide and release notes for **Big Bang Smugglers**,
-built with [Hugo](https://gohugo.io/) and deployed to GitHub Pages.
+Run a galaxy from your phone.
 
-## Structure
+Big Bang Smugglers is a free, turn-based space trader for Android and the browser, in the tradition of the classic BBS door games. You get 250 turns every four hours. Trade, fight, smuggle, and build in a galaxy that moves on the same clock. Your phone and the browser share one account and the same galaxy.
 
-```
-content/
-  guide/            Player guide (21 pages, grouped by front matter)
-  releases/         Releases (v1.1.0 →) and the Feb 2026 dev log
-  privacy.md        Privacy policy
-  delete-account.md Account deletion instructions
-assets/css/site.css The only stylesheet (tokens + components)
-data/site.yaml      Season status and store/community links
-layouts/            Base layout, page templates, partials (see CLAUDE.md)
-static/             Logo and favicon
-hugo.toml           Site configuration
-.github/workflows/  Build and deploy on push to main
-```
+Start at [bigbangsmugglers.com](https://bigbangsmugglers.com).
 
-## Local development
+## Where to go
 
-Requires **Hugo extended** 0.155 or later.
+- [Install on Android](https://play.google.com/store/apps/details?id=com.bbsgames.bigbangsmugglers).
+- [Play in the browser](https://play.bigbangsmugglers.com).
+- Read the [player guide](https://bigbangsmugglers.com/guide/) to learn how the game works.
+- Read the [release notes](https://bigbangsmugglers.com/releases/) to see what changed.
 
-```bash
-git clone https://github.com/thegregstengel/bigbangsmugglers.com.git
-cd bigbangsmugglers.com
-hugo server -D
-```
-
-Visit http://localhost:1313.
-
-## Adding a release note
-
-```bash
-~/.aiops/scripts/bbs-release-notes-site "<filename>.md" "v<version> -- <Title>"
-```
-
-Or create a file in `content/releases/` by hand. Every note needs
-`title`, `date` (explicit UTC), `description`, `entry`
-(`release` or `devlog`), `version` (releases only) and `tags`. The tag list
-and guide conventions live in `CLAUDE.md`.
-
-## Deployment
-
-Pushing to `main` builds the site with `hugo --gc --minify` and deploys it
-to GitHub Pages. There are no manual steps.
+If you maintain this site, start with [CLAUDE.md](CLAUDE.md).
